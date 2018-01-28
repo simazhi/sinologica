@@ -50,6 +50,4 @@ I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologi
 
 Between my bachelor and my master of Sinology, I was able to study at <a href="http://eng.suda.edu.cn/" target="_blank">Suzhou University 苏州大学</a> with a scholarship provided by the Hanban. 
 
-Find more about me by clicking on links in the About-me tab. You can read a more extensive <a href="http://www.thomasvanhoey.com/biography/" target="_blank">biography</a>, see a <a href="http://www.thomasvanhoey.com/where-ive-been/" target="_blank">map of the places I have visited</a> and my [academic cv][1].
-
- [1]: http://www.thomasvanhoey.com/academiccv
+**Click here for my [academic cv](https://www.dropbox.com/s/j60mfsbpkujasxq/CV_Thomas_EN.pdf?dl=0).**
