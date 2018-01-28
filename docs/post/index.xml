@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Hugo Tanka Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>England</title>
+      <link>/post/england/</link>
+      <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/england/</guid>
+      <description>Howdy cowboys and cowgirls!
+In this post I&amp;rsquo;ll talk about the trip I went on to UK this summer, which took place after the events chronicled in last time&amp;rsquo;s post &amp;ldquo;Hashtag Travels With Bae&amp;rdquo;. Since I am of a recycling nature, I wanted to reuse that title, hence this one is called &amp;ldquo;Travels with bae in UK&amp;rdquo;. The trip we took was about 10 days long and was a real Journey To the West: we first went to London for a night, then to Oxford, subsequently Bristol with a day trip to Bath, then to Cardiff and then back to London with an excursion to Cambridge.</description>
+    </item>
     
     <item>
       <title>Tanka Theme Demo</title>
