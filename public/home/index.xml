@@ -18,23 +18,14 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
-    </item>
-    
-    <item>
-      <title>Selected Publications</title>
-      <link>/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>/home/publications_selected/</guid>
-      <description></description>
+      <description>Biography Hi, my name is Thomas Van Hoey (IPA:[&amp;lsquo;to:mas van &amp;lsquo;hui]). Alternatively, you may find me by my Chinese name — 司馬智 (Hanyu pinyin: Sīmǎ Zhì).
+I am a sinologist and a linguist, with MA degrees obtained at the University of Leuven, Belgium. At this moment, I am a Ph.D student at the Graduate Institute of Linguistics of National Taiwan University with a scholarship provided by NTU (Research Fellowship for Outstanding International Doctoral Students 優秀國際博士生獎學金).</description>
     </item>
     
     <item>
       <title>Recent Publications</title>
       <link>/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 28 Jan 2018 00:00:00 +0800</pubDate>
       
       <guid>/home/publications/</guid>
       <description></description>
@@ -65,17 +56,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
       
       <guid>/home/projects/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Teaching</title>
-      <link>/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.
-I am a teaching instructor for the following courses at University X:
- CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
     </item>
     
     <item>

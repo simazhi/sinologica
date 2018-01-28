@@ -33,12 +33,12 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "Deep Learning"
-  tag = ".deep-learning"
+  name = "Ideophone"
+  tag = ".ideophone"
 
-[[filter]]
-  name = "Other"
-  tag = ".demo"
+#[[filter]]
+#  name = "Other"
+#  tag = "."
 
 +++
 
