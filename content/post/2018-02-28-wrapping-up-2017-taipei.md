@@ -2,14 +2,25 @@
 title: 'Wrapping up 2017: Taipei'
 author: Thomas Van Hoey
 date: '2018-02-28'
-slug: wrapping-up-2017-i
 categories:
   - Blog
 tags:
-  - Taiwan
-  - japan
   - reisjes
   - visitors
+  - Taipei
+  - Taiwan
+  - belgium
+  - art
+  - Belgians
+  - Gaypride
+  - hsinchu
+  - linguistics
+  - ideophones
+  - ideophone
+slug: wrapping-up-2017-i
+header:
+  caption: ''
+  image: ''
 ---
 
 I'm back. And I don't know if to you, the reader, it feels as if I have to say that very often at the start of a blog post, but to me it does. Anyway, no more excuses, but *I solemly swear* to write more often here. Where were we at last time? Ah yes, I chronicled [my trip to the UK](http://www.thomasvanhoey.com/post/travels-with-bae-in-uk/). Go read that if you forgot about it, but be sure to return for the update.
@@ -131,4 +142,3 @@ But they do make for lush background settings.
 Our first picture together in Taiwan - visiting NTU's campus and Drunken Moon Lake
 
 And with that picture this update is finished! Next time, we go to Japan! So stay tuned. And stay in school!
-
