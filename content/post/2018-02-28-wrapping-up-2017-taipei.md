@@ -25,7 +25,7 @@ header:
 
 I'm back. And I don't know if to you, the reader, it feels as if I have to say that very often at the start of a blog post, but to me it does. Anyway, no more excuses, but *I solemly swear* to write more often here. Where were we at last time? Ah yes, I chronicled [my trip to the UK](http://www.thomasvanhoey.com/post/travels-with-bae-in-uk/). Go read that if you forgot about it, but be sure to return for the update.
 
-In this update,
+In this update, I first look back at the end of August until the beginning of November. [*Get set, ready, go!*](https://www.youtube.com/watch?v=yMqL1iWfku4)
 
 # Going back to Taiwan - August 2017
 It was hot in Taiwan last summer. We got back and constantly craved air conditioning and only sporadically went places. I also don't seem to have taken any good pictures, so you will have to scroll on.
@@ -77,7 +77,8 @@ This semester I decided to take three classes:
 I think this was a good combination for me. Methodologically, I got the most from the R class (*should you not know, [R](https://www.r-project.org/) is a programming language, like e.g. [python](https://www.python.org/), but [it can do some things very well that other languages cannot](https://www.quora.com/What-are-some-examples-of-things-I-can-do-in-R-that-I-cant-do-in-Excel)*) and I think I am able to speed up my research process significantly with techniques I learnt there.
 Related to ideophones, however, I was able to discuss the same phenomenon (namely ideophones expressing LIGHT in Pre-Modern Chinese) from a Cognitive Semantic point of view, and from a phonological point of view. The resulting papers revealed some overlap, as you would expect from a linguistic phenomenon that is driven by iconicity, and are complementary. I think I might even use chunks of it in my -- gasp -- dissertation.
 
-# Warm October Nights - October 2017
+# White nights and visitors - October 2017
+## Warm October Nights
 As sung by one of my defining bands, [Yellowcard](http://yellowcardrock.com/), in their song [*Warm October Nights*](http://yellowcardrock.com/), there was one night-related event that stood out in this month: [Taipei's annual *Nuit Blanche*](http://nuitblanche.taipei/), although that 'annual' should be taken with a grain of salt, as it's only the second edition. (I missed last year's edition, because I was too busy going to [Thailand](http://www.thomasvanhoey.com/post/thomas-in-thailand/) and [China.](http://www.thomasvanhoey.com/post/shanghai-and-suzhou/))
 Anyway, my university NTU figured prominently on the route of venues that partook in the event. I decided to go with my *xuemei* Hanna and her Korean friend, and after they went home, I just felt the energy and nearly pulled an allnighter, doing research in my department. I know, I know, that shouldn't be the point, but at that time it just felt right, and it also reminded me of the one time the Faculty of Arts students back in Leuven did a *nuit blanche* in the Faculty library. Ah, good times. Anyways, here are pictures of this event.
 
@@ -93,7 +94,6 @@ The moon looking down with its menacing eye.
 <a data-flickr-embed="true"  href="https://www.flickr.com/photos/86097314@N03/39034831751/in/album-72157666234252478/" title="20171008_040359"><img src="https://farm5.staticflickr.com/4640/39034831751_e96cf99ee5_b.jpg" width="576" height="1024" alt="20171008_040359"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 So at 5 o'clock in the morning people *do* look like zombies.
 
-# Visitors. - November (actually still October too) 2017
 ## Good advice
 Halfway October my old advisor for my MA in Sinology thesis was in Taipei and we decided to meet up. We spent a lovely, yet rainy afternoon chatting about the past, the current state of affairs and future plans, and it was as inspiring as I seemed to remember. Thank you for everything 范德望老師！
 
