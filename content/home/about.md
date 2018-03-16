@@ -50,4 +50,4 @@ I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologi
 
 Between my bachelor and my master of Sinology, I was able to study at <a href="http://eng.suda.edu.cn/" target="_blank">Suzhou University 苏州大学</a> with a scholarship provided by the Hanban. 
 
-**Click here for my [academic cv](https://www.dropbox.com/s/j60mfsbpkujasxq/CV_Thomas_EN.pdf?dl=0).**
+**Click here for my [academic cv](https://github.com/simazhi/cv_in_rmarkdown/blob/master/CV_thomas.pdf).**
