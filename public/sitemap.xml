@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/icons-we-live-by/</loc>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/wrapping-up-2017-ii/</loc>
       <lastmod>2018-03-01T00:00:00+00:00</lastmod>
     </url>
@@ -554,24 +563,18 @@
     
     <url>
     
-      <loc>/post/2018-02-28-wrapping-up-2017-taipei/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/2018-03-01-wrapping-up-2017-japan/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/publication_types/6/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/academic-workflow/</loc>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -711,7 +714,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2018-03-01T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1271,7 +1274,7 @@
     <url>
     
       <loc>/tags/linguistics/</loc>
-      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1440,6 +1443,16 @@
     
     <url>
     
+      <loc>/tags/pln/</loc>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/phuket/</loc>
       <lastmod>2017-02-02T08:41:19+00:00</lastmod>
       <priority>0</priority>
@@ -1530,6 +1543,16 @@
     
     <url>
     
+      <loc>/tags/research/</loc>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/sanya/</loc>
       <lastmod>2013-02-24T07:07:49+00:00</lastmod>
       <priority>0</priority>
@@ -1582,6 +1605,16 @@
     
       <loc>/tags/spirited-away/</loc>
       <lastmod>2015-10-25T16:53:15+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/study/</loc>
+      <lastmod>2018-04-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
