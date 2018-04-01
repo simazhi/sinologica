@@ -12,7 +12,7 @@ tags:
   - PLN
 slug: icons-we-live-by
 header:
-  caption: ''
+  caption: 'Icons We Live By'
   image: '2018/PLN_2017.png'
 ---
 
