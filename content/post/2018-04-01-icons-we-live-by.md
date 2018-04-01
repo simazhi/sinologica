@@ -13,7 +13,7 @@ tags:
 slug: icons-we-live-by
 header:
   caption: ''
-  image: ''
+  image: '2018/PLN_2017.png'
 ---
 
 Let's talk a bit about research. I know, I don't often do that on this blog — some of you might even have the impression that this is only a travel blog or something similar, but in fact travel is very peripheral to my life, although I like to flood my social media accounts with nice pictures of said travels whenever possible. 
