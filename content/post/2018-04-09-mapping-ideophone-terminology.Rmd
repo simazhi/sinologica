@@ -10,6 +10,9 @@ tags:
   - ideophone
   - ideophones
 slug: Mapping the terminology for ideophones
+header:
+  caption: 'Icons We Live By'
+  image: '2018/map_terminology.png'
 ---
 
 #Goal
