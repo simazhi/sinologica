@@ -11,6 +11,151 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Handling research (Academic workflow 2)</title>
+      <link>/post/handling-research/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/handling-research/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Last time we did this, &lt;a href=&#34;http://www.thomasvanhoey.com/post/icons-we-live-by/&#34; target=&#34;_blank&#34;&gt;I showed you what my PLN looked like about a year ago&lt;/a&gt;. I advise you to read that first before you continue reading below.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In today&amp;rsquo;s update I will lay out how I generally go about the processing of research.
+It&amp;rsquo;s a kind of habit I&amp;rsquo;ve been cultivating for a few years now, and it generally does pay off, but it did not come out of nowhere and I might have forgotten some of the sources that influenced me.
+Since the basic process hasnt&amp;rsquo; really changed in the last year, I will first display again the picture from last update:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/2018/PLN_2017_research.png&#34; alt=&#34;PLN 2017&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, I marked the research process with a purple frame.
+So, let&amp;rsquo;s dig into it.&lt;/p&gt;
+
+&lt;h1 id=&#34;finding-research-stuff&#34;&gt;Finding research stuff&lt;/h1&gt;
+
+&lt;p&gt;In general we can break this first point down into two smaller processes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;finding the bibliographical records&lt;/li&gt;
+&lt;li&gt;finding the record itself to read&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finding-bibliographical-records&#34;&gt;Finding bibliographical records&lt;/h2&gt;
+
+&lt;p&gt;Usually this is the easiest part, because you will find references to what other researchers wrote in a variety of places: &lt;code&gt;books&lt;/code&gt;, &lt;code&gt;articles&lt;/code&gt;, &lt;code&gt;websites&lt;/code&gt;, &lt;code&gt;lectures&lt;/code&gt;, &lt;code&gt;classes&lt;/code&gt;, &lt;code&gt;by word of mouth&lt;/code&gt; etc.
+If this reference is decent enough, you should have the &lt;code&gt;author&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;year&lt;/code&gt;, &lt;code&gt;place of publishing (a publishing house or a journal)&lt;/code&gt;.
+If not, well, bummer, but you can use some Google, database, or library magic in the hopes of finding the metadata of the record.&lt;/p&gt;
+
+&lt;h2 id=&#34;finding-the-record-itself&#34;&gt;Finding the record itself&lt;/h2&gt;
+
+&lt;p&gt;My usual go-to practice is going to &lt;a href=&#34;scholar.google.com&#34; target=&#34;_blank&#34;&gt;Google Scholar&lt;/a&gt;, which is a very large linked database of existing versions of different articles / chapters (I am going to refer to the thing we are looking for as the &lt;strong&gt;paper&lt;/strong&gt; in the rest of this update).
+The question remains, however, if your institution has &lt;em&gt;access&lt;/em&gt; to the paper you are looking for.
+Usually that is okay, but for some you may be linked to the publisher, where you have to pay for access to the paper.
+One of the more recent big issues in academia is the cry for more open-access, and we are still trying to find a viable model that does not waste the people&amp;rsquo;s tax money, but still keeps things like peer-review alive.
+A really good model hasn&amp;rsquo;t been found yet, but I have the feeling we are getting there.&lt;/p&gt;
+
+&lt;p&gt;Anyway, assuming you do have access to the paper you want, what to do next &amp;mdash; that is the issue at stake in this update.
+Let&amp;rsquo;s download the thing!&lt;/p&gt;
+
+&lt;h1 id=&#34;a-reference-manager&#34;&gt;A reference manager&lt;/h1&gt;
+
+&lt;p&gt;I think now we come at the heart of this update.
+One of the better inventions in the last few years is that of reference managers: software you can put your bibliographical records in, and that help you spit out references in the style you want.
+There are a few options out there:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt; and its alternative &lt;a href=&#34;https://juris-m.github.io/&#34; target=&#34;_blank&#34;&gt;Juris-M&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://endnote.com/&#34; target=&#34;_blank&#34;&gt;Endnote&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.bibtex.org/&#34; target=&#34;_blank&#34;&gt;Bibtex&lt;/a&gt; and &lt;a href=&#34;https://bibdesk.sourceforge.io/&#34; target=&#34;_blank&#34;&gt;Bibdesk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mendeley.com/&#34; target=&#34;_blank&#34;&gt;Mendeley&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Of these, Zotero and its spin-off Juris-M are my favourites, because they are open source and just do the job I want them to do.
+Now, let&amp;rsquo;s first quickly look at what Zotero can do for you!&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7FOu94Ah85Y&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Basically, all of the previously mentioned reference manager get this same trick done.
+However, there are some customisations that will improve the usefulness of Zotero.&lt;/p&gt;
+
+&lt;h2 id=&#34;customising-the-storage-place-of-files&#34;&gt;Customising the storage place of files&lt;/h2&gt;
+
+&lt;p&gt;I have a folder on my desktop called &lt;code&gt;papers&lt;/code&gt; in which I store all my, well, papers.
+I suggest you do something similar &amp;mdash; it is easy to back up and easy to find, which is what you want.&lt;/p&gt;
+
+&lt;h2 id=&#34;linking-the-data-to-a-file&#34;&gt;Linking the data to a file&lt;/h2&gt;
+
+&lt;p&gt;In Zotero you can link a bibliographical record to a file, in two ways.
+Either you reimport the file into Zotero, allowing Zotero to make a copy and store it somewhere in its directory where it is not easy to find.
+The other option is to link to the file.
+And since we made a folder with all our files, we know exactly where it is and which file we should link to.
+Then, as you click, it is super easy to find the paper (still assuming you had access and have a local copy of it).&lt;/p&gt;
+
+&lt;h2 id=&#34;renaming-the-file-after-metadata&#34;&gt;Renaming the file after metadata&lt;/h2&gt;
+
+&lt;p&gt;So, after you linked to the file within Zotero, you can go right click on the file itself (within Zotero), and rename the file after the metadata, i.e. the bibliographical record you imported/wrote/adapted.
+This makes finding data even easier!&lt;/p&gt;
+
+&lt;p&gt;The next video basically outlines this approach (although he doesn&amp;rsquo;t store them in a separate location. Listen to me and not to him!)&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/4aDvAPLZwCY&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;juris-m&#34;&gt;Juris-M&lt;/h2&gt;
+
+&lt;p&gt;Now, actually these days I don&amp;rsquo;t use Zotero itself anymore, but instead tend to use Juris-M.
+Why is that?
+Juris-M is able to handle multilingual support in bibliographical records and since I am dealing with Chinese papers and the occasional Japanese one, it is a very handy feature, that many people can&amp;rsquo;t believe hasn&amp;rsquo;t been integrated into Zotero itself yet!&lt;/p&gt;
+
+&lt;p&gt;However, all the good things of Zotero still exist in Juris-M:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;magic stick input with ISBN / DOI numbers&lt;/li&gt;
+&lt;li&gt;the whole archiving process I briefly outlined above&lt;/li&gt;
+&lt;li&gt;plug-ins into Word or .odt files&lt;/li&gt;
+&lt;li&gt;online sync to your account&lt;/li&gt;
+&lt;li&gt;the &lt;a href=&#34;https://www.zotero.org/styles&#34; target=&#34;_blank&#34;&gt;superlarge repository of citation styles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So that is the way to handle files. But now, what do I do after I have gotten the bibliographical record and a soft/hard copy of the paper?&lt;/p&gt;
+
+&lt;h1 id=&#34;taking-notes&#34;&gt;Taking notes&lt;/h1&gt;
+
+&lt;p&gt;I am assuming you are using some kind of note-taking strategy to deal with research.
+For classes I tend to have a mix of written notes and digital ones, but for research I pretty much put everything in a digital note-taking programme.
+I&amp;rsquo;ve been using &lt;a href=&#34;https://www.evernote.com&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt; since a few years, because of their (back then) really good free plan &amp;mdash; recently they&amp;rsquo;ve limited the free integration on different devices to a whopping maximum of two.
+But if you do want to use if for free, I would suggest computer and phone, because Evernote has a nice phone camera integration, as well as the ever-so-useful webclipper.&lt;/p&gt;
+
+&lt;p&gt;Of course there are alternatives out there, such as MS&amp;rsquo;s  &lt;a href=&#34;https://www.onenote.com&#34; target=&#34;_blank&#34;&gt;OneNote&lt;/a&gt; or the more recent hashtag-friendly &lt;a href=&#34;http://www.bear-writer.com/&#34; target=&#34;_blank&#34;&gt;Bear&lt;/a&gt; etc.
+I think it&amp;rsquo;s probably most beneficial to just stick with one, and since I settled on Evernote a few years ago, it&amp;rsquo;s easy to stay there.
+However, that doesn&amp;rsquo;t mean I am completely in love with it: for instance, &lt;a href=&#34;https://www.theverge.com/2017/3/2/14785264/evernote-replacement-bear-app&#34; target=&#34;_blank&#34;&gt;its continued lack&lt;/a&gt; of &lt;a href=&#34;https://discussion.evernote.com/topic/99861-native-markdown-support/&#34; target=&#34;_blank&#34;&gt;markdown integration is very annoying&lt;/a&gt;, because that is a very efficient way of taking notes.
+But it must be said, Evernote is a behemoth, and can probably handle virtually all of your note-taking qualms.&lt;/p&gt;
+
+&lt;p&gt;Now, let us go back to our topic.
+Let&amp;rsquo;s say, you have your paper, did all the bibliographical stuff correctly.
+Now what?
+Use Zotero to make a bibliographical reference and put it in the title of your Evernote note. It&amp;rsquo;s best to make some kind of folder to collect all research notes &amp;mdash; mine is called &lt;code&gt;Annotated Bibliography&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next, you are gonna want to repeat the same line as the first line of the note itself. This is because sometimes you have to shorten the title a little bit, for instance when it is too long because it is a book chapter.&lt;/p&gt;
+
+&lt;p&gt;Then, I always put the date I read it, in the order of year-month-day: &lt;code&gt;Read: YYYYMMDD&lt;/code&gt;. This is because if you later revisite the note, Evernote might update the record to the new date you did some changes on.
+So I generally end up with a header that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/2018/Evernote_header.png&#34; alt=&#34;PLN 2017&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Beneath that line (&lt;code&gt;---&lt;/code&gt;) I can start my note itself: what I think are important points, or things I don&amp;rsquo;t agree with.
+Usually I will also write some judgment right below the &lt;code&gt;read&lt;/code&gt; information, saying if I liked the paper or not.
+The trick is to allow future me to able to recall the big message of the paper without having to plough through it completely again.
+However, that also depends on how well you process it the first time.
+Luckily, note-taking software usually allows for good searching capabilities, to help you find previous notes, and also relate notes you didn&amp;rsquo;t know where dealing with similar things.&lt;/p&gt;
+
+&lt;p&gt;There is also the option to tag them, but I don&amp;rsquo;t really make use of this feature.&lt;/p&gt;
+
+&lt;p&gt;And that is basically it, but then quantified over many papers. I don&amp;rsquo;t quite remember when I exactly started doing it as follows, but I currently have 233 notes in Evernote and apparently 889 items in Zotero.
+This reflects my evolution from 2014 or 2015 onwards: going from paper to Zotero to more digital notes.&lt;/p&gt;
+
+&lt;p&gt;I hope this has been useful to you (as it was for me &amp;mdash; spelling out my process). In the next update of this series (&lt;em&gt;Acedemic Workflow&lt;/em&gt;) I am going to discuss R and Rmarkdown.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Mapping the terminology for ideophones</title>
       <link>/post/mapping-the-terminology-for-ideophones/</link>
       <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
@@ -2670,16 +2815,6 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
 &lt;p&gt;And thus ended my Autumn Break in Thailand. Next stop, Shanghai! 耶✌️～～～～&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/30339203591/in/album-72157675749643025/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/6/5654/30339203591_51433e1bab_k.jpg&#34; alt=&#34;20161016_190220&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Chinese ideophones in historical corpora: A case study of mental space markers</title>
-      <link>/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/example-talk/</guid>
-      <description>&lt;iframe src=&#34;https://widgets.figshare.com/articles/5830341/embed?show_title=1&#34; width=&#34;568&#34; height=&#34;351&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     
