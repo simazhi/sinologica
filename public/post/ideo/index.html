@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.34" />
+  <meta name="author" content="Thomas Van Hoey">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="Goal Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.
+ Load packages library(tidyverse) library(lingtypology) library(kableExtra)  Read in the data The data below is divided into three columns:
+ language: the language name found in the Glottolog database1. terminology: the terminology used to refer to ideophones in descriptions of the phenomenon across different languages.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/ideo/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-15860584-2', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Thomas Van Hoey | Sinologica">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Thomas Van Hoey | Sinologica">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/ideo/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@Simazhi">
+  <meta property="twitter:creator" content="@Simazhi">
+  
+  <meta property="og:site_name" content="Thomas Van Hoey | Sinologica">
+  <meta property="og:url" content="/post/ideo/">
+  <meta property="og:title" content="ideo | Thomas Van Hoey | Sinologica">
+  <meta property="og:description" content="Goal Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.
+ Load packages library(tidyverse) library(lingtypology) library(kableExtra)  Read in the data The data below is divided into three columns:
+ language: the language name found in the Glottolog database1. terminology: the terminology used to refer to ideophones in descriptions of the phenomenon across different languages.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-04-09T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-04-09T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>ideo | Thomas Van Hoey | Sinologica</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Thomas Van Hoey | Sinologica</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">ideo</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-04-09 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Apr 9, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Thomas Van Hoey">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/ideo/#disqus_thread"></a>
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=ideo&amp;url=%2fpost%2fideo%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fideo%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fideo%2f&amp;title=ideo"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fideo%2f&amp;title=ideo"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=ideo&amp;body=%2fpost%2fideo%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/leaflet-label/leaflet.label.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-label/leaflet.label.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+
+
+<div id="goal" class="section level1">
+<h1>Goal</h1>
+<p>Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.</p>
+</div>
+<div id="load-packages" class="section level1">
+<h1>Load packages</h1>
+<pre class="r"><code>library(tidyverse)
+library(lingtypology)
+library(kableExtra)</code></pre>
+</div>
+<div id="read-in-the-data" class="section level1">
+<h1>Read in the data</h1>
+<p>The data below is divided into three columns:</p>
+<ul>
+<li><code>language</code>: the language name found in the <a href="http://glottolog.org/">Glottolog database</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</li>
+<li><code>terminology</code>: the terminology used to refer to ideophones in descriptions of the phenomenon across different languages.</li>
+<li><code>popup</code>: What I want to appear in the frames when you click on a given language. In this case that would be a reference to some research, or the names used for the phenomenon in the language itself.</li>
+</ul>
+<pre class="r"><code>df &lt;- read_tsv(&quot;https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv&quot;)
+df %&gt;%
+  kable(&quot;html&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;))</code></pre>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+language
+</th>
+<th style="text-align:left;">
+terminology
+</th>
+<th style="text-align:left;">
+popup
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Semai
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Diffloth (1976); (Tufvesson 2011)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bahnar
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Diffloth (1994)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kedah Malay
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Collins (1979)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lao
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Crisfield (1983); Waylang (1996)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Indonesian
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Carr (1966)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Somali
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Dhoorre &amp; Tosco (1998)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yoruba
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Rowlands (1970)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kisi
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Childs (1988)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zulu
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Doke 1935, Msimang &amp; Poulos 2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gbaya-Bossangoa
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Samarin (1965); Noss (2001); Roulon-Doko 2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hausa
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Newman (1968)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Siwu
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Dingemanse (2011)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Korean
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+You (1991); Lee (1992) &lt;br&gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asheninka Perene
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Mihas (2012)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Japanese
+</td>
+<td style="text-align:left;">
+mimetic
+</td>
+<td style="text-align:left;">
+Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp; Itō (1989), Rodrigues (1604) &lt;br&gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+French
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Grammont (1901)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Northern Pastaza Quichua
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Nuckolls (1992,1996,2004, 2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ewe
+</td>
+<td style="text-align:left;">
+Lautbilder
+</td>
+<td style="text-align:left;">
+Westermann (1905: 1907), Ameka (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shona
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Fortune (1962), Klassen (1999)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Southern Sotho
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Kunene (1965)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kota (India)
+</td>
+<td style="text-align:left;">
+onomatopoetics
+</td>
+<td style="text-align:left;">
+Emeneau (1969)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vietnamese
+</td>
+<td style="text-align:left;">
+impressif
+</td>
+<td style="text-align:left;">
+Durand (1961)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Khasi
+</td>
+<td style="text-align:left;">
+phonaesthetic words
+</td>
+<td style="text-align:left;">
+Henderson (1965)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pacoh
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Watson (1966)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yir-Yoront
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Alpher (1994), 2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nyanja
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Kulemeka (1994) (lang: Chichewa),1996, 1997)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wolaytta
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Amha (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tswana
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Creissels (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Emai-Iuleha-Ora
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Egbokhare (2001), Schaefer (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mundang
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Elders (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Finnish
+</td>
+<td style="text-align:left;">
+expressive
+</td>
+<td style="text-align:left;">
+Jarva (2001), Mikone (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Didinga
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+de Jong (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luba-Katanga
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Kabuta (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Baka (Cameroon)
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Kilian-Hatz (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kxoe
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Kilian-Hatz (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kambera
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Klamer (1998, 2000)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Warrwa
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+McGregor (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gooniyandi
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+McGregor (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kwini
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+McGregor (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Estonian
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Mikone (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iloko
+</td>
+<td style="text-align:left;">
+onomatopoetics
+</td>
+<td style="text-align:left;">
+Rubino (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jaminjung
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Schultze-Berndt (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tetela
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Tassa (2001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kamu
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Svantesson (1983)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mandarin Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yue Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Mok (2001); Bodomo (2006); de Sousa (2008) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central Dagaare
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Bodomo (2006)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hakka Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xiang Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gan Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wu Chinese
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Upper Necaxa Totonac
+</td>
+<td style="text-align:left;">
+ideophone
+</td>
+<td style="text-align:left;">
+Beck (2008)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+English
+</td>
+<td style="text-align:left;">
+onomatopoeia and phonaesthemes
+</td>
+<td style="text-align:left;">
+Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="plot-the-terminology-map" class="section level1">
+<h1>Plot the terminology map</h1>
+<p>Next we plot the map, which can then be explored.</p>
+<pre class="r"><code>map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            color= c(&quot;yellowgreen&quot;, &quot;navy&quot;),
+            #shape = TRUE
+            label = df$language
+            )</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false},"calls":[{"method":"addTiles","args":["OpenStreetMap.Mapnik",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,"OpenStreetMap.Mapnik",{"errorTileUrl":"","noWrap":false,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addCircleMarkers","args":[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5.5,null,["expressive","expressive","expressive","expressive","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","mimetic","expressive","ideophone","Lautbilder","ideophone","ideophone","onomatopoetics","impressif","phonaesthetic words","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoetics","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia and phonaesthemes"],{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"black","fillOpacity":1,"dashArray":null},null,null,["<a href='http://glottolog.org/resource/languoid/iso/sea' target='_blank'>Semai<\/a><br>Diffloth (1976); (Tufvesson 2011)","<a href='http://glottolog.org/resource/languoid/iso/bdq' target='_blank'>Bahnar<\/a><br>Diffloth (1994)","<a href='http://glottolog.org/resource/languoid/iso/meo' target='_blank'>Kedah Malay<\/a><br>Collins (1979)","<a href='http://glottolog.org/resource/languoid/iso/lao' target='_blank'>Lao<\/a><br>Crisfield (1983); Waylang (1996)","<a href='http://glottolog.org/resource/languoid/iso/ind' target='_blank'>Indonesian<\/a><br>Carr (1966)","<a href='http://glottolog.org/resource/languoid/iso/som' target='_blank'>Somali<\/a><br>Dhoorre & Tosco (1998)","<a href='http://glottolog.org/resource/languoid/iso/yor' target='_blank'>Yoruba<\/a><br>Rowlands (1970)","<a href='http://glottolog.org/resource/languoid/iso/kiz' target='_blank'>Kisi<\/a><br>Childs (1988)","<a href='http://glottolog.org/resource/languoid/iso/zul' target='_blank'>Zulu<\/a><br>Doke 1935, Msimang & Poulos 2001)","<a href='http://glottolog.org/resource/languoid/iso/gbp' target='_blank'>Gbaya-Bossangoa<\/a><br>Samarin (1965); Noss (2001); Roulon-Doko 2001)","<a href='http://glottolog.org/resource/languoid/iso/hau' target='_blank'>Hausa<\/a><br>Newman (1968)","<a href='http://glottolog.org/resource/languoid/iso/akp' target='_blank'>Siwu<\/a><br>Dingemanse (2011)","<a href='http://glottolog.org/resource/languoid/iso/kor' target='_blank'>Korean<\/a><br>You (1991); Lee (1992) <br> 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]","<a href='http://glottolog.org/resource/languoid/iso/prq' target='_blank'>Asheninka Perene<\/a><br>Mihas (2012)","<a href='http://glottolog.org/resource/languoid/iso/jpn' target='_blank'>Japanese<\/a><br>Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester & Itō (1989), Rodrigues (1604) <br> オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/fra' target='_blank'>French<\/a><br>Grammont (1901)","<a href='http://glottolog.org/resource/languoid/iso/qvz' target='_blank'>Northern Pastaza Quichua<\/a><br>Nuckolls (1992,1996,2004, 2017)","<a href='http://glottolog.org/resource/languoid/iso/ewe' target='_blank'>Ewe<\/a><br>Westermann (1905: 1907), Ameka (2001)","<a href='http://glottolog.org/resource/languoid/iso/sna' target='_blank'>Shona<\/a><br>Fortune (1962), Klassen (1999)","<a href='http://glottolog.org/resource/languoid/iso/sot' target='_blank'>Southern Sotho<\/a><br>Kunene (1965)","<a href='http://glottolog.org/resource/languoid/iso/kfe' target='_blank'>Kota (India)<\/a><br>Emeneau (1969)","<a href='http://glottolog.org/resource/languoid/iso/vie' target='_blank'>Vietnamese<\/a><br>Durand (1961)","<a href='http://glottolog.org/resource/languoid/iso/kha' target='_blank'>Khasi<\/a><br>Henderson (1965)","<a href='http://glottolog.org/resource/languoid/iso/pac' target='_blank'>Pacoh<\/a><br>Watson (1966)","<a href='http://glottolog.org/resource/languoid/iso/yiy' target='_blank'>Yir-Yoront<\/a><br>Alpher (1994), 2001)","<a href='http://glottolog.org/resource/languoid/iso/nya' target='_blank'>Nyanja<\/a><br>Kulemeka (1994) (lang: Chichewa),1996, 1997)","<a href='http://glottolog.org/resource/languoid/iso/wal' target='_blank'>Wolaytta<\/a><br>Amha (2001)","<a href='http://glottolog.org/resource/languoid/iso/tsn' target='_blank'>Tswana<\/a><br>Creissels (2001)","<a href='http://glottolog.org/resource/languoid/iso/ema' target='_blank'>Emai-Iuleha-Ora<\/a><br>Egbokhare (2001), Schaefer (2001)","<a href='http://glottolog.org/resource/languoid/iso/mua' target='_blank'>Mundang<\/a><br>Elders (2001)","<a href='http://glottolog.org/resource/languoid/iso/fin' target='_blank'>Finnish<\/a><br>Jarva (2001), Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/did' target='_blank'>Didinga<\/a><br>de Jong (2001)","<a href='http://glottolog.org/resource/languoid/iso/lub' target='_blank'>Luba-Katanga<\/a><br>Kabuta (2001)","<a href='http://glottolog.org/resource/languoid/iso/bkc' target='_blank'>Baka (Cameroon)<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xuu' target='_blank'>Kxoe<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xbr' target='_blank'>Kambera<\/a><br>Klamer (1998, 2000)","<a href='http://glottolog.org/resource/languoid/iso/wwr' target='_blank'>Warrwa<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gni' target='_blank'>Gooniyandi<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gww' target='_blank'>Kwini<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/ekk' target='_blank'>Estonian<\/a><br>Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/ilo' target='_blank'>Iloko<\/a><br>Rubino (2001)","<a href='http://glottolog.org/resource/languoid/iso/djd' target='_blank'>Jaminjung<\/a><br>Schultze-Berndt (2001)","<a href='http://glottolog.org/resource/languoid/iso/tll' target='_blank'>Tetela<\/a><br>Tassa (2001)","<a href='http://glottolog.org/resource/languoid/iso/xmu' target='_blank'>Kamu<\/a><br>Svantesson (1983)","<a href='http://glottolog.org/resource/languoid/iso/cmn' target='_blank'>Mandarin Chinese<\/a><br>Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/yue' target='_blank'>Yue Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/dga' target='_blank'>Central Dagaare<\/a><br>Bodomo (2006)","<a href='http://glottolog.org/resource/languoid/iso/hak' target='_blank'>Hakka Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/hsn' target='_blank'>Xiang Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/gan' target='_blank'>Gan Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/wuu' target='_blank'>Wu Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/tku' target='_blank'>Upper Necaxa Totonac<\/a><br>Beck (2008)","<a href='http://glottolog.org/resource/languoid/iso/eng' target='_blank'>English<\/a><br>Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)"],null,null,null,null]},{"method":"addCircleMarkers","args":[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5,null,["expressive","expressive","expressive","expressive","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","mimetic","expressive","ideophone","Lautbilder","ideophone","ideophone","onomatopoetics","impressif","phonaesthetic words","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoetics","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia and phonaesthemes"],{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":["#9ACD32","#9ACD32","#9ACD32","#9ACD32","#9ACD32","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#6A596D","#9ACD32","#91AF49","#7A7564","#91AF49","#91AF49","#3D227A","#879259","#000080","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#9ACD32","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#3D227A","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#573E74"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#9ACD32","#9ACD32","#9ACD32","#9ACD32","#9ACD32","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#6A596D","#9ACD32","#91AF49","#7A7564","#91AF49","#91AF49","#3D227A","#879259","#000080","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#9ACD32","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#3D227A","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#91AF49","#573E74"],"fillOpacity":1,"dashArray":null},null,null,["<a href='http://glottolog.org/resource/languoid/iso/sea' target='_blank'>Semai<\/a><br>Diffloth (1976); (Tufvesson 2011)","<a href='http://glottolog.org/resource/languoid/iso/bdq' target='_blank'>Bahnar<\/a><br>Diffloth (1994)","<a href='http://glottolog.org/resource/languoid/iso/meo' target='_blank'>Kedah Malay<\/a><br>Collins (1979)","<a href='http://glottolog.org/resource/languoid/iso/lao' target='_blank'>Lao<\/a><br>Crisfield (1983); Waylang (1996)","<a href='http://glottolog.org/resource/languoid/iso/ind' target='_blank'>Indonesian<\/a><br>Carr (1966)","<a href='http://glottolog.org/resource/languoid/iso/som' target='_blank'>Somali<\/a><br>Dhoorre & Tosco (1998)","<a href='http://glottolog.org/resource/languoid/iso/yor' target='_blank'>Yoruba<\/a><br>Rowlands (1970)","<a href='http://glottolog.org/resource/languoid/iso/kiz' target='_blank'>Kisi<\/a><br>Childs (1988)","<a href='http://glottolog.org/resource/languoid/iso/zul' target='_blank'>Zulu<\/a><br>Doke 1935, Msimang & Poulos 2001)","<a href='http://glottolog.org/resource/languoid/iso/gbp' target='_blank'>Gbaya-Bossangoa<\/a><br>Samarin (1965); Noss (2001); Roulon-Doko 2001)","<a href='http://glottolog.org/resource/languoid/iso/hau' target='_blank'>Hausa<\/a><br>Newman (1968)","<a href='http://glottolog.org/resource/languoid/iso/akp' target='_blank'>Siwu<\/a><br>Dingemanse (2011)","<a href='http://glottolog.org/resource/languoid/iso/kor' target='_blank'>Korean<\/a><br>You (1991); Lee (1992) <br> 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]","<a href='http://glottolog.org/resource/languoid/iso/prq' target='_blank'>Asheninka Perene<\/a><br>Mihas (2012)","<a href='http://glottolog.org/resource/languoid/iso/jpn' target='_blank'>Japanese<\/a><br>Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester & Itō (1989), Rodrigues (1604) <br> オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/fra' target='_blank'>French<\/a><br>Grammont (1901)","<a href='http://glottolog.org/resource/languoid/iso/qvz' target='_blank'>Northern Pastaza Quichua<\/a><br>Nuckolls (1992,1996,2004, 2017)","<a href='http://glottolog.org/resource/languoid/iso/ewe' target='_blank'>Ewe<\/a><br>Westermann (1905: 1907), Ameka (2001)","<a href='http://glottolog.org/resource/languoid/iso/sna' target='_blank'>Shona<\/a><br>Fortune (1962), Klassen (1999)","<a href='http://glottolog.org/resource/languoid/iso/sot' target='_blank'>Southern Sotho<\/a><br>Kunene (1965)","<a href='http://glottolog.org/resource/languoid/iso/kfe' target='_blank'>Kota (India)<\/a><br>Emeneau (1969)","<a href='http://glottolog.org/resource/languoid/iso/vie' target='_blank'>Vietnamese<\/a><br>Durand (1961)","<a href='http://glottolog.org/resource/languoid/iso/kha' target='_blank'>Khasi<\/a><br>Henderson (1965)","<a href='http://glottolog.org/resource/languoid/iso/pac' target='_blank'>Pacoh<\/a><br>Watson (1966)","<a href='http://glottolog.org/resource/languoid/iso/yiy' target='_blank'>Yir-Yoront<\/a><br>Alpher (1994), 2001)","<a href='http://glottolog.org/resource/languoid/iso/nya' target='_blank'>Nyanja<\/a><br>Kulemeka (1994) (lang: Chichewa),1996, 1997)","<a href='http://glottolog.org/resource/languoid/iso/wal' target='_blank'>Wolaytta<\/a><br>Amha (2001)","<a href='http://glottolog.org/resource/languoid/iso/tsn' target='_blank'>Tswana<\/a><br>Creissels (2001)","<a href='http://glottolog.org/resource/languoid/iso/ema' target='_blank'>Emai-Iuleha-Ora<\/a><br>Egbokhare (2001), Schaefer (2001)","<a href='http://glottolog.org/resource/languoid/iso/mua' target='_blank'>Mundang<\/a><br>Elders (2001)","<a href='http://glottolog.org/resource/languoid/iso/fin' target='_blank'>Finnish<\/a><br>Jarva (2001), Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/did' target='_blank'>Didinga<\/a><br>de Jong (2001)","<a href='http://glottolog.org/resource/languoid/iso/lub' target='_blank'>Luba-Katanga<\/a><br>Kabuta (2001)","<a href='http://glottolog.org/resource/languoid/iso/bkc' target='_blank'>Baka (Cameroon)<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xuu' target='_blank'>Kxoe<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xbr' target='_blank'>Kambera<\/a><br>Klamer (1998, 2000)","<a href='http://glottolog.org/resource/languoid/iso/wwr' target='_blank'>Warrwa<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gni' target='_blank'>Gooniyandi<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gww' target='_blank'>Kwini<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/ekk' target='_blank'>Estonian<\/a><br>Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/ilo' target='_blank'>Iloko<\/a><br>Rubino (2001)","<a href='http://glottolog.org/resource/languoid/iso/djd' target='_blank'>Jaminjung<\/a><br>Schultze-Berndt (2001)","<a href='http://glottolog.org/resource/languoid/iso/tll' target='_blank'>Tetela<\/a><br>Tassa (2001)","<a href='http://glottolog.org/resource/languoid/iso/xmu' target='_blank'>Kamu<\/a><br>Svantesson (1983)","<a href='http://glottolog.org/resource/languoid/iso/cmn' target='_blank'>Mandarin Chinese<\/a><br>Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/yue' target='_blank'>Yue Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/dga' target='_blank'>Central Dagaare<\/a><br>Bodomo (2006)","<a href='http://glottolog.org/resource/languoid/iso/hak' target='_blank'>Hakka Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/hsn' target='_blank'>Xiang Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/gan' target='_blank'>Gan Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/wuu' target='_blank'>Wu Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”","<a href='http://glottolog.org/resource/languoid/iso/tku' target='_blank'>Upper Necaxa Totonac<\/a><br>Beck (2008)","<a href='http://glottolog.org/resource/languoid/iso/eng' target='_blank'>English<\/a><br>Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)"],null,["Semai","Bahnar","Kedah Malay","Lao","Indonesian","Somali","Yoruba","Kisi","Zulu","Gbaya-Bossangoa","Hausa","Siwu","Korean","Asheninka Perene","Japanese","French","Northern Pastaza Quichua","Ewe","Shona","Southern Sotho","Kota (India)","Vietnamese","Khasi","Pacoh","Yir-Yoront","Nyanja","Wolaytta","Tswana","Emai-Iuleha-Ora","Mundang","Finnish","Didinga","Luba-Katanga","Baka (Cameroon)","Kxoe","Kambera","Warrwa","Gooniyandi","Kwini","Estonian","Iloko","Jaminjung","Tetela","Kamu","Mandarin Chinese","Yue Chinese","Central Dagaare","Hakka Chinese","Xiang Chinese","Gan Chinese","Wu Chinese","Upper Necaxa Totonac","English"],{"clickable":false,"noHide":false,"direction":"right","opacity":1,"offset":[12,-15],"textsize":"10px","textOnly":true,"style":{"font-size":"14px"},"zoomAnimation":true,"className":""},null]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addLegend","args":[{"colors":["#9ACD32","#91AF49","#879259","#7A7564","#6A596D","#573E74","#3D227A","#000080"],"labels":["expressive","ideophone","impressif","Lautbilder","mimetic","onomatopoeia and phonaesthemes","onomatopoetics","phonaesthetic words"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend"}]}],"limits":{"lat":[-30.44451,64.762825],"lng":[-2.52265,285.08472]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.</p>
+<p>Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: University of Queensland PhD dissertation.</p>
+<p>Moroz G (2017). <em>lingtypology: easy mapping for Linguistic Typology</em>. &lt;URL: <a href="https://CRAN.R-project.org/package=lingtypology" class="uri">https://CRAN.R-project.org/package=lingtypology</a>&gt;.</p>
+<p>Voeltz, Erhard Friedrich Karl &amp; Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam; Philadelphia: J. Benjamins.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Although maybe it is an adapted form, <a href="https://ropensci.github.io/lingtypology/lingtypology_glottolog_functions.html">see the documentation for the R package ‘lingtypology’</a>.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+    
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "simazhi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    <script id="dsq-count-scr" src="//simazhi.disqus.com/count.js" async></script>
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

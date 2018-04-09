@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Mapping the terminology for ideophones</title>
+      <link>/post/mapping-the-terminology-for-ideophones/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mapping-the-terminology-for-ideophones/</guid>
+      <description>Goal The goal for this short update is to use the R package lingtypology (click here for the tutorial), in order to create a map that shows which for which languages we use which terminology relating to ideophones.
+Now, I know that the data isn’t complete yet. It is an ongoing cataloguing project. You can find the more recent versions of this map on my Github account.</description>
+    </item>
+    
+    <item>
       <title>Icons We Live By (Academic Workflow 1)</title>
       <link>/post/icons-we-live-by/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
