@@ -47,10 +47,11 @@ If not, well, bummer, but you can use some Google, database, or library magic in
 &lt;h2 id=&#34;finding-the-record-itself&#34;&gt;Finding the record itself&lt;/h2&gt;
 
 &lt;p&gt;My usual go-to practice is going to &lt;a href=&#34;scholar.google.com&#34; target=&#34;_blank&#34;&gt;Google Scholar&lt;/a&gt;, which is a very large linked database of existing versions of different articles / chapters (I am going to refer to the thing we are looking for as the &lt;strong&gt;paper&lt;/strong&gt; in the rest of this update).
+Now, Google scholar &lt;a href=&#34;http://ideophone.org/some-things-you-need-to-know-about-google-scholar/&#34; target=&#34;_blank&#34;&gt;is also not without problems&lt;/a&gt;.
 The question remains, however, if your institution has &lt;em&gt;access&lt;/em&gt; to the paper you are looking for.
 Usually that is okay, but for some you may be linked to the publisher, where you have to pay for access to the paper.
-One of the more recent big issues in academia is the cry for more open-access, and we are still trying to find a viable model that does not waste the people&amp;rsquo;s tax money, but still keeps things like peer-review alive.
-A really good model hasn&amp;rsquo;t been found yet, but I have the feeling we are getting there.&lt;/p&gt;
+One of the more recent big issues in academia is the &lt;a href=&#34;http://www.veto.be/artikel/monopolieprijzen-van-uitgeverijen-brengen-onderzoekers-en-universiteiten-in-problemen&#34; target=&#34;_blank&#34;&gt;cry for more open-access&lt;/a&gt;, and we are &lt;a href=&#34;https://www.economist.com/blogs/economist-explains/2017/03/economist-explains-23&#34; target=&#34;_blank&#34;&gt;still trying to find a viable model&lt;/a&gt; that does not waste the people&amp;rsquo;s tax money, but still keeps things like peer-review alive.
+A really good model hasn&amp;rsquo;t been found yet, but I have the feeling &lt;a href=&#34;https://www.timeshighereducation.com/news/french-say-no-deal-springer-journal-fight-spreads&#34; target=&#34;_blank&#34;&gt;we are getting there&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Anyway, assuming you do have access to the paper you want, what to do next &amp;mdash; that is the issue at stake in this update.
 Let&amp;rsquo;s download the thing!&lt;/p&gt;
@@ -73,13 +74,20 @@ Now, let&amp;rsquo;s first quickly look at what Zotero can do for you!&lt;/p&gt;
 
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7FOu94Ah85Y&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Basically, all of the previously mentioned reference manager get this same trick done.
-However, there are some customisations that will improve the usefulness of Zotero.&lt;/p&gt;
+&lt;p&gt;If you want to read more about this in a blog post at your own pace, I recommend &lt;a href=&#34;http://ideophone.org/slides-for-a-hands-on-zotero-workshop/&#34; target=&#34;_blank&#34;&gt;this piece by Mark Dingemanse&lt;/a&gt;, which shows the fundamental usage of the software. I&amp;rsquo;ll show his presentation here as well:&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;2b7d44ceb02d4aa1bb441faf59356819&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;So, once you get that down and get the basic usage of a reference manager, it is worth remembering that all of the previously mentioned reference managers get the same basic trick done.
+However, I still like the open source (&lt;strong&gt;and thus free&lt;/strong&gt;) Zotero-like software best, because there are some customisations that will improve its usefulness.
+Of course, as the noun suggests, these customisations, are, well, custom, and fit my personal style best.
+What you do with your references eventually remains your business, although I can only hope that you at least reflect on how to optimize it.
+Let&amp;rsquo;s see how I customized my Zotero.&lt;/p&gt;
 
 &lt;h2 id=&#34;customising-the-storage-place-of-files&#34;&gt;Customising the storage place of files&lt;/h2&gt;
 
 &lt;p&gt;I have a folder on my desktop called &lt;code&gt;papers&lt;/code&gt; in which I store all my, well, papers.
-I suggest you do something similar &amp;mdash; it is easy to back up and easy to find, which is what you want.&lt;/p&gt;
+I suggest you do something similar &amp;mdash; it is &lt;strong&gt;easy to back up&lt;/strong&gt;, &lt;strong&gt;easy to find&lt;/strong&gt; and its &lt;strong&gt;contents are easily searchable&lt;/strong&gt;, which is what you want.&lt;/p&gt;
 
 &lt;h2 id=&#34;linking-the-data-to-a-file&#34;&gt;Linking the data to a file&lt;/h2&gt;
 
@@ -102,7 +110,7 @@ This makes finding data even easier!&lt;/p&gt;
 
 &lt;p&gt;Now, actually these days I don&amp;rsquo;t use Zotero itself anymore, but instead tend to use Juris-M.
 Why is that?
-Juris-M is able to handle multilingual support in bibliographical records and since I am dealing with Chinese papers and the occasional Japanese one, it is a very handy feature, that many people can&amp;rsquo;t believe hasn&amp;rsquo;t been integrated into Zotero itself yet!&lt;/p&gt;
+Juris-M is able to &lt;a href=&#34;https://our.law.nagoya-u.ac.jp/howto/jurism-set-multilingual.webm&#34; target=&#34;_blank&#34;&gt;handle multilingual support&lt;/a&gt; in bibliographical records and since I am dealing with Chinese papers and the occasional Japanese one, it is a very handy feature, that many people can&amp;rsquo;t believe hasn&amp;rsquo;t been integrated into Zotero itself yet!&lt;/p&gt;
 
 &lt;p&gt;However, all the good things of Zotero still exist in Juris-M:&lt;/p&gt;
 
@@ -151,7 +159,8 @@ Luckily, note-taking software usually allows for good searching capabilities, to
 &lt;p&gt;And that is basically it, but then quantified over many papers. I don&amp;rsquo;t quite remember when I exactly started doing it as follows, but I currently have 233 notes in Evernote and apparently 889 items in Zotero.
 This reflects my evolution from 2014 or 2015 onwards: going from paper to Zotero to more digital notes.&lt;/p&gt;
 
-&lt;p&gt;I hope this has been useful to you (as it was for me &amp;mdash; spelling out my process). In the next update of this series (&lt;em&gt;Acedemic Workflow&lt;/em&gt;) I am going to discuss R and Rmarkdown.&lt;/p&gt;
+&lt;p&gt;I hope this has been useful to you (as it was for me &amp;mdash; spelling out my process and seeing how it evolved from &lt;a href=&#34;http://www.thomasvanhoey.com/post/icons-we-live-by/&#34; target=&#34;_blank&#34;&gt;last year&amp;rsquo;s workflow&lt;/a&gt;).
+In the next update of this series (&lt;em&gt;Academic Workflow&lt;/em&gt;) I am going to discuss R and Rmarkdown.&lt;/p&gt;
 </description>
     </item>
     

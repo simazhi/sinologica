@@ -11,8 +11,8 @@ tags:
   - linguistics
   - research
 header:
-  caption: ''
-  image: '2018/PLN_2017_research.png'
+  caption: 'Handling research'
+  image: '2018/PLN_research.png'
 ---
 
 *Last time we did this, [I showed you what my PLN looked like about a year ago](http://www.thomasvanhoey.com/post/icons-we-live-by/). I advise you to read that first before you continue reading below.*
@@ -42,10 +42,11 @@ If not, well, bummer, but you can use some Google, database, or library magic in
 ## Finding the record itself
 
 My usual go-to practice is going to [Google Scholar](scholar.google.com), which is a very large linked database of existing versions of different articles / chapters (I am going to refer to the thing we are looking for as the **paper** in the rest of this update).
+Now, Google scholar [is also not without problems](http://ideophone.org/some-things-you-need-to-know-about-google-scholar/).
 The question remains, however, if your institution has *access* to the paper you are looking for. 
 Usually that is okay, but for some you may be linked to the publisher, where you have to pay for access to the paper. 
-One of the more recent big issues in academia is the cry for more open-access, and we are still trying to find a viable model that does not waste the people's tax money, but still keeps things like peer-review alive.
-A really good model hasn't been found yet, but I have the feeling we are getting there.
+One of the more recent big issues in academia is the [cry for more open-access](http://www.veto.be/artikel/monopolieprijzen-van-uitgeverijen-brengen-onderzoekers-en-universiteiten-in-problemen), and we are [still trying to find a viable model](https://www.economist.com/blogs/economist-explains/2017/03/economist-explains-23) that does not waste the people's tax money, but still keeps things like peer-review alive.
+A really good model hasn't been found yet, but I have the feeling [we are getting there](https://www.timeshighereducation.com/news/french-say-no-deal-springer-journal-fight-spreads).
 
 Anyway, assuming you do have access to the paper you want, what to do next --- that is the issue at stake in this update.
 Let's download the thing!
@@ -66,13 +67,20 @@ Now, let's first quickly look at what Zotero can do for you!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7FOu94Ah85Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Basically, all of the previously mentioned reference manager get this same trick done. 
-However, there are some customisations that will improve the usefulness of Zotero.
+If you want to read more about this in a blog post at your own pace, I recommend [this piece by Mark Dingemanse](http://ideophone.org/slides-for-a-hands-on-zotero-workshop/), which shows the fundamental usage of the software. I'll show his presentation here as well:
+
+<script async class="speakerdeck-embed" data-id="2b7d44ceb02d4aa1bb441faf59356819" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+So, once you get that down and get the basic usage of a reference manager, it is worth remembering that all of the previously mentioned reference managers get the same basic trick done.
+However, I still like the open source (**and thus free**) Zotero-like software best, because there are some customisations that will improve its usefulness.
+Of course, as the noun suggests, these customisations, are, well, custom, and fit my personal style best. 
+What you do with your references eventually remains your business, although I can only hope that you at least reflect on how to optimize it.
+Let's see how I customized my Zotero.
 
 ## Customising the storage place of files
 
 I have a folder on my desktop called `papers` in which I store all my, well, papers. 
-I suggest you do something similar --- it is easy to back up and easy to find, which is what you want.
+I suggest you do something similar --- it is **easy to back up**, **easy to find** and its **contents are easily searchable**, which is what you want.
 
 ## Linking the data to a file
 
@@ -95,7 +103,7 @@ The next video basically outlines this approach (although he doesn't store them 
 
 Now, actually these days I don't use Zotero itself anymore, but instead tend to use Juris-M. 
 Why is that?
-Juris-M is able to handle multilingual support in bibliographical records and since I am dealing with Chinese papers and the occasional Japanese one, it is a very handy feature, that many people can't believe hasn't been integrated into Zotero itself yet!
+Juris-M is able to [handle multilingual support](https://our.law.nagoya-u.ac.jp/howto/jurism-set-multilingual.webm) in bibliographical records and since I am dealing with Chinese papers and the occasional Japanese one, it is a very handy feature, that many people can't believe hasn't been integrated into Zotero itself yet!
 
 However, all the good things of Zotero still exist in Juris-M:
 
@@ -142,5 +150,6 @@ There is also the option to tag them, but I don't really make use of this featur
 And that is basically it, but then quantified over many papers. I don't quite remember when I exactly started doing it as follows, but I currently have 233 notes in Evernote and apparently 889 items in Zotero.
 This reflects my evolution from 2014 or 2015 onwards: going from paper to Zotero to more digital notes.
 
-I hope this has been useful to you (as it was for me --- spelling out my process). In the next update of this series (*Acedemic Workflow*) I am going to discuss R and Rmarkdown.
+I hope this has been useful to you (as it was for me --- spelling out my process and seeing how it evolved from [last year's workflow](http://www.thomasvanhoey.com/post/icons-we-live-by/)). 
+In the next update of this series (*Academic Workflow*) I am going to discuss R and Rmarkdown.
 
