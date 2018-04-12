@@ -1,7 +1,7 @@
 ---
 title: Handling research (Academic workflow 2)
 author: Thomas Van Hoey
-date: '2018-04-09'
+date: '2018-04-12'
 slug: handling-research
 categories:
   - Blog
