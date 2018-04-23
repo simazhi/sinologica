@@ -330,7 +330,7 @@ Croft et al (2010:208) propose a new typology:
 <table border="0">
 <tr> 
  <td  align="left">彼女-は</td>
- <td  align="left">喋り-</td>
+ <td  align="left">喋り-ながら</td>
  <td  align="left">道路-を</td>
  <td  align="left">渡った。</td>
 </tr>
@@ -436,7 +436,7 @@ Using the *Frog Story*, Toratani (2012; 2016) finds L2 Japanese learners who use
  <td  align="left">ハチ-が</td>
  <td  align="left">ハチ-の-巣</td>
  <td  align="left">から</td>
- <td  align="left">出ましt。</td>
+ <td  align="left">出ました。</td>
  <td  align="left">ブーン、</td>
  <td  align="left">ブーン。</td>
 </tr>
