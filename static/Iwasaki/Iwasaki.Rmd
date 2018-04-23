@@ -255,12 +255,12 @@ Croft et al (2010:208) propose a new typology:
  <td colspan="9">'I ran into the house.'</td>
 </tr>
 
+</table>
+
 --
 <br>
 <br>
 
-
-</table>
 
 <table border="0">
 <tr> 
@@ -296,7 +296,7 @@ Croft et al (2010:208) propose a new typology:
 <tr> 
  <td  align="left">私-は</td>
  <td  align="left">タル-を</td>
- <td  align="left">転がし-て。</td>
+ <td  align="left">転がし-て</td>
  <td  align="left">地下室-に</td>
  <td  align="left">入れた。</td>
 </tr>
@@ -331,8 +331,7 @@ Croft et al (2010:208) propose a new typology:
 <tr> 
  <td  align="left">彼女-は</td>
  <td  align="left">喋り-</td>
- <td  align="left">道路-を。</td>
- <td  align="left">地下室-に</td>
+ <td  align="left">道路-を</td>
  <td  align="left">渡った。</td>
 </tr>
 
