@@ -741,7 +741,16 @@ But there is a drawback: it is impossible to see whether or not this research wi
 ---
 # References
 
-```{r, 'refs', results='asis', echo=FALSE}
+**Iwasaki, Noriko. 2017. Use of mimetics in Motion event descriptions by English and Korean learners of L2 Japanese: Does language typology make a difference?** In Noriko Iwasaki, Peter Sells & Kimi Akita (eds.), The grammar of Japanese mimetics: perspectives from structure, acquisition and translation, 193–218. (Routledge Studies in East Asian Linguistics). Milton Park, Abingdon, Oxon ; New York, NY: Routledge.
 
-```
+Fauconnier, Gilles. 1994. Mental spaces: aspects of meaning construction in natural language. Cambridge ; New York, NY, USA: Cambridge University Press.
+
+Fauconnier, Gilles & Mark Turner. 2003. The way we think: conceptual blending and the mind’s hidden complexities. New York, NY: Basic Books.
+
+Wu, Mengqi. 2014. The structure of ideophones in Southern Sinitic. Hong Kong: University of Hong Kong Master thesis.
+
+
+
+
+
 
