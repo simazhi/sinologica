@@ -17,16 +17,7 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-```{r, load_refs, echo=FALSE, cache=FALSE, warning=FALSE}
-library(RefManageR)
-BibOptions(check.entries = FALSE, 
-           bib.style = "authoryear", 
-           cite.style = 'alphabetic', 
-           style = "markdown",
-           hyperlink = FALSE, 
-           dashed = FALSE)
-myBib <- ReadBib("/Users/Thomas/Desktop/latexref.bib", check = FALSE)
-```
+
 # Iwasaki Noriko 岩﨑典子
 
 ![](NINJAL_identified.png)
@@ -751,6 +742,6 @@ But there is a drawback: it is impossible to see whether or not this research wi
 # References
 
 ```{r, 'refs', results='asis', echo=FALSE}
-PrintBibliography(myBib)
+
 ```
 
