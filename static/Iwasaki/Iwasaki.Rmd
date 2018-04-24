@@ -2,7 +2,7 @@
 title: "Use of mimetics in Motion event descriptions by English and Korean learners of L2 Japanese"
 subtitle: "Does language typology make a difference?"
 author: "Noriko Iwasaki <br> presented by Thomas Van Hoey"
-date: "2018/04/24"
+date: "2018/04/24<br> [click for presentation](//www.thomasvanhoey.com/iwasaki/iwasaki.html)"
 output:
   xaringan::moon_reader:
     css: "xaringan-style.css"
@@ -37,7 +37,7 @@ Now she is in the Department of Linguistics at SOAS (London)
 * Mimetics
 * style, grammar, etc.
 
-Citet(myBib, "Dingemanse2011")
+
 
 ]
 
@@ -80,7 +80,7 @@ map.feature(languages = df$language,
 >Mimetics in Japanese are generally considered to be an important part of the lexicon for second language (L2) learners of Japanese to acquire (e.g. Makino & Tsutsui 1986; Akimoto 2007), and many reference books have been published on this topic (e.g. Hyuga & Hibiya 1989; Akutsu 1994; Tomikawa 1997).  
 However, **few studies have investigated L2 acquisition of mimetic words**; in particular, **research examining how L2 learners *spontaneously* use mimetics in speech is scarce**. (p. 193)
 
-Iwasaki (2017:148-171) showed that even though "English speakers, whose L1 contains no mimetics" [I don't agree with this], they used more mimetics than expected. 
+Iwasaki (2017:148-171) showed that even though "English speakers, whose L1 contains no mimetics" [I don't necessarily agree with this], they used more mimetics than expected. 
 
 
 But the language level of the subjects was very varied.
@@ -115,12 +115,12 @@ e.g.
 **Manner**, later retermed as **Co-Event**, is specified as (Talmy 2007: 85-86):
 
 1. **Precursion**: *Glass splintered over the food*<br> [glass <sc>moved</sc> over the food] <sc>with-the-precursion-of</sc> [the glass splintered]
-2. **Enablement**: *I scooped jellybeans up into her sack*<br> [I Amoved jellybeans into her sack] <sc>with-the-enablement-of</sc> [I scooped up the jellybeans]
-3. **Cause**: *I squeezed the toothpaste out of the tube*<br> [I Amoved the toothpaste out of the tube] <sc>with-the-cause-of</sc> [I squeezed on the toothpaste/tube]
-4. **Manner**: *The top spun into the box*<br> [the top moved into the box] <sc>with-the-manner-of<sc> [the top
+2. **Enablement**: *I scooped jellybeans up into her sack*<br> [I <sc>moved</sc> jellybeans into her sack] <sc>with-the-enablement-of</sc> [I scooped up the jellybeans]
+3. **Cause**: *I squeezed the toothpaste out of the tube*<br> [I <sc>moved</sc> the toothpaste out of the tube] <sc>with-the-cause-of</sc> [I squeezed on the toothpaste/tube]
+4. **Manner**: *The top spun into the box*<br> [the top <sc>moved</sc> into the box] <sc>with-the-manner-of<sc> [the top
 spun]
-3. **Concomitance**: *She wore a green dress to the party*<br> [she went to the party] <sc>with-the-concomitance-of</sc> [shewore a green dress]
-4. **Subsequence**: *They locked the prisoner into his cell*<br> [they Amoved the prisoner into his cell] <sc>with-the-subsequence-of</sc> [they locked the cell]
+3. **Concomitance**: *She wore a green dress to the party*<br> [she <sc>went</sc> to the party] <sc>with-the-concomitance-of</sc> [she wore a green dress]
+4. **Subsequence**: *They locked the prisoner into his cell*<br> [they <sc>moved</sc> the prisoner into his cell] <sc>with-the-subsequence-of</sc> [they locked the cell]
 
 ---
 
