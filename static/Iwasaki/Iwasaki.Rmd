@@ -400,6 +400,15 @@ However, Manner is not the only Co-event that can be expressed using mimetics (T
 
 
 ---
+## Mimetics and motion typology
+
+It is maybe worth pointing out that ideophones in (Premodern) Chinese behave differently from Japanese ideophones, which are usually used adverbially (see before).
+
+![](LFG.png)
+
+
+
+---
 
 ## L1 influence in L2 motion description
 
@@ -730,7 +739,8 @@ Therefore, I have not exactly thought out what I want to do for this class's ter
 
 I think this can be analyzed with the idea of Mental Spaces (Fauconnier 1994; Fauconnier & Turner 2003 among others). 
 
-A good idea might be first to perform a corpus exploration to see how prevalent an ideophone is after such a sensory construction, e.g. 摸起來、聞起來 etc.
+A good idea might be first to perform a corpus exploration to see how prevalent an ideophone is after such a sensory construction, 
+<br>e.g. 摸起來、聞起來 etc. + <sc>ideophone</sc> or <sc>if-space</sc>.
 
 Second, devise a similar three-language design to investigate L2s with L1s, similar to this paper.
 
