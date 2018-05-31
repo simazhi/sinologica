@@ -1,7 +1,7 @@
 ---
 title: "Metaphor, metaphorical extension, and grammaticalization"
 subtitle: "A study of Mandarin Chinese *-qilai*"
-author: "Huang Chu-Ren  黄居仁 & Chang Sheng-Ming <br> presented by Thomas Van Hoey 司马智"
+author: "Huang Chu-Ren  黄居仁 & Chang Sheng-Ming <br> presented by Thomas Van Hoey 司馬智"
 date: "2018/05/29<br> [click for presentation](//www.thomasvanhoey.com/huangchang/huangchang.html)"
 output:
   xaringan::moon_reader:
@@ -206,6 +206,8 @@ Huang & Chang discern/treat three kinds of **monoclausal** *-qilai* in this pape
 </tr>
 
 </table>
+---
+## 1. Directional *-qilai*
 
 But not
 
@@ -228,7 +230,7 @@ Huang & Chang claim there is a metaphorical extension of the spatial movement to
 
 <sc>to start (a new state) is to move up</sc> 
 
-This metaphor is an elaboration of <sc>activaiton is motion</sc> (Lakoff 1987)
+This metaphor is an elaboration of <sc>activation is motion</sc> (Lakoff 1987)
 
 The authors quote some examples about *shàng* <sc>up</sc> here to prove this metaphor exists., e.g. 「上吧」、「上癮」、「愛上」etc.
 However, a "slightly different meaning is assigned when the exension [of the verbs] is marked by *-qilai*" (p.205).
@@ -282,7 +284,7 @@ Because the **viewpoint focus** of the inchoative aspect *-qilai* is on the **co
 正在 = a **progress event** composed of **stages**
 *-qilai* = a **progress event** with a **continuing state**
 
-For Huang & Chang, "*-qilai* marks an imperfective aspect (see Chang 1994), contrary to Smith's (1991) claim that it is telic by viertue of its start point!"
+For Huang & Chang, "*-qilai* marks an imperfective aspect (see Chang 1994), contrary to Smith's (1991) claim that it is telic by virtue of its start point!"
 ---
 
 ## 2. Inchoative *-qilai*: durational and change-of-state adjuncts
