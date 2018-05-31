@@ -2,7 +2,7 @@
 title: "Metaphor, metaphorical extension, and grammaticalization"
 subtitle: "A study of Mandarin Chinese *-qilai*"
 author: "Huang Chu-Ren  黄居仁 & Chang Sheng-Ming <br> presented by Thomas Van Hoey 司馬智"
-date: "2018/05/29<br> [click for presentation](//www.thomasvanhoey.com/huangchang/huangchang.html)"
+date: "2018/05/29<br> [click for presentation](//www.thomasvanhoey.com/huangchang/huangchang)"
 output:
   xaringan::moon_reader:
     css: "xaringan-style.css"
