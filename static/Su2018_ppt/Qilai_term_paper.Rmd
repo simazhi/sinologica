@@ -92,7 +92,7 @@ So far, it seems only Chang (1994) and its continuation Huang & Chang (1996) are
 If what we know from our discussion on learning vs. acquisition is true, namely that **(sub)consciousness**, **im/explicitness** and **product/process** (Krashen 1981; Ellis 2008) all influence how languages are learned and keep on being acquired, then we need a **dynamic** model that does justice to our analysis of .sc[qilai], not only for second language acquisition but also for first language acquisition.
 
 
-For me, the framework that seems to answer most to my questions, is that of Langacker's **Cognitive Grammar** (1987; 1991 etc.):
+For me, the framework that seems to answer most of my questions, is that of Langacker's **Cognitive Grammar** (1987; 1991 etc.):
 * dynamic
 * usage-based
 * role of the Conceptualizer C
@@ -155,7 +155,7 @@ This way we get a tentative idea of the kind of verbs and constructions we need 
 
 .font70[
 ```{r vqilaifreqD, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
-vqilaifreqD <- read_csv("../data/V-QILAI-freq.csv") %>%
+vqilaifreqD <- read_csv("V-QILAI-freq.csv") %>%
   select(hit, sum)
 #knitr::kable(vqilaifreqD, format = "html")
 DT::datatable(
@@ -174,7 +174,7 @@ Especially, looking at `token frequency > 1000`, we find a few different classes
 
 .font70[
 ```{r vqilaiframe, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
-vqilaiframe <- read_csv("../data/V-QILAI-freq-frame.csv")
+vqilaiframe <- read_csv("V-QILAI-freq-frame.csv")
 framefreq <- vqilaiframe %>%
   select(hit, sum, frame) %>%
   group_by(frame) %>%
@@ -242,7 +242,7 @@ However, there are dialects where *qǐqù* also grammaticalized.
 
 >to properly apprehend this event, C must access the successive locations in the same order that the mover reaches them. 
 
->The dynamic conception of a path is therefore immanent in the conception of actual motion." (Langacker 2008:529)
+>The dynamic conception of a path is therefore immanent in the conception of actual motion." <br>(Langacker 2008:529)
 
 ]
 ]
@@ -385,7 +385,7 @@ However, it is not uncommon for the elaborations of `V-qilai + small clause` to 
 ]
 
 ```{r tingqilai, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
-tingqilai <- read_csv("../data/tingqilai.csv") 
+tingqilai <- read_csv("tingqilai.csv") 
 #knitr::kable(tingqilai, format = "html")
 DT::datatable(
   head(tingqilai, 500),
@@ -401,7 +401,7 @@ DT::datatable(
 .sc[Ideophones] can be cross-linguistically defined as `Marked Words that Depict Sensory imagery` (Dingemanse 2011;2012), and for Chinese usually conform to all or the majority of the following criteria:
 * partial / full reduplication, e.g. `玲瓏、稀裡嘩啦，汪汪、濛濛`
 * *canonically* non-.sc[referential] usage (although conceptual reification and metonymy can occur `一個帥帥`) in the Croftian (1991;2001) sense
-* 'radical support' for literary ideophones (Van Hoey *in press*), e.g. `雨 in 霏霏`
+* 'radical support' for literary ideophones (Van Hoey 2017; 2018), e.g. `雨 in 霏霏`
 * multiple <graphemes> that encode the same word, e.g. `<凌亂> and <零亂>`
 * a definition in traditional dictionaries that ends with `的樣子` or `然`
 
@@ -419,7 +419,7 @@ There might be an extra construction in between, as we often have the inheritanc
 
 .pull-left[
 ```{r moqilai, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
-moqilai <- read_csv("../data/moqilai.csv") 
+moqilai <- read_csv("moqilai.csv") 
 #knitr::kable(moqilai, format = "html")
 DT::datatable(
   head(moqilai, 100),
@@ -430,7 +430,7 @@ DT::datatable(
 
 .pull-right[
 ```{r moqilai_ideos, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
-moqilai_ideos <- read_csv("../data/moqilai_ideos.csv") 
+moqilai_ideos <- read_csv("moqilai_ideos.csv") 
 #knitr::kable(moqilai_ideos, format = "html")
 DT::datatable(
   head(moqilai_ideos, 10000),
@@ -446,9 +446,9 @@ DT::datatable(
 ## What have we learnt?
 
 * Just like Kilgariff et al. (2015), it seems the corpus can help the learner incredibly (be it first or second language) acquire the most frequent collostructions (Stefanowitsch & Gries 2003).
-* This helps the formation of different schemas (based on real language data) that will help apprehend next encounters with of the same construction (and different levels of abstraction).
+* This helps the formation of different schemas (based on real language data) that will help apprehend next encounters of the same construction (and different levels of abstraction).
 * Invoking fictive motion -- a general cognitive mechanism that has an increasing body of experimental evidence as well -- seems to be a good theory to explain the different *qilai*s. Even opaque collocations (Xiong 2017), like `想起來 'remember'` can be motivated as an elaboration of  .sc[qilai]<sub>.sc[pfv]</sub>.
-* Particularly in connection to my own studies, this network of .sc[perception verb + qilai] constructions can help me discover new ideophones -- probably relatable to evidentiality (cf. Vygotsky 1983; San Roque et al. 2015; Van Hoey & Lu *in prep.*). However, this deserves further research.
+* Particularly in connection with my own studies, this network of .sc[perception verb + qilai] constructions can help me discover new ideophones -- probably relatable to evidentiality (cf. Vygotsky 1983; San Roque et al. 2015; Van Hoey & Lu *in prep.*). However, this deserves further research.
 
 ---
 
@@ -469,6 +469,62 @@ If you follow e.g. Xiong's narrow definition of a middle (2017), some functions 
 If you follow e.g. Kemmer's (1993) extensive typological discussion on middle voice, it most definitely is.
 
 Only, the reflexive meaning present in so many Standard Average European languages is not covered by .sc[qilai]. However, this may not be a problem: for the Austronesian language Mori Atas, a similar observation was made (Sirima 2017:60).
+
+---
+
+# Future directions
+
+The status of .sc[qilai] as an evidentiality + middle marker deserves further investigation. For instance, how/when do children learn these constructions? Childes corpus (*Lu*):
+
+.pull-left[
+```{r childesqilai, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
+qilai <- read_csv("qilaiCHILDES.csv")
+qilaismooth <- qilai %>%
+  group_by(age) %>%
+  tally()
+
+plot <- ggplot() +
+  stat_count(data = qilai, mapping = aes(x = age, fill = role)) +
+#  geom_smooth(data = qilaismooth, mapping = aes(x = age, y = n)) +
+  ggtitle("XXde uttered by children and adults") +
+  theme_bw() +
+  theme(panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line((colour = "black"))
+        ) +
+  scale_x_continuous(name = "age",
+                     limits = c(12, 100),
+                     breaks = seq(12, 100, 6)) +
+  scale_y_continuous(name = "number of onomatopoeia",
+                     limits = c(0, 350),
+                     breaks = seq(0, 400, 50)) 
+
+library(plotly)
+ggplotly(plot)
+```
+
+]
+
+.pull-right[
+```{r childesverbs, echo=FALSE, warning=FALSE, message=FALSE, tidy=FALSE}
+Vqilai <- qilai %>%
+  select(Vqilai, age, role) %>%
+  filter(role == "child") %>%
+  arrange(age)
+
+Vqilaismooth <- Vqilai %>%
+  group_by(Vqilai) %>%
+  tally() %>%
+  arrange(desc(n)) %>%
+  top_n(10)
+
+knitr::kable(Vqilaismooth, format = "html")
+```
+
+]
+
+
 
 ---
 class: middle, center
@@ -552,7 +608,7 @@ Next, they also accept similar criteria as Lamarre (2007;2008) for deciding the 
 
 ## Interim summary
 
-* I am not entirely in agreement with this list. There seem many 'mistakes'?
+* I do not entirely agree with this list. There seem many 'mistakes'?
 * I really like the way Shi & Wu defended their argument.
 * Lamarre's and Xu's discussions also fit in with this split system.
 * So, my interim conclusion is that Chinese has indeed more than just one pattern, but it does have dominant tendencies, and I would also classify it as a Sattellite-framed language (though not entirely).
