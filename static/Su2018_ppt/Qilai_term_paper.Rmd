@@ -486,7 +486,7 @@ qilaismooth <- qilai %>%
 plot <- ggplot() +
   stat_count(data = qilai, mapping = aes(x = age, fill = role)) +
 #  geom_smooth(data = qilaismooth, mapping = aes(x = age, y = n)) +
-  ggtitle("XXde uttered by children and adults") +
+  ggtitle("Qilai uttered by children and adults") +
   theme_bw() +
   theme(panel.border = element_blank(),
         panel.grid.major = element_blank(),
