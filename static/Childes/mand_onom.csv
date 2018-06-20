@@ -1,0 +1,298 @@
+part_of_speech,gloss,target_child_age,corpus_name,speaker_role,age,role
+v cl adj n on,有 个 小 鸭子 嘎嘎 嘎嘎 嘎,36.00073923489189,ZhouNarratives,Target_Child,36,child
+co on,噢 嘎嘎 嘎 嘎,36.00073923489189,ZhouNarratives,Investigator,36,adult
+on,嘣,36.00073923489189,ZhouNarratives,Target_Child,36,child
+on co on,呜呜 啊 呜呜,36.00073923489189,ZhouNarratives,Target_Child,36,child
+on,啪,36.00073923489189,ZhouNarratives,Target_Child,36,child
+on,嘘,36.00073923489189,ZhouNarratives,Target_Child,36,child
+on,嘘,36.00073923489189,ZhouNarratives,Target_Child,36,child
+on co v,啪 嗒 xxx 摔跤,48.000985646522516,ZhouNarratives,Target_Child,48,child
+on num cl num cl adv adj adv adj nom n prep n post v asp v,啵 一 声 一 条 小 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 了 出来,60.00123205815314,ZhouNarratives,Target_Child,60,child
+on num cl num cl adv adj adv adj nom n prep n post v v,吱 一 声 一 条 又小又 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 出来,60.00123205815314,ZhouNarratives,Target_Child,60,child
+on num cl num cl adv adj adv adj nom n prep n post v asp v,啪 一 声 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 了 出来,60.00123205815314,ZhouNarratives,Target_Child,60,child
+on num cl num cl adv adj adv adj nom n prep n post v asp v,啪 一 声 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 了 出来,72.00147846978378,ZhouNarratives,Target_Child,72,child
+on num cl num cl adv adj adv adj nom n prep n post v asp v,啵 一 声 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 了 出来,72.00147846978378,ZhouNarratives,Target_Child,72,child
+on num cl num cl adj n prep cl n post v v,嘭 一 声 一 条 小 毛毛虫 从 蛋 从 个 蛋 里 爬 出来,72.00147846978378,ZhouNarratives,Target_Child,72,child
+v:cop pro:wh on sfp,是 什么 啵 啊,72.00147846978378,ZhouNarratives,Target_Child,72,child
+on num cl num cl adv adj adv adj nom n prep n post v asp v,啵 一 声 一 条 又 小 又 饿 的 毛毛虫 从 蛋 里 爬 了 出来,72.00147846978378,ZhouNarratives,Target_Child,72,child
+adv pro on adv v n asp,然后 它 啪 一下子 变成 蝴蝶 了,72.00147846978378,ZhouNarratives,Target_Child,72,child
+prep pro v v adv v asp num cl prep pro adv on v asp,嘭 把 他们 丢 下去 又 打 了 一 个 把 他 也 嘭 倒 了,48.000985646522516,ZhouNarratives,Target_Child,48,child
+n v v:resc asp n on,轮胎 破 掉 了 轮胎 啪,48.000985646522516,ZhouNarratives,Target_Child,48,child
+adj n on on on on sfp post adv v asp pro:wh sfp,小 汽车 呜 呜 呜 呜 啊 这里 又 发生 了 什么 呀,48.000985646522516,ZhouNarratives,Investigator,48,adult
+n adv v:dirc adj nom v neg asp n v on poss adj adj v:cop pro:wh sfp,马 都 走 慢慢 的 找 不 着 人 睡觉 轰隆 的 巨 响 是 什么 呀,48.000985646522516,ZhouNarratives,Target_Child,48,child
+on adv adv sfp v v,嘘 嘘 好 然后 呢 继续 讲,48.000985646522516,ZhouNarratives,Investigator,48,adult
+adv pro adv v v:resc num cl n n v cpt adv v adv adj n n adv on nom prep post v,然后 他们 就 变 成 三 块 石头 小朋友 吓 得 四处 逃 连 小 狗 狗 也 汪汪 的 在 后面 跟着,48.000985646522516,ZhouNarratives,Target_Child,48,child
+pro adv v pro cl on v pro v cpt adv adv adv adv adv adj,他 就 拿 这 个 咚 让 它 吹 得 很 响 很 响 很 响 很 响 很 响,48.000985646522516,ZhouNarratives,Target_Child,48,child
+adv pro adv v asp n on,然后 他 就 拿 着 枪 砰 砰,48.000985646522516,ZhouNarratives,Target_Child,48,child
+pro on n v n adv prep pro v prep asp n,他 哇哇 地 叫 强盗 就 把 他 留 在 了 家,48.000985646522516,ZhouNarratives,Target_Child,48,child
+adv pro prep n v post n adv v v:resc adv n asp num cl n conj adv cl v:aux v nom pro cl n adv n adv v post adv v:aux prep pro cl n pro cl n prep v n adv adv sfp pro adv:wh cl n adj n v:dirc adv sfp pro adv adj asp n adv prep quant n adv prep v v asp adv sfp n sfp adv pro adv v n adv adv on pro cl co:int n pro:wh cl n prep n prep v asp,然后 他们 在 枪 放 这里 喇叭 也 夹 住 然后 用 了 一 个 喇叭 和 一 个 可以 收缩 的 那 个 东西 然后 喇叭 一 吹 之后 就 可以 把 这 个 东西 这 个 武器 给 吹 站 起来 然后 呢 这 几 个 人 过 桥 去 然后 呢 他 一直 对 着 武器 然后 把 这些 人 都 给 吓 跑 了 然后 呢 马 呢 就 他 一 吹 喇叭 然后 就 嘣 那 个 就是 用 哪 个 武器 把 轮胎 给 打断 了,48.000985646522516,ZhouNarratives,Target_Child,48,child
+adj on v v n,怪 呼呼 戴 顶 帽子,72.00147846978378,ZhouNarratives,Target_Child,72,child
+adj on v nom n,大声 哇哇 叫 的 话,36.00073923489189,ZhouDinner,Adult,36,adult
+sfp on,啊 呜,14.000287480235734,Zhou1,Target_Child,14,child
+sfp on sfp,啊 呜 啊,14.000287480235734,Zhou1,Mother,14,adult
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on on,嘎 嘎,14.000287480235734,Zhou1,Mother,14,adult
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+adj n v:cop on on v nom sfp,小 鸭 是 嘎 嘎 叫 的 呀,14.000287480235734,Zhou1,Mother,14,adult
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+n:relat v:cop on on sfp,哥哥 是 嘎 嘎 呀,14.000287480235734,Zhou1,Mother,14,adult
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+pro adv v:aux v on on sfp,你 只 会 说 嘎 嘎 呀,14.000287480235734,Zhou1,Mother,14,adult
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on on,嘎 嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on,呜,14.000287480235734,Zhou1,Mother,14,adult
+on,呱呱,14.000287480235734,Zhou1,Target_Child,14,child
+on,呱呱,14.000287480235734,Zhou1,Mother,14,adult
+n v:cop on on n v,鸭子 是 嗄 嗄 地 叫,14.000287480235734,Zhou1,Mother,14,adult
+on,嘎,14.000287480235734,Zhou1,Target_Child,14,child
+on co,呜 噢,14.000287480235734,Zhou1,Target_Child,14,child
+on co,呜 噢,14.000287480235734,Zhou1,Target_Child,14,child
+on,汪汪,14.000287480235734,Zhou1,Mother,14,adult
+on,呜,14.000287480235734,Zhou1,Target_Child,14,child
+sfp on,啊 嘘,14.000287480235734,Zhou1,Target_Child,14,child
+on,哇哇,14.000287480235734,Zhou1,Target_Child,14,child
+on n,汪汪 狗,14.000287480235734,Zhou1,Mother,14,adult
+on adv v,咚 再 扔,14.000287480235734,Zhou1,Mother,14,adult
+on,啪,20.000410686051048,Zhou1,Target_Child,20,child
+on,啪,20.000410686051048,Zhou1,Target_Child,20,child
+on,啪啪,20.000410686051048,Zhou1,Target_Child,20,child
+pro v:cop on,这 是 呜,20.000410686051048,Zhou1,Father,20,adult
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+pro v:cop on,这 是 呜,20.000410686051048,Zhou1,Father,20,adult
+on on on,呜 呜 呜,20.000410686051048,Zhou1,Mother,20,adult
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,20.000410686051048,Zhou1,Mother,20,adult
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,14.000287480235734,Zhou1,Target_Child,14,child
+on,呜,14.000287480235734,Zhou1,Target_Child,14,child
+on,呜,14.000287480235734,Zhou1,Target_Child,14,child
+co on,哟 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on on,呜 呜,21.0004312203536,Zhou1,Target_Child,21,child
+co on co,哎 呜 嘻,21.0004312203536,Zhou1,Target_Child,21,child
+on on on v,呜 呜 呜 嘟嘟,20.000410686051048,Zhou1,Target_Child,20,child
+on on,呜 呜,21.0004312203536,Zhou1,Target_Child,21,child
+on co,喔喔 喔喔,20.000410686051048,Zhou1,Target_Child,20,child
+on,汪汪,20.000410686051048,Zhou1,Target_Child,20,child
+on,汪汪,20.000410686051048,Zhou1,Mother,20,adult
+co on on on,哎哟 呜 呜 呜,21.0004312203536,Zhou1,Target_Child,21,child
+on,呜,14.000287480235734,Zhou1,Target_Child,14,child
+sfp on,啊 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,叽,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,21.0004312203536,Zhou1,Target_Child,21,child
+on,呜,21.0004312203536,Zhou1,Target_Child,21,child
+on co sfp,叽 嘁 呀,21.0004312203536,Zhou1,Target_Child,21,child
+on,呜,21.0004312203536,Zhou1,Target_Child,21,child
+on,呜,21.0004312203536,Zhou1,Target_Child,21,child
+num cl on on n adj,一 会 呜 呜 地 响,20.000410686051048,Zhou1,Mother,20,adult
+on,呜,21.0004312203536,Zhou1,Target_Child,21,child
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+sfp on,啊 噶,21.0004312203536,Zhou1,Target_Child,21,child
+on on,喵 呜,21.0004312203536,Zhou1,Target_Child,21,child
+sfp on co,啊 呜 奥,21.0004312203536,Zhou1,Target_Child,21,child
+on on pro v v,呜 呜 你 推 过来,25.033368241647672,Zhou1,Mother,25,adult
+on,呜,25.033368241647672,Zhou1,Mother,25,adult
+on on,呜 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,喔喔,20.000410686051048,Zhou1,Mother,20,adult
+on co on co,呜 哇 呜 哇,14.000287480235734,Zhou1,Target_Child,14,child
+on on,呜 呜,25.263352430234708,Zhou1,Mother,25,adult
+on on on,呜 呜 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on on on,呜 呜 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,咩,20.000410686051048,Zhou1,Target_Child,20,child
+on adj n,咩 小 羊,20.000410686051048,Zhou1,Mother,20,adult
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,25.65761103924105,Zhou1,Mother,25,adult
+on,呜,26.72334134171133,Zhou1,Target_Child,26,child
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+v:aux on on v nom v:cop pro:wh n sfp,会 吱 吱 叫 的 是 什么 东西 啊,26.854760878046775,Zhou1,Mother,26,adult
+on,呜,25.62475615515719,Zhou1,Target_Child,25,child
+on,呜,25.62475615515719,Zhou1,Target_Child,25,child
+on,呜,25.62475615515719,Zhou1,Mother,25,adult
+on on,呜 呜,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,20.000410686051048,Zhou1,Target_Child,20,child
+on on on,呜 呜 呜,32.000657097681675,Zhou1,Target_Child,32,child
+on on on,呜 呜 呜,32.000657097681675,Zhou1,Target_Child,32,child
+on,嘎,20.000410686051048,Zhou1,Mother,20,adult
+on on on on,吱 吱 吱 吱,32.000657097681675,Zhou1,Mother,32,adult
+adj adj n v co v adv pro asp adj adj n on adj v co n:relat v asp,大 灰 狼 说 哎哟 疼 死 我 了 大 灰 狼 哇哇 大 叫 哎 妈妈 回来 了,21.0004312203536,Zhou1,Mother,21,adult
+on n v asp,哇哇 地 哭 着,21.0004312203536,Zhou1,Mother,21,adult
+on adj n adv:wh v,喵 小 羊 怎么 叫,32.000657097681675,Zhou1,Target_Child,32,child
+n v:cop on nom v nom,猫 是 喵 的 叫 的,14.000287480235734,Zhou1,Mother,14,adult
+adj n v v:resc on on n v asp v v:resc asp,小 猴子 疼 得 吱 吱 地 叫 着 跑 开 了,26.789051109879054,Zhou1,Mother,26,adult
+on,嘀,32.000657097681675,Zhou1,Target_Child,32,child
+on,呜,26.00053389186636,Zhou1,Target_Child,26,child
+on,嘘,32.000657097681675,Zhou1,Target_Child,32,child
+cleft post on v nom sfp,的 里 咕 骑 的 呢,14.000287480235734,Zhou1,Mother,14,adult
+on,呜,25.00051335756381,Zhou1,Mother,25,adult
+on,啪,20.000410686051048,Zhou1,Mother,20,adult
+on on on on on on,叽 叽 喳 叽 叽 喳,20.000410686051048,Zhou1,Target_Child,20,child
+on on,喵 喵,32.000657097681675,Zhou1,Target_Child,32,child
+on,嘀,25.00051335756381,Zhou1,Target_Child,25,child
+on,嘘,20.000410686051048,Zhou1,Target_Child,20,child
+on,呜,25.197642662066983,Zhou1,Mother,25,adult
+on,咚,26.493357153124293,Zhou1,Target_Child,26,child
+v num cl pro cl n adv prep n post adv pro v v:resc num cl adv adj nom n on on on on,有 一 天 这 些 动物 都 在 森林 里 突然 牠们 听 到 一 个 很 大 的 声音 踫 踫 踫 踫,47.000965112219966,Chang1,Observer,47,adult
+on,呜,36.00073923489189,Zhou2,Target_Child,36,child
+on on,咕 咕,36.00073923489189,Zhou2,Target_Child,36,child
+on,呜,36.00073923489189,Zhou2,Target_Child,36,child
+on on,咕 咕,36.00073923489189,Zhou2,Target_Child,36,child
+on,哈哈哈,35.39497730959568,Zhou2,Target_Child,35,child
+on,呜,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+on,哈哈哈,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+pro pro cl on,我 这 个 咚,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Mother,36,adult
+on on,呜 呜,36.00073923489189,Zhou2,Target_Child,36,child
+on,叭,36.00073923489189,Zhou2,Target_Child,36,child
+on on,呜 呜,35.39497730959568,Zhou2,Target_Child,35,child
+co on on v:dirc asp,那个 呜 呜 来 了,35.39497730959568,Zhou2,Target_Child,35,child
+on on,噔 噔,36.00073923489189,Zhou2,Mother,36,adult
+co on,哦 哗啦啦,42.0008624407072,Zhou2,Mother,42,adult
+on on,嘣 嘣,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Mother,36,adult
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+on,咚,36.00073923489189,Zhou2,Target_Child,36,child
+on sfp,呜 啊,36.00073923489189,Zhou2,Mother,36,adult
+adv v:aux on v v:resc,不然 会 砰 倒 掉,36.00073923489189,Zhou2,Mother,36,adult
+on on,噔 噔,42.0008624407072,Zhou2,Target_Child,42,child
+on on,噼 噼,36.00073923489189,Zhou2,Target_Child,36,child
+on chi,呜 qiu,42.0008624407072,Zhou2,Target_Child,42,child
+v v:resc n pro on n v asp asp,听 完 故事 他们 呼噜噜 地 睡 着 了,36.00073923489189,Zhou2,Mother,36,adult
+on,叭 叭,36.00073923489189,Zhou2,Target_Child,36,child
+on,嘿嘿嘿,42.0008624407072,Zhou2,Target_Child,42,child
+num adv n v asp v cpt on n v v v:resc asp n poss post,一 只 皮皮鼠 听见 了 吓 得 呼噜噜 滚 下来 跌 到 了 床 的 下面,36.00073923489189,Zhou2,Mother,36,adult
+on,叭,36.00073923489189,Zhou2,Target_Child,36,child
+num adv n adv on v v:resc asp pro:wh sfp,一 只 皮皮鼠 就 嘣 摔 到 了 什么 啊,36.00073923489189,Zhou2,Mother,36,adult
+on on,呜 呜,42.0008624407072,Zhou2,Target_Child,42,child
+on on,呜 呜,42.0008624407072,Zhou2,Target_Child,42,child
+on,呱呱呱,42.0008624407072,Zhou2,Target_Child,42,child
+on,呱呱呱,42.0008624407072,Zhou2,Mother,42,adult
+on,呜,42.0008624407072,Zhou2,Mother,42,adult
+on,嘿嘿嘿,42.0008624407072,Zhou2,Mother,42,adult
+pro prep n post on on n v v,他们 在 床 上面 砰 砰 地 乱蹦 乱跳,42.0008624407072,Zhou2,Mother,42,adult
+on,呱呱呱,42.0008624407072,Zhou2,Mother,42,adult
+v:cop pro adv v pro cl n adv prep n post on on n v v,是 他们 一 吃 这 个 糖 就 在 床 上 砰 砰 地 跳 起来,42.0008624407072,Zhou2,Mother,42,adult
+n v asp v cpt on on n v v v:resc asp n post v:dirc v v:resc asp n v adj asp n,皮皮鼠 听见 了 吓 得 咕噜 咕噜 滚 下来 跌 到 了 床 下面 去 折 断 了 手臂 摔 破 了 头,42.0008624407072,Zhou2,Mother,42,adult
+on,呜,42.0008624407072,Zhou2,Mother,42,adult
+on,嘿嘿嘿,42.0008624407072,Zhou2,Mother,42,adult
+on,啪,36.00073923489189,Zhou2,Mother,36,adult
+adv on v v:resc asp,然后 啪 吐 掉 了,36.00073923489189,Zhou2,Mother,36,adult
+on,呜,42.0008624407072,Zhou2,Target_Child,42,child
+pro v asp post adv prep n post on n v,他们 吃 了 以后 就 在 柜子 上面 兵砰乒砰 地 乱跳,42.0008624407072,Zhou2,Mother,42,adult
+on,呜,42.0008624407072,Zhou2,Mother,42,adult
+pro prep n post adv on n v v,他们 在 衣橱 上 又 兵砰兵砰 地 乱蹦 乱跳,42.0008624407072,Zhou2,Mother,42,adult
+on,哈哈哈,42.0008624407072,Zhou2,Target_Child,42,child
+adv adv on on n v asp adv,然后 就 呜 呜 地 哭 了 起来,42.0008624407072,Zhou2,Mother,42,adult
+pro cl n v asp n on v,这 个 糖 吃 了 会 乒 乱跳,42.0008624407072,Zhou2,Mother,42,adult
+on,咚咚咚,42.0008624407072,Zhou2,Mother,42,adult
+on,嘣,48.000985646522516,Zhou2,Target_Child,48,child
+adv num adv n v v:resc asp v cpt on on n v v v:resc n post adv sfp v n v adj asp,然后 一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 滚 下来 跌 到 床 下面 然后 啊 把 膀子 摔 破 了,42.0008624407072,Zhou2,Mother,42,adult
+n v asp v cpt on on n v v v:resc asp n post v:dirc v v:resc asp n v adj asp n,皮皮鼠 听见 了 吓 得 咕噜 咕噜 滚 下来 跌 到 了 床 下面 去 折 断 了 手臂 摔 破 了 头,42.0008624407072,Zhou2,Mother,42,adult
+adv sfp n:relat prep v v:dirc poss num adv n v pro prep pro adj v neg v v conj sfp pro poss n:relat n:relat num v:dirc pro adv v asp co n pro prep n on on on n v v,然后 呢 妈妈 对 剩下 来 的 三 只 皮皮鼠 说 你们 给 我 好好 睡觉 不 准 吵 可是 啊 它 的 爸爸 妈妈 一 走 它们 又 吃 了 那个 跳跳糖 它们 在 柜子 砰 砰 砰 地 乱蹦 乱跳,42.0008624407072,Zhou2,Mother,42,adult
+on sfp,噼 呀,48.000985646522516,Zhou2,Target_Child,48,child
+pro prep n post n n v v n:relat n:relat v co pro:wh n sfp adv v:cop adj adv sfp adv v num adv n v v:resc asp v cpt on on n v v v asp v v:resc asp n,它们 在 衣橱 上面 乒乒乓乓 地 乱蹦 乱跳 爸爸 妈妈 说 咦 什么 声音 啊 真 是 奇怪 然后 呢 又 有 一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 滚 下来 跌 倒 了 摔 断 了 手臂,42.0008624407072,Zhou2,Mother,42,adult
+on,啪啪,48.000985646522516,Zhou2,Mother,48,adult
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Mother,42,adult
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,噔 噔,48.000985646522516,Zhou2,Target_Child,48,child
+on on,噔 噔,48.000985646522516,Zhou2,Mother,48,adult
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,噔 噔,48.000985646522516,Zhou2,Target_Child,48,child
+on on,嘣 嘣,48.000985646522516,Zhou2,Target_Child,48,child
+on on,咚咚咚 咚咚咚,42.0008624407072,Zhou2,Target_Child,42,child
+on on,呜 呜,48.000985646522516,Zhou2,Mother,48,adult
+on co,呜 嗯,48.000985646522516,Zhou2,Target_Child,48,child
+on,呜,48.000985646522516,Zhou2,Mother,48,adult
+on on,呜 呜,54.00110885233783,Zhou2,Target_Child,54,child
+co neg adj on,哦 不 好看 啵,54.00110885233783,Zhou2,Target_Child,54,child
+on,乒乒,48.000985646522516,Zhou2,Target_Child,48,child
+pro cl n adv v on on adv v v asp,这 个 跳跳糖 一 吃 砰 砰 就 跳 起来 了,48.000985646522516,Zhou2,Mother,48,adult
+co:int pro cl n adv v adv on on v asp,就是 这 个 跳跳糖 一 吃 就 砰 砰 起来 了,48.000985646522516,Zhou2,Mother,48,adult
+num adv n v asp v cpt on on n v v v:resc asp n,一 只 皮皮鼠 听见 了 吓 得 咕噜 咕噜 滚 下来 跌 到 了 床,48.000985646522516,Zhou2,Mother,48,adult
+adv on on nom n v,结果 咕噜 咕噜 的 滚 下来,48.000985646522516,Zhou2,Mother,48,adult
+on on v v asp,砰 砰 跳 起来 了,48.000985646522516,Zhou2,Mother,48,adult
+on on,砰 砰,48.000985646522516,Zhou2,Target_Child,48,child
+on on,这 个 噔 噔 噔,54.00110885233783,Zhou2,Target_Child,54,child
+pro cl on,这 个 噔,54.00110885233783,Zhou2,Target_Child,54,child
+adv prep n post on on v v asp,又 在 橱子 上面 砰 砰 跳 起来 了,48.000985646522516,Zhou2,Mother,48,adult
+adv adv adv n v v:resc asp v cpt on on v asp v v v:resc asp n nom,又 一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 滚 了 下来 跌 到 了 衣橱 的,48.000985646522516,Zhou2,Mother,48,adult
+on,咚,54.00110885233783,Zhou2,Target_Child,54,child
+on,砰,48.000985646522516,Zhou2,Mother,48,adult
+n:relat n:relat v pro:wh n adv adj sfp adv v:cop adj num adv n v v:resc asp v cpt on on n v asp,爸爸 妈妈 说 什么 声音 在 响 啊 真 是 奇怪 一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 滚 下来 了,54.00110885233783,Zhou2,Mother,54,adult
+sfp on,啊 呜,54.00110885233783,Zhou2,Target_Child,54,child
+on adv v v asp tag,砰 又 跳 起来 了 对吧,54.00110885233783,Zhou2,Mother,54,adult
+n:relat n:relat v pro:wh n adv prep adj sfp adv adj pro adv on adv asp adv adv adv n v asp v cpt on n v,爸爸 妈妈 说 什么 声音 还 在 响 啊 真 奇怪 他们 又 咚 上楼 了 又 一 只 皮皮鼠 听见 了 吓 得 咕噜噜 滚 下来,54.00110885233783,Zhou2,Mother,54,adult
+co adj n on,嗯 小 便士 吱,54.00110885233783,Zhou2,Target_Child,54,child
+on,哈哈哈,60.00123205815314,Zhou2,Target_Child,60,child
+on,哈哈哈,60.00123205815314,Zhou2,Target_Child,60,child
+num adv n v asp v cpt on n v v v:resc asp n post v v:resc asp n v adj asp n,一 只 皮皮鼠 听见 了 吓 得 咕噜 滚 下来 跌 到 了 床 下面 折 断 了 手臂 摔 破 了 头,60.00123205815314,Zhou2,Mother,60,adult
+on,嘿嘿嘿,60.00123205815314,Zhou2,Target_Child,60,child
+on,呜,60.00123205815314,Zhou2,Target_Child,60,child
+on,哈哈哈,60.00123205815314,Zhou2,Target_Child,60,child
+on,嘿嘿嘿,60.00123205815314,Zhou2,Target_Child,60,child
+on,哈哈哈,60.00123205815314,Zhou2,Target_Child,60,child
+on,哈哈哈,60.00123205815314,Zhou2,Target_Child,60,child
+on,pi,60.00123205815314,Zhou2,Target_Child,60,child
+on,呜,60.00123205815314,Zhou2,Target_Child,60,child
+on on,叭 叭,60.00123205815314,Zhou2,Target_Child,60,child
+on,哗啦啦,60.00123205815314,Zhou2,Target_Child,60,child
+on,哇哇,60.00123205815314,Zhou2,Mother,60,adult
+on,啪啪,60.00123205815314,Zhou2,Mother,60,adult
+on,啪,60.00123205815314,Zhou2,Mother,60,adult
+post adv cl on,下面 还有 个 啵,60.00123205815314,Zhou2,Mother,60,adult
+pro adv v:aux on,它 就 会 咚,60.00123205815314,Zhou2,Target_Child,60,child
+num adv n v v:resc asp v cpt on n v v v:resc asp n poss post pro prep n v v:resc asp v adj asp n,一 只 皮皮鼠 听 见 了 吓 得 咕噜 滚 下来 跌 到 了 床 的 下面 它 把 手臂 折 断 了 摔 破 了 头,60.00123205815314,Zhou2,Mother,60,adult
+on,咚咚,60.00123205815314,Zhou2,Mother,60,adult
+on,咔嚓 咔嚓,66.00135526396846,Zhou2,Target_Child,66,child
+on on on,咔嚓 咔嚓 噼噼,66.00135526396846,Zhou2,Target_Child,66,child
+pro prep n poss post on n v,他们 在 衣橱 的 上面 嘭 地 乱跳,60.00123205815314,Zhou2,Mother,60,adult
+on,啾,66.00135526396846,Zhou2,Target_Child,66,child
+pro prep n post on n v,他们 在 床 上 嘭嘭嘭嘭嘭 地 乱跳,66.00135526396846,Zhou2,Mother,66,adult
+num adv n v asp v cpt on on n v v v:resc post v v:resc asp n,一 只 皮皮鼠 听见 了 吓 得 咕噜 咕噜 滚 下来 跌 到 下面 折 断 了 手臂,66.00135526396846,Zhou2,Mother,66,adult
+adv num adv n v asp v nom v v:resc n post v:dirc v:dirc asp on cleft v:resc v:resc n post v:dirc asp,然后 一 只 皮皮鼠 听见 了 吓 的 跑 到 床 底 下 去 了 咚 的 掉 到 床 底下 去 了,60.00123205815314,Zhou2,Mother,60,adult
+adv v num adv n v asp on on n v v v:resc n post v v:resc asp n v adj asp n,又 有 一 只 皮皮鼠 听见 了 咕噜 咕噜 滚 下来 摔 到 桌子 上面 折 断 了 手臂 摔 破 了 头,66.00135526396846,Zhou2,Mother,66,adult
+adv v v:resc v v:resc num cl n on on n v v v:resc asp n poss n v v:resc asp n v adj asp n,又 听 到 听 到 一 个 皮皮鼠 咕噜 咕噜 滚 下来 跌 到 了 衣橱 的 外面 折 断 了 手臂 摔 破 了 头,66.00135526396846,Zhou2,Mother,66,adult
+v v adj asp on,有 点儿 大 了 啵,66.00135526396846,Zhou2,Mother,66,adult
+num adv n v v:resc asp v cpt on on n n v v v:resc asp n,一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 地 滚 下来 跌 到 了 床,66.00135526396846,Zhou2,Mother,66,adult
+num adv n v v:resc asp v cpt on on n v v v:resc asp n post v v:resc asp n v adj asp n,一 只 皮皮鼠 听 到 了 吓 得 咕噜 咕噜 滚 下来 跌 到 了 床 下面 折 断 了 手臂 摔 破 了 头,66.00135526396846,Zhou2,Mother,66,adult
+on,的的的的的的,72.00147846978378,Zhou2,Mother,72,adult
+on cleft on,噔 的 噔,60.00123205815314,Zhou2,Target_Child,60,child
+v prep post on,放 在 这里 咚咚咚,66.00135526396846,Zhou2,Mother,66,adult
+n on nom,眼 汪汪 的,66.00135526396846,Zhou2,Target_Child,66,child
+adv adv adv n on v v:resc asp n poss n prep n post v v adv v v:resc asp n,又 一 只 皮皮鼠 砰 摔 到 了 衣橱 的 外面 从 衣橱 里 摔 出来 又 摔 断 了 手臂,66.00135526396846,Zhou2,Mother,66,adult
+adj n:name pro v:resc adv adj n post v adv adv on on v asp adv,小 星星 它 掉 在 大 街 上 东张张西望望 然后 就 呜 呜 哭 了 起来,72.00147846978378,Zhou2,Mother,72,adult
+on,呜,72.00147846978378,Zhou2,Target_Child,72,child
+on,Gagaga,72.00147846978378,Zhou2,Target_Child,72,child
+v num cl pro v on,等 一 下 我 拿 嘎,72.00147846978378,Zhou2,Target_Child,72,child
+pro prep n post on n v,他们 在 柜子 上面 砰砰砰砰 地 乱跳,66.00135526396846,Zhou2,Mother,66,adult
+adv prep n post on v v,又 在 衣橱 上面 砰砰砰砰 乱跳 起来,66.00135526396846,Zhou2,Mother,66,adult
+on,啪,72.00147846978378,Zhou2,Mother,72,adult
+on,啪,72.00147846978378,Zhou2,Target_Child,72,child
+on num cl n v,阿嚏 一 个 冰块 出来,72.00147846978378,Zhou2,Target_Child,72,child
+neg v n asp on,没 有 箱子 了 啵,66.00135526396846,Zhou2,Target_Child,66,child
+neg cleft asp on,没 的 了 啵,66.00135526396846,Zhou2,Target_Child,66,child
+on,咚,72.00147846978378,Zhou2,Target_Child,72,child
+on,咚,72.00147846978378,Zhou2,Target_Child,72,child
+neg v nom on,不 拼 的 啵,66.00135526396846,Zhou2,Target_Child,66,child
+on,噔噔噔,72.00147846978378,Zhou2,Target_Child,72,child
+on,哈哈哈,72.00147846978378,Zhou2,Mother,72,adult
+on adv cl adv v asp,咚 一 下 就 出来 了,72.00147846978378,Zhou2,Target_Child,72,child
+n:tm adv adv n v asp v cpt on on adv v cl n v:dirc asp,这时 一 只 皮皮鼠 听见 了 吓 得 咕噜 咕噜 就 滚 下 床 来 了,72.00147846978378,Zhou2,Mother,72,adult
+on on n v nom,咕噜 咕噜 滚 下来 的,72.00147846978378,Zhou2,Mother,72,adult
+num adv n v v:resc asp on on prep n post v v v adj asp n,一 只 皮皮鼠 听 到 了 咕噜 咕噜 从 衣橱 上 滚 下来 摔 破 了 头,72.00147846978378,Zhou2,Target_Child,72,child
+adv v num adv n v asp v cpt on on n v v v:resc asp n n,又 有 一 只 皮皮鼠 听见 了 吓 得 咕噜 咕噜 滚 下来 跌 到 了 衣橱 外面,72.00147846978378,Zhou2,Mother,72,adult
+on,呜呜呜,72.00147846978378,Zhou2,Target_Child,72,child
+n:relat n:relat v num v v:resc v pro num adv n v asp sfp adv v:cop num cl on sfp,爸爸 妈妈 回来 一 听 到 以为 这 三 只 老鼠 睡觉 了 呢 又 是 一 声 咚 啊,72.00147846978378,Zhou2,Mother,72,adult
