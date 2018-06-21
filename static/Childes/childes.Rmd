@@ -18,6 +18,15 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+
+layout: false
+
+background-image: url(finished.jpg)
+background-size: cover
+
+
+---
+
 # Roadmap
 
 * Introduction
@@ -720,3 +729,5 @@ Tomasello, Michael. 2003. *Constructing a language: a usage-based theory of lang
 
 Van Hoey, Thomas. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* 4(2).
 ]
+
+
