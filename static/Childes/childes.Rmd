@@ -391,7 +391,7 @@ mandarin_real_utt <- mand_onom %>%
   arrange(age)
 
 DT::datatable(
-  head(mandarin_real_utt, 45),
+  head(mandarin_real_utt, 150),
   fillContainer = FALSE, options = list(pageLength = 8))
 ```
 ]
