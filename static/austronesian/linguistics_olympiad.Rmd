@@ -309,9 +309,13 @@ If you know that *na=* is a future/irrealis marker and *min-* means 'change', th
 left-right
 front-back
 
+--
+
 ## fixed coordinates
 cardinal directions
 North, East, South, West
+
+--
 
 ## geographical terrain
 land-sea axis
@@ -681,7 +685,7 @@ class: center
 .font70[
 | type | direction | form | combinations 
 | --- | --- | --- | ---
-| alphabet | up->down, left->right | different forms beginning, middle, end | sometimes ligatures (combinations)
+| alphabet <br> syllabary | up->down, left->right | different forms beginning, middle, end | sometimes ligatures (combinations)
 ]
 
 
