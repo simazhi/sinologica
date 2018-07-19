@@ -2,7 +2,7 @@
 title: "Austronesian languages"
 subtitle: "and other things I wanted to tell you guys about<html><div style='float:left'></div><hr color='#875712' size=1px width=796px></html>"
 author: "Thomas Van Hoey 司馬智 <br>"
-date: "`r Sys.Date()`"
+date: "`r Sys.Date()` <br> [Click here for presentation](http://www.thomasvanhoey.com/austronesian/linguistics_olympiad)"
 output:
   xaringan::moon_reader:
     css: ["ntu.css", "ntu-fonts.css"]
@@ -137,7 +137,7 @@ NEG he FUT graduate SINGLE.EVENT <br>
 
 .pull-left[
 * phonological inventory is quite small (like all Austronesian languages)
-* analytic language
+* analytic language (agglutinative)
 * SVO order (tendency)
 * voices / focus system: actor, undergoer + extra
 * affixes:
@@ -170,7 +170,7 @@ Examples
 # Philippine-type languages
 
 * Taiwan, Philippines, Madagascar...
-* analytical
+* analytical (agglutinative)
 * VSO tendency
 * typically a 4 focus system (or voice system)
     1. agent focus
@@ -213,8 +213,8 @@ will:take:out-.red[LF] .blue[ART woman] .blue[ART rice] .orange[TR sack] BEN chi
 ]
 
 .font80[
-Tagalog (Langacker 2008 adapted from Schachter 1976)
-TR = trajector; TF = theme focus; LF = locative focus; beneficiary focus
+Tagalog (Langacker 2008 adapted from Schachter 1976) <br>
+TR = trajector (here: the thing in focus); TF = theme focus; LF = locative focus; beneficiary focus
 ]
 
 ---
@@ -225,7 +225,7 @@ TR = trajector; TF = theme focus; LF = locative focus; beneficiary focus
 
 | Root | Meaning | Present | Recent past | Remote past | Future |
 | --- | --- | --- | --- | --- | ---
-| hanup | ‘to hunt’ | hanup | h<in>anup | h<inin>anup | na=hanup 
+| hanup | ‘to hunt’ | hanup | h-in-anup | h-inin-anup | na=hanup 
 | | 打獵 | 打獵 | 打過獵 | 很久以前打過獵 | 要打獵了
 
 
@@ -233,12 +233,12 @@ TR = trajector; TF = theme focus; LF = locative focus; beneficiary focus
 
 | Root | Meaning | Simple | Perfective | Repetitive | Durative |
 | --- | --- | --- | --- | --- | ---
-| hanup | ‘to hunt’ | hanup | hanup-in | <ha>hanup | hanup-ang |
+| hanup | ‘to hunt’ | hanup | hanup-in | ha~hanup | hanup-ang |
 | | 打獵 | 打獵 | 打獵了 | 一直打獵 | 正在打獵
 
 ## Reduplication
 
-Reduplication can have many meanings: repetition (*hahanup*), intensive (人海茫茫), diminution 'make smaller' (看看)...
+Reduplication can have many meanings: repetition (*ha~hanup*), intensive (人海茫茫), diminution 'make smaller' (看看)...
 
 ---
 
@@ -256,22 +256,22 @@ Having this kind of focus system is also useful for nominalization.
 .font80[
 | root | meaning | focus | nominal | meaning |
 | --- | --- | --- | --- | --- |
-| ka-huzas | ‘to  sing’ | ka-<hu>huzas | kahuhuzas | ‘singer’ |
-| un-huma | ‘to  farm’ | m-un<hu>huma | munhuhuma | ‘farmer’ |
-| hanup | ‘to  hunt’ | <ha>hanup | hahanup | ‘hunter’ |
-| masnav | ‘to  teach’ | mas<na>nav | masnanav | ‘teacher’ |
+| ka-huzas | ‘to  sing’ | ka-hu~huzas | kahuhuzas | ‘singer’ |
+| un-huma | ‘to  farm’ | m-unhu~huma | munhuhuma | ‘farmer’ |
+| hanup | ‘to  hunt’ | ha~hanup | hahanup | ‘hunter’ |
+| masnav | ‘to  teach’ | mas-na~nav | masnanav | ‘teacher’ |
 | | | | | |
-| kaun | ‘to eat’ | <ka>kaun-un | kakaunun | ‘food’ |
-| baliv | ‘to  buy’ | baliv-un | balivun | ‘things | to be bought’ |
+| kaun | ‘to eat’ | ka~kaun-un | kakaunun | ‘food’ |
+| baliv | ‘to  buy’ | baliv-un | balivun | ‘things to be bought’ |
 | pit’ia | ‘to  cook’ | pit’i-un | pit’iun | ‘food’ |
 | | | | | |
-| kaun | ‘to eat’ | is-<ka>kaun | iskakaun | ‘cutlery’ |
-| patas | ‘to  write’ | is-<pa>patas | ispapatas | ‘pen’ |
+| kaun | ‘to eat’ | is-ka~kaun | iskakaun | ‘cutlery’ |
+| patas | ‘to  write’ | is-pa~patas | ispapatas | ‘pen’ |
 | | | | | |
-| kaun | ‘to  eat’ | <ka>kaun-an | kakaunan | ‘dining place’ |
-| baliv | ‘to  buy’ | <ba>baliv-an | babalivan | ‘shop’ |
-| sumsum | ‘to  worship’ | <su>sumsum-an | susumsuman | ‘church/temple’ |
-| (pas-)nava | ‘to  study | pas<na>nava-an | pasnanavaan | ‘school’ |
+| kaun | ‘to  eat’ | ka~kaun-an | kakaunan | ‘dining place’ |
+| baliv | ‘to  buy’ | ba~baliv-an | babalivan | ‘shop’ |
+| sumsum | ‘to  worship’ | su~sumsum-an | susumsuman | ‘church/temple’ |
+| (pas-)nava | ‘to  study | pas-na~nava-an | pasnanavaan | ‘school’ |
 ]
 
 ---
@@ -334,7 +334,7 @@ Many Austronesian languages use a radically different way of expressing directio
 | Pazeh | daya ‘upstream; east’ | rahut ‘downstream; west’
 | Thao | saya ‘uphill, upstream’ | raus ‘downhill, downstream’
 | Paiwan | zaya ‘upland, upriver’ | lauz ‘seaward, downriver’
-| Yami | rala 'next to the mountain | / (?)
+| Yami | rala 'next to the mountain | ralud 'towards the sea'
 | Ilokano | dáya ‘east’ | láud ‘west’
 | Cebuano | iláya ‘away from coast/town’ | iláwud ‘near coast/town’
 | Kelabit | dayəh ‘upstream’ | laʔud ‘downstream’
@@ -371,10 +371,12 @@ On the other hand, don't overthink the clues they give you, but just try to stay
 .font80[
 The valence of a lexical item is its inherent relationality that allows it to govern a particular number of arguments
 
-* 看 = usually 2 participants
-* 跑 = usually 1 participants
-* 給 = usually 3 participants
+* `看` = usually 2 participants
+* `跑` = usually 1 participants
+* `給` = usually 3 participants
 ]
+
+## alignment
 
 .font80[
 Typologically we can see some major roles in clauses
