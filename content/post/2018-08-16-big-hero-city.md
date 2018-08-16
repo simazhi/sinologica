@@ -17,7 +17,7 @@ tags:
 slug: big-hero-city
 header:
   caption: ''
-  image: '2018/kaohsiung.png'
+  image: '2018/kaohsiung2.png'
 ---
 
 In an [earlier post](https://www.thomasvanhoey.com/post/wrapping-up-2017-ii/), I have asked you guys why you are visiting this blog. 
