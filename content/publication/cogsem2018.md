@@ -1,6 +1,6 @@
 +++
 title = "Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity"
-date = "2018/08/01"
+date = 2018-08-01
 
 
 # Authors. Comma separated list, e.g. `["Van Hoey, Thomas"]`.
