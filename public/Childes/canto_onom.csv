@@ -1,0 +1,458 @@
+part_of_speech,gloss,target_child_age,corpus_name,speaker_role,age,role
+on,am3,29.394854103780364,HKU,Investigator,29,adult
+on,am4,29.033450378857882,HKU,Target_Child,29,child
+adv v v pro adv v on adv sfp sfp,咁樣 打 開 佢 跟住 bat1 am4 咁樣 架 喎,29.033450378857882,HKU,Investigator,29,adult
+on,am4,29.033450378857882,HKU,Target_Child,29,child
+on pro v v sfp,am4 你 有 食 aa4,29.033450378857882,HKU,Investigator,29,adult
+pro sfp adv v:aux v cl n v stprt adj on,我哋 呢 又 可以 lo2 個 匙羹 bat1 啲 脆脆 am4,29.033450378857882,HKU,Investigator,29,adult
+on pro adv v,am4 am4 你 又 食,29.033450378857882,HKU,Investigator,29,adult
+v on,bat1 am2,29.49341875603195,HKU,Target_Child,29,child
+on co,am2 係喎,29.49341875603195,HKU,Investigator,29,adult
+on,am4,29.033450378857882,HKU,Target_Child,29,child
+adj sfp v sfp adv v n on,好 喎 試 haa5 好 冇 味 am1,29.000595494774018,HKU,Investigator,29,adult
+on,am2,29.49341875603195,HKU,Target_Child,29,child
+on,am2,29.49341875603195,HKU,Target_Child,29,child
+on,pet6 pet6 pet6,29.887677365038297,HKU,Target_Child,29,child
+pro adv on quan v:dirc v fil,你 又 pet6 嗮 落 去 aa3,29.887677365038297,HKU,Investigator,29,adult
+on,gok1gu4 xxx,29.887677365038297,HKU,Target_Child,29,child
+on,am1,29.000595494774018,HKU,Target_Child,29,child
+on adj n fil pro n adj fil num cl adv adj fil,am1 好 味 aa3 我 味 飽 aa3 一 啖 就 飽 aa3,29.000595494774018,HKU,Investigator,29,adult
+on adj n,am1 好 味,29.000595494774018,HKU,Investigator,29,adult
+stprt sfp sfp adv pro v sfp on,得 架 喇 就 咁 飲 啦 gu4lu3,29.46056387194809,HKU,Investigator,29,adult
+on,lin1 lin1 lin1,29.887677365038297,HKU,Target_Child,29,child
+co on adv sfp n sfp,係喎 am6 咁樣 喎 筆 喎,29.887677365038297,HKU,Investigator,29,adult
+v on on,ngoi2 gu4 gu4 ngoi2 gu4 gu4,29.000595494774018,HKU,Investigator,29,adult
+v on on,ngoi2 gu4 gu4,29.000595494774018,HKU,Target_Child,29,child
+on,ik1 ik1,35.986365223105196,HKU,Investigator,35,adult
+on,am4,29.986242017289882,HKU,Investigator,29,adult
+on,fu3,41.000841906404645,HKU,Target_Child,41,child
+on,am3,35.526396845931124,HKU,Investigator,35,adult
+adv v on,咁樣 推 bu1,41.000841906404645,HKU,Target_Child,41,child
+on,am4 am4 am4,35.986365223105196,HKU,Investigator,35,adult
+adv fil v fil on,咁樣 aa3 係 aa3 am6,35.953510339021335,HKU,Investigator,35,adult
+adj v adj v adj v v v v v on on on on sfp adj v,快樂 笑笑 快樂 笑笑 xxx 快樂 笑 haa1 haa1 haa1 haa1 呵 呵 呵 呵 lu4 快樂 笑,35.526396845931124,HKU,Target_Child,35,child
+on,am4 好味,41.526520051746445,HKU,Investigator,41,adult
+on,am4,41.526520051746445,HKU,Target_Child,41,child
+co adv adj fil v on,好啦 好 開心 aa3 bat1 am6,41.75650424033348,HKU,Housekeeper,41,adult
+on,am6,41.75650424033348,HKU,Investigator,41,adult
+on on,fu1 fu1,41.000841906404645,HKU,Target_Child,41,child
+adj sfp on on on on,好 喇 gok1 gok2 gok3 gok4,35.986365223105196,HKU,Investigator,35,adult
+v fil on,係 aa3 瞓覺 ou4,41.75650424033348,HKU,Housekeeper,41,adult
+on on,jam6 jam6,30.033470913160436,HKU,Target_Child,30,child
+on on,jam6 jam6,30.033470913160436,HKU,Target_Child,30,child
+adv on on,就黎 jam6 jam6,30.033470913160436,HKU,Target_Child,30,child
+on on,jam6 jam6,30.033470913160436,HKU,Target_Child,30,child
+on,am4,41.526520051746445,HKU,Target_Child,41,child
+on,gluck4 gluck4 gluck4 gluck4 gluck4,41.526520051746445,HKU,Investigator,41,adult
+on,am4,41.526520051746445,HKU,Investigator,41,adult
+on,am6,42.657960122384445,HKU,Target_Child,42,child
+fil on v quan,m6 am6 am6 am6 食 嗮,42.657960122384445,HKU,Investigator,42,adult
+on,gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3,42.657960122384445,HKU,Investigator,42,adult
+on n:prop v adv:neg v fil,am6 子健 食 唔 食 aa3,42.0008624407072,HKU,Investigator,42,adult
+co v sfp on,係喎 食 aa1 gu4 gu4 gu4,43.03373785909361,HKU,Investigator,43,adult
+co adv adv:neg sfp on on on,係喎 好 未 喎 am6 am6 am6,37.19788907369761,HKU,Investigator,37,adult
+on co,guk4 guk4 guk4 guk4 guk4 嘩,47.55949814164562,HKU,Investigator,47,adult
+on v asp n sfp,gu4 瞓 完 覺覺 lu3,42.88794431097148,HKU,Investigator,42,adult
+on,am6,47.55949814164562,HKU,Investigator,47,adult
+on on,he1 he1,52.526745929074515,HKU,Target_Child,52,child
+v n on co co v:aux n asp cl v:aux n asp,食 粉 am4 ai1 jaa3 要 墊 住 架 要 墊 住,47.033819996303826,HKU,Target_Child,47,child
+on adv sfp v:aux v n sfp sfp,am4 am4 am4 跟住 呢 要 食 蕃茄 囉 喎,47.033819996303826,HKU,Target_Child,47,child
+on v:aux v asp,am4 am4 am4 要 食 完,47.033819996303826,HKU,Target_Child,47,child
+on co co adv adj fil,gu4 gu4 gu4 gu4 gu4 aai1 jaa3 好 快 aa3,46.85517156409782,HKU,Investigator,46,adult
+cl n on on n adv v n,間 屋 syu4 syu4 媽咪 又 有 雞翼,42.88794431097148,HKU,Target_Child,42,child
+on,am4,49.428119673915276,HKU,Target_Child,49,child
+co cl n on co,係喎 隻 叉 am4 係喎,49.428119673915276,HKU,Investigator,49,adult
+on int adv n fil pro adv v:aux v adj stprt v:aux v adv v adv adj n,jam1 jam1 jam1 嘩 好 味道 aa4 我 仲 要 食 多 啲 要 食 越 lei4 越 多 嘢,46.85517156409782,HKU,Investigator,46,adult
+on v n pro prep wh pro v,gu4 飲 嘢 你 俾 乜嘢 佢 飲,42.88794431097148,HKU,Investigator,42,adult
+fil on adv n,m6 jam1 jam1 jam1 jam1 好 味道,52.526745929074515,HKU,Investigator,52,adult
+pro sfp v n v n sfp on,我哋 呢 餵 公仔 飲 奶奶 喎 gwut6 gwut6 gwut6 gwut6 gwut6,54.03396373642169,HKU,Investigator,54,adult
+on pro v adv:neg v v n v sfp,m1 m1 m1 m1 m1 你 識 唔 識 煮 嘢 食 架,46.85517156409782,HKU,Investigator,46,adult
+on v quan sfp,am4 食 嗮 lu3,53.888170188299554,HKU,Target_Child,53,child
+pro v on fil,佢 話 am4 aa3,42.723669890552166,HKU,Target_Child,42,child
+on on,aam3 aam3,42.723669890552166,HKU,Investigator,42,adult
+on on,aam3 aam3,42.723669890552166,HKU,Investigator,42,adult
+on,zi4,55.16540380705969,HKU,Investigator,55,adult
+on stprt sfp,si4 得 laak3,55.16540380705969,HKU,Target_Child,55,child
+adv:neg v:aux on pro v quan sfp,唔 會 gu4 佢 飲 嗮 喇,53.625331115628654,HKU,Target_Child,53,child
+on v v cl,am6 食 過 啲,42.723669890552166,HKU,Target_Child,42,child
+on v n prep pro v sfp,am1 係 咪 俾 我 食 架,48.69093821228362,HKU,Investigator,48,adult
+on stprt sfp,ci6 得 laak3,55.06683915480811,HKU,Target_Child,55,child
+on,am4 am4 am4 am4 am4,53.756750651964104,HKU,Investigator,53,adult
+v n sfp fil co v n on,飲 奶奶 先 aa3 係喇 朝頭早 飲 奶奶 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3 gu4lu3,47.42807860531017,HKU,Investigator,47,adult
+adv:neg on co adj n fil n adv adv:neg sfp,唔 am5 am5 am5 嘩 好 味道 aa3 啤啤 夠 未 呢,53.49391157929321,HKU,Investigator,53,adult
+on,zi4zaa3 zi4zaa3 zi4zaa3 zi4zaa3,53.756750651964104,HKU,Target_Child,53,child
+n sfp on adv n adv n,牛肉 gaa4 am1 am1 am1 am1 好 味 好 味道,50.00102671512762,HKU,Investigator,50,adult
+on co co adv:neg v n sfp,gu4 gu4 gu4 gu4 gu4 ai1 jaa3 未 開 蓋 喎,53.49391157929321,HKU,Investigator,53,adult
+on,am6,55.16540380705969,HKU,Target_Child,55,child
+on on v adv:neg v fil,he1 he1 著 唔 倒 aa3,52.526745929074515,HKU,Target_Child,52,child
+n n adv n on on,橙汁 冰冰 好 味道 am6 jam4 jam4 jam4 jam4,58.066900757715764,HKU,Investigator,58,adult
+on,am6,58.066900757715764,HKU,Investigator,58,adult
+v on adv n,m1 jam1 jam1 jam1 jam1 好 味道,55.06683915480811,HKU,Investigator,55,adult
+pro v pro pro adj pro v:dirc on,佢 喊 咁 你 塞 佢 埋 bi4,55.03398427072425,HKU,Target_Child,55,child
+adv adv:neg v stprt asp on on on on on on stprt,好 唔 開 得 倒 lou3 lou3 lou3 lou3 lou3 lou3 得,55.16540380705969,HKU,Target_Child,55,child
+on,bu4zaat1,55.06683915480811,HKU,Investigator,55,adult
+v v v on fil adj cl,有 冇 玩 bu4zaat1 aa3 細 個,55.06683915480811,HKU,Investigator,55,adult
+v n on,食 蕃茄 am6,60.494055319411075,HKU,Target_Child,60,child
+v loc sfp on,屙 呢度 囉 syu4,55.06683915480811,HKU,Target_Child,55,child
+co on quan n sfp,好啦 si1 好多 水 好多 水 喎,66.49417852522639,HKU,Investigator,66,adult
+on adv n fil,gu1 gu1 gu1 gu1 好 味 aa3,60.494055319411075,HKU,Target_Child,60,child
+on,am1,61.592640505965214,HKU,Target_Child,61,child
+on,am1,65.16560915008522,HKU,Investigator,65,adult
+on on on,gwut6 gwut6 gwut6,65.16560915008522,HKU,Investigator,65,adult
+on adj n fil,jam1 jam1 jam1 jam1 jam1 jam1 jam1 jam1 jam1 好 味 aa3,60.756894392081975,HKU,Investigator,60,adult
+on,gu4,61.6912051582168,HKU,Investigator,61,adult
+co on,哦 m1 m1 m1 m1 m1 m1,67.19850510277418,HKU,Investigator,67,adult
+on,am6 am6 am6,64.95410583379535,HKU,Target_Child,64,child
+on,hi1,26.197663196369536,LeeWongLeung,Investigator,26,adult
+loc on fil,呢度 ngok6ngok6 aa3,25.559046386989465,LeeWongLeung,Mother,25,adult
+on,ngok6ngok6,25.559046386989465,LeeWongLeung,Investigator,25,adult
+on,ngok6ngok6,25.559046386989465,LeeWongLeung,Target_Child,25,child
+on,ngok6ngok6,25.559046386989465,LeeWongLeung,Target_Child,25,child
+on loc,ngok6ngok6 呢度,25.559046386989465,LeeWongLeung,Target_Child,25,child
+on,zi3 zi3,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on on,bu1 bu1,25.559046386989465,LeeWongLeung,Target_Child,25,child
+on,zi4 zi4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on on loc sfp,bu4 bi1 呢度 aa4,25.559046386989465,LeeWongLeung,Mother,25,adult
+on on,bu1 bu1,25.559046386989465,LeeWongLeung,Target_Child,25,child
+adj on on fil,勁 bu1 bu1 aa3,25.559046386989465,LeeWongLeung,Target_Child,25,child
+adj on on fil,勁 bu1 bu1 aa4,25.559046386989465,LeeWongLeung,Investigator,25,adult
+adj on on,勁 bu1 bu1,25.559046386989465,LeeWongLeung,Target_Child,25,child
+on on,bu1 bu1,25.32906219840243,LeeWongLeung,Target_Child,25,child
+on,hi1,25.32906219840243,LeeWongLeung,Investigator,25,adult
+on,hi1,25.32906219840243,LeeWongLeung,Investigator,25,adult
+v n on n sfp,係 咪 嘟嘟 laas1 飛飛 aa1,27.756216760097743,LeeWongLeung,Mother,27,adult
+on on on on,but1 but1 but1 but1,26.197663196369536,LeeWongLeung,Target_Child,26,child
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+n:prop adv:neg adj on,俊俊 唔 好 bu4,30.263455101747468,LeeWongLeung,Mother,30,adult
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+v adv:neg v asp n v adv:neg v on,聽 唔 聽 倒 媽咪 話 唔 准 bu4,30.263455101747468,LeeWongLeung,Investigator,30,adult
+on,bu4,30.263455101747468,LeeWongLeung,Investigator,30,adult
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+adv:neg on,唔 bu4,30.263455101747468,LeeWongLeung,Investigator,30,adult
+on,bu4,30.263455101747468,LeeWongLeung,Target_Child,30,child
+on,zap3,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on,am4,26.197663196369536,LeeWongLeung,Mother,26,adult
+on,am4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on,am4 am4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on,bung4,26.197663196369536,LeeWongLeung,Target_Child,26,child
+asp on,喺度 baak1,23.723279738803672,LeeWongLeung,Mother,23,adult
+on,m4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on,am4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on on on,ding1 dong1 ding1,32.033511981765535,LeeWongLeung,Target_Child,32,child
+on on,ding1 ding1,31.427750056469332,LeeWongLeung,Target_Child,31,child
+on,ging4gong4,26.230518080453397,LeeWongLeung,Investigator,26,adult
+on on on,ding1 dong1 ding1,32.033511981765535,LeeWongLeung,Target_Child,32,child
+on on on,ding1 dong1 ding1,32.033511981765535,LeeWongLeung,Target_Child,32,child
+wh sfp sfp on on on,咩 嚟 架 ding1 dong1 ding1,32.033511981765535,LeeWongLeung,Investigator,32,adult
+on on on,ding1 dong1 ding1,32.033511981765535,LeeWongLeung,Target_Child,32,child
+on on,ging4gung4 ging4gung4,30.263455101747468,LeeWongLeung,Investigator,30,adult
+on,gwung4,26.230518080453397,LeeWongLeung,Investigator,26,adult
+on,gwung4,26.230518080453397,LeeWongLeung,Investigator,26,adult
+on,am4,28.131994496806914,LeeWongLeung,Investigator,28,adult
+on n,hi1 兔仔,24.263331895932154,LeeWongLeung,Target_Child,24,child
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on on,gok4 gok4,26.9204706462145,LeeWongLeung,Target_Child,26,child
+on on,ging4gung4 ging4gung4,30.263455101747468,LeeWongLeung,Investigator,30,adult
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on on,hi1 hi1,29.756257828702847,LeeWongLeung,Target_Child,29,child
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on on,ging4gung4 ging4gung4,31.427750056469332,LeeWongLeung,Investigator,31,adult
+on,guk4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on,hi1,28.131994496806914,LeeWongLeung,Target_Child,28,child
+on,hi1,25.32906219840243,LeeWongLeung,Investigator,25,adult
+on,hi1,25.32906219840243,LeeWongLeung,Target_Child,25,child
+on,be6,29.756257828702847,LeeWongLeung,Target_Child,29,child
+on,be6,29.756257828702847,LeeWongLeung,Target_Child,29,child
+on,am4,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on on on on,doeng1 doeng1 doeng1 doeng1,23.953263927390704,LeeWongLeung,Target_Child,23,child
+on on on,gok4 gok4 gok4,33.230661820571264,LeeWongLeung,Cousin,33,adult
+on,am4,23.953263927390704,LeeWongLeung,Target_Child,23,child
+on,am4,32.033511981765535,LeeWongLeung,Investigator,32,adult
+on,am4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+on num n,bom4 一 聲,27.756216760097743,LeeWongLeung,Mother,27,adult
+on on on on,git4 git4 git4 git4,26.690486457627465,LeeWongLeung,Investigator,26,adult
+on on on,git4 git4 git4,26.690486457627465,LeeWongLeung,Target_Child,26,child
+quan adv on on on asp v,全部 都 git4 git4 git4 喺度 笑,26.690486457627465,LeeWongLeung,Investigator,26,adult
+on,bung1,29.099160147025607,LeeWongLeung,Target_Child,29,child
+on on,bu3 bi1,28.131994496806914,LeeWongLeung,Target_Child,28,child
+on on on on,bi1 bu3 bi1 bu3,30.263455101747468,LeeWongLeung,Target_Child,30,child
+on,but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on,but but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on,but but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on,but but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on,but but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on,but but,27.756216760097743,LeeWongLeung,Investigator,27,adult
+on on on on adv fil,gak6 dak6 gak6 dak6 咁樣 aa3,32.263496170352575,LeeWongLeung,Target_Child,32,child
+on,am4,27.131973962504365,LeeWongLeung,Target_Child,27,child
+on,caak3,27.131973962504365,LeeWongLeung,Target_Child,27,child
+on v asp pro cl n,om1 食 咗 你 個 頭,32.592045011191196,LeeWongLeung,Investigator,32,adult
+on,si3,24.52617096860305,LeeWongLeung,Investigator,24,adult
+on,cit3,24.52617096860305,LeeWongLeung,Investigator,24,adult
+adv:neg on fil,唔 呵 aa3,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on on on on on,but6 but6 but6 but1 but1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on on on,hi1 hi1 hi1,32.592045011191196,LeeWongLeung,Investigator,32,adult
+on,am4,33.230661820571264,LeeWongLeung,Investigator,33,adult
+on v,am1 提 tin2,23.42758578204891,LeeWongLeung,Target_Child,23,child
+v v on fil v,喊 到 bi1li1baa1laa1 aa3 冇,32.033511981765535,LeeWongLeung,Mother,32,adult
+on fil,bi1li1baa1laa1 aa3,32.033511981765535,LeeWongLeung,Investigator,32,adult
+adv:neg v on fil,唔 係 bi1li1zaa1laa1 aa3,32.033511981765535,LeeWongLeung,Target_Child,32,child
+co on on,i1 gung3 gung3,29.46056387194809,LeeWongLeung,Target_Child,29,child
+on,bi1li1baa1laa1,32.033511981765535,LeeWongLeung,Investigator,32,adult
+v on,係 di1di1di1di1,32.033511981765535,LeeWongLeung,Investigator,32,adult
+adv:neg v on,唔 係 bi1bi1daa1laa1,32.033511981765535,LeeWongLeung,Target_Child,32,child
+on on,au3 au3,33.230661820571264,LeeWongLeung,Investigator,33,adult
+on on n v n sfp,but1 but1 火車 倒 站 lu3,24.52617096860305,LeeWongLeung,Investigator,24,adult
+on,baak1,28.03342984455533,LeeWongLeung,Investigator,28,adult
+v on on on on on on dem cl adv co,搭 cun4 cun4 cun4 cun4 cun4 cun4 嗰 啲 好 唔好啦,24.296186780016015,LeeWongLeung,Aunt,24,adult
+on v pro v v v adj quan,bing4bing1 bam4bam4 你 睇 整 到 高 嗮,27.0991190784205,LeeWongLeung,Father,27,adult
+on,am1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,am1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,am1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,am1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,am1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,aam1,26.164808312285672,LeeWongLeung,Target_Child,26,child
+on on on adv,bom3 bom3 bom3 咁樣,28.460543337645536,LeeWongLeung,Investigator,28,adult
+on,bom1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on,am1,29.46056387194809,LeeWongLeung,Target_Child,29,child
+v on fil,係 呵 aa3,29.46056387194809,LeeWongLeung,Investigator,29,adult
+on on,bit1 bit1,23.887554159222983,LeeWongLeung,Investigator,23,adult
+on,bu4zaak1,22.986098277172015,LeeWongLeung,Target_Child,22,child
+on,syu4,28.03342984455533,LeeWongLeung,Investigator,28,adult
+sfp sfp cl n on on on n adj sfp adv v fil,laa4 呢 個 公雞 go4 go1 go3 天 光 囉 咁樣 叫 aa3,32.263496170352575,LeeWongLeung,Father,32,adult
+on on,git1 gu3,24.52617096860305,LeeWongLeung,Target_Child,24,child
+on on fil,git1 gu3 aa4,24.52617096860305,LeeWongLeung,Investigator,24,adult
+on,cit3 cit3 cit3 cit3 cit3,29.033450378857882,LeeWongLeung,Investigator,29,adult
+on,si3,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on,ci3,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on,si3,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on v fil,mieu1 救 aa3,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on on,am1 am1,23.887554159222983,LeeWongLeung,Target_Child,23,child
+on,am4,23.887554159222983,LeeWongLeung,Investigator,23,adult
+on on,but1 but1,27.0991190784205,LeeWongLeung,Target_Child,27,child
+v v on on fil,開 車 but1 but1 aa3,27.0991190784205,LeeWongLeung,Target_Child,27,child
+on on on on,bu1 bu1 bu1 bu1,27.0991190784205,LeeWongLeung,Target_Child,27,child
+on on v n,but1 but1 開 車車,27.0991190784205,LeeWongLeung,Target_Child,27,child
+on on on on,cit3 cit3 cit3 cit3,29.033450378857882,LeeWongLeung,Investigator,29,adult
+on on,bi3bu1 bi3bu1,29.033450378857882,LeeWongLeung,Investigator,29,adult
+on on on,hi1 hi1 hi1,30.329164869915193,LeeWongLeung,Sister,30,adult
+on,baak1,22.986098277172015,LeeWongLeung,Investigator,22,adult
+on on,mieu1 mieu1,28.460543337645536,LeeWongLeung,Investigator,28,adult
+adv:neg on,唔 zaak1,24.52617096860305,LeeWongLeung,Target_Child,24,child
+on,mieu1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on,hi1,30.329164869915193,LeeWongLeung,Sister,30,adult
+on on on on,bi1 bi1 but1 but1,29.427708987864225,LeeWongLeung,Target_Child,29,child
+on,mieu1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on on on on on,cit3 cit3 cit3 cit3 bu1,31.06634633154685,LeeWongLeung,Investigator,31,adult
+on on,fu3 fu3,29.46056387194809,LeeWongLeung,Target_Child,29,child
+on,wu3,29.46056387194809,LeeWongLeung,Target_Child,29,child
+on on,am1 am1,29.46056387194809,LeeWongLeung,Target_Child,29,child
+fil on,aa1 am1,29.46056387194809,LeeWongLeung,Target_Child,29,child
+v n v asp on on fil pro adv v,係 咪 跌 咗 bi1 bu3 aa3 你 頭先 話,30.59200394258609,LeeWongLeung,Investigator,30,adult
+on,bu1,27.0991190784205,LeeWongLeung,Target_Child,27,child
+on,lin1,29.6248382923674,LeeWongLeung,Target_Child,29,child
+pro on on pro sfp sfp,你 呵 呵 佢 gaa1 嘛,26.493357153124293,LeeWongLeung,Investigator,26,adult
+on on,bu4zaak1 bu4zaak1,25.263352430234708,LeeWongLeung,Father,25,adult
+on on n fil,i1 i1 聲 aa3,30.78913324708926,LeeWongLeung,Target_Child,30,child
+on on n sfp,i1 i1 聲 aa4,30.78913324708926,LeeWongLeung,Investigator,30,adult
+on on n co,i1 i1 聲 哦,30.78913324708926,LeeWongLeung,Target_Child,30,child
+adv v v on on n pro v sfp,仲 有 冇 i1 i1 聲 你 聽 haa5,30.78913324708926,LeeWongLeung,Investigator,30,adult
+on,am4,30.59200394258609,LeeWongLeung,Investigator,30,adult
+on,wu1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on on,but1 but1,27.0991190784205,LeeWongLeung,Investigator,27,adult
+on on on,am6 am6 am6,26.164808312285672,LeeWongLeung,Investigator,26,adult
+v v on on on on on,dap6 dap6 bap6 bap6 bap6 bap6 bap6,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on v quan,am6 飲 嗮,26.164808312285672,LeeWongLeung,Investigator,26,adult
+on,am1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on on,hi1 hi1,30.329164869915193,LeeWongLeung,Sister,30,adult
+on on stprt sfp v asp,caak4 caak4 得 喇 影 完,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on on,bam4 bam4,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on on on on,bi1 bu3 bi1 bu3,30.59200394258609,LeeWongLeung,Investigator,30,adult
+on on on,bam4 bam4 baan4,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on,beou1,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on,beou1,36.26357830756278,LeeWongLeung,Target_Child,36,child
+on,am1,28.460543337645536,LeeWongLeung,Target_Child,28,child
+on,si3,29.033450378857882,LeeWongLeung,Target_Child,29,child
+on,beou1,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on,bom3,36.26357830756278,LeeWongLeung,Investigator,36,adult
+int on,嘩 bom3,36.26357830756278,LeeWongLeung,Target_Child,36,child
+on,bom4,36.26357830756278,LeeWongLeung,Investigator,36,adult
+co on,haai1 bom4,36.26357830756278,LeeWongLeung,Target_Child,36,child
+on,bom3,36.26357830756278,LeeWongLeung,Target_Child,36,child
+on,baan3,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on,am1,30.59200394258609,LeeWongLeung,Target_Child,30,child
+on on on on on on,cit3 cit3 cit3 cit3 cit3 cit3,28.03342984455533,LeeWongLeung,Investigator,28,adult
+on n on,mieu1 wou1wou1 mieu1,30.59200394258609,LeeWongLeung,Target_Child,30,child
+on,mieu1,30.59200394258609,LeeWongLeung,Target_Child,30,child
+adv on co num num num num,一齊 捧捧 aa3 一 二 三 四,36.26357830756278,LeeWongLeung,Target_Child,36,child
+pro v pro adv stprt sfp on on co,你 but1 我 先 得 gaak3 but1 but1 係喇,35.26355777326023,LeeWongLeung,Investigator,35,adult
+on,wou1,30.59200394258609,LeeWongLeung,Target_Child,30,child
+on,peou1,36.26357830756278,LeeWongLeung,Investigator,36,adult
+co on on on on on,hm1 baan4 baan4 baan4 baan4 baan4,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on on,bam3 bam3,35.26355777326023,LeeWongLeung,Investigator,35,adult
+on,hi1,29.6248382923674,LeeWongLeung,Target_Child,29,child
+on on on,zit1 zit1 zit1,31.06634633154685,LeeWongLeung,Target_Child,31,child
+v n on,彈 琴琴 tit1,26.164808312285672,LeeWongLeung,Target_Child,26,child
+on on,zit1 zit1,31.06634633154685,LeeWongLeung,Target_Child,31,child
+on,am3,30.329164869915193,LeeWongLeung,Investigator,30,adult
+on,m4,29.6248382923674,LeeWongLeung,Investigator,29,adult
+adj on on on,暗 jam3 jam3 jam3,35.26355777326023,LeeWongLeung,Investigator,35,adult
+on on on,hi1 hi1 hi1,35.26355777326023,LeeWongLeung,Investigator,35,adult
+on,wu2,27.0991190784205,LeeWongLeung,Target_Child,27,child
+adv:neg v pro v wh on on,唔 知 你 講 乜嘢 i4i4 wu4wu4,38.52645844883878,LeeWongLeung,Investigator,38,adult
+on on n sfp,but1 but1 聲 架,26.493357153124293,LeeWongLeung,Investigator,26,adult
+on on on on pro sfp,but1 but1 but1 but1 咁 架,26.493357153124293,LeeWongLeung,Investigator,26,adult
+on on on,but1 but1 but1,26.493357153124293,LeeWongLeung,Target_Child,26,child
+on co co,but1but1 嘩 m3 xxx,36.26357830756278,LeeWongLeung,Target_Child,36,child
+on on n v n fil,it1 it1 聲 係 咪 aa3,30.78913324708926,LeeWongLeung,Investigator,30,adult
+on,hi1 hi1 hi1,30.329164869915193,LeeWongLeung,Sister,30,adult
+on,hi1 hi1 hi1,30.329164869915193,LeeWongLeung,Target_Child,30,child
+on,dut1,31.69058912914023,LeeWongLeung,Target_Child,31,child
+on,dut1,31.69058912914023,LeeWongLeung,Target_Child,31,child
+on,dut1,31.69058912914023,LeeWongLeung,Investigator,31,adult
+on,dut1,31.69058912914023,LeeWongLeung,Investigator,31,adult
+on,am4,34.427811659376985,LeeWongLeung,Target_Child,34,child
+on,dut1,31.69058912914023,LeeWongLeung,Investigator,31,adult
+on,bom4,30.78913324708926,LeeWongLeung,Investigator,30,adult
+pro v n n on n sfp,佢 講 嘢 咪 wu4wu2 聲 囉,38.52645844883878,LeeWongLeung,Investigator,38,adult
+on,wou1,40.46078974927617,LeeWongLeung,Target_Child,40,child
+v n n on on on,屙 屎 屎 hi1 hi1 hi1,33.92061438633237,LeeWongLeung,Sister,33,adult
+on,hi1 xxx,33.92061438633237,LeeWongLeung,Target_Child,33,child
+on,hi1,33.92061438633237,LeeWongLeung,Investigator,33,adult
+on,hi1,30.329164869915193,LeeWongLeung,Sister,30,adult
+co v sfp v sfp on,laa4 食 喇 食 喇 aam4,35.0335735846732,LeeWongLeung,Investigator,35,adult
+on,aam4,35.0335735846732,LeeWongLeung,Investigator,35,adult
+on on on v adv:neg quan fil,jam3 jam3 jam3 食 唔 嗮 aa3,36.26357830756278,LeeWongLeung,Investigator,36,adult
+on on on,gok3 gok1 gu3,33.92061438633237,LeeWongLeung,Investigator,33,adult
+conn pro on v pro v quan pro adv co co,不如 我 zi4zi4zaa4zaa4 幫 你 寫 嗮 佢 仲 好啦 好唔好啦,40.46078974927617,LeeWongLeung,Investigator,40,adult
+on on,bi1 bu3 bi1 bu3,33.460646009158296,LeeWongLeung,Target_Child,33,child
+on on,bi1 bu3 bi1 bu3,33.460646009158296,LeeWongLeung,Investigator,33,adult
+on on,bi1 bu3 bi1 bu3,33.460646009158296,LeeWongLeung,Investigator,33,adult
+on on,bi1 bu3 bi1 bu3,33.460646009158296,LeeWongLeung,Target_Child,33,child
+on on,bi1 bu3 bi1 bu3,33.460646009158296,LeeWongLeung,Target_Child,33,child
+adj on on on,暗 jam3 jam3 jam3,35.26355777326023,LeeWongLeung,Investigator,35,adult
+adj on on on,暗 jam3 jam3 jam3,35.26355777326023,LeeWongLeung,Target_Child,35,child
+adv adj sfp adv v cl n adv adj sfp sfp pro v asp sfp on on,好 得意 架 仲 有 個 男仔 好 得意 架 好笑 架 我 睇 過 喇 hi1 hi1,40.46078974927617,LeeWongLeung,Sister,40,adult
+on,hi1 xxx,33.92061438633237,LeeWongLeung,Investigator,33,adult
+on pro adv:neg v v wh,wou1 你 唔 知 係 邊個,40.46078974927617,LeeWongLeung,Target_Child,40,child
+on,gong4long4 gong4long4 gong4long4,35.0335735846732,LeeWongLeung,Sister,35,adult
+on on v sfp on,hi1 hi1 係 aa1 hi1,40.46078974927617,LeeWongLeung,Target_Child,40,child
+v n v v sfp co v on on v asp fil,吹 波波 打 破 了 嘩 爆 bak1 bak1 爛 咗 aa3,35.26355777326023,LeeWongLeung,Target_Child,35,child
+pro v asp on on n sfp,你 聽 倒 wou1 wou1 聲 aa4,35.0335735846732,LeeWongLeung,Investigator,35,adult
+on v,hi1 笑,37.52643791453623,LeeWongLeung,Target_Child,37,child
+on on,cik4 caak4,37.52643791453623,LeeWongLeung,Target_Child,37,child
+on,aa6,26.197663196369536,LeeWongLeung,Investigator,26,adult
+v on on,笑 cik4 caak4,37.52643791453623,LeeWongLeung,Target_Child,37,child
+on,hi1,35.953510339021335,LeeWongLeung,Sister,35,adult
+on,bom1,35.953510339021335,LeeWongLeung,Investigator,35,adult
+v n on on n fil,係 咪 saa4 saa2 聲 aa3,40.72362882194706,LeeWongLeung,Investigator,40,adult
+on,wu1 xxx,33.92061438633237,LeeWongLeung,Target_Child,33,child
+on,am4,28.887656830735743,LeeWongLeung,Investigator,28,adult
+on,baang4,26.329082732704983,LeeWongLeung,Target_Child,26,child
+on,baang4,26.329082732704983,LeeWongLeung,Target_Child,26,child
+on,du1,29.591983408283536,LeeWongLeung,Target_Child,29,child
+on on on,am3 nam2 nam2,38.19790960800017,LeeWongLeung,Target_Child,38,child
+adj stprt on n v asp pro vprt,快 啲 gu4gu2 聲 飲 咗 佢 先,35.0335735846732,LeeWongLeung,Mother,35,adult
+on on on,bu4 bu4 bu4,27.98620094868478,LeeWongLeung,Target_Child,27,child
+pro v pro cl n on,我 食 你 個 鼻哥 am4,39.36220456272203,LeeWongLeung,Target_Child,39,child
+on,bon3,28.887656830735743,LeeWongLeung,Target_Child,28,child
+co on on n v asp cl n sfp,laa4 gut4 gut4 聲 飲 咗 啲 奶 先,40.72362882194706,LeeWongLeung,Mother,40,adult
+n n wh on n wh v sfp,wou1wou1 狗 點樣 guk4 雞 點樣 叫 架,27.06626419433664,LeeWongLeung,Investigator,27,adult
+on on on on,gut4 gut1 gut1 gut3,27.06626419433664,LeeWongLeung,Investigator,27,adult
+on,am1,30.033470913160436,LeeWongLeung,Investigator,30,adult
+co on on on on n v:aux v:dirc n sfp,ou1 bok3 bok3 bok3 bok3 婆婆 會 上 車 囉,26.197663196369536,LeeWongLeung,Investigator,26,adult
+on on on pro adv loc adj,bom4 bom4 bom4 我 都 呢度 一樣,39.36220456272203,LeeWongLeung,Target_Child,39,child
+pro pro sfp on on on,我 bom4 你 喇 bom3 bom3 bom3,39.36220456272203,LeeWongLeung,Target_Child,39,child
+v sfp pro on on on,係 好玩 囉 bom4 你 bom3 bom3 bom3,39.36220456272203,LeeWongLeung,Target_Child,39,child
+on on,ding1 dong5,33.92061438633237,LeeWongLeung,Target_Child,33,child
+v cl fil n adv on num n v asp v:dirc n sfp,小心 啲 aa3 咪 陣間 bom4 一 聲 跌 咗 落 地下 囉,31.164910983798435,LeeWongLeung,Investigator,31,adult
+on,hi1 xxx,33.92061438633237,LeeWongLeung,Target_Child,33,child
+v on,因住 ping1paang1,38.4278937965872,LeeWongLeung,Target_Child,38,child
+on num n sfp,baak1 一 聲 先,26.329082732704983,LeeWongLeung,Investigator,26,adult
+co sfp cl sfp adv v asp pro adv on num n n stprt sfp,laa4 呢 隻 呢 咁樣 整 住 佢 跟住 baak1 一 聲 咪 得 囉,30.033470913160436,LeeWongLeung,Investigator,30,adult
+v n sfp v sfp adv on on adv sfp,冇 車轆 架 車 呢 就 gwung4gwung4 gwung4gwung4 咁樣 嘅,40.72362882194706,LeeWongLeung,Investigator,40,adult
+on pro n prep pro sfp pro adv pro v sfp,hi1 你 爸爸 俾 我 架 我 今日 自己 搵 架,26.197663196369536,LeeWongLeung,Sister,26,adult
+on on on,dut1 dut1 dut1,24.52617096860305,LeeWongLeung,Investigator,24,adult
+on on on,dyut1 dyut1 dyut1,28.887656830735743,LeeWongLeung,Investigator,28,adult
+on,am4,25.49333661882174,LeeWongLeung,Mother,25,adult
+on,wou4wou4,31.164910983798435,LeeWongLeung,Target_Child,31,child
+on,aau1,31.164910983798435,LeeWongLeung,Target_Child,31,child
+on on on sfp sfp,gut4 gut1 gut1 gu3 囉,31.657734245056368,LeeWongLeung,Investigator,31,adult
+on on on on on on,ngap3 ngap3 ngep3 ngep3 ngep3 ngep3,31.657734245056368,LeeWongLeung,Investigator,31,adult
+on on pro fil v n fil,ngep3 ngep3 咁 aa4 係 咪 aa3,31.657734245056368,LeeWongLeung,Target_Child,31,child
+on,hi1,27.29624838292367,LeeWongLeung,Target_Child,27,child
+on,haau1,31.164910983798435,LeeWongLeung,Target_Child,31,child
+on,haau1,31.164910983798435,LeeWongLeung,Target_Child,31,child
+on on on,dam6 dam3 dam1,27.29624838292367,LeeWongLeung,Investigator,27,adult
+on,dung1,25.95330499599581,LeeWongLeung,Investigator,25,adult
+on on on,dan4 dan1 dan1,27.29624838292367,LeeWongLeung,Target_Child,27,child
+on,ci3,25.95330499599581,LeeWongLeung,Investigator,25,adult
+v n v n on,jingle bell jingle bell ding,27.29624838292367,LeeWongLeung,Investigator,27,adult
+on v asp v:dirc n pro n v sfp,bam3 跌 咗 落 地下 咁 咪 爛 囉,34.592086079796296,LeeWongLeung,Investigator,34,adult
+co co co on on on v asp n sfp,i3 i3 i3 ci3 ci3 ci3 抌 咗 媽媽 aa4,29.132015031109468,LeeWongLeung,Investigator,29,adult
+on on on on on on,bi1 bu3 bi1 bu3 bi1 bu3,30.13203556541202,LeeWongLeung,Target_Child,30,child
+on on on on,cit3 cit3 cit3 cit3,25.95330499599581,LeeWongLeung,Investigator,25,adult
+on,dut1 dut1 dut1 dut1 dut1,24.52617096860305,LeeWongLeung,Investigator,24,adult
+on on on,ep3 ep3 ep3,31.657734245056368,LeeWongLeung,Target_Child,31,child
+sfp cl on on fil,呢 個 ep6 ep6 aa3,31.657734245056368,LeeWongLeung,Target_Child,31,child
+on on on,gut4 gu1 gu3,31.657734245056368,LeeWongLeung,Target_Child,31,child
+on on on on,bi1 bu3 bi1 bu3,30.13203556541202,LeeWongLeung,Target_Child,30,child
+on on,bi1 buk6,28.2305591490585,LeeWongLeung,Target_Child,28,child
+v on on,晌 but1 but1,28.69052752623257,LeeWongLeung,Investigator,28,adult
+on,am1,29.6248382923674,LeeWongLeung,Target_Child,29,child
+on on,wu1 wu1,26.854760878046775,LeeWongLeung,Target_Child,26,child
+on on on,guk2 guk1 guk1,26.854760878046775,LeeWongLeung,Target_Child,26,child
+on on on on fil,bi1 bu3 bi1 bu3 aa4,24.52617096860305,LeeWongLeung,Mother,24,adult
+on on on,zyut1 zyut1 zyut1,38.59216821700651,LeeWongLeung,Sister,38,adult
+on,haa5,25.49333661882174,LeeWongLeung,Investigator,25,adult
+pro pro v:aux n sfp cl sfp on,咁 我 要 愛 呢 個 啦 am6,29.132015031109468,LeeWongLeung,Investigator,29,adult
+on on on on,baa6 baa6 baa6 baa6,28.2305591490585,LeeWongLeung,Target_Child,28,child
+on on,be1 be1,24.52617096860305,LeeWongLeung,Target_Child,24,child
+on on on,be1 be1 be1,24.52617096860305,LeeWongLeung,Target_Child,24,child
+on on,bu1 bu1,24.52617096860305,LeeWongLeung,Target_Child,24,child
+on on on on on,bam3 bam3 bam3 bam3 bam3,26.854760878046775,LeeWongLeung,Target_Child,26,child
+on on on on on,ding1 ding1 ding1 ding1 ding1,26.854760878046775,LeeWongLeung,Investigator,26,adult
+co co on on on on,ai1 jo1 gi6 gi6 gi6 gi6,29.132015031109468,LeeWongLeung,Investigator,29,adult
+on on on on,gu4 gu1 gu1 gu3,26.099098544117947,LeeWongLeung,Mother,26,adult
+on,bom2,30.59200394258609,LeeWongLeung,Investigator,30,adult
+on on on on,gut4 gut1 gut1 gut3,26.394792500872708,LeeWongLeung,Investigator,26,adult
+on on on,zi1 zi1 zi1,28.2305591490585,LeeWongLeung,Mother,28,adult
+pro adv:neg on pro sfp,你 唔 呵 我 gaa4,28.69052752623257,LeeWongLeung,Investigator,28,adult
+on,bu1,38.59216821700651,LeeWongLeung,Investigator,38,adult
+on on on on on,ging4 gung4 ging4 gung4 gu1,25.033368241647672,LeeWongLeung,Target_Child,25,child
+on on on on,ging4 gung4 ging4 gung4,25.033368241647672,LeeWongLeung,Target_Child,25,child
+sfp cl adv:neg on on on on cl sfp cl,呢 啲 唔 ging4 gung4 ging4 gung4 架 呢 啲,25.033368241647672,LeeWongLeung,Investigator,25,adult
+co pro cl on on n sfp,哦 你 個 ging3 gung4 筆袋 呢,25.033368241647672,LeeWongLeung,Investigator,25,adult
+on on,ging6 gung6,25.033368241647672,LeeWongLeung,Investigator,25,adult
+pro v v adv dem on n fil,我 聽 倒 頭先 邊 bi1bu3 聲 aa3,37.69071233495554,LeeWongLeung,Target_Child,37,child
+on on,bok6 bok6,28.2305591490585,LeeWongLeung,Target_Child,28,child
+on on on v v:dirc v n,kin2 入 轉 頭 syu4 syu4 syu4 揭 入 轉 頭,30.296309985831332,LeeWongLeung,Investigator,30,adult
+on,gu4,31.460604940553193,LeeWongLeung,Investigator,31,adult
+on on on on,bap6 ba6p bap6 bap6,32.197786402184846,LeeWongLeung,Investigator,32,adult
+on,am4,29.197724799277193,LeeWongLeung,Target_Child,29,child
+on on on on,ge6 go6 ge6 go6,35.526396845931124,LeeWongLeung,Target_Child,35,child
+n v on,豬 叫 me1,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on,me1,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on on on,wou1 wou1 wou1,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on on on adv,xxx wou1 wou1 wou1 咁樣,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on on,mieu1 mieu1,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on,mieu1,32.197786402184846,LeeWongLeung,Investigator,32,adult
+on on v,bi1 bu1 叫,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on on,bi1 bu3,32.197786402184846,LeeWongLeung,Target_Child,32,child
+on on wh v v sfp,wi1wu3 wi1wu3 咩 車 嚟 架,28.69052752623257,LeeWongLeung,Investigator,28,adult
+pro adv v asp on sfp,你 又 見 倒 bi1bu3 喎,33.854904618164646,LeeWongLeung,Investigator,33,adult
+on on on on on on,bom3 bom3 bom3 bom3 bom3 bom3,27.920491180517054,LeeWongLeung,Target_Child,27,child
+pro loc on,咁 呢度 we4,35.1978480050925,LeeWongLeung,Investigator,35,adult
+pro on v n sfp conn,咁 am6 食 香蕉 啦 不如,30.13203556541202,LeeWongLeung,Investigator,30,adult
+on,am4,31.460604940553193,LeeWongLeung,Investigator,31,adult
+on on,but1 but1,38.65787798517423,LeeWongLeung,Investigator,38,adult
+on on,but1 but1,38.65787798517423,LeeWongLeung,Investigator,38,adult
+on,am4,35.920655454937474,LeeWongLeung,Investigator,35,adult
+on on on on on,bit1 bit1 bit1 bit1 bit1,30.59200394258609,LeeWongLeung,Investigator,30,adult
+on,am4,38.65787798517423,LeeWongLeung,Investigator,38,adult
+on on on,wou1 ou1 ou1,32.197786402184846,LeeWongLeung,Investigator,32,adult
+co on on sfp,ji1 ji1 o1o1 囉,30.59200394258609,LeeWongLeung,Investigator,30,adult
