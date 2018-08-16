@@ -18,7 +18,7 @@ header:
   image: '2018/foguangshan.jpg'
 ---
 
-In an [earlier post](https://www.thomasvanhoey.com/post/wrapping-up-2017-ii/),  I have asked you guys why you are visiting this blog. 
+In an [earlier post](https://www.thomasvanhoey.com/post/wrapping-up-2017-ii/), I have asked you guys why you are visiting this blog. 
 If you feel like contributing to my informal study, please do so now by filling out this questionnaire.
 **If you just want to read and watch pictures, what most of the answers indicated, just keep scrolling down! Because this time we've got Kaohsiung in store!**
 
