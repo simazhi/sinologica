@@ -14,7 +14,7 @@
     
     <url>
     
-      <loc>/post/big-hero-city/</loc>
+      <loc>/post/big-hero-city-kaohsiung/</loc>
       <lastmod>2018-08-16T00:00:00+00:00</lastmod>
     </url>
     
@@ -599,14 +599,6 @@
     
     <url>
     
-      <loc>/post/2018-08-16-visitors/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/publication_types/6/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -717,8 +709,8 @@
     
     <url>
     
-      <loc>/tags/belgi%C3%AB/</loc>
-      <lastmod>2017-08-24T06:34:14+00:00</lastmod>
+      <loc>/categories/belgi%C3%AB/</loc>
+      <lastmod>2016-05-30T14:24:33+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -727,8 +719,8 @@
     
     <url>
     
-      <loc>/categories/belgi%C3%AB/</loc>
-      <lastmod>2016-05-30T14:24:33+00:00</lastmod>
+      <loc>/tags/belgi%C3%AB/</loc>
+      <lastmod>2017-08-24T06:34:14+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -758,7 +750,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2018-04-12T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1028,7 +1020,7 @@
     <url>
     
       <loc>/tags/gaoxiong/</loc>
-      <lastmod>2015-09-05T12:23:45+00:00</lastmod>
+      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1147,7 +1139,7 @@
     
     <url>
     
-      <loc>/tags/huangshan/</loc>
+      <loc>/categories/huangshan/</loc>
       <lastmod>2013-06-27T07:22:04+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1157,7 +1149,7 @@
     
     <url>
     
-      <loc>/categories/huangshan/</loc>
+      <loc>/tags/huangshan/</loc>
       <lastmod>2013-06-27T07:22:04+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1477,7 +1469,7 @@
     
     <url>
     
-      <loc>/tags/ningbo/</loc>
+      <loc>/categories/ningbo/</loc>
       <lastmod>2012-10-31T13:40:23+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1487,7 +1479,7 @@
     
     <url>
     
-      <loc>/categories/ningbo/</loc>
+      <loc>/tags/ningbo/</loc>
       <lastmod>2012-10-31T13:40:23+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1587,8 +1579,8 @@
     
     <url>
     
-      <loc>/tags/reisjes/</loc>
-      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
+      <loc>/categories/reisjes/</loc>
+      <lastmod>2015-09-04T20:32:59+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1597,8 +1589,8 @@
     
     <url>
     
-      <loc>/categories/reisjes/</loc>
-      <lastmod>2015-09-04T20:32:59+00:00</lastmod>
+      <loc>/tags/reisjes/</loc>
+      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1637,7 +1629,7 @@
     
     <url>
     
-      <loc>/tags/shanghai/</loc>
+      <loc>/categories/shanghai/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1647,7 +1639,7 @@
     
     <url>
     
-      <loc>/categories/shanghai/</loc>
+      <loc>/tags/shanghai/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1707,7 +1699,7 @@
     
     <url>
     
-      <loc>/tags/suzhou/</loc>
+      <loc>/categories/suzhou/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1717,7 +1709,7 @@
     
     <url>
     
-      <loc>/categories/suzhou/</loc>
+      <loc>/tags/suzhou/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1767,16 +1759,6 @@
     
     <url>
     
-      <loc>/tags/taipei/</loc>
-      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/categories/taipei/</loc>
       <lastmod>2016-05-31T15:40:48+00:00</lastmod>
       <priority>0</priority>
@@ -1787,8 +1769,8 @@
     
     <url>
     
-      <loc>/tags/taiwan/</loc>
-      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
+      <loc>/tags/taipei/</loc>
+      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1799,6 +1781,16 @@
     
       <loc>/categories/taiwan/</loc>
       <lastmod>2016-07-15T15:32:28+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/taiwan/</loc>
+      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
