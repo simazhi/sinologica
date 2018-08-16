@@ -17,7 +17,7 @@ tags:
 slug: big-hero-city
 header:
   caption: ''
-  image: ''
+  image: '2018/foguangshan.jpg'
 ---
 
 In an [earlier post](https://www.thomasvanhoey.com/post/wrapping-up-2017-ii/), I have asked you guys why you are visiting this blog. 
