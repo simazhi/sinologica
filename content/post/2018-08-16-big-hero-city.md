@@ -2,12 +2,19 @@
 title: Big Hero City
 author: Thomas Van Hoey
 date: '2018-08-16'
-slug: big-hero-city
 categories:
   - Blog
 tags:
-  - visitors
   - Kaohsiung
+  - visitors
+  - Taiwan
+  - winter
+  - temple
+  - Buddhism
+  - museum
+  - reisjes
+  - summer school
+slug: big-hero-city
 header:
   caption: ''
   image: ''
