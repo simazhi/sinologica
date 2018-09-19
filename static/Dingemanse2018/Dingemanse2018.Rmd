@@ -73,7 +73,22 @@ options(htmltools.dir.version = FALSE)
 
 # Terminology 
 
-INSERT SCRIPT HERE
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width='100%'}
+library(tidyverse)
+library(lingtypology)
+
+df <- read_csv("https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv")
+
+map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            #color= c("yellowgreen", "navy"),
+            #shape = TRUE,
+            label = df$language
+            )
+```
+
 
 
 
@@ -451,6 +466,19 @@ One common argument that stresses the importance of including ideophones in ling
 .font80[
 > "Precise numbers are less important than what they imply about grammatical significance and functional load. While minor word classes may be dismissed by some as marginal or of limited importance to linguistic analysis, it is much harder to make such arguments for languages with thousands of ideophones." 
 
+]
+
+---
+
+# The 2000s and 2010s: Typology 
+
+## Chinese inventory
+
+.ru-blockquote[
+* my database project was stuck at 784 types for a very long time.
+* since this summer I (and Arthur Thompson from HKU) are working on getting all the ideophones from Kroll .lit[(2015)], *A Student's Dictionary of Classical and Medieval Chinese*
+* combining that database and this dictionary project seems to yield about 2000 ideophones in total -- although we still need to discuss the validity.
+* this database can be analyzed and also used for corpus-based explorations
 ]
 
 ---
