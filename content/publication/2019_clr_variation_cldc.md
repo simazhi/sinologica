@@ -1,5 +1,5 @@
 +++
-title = "Ideophones in Chinese classics: their development and distribution from a variationist perspective"
+title = "Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration"
 date = "2018-01-01"
 
 
@@ -18,8 +18,8 @@ authors = ["Thomas Van Hoey", "Chiarung Lu"]
 publication_types = ["6"]
 
 # Publication name and optional abbreviated version.
-publication = "*Proceedings of CLDC 8*. (*Cognitive Linguistics Research*)"
-publication_short = "(forthcoming)"
+publication = "*Cognitive Linguistics Research* 63"
+publication_short = "2019"
 
 # Abstract and optional shortened version.
 abstract = ""
