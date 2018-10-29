@@ -20,7 +20,7 @@ selected = true
 projects = ["ideophones"]
 
 # Links (optional).
-url_pdf = ""
+url_pdf = "pdfs/nagoya_20171111.pdf"
 url_slides = ""
 url_video = ""
 url_code = ""
