@@ -1,6 +1,6 @@
 +++
 title = "Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration"
-date = "2019-01-01"
+date = "2018-01-01"
 
 
 # Authors. Comma separated list, e.g. `["Van Hoey, Thomas", "Chiarung Lu"]`.
@@ -19,7 +19,7 @@ publication_types = ["6"]
 
 # Publication name and optional abbreviated version.
 publication = "*Cognitive Linguistics Research* 63"
-publication_short = ""
+publication_short = "(to be published in 2019)"
 
 # Abstract and optional shortened version.
 abstract = ""
