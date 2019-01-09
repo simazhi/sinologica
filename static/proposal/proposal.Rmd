@@ -231,7 +231,7 @@ Some possible future lines of development:
 
 # Structure and contributions
 
-![](structure.pdf)
+![](structure.png)
 
 A holistic study with attention to balances between:
 
@@ -265,7 +265,7 @@ For looking at historical material:
 
 # Case study: .sc[light] ideophones
 
-![](hierarchy.pdf)
+![](hierarchy.png)
 
 From these ideophones that are expressed by the sensory modality of .sc[vision] <br> be it dynamic (.sc[movement]) or static (.sc[vision]),
 <br> I have chosent those that express .sc[light].
