@@ -11,6 +11,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      beforeInit: "macros.js"
 ---
 
 
@@ -31,6 +32,7 @@ background-size: cover
 
 # Roadmap
 
+.font170[
 * Introduction
 <!-- * Aims and scope -->
 * Background (literature review)
@@ -39,12 +41,10 @@ background-size: cover
 * Case study: .sc[visual] ideophones: .sc[light] ideophones
 * Expected findings for the full dissertation
 * Selected references
+]
     
 ---
 
-WHY YOU SHOULD CARE
-
----
 
 # Introduction: .sc[iconicity]
 
@@ -418,7 +418,7 @@ Step 1. .markeer[Identifying the collocate]
 
 Step 2. .markeer[Count these collocates per period]
 
-![](huihui.pdf)
+![:scale 80%](huihui.png)
 
 ---
 
@@ -442,7 +442,7 @@ This difference in type frequency inspired an inquiry into .markeer2[token frequ
 
 # *Zhuózhuó* 灼灼
 
-![](zhuozhuo.pdf)
+![:scale 90%](zhuozhuo.png)
 
 Prototypical bundle of very frequent meanings: .sc[blossoming] frame, with less salient in the margins.
 
@@ -499,104 +499,86 @@ Now there is a long data frame ('table-like object in `R`'), with a score for ea
 
 # The computational *zhuózhuó* 灼灼
 
-```{r zhuozhuocompute, warning=FALSE, cache=TRUE, echo=FALSE, message=FALSE, fig.cap="Nearest neighbours of zhuozhuo 灼灼", fig.align='center'}
-db <- read_csv("zhuozhuocombined.csv") %>%
-  filter(! period == "period")
+![](computationalzhuozhuo.png)
 
-db$period <- factor(db$period,
-                    levels = c('xianqin', 
-                               'qinhan', 
-                               'weijin',
-                               'suitang', 
-                               'songjin', 
-                               'yuan', 
-                               'ming',
-                               'qing', 
-                               'minguo',
-                               'modern'
-                               ))
-plot <- db %>%
-  #arrange(desc(value)) %>%
-  filter(! collocate == "灼灼") %>%
-  filter(! collocate == "。") %>%
-  filter(! collocate == "，") %>%
-  filter(! collocate == "；") %>%
-  filter(! collocate == "“") %>%
-  filter(! collocate == "”") %>%
-  filter(! collocate == "」") %>%
-  mutate(highlight = 
-           case_when(str_detect(collocate, "[桃金光火珠珊瑚亮姿黃菊華紅綠蓁雲鬼]") ~ "in original", 
-    TRUE ~ "not in original")) %>%
-  filter(value > 0.025) %>%
-  ggplot(aes(x = period, y = value)) +
-  #geom_point() +
-  theme_classic() +
-  geom_text(aes(label = collocate, color = highlight
-                ), 
-            family="Noto Sans CJK TC") +
-  scale_color_manual(values=c("darkblue", "#999999")) +
-  theme(legend.title = element_blank(),
-        legend.position = "bottom",
-        plot.title = element_text(family = "Noto Sans CJK TC", hjust=-0)) +
-  ggtitle("Distributional semantic nearest neighbours of zhuozhuo 灼灼") +
-  ylab("measure of similarity")
-
-ggplotly(plot)
-```
 
 ---
 
-Step 3: frequencies and co-occurrence strength. Next, the strength of the co-occurrence of the skip-grams that resulted from the previous function needs to be weighted. For this we will also calculate the PMI value for each pair of words. This is then stored in a tidy data frame44 (Wickham 2014). This function is called tidy_pmi() and results in an extremely long and thin table.
-Step 4: similarity. To reduce the dimensionality the widely_svd() function from the widyr package is used. In her example, Silge uses 256 dimensions, which seems to be a good number for our data as well. This eventually results in a data frame object tidy_word_vectors, which can be queried for the nearest neighbours of a target word.
+# The computational *zhuózhuó* 灼灼
+
+Computational methods are able to calculate similar results as with the manual analysis.
+
+But: they mostly show the higher-frequency items -- if there are 'hapaxes' or many similar scores, it can become messy.
+
+However, they can aid at higher levels for abstraction.
 
 ---
 
-zhuozhuo
+# Manual frames 
+
+![:scale 80%](framesdomains.png)
 
 ---
 
-conclusion: good method and supplement
+# Computationally aided frames
 
-but needs manual tweaking
-
----
-
-remainder of dissertation
-
-auditory
-ideophones, but first computation and then finegrained 
+![:scale 80%](computationalframesdomains.png)
 
 ---
 
-revisiting definition
+# Interim discussion
 
---- 
+.Large[.markeer2[RQ1: Is there any variation at play, and if so, in what ways?]]
 
-qualitative: multimodal
+.Large[.markeer2[RQ2: How have these structure evolved over time?]]
 
----
+Through these case studies I have shown that variation is present in .sc[light] ideophones (as it is probably inherent in language throughout time), by looking at how the .sc[meanings] of these ideophones change, but also how their .sc[written form] have variation and how that influences these meanings.
 
-qualitative: constructions
-
---- 
-
-qualitative: acquisition
 
 ---
 
-conclusion:
+# Plan for the dissertation
+
+## More case studies
+* auditory (computational and then manual)
+* other modalities (?)
+
+## Revisiting Chinese ideophones
+
+After these case studies, what is typical for 'the Chinese ideophone'?
+
+## Qualitative studies
+* particular constructions
+* multimodality
+* acquisition
+
+
+---
+
+# Conclusion:
+
+.markeer[I find this section very hard to write. I don't know if a proposal already needs to have a conclusion and I would like to have your input.
+
+Thank you!
+
+As a reference: 
 
 Research questions:
+
 What does the semantic structure of Chinese ideophones look like?
-a. Is there any variation at play, and if so, in what ways?
-b. How have these structure evolved over time?
-c. What constructions do ideophones appear in and what are their functions?
 
+1. Is there any variation at play, and if so, in what ways?
+1. How have these structure evolved over time?
+1. What constructions do ideophones appear in and what are their functions?
+]
 
+---
 
+# Selected references
 
-
-
+.font200[
+** under construction**
+]
 
 
 

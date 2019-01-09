@@ -13,10 +13,6 @@
     <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
     <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
     <script src="libs/crosstalk/js/crosstalk.min.js"></script>
-    <script src="libs/plotly-binding/plotly.js"></script>
-    <script src="libs/typedarray/typedarray.min.js"></script>
-    <link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-    <script src="libs/plotly-main/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="ntu.css" type="text/css" />
     <link rel="stylesheet" href="ntu-fonts.css" type="text/css" />
   </head>
@@ -51,6 +47,7 @@ background-size: cover
 
 # Roadmap
 
+.font170[
 * Introduction
 &lt;!-- * Aims and scope --&gt;
 * Background (literature review)
@@ -59,12 +56,10 @@ background-size: cover
 * Case study: .sc[visual] ideophones: .sc[light] ideophones
 * Expected findings for the full dissertation
 * Selected references
+]
     
 ---
 
-WHY YOU SHOULD CARE
-
----
 
 # Introduction: .sc[iconicity]
 
@@ -360,7 +355,7 @@ Step 1. .markeer[Identifying the collocate]
 
 Step 2. .markeer[Count these collocates per period]
 
-![](huihui.pdf)
+![:scale 80%](huihui.png)
 
 ---
 
@@ -384,7 +379,7 @@ This difference in type frequency inspired an inquiry into .markeer2[token frequ
 
 # *Zhuózhuó* 灼灼
 
-![](zhuozhuo.pdf)
+![:scale 90%](zhuozhuo.png)
 
 Prototypical bundle of very frequent meanings: .sc[blossoming] frame, with less salient in the margins.
 
@@ -441,61 +436,89 @@ Now there is a long data frame ('table-like object in `R`'), with a score for ea
 
 # The computational *zhuózhuó* 灼灼
 
-&lt;div class="figure" style="text-align: center"&gt;
-<div id="htmlwidget-01e42b0a8ba5f9e5b7ca" style="width:504px;height:504px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-01e42b0a8ba5f9e5b7ca">{"x":{"data":[{"x":[7,9,9,9,9,10,10,10,8,8,8,2,2,2,2,2,2,5,4,4,3,3,3,3,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6],"y":[0.0333330007265765,0.040705542220987,0.0359369444986712,0.0337884606155361,0.0313168302309099,0.0829464966791976,0.0269149746433564,0.0257236695270037,0.031065590660715,0.0302682759763191,0.0279663162958958,0.0382490094592264,0.0284921714142454,0.0275604007599345,0.0263761683726694,0.0256299002411403,0.0252732752761297,0.0336110276456009,0.0392659815620061,0.0314428662358282,0.0372409359887374,0.0293301852061808,0.0252646876879223,0.0250850467496232,0.0378867387292615,0.0297037704435265,0.0296643101459813,0.0283152529606302,0.0282154174340989,0.0268706893964867,0.0267590289236384,0.0266352948956856,0.0252357755096835,0.0388203308394079,0.0308995054004,0.0297766359336344,0.0280624977405538,0.0266425549467953,0.0262746869150488,0.0250284301921691],"text":["桃之夭夭","雲全","金庭","桃李","紅綻","目光","闪光","光","有光","圓陀陀光","桃之夭夭","桃之夭夭","其華","其華易林","春桃","開紅春","紅榴吐何","桃之夭夭","桃之夭夭","其華","桃之夭夭","其華","桃悅色","其華易林","桃之夭夭","其華","其華易林","春桃","開紅春","蓁蓁","生華季","紅榴吐何","大火","桃之夭夭","其華","紅綻","其華易林","春桃","開紅春","生華季"],"hovertext":["collocate: 桃之夭夭<br />highlight: in original<br />period: ming<br />value: 0.03333300","collocate: 雲全<br />highlight: in original<br />period: minguo<br />value: 0.04070554","collocate: 金庭<br />highlight: in original<br />period: minguo<br />value: 0.03593694","collocate: 桃李<br />highlight: in original<br />period: minguo<br />value: 0.03378846","collocate: 紅綻<br />highlight: in original<br />period: minguo<br />value: 0.03131683","collocate: 目光<br />highlight: in original<br />period: modern<br />value: 0.08294650","collocate: 闪光<br />highlight: in original<br />period: modern<br />value: 0.02691497","collocate: 光<br />highlight: in original<br />period: modern<br />value: 0.02572367","collocate: 有光<br />highlight: in original<br />period: qing<br />value: 0.03106559","collocate: 圓陀陀光<br />highlight: in original<br />period: qing<br />value: 0.03026828","collocate: 桃之夭夭<br />highlight: in original<br />period: qing<br />value: 0.02796632","collocate: 桃之夭夭<br />highlight: in original<br />period: qinhan<br />value: 0.03824901","collocate: 其華<br />highlight: in original<br />period: qinhan<br />value: 0.02849217","collocate: 其華易林<br />highlight: in original<br />period: qinhan<br />value: 0.02756040","collocate: 春桃<br />highlight: in original<br />period: qinhan<br />value: 0.02637617","collocate: 開紅春<br />highlight: in original<br />period: qinhan<br />value: 0.02562990","collocate: 紅榴吐何<br />highlight: in original<br />period: qinhan<br />value: 0.02527328","collocate: 桃之夭夭<br />highlight: in original<br />period: songjin<br />value: 0.03361103","collocate: 桃之夭夭<br />highlight: in original<br />period: suitang<br />value: 0.03926598","collocate: 其華<br />highlight: in original<br />period: suitang<br />value: 0.03144287","collocate: 桃之夭夭<br />highlight: in original<br />period: weijin<br />value: 0.03724094","collocate: 其華<br />highlight: in original<br />period: weijin<br />value: 0.02933019","collocate: 桃悅色<br />highlight: in original<br />period: weijin<br />value: 0.02526469","collocate: 其華易林<br />highlight: in original<br />period: weijin<br />value: 0.02508505","collocate: 桃之夭夭<br />highlight: in original<br />period: xianqin<br />value: 0.03788674","collocate: 其華<br />highlight: in original<br />period: xianqin<br />value: 0.02970377","collocate: 其華易林<br />highlight: in original<br />period: xianqin<br />value: 0.02966431","collocate: 春桃<br />highlight: in original<br />period: xianqin<br />value: 0.02831525","collocate: 開紅春<br />highlight: in original<br />period: xianqin<br />value: 0.02821542","collocate: 蓁蓁<br />highlight: in original<br />period: xianqin<br />value: 0.02687069","collocate: 生華季<br />highlight: in original<br />period: xianqin<br />value: 0.02675903","collocate: 紅榴吐何<br />highlight: in original<br />period: xianqin<br />value: 0.02663529","collocate: 大火<br />highlight: in original<br />period: xianqin<br />value: 0.02523578","collocate: 桃之夭夭<br />highlight: in original<br />period: yuan<br />value: 0.03882033","collocate: 其華<br />highlight: in original<br />period: yuan<br />value: 0.03089951","collocate: 紅綻<br />highlight: in original<br />period: yuan<br />value: 0.02977664","collocate: 其華易林<br />highlight: in original<br />period: yuan<br />value: 0.02806250","collocate: 春桃<br />highlight: in original<br />period: yuan<br />value: 0.02664255","collocate: 開紅春<br />highlight: in original<br />period: yuan<br />value: 0.02627469","collocate: 生華季<br />highlight: in original<br />period: yuan<br />value: 0.02502843"],"textfont":{"size":14.6645669291339,"color":"rgba(0,0,139,1)"},"type":"scatter","mode":"text","hoveron":"points","name":"in original","legendgroup":"in original","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[7,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,8,8,8,8,8,2,2,2,2,2,2,2,2,2,2,2,2,2,2,5,5,5,5,5,5,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],"y":[0.0340989927400399,0.0441333517275751,0.0439732728042609,0.0431596812941783,0.0421217407696889,0.0380665099668189,0.0372974919315253,0.0347003909696539,0.033350669235263,0.0324152219647878,0.0323321189415892,0.0319644207730102,0.0307515445091489,0.0303933192115443,0.0300779110753068,0.0290364753408782,0.0289127098949954,0.0288508682687087,0.0277568349455989,0.0276672738249066,0.0267674239347271,0.0267509485507341,0.0265825981626426,0.0261715762497311,0.0260891374882261,0.0260656804656957,0.0256356427698832,0.0254935770012818,0.0254255946593257,0.0254154040080149,0.0254098427816851,0.0253349135067315,0.0621158205149478,0.0511985235882423,0.0468304169984126,0.0442815976791152,0.0376291477198941,0.0371391551517624,0.0295448042292423,0.0273899542978251,0.0265758556752769,0.0261214513875444,0.0260438370493304,0.0432197402878696,0.0331356069938215,0.0320341492100122,0.0290868087011067,0.0280292828202375,0.0636716091674706,0.035235326068031,0.0300170569672676,0.0290967875852195,0.028858540157425,0.0288361306399236,0.0269545007599017,0.026715173752162,0.0265369514411218,0.0264488988748808,0.0260018462720932,0.0254986487589986,0.0254958418807865,0.0251494689052086,0.0396807287338222,0.0334134654122728,0.0323081711643402,0.0267468712737422,0.0263924464161538,0.0261491817270299,0.0624820527660529,0.0333935994736953,0.0292017137950013,0.0287115789968289,0.0259689386906271,0.0254276650601995,0.025079771504957,0.0419814066841376,0.0344366418949755,0.0332632446089996,0.0281288357398779,0.0264502124060443,0.0256509104338742,0.0252982201166235,0.025128926408046,0.0486647096831497,0.0396909167113423,0.0312914684191049,0.0305273598885019,0.0302614925965099,0.0293154597491129,0.0289550585533039,0.0283879973129197,0.0283585121947571,0.028302985167141,0.0282939073162772,0.0282919597755653,0.0281189806148635,0.0273355163541163,0.0272213953540352,0.0270647379222204,0.0268537440861684,0.0267930257434527,0.0265388109593175,0.0263179027227004,0.026168004719097,0.025931342529648,0.0256274017074932,0.0255056465120477,0.0250097833167666,0.0463314199832143,0.0450791363954471,0.031837167249332,0.0310666856650024,0.0306289973414745,0.0301000367179572,0.0292478065063031,0.02881396054266,0.028529041643555,0.0281072975818273,0.0279943902147817,0.0277957483075383,0.027561418218165,0.0268192314092657,0.0265090448107862,0.0259999019843852,0.0257872029638625,0.0254841148704986,0.0252891253971703,0.0251529000811957,0.0250883318796406],"text":["夭夭","雪半青","晴嵐花","白陽峰","春澗水","南嶺","雞犬","桑麻外","泠泠","已入","欄邊","漁舟","面對","葵","灣灣","敷晨葩","皇居帝","飄飄","下水","芙蓉花","貴守","闕開","委路","停","谷路","蛇行","到門遠","涉世","錯碧流堂","出水","幪","江作","其","华","生辉","在","的","一","似","着","、","花","了","夭夭","是","目","於","爾","夭夭","離離","盛者","宜家","亭亭","遮詩","英英","滿縣","錦莫周","時鳥鳴","詩濯","結實夏","嚶嚶","𩄇","離離","夭夭","葵","朝霞","中而","朱實繁","夭夭","離離","盛者","亭亭","遮詩","英英","滿縣","夭夭","離離","亭亭","皎皎","遮詩","曠","宜家","英英","夭夭","離離","遮詩","亭亭","宜家","熱無","錦莫周","食飲者","詩濯","結實夏","滿縣","英英","時鳥鳴","出汗","嚶嚶","𩄇","寒無滄滄寒","中而","傍蓮池","如雨","朱實繁","溫中適","故氣","禛","心娱","夭夭","離離","葵","面對","欄邊","遮詩","皇居帝","滿縣","宜家","灣灣","錦莫周","詩濯","闕開","𩄇","花開","結實夏","下水","平分","熱無","禛","耳目"],"hovertext":["collocate: 夭夭<br />highlight: not in original<br />period: ming<br />value: 0.03409899","collocate: 雪半青<br />highlight: not in original<br />period: minguo<br />value: 0.04413335","collocate: 晴嵐花<br />highlight: not in original<br />period: minguo<br />value: 0.04397327","collocate: 白陽峰<br />highlight: not in original<br />period: minguo<br />value: 0.04315968","collocate: 春澗水<br />highlight: not in original<br />period: minguo<br />value: 0.04212174","collocate: 南嶺<br />highlight: not in original<br />period: minguo<br />value: 0.03806651","collocate: 雞犬<br />highlight: not in original<br />period: minguo<br />value: 0.03729749","collocate: 桑麻外<br />highlight: not in original<br />period: minguo<br />value: 0.03470039","collocate: 泠泠<br />highlight: not in original<br />period: minguo<br />value: 0.03335067","collocate: 已入<br />highlight: not in original<br />period: minguo<br />value: 0.03241522","collocate: 欄邊<br />highlight: not in original<br />period: minguo<br />value: 0.03233212","collocate: 漁舟<br />highlight: not in original<br />period: minguo<br />value: 0.03196442","collocate: 面對<br />highlight: not in original<br />period: minguo<br />value: 0.03075154","collocate: 葵<br />highlight: not in original<br />period: minguo<br />value: 0.03039332","collocate: 灣灣<br />highlight: not in original<br />period: minguo<br />value: 0.03007791","collocate: 敷晨葩<br />highlight: not in original<br />period: minguo<br />value: 0.02903648","collocate: 皇居帝<br />highlight: not in original<br />period: minguo<br />value: 0.02891271","collocate: 飄飄<br />highlight: not in original<br />period: minguo<br />value: 0.02885087","collocate: 下水<br />highlight: not in original<br />period: minguo<br />value: 0.02775683","collocate: 芙蓉花<br />highlight: not in original<br />period: minguo<br />value: 0.02766727","collocate: 貴守<br />highlight: not in original<br />period: minguo<br />value: 0.02676742","collocate: 闕開<br />highlight: not in original<br />period: minguo<br />value: 0.02675095","collocate: 委路<br />highlight: not in original<br />period: minguo<br />value: 0.02658260","collocate: 停<br />highlight: not in original<br />period: minguo<br />value: 0.02617158","collocate: 谷路<br />highlight: not in original<br />period: minguo<br />value: 0.02608914","collocate: 蛇行<br />highlight: not in original<br />period: minguo<br />value: 0.02606568","collocate: 到門遠<br />highlight: not in original<br />period: minguo<br />value: 0.02563564","collocate: 涉世<br />highlight: not in original<br />period: minguo<br />value: 0.02549358","collocate: 錯碧流堂<br />highlight: not in original<br />period: minguo<br />value: 0.02542559","collocate: 出水<br />highlight: not in original<br />period: minguo<br />value: 0.02541540","collocate: 幪<br />highlight: not in original<br />period: minguo<br />value: 0.02540984","collocate: 江作<br />highlight: not in original<br />period: minguo<br />value: 0.02533491","collocate: 其<br />highlight: not in original<br />period: modern<br />value: 0.06211582","collocate: 华<br />highlight: not in original<br />period: modern<br />value: 0.05119852","collocate: 生辉<br />highlight: not in original<br />period: modern<br />value: 0.04683042","collocate: 在<br />highlight: not in original<br />period: modern<br />value: 0.04428160","collocate: 的<br />highlight: not in original<br />period: modern<br />value: 0.03762915","collocate: 一<br />highlight: not in original<br />period: modern<br />value: 0.03713916","collocate: 似<br />highlight: not in original<br />period: modern<br />value: 0.02954480","collocate: 着<br />highlight: not in original<br />period: modern<br />value: 0.02738995","collocate: 、<br />highlight: not in original<br />period: modern<br />value: 0.02657586","collocate: 花<br />highlight: not in original<br />period: modern<br />value: 0.02612145","collocate: 了<br />highlight: not in original<br />period: modern<br />value: 0.02604384","collocate: 夭夭<br />highlight: not in original<br />period: qing<br />value: 0.04321974","collocate: 是<br />highlight: not in original<br />period: qing<br />value: 0.03313561","collocate: 目<br />highlight: not in original<br />period: qing<br />value: 0.03203415","collocate: 於<br />highlight: not in original<br />period: qing<br />value: 0.02908681","collocate: 爾<br />highlight: not in original<br />period: qing<br />value: 0.02802928","collocate: 夭夭<br />highlight: not in original<br />period: qinhan<br />value: 0.06367161","collocate: 離離<br />highlight: not in original<br />period: qinhan<br />value: 0.03523533","collocate: 盛者<br />highlight: not in original<br />period: qinhan<br />value: 0.03001706","collocate: 宜家<br />highlight: not in original<br />period: qinhan<br />value: 0.02909679","collocate: 亭亭<br />highlight: not in original<br />period: qinhan<br />value: 0.02885854","collocate: 遮詩<br />highlight: not in original<br />period: qinhan<br />value: 0.02883613","collocate: 英英<br />highlight: not in original<br />period: qinhan<br />value: 0.02695450","collocate: 滿縣<br />highlight: not in original<br />period: qinhan<br />value: 0.02671517","collocate: 錦莫周<br />highlight: not in original<br />period: qinhan<br />value: 0.02653695","collocate: 時鳥鳴<br />highlight: not in original<br />period: qinhan<br />value: 0.02644890","collocate: 詩濯<br />highlight: not in original<br />period: qinhan<br />value: 0.02600185","collocate: 結實夏<br />highlight: not in original<br />period: qinhan<br />value: 0.02549865","collocate: 嚶嚶<br />highlight: not in original<br />period: qinhan<br />value: 0.02549584","collocate: 𩄇<br />highlight: not in original<br />period: qinhan<br />value: 0.02514947","collocate: 離離<br />highlight: not in original<br />period: songjin<br />value: 0.03968073","collocate: 夭夭<br />highlight: not in original<br />period: songjin<br />value: 0.03341347","collocate: 葵<br />highlight: not in original<br />period: songjin<br />value: 0.03230817","collocate: 朝霞<br />highlight: not in original<br />period: songjin<br />value: 0.02674687","collocate: 中而<br />highlight: not in original<br />period: songjin<br />value: 0.02639245","collocate: 朱實繁<br />highlight: not in original<br />period: songjin<br />value: 0.02614918","collocate: 夭夭<br />highlight: not in original<br />period: suitang<br />value: 0.06248205","collocate: 離離<br />highlight: not in original<br />period: suitang<br />value: 0.03339360","collocate: 盛者<br />highlight: not in original<br />period: suitang<br />value: 0.02920171","collocate: 亭亭<br />highlight: not in original<br />period: suitang<br />value: 0.02871158","collocate: 遮詩<br />highlight: not in original<br />period: suitang<br />value: 0.02596894","collocate: 英英<br />highlight: not in original<br />period: suitang<br />value: 0.02542767","collocate: 滿縣<br />highlight: not in original<br />period: suitang<br />value: 0.02507977","collocate: 夭夭<br />highlight: not in original<br />period: weijin<br />value: 0.04198141","collocate: 離離<br />highlight: not in original<br />period: weijin<br />value: 0.03443664","collocate: 亭亭<br />highlight: not in original<br />period: weijin<br />value: 0.03326324","collocate: 皎皎<br />highlight: not in original<br />period: weijin<br />value: 0.02812884","collocate: 遮詩<br />highlight: not in original<br />period: weijin<br />value: 0.02645021","collocate: 曠<br />highlight: not in original<br />period: weijin<br />value: 0.02565091","collocate: 宜家<br />highlight: not in original<br />period: weijin<br />value: 0.02529822","collocate: 英英<br />highlight: not in original<br />period: weijin<br />value: 0.02512893","collocate: 夭夭<br />highlight: not in original<br />period: xianqin<br />value: 0.04866471","collocate: 離離<br />highlight: not in original<br />period: xianqin<br />value: 0.03969092","collocate: 遮詩<br />highlight: not in original<br />period: xianqin<br />value: 0.03129147","collocate: 亭亭<br />highlight: not in original<br />period: xianqin<br />value: 0.03052736","collocate: 宜家<br />highlight: not in original<br />period: xianqin<br />value: 0.03026149","collocate: 熱無<br />highlight: not in original<br />period: xianqin<br />value: 0.02931546","collocate: 錦莫周<br />highlight: not in original<br />period: xianqin<br />value: 0.02895506","collocate: 食飲者<br />highlight: not in original<br />period: xianqin<br />value: 0.02838800","collocate: 詩濯<br />highlight: not in original<br />period: xianqin<br />value: 0.02835851","collocate: 結實夏<br />highlight: not in original<br />period: xianqin<br />value: 0.02830299","collocate: 滿縣<br />highlight: not in original<br />period: xianqin<br />value: 0.02829391","collocate: 英英<br />highlight: not in original<br />period: xianqin<br />value: 0.02829196","collocate: 時鳥鳴<br />highlight: not in original<br />period: xianqin<br />value: 0.02811898","collocate: 出汗<br />highlight: not in original<br />period: xianqin<br />value: 0.02733552","collocate: 嚶嚶<br />highlight: not in original<br />period: xianqin<br />value: 0.02722140","collocate: 𩄇<br />highlight: not in original<br />period: xianqin<br />value: 0.02706474","collocate: 寒無滄滄寒<br />highlight: not in original<br />period: xianqin<br />value: 0.02685374","collocate: 中而<br />highlight: not in original<br />period: xianqin<br />value: 0.02679303","collocate: 傍蓮池<br />highlight: not in original<br />period: xianqin<br />value: 0.02653881","collocate: 如雨<br />highlight: not in original<br />period: xianqin<br />value: 0.02631790","collocate: 朱實繁<br />highlight: not in original<br />period: xianqin<br />value: 0.02616800","collocate: 溫中適<br />highlight: not in original<br />period: xianqin<br />value: 0.02593134","collocate: 故氣<br />highlight: not in original<br />period: xianqin<br />value: 0.02562740","collocate: 禛<br />highlight: not in original<br />period: xianqin<br />value: 0.02550565","collocate: 心娱<br />highlight: not in original<br />period: xianqin<br />value: 0.02500978","collocate: 夭夭<br />highlight: not in original<br />period: yuan<br />value: 0.04633142","collocate: 離離<br />highlight: not in original<br />period: yuan<br />value: 0.04507914","collocate: 葵<br />highlight: not in original<br />period: yuan<br />value: 0.03183717","collocate: 面對<br />highlight: not in original<br />period: yuan<br />value: 0.03106669","collocate: 欄邊<br />highlight: not in original<br />period: yuan<br />value: 0.03062900","collocate: 遮詩<br />highlight: not in original<br />period: yuan<br />value: 0.03010004","collocate: 皇居帝<br />highlight: not in original<br />period: yuan<br />value: 0.02924781","collocate: 滿縣<br />highlight: not in original<br />period: yuan<br />value: 0.02881396","collocate: 宜家<br />highlight: not in original<br />period: yuan<br />value: 0.02852904","collocate: 灣灣<br />highlight: not in original<br />period: yuan<br />value: 0.02810730","collocate: 錦莫周<br />highlight: not in original<br />period: yuan<br />value: 0.02799439","collocate: 詩濯<br />highlight: not in original<br />period: yuan<br />value: 0.02779575","collocate: 闕開<br />highlight: not in original<br />period: yuan<br />value: 0.02756142","collocate: 𩄇<br />highlight: not in original<br />period: yuan<br />value: 0.02681923","collocate: 花開<br />highlight: not in original<br />period: yuan<br />value: 0.02650904","collocate: 結實夏<br />highlight: not in original<br />period: yuan<br />value: 0.02599990","collocate: 下水<br />highlight: not in original<br />period: yuan<br />value: 0.02578720","collocate: 平分<br />highlight: not in original<br />period: yuan<br />value: 0.02548411","collocate: 熱無<br />highlight: not in original<br />period: yuan<br />value: 0.02528913","collocate: 禛<br />highlight: not in original<br />period: yuan<br />value: 0.02515290","collocate: 耳目<br />highlight: not in original<br />period: yuan<br />value: 0.02508833"],"textfont":{"size":14.6645669291339,"color":"rgba(153,153,153,1)"},"type":"scatter","mode":"text","hoveron":"points","name":"not in original","legendgroup":"not in original","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.8401826484018,"r":7.30593607305936,"b":37.2602739726027,"l":48.9497716894977},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":"Distributional semantic nearest neighbours of zhuozhuo 灼灼","titlefont":{"color":"rgba(0,0,0,1)","family":"Noto Sans CJK TC","size":17.5342465753425},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,10.6],"tickmode":"array","ticktext":["xianqin","qinhan","weijin","suitang","songjin","yuan","ming","qing","minguo","modern"],"tickvals":[1,2,3,4,5,6,7,8,9,10],"categoryorder":"array","categoryarray":["xianqin","qinhan","weijin","suitang","songjin","yuan","ming","qing","minguo","modern"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":true,"linecolor":"rgba(0,0,0,1)","linewidth":0.66417600664176,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"period","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.022112947648645,0.0858433323473191],"tickmode":"array","ticktext":["0.04","0.06","0.08"],"tickvals":[0.04,0.06,0.08],"categoryorder":"array","categoryarray":["0.04","0.06","0.08"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":true,"linecolor":"rgba(0,0,0,1)","linewidth":0.66417600664176,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"measure of similarity","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":1},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"source":"A","attrs":{"3e926ad1e9a7":{"label":{},"colour":{},"x":{},"y":{},"type":"scatter"}},"cur_data":"3e926ad1e9a7","visdat":{"3e926ad1e9a7":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
-&lt;p class="caption"&gt;Nearest neighbours of zhuozhuo 灼灼&lt;/p&gt;
-&lt;/div&gt;
+![](computationalzhuozhuo.png)
+
 
 ---
 
-Step 3: frequencies and co-occurrence strength. Next, the strength of the co-occurrence of the skip-grams that resulted from the previous function needs to be weighted. For this we will also calculate the PMI value for each pair of words. This is then stored in a tidy data frame44 (Wickham 2014). This function is called tidy_pmi() and results in an extremely long and thin table.
-Step 4: similarity. To reduce the dimensionality the widely_svd() function from the widyr package is used. In her example, Silge uses 256 dimensions, which seems to be a good number for our data as well. This eventually results in a data frame object tidy_word_vectors, which can be queried for the nearest neighbours of a target word.
+# The computational *zhuózhuó* 灼灼
+
+Computational methods are able to calculate similar results as with the manual analysis.
+
+But: they mostly show the higher-frequency items -- if there are 'hapaxes' or many similar scores, it can become messy.
+
+However, they can aid at higher levels for abstraction.
 
 ---
 
-zhuozhuo
+# Manual frames 
+
+![:scale 80%](framesdomains.png)
 
 ---
 
-conclusion: good method and supplement
+# Computationally aided frames
 
-but needs manual tweaking
-
----
-
-remainder of dissertation
-
-auditory
-ideophones, but first computation and then finegrained 
+![:scale 80%](computationalframesdomains.png)
 
 ---
 
-revisiting definition
+# Interim discussion
 
---- 
+.Large[.markeer2[RQ1: Is there any variation at play, and if so, in what ways?]]
 
-qualitative: multimodal
+.Large[.markeer2[RQ2: How have these structure evolved over time?]]
 
----
+Through these case studies I have shown that variation is present in .sc[light] ideophones (as it is probably inherent in language throughout time), by looking at how the .sc[meanings] of these ideophones change, but also how their .sc[written form] have variation and how that influences these meanings.
 
-qualitative: constructions
-
---- 
-
-qualitative: acquisition
 
 ---
 
-conclusion:
+# Plan for the dissertation
+
+## More case studies
+* auditory (computational and then manual)
+* other modalities (?)
+
+## Revisiting Chinese ideophones
+
+After these case studies, what is typical for 'the Chinese ideophone'?
+
+## Qualitative studies
+* particular constructions
+* multimodality
+* acquisition
+
+
+---
+
+# Conclusion:
+
+.markeer[I find this section very hard to write. I don't know if a proposal already needs to have a conclusion and I would like to have your input.
+
+Thank you!
+
+As a reference: 
 
 Research questions:
+
 What does the semantic structure of Chinese ideophones look like?
-a. Is there any variation at play, and if so, in what ways?
-b. How have these structure evolved over time?
-c. What constructions do ideophones appear in and what are their functions?
+
+1. Is there any variation at play, and if so, in what ways?
+1. How have these structure evolved over time?
+1. What constructions do ideophones appear in and what are their functions?
+]
+
+---
+
+# Selected references
+
+.font200[
+** under construction**
+]
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
