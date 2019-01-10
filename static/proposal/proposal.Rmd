@@ -129,7 +129,7 @@ Moreover: variation is what interests me.
 .Large[
 .markeer2[
 1. Is there any variation at play, and if so, in what ways?
-1. How have these structure evolved over time?
+1. How have these structures evolved over time?
 1. What constructions do ideophones appear in and what are their functions?
 ]
 ]
@@ -207,7 +207,7 @@ Cursory findings:
 
 # RQ 2: Diachronic evolution
 
-.Large[.markeer2[How have these structure evolved over time?]]
+.Large[.markeer2[How have these structures evolved over time?]]
 
 Using the same case study of .sc[light] ideophones:
 
@@ -530,7 +530,7 @@ However, they can aid at higher levels for abstraction.
 
 .Large[.markeer2[RQ1: Is there any variation at play, and if so, in what ways?]]
 
-.Large[.markeer2[RQ2: How have these structure evolved over time?]]
+.Large[.markeer2[RQ2: How have these structures evolved over time?]]
 
 Through these case studies I have shown that variation is present in .sc[light] ideophones (as it is probably inherent in language throughout time), by looking at how the .sc[meanings] of these ideophones change, but also how their .sc[written form] have variation and how that influences these meanings.
 
@@ -568,7 +568,7 @@ Research questions:
 What does the semantic structure of Chinese ideophones look like?
 
 1. Is there any variation at play, and if so, in what ways?
-1. How have these structure evolved over time?
+1. How have these structures evolved over time?
 1. What constructions do ideophones appear in and what are their functions?
 ]
 
