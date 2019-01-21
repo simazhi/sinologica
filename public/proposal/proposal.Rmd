@@ -1,0 +1,585 @@
+---
+title: "Lexical variation and semantic change in literary Chinese ideophones: <br> A cognitive and computational linguistic approach"
+subtitle: "中文文言象聲詞的詞彙變異與語意變遷— <br>  以認知與計算語言學方法探討 <html><div style='float:left'></div><hr color='#875712' size=1px width=796px></html>"
+author: "Ph.D candidate Thomas Van Hoey 司馬智 <br> Advisor: Lu Chiarung 呂佳蓉"
+date: "<br>`r Sys.Date()` National Taiwan University"
+output:
+  xaringan::moon_reader:
+    css: ["ntu.css", "ntu-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(plotly)
+```
+
+
+layout: false
+
+background-image: url(finished.jpg)
+background-size: cover
+
+
+
+# Roadmap
+
+.font170[
+* Introduction
+<!-- * Aims and scope -->
+* Background (literature review)
+* Research questions
+* Methodology
+* Case study: .sc[visual] ideophones: .sc[light] ideophones
+* Expected findings for the full dissertation
+* Selected references
+]
+    
+---
+
+
+# Introduction: .sc[iconicity]
+
+Iconicity has been studied in different perspectives since the 1980s:
+
+* iconic ordering of clausal constituents in relation to their temporal order in syntax and pragmatics .ref[(e.g. Haiman 1985; Simone 1995; Radden & Panther 2004)];
+* iconic relations between sounds and meaning, viz. phonaesthemes and sound symbolism in phonetics, phonology and morphology .ref[(Hinton, Nichols & Ohala 1994; Perniss & Vigliocco 2014; Lockwood 2017)]; 
+* iconicity across different modalities such as in sign language .ref[(Taub 2001)] or metaphor .ref[(Hiraga 2005)]; 
+* and in the .sc[lexicon] (.markeer[onomatopoeia] and .markeer[ideophones] or .markeer[mimetics], .ref[cf. Voeltz & Kilian-Hatz 2001; Dingemanse 2012; 2018; Haiman 2018)].
+ 
+.ru-blockquote[This dissertation is about onomatopoeia and ideophones / mimetics.]
+
+---
+
+# Ideophones: examples
+
+Language | Examples
+--- | ---
+Korean <br> .ref[(Lee 1992)] | *potïl* ‘soft and tender (surface)’, *palt’ak* ‘palpitating, jerking’, *c’onc’on* ‘woven tightly’, *ulakpulak* ‘unbalanced scary appearance’, *colcol* ‘flowing liquid’, *kalphancilphaN* ‘unable to decide’
+Pastaza Quechua <br> .ref[(Nuckolls 1996)] | *dzing* ‘a sudden awareness or intuition, especially one that causes fright’, *sa* ‘expanded or random movement from or within a locus’, *tsung* ‘to absorb, cover, or drench with a liquid substance’, *palay* ‘to fall rapidly and/or peltingly, as a collectivity of entities’
+Siwu <br> .ref[(Dingemanse 2011)] | *gùdùù* ‘pitch dark’, *gblogblogblo* ‘bubbling’, *fũɛ̃fũɛ̃* ‘malleable' *kpɔtɔtɔrɔ-kpɔtɔtɔrɔ* ‘walking like a  tortoise’, *ɣììì*  ‘sensation of vertigo’, *wɔ̃rã~wɔ̃rã* ‘spotted, patchy pattern’, *nyɛ̃kɛ̃nyɛ̃kɛ̃* ‘intensely sweet’, *kpiɛkpiɛ* ‘lukewarm’
+
+Examples presented in Dingemanse's .ref[(2012:661)] overview article
+
+---
+
+# Ideophones: semantic domains
+
+Domain | Example
+--- | ---
+.sc[sound] | *miāo* 喵 ‘mew, miaow’
+.sc[movement] | *yōuyōu* 攸攸 ‘move swiftly, quickly; smoothly slipping by, rapidly rushing’
+.sc[visual patterns] | *zhēngróng* 崢嶸 ‘craggy, precipitous masses of rock; loftily lifted; sheer steepness; high-piled’
+.sc[other sensory perceptions] | *bìbì* 苾苾 ‘deeply fragrant’
+.sc[inner feelings and cognitive states] | *xǔxǔ* 栩栩 ‘glad and gay, happy and light-heared, smug and satisfied’
+
+Hierarchy presented in .ref[Dingemanse (2012:663)].
+
+As it can be seen, .markeer[Chinese has examples for all these different domains].
+Yet, it is usually left out from the cross-linguistic debate.
+
+---
+
+# Ideophones: terminology
+
+Japanese-inspired | Cross-linguistic | Reduplication | Examples
+--- | --- | ---
+擬聲詞 <br> *giongo* 擬音語 <br> .markeer[phonomimes] | .markeer2[ideophones] <br>  onomatopoeia | non-red. or A| 哔 'peep', <br> 咻 'shew' (.sc[sound + visual])
+擬態詞 <br> *gitaigo* 擬態語 <br> .markeer[phenomimes] | .markeer2[ideophones] <br> non-phonomimes  | full red. or XAA (ABB) <br> partial red. or AB |  雾-濛濛 'fog-misty' <br> 崢嶸 'precipitous'
+擬情詞 <br> *gijōgo* 擬情語 <br> .markeer[psychomimes] | .markeer2[ideophones] <br> non-phonomimes   | full red. or AA | 欣欣 'joyful'
+
+These terms each highlight a different aspect of the data (cf. section 2 of the proposal).
+
+It is my goal to unify these aspects into a single, though multi-faceted theory.
+
+---
+
+# Defining ideophones
+
+Such a theory is already in the making: Dingemanse's .ref[(2011; 2012)] definition:
+
+.ru-blockquote[Ideophones are marked words that depict sensory imagery.]
+
+form | meaning
+--- | ---
+marked | depiction 
+words | sensory imagery
+
+Most studies up to this point have focused on the .sc[form].
+When .sc[meaning] is taken into account, the scope usually only contains .sc[sound].
+
+I want to focus mostly on the .sc[meaning] but not without losing .sc[form] out of sight.
+
+Moreover: variation is what interests me.
+
+---
+
+# Research questions
+
+.Large[.markeer[What does the semantic structure of Chinese ideophones look like?]]
+
+.Large[
+.markeer2[
+1. Is there any variation at play, and if so, in what ways?
+1. How have these structures evolved over time?
+1. What constructions do ideophones appear in and what are their functions?
+]
+]
+
+---
+
+# Main research question
+
+.Large[.markeer[What does the semantic structure of Chinese ideophones look like?]]
+
+This is the main question.
+
+I want to answer this by:
+
+* answering the subquestions
+* as a starting point: Dingemanse's definition
+* database of ideophones
+
+[I hope to maybe show this briefly during my proposal 口試.]
+
+---
+
+# RQ 1: Variation
+
+.Large[.markeer2[Is there any variation at play, and if so, in what ways?]]
+
+Usually, constructions are defined as mappings between .sc[form] and .sc[meaning] .ref[(Langacker 1987; 1991; 2008)] or .sc[form] and .sc[function] .ref[(Fillmore 1988; Goldberg 1995; 2006; Croft 2001)]
+
+$$form \mid meaning$$
+
+Chinese has a folk model of *xíng yīn yì* 形音義 (all culminating in 'the character' *zì* 字, cf. .ref[Packard 1998; 2000])
+
+$$\frac{sound}{writing} \mid meaning$$
+
+<!-- Clearly, there can be variation at any of these poles: -->
+
+---
+
+# RQ 1: Variation
+
+.Large[.markeer2[Is there any variation at play, and if so, in what ways?]]
+
+
+$$\frac{sound}{writing} \mid meaning$$
+
+Clearly, there can be variation at any of these poles:
+
+Pole | Example
+--- | ---
+.sc[sound] vs. .sc[meaning] | /jījīzhāzhā/ referring to the sounds of 'mice' or 'people chattering'
+.sc[writing] vs. .sc[meaning] | <嘰嘰喳喳\> referring to the sounds of 'mice' or 'people chattering'
+.sc[sound] vs. .sc[writing] | /xīlīhuālā/ being written as 唏哩嘩啦 or 稀裡嘩啦 <br> maybe there is a better example?
+
+
+---
+
+# RQ 1: Variation
+
+.Large[.markeer2[Is there any variation at play, and if so, in what ways?]]
+
+
+Ideophones of different modalities, e.g. .sc[sound], .sc[visual], .sc[other perceptions], .sc[inner feelings] and .sc[cognitive states].
+
+Case study of .sc[visual] ideophones, more precisely ideophones in the domain of .sc[light].
+
+Later on another major case study with .sc[auditory] ideophones.
+
+Cursory findings:
+
+* prototypical structure of meanings
+* token frequency effects
+* type frequency effects
+
+---
+
+# RQ 2: Diachronic evolution
+
+.Large[.markeer2[How have these structures evolved over time?]]
+
+Using the same case study of .sc[light] ideophones:
+
+* the semantic structure is dynamic and evolves over time
+* new meanings are formed from certain meanings or clusters of meanings in similar ways for the data under inspection
+* these meaning extensions are motivated (yet not predictable)
+
+---
+
+# RQ 3: Qualitative approaches
+
+.Large[.markeer2[What constructions do ideophones appear in and what are their functions?]]
+
+Some possible future lines of development:
+
+* investigating particular constructions, <br> e.g. .sc[v-qilai + ideophone]) with particular theories (e.g. Cognitive Grammar .ref[(Langacker 1987; 1991; 2008)], collostructions .ref[(Stefanowitsch & Gries 2003)]
+* multimodality: ideophone and image, <br> cf. comic book studies .ref[(Forceville & Urios-Aparisi 2009)] or clothing terms .ref[(Geeraerts, Grondelaers & Bakema 1994)]
+* acquisition: the role of intersubjectivity .ref[(Verhagen 2005)] in this process
+
+---
+
+# Structure and contributions
+
+![:scale 90%](structure.png)
+
+A holistic study with attention to balances between:
+
+* synchronic and diachronic
+* qualitative and quantitative
+* paradigmatic and syntagmatic
+* form, meaning, and usage
+
+---
+
+# Methodology
+
+The methodological frameworks in this dissertation draw heavily on approaches from Cognitive semantics, e.g.:
+
+* Diachronic prototype semantics .ref[(Geeraerts 1997)]
+* Conceptual Metaphor Theory .ref[(Lakoff & Johnson 1980; Kövecses 2017)]
+* Mental Spaces .ref[(Fauconnier & Sweetser 1996; Fauconnier & Turner 2003)]
+* Frequency effects .ref[(Bybee & Hopper 2001)]
+
+Combined with computational approaches, such as distributional semantics:
+
+* Cognitive Linguistics .ref[(Heylen, Speelman & Geeraerts 2012; Wielfaert, Heylen & Speelman 2013; Heylen et al. 2015; Peirsman, Geeraerts & Speelman 2015)]
+* `word2vec`-like approaches .ref[((Mikolov, Yih & Zweig 2013; Mikolov et al. 2013; (Goldberg & Levy 2014)]
+* `R` .ref[(Silge 2017a; 2017b)] and `python`
+
+For looking at historical material: 
+
+* Scripta Sinica corpus 漢籍全文資料庫計畫 
+
+---
+
+# Case study: .sc[light] ideophones
+
+![:scale 80%](hierarchy.png)
+
+From these ideophones that are expressed by the sensory modality of .sc[vision] <br> be it dynamic (.sc[movement]) or static (.sc[vision]),
+<br> I have chosen those that express .sc[light].
+
+Similar to the English *gl-* phonaestheme:
+
+* *glare, gleam, glim, glimmer, glint, glisten, glister, glitter, gloaming, glow*
+* *glance, glaze, glimpse, glint*
+* *glacé, glacier, glair, glare, glass, glaze, gloss*
+
+---
+
+# .sc[light] ideos: types
+
+.font80[
+```{r data, echo=FALSE, warning=FALSE, error=FALSE, cache=TRUE}
+character <- c("熠熠",
+"煜煜",
+"燿燿",
+"耀耀",
+"爚爚",
+"灼灼",
+"爍爍",
+"鑠鑠",
+"犖犖",
+"燁燁",
+"爗爗",
+"曄曄",
+"煒煒",
+"韡韡",
+"煇煇",
+"輝輝",
+"暉暉")
+
+pinyin <- c(" yìyì ",
+" yùyù ",
+" yàoyào ",
+" yàoyào ",
+" yuèyuè ",
+" zhuózhuó ",
+" shuòshuò ",
+" shuòshuò ",
+" luòluò ",
+" yèyè ",
+" yèyè ",
+" yèyè ",
+" wěiwěi ",
+" wěiwěi ",
+" huīhuī ",
+" huīhuī ",
+" huīhuī ")
+
+MOE <- c(" 閃亮光耀的樣子。 ",
+" 光明照耀的樣子。 ",
+" 光明的樣子。 ",
+" 光明的樣子。 ",
+" 光明的樣子。 ",
+" 花茂盛鮮明。明亮。 ",
+" 光閃動的樣子。 ",
+" 光明閃耀的樣子。 ",
+" 事理分明的樣子。光明磊落的樣子。  ",
+" 光鮮明亮的樣子。  顯赫的樣子。  ",
+" NA ",
+" 盛大的樣子。 ",
+" 光彩極盛的樣子。 ",
+" 光明盛大的樣子。 ",
+" NA ",
+" NA ",
+" 晴朗的樣子。 ")
+
+Kroll <- c(" vividly bright",
+" burning brightly, flamboyant",
+" flashing, sparkling, glittering",
+" flashing, sparkling, glittering",
+" flashing and flickering, blazingly bright",
+" evident, brilliant, aglow, vivid and vibrant,   brightly blazing, plain and patent",
+" flashing, flaring, effulgent, alight, rutilant; splendrous",
+" polished, gleaming; shining; glittering, flashing",
+" manifestly evident; conspicuous, outstanding",
+" brightly shining; flashing, flaring, gleaming",
+" NA",
+" brightly shining; flashing, flaring, gleaming",
+" swirling or globed flames; bright shimmer",
+" vividly dazzling, gorgeously glistering",
+" fire-red, blazing brightly; splendid; brilliant",
+" radiant illumination, glow; splendor, brilliance",
+" radiant, gleaming; vividly white, candent;  gloze, spread light; dazzle")
+
+df <- tibble(character, pinyin, MOE, Kroll)
+
+DT::datatable(
+  df,
+  fillContainer = FALSE, options = list(pageLength = 9)
+)
+```
+]
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+Let us take these three as a case study for this presentation:
+
+Mandarin |Middle Chinese|Old Chinese|MOE|Shuowen jiezi
+--- |--- |--- |--- 
+暉 huī |<MC xjwɨj |<OC *qʷʰər|「 晴朗的樣子。」|「 光也。」
+輝 huī |<MC xjwɨj |<OC *qʷʰər||「 光也。」
+煇 huī |<MC xjwɨj |<OC *qʷʰər||「 光也。」
+
+Based on the definitions, one could presume that their meanings are entirely the same, i.e. synonymous.
+
+But below I will show that this is not the case.
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+Step 0. .markeer[Getting the data from corpus (manual copying) + 'wrangling' into concordance]
+
+Step 1. .markeer[Identifying the collocate]
+
+*huīhuī* 輝輝 with .markeer2[LIGHT] radical
+
+* "Spring clouds gently drifting, .under[the sun] *blazing*" 春雲澹澹日輝輝, in collection of 御定佩文齋廣群芳譜
+* "On a clear morning, .under[the lantern] *burning brightly*" 清晨輝輝燭, in collection of 御定佩文齋廣群芳譜
+* "*Bright* .under[cinnabar]" 輝輝丹, in collection of 御定佩文齋廣群芳譜
+* "*Bright* is the light, shining in the 5 .under[colours]" 輝輝有光曜五色, in 全後漢文
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+Step 1. .markeer[Identifying the collocate]
+
+*huīhuī* 煇煇 with .markeer2[FIRE] radical
+
+* "[...] make ill .under[the ear], and the sound *blazing*" 病耳聾煇煇, in 耳病門
+* ".under[candles] *burning brightly*"燭煇煇, in 咸淳臨安志
+* "The colour .under[red] is *flaming brightly*" 赤之色煇煇也, in 易緯稽覽圖
+
+*huīhuī* 暉暉 with .markeer2[SUN] radical
+
+* ".under[vermillion red] and *bright* the drunken face" 暉暉朱顏酡, in 全宋詩
+* "*Brightly red*, watching the .under[setting sun]" 暉暉視落日, in 梁詩
+* ".under[The sun] *brightly red*, under the mountain" 日暉暉兮山之下, in 全宋詩
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+Step 2. .markeer[Count these collocates per period]
+
+![:scale 80%](huihui.png)
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+There is a big type frequency difference: *huīhuī* 輝輝 with .markeer2[LIGHT] radical has a much higher .markeer2[type frequency] in terms of different referential collocates.
+
+Still, they each are similar in meanings, e.g. shades of .sc[red], just different shades per ideophone.
+
+This difference in type frequency inspired an inquiry into .markeer2[token frequency].
+
+---
+
+# *Huīhuī*s vs. *zhuózhuó* 灼灼
+
+![](huihuizhuozhuo.png)
+
+*Zhuózhuó* was much more common than any of the three *huīhuī*s -- in fact, it had the highest .markeer2[token frequency] of all the ideophones under consideration.
+
+---
+
+# *Zhuózhuó* 灼灼
+
+![:scale 90%](zhuozhuo.png)
+
+Prototypical bundle of very frequent meanings: .sc[blossoming] frame, with less salient in the margins.
+
+---
+
+# Computational complement
+
+It is useful for future research to be able to try to automate such analysis, in order to gain more insight.
+
+Operationalized: how can computational methods help us better understand the semantic structure of ideophones?
+
+As mentioned, answers were found in .markeer[distributional semantics] methodology.
+
+Step 0. .markeer[Gathering data]
+
+The material stayed the same -- Scripta Sinica corpus 漢籍全文資料庫計畫 -- but I wrote a `python` script (with the `selenium` library) to gather the data, instead of having to manually copy it.
+
+---
+
+# Computational complement
+
+Step 1. .markeer[Segmenting text]
+
+Using the `python` library `jieba`, I segmented the text, which was relatively successful. 
+
+In order to aid in the segmentation process, two 'dictionaries' were added to `jieba`:
+
+1. a list of ideophones (database)
+1. a list of particles used in Premodern Chinese .ref[cf. Jonker, Esch & Mansvelt Beck (2011)]
+
+Step 2. .markeer[Choice of model and units]
+
+* word-based (as opposed to syntax-based or text-based)
+* skip-grams (cf. [this blog post](https://juliasilge.com/blog/tidy-word-vectors/) and [this one](https://juliasilge.com/blog/word-vectors-take-two/))]
+* functions written with `R` (a function called `sliding_windows()`)
+
+---
+
+# Computational complement
+
+Step 3. .markeer[Frequencies and co-occurrence strength]
+
+* calculating the pointwise mutual information PMI for every pair of words, using a function `tidy_pmi()`
+
+Step 4. .markeer[Similarity]
+
+* reducing the dimensionality with singular value decomposition SVD, with a function `widely_svd()` from the `widyr` package
+
+Step 5. .markeer[Interpreting the results]
+
+Now there is a long data frame ('table-like object in `R`'), with a score for each 'neighbour' ('calculated collocate')
+
+---
+
+# The computational *zhuózhuó* 灼灼
+
+![](computationalzhuozhuo.png)
+
+
+---
+
+# The computational *zhuózhuó* 灼灼
+
+Computational methods are able to calculate similar results as with the manual analysis.
+
+But: they mostly show the higher-frequency items -- if there are 'hapaxes' or many similar scores, it can become messy.
+
+However, they can aid at higher levels for abstraction.
+
+---
+
+# Manual frames 
+
+![:scale 80%](framesdomains.png)
+
+---
+
+# Computationally aided frames
+
+![:scale 80%](computationalframesdomains.png)
+
+---
+
+# Interim discussion
+
+.Large[.markeer2[RQ1: Is there any variation at play, and if so, in what ways?]]
+
+.Large[.markeer2[RQ2: How have these structures evolved over time?]]
+
+Through these case studies I have shown that variation is present in .sc[light] ideophones (as it is probably inherent in language throughout time), by looking at how the .sc[meanings] of these ideophones change, but also how their .sc[written form] have variation and how that influences these meanings.
+
+
+---
+
+# Plan for the dissertation
+
+## More case studies
+* auditory (computational and then manual)
+* other modalities (?)
+
+## Revisiting Chinese ideophones
+
+After these case studies, what is typical for 'the Chinese ideophone'?
+
+## Qualitative studies
+* particular constructions
+* multimodality
+* acquisition
+
+
+---
+
+# Conclusion:
+
+.markeer[I find this section very hard to write. I don't know if a proposal already needs to have a conclusion and I would like to have your input.
+
+Thank you!
+
+As a reference: 
+
+Research questions:
+
+What does the semantic structure of Chinese ideophones look like?
+
+1. Is there any variation at play, and if so, in what ways?
+1. How have these structures evolved over time?
+1. What constructions do ideophones appear in and what are their functions?
+]
+
+---
+
+# Selected references
+
+.font200[
+** under construction**
+]
+
+
+
+

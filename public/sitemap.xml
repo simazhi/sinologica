@@ -5,6 +5,33 @@
     
     <url>
     
+      <loc>/post/memorable-moments-of-2018-shang/</loc>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/2018_cldc/</loc>
+      <lastmod>2018-10-20T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/2018_raam12/</loc>
+      <lastmod>2018-10-20T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/the-rite-of-spring/</loc>
       <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     </url>
@@ -23,7 +50,7 @@
     
     <url>
     
-      <loc>/publication/cogsem2018/</loc>
+      <loc>/publication/2018_cogsem_weather/</loc>
       <lastmod>2018-08-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -86,7 +113,7 @@
     
     <url>
     
-      <loc>/publication/cldc2015/</loc>
+      <loc>/publication/2019_clr_variation_cldc/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -194,7 +221,7 @@
     
     <url>
     
-      <loc>/talk/example-talk/</loc>
+      <loc>/talk/2017_nagoya/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -709,7 +736,7 @@
     <url>
     
       <loc>/tags/belgians/</loc>
-      <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -719,17 +746,7 @@
     <url>
     
       <loc>/tags/belgium/</loc>
-      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/belgi%C3%AB/</loc>
-      <lastmod>2017-08-24T06:34:14+00:00</lastmod>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -740,6 +757,16 @@
     
       <loc>/categories/belgi%C3%AB/</loc>
       <lastmod>2016-05-30T14:24:33+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/belgi%C3%AB/</loc>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -769,7 +796,7 @@
     <url>
     
       <loc>/categories/blog/</loc>
-      <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -989,7 +1016,7 @@
     <url>
     
       <loc>/tags/family/</loc>
-      <lastmod>2017-08-24T06:34:14+00:00</lastmod>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1009,7 +1036,7 @@
     <url>
     
       <loc>/tags/friends/</loc>
-      <lastmod>2017-05-13T07:47:54+00:00</lastmod>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1158,7 +1185,7 @@
     
     <url>
     
-      <loc>/tags/huangshan/</loc>
+      <loc>/categories/huangshan/</loc>
       <lastmod>2013-06-27T07:22:04+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1168,7 +1195,7 @@
     
     <url>
     
-      <loc>/categories/huangshan/</loc>
+      <loc>/tags/huangshan/</loc>
       <lastmod>2013-06-27T07:22:04+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1488,7 +1515,7 @@
     
     <url>
     
-      <loc>/tags/ningbo/</loc>
+      <loc>/categories/ningbo/</loc>
       <lastmod>2012-10-31T13:40:23+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1498,7 +1525,7 @@
     
     <url>
     
-      <loc>/categories/ningbo/</loc>
+      <loc>/tags/ningbo/</loc>
       <lastmod>2012-10-31T13:40:23+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1598,8 +1625,8 @@
     
     <url>
     
-      <loc>/tags/reisjes/</loc>
-      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
+      <loc>/categories/reisjes/</loc>
+      <lastmod>2015-09-04T20:32:59+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1608,8 +1635,8 @@
     
     <url>
     
-      <loc>/categories/reisjes/</loc>
-      <lastmod>2015-09-04T20:32:59+00:00</lastmod>
+      <loc>/tags/reisjes/</loc>
+      <lastmod>2018-08-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1648,7 +1675,7 @@
     
     <url>
     
-      <loc>/tags/shanghai/</loc>
+      <loc>/categories/shanghai/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1658,7 +1685,7 @@
     
     <url>
     
-      <loc>/categories/shanghai/</loc>
+      <loc>/tags/shanghai/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1718,7 +1745,7 @@
     
     <url>
     
-      <loc>/tags/suzhou/</loc>
+      <loc>/categories/suzhou/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1728,7 +1755,7 @@
     
     <url>
     
-      <loc>/categories/suzhou/</loc>
+      <loc>/tags/suzhou/</loc>
       <lastmod>2017-02-03T12:03:49+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1778,16 +1805,6 @@
     
     <url>
     
-      <loc>/tags/taipei/</loc>
-      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/categories/taipei/</loc>
       <lastmod>2016-05-31T15:40:48+00:00</lastmod>
       <priority>0</priority>
@@ -1798,8 +1815,8 @@
     
     <url>
     
-      <loc>/tags/taiwan/</loc>
-      <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+      <loc>/tags/taipei/</loc>
+      <lastmod>2018-02-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1810,6 +1827,16 @@
     
       <loc>/categories/taiwan/</loc>
       <lastmod>2016-07-15T15:32:28+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/taiwan/</loc>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -2020,6 +2047,16 @@
     
       <loc>/tags/witches/</loc>
       <lastmod>2016-02-21T07:49:27+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/wrap-up/</loc>
+      <lastmod>2019-01-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

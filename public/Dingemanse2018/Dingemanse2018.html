@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redrawing the margins of language: Lessons from research on ideophones</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Thomas Van Hoey 司馬智" />
+    <meta name="date" content="2018-10-29" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <link href="libs/leaflet-label/leaflet.label.css" rel="stylesheet" />
+    <script src="libs/leaflet-label/leaflet.label.js"></script>
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <script src="libs/leaflet-providers/leaflet-providers.js"></script>
+    <script src="libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+    <link rel="stylesheet" href="ntu.css" type="text/css" />
+    <link rel="stylesheet" href="ntu-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Redrawing the margins of language: Lessons from research on ideophones
+## by Dingemanse (2018)
+<html>
+<div style="float:left">
+
+</div>
+<hr color='#875712' size=1px width=796px>
+</html>
+### Thomas Van Hoey 司馬智 <br>
+### 2018-10-29
+
+---
+
+
+
+
+# Abstract
+
+.left-column[
+![](imgs/tree.jpg)
+
+]
+
+.right-column[
+
+.font80[ 
+&gt;Ideophones (also known as expressives or mimetics, and including onomatopoeia) have been systematically studied in linguistics since the 1850s, when they were first described as a lexical class of vivid sensory words in West-African languages.
+
+&gt;This paper **surveys the research history of ideophones**, from its **roots** in African linguistics to its **fruits** in general linguistics and typology around the globe.
+
+&gt;It shows that despite a recurrent narrative of marginalisation, work on **ideophones has made an impact in many areas of linguistics**, from theories of phonological features to typologies of manner and motion, and from sound symbolism to sensory language. 
+
+&gt;Due to their hybrid nature as gradient vocal gestures that grow roots in discrete linguistic systems, ideophones provide opportunities to reframe **typological questions**, reconsider the role of **language ideology** in linguistic scholarship, and **rethink the margins of language**. With ideophones increasingly being brought into the fold of the language sciences, this review synthesises past theoretical insights and empirical findings in order to enable future work to build on them.
+
+] 
+
+]
+
+---
+
+# Topic addressed
+
+##  Alternative (affectionate) title:
+
+.font120[**Ideophones and why you should care.**]
+
+## Focuses of the paper
+
+- ideophones in the margins .lit[§1]
+- historical overview (a story about scholars) .lit[§2-5]
+- recent developments .lit[§6]
+- lessons learned from ideophones .lit[§7]
+
+---
+
+# Terminology (once more)
+
+## Difference in semantics:
+- semantics / pragmatic functions &lt;br&gt; *expressive, descriptive, intensifier*
+- morphosyntactic properties &lt;br&gt; *radical, particle, adverb*
+- mode of representation &lt;br&gt; *imitative, Lautbild, picture word*
+- familiar phenomena &lt;br&gt; *onomatopoeia, interjection, Schallwort*
+
+## Three competitors
+- expressives
+- mimetics
+- **ideophones**
+
+---
+
+# Terminology 
+
+
+<div id="htmlwidget-a2513d605a4c3a8e2f01" style="width:100%;height:504px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a2513d605a4c3a8e2f01">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false},"calls":[{"method":"addTiles","args":["OpenStreetMap.Mapnik",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,"OpenStreetMap.Mapnik",{"errorTileUrl":"","noWrap":false,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addCircleMarkers","args":[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53,5.9437,-15.60807,-0.87437,-31.03886,31.1833333333,43.27872,-1.48741,55.14291,13.87489],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1,0.13243,26.45548,17.22697,28.07686,48.2333333333,-1.31622,9.50247,23.96007,14.84371],5.5,null,["expressive","expressive","expressive","expressive","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","mimetic","expressive","ideophone","other","ideophone","ideophone","onomatopoeia","impressif","other","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia","other","other","onomatopoeia","onomatopoeia","onomatopoeia","ideophone","onomatopoeia","onomatopoeia","other"],{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"black","fillOpacity":1,"dashArray":null},null,null,["<a href='http://glottolog.org/resource/languoid/iso/sea' target='_blank'>Semai<\/a><br>Diffloth (1976); (Tufvesson 2011)","<a href='http://glottolog.org/resource/languoid/iso/bdq' target='_blank'>Bahnar<\/a><br>Diffloth (1994)","<a href='http://glottolog.org/resource/languoid/iso/meo' target='_blank'>Kedah Malay<\/a><br>Collins (1979)","<a href='http://glottolog.org/resource/languoid/iso/lao' target='_blank'>Lao<\/a><br>Crisfield (1983); Waylang (1996)","<a href='http://glottolog.org/resource/languoid/iso/ind' target='_blank'>Indonesian<\/a><br>Carr (1966)","<a href='http://glottolog.org/resource/languoid/iso/som' target='_blank'>Somali<\/a><br>Dhoorre & Tosco (1998)","<a href='http://glottolog.org/resource/languoid/iso/yor' target='_blank'>Yoruba<\/a><br>Rowlands (1970) <br> specific adverbs (Vidal 1852)","<a href='http://glottolog.org/resource/languoid/iso/kiz' target='_blank'>Kisi<\/a><br>Childs (1988)","<a href='http://glottolog.org/resource/languoid/iso/zul' target='_blank'>Zulu<\/a><br>Doke (1935) ;  Msimang & Poulos (2001) <br> radical descriptives (Doke 1927)","<a href='http://glottolog.org/resource/languoid/iso/gbp' target='_blank'>Gbaya-Bossangoa<\/a><br>Samarin (1965); Noss (2001); Roulon-Doko 2001)","<a href='http://glottolog.org/resource/languoid/iso/hau' target='_blank'>Hausa<\/a><br>Newman (1968) <br> specific intensifying adverbs (Spezifische Verstärkungsadverbien) (Prietze 1908)","<a href='http://glottolog.org/resource/languoid/iso/akp' target='_blank'>Siwu<\/a><br>Dingemanse (2011)","<a href='http://glottolog.org/resource/languoid/iso/kor' target='_blank'>Korean<\/a><br>You (1991); Lee (1992) <br> 의성어 [uiseong-eo]; 의태 [uitae]; 의정어 [uijeong-eo]","<a href='http://glottolog.org/resource/languoid/iso/prq' target='_blank'>Asheninka Perene<\/a><br>Mihas (2012)","<a href='http://glottolog.org/resource/languoid/iso/jpn' target='_blank'>Japanese<\/a><br>Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester & Itō (1989); Rodrigues (1604) <br> オノマトペ・擬音語・擬態語・擬情語 [onomatope; giongo; gitaigo; gijōgo] “onomatopeia; phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/fra' target='_blank'>French<\/a><br>Grammont (1901) <br> expressive (mots expressifs)","<a href='http://glottolog.org/resource/languoid/iso/qvz' target='_blank'>Northern Pastaza Quichua<\/a><br>Nuckolls (1992; 1996; 2004; 2017)","<a href='http://glottolog.org/resource/languoid/iso/ewe' target='_blank'>Ewe<\/a><br>Westermann (1905: 1907); Schlegel (1857); Ameka (2001) <br> sound pictures (Lautbilder); intensity and frequency adverbs (Intensitäts- und Frequenzadverbien)\n","<a href='http://glottolog.org/resource/languoid/iso/sna' target='_blank'>Shona<\/a><br>Fortune (1962); Klassen (1999)","<a href='http://glottolog.org/resource/languoid/iso/sot' target='_blank'>Southern Sotho<\/a><br>Kunene (1965)","<a href='http://glottolog.org/resource/languoid/iso/kfe' target='_blank'>Kota (India)<\/a><br>Emeneau (1969) <br> onomatopoetics","<a href='http://glottolog.org/resource/languoid/iso/vie' target='_blank'>Vietnamese<\/a><br>Durand (1961)","<a href='http://glottolog.org/resource/languoid/iso/kha' target='_blank'>Khasi<\/a><br>Henderson (1965) <br> phonaesthetic words","<a href='http://glottolog.org/resource/languoid/iso/pac' target='_blank'>Pacoh<\/a><br>Watson (1966)","<a href='http://glottolog.org/resource/languoid/iso/yiy' target='_blank'>Yir-Yoront<\/a><br>Alpher (1994; 2001)","<a href='http://glottolog.org/resource/languoid/iso/nya' target='_blank'>Nyanja<\/a><br>Kulemeka (1994) (lang: Chichewa); 1996; 1997)","<a href='http://glottolog.org/resource/languoid/iso/wal' target='_blank'>Wolaytta<\/a><br>Amha (2001)","<a href='http://glottolog.org/resource/languoid/iso/tsn' target='_blank'>Tswana<\/a><br>Creissels (2001)","<a href='http://glottolog.org/resource/languoid/iso/ema' target='_blank'>Emai-Iuleha-Ora<\/a><br>Egbokhare (2001); Schaefer (2001)","<a href='http://glottolog.org/resource/languoid/iso/mua' target='_blank'>Mundang<\/a><br>Elders (2001)","<a href='http://glottolog.org/resource/languoid/iso/fin' target='_blank'>Finnish<\/a><br>Jarva (2001); Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/did' target='_blank'>Didinga<\/a><br>de Jong (2001)","<a href='http://glottolog.org/resource/languoid/iso/lub' target='_blank'>Luba-Katanga<\/a><br>Kabuta (2001)","<a href='http://glottolog.org/resource/languoid/iso/bkc' target='_blank'>Baka (Cameroon)<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xuu' target='_blank'>Kxoe<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xbr' target='_blank'>Kambera<\/a><br>Klamer (1998; 2000)","<a href='http://glottolog.org/resource/languoid/iso/wwr' target='_blank'>Warrwa<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gni' target='_blank'>Gooniyandi<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gww' target='_blank'>Kwini<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/ekk' target='_blank'>Estonian<\/a><br>Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/ilo' target='_blank'>Iloko<\/a><br>Rubino (2001) <br> onomatopoetics","<a href='http://glottolog.org/resource/languoid/iso/djd' target='_blank'>Jaminjung<\/a><br>Schultze-Berndt (2001)","<a href='http://glottolog.org/resource/languoid/iso/tll' target='_blank'>Tetela<\/a><br>Tassa (2001)","<a href='http://glottolog.org/resource/languoid/iso/xmu' target='_blank'>Kamu<\/a><br>Svantesson (1983)","<a href='http://glottolog.org/resource/languoid/iso/cmn' target='_blank'>Mandarin Chinese<\/a><br>Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/yue' target='_blank'>Yue Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/dga' target='_blank'>Central Dagaare<\/a><br>Bodomo (2006)","<a href='http://glottolog.org/resource/languoid/iso/hak' target='_blank'>Hakka Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/hsn' target='_blank'>Xiang Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/gan' target='_blank'>Gan Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/wuu' target='_blank'>Wu Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/tku' target='_blank'>Upper Necaxa Totonac<\/a><br>Beck (2008)","<a href='http://glottolog.org/resource/languoid/iso/eng' target='_blank'>English<\/a><br>Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001); etc.","<a href='http://glottolog.org/resource/languoid/iso/ada' target='_blank'>Adangme<\/a><br>Christaller (1888) <br> descriptive adverbs","<a href='http://glottolog.org/resource/languoid/iso/ilb' target='_blank'>Ila<\/a><br>Smith (1920) <br> echoisms","<a href='http://glottolog.org/resource/languoid/iso/bni' target='_blank'>Bangi<\/a><br>Whitehead (1899) <br> indeclinable adjectives","<a href='http://glottolog.org/resource/languoid/iso/xho' target='_blank'>Xhosa<\/a><br>McLaren (1906) <br> indeclinable verbal particles","<a href='http://glottolog.org/resource/languoid/iso/elx' target='_blank'>Elamite<\/a><br>Winkler-Breslau (1907) <br> Sound figures (Klangfiguren)\n","<a href='http://glottolog.org/resource/languoid/iso/eus' target='_blank'>Basque<\/a><br>Urtel (1917); Ibarretxe-Antuñano (2017); Schuchardt (1919) <br> onomatopoeia; ideophones; sound words (Schallwörter)","<a href='http://glottolog.org/resource/languoid/iso/mye' target='_blank'>Myene<\/a><br>Wilson (1847) <br> (onomatopoeic) interjections","<a href='http://glottolog.org/resource/languoid/iso/lit' target='_blank'>Lithuanian<\/a><br>Leskien (1902) <br> sound imitations (Schallnachahmungen)","<a href='http://glottolog.org/resource/languoid/iso/kbl' target='_blank'>Kanembu<\/a><br>(Prietze 1908) <br> specific intensifying adverbs (Spezifische Verstärkungsadverbien)"],null,null,null,null]},{"method":"addCircleMarkers","args":[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53,5.9437,-15.60807,-0.87437,-31.03886,31.1833333333,43.27872,-1.48741,55.14291,13.87489],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1,0.13243,26.45548,17.22697,28.07686,48.2333333333,-1.31622,9.50247,23.96007,14.84371],5,null,["expressive","expressive","expressive","expressive","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","mimetic","expressive","ideophone","other","ideophone","ideophone","onomatopoeia","impressif","other","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","expressive","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","ideophone","onomatopoeia","other","other","onomatopoeia","onomatopoeia","onomatopoeia","ideophone","onomatopoeia","onomatopoeia","other"],{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":["#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#D62728","#1F77B4","#FF7F0E","#8C564B","#FF7F0E","#FF7F0E","#9467BD","#2CA02C","#8C564B","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#1F77B4","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#9467BD","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#9467BD","#8C564B","#8C564B","#9467BD","#9467BD","#9467BD","#FF7F0E","#9467BD","#9467BD","#8C564B"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#D62728","#1F77B4","#FF7F0E","#8C564B","#FF7F0E","#FF7F0E","#9467BD","#2CA02C","#8C564B","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#1F77B4","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#9467BD","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#9467BD","#8C564B","#8C564B","#9467BD","#9467BD","#9467BD","#FF7F0E","#9467BD","#9467BD","#8C564B"],"fillOpacity":1,"dashArray":null},null,null,["<a href='http://glottolog.org/resource/languoid/iso/sea' target='_blank'>Semai<\/a><br>Diffloth (1976); (Tufvesson 2011)","<a href='http://glottolog.org/resource/languoid/iso/bdq' target='_blank'>Bahnar<\/a><br>Diffloth (1994)","<a href='http://glottolog.org/resource/languoid/iso/meo' target='_blank'>Kedah Malay<\/a><br>Collins (1979)","<a href='http://glottolog.org/resource/languoid/iso/lao' target='_blank'>Lao<\/a><br>Crisfield (1983); Waylang (1996)","<a href='http://glottolog.org/resource/languoid/iso/ind' target='_blank'>Indonesian<\/a><br>Carr (1966)","<a href='http://glottolog.org/resource/languoid/iso/som' target='_blank'>Somali<\/a><br>Dhoorre & Tosco (1998)","<a href='http://glottolog.org/resource/languoid/iso/yor' target='_blank'>Yoruba<\/a><br>Rowlands (1970) <br> specific adverbs (Vidal 1852)","<a href='http://glottolog.org/resource/languoid/iso/kiz' target='_blank'>Kisi<\/a><br>Childs (1988)","<a href='http://glottolog.org/resource/languoid/iso/zul' target='_blank'>Zulu<\/a><br>Doke (1935) ;  Msimang & Poulos (2001) <br> radical descriptives (Doke 1927)","<a href='http://glottolog.org/resource/languoid/iso/gbp' target='_blank'>Gbaya-Bossangoa<\/a><br>Samarin (1965); Noss (2001); Roulon-Doko 2001)","<a href='http://glottolog.org/resource/languoid/iso/hau' target='_blank'>Hausa<\/a><br>Newman (1968) <br> specific intensifying adverbs (Spezifische Verstärkungsadverbien) (Prietze 1908)","<a href='http://glottolog.org/resource/languoid/iso/akp' target='_blank'>Siwu<\/a><br>Dingemanse (2011)","<a href='http://glottolog.org/resource/languoid/iso/kor' target='_blank'>Korean<\/a><br>You (1991); Lee (1992) <br> 의성어 [uiseong-eo]; 의태 [uitae]; 의정어 [uijeong-eo]","<a href='http://glottolog.org/resource/languoid/iso/prq' target='_blank'>Asheninka Perene<\/a><br>Mihas (2012)","<a href='http://glottolog.org/resource/languoid/iso/jpn' target='_blank'>Japanese<\/a><br>Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester & Itō (1989); Rodrigues (1604) <br> オノマトペ・擬音語・擬態語・擬情語 [onomatope; giongo; gitaigo; gijōgo] “onomatopeia; phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/fra' target='_blank'>French<\/a><br>Grammont (1901) <br> expressive (mots expressifs)","<a href='http://glottolog.org/resource/languoid/iso/qvz' target='_blank'>Northern Pastaza Quichua<\/a><br>Nuckolls (1992; 1996; 2004; 2017)","<a href='http://glottolog.org/resource/languoid/iso/ewe' target='_blank'>Ewe<\/a><br>Westermann (1905: 1907); Schlegel (1857); Ameka (2001) <br> sound pictures (Lautbilder); intensity and frequency adverbs (Intensitäts- und Frequenzadverbien)\n","<a href='http://glottolog.org/resource/languoid/iso/sna' target='_blank'>Shona<\/a><br>Fortune (1962); Klassen (1999)","<a href='http://glottolog.org/resource/languoid/iso/sot' target='_blank'>Southern Sotho<\/a><br>Kunene (1965)","<a href='http://glottolog.org/resource/languoid/iso/kfe' target='_blank'>Kota (India)<\/a><br>Emeneau (1969) <br> onomatopoetics","<a href='http://glottolog.org/resource/languoid/iso/vie' target='_blank'>Vietnamese<\/a><br>Durand (1961)","<a href='http://glottolog.org/resource/languoid/iso/kha' target='_blank'>Khasi<\/a><br>Henderson (1965) <br> phonaesthetic words","<a href='http://glottolog.org/resource/languoid/iso/pac' target='_blank'>Pacoh<\/a><br>Watson (1966)","<a href='http://glottolog.org/resource/languoid/iso/yiy' target='_blank'>Yir-Yoront<\/a><br>Alpher (1994; 2001)","<a href='http://glottolog.org/resource/languoid/iso/nya' target='_blank'>Nyanja<\/a><br>Kulemeka (1994) (lang: Chichewa); 1996; 1997)","<a href='http://glottolog.org/resource/languoid/iso/wal' target='_blank'>Wolaytta<\/a><br>Amha (2001)","<a href='http://glottolog.org/resource/languoid/iso/tsn' target='_blank'>Tswana<\/a><br>Creissels (2001)","<a href='http://glottolog.org/resource/languoid/iso/ema' target='_blank'>Emai-Iuleha-Ora<\/a><br>Egbokhare (2001); Schaefer (2001)","<a href='http://glottolog.org/resource/languoid/iso/mua' target='_blank'>Mundang<\/a><br>Elders (2001)","<a href='http://glottolog.org/resource/languoid/iso/fin' target='_blank'>Finnish<\/a><br>Jarva (2001); Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/did' target='_blank'>Didinga<\/a><br>de Jong (2001)","<a href='http://glottolog.org/resource/languoid/iso/lub' target='_blank'>Luba-Katanga<\/a><br>Kabuta (2001)","<a href='http://glottolog.org/resource/languoid/iso/bkc' target='_blank'>Baka (Cameroon)<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xuu' target='_blank'>Kxoe<\/a><br>Kilian-Hatz (2001)","<a href='http://glottolog.org/resource/languoid/iso/xbr' target='_blank'>Kambera<\/a><br>Klamer (1998; 2000)","<a href='http://glottolog.org/resource/languoid/iso/wwr' target='_blank'>Warrwa<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gni' target='_blank'>Gooniyandi<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/gww' target='_blank'>Kwini<\/a><br>McGregor (2001)","<a href='http://glottolog.org/resource/languoid/iso/ekk' target='_blank'>Estonian<\/a><br>Mikone (2001)","<a href='http://glottolog.org/resource/languoid/iso/ilo' target='_blank'>Iloko<\/a><br>Rubino (2001) <br> onomatopoetics","<a href='http://glottolog.org/resource/languoid/iso/djd' target='_blank'>Jaminjung<\/a><br>Schultze-Berndt (2001)","<a href='http://glottolog.org/resource/languoid/iso/tll' target='_blank'>Tetela<\/a><br>Tassa (2001)","<a href='http://glottolog.org/resource/languoid/iso/xmu' target='_blank'>Kamu<\/a><br>Svantesson (1983)","<a href='http://glottolog.org/resource/languoid/iso/cmn' target='_blank'>Mandarin Chinese<\/a><br>Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/yue' target='_blank'>Yue Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/dga' target='_blank'>Central Dagaare<\/a><br>Bodomo (2006)","<a href='http://glottolog.org/resource/languoid/iso/hak' target='_blank'>Hakka Chinese<\/a><br>Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/hsn' target='_blank'>Xiang Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/gan' target='_blank'>Gan Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/wuu' target='_blank'>Wu Chinese<\/a><br>Wu (2015) <br> 象聲詞 [xiangshengci] “onomatope” <br> 擬聲詞·擬態詞·擬請詞 [nishengci; nitaici; niqingci] “phonomime; phenomime; psychomime”","<a href='http://glottolog.org/resource/languoid/iso/tku' target='_blank'>Upper Necaxa Totonac<\/a><br>Beck (2008)","<a href='http://glottolog.org/resource/languoid/iso/eng' target='_blank'>English<\/a><br>Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001); etc.","<a href='http://glottolog.org/resource/languoid/iso/ada' target='_blank'>Adangme<\/a><br>Christaller (1888) <br> descriptive adverbs","<a href='http://glottolog.org/resource/languoid/iso/ilb' target='_blank'>Ila<\/a><br>Smith (1920) <br> echoisms","<a href='http://glottolog.org/resource/languoid/iso/bni' target='_blank'>Bangi<\/a><br>Whitehead (1899) <br> indeclinable adjectives","<a href='http://glottolog.org/resource/languoid/iso/xho' target='_blank'>Xhosa<\/a><br>McLaren (1906) <br> indeclinable verbal particles","<a href='http://glottolog.org/resource/languoid/iso/elx' target='_blank'>Elamite<\/a><br>Winkler-Breslau (1907) <br> Sound figures (Klangfiguren)\n","<a href='http://glottolog.org/resource/languoid/iso/eus' target='_blank'>Basque<\/a><br>Urtel (1917); Ibarretxe-Antuñano (2017); Schuchardt (1919) <br> onomatopoeia; ideophones; sound words (Schallwörter)","<a href='http://glottolog.org/resource/languoid/iso/mye' target='_blank'>Myene<\/a><br>Wilson (1847) <br> (onomatopoeic) interjections","<a href='http://glottolog.org/resource/languoid/iso/lit' target='_blank'>Lithuanian<\/a><br>Leskien (1902) <br> sound imitations (Schallnachahmungen)","<a href='http://glottolog.org/resource/languoid/iso/kbl' target='_blank'>Kanembu<\/a><br>(Prietze 1908) <br> specific intensifying adverbs (Spezifische Verstärkungsadverbien)"],null,["Semai","Bahnar","Kedah Malay","Lao","Indonesian","Somali","Yoruba","Kisi","Zulu","Gbaya-Bossangoa","Hausa","Siwu","Korean","Asheninka Perene","Japanese","French","Northern Pastaza Quichua","Ewe","Shona","Southern Sotho","Kota (India)","Vietnamese","Khasi","Pacoh","Yir-Yoront","Nyanja","Wolaytta","Tswana","Emai-Iuleha-Ora","Mundang","Finnish","Didinga","Luba-Katanga","Baka (Cameroon)","Kxoe","Kambera","Warrwa","Gooniyandi","Kwini","Estonian","Iloko","Jaminjung","Tetela","Kamu","Mandarin Chinese","Yue Chinese","Central Dagaare","Hakka Chinese","Xiang Chinese","Gan Chinese","Wu Chinese","Upper Necaxa Totonac","English","Adangme","Ila","Bangi","Xhosa","Elamite","Basque","Myene","Lithuanian","Kanembu"],{"clickable":false,"noHide":false,"direction":"right","opacity":1,"offset":[12,-15],"textsize":"10px","textOnly":true,"style":{"font-size":"14px"},"zoomAnimation":true,"className":""},null]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addLegend","args":[{"colors":["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B"],"labels":["expressive","ideophone","impressif","mimetic","onomatopoeia","other"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend"}]}],"limits":{"lat":[-31.03886,64.762825],"lng":[-2.52265,285.08472]}},"evals":[],"jsHooks":[]}</script>
+
+
+
+
+---
+
+# Marginality and rara
+
+Ideophones were understudied, relocated to the margins of linguistics.
+But, what does it mean to be marginal?
+
+&gt;.sc[Rara] are typologically exceptional phenomenona that illuminate the fringes of linguistic diversity. […] 
+
+&gt;.sc[Marginalia] are typologically unexceptional phenomena that many linguists think can be ignored without harm to linguistic inquiry. They are not rare, but linguistic practice assigns them to the margins by consensus. 
+
+&gt;Whereas rara can be objectively described as exceptional, marginalia are viewpoint-dependent” 
+(Dingemanse 2017: 195–6).
+
+However, they (should) have a rightful place in grammars.
+
+---
+
+# Origins of marginality
+
+## Assimilation
+
+Ideophones can be equated with grammatical categories more familiar to the investigator
+
+- response cries .lit[(Pinker &amp; Jackendoff 2009)]
+- onomatopoeia, which only depict .sc[sound] in their strict definition
+
+## Exceptionalism
+
+Ideophones are *completely different* from anything in else in language
+
+- ideophones are a "singularly unique feature" of Yoruba .lit[(Vidal 1852)]
+- studying ideophones = "explorations in the lunatic fringe of language" .lit[(Frankis 1991)]
+
+Combatting marginality through highlighting the **unique significance** of ideophones, while showing how they are **shaped and constrained by the linguistic system**.
+
+---
+
+# The discovery of ideophones
+
+Much of this survey can be found in Dingemanse's PhD dissertation .lit[(2011)]
+
+## First findings
+
+- Sanskrit *anukāraṇa* (4th cent. BCE)
+    - quotatitve *-iti*
+    - reduplication
+- Japanese (17th cent.)
+    - "adverbs that dconclude and draw attention"
+    - "The Japanese have a great number of adverbs which serve not only to express the manner of an event, but which also indicate the sound, the noise, the posture of the thing. (…) Many of these adverbs are formed by repetition of the same word, to express the manner in which a thing is done, or the sound of the thing: like farafara, ‘sound of rain or tears falling’."
+    
+---
+
+# The discovery of ideophones
+
+## 1850s: First modern findings
+
+1850s: independent descriptions of large numbers of ideophones in West-African languages
+
+- [Owen Vidal](https://en.wikipedia.org/wiki/Owen_Vidal) (1819-1854) on Yoruba .lit[(1852)]
+- [Sigismund Koelle](https://en.wikipedia.org/wiki/Sigismund_Koelle) (1820-1902) on Kanuri .lit[(1854)]
+- [Bernhard Schlegel](https://www.deutsche-biographie.de/sfz78426.html) (1827-1859) on Ewe .lit[(1857)]
+
+They find similar sets of ideophones for these three languages, and have some impact.
+
+However, authorities like [Max Müller](https://en.wikipedia.org/wiki/Max_M%C3%BCller) from Oxford say they "constitute a very small proportion of our dictionary" and "are playthings , not the tools of language" .lit[(1861:346)]
+
+---
+
+# The discovery of ideophones
+
+## Around 1900: Africa and beyond
+
+More studies start mentioning ideophones:
+
+* McLaren (1886) on Nguni
+* Junod (1896) on Ronga
+* Whitehead (1899) on Bobangi
+* Meinhof (1906) on the Bantu languages
+* Aston (1894) on Japanese
+* Grammont (1901) on Indo-European languages
+* Leskien (1902) on Lithuanian
+* Wrinkler-Breslau (1907) on Caucasian languages
+* Urtel (1919) on Basque
+
+---
+
+# Ideophones are significant
+
+## [Henri Junod](https://en.wikipedia.org/wiki/Henri-Alexandre_Junod) (1863-1934)
+
+.pull-left[
+- Ronga language .lit[(Junod 1896)]
+- *adverbes descriptifis*
+- occurs in normal conversation
+- "One might say: “This is an childish way of speaking; it is not worth the trouble. **Quite the contrary!** The versatile and spontaneous mind of the people is reflected in this picturesque talk. It enables these words to render nuances which a more restrained language could not express." (Junod 1896: 196f.)
+]
+
+.pull-right[
+![](https://upload.wikimedia.org/wikipedia/commons/2/2e/Henri-Alexandre_Junod00a.jpg)
+]
+
+---
+
+# Ideophones are significant
+
+## [Diedrich Westermann](https://en.wikipedia.org/wiki/Diedrich_Hermann_Westermann) (1875-1956)
+
+
+.pull-left[
+- Ewe language .lit[(Westermann 1905; 1907)]
+- *Lautbilder* 'picture words'
+- "the more the meaning of a verb is removed from the sensory domain, the more these special adverbs disappear and make place for more general ones like *ŋutɔ* ‘very’, *geɖe* ‘many’, *kakáka* ‘to a great extent’, etc." (Westermann 1907: 83).
+]
+
+.pull-right[
+
+![](http://www.germananthropology.com/cms/media/cache/image/portrait-detail/223/portrait_4ff8ad49d6f72.jpg)
+]
+
+---
+
+# Ideophones are significant
+
+## Diedrich Westermann 
+
+&gt;Ewe has two dialectally separated words for duck (…), *kpakpa* after its quacking and *ɖaboɖabo.* When I asked a local whose dialect does not have the latter why it is that other people would say *ɖaboɖabo*, his answer was, “Well, because…”, and he used his upper body to imitate the waddle of a duck. **Ideophones describe a process or object as a whole, not focusing on a single aspect but highlighting primarily its living, moving features.** Asking for the meaning of an ideophone often leads to the objection: “You cannot just describe it, you have to see it.” **It is the total impression, the whole Gestalt, or the movement of the whole Gestalt, which is important.** (Westermann 1937: 159)
+
+.ru-blockquote[
+As a side note, to me this quote convinces me even more that we can use Mental Space theory to the idea of ideophones, as I explored for seminar and [presented in Nagoya (Van Hoey 2017)](https://www.dropbox.com/s/trv8rzytiqf0j9y/Mimetics2_Thomas.pdf?dl=0). 
+
+Recently, Verhagen and Dingemanse want to apply the notion of intersubjectivity to ideophones, and I think that could be a continuation of applying Mental Spaces to that phenomenon.
+]
+
+---
+ 
+# Ideophones are significant
+
+## Ewe collocations with zɔ ‘to go/walk’
+
+- *zɔ hlóyihloyi* ‘walk with many objects dangling about’
+- *zɔ kpúɖukpuɖu* ‘rapid walking of a small person’
+- *zɔ ʋɛ̃ʋɛ̃* ‘gait of a fat and stiff peson'
+
+These vivid depictions made an impact on the philosopher Lévy-Bruhl and made its way into Dan Slobin's .lit[(2004)] starting point on .sc[thinking-for-speaking]! and .sc[satellite]-framed versus .sc[verb]-framed.
+
+.ru-blockquote[
+Notice how these patterns are similar to what we call ABB in Chinese
+- 霧濛濛
+- 軟綿綿
+- 硬邦邦
+]
+
+---
+
+# Ideophones are significant
+
+## Iconicities discovered by Westermann .lit[(1927; 1937)]
+
+![](imgs/Westermann.png)
+---
+
+# Ideophones are significant
+## Iconicities in the lab 
+.lit[(Lockwood &amp; Dingemanse 2015; Lockwood 2017)]
+
+![](imgs/Lockwood1.png)
+
+
+
+---
+
+# Ideophones are significant
+## Iconicities in the lab 
+.lit[(Lockwood &amp; Dingemanse 2015; Lockwood 2017)]
+
+.right-column[
+![](imgs/Lockwood2.png)
+]
+
+.left-column[
+Dingemanse thinks it's unfortunate that not more experimental studies use real ideophones as stimuli, instead of making up *maluma* and *takete*, or *kiki* and *bouba*.
+]
+
+---
+# Ideophones are significant
+
+## [Lévy-Bruhl](https://en.wikipedia.org/wiki/Lucien_L%C3%A9vy-Bruhl) (1857-1939)
+
+Junod's and Westermann's research showed that ideophones can be a study field by themselves, and they were quoted by the influential book *Les fonctions mentales dans les sociétés inférieures* (*How Natives Think*) (1910).
+However, this book argued that the people using ideophones were **primitive and used by primitives**.
+
+This (with a.o. Max Müller's comments) made sure ideophones only got marginal attention in linguistics.
+
+---
+
+# Grammar and performance
+
+## [Clement Martyn Doke](https://en.wikipedia.org/wiki/Clement_Martyn_Doke) (1893-1980)
+
+.left-column[
+![](http://pzacad.pitzer.edu/NAM/Images/dokec.jpg)
+]
+
+.right-column[
+- *Bantu Linguistic Terminology* (1935)
+- coined term 'ideophone' (in this usage)
+- definition: "A vivid representation of an idea in sound. A word, often onomatopoetic, which describes a predicate, qualificative or adverb in respect to manner, colour, sound, smell, action, state or intensity" (Doke 1935:118).
+- argues that ideophones are their own word class / part-of-speech
+- only rhetorical device, used in narrative
+]
+
+---
+
+# The 1960s: More research
+
+The Africanist [Paul Newman](https://en.wikipedia.org/wiki/Paul_Newman_(linguist)) accepted ideophones as a class for Hausa, but maybe not so much for other languages .lit[(1968)].
+
+So, "it was possible to speak of ideophones as a lexical class while recognising that their morphosyntactic functions might be more multifaceted and language-specific."
+
+
+## More research
+
+- Hoffkann (1952) on ancient Indian languages
+- Emeneau (1969) on languages in India
+- Uhlenbeck (1952) on Indonesian (Javanese)
+- Carr (1966) on Malay
+- Durand (1961) on Vietnamese
+- Baner (1964) on Bahnar
+- Henderson (1965) on Khasi
+- Watson (1966) on Pacoh
+- explosion in Japanese studies as well (Akita 2009)
+
+
+---
+
+# Grammar and performance
+
+## [Daniel Kunene](https://www.sahistory.org.za/people/daniel-kunene) (1923-2016)
+
+.left-column[
+![](http://www.sahistory.org.za/sites/default/files/bio_pics/daniel_kunene.jpg)
+]
+
+.right-column[
+- After Fortune .lit[(1962)] noted the dramatic (as in theater) usage of ideophones, Kunene highlighted their similarity to performances
+- While for Vidal (1852) ideophones had the meaning of 'very' (intensifier), for Kunene **this intensification simply arose as a side effect of the depictive quality of ideophones.** (1965:22)
+
+&gt;"The ideophone attempts to bring before the listener, for first-hand perception, actions or states (…) It is an attempt to make the audience *see for themselves* what happened — or will happen" (1965:35)
+
+]
+
+
+---
+
+# The 1970s: Cross-linguistic encounters
+
+## William Samarin
+
+.pull-left[
+.font80[
+&gt; Elsewhere in the world […] we find similar classes of words. What is striking about them, as with African ideophonic words, is that (1) they display a **great deal of play with sounds**, that (2) they are **predominantly reduplicative**, that (3) their **phonology** is in some respects **different** from that of all other words, and finally, that (4) they have **very specific meanings** sometimes **difficult to define**. (Samarin 1970b: 160)
+
+]
+
+Based on ideophones in African languages, Azerbaijani, Malagasy, Mon-Khmer, Korean, Tamil, Thai, Yokuts and Waiwai.
+
+]
+
+.pull-right[
+![](https://tspace.library.utoronto.ca/retrieve/1065506)
+]
+
+---
+
+# The 1970s: Cross-linguistic encounters
+
+## Gérard Diffloth
+
+.pull-left[
+.font80[
+&gt; Such a wide geographic and historical distribution indicates that ideophones are a characteristic of natural language in general, even though they are conspicuously undeveloped and poorly structured in the languages of Europe. (Diffloth 1972: 440)
+
+]
+
+Based on ideophones in Bantu, Chadic, Indo-Aryan, Dravidian, Munda and Mon-Khmer, Austronesian, Japanese and Korean
+
+]
+
+.pull-right[
+![](https://fpalbs.files.wordpress.com/2014/09/gd.jpg)
+
+]
+
+---
+
+# The 1970s and 1980s
+
+## New methods and findings
+
+- Renewed focus on how iconicity and ideophones might correlate, while shifting away from the discussion of their word class status
+- Expressive phonology
+- ...
+
+.ru-blockquote[
+I also wonder, how important is their word class status, especially if one were to adopt frameworks like Croft's Radical Construction Grammar (2001) or Langacker's Cognitive Grammar (1987; 1991; 2008)
+
+]
+
+---
+
+# The 1980s: Impact in linguistics
+ 
+| Topic of study | Key examples
+| ------|----
+| nature of phonological features | Kim-Renaud (1978), Mester &amp; Itô (1989)
+| nonconcatenative morphology | McCarthy (1983), McNally (1991)
+| aesthetic and expressive functions of language | Samarin (1970a), Jakobson and Waugh (1979)
+| lexical discreteness and the nature of words | Diffloth (1976), Mithun (1982)
+| gradience and iconicity in prosody | Liberman (1975), Bolinger (1985)
+| psychological reality of lexical iconicity | Fischer-Jørgensen (1978), Fordyce (1988)
+| expressive vs. prosaic levels of structure | Diffloth (1980), Zwicky &amp; Pullum (1987)
+
+So, ideophones started influencing theoretical linguistics, providing  ruual data and motivating theoretical innovations.
+
+---
+
+# The 1990s: Contravoices
+
+In 1992 [Frederick Newmeyer](https://en.wikipedia.org/wiki/Frederick_Newmeyer) wrote that "the number of pictorial, imitative, or onomatopoetic nonderived words in any language is vanishingly small" .lit[(1992:758)] -- not based on data, but on his gut feeling (or so).
+
+BUT
+
+Other works stressing the important role of iconicity:
+- Linda Waugh took "the 'con' out of iconicity" .lit[(Waugh 1992)]
+- seminal volume on *Sound Symbolism* .lit[(Hinton, Nichols &amp; Ohala 1994)]
+- Janis Nuckolls began working on Quecha ideophones .lit[(Nuckolls 1997)]
+
+---
+
+# The 2000s and 2010s: Inter-discipline
+
+Kulemeka .lit[(1995)] argued that there are two 'traditions' of ideophones:
+- African: focus on word class status of ideophones
+- Asian: focus on iconic patterns in ideophones
+
+Then the first conference on ideophones led to a seminal volume *Ideophones* .lit[(Voeltz &amp; Kilian-Hatz 2001)] on ideophones all around the world, but with a strong focus on Africa.
+
+Interdiscplinary studies: gesture, sociolinguistics, translation, neuroimaging, word learning.
+These have already been reviewed in other overview articles .lit[(Vigliocco &amp; Kita 2006; Akita 2009; 2015; Armoskaite &amp; Koskinen 2017; Ibarretxe-Antuñano 2017)]
+
+Because of these discussions elsewhere, Dingemanse will focus on typology, and linguistic anthropology and language ideologies
+
+---
+
+# The 2000s and 2010s: Typology 
+
+One common argument that stresses the importance of including ideophones in linguistics is the size of the inventory.
+
+| Language | Reported magnitude of ideophone inventory
+|  ---|---
+| Basque | “more than 4,500” (Ibarretxe-Antuñano 2006: 150)
+| Gbeya | “over 3,000” (Samarin 1971: 161)
+| Japanese | “4,500” (Ono 2007)
+| Korean | “several thousands” (Sohn 2001: 96)
+| Semai | “same order of magnitude” as nouns and verbs (Diffloth 1976: 249)
+| Turkish | “one to two thousand” (Jendraschek 2001: 39)
+| Zulu | “3,000” (von Staden 1977: 200)
+
+--
+
+.font80[
+&gt; "Precise numbers are less important than what they imply about grammatical significance and functional load. While minor word classes may be dismissed by some as marginal or of limited importance to linguistic analysis, it is much harder to make such arguments for languages with thousands of ideophones." 
+
+]
+
+---
+
+# The 2000s and 2010s: Typology 
+
+## Chinese inventory
+
+.ru-blockquote[
+* my database project was stuck at 784 types for a very long time.
+* since this summer I (and Arthur Thompson from HKU) are working on getting all the ideophones from Kroll .lit[(2015)], *A Student's Dictionary of Classical and Medieval Chinese*
+* combining that database and this dictionary project seems to yield about 2000 ideophones in total -- although we still need to discuss the validity.
+* this database can be analyzed and also used for corpus-based explorations
+]
+
+---
+
+# The 2000s and 2010s: Typology 
+
+Dingemanse deplores that some linguistic typologies, like Dixon's .lit[(1982)] continuum between strongly adjectival languages and strongly verbal languages does not take ideophones into account. Neglecting to do so would place e.g. in the verbal category; while with ideophones in mind, Ewe is adjectival.
+
+In the typology of the motion event, we know about .sc[satellite-framed] and .sc[verbal-framed] languages (and .sc[equipollently framed] ones). As work on Basque .lit[(Ibarretxe-Antuñano 2004; 2015)] and Quecha .lit[(Nuckolls 2014)] shows, ideophones can and should be part of the complex event description.
+
+---
+
+# The 2000s and 2010s
+
+##Linguistic anthropology 
+
+Ethnographically informed approaches to ideophone studies
+- Philip Noss on ideophones and verbal art in Gbaya .lit[(1989; 1999; 2001)]
+- Janis Nuckolls linguistic and cultural ecology of ideophones in Quechua .lit[(1996; 2010)]
+- Anthony Webster and the aesthetics and semiotics of iconicity in Navajo poems .lit[(2008)]
+
+Many studies done by native speaker-linguists.
+
+Based on Ameka .lit[(2006)], Dingemanse argues that the "most productive situation in linguage description and theory is when native and non-native speakers join forces."
+
+---
+
+# The 2000s and 2010s
+
+##Redrawing the margins
+
+&gt; “So **linguists do not deal with onomatopoeic expressions. Or perhaps I should say, they are unable to deal with them.** And this is not surprising; onomatopoeic expressions are not the kind of subject matter that expert linguists can take up as a separate topic and study academically. After all, onomatopoeic expressions are not really language; they are, in a sense, raw language. […] Linguists, who are always described by such orthodox adjectives as *kashikoi* (wise), *tadashii* (right), *erai* (great), or *rippana* (respected), cannot handle them. If they handle them carelessly, they will run into problems.” (Gomi 1989: iii)
+
+However, a redrawing of the margins has long been underway
+- ideophones are increasingly considered as a possible word class
+- innovations in phonology and morphology because of their similarity to gesture
+- arbitrariness vs. iconicity
+
+---
+
+# The 2000s and 2010s: Redrawing the margins
+
+Some current questions for which ideophones provide critical evidence.
+
+- How can we incorporate arbitrariness and iconicity in formal theories of language? .lit[(Schlenker, Lamberton &amp; Santoro 2013; Wilcox &amp; Xavier 2013; Davidson 2015)]
+- What are the roles of iconicity in language learning and communication? .lit[(Imai &amp; Kita 2014; Laing 2014; Perniss &amp; Vigliocco 2014)]
+- Which cognitive and perceptual processes underlie iconic associations? .lit[(Bankieris &amp; Simner 2015; Sidhu &amp; Pexman 2017)]
+- What is the role of iconicity in the cultural evolution of language? .lit[(Verhoef, Kirby &amp; de Boer 2015; Tamariz et al. 2017; Pleyer et al. 2017)]
+- How are new vocal depictions created and interpreted? .lit[(Assaneo, Nichols &amp; Trevisan 2011; Dingemanse 2014;Perlman, Dale &amp; Lupyan 2015)]
+- Which words are most iconic, and why? .lit[(Winter et al. 2017)]
+- How universal or language-specific are iconic form-meaning mappings? .lit[(Dingemanse 2012; Occhino et al. 2017)]
+
+---
+
+# Challenges and opportunities
+
+## 1. Three .sc[misconceptions] about ideophones
+1. **Ideophones are “playthings, not tools”.** Some have considered any imitative useo f language childish, based on unreflective adoption of Standard Average European language ideologies. &lt;br&gt; *Questionable assumption: one’s own language ideologies offer a good guide to those of others.*
+2. **Ideophones are just onomatopoeia.** Some have taken all ideophones to be imitative of sound, based on the fact that onomatopoeia are the most obvious example of imitative words. &lt;br&gt; *Questionable assumption: speech can depict only sound.*
+3. **Ideophones are just intensifiers.** Some have thought ideophones are essentially intensifiers, because pragmatically equivalent translations in European languages tend to include “very”. &lt;br&gt; *Questionable assumption: pragmatic equivalence implies semantic and semiotic identity.*
+
+.ru-blockquote[
+Some authors, like Haiman (2018) still seem to think this.
+]
+
+---
+
+# Challenges and opportunities
+
+## 2. Three .sc[lessons] learned from ideophones
+1. **Depiction is one of the major modes of communication.** Ideophones show how vocal depictions may become lexicalised as vivid sensory words, and how speech and iconic gesture can be tightly linked and mutually reinforcing in multimodal acts of depiction.
+2. **Lexical iconicity is not deterministic but probabilistic.** Language provides a multidimensional possibility space for iconic associations between aspects of form and meaning. Ideophones offer existence proofs of many iconic associations beyond those known from pseudowords.
+3. **Ideophones reshape the typology of language.** Our power to formulate meaningful typological generalisations in domains like phonology, motion events, adjectival concepts, and sensory language is strongly affected by the inclusion or exclusion of ideophones.
+
+---
+
+# Challenges and opportunities
+
+## 2. Three .sc[challenges] provided from ideophones
+1. **How can we account for depiction in grammar?** As multimodal depictions, ideophones defy dichotomies like language versus paralanguage or word versus image. Linguistic theory needs to be enriched to account for the phonology and morphosyntax of lexicalised depictions.
+2. **How can we make linguistic diversity accessible to the cognitive sciences?** Ideophones provide fertile ground for empirical work on the roles of iconicity in cognition and communication. Linguistic studies must be combined with experimental work for broader impact.
+3. **How can we avoid perpetuating language ideologies in linguistic practice?** Biases can only be overcome through awareness and diversity in scholarship. As ideophones show, native speaker linguists can offer a powerful antidote against unquestioned ideologies.
+
+.ru-blockquote[
+Dingemanse is an avid advocate for experimental work. However, corpus studies can maybe provide even more data, because they are non-elicited?
+]
+
+---
+
+# My takeaway
+
+## What do I want to do with ideophones?
+
+.ru-blockquote[
+Things I think this overview misses:
+1. **Chinese**
+2. **diachronic** studies
+3. attention for cross-modal studies (gesture is there, but what about **writing**?)
+4. **variation** and the **onomasiological** perspective
+]
+
+## Frameworks and methodology
+
+.ru-blockquote[
+- **corpus-based** approaches
+- **Radical Construction Grammar** and/or **Cognitive Grammar** (?) .lit[Croft; Langacker etc.]
+- **Diachronic prototype semantics** .lit[Geeraerts (1997)]
+]
+
+---
+
+# Selected references
+
+Dingemanse, Mark. 2018. Redrawing the margins of language: Lessons from research on ideophones. Glossa: a journal of general linguistics 3(1). doi:10.5334/gjgl.444.
+
+---
+
+# Questions: Alex
+
+.font90[
+&gt;Doke argued the ideophone was a **part of speech** on a par with better known categories like nouns, verbs and adverbs. Writing for an audience of traditionally schooled grammarians, he noted that only a limited proportion of ideophones were imitative of sound and therefore “it is not wise to use the term [onomatopoeia] for that part of speech” (Doke 1935: 183). **Doke’s insistence on the ideophone as a word class was arguably one of the most influential moves in ideophone studies. **
+
+&gt;QUESTION: Do you concur with Doke’s idea that ideophone can be regarded as a part of speech/class of word? 
+
+&gt;However Kunene argued that that ideophones could sometimes even be substituted by a gesture, carrying dramatisation to its logical extreme. 
+Ideophones emerged as multimodal performances, inviting the listener to imagine what it is like to perceive the scene depicted. 
+
+&gt;QUESTION: Are these two ideas incompatible or complementary to each other? 
+
+&gt; QUESTION: Are there any supporting evidence or vivid examples that you can kindly share with us? 
+
+&gt;A deeply rooted dismissive attitude towards iconic modes of communication is one of the prime reasons for the traditional marginalisation of the ideophone in Western linguistics. Interesting!
+
+]
+
+---
+
+# Questions: Alex
+
+.ru-blockquote[
+I think that word class status in Chinese is a particularly difficult topic. Given a framework like CG and RCG, where parts of speech are also semantically motivated (and not just distributionally), I would say that **ideophones or ideophonic constructions, as a family of constructions, can definitely have their place.** Although I would definitely consider ideophones to be closer to adjectives and verbs than nouns!
+]
+
+![](imgs/croft_ideos.png)
+
+
+---
+# Questions: Alex
+
+.ru-blockquote[
+So I think, with more **functional approaches to language** (focusing on language use, in all modalities), it should be possible to integrate both Doke's concerns and Kunene's observations. But of course it is a continuum, and the whole spectrum should be investigated.
+In fact, that is what Dingemanse has been trying to do since he came into contact with Siwu.  
+
+An example we have used before in class: 咻 *xiū* as a .sc[manner] depiction that integrates in a **complex verbal event**.
+
+他咻一下地跑過去了。
+[gesture]
+
+My hairdresser: 頭髮要吹蓬蓬 (/澎澎) *chuī péng~péng* 'blow the hair PENG'
+
+A-Sheng: 狗在那邊徘徊 *pái~huái* 'roaming around'
+[gesture finger in circle]
+
+Maybe you have other examples?
+]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

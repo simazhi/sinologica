@@ -29,7 +29,7 @@ a, a > code {
   background-color: #FAFAFA;
   background-image: url(http://www.thomasvanhoey.com/img/logos/NTU_logo.png);
   background-position: 90% 3%;
-  background-size: 80px;
+  background-size: cover;
 }
 
 .inverse {
@@ -364,3 +364,6 @@ position: absolute;
     box-shadow: 5px 5px 5px #aaa;
     border-radius: 2px;  
 }
+
+
+
