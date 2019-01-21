@@ -1,5 +1,5 @@
 ---
-title: Memorable moments of 2018 shang
+title: Memorable moments of 2018
 author: Thomas Van Hoey
 date: '2019-01-21'
 categories:
@@ -12,7 +12,7 @@ tags:
   - friends
   - family
   - wrap-up
-slug: memorable-moments-of-2018-shang
+slug: memorable-moments-of-2018
 header:
   caption: 'Drying flying fish on Lanyu'
   image: '2018/fish.jpg'
