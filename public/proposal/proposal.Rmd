@@ -2,7 +2,7 @@
 title: "Lexical variation and semantic change in literary Chinese ideophones: <br> A cognitive and computational linguistic approach"
 subtitle: "中文文言象聲詞的詞彙變異與語意變遷— <br>  以認知與計算語言學方法探討 <html><div style='float:left'></div><hr color='#875712' size=1px width=796px></html>"
 author: "Ph.D candidate Thomas Van Hoey 司馬智 <br> Advisor: Lu Chiarung 呂佳蓉"
-date: "<br>`r Sys.Date()` National Taiwan University"
+date: "<br>Proposal<br>`r Sys.Date()`<br>National Taiwan University"
 output:
   xaringan::moon_reader:
     css: ["ntu.css", "ntu-fonts.css"]
@@ -160,9 +160,12 @@ Usually, constructions are defined as mappings between .sc[form] and .sc[meaning
 
 $$form \mid meaning$$
 
-Chinese has a folk model of *xíng yīn yì* 形音義 (all culminating in 'the character' *zì* 字, cf. .ref[Packard 1998; 2000])
+Chinese has a folk model of *xíng yīn yì* 形音義: .sc[written form], .sc[phonological form] and .sc[meaning]  
+(all culminating in 'the character' *zì* 字, cf. .ref[Packard 1998; 2000])
 
 $$\frac{sound}{writing} \mid meaning$$
+
+
 
 <!-- Clearly, there can be variation at any of these poles: -->
 
@@ -231,7 +234,7 @@ Some possible future lines of development:
 
 # Structure and contributions
 
-![:scale 90%](structure.png)
+.center[![:scale 90%](structure.png)]
 
 A holistic study with attention to balances between:
 
@@ -265,7 +268,7 @@ For looking at historical material:
 
 # Case study: .sc[light] ideophones
 
-![:scale 80%](hierarchy.png)
+.center[![:scale 80%](hierarchy.png)]
 
 From these ideophones that are expressed by the sensory modality of .sc[vision] <br> be it dynamic (.sc[movement]) or static (.sc[vision]),
 <br> I have chosen those that express .sc[light].
@@ -424,6 +427,24 @@ Step 2. .markeer[Count these collocates per period]
 
 # *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
 
+![:scale 140%](huihui-fire.png)
+![:scale 140%](huihui-light.png)
+![:scale 140%](huihui-sun.png)
+
+---
+
+
+background-image: url(huihui.png)
+background-size:contain
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
+<!-- I have to test this -->
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
 There is a big type frequency difference: *huīhuī* 輝輝 with .markeer2[LIGHT] radical has a much higher .markeer2[type frequency] in terms of different referential collocates.
 
 Still, they each are similar in meanings, e.g. shades of .sc[red], just different shades per ideophone.
@@ -432,7 +453,7 @@ This difference in type frequency inspired an inquiry into .markeer2[token frequ
 
 ---
 
-# *Huīhuī*s vs. *zhuózhuó* 灼灼
+# *Huīhuī* vs. *zhuózhuó* 灼灼
 
 ![](huihuizhuozhuo.png)
 
@@ -499,7 +520,7 @@ Now there is a long data frame ('table-like object in `R`'), with a score for ea
 
 # The computational *zhuózhuó* 灼灼
 
-![](computationalzhuozhuo.png)
+![](zhuozhuocomp.png)
 
 
 ---
@@ -510,19 +531,53 @@ Computational methods are able to calculate similar results as with the manual a
 
 But: they mostly show the higher-frequency items -- if there are 'hapaxes' or many similar scores, it can become messy.
 
-However, they can aid at higher levels for abstraction.
+However, they can aid in the analysis of higher levels of abstraction.
+
+--
+
+* mental spaces
+* frames
+* domains / ICMs
+* image schemas
+
+I categorized the most frequent collocates of the mental spaces into frames and domains.
 
 ---
+class: center, middle
+
 
 # Manual frames 
 
 ![:scale 80%](framesdomains.png)
 
 ---
+class: center, middle
 
 # Computationally aided frames
 
 ![:scale 80%](computationalframesdomains.png)
+
+
+---
+
+# The frames and domains of *huīhuī* 
+
+The preceding diagram leads to two further questions, in relation to the case study:
+<!-- Taht I haven't talked about in my proposal -->
+
+1. If we collapse the variable `time`, what are the frames that co-occur with the three *huīhuī*s?
+1. Given that there are three different radicals (部首/偏旁/functional components), how much do certain radicals *attract* certain frames?
+
+--
+
+.center[![:scale 80%](mca-huihui.png)]
+
+---
+
+background-image: url(huihui-mca-adapted.png)
+background-size:contain
+
+# Frames, domains, and *huīhuī*
 
 ---
 

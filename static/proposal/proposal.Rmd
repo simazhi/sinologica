@@ -424,6 +424,16 @@ Step 2. .markeer[Count these collocates per period]
 
 # *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
 
+Step 2. .markeer[Count these collocates per period]
+
+![:scale 80%](huihuifire.png) 
+
+
+
+---
+
+# *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
+
 There is a big type frequency difference: *huīhuī* 輝輝 with .markeer2[LIGHT] radical has a much higher .markeer2[type frequency] in terms of different referential collocates.
 
 Still, they each are similar in meanings, e.g. shades of .sc[red], just different shades per ideophone.

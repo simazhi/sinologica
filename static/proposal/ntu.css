@@ -26,10 +26,8 @@ a, a > code {
 }
 
 .title-slide {
-  background-color: #FAFAFA;
-  background-image: url(http://www.thomasvanhoey.com/img/logos/NTU_logo.png);
-  background-position: 90% 3%;
-  background-size: 80px;
+  background-image: url(titlebackground.png);
+  background-size: cover;
 }
 
 .inverse {

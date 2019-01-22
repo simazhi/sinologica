@@ -12,8 +12,8 @@ a, a > code {
 .remark-code-line-highlighted     { background-color: #ffff88; }
 
 .remark-slide-content {
-  background-color: #FAFAFA;
-  border-top: 80px solid #7B2732; /* border on every page*/ 
+  background-color: #FFFFFF;
+  border-top: 80px solid #274C77; /* border on every page*/ 
   font-size: 20px;
   font-weight: 300;
   line-height: 1.5;
@@ -22,23 +22,19 @@ a, a > code {
 
 /* Removes colored bar from top of the slide resulting in a clear slide */
 .clear{
-  border-top: 0px solid #FAFAFA;
+  border-top: 0 solid #FAFAFA;
 }
 
-.title-slide {
-  background-color: #FAFAFA;
-  background-image: url(http://www.thomasvanhoey.com/img/logos/NTU_logo.png);
-  background-position: 90% 3%;
-  background-size: 80px;
-}
 
 .inverse {
   background-color: #23373B;
   text-shadow: none;
 }
 .inverse h1, .inverse h2, .inverse h3 {
-  color: #f3f3f3;
+  color: #FFFFFF;
 }
+
+
 /* Two-column layout */
 .left-column {
   color: #777;
@@ -79,10 +75,10 @@ blockquote {
   margin-bottom: 1em;
   margin-left: 40px;
   margin-right: 40px;
-  border-left: solid 10px #7B2732;
-  background-color: #818181;
+  border-left: solid 10px #274C77;
+  background-color: #8B8C89;
   padding: 1em;
-  color: #fff;
+  color: #FFFFFF;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
@@ -152,8 +148,10 @@ position: absolute;
 
 
 .title-slide {
-  background-color: #FAFAFA;
-  border-top: 80px solid #FAFAFA;
+  background-color: #FFFFFF;
+  background-image: url(titlebackground.png);
+  background-size: cover;
+  border-top: none;
 }
 
 .title-slide > h1  {
@@ -210,19 +208,20 @@ position: absolute;
 
 
 .ref {
-  font-weight: lighter; 
-  color: #954d57;
+  color: #8B8C89;
 }
 
 .markeer{
-  color: #277b65;
+  color: #274C77;
   font-weight: bolder;
 }
 
 .markeer2{
-  color: #5c7b27;
+  color: #6096BA;
 }
 
 .under{
   text-decoration: underline;
 }
+
+
