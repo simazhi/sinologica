@@ -257,7 +257,7 @@ The methodological frameworks in this dissertation draw heavily on approaches fr
 Combined with computational approaches, such as distributional semantics:
 
 * Cognitive Linguistics .ref[(Heylen, Speelman & Geeraerts 2012; Wielfaert, Heylen & Speelman 2013; Heylen et al. 2015; Peirsman, Geeraerts & Speelman 2015)]
-* `word2vec`-like approaches .ref[((Mikolov, Yih & Zweig 2013; Mikolov et al. 2013; (Goldberg & Levy 2014)]
+* `word2vec`-like approaches .ref[(Mikolov, Yih & Zweig 2013; Mikolov et al. 2013; Goldberg & Levy 2014)]
 * `R` .ref[(Silge 2017a; 2017b)] and `python`
 
 For looking at historical material: 
@@ -445,45 +445,60 @@ background-size:contain
 
 # *Huīhuī* 煇煇, *huīhuī* 輝輝,  *huīhuī* 暉暉
 
-There is a big type frequency difference: *huīhuī* 輝輝 with .markeer2[LIGHT] radical has a much higher .markeer2[type frequency] in terms of different referential collocates.
+There is a big .markeer[type frequency] difference: *huīhuī* 輝輝 with .sc[LIGHT] radical has a much higher .markeer[type frequency] in terms of different referential collocates.
 
-Still, they each are similar in meanings, e.g. shades of .sc[red], just different shades per ideophone.
+Still, they each are similar in meanings, e.g. different shades of .sc[red] per ideophone.
 
-This difference in type frequency inspired an inquiry into .markeer2[token frequency].
+This difference in .markeer[type frequency] inspired an inquiry into .markeer[token frequency].
 
----
+The ideophone with the highest token frequency in my data was *zhuózhuó* 灼灼. 
 
-# *Huīhuī* vs. *zhuózhuó* 灼灼
+.center[![:scale 70%](huihuizhuozhuo.png)]
 
-![](huihuizhuozhuo.png)
-
-*Zhuózhuó* was much more common than any of the three *huīhuī*s -- in fact, it had the highest .markeer2[token frequency] of all the ideophones under consideration.
 
 ---
 
 # *Zhuózhuó* 灼灼
 
-![:scale 90%](zhuozhuo.png)
+.center[![:scale 90%](zhuozhuo.png)]
 
 Prototypical bundle of very frequent meanings: .sc[blossoming] frame, with less salient in the margins.
+
+So now we already have gained alread a lot of insight into the dynamic semantic structure of these ideophones.
+
+---
+
+background-image: url(zhuozhuo.png)
+background-size:contain
+
+# *Zhuózhuó* 灼灼
 
 ---
 
 # Computational complement
 
-It is useful for future research to be able to try to automate such analysis, in order to gain more insight.
+Until now, these manual methods have yielded a great amount of insight into the dynamic semantic structure of these ideophones.
 
-Operationalized: how can computational methods help us better understand the semantic structure of ideophones?
+However, I want to subject even more ideophones to such an analysis.
 
-As mentioned, answers were found in .markeer[distributional semantics] methodology.
+Therefore, I wanted to use computational methods to help automate the process.
+
+.markeer[Operationalized question:] .markeer2[how can computational methods help us better understand the semantic structure of ideophones?]
+
+As mentioned, answers were found in .markeer[distributional semantics] methodology.  
+.ref[
+* Cognitive linguistics: Heylen, Speelman & Geeraerts 2012; Wielfaert, Heylen & Speelman 2013; Heylen et al. 2015; Peirsman, Geeraerts & Speelman 2015
+* word2vec-like approaches: Mikolov, Yih & Zweig 2013; Mikolov et al. 2013; Goldberg & Levy 2014
+]
+
+---
+
+# Computational complement
 
 Step 0. .markeer[Gathering data]
 
 The material stayed the same -- Scripta Sinica corpus 漢籍全文資料庫計畫 -- but I wrote a `python` script (with the `selenium` library) to gather the data, instead of having to manually copy it.
 
----
-
-# Computational complement
 
 Step 1. .markeer[Segmenting text]
 
@@ -527,46 +542,47 @@ Now there is a long data frame ('table-like object in `R`'), with a score for ea
 
 # The computational *zhuózhuó* 灼灼
 
-Computational methods are able to calculate similar results as with the manual analysis.
+.markeer[Discussion:]
 
-But: they mostly show the higher-frequency items -- if there are 'hapaxes' or many similar scores, it can become messy.
+.markeer2[Computational methods are able to calculate similar results as with the manual analysis.]
 
-However, they can aid in the analysis of higher levels of abstraction.
+But: they mostly show the higher-frequency items  
+— if there are 'hapaxes' or many similar scores, it can become messy.
 
---
+However, they can aid in the analysis of higher levels of abstraction:
 
-* mental spaces
-* frames
-* domains / ICMs
-* image schemas
+* mental spaces .ref[(Fauconnier1994; Fauconnier & Turner 2003; etc.)]
+* frames .ref[(Fillmore 1975; 1988; 2003; etc.)]
+* domains .ref[(Langacker 1987; 1991)] / ICMs .ref[(Lakoff 1987)]
+* image schemas .ref[(Johnson 1987; Lakoff 1987)]
 
-I categorized the most frequent collocates of the mental spaces into frames and domains.
+I categorized the most frequent collocates of the mental spaces into frames and domains, following the method proposed by Kövecses .ref[(2017)].
 
 ---
-class: center, middle
 
+background-image: url(framesdomains.png)
+background-size:contain
 
 # Manual frames 
 
-![:scale 80%](framesdomains.png)
 
 ---
-class: center, middle
+
+background-image: url(computationalframesdomains.png)
+background-size:contain
+
 
 # Computationally aided frames
-
-![:scale 80%](computationalframesdomains.png)
-
 
 ---
 
 # The frames and domains of *huīhuī* 
 
-The preceding diagram leads to two further questions, in relation to the case study:
+The preceding diagram leads to two further questions, in relation to the case study of *huīhuī*:
 <!-- Taht I haven't talked about in my proposal -->
 
-1. If we collapse the variable `time`, what are the frames that co-occur with the three *huīhuī*s?
-1. Given that there are three different radicals (部首/偏旁/functional components), how much do certain radicals *attract* certain frames?
+1. .markeer[If we collapse the variable .sc[time], whichframes co-occur with the three *huīhuī*s?]
+1. .markeer[Given that there are three different radicals (部首/偏旁/functional components), how much do certain radicals *attract* certain frames?]
 
 --
 
@@ -587,45 +603,77 @@ background-size:contain
 
 .Large[.markeer2[RQ2: How have these structures evolved over time?]]
 
-Through these case studies I have shown that variation is present in .sc[light] ideophones (as it is probably inherent in language throughout time), by looking at how the .sc[meanings] of these ideophones change, but also how their .sc[written form] have variation and how that influences these meanings.
+Through the case studies presented today, and those in my proposal, I have shown that:
 
+1. .markeer[variation] is present in .sc[light] ideophones (as it is probably inherent in language throughout time) 
+1. the meanings of these ideophones are .markeer[dynamic]
+1. the .markeer[written form] has variation which can .markeer[influence the meaning]
+
+.Large[.ref[(RQ3: What constructions do ideophones appear in and what are their functions?)]]
+
+.ref[(not yet explored)]
+
+ 
 
 ---
 
+
 # Plan for the dissertation
 
-## More case studies
-* auditory (computational and then manual)
-* other modalities (?)
+## 1. More case studies
+* .sc[auditory] (computational and then manual)
+* other modalities .ref[(?)]
 
-## Revisiting Chinese ideophones
+## 2. Revisiting Chinese ideophones
 
 After these case studies, what is typical for 'the Chinese ideophone'?
 
-## Qualitative studies
+## 3. Qualitative studies
 * particular constructions
 * multimodality
 * acquisition
 
+---
+
+# Contributions and expected findings
+
+## .markeer[Bridging] the literature:
+
+* Western languages: ideophone studies 
+* Japanese: mimetics studies
+* Chinese:
+    * onomatopoeia
+    * binomes
+    * reduplication studies
+
+--
+
+## Methodologically:
+* approaches grounded in Cognitive Linguistics that focus on .markeer[lexical semantics] (.markeer[categorization] and .markeer[variation])
+    * mental spaces
+    * frames
+    * domains and ICMs
+    * image schemas
+* computationally aided (.markeer[empirical usage-based data])
+
+<!-- My innovation lies in bringing together a number of theories and techniques, applied to Chinese ideophones -->
 
 ---
 
-# Conclusion:
+# Contributions and expected findings
 
-.markeer[I find this section very hard to write. I don't know if a proposal already needs to have a conclusion and I would like to have your input.
+## Expected findings
 
-Thank you!
+I expect to:
 
-As a reference: 
+1.  find out ***that*** .markeer[variation] is important for Chinese ideophones, in the three poles (.markeer2[meaning], .markeer2[phonological form], and .markeer2[written form]) of the Chinees folk model.
+1. find out ***how*** the interplay between variation of these three poles is structured.
+1. find out ***how*** this variation evolved over time.
+1. find out ***that*** the functions of Chinese ideophones becomes more clear, more specifically from the perspective of mental spaces theory.
+1. find out ***how*** this reflects back on what is cross-linguistically known about ideophones. More precisely, how .markeer[cross-modality] — in this case the .markeer2[written form] — influences the meaning and usage of (Chinese) ideophones.
 
-Research questions:
 
-What does the semantic structure of Chinese ideophones look like?
-
-1. Is there any variation at play, and if so, in what ways?
-1. How have these structures evolved over time?
-1. What constructions do ideophones appear in and what are their functions?
-]
+<!-- This study is innovative because of it brings together these fields and methods in order to apply them to Chinese ideophones. -->
 
 ---
 
