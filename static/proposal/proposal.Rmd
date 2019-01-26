@@ -79,7 +79,7 @@ Domain | Example
 .sc[movement] | *yōuyōu* 攸攸 ‘move swiftly, quickly; smoothly slipping by, rapidly rushing’
 .sc[visual patterns] | *zhēngróng* 崢嶸 ‘craggy, precipitous masses of rock; loftily lifted; sheer steepness; high-piled’
 .sc[other sensory perceptions] | *bìbì* 苾苾 ‘deeply fragrant’
-.sc[inner feelings and cognitive states] | *xǔxǔ* 栩栩 ‘glad and gay, happy and light-heared, smug and satisfied’
+.sc[inner feelings and cognitive states] | *tántè* 忐忑 'be perturbed, mentally disturbed'
 
 Hierarchy presented in .ref[Dingemanse (2012:663)].
 
@@ -132,7 +132,6 @@ Moreover: variation is what interests me.
 ### .markeer2[RQ2. How have these structures evolved over time?]
 
 ### .markeer2[RQ3. What constructions do ideophones appear in and what are their functions?]
-
 
 
 ---
@@ -523,7 +522,7 @@ Using the `python` library `jieba`, I segmented the text, which was relatively s
 In order to aid in the segmentation process, two 'dictionaries' were added to `jieba`:
 
 1. a list of ideophones (database)
-1. a list of particles used in Premodern Chinese .ref[(based onJonker, Esch & Mansvelt Beck 2011)]
+1. a list of particles used in Premodern Chinese .ref[(based on Jonker, Esch & Mansvelt Beck 2011)]
 
 Step 2. .markeer[Choice of model and units]
 
@@ -694,8 +693,128 @@ I expect to:
 
 # Selected references
 
-.font200[
-** under construction**
+.font70[
+Academia Sinica 中央研究院. 2015. Scripta Sinica Database (Hanji quanwen ziliaoku jihua 漢籍全文資料庫計畫). Database. Scripta Sinica Database. http://hanchi.ihp.sinica.edu.tw/ (26 June, 2016).
+
+Bybee, Joan L. & Paul J. Hopper (eds.). 2001. Frequency and the emergence of linguistic structure (Typological Studies in Language 45). Amsterdam: Benjamins.
+
+Croft, William. 2001. Radical construction grammar: Syntactic theory in typological perspective. Oxford: Oxford Univ. Press.
+
+Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.
+
+Dingemanse, Mark. 2012. Advances in the cross-linguistic study of ideophones. Language and Linguistics Compass 6(10). 654–672.
+
+Fauconnier, Gilles. 1994. Mental spaces: aspects of meaning construction in natural language. Cambridge ; New York, NY, USA: Cambridge University Press.
+
+Fauconnier, Gilles & Eve Sweetser (eds.). 1996. Spaces, worlds, and grammar (Cognitive Theory of Language and Culture). Chicago: University of Chicago Press.
+
+Fauconnier, Gilles & Mark Turner. 2003. The way we think: conceptual blending and the mind’s hidden complexities. New York, NY: Basic Books.
+
+Fillmore, Charles J., Paul Kay & Mary Catherine O’Connor. 1988. Regularity and idiomaticity in grammatical constructions: the case of Let Alone. Language 64(3). 501–538.
+
+Forceville, Charles & Eduardo Urios-Aparisi (eds.). 2009. Multimodal metaphor (Applications of Cognitive Linguistics 11). Berlin ; New York: Mouton de Gruyter.
+
+Geeraerts, Dirk. 1997. Diachronic prototype semantics: a contribution to historical lexicology (Oxford Studies in Lexicography and Lexicology). Oxford ; New York: Clarendon Press ; Oxford University Press.
+
+]
+
+---
+
+# Selected references
+
+.font70[
+Geeraerts, Dirk, Stefan Grondelaers & Peter Bakema. 1994. The structure of lexical variation: Meaning, naming, and context (Cognitive Linguistics Research 5). Berlin: Mouton de Gruyter.
+
+Goldberg, Adele E. 1995. Constructions: a construction grammar approach to argument structure (Cognitive Theory of Language and Culture). Chicago: University of Chicago Press.
+
+Goldberg, Adele E. 2006. Constructions at work: the nature of generalization in language (Oxford Linguistics). Oxford ; New York: Oxford University Press.
+
+Goldberg, Yoav & Omer Levy. 2014. word2vec explained: Deriving Mikolov et al.’s negative-sampling word-embedding method. arXiv:1402.3722 [cs, stat]. http://arxiv.org/abs/1402.3722.
+
+Haiman, John (ed.). 1985. Iconicity in syntax: proceedings of a Symposium on Iconicity in Syntax, Stanford, June 24 - [2]6, 1983 (Typological Studies in Language 6). Amsterdam: Benjamins.
+
+Haiman, John. 2018. Ideophones and the evolution of language. Cambridge University Press. doi:10.1017/9781107706897 (26 November, 2018).
+
+Heylen, Kris, Dirk Speelman & Dirk Geeraerts. 2012. Looking at word meaning: An interactive visualization of semantic vector spaces for Dutch synsets. Proceedings of the EACL 2012 Joint Workshop of LINGVIS & UNCLH 16–24.
+
+Heylen, Kris, Thomas Wielfaert, Dirk Speelman & Dirk Geeraerts. 2015. Monitoring polysemy: Word space models as a tool for large-scale lexical semantic analysis. Lingua 157. 153–172. doi:10.1016/j.lingua.2014.12.001.
+
+Hinton, Leanne, Johanna Nichols & John J. Ohala (eds.). 1994. Sound symbolism. Cambridge [England]: Cambridge UP.
+
+Hiraga, Masako. 2005. Metaphor and iconicity: a cognitive approach to analysing texts. Houndmills, Basingstoke, Hampshire ; New York: Palgrave Macmillan.
+]
+
+---
+
+# Selected references
+
+.font70[
+
+Hsu Chen-Pang 徐振邦 (ed.). 2013. Lianmianci da cidian 聯綿詞大詞典 [Great dictionary of binomes]. Beijing: Commercial Press.
+
+Johnson, Mark. 1987. The body in the mind: the bodily basis of meaning, imagination, and reason. Chicago: University of Chicago Press.
+
+Jonker, Dirk R., Daan J.J. van Esch & Burchard J. Mansvelt Beck. 2011. Wenyan partikels. Leiden: Stichting Shilin.
+
+Kövecses, Zoltán. 2017. Levels of metaphor. Cognitive Linguistics 28(2). doi:10.1515/cog-2016-0052. http://www.degruyter.com/view/j/cogl.2017.28.issue-2/cog-2016-0052/cog-2016-0052.xml (14 October, 2017).
+
+Lakoff, George. 1987. Women, fire, and dangerous things: What categories reveal about the mind. Chicago: The Univ. of Chicago Press.
+
+Lakoff, George & Mark Johnson. 1980. Metaphors we live by. Chicago: University of Chicago Press.
+
+Langacker, Ronald W. 1987. Foundations of Cognitive Grammar 1: Theoretical prerequisites. Stanford, California: Stanford University Press.
+
+Langacker, Ronald W. 1991. Foundations of Cognitive Grammar 2: Descriptive application. Stanford, California: Stanford University Press.
+
+Langacker, Ronald W. 2008. Cognitive grammar: a basic introduction. Oxford ; New York: Oxford University Press.
+
+Lockwood, Gwilym. 2017. Talking sense: The behavioural and neural correlates of sound symbolism. Nijmegen: Radboud University Nijmegen PhD dissertation.
+
+Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg Corrado & Jeffrey Dean. 2013. Distributed representation of words and phrases and their compositionality. In Christopher J.C. Burges, Léon Bottou, Max Welling, Zoubin Ghahramani & Kilian Q. Weinberger (eds.), Advances in neural information processing systems (Proceedings of Neual Information Processing Systems [NIPS 26]), 3111–3119.
+]
+
+---
+
+# Selected references
+
+.font70[
+
+Mikolov, Tomas, Wen-Tau Yih & Geoffrey Zweig. 2013. Linguistic regularities in continuous space word representations. Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational LInguistics: Human Language Technologies 746–751.
+
+Nuckolls, Janis B. 1996. Sounds like life: sound-symbolic grammar, performance, and cognition in Pastaza Quechua (Oxford Studies in Anthropological Linguistics 2). New York: Oxford University Press.
+
+Packard, Jerome Lee (ed.). 1998. New approaches to Chinese word formation: morphology, phonology and the lexicon in modern and ancient Chinese (Trends in Linguistics: Studies and Monographs 105). Berlin ; New York: Mouton de Gruyter.
+
+Packard, Jerome Lee. 2000. The morphology of Chinese: A linguistic and cognitive approach. Cambridge, UK ; New York, NY, USA: Cambridge University Press.
+
+Peirsman, Yves, Dirk Geeraerts & Dirk Speelman. 2015. The corpus-based identification of cross-lectal synonyms in pluricentric languages. International Journal of Corpus Linguistics 20(1). 54–80. doi:10.1075/ijcl.20.1.03pei.
+
+Perniss, Pamela & Gabriella Vigliocco. 2014. The bridge of iconicity: From a world of experience to the experience of language. Philosophical transactions of The Royal Society 369. 1–13.
+
+Radden, Günter & Klaus-Uwe Panther (eds.). 2004. Studies in linguistic motivation (Cognitive Linguistics Research 28). Berlin ; New York: Mouton de Gruyter.
+
+Silge, Julia. 2017a. Word vectors with tidy data principles. [2017-30-10]. https://juliasilge.com/blog/tidy-word-vectors/ (4 November, 2018).
+
+Silge, Julia. 2017b. Tidy word vectors, take 2! [2017-11-27]. https://juliasilge.com/blog/word-vectors-take-two/ (4 November, 2018).
+
+Simone, Raffaele (ed.). 1995. Iconicity in language (Amsterdam Studies in the Theory and History of Linguistic Science v. 110). Amsterdam ; Philadelphia: J. Benjamins.
+]
+
+---
+
+# Selected references
+
+.font70[
+
+Stefanowitsch, Anatol & Stefan Th. Gries. 2003. Collostructions: Investigating the interaction of words and constructions. International Journal of Corpus Linguistics 8(2). 209–243. doi:10.1075/ijcl.8.2.03ste.
+
+Taub, Sarah F. 2001. Language from the body: iconicity and metaphor in American Sign Language. Cambridge, UK New York: Cambridge University Press.
+
+Verhagen, Arie. 2005. Constructions of intersubjectivity: discourse, syntax, and cognition. New York: Oxford University Press.
+
+Voeltz, Erhard Friedrich Karl & Christa Kilian-Hatz (eds.). 2001. Ideophones (Typological Studies in Language v. 44). Amsterdam ; Philadelphia: J. Benjamins.
+
+Wielfaert, Thomas, Kris Heylen & Dirk Speelman. 2013. Interactive visualization of semantic vector spaces for lexicological analysis. TALN-RÉCITAL 2013 154–166.
 ]
 
 
