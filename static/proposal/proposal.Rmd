@@ -92,7 +92,7 @@ Yet, it is usually left out from the cross-linguistic debate.
 
 Japanese-inspired | Cross-linguistic | Reduplication | Examples
 --- | --- | ---
-擬聲詞 <br> *giongo* 擬音語 <br> .markeer[phonomimes] | .markeer2[ideophones] <br>  onomatopoeia | non-red. or A| 哔 'peep', <br> 咻 'shew' (.sc[sound + visual])
+擬聲詞 <br> *giongo* 擬音語 <br> .markeer[phonomimes] | .markeer2[ideophones] <br>  onomatopoeia | non-red. or A| 哔 'beep', <br> 咻 'shew' (.sc[sound + visual])
 擬態詞 <br> *gitaigo* 擬態語 <br> .markeer[phenomimes] | .markeer2[ideophones] <br> non-phonomimes  | full red. or XAA (ABB) <br> partial red. or AB |  雾-濛濛 'fog-misty' <br> 崢嶸 'precipitous'
 擬情詞 <br> *gijōgo* 擬情語 <br> .markeer[psychomimes] | .markeer2[ideophones] <br> non-phonomimes   | full red. or AA | 欣欣 'joyful'
 
@@ -108,10 +108,9 @@ Such a theory is already in the making: Dingemanse's .ref[(2011; 2012)] definiti
 
 .ru-blockquote[Ideophones are marked words that depict sensory imagery.]
 
-form | meaning
---- | ---
-marked | depiction 
-words | sensory imagery
+
+* **formal component**: marked words
+* **meaning component**: depiction of sensory imagery
 
 Most studies up to this point have focused on the .sc[form].
 When .sc[meaning] is taken into account, the scope usually only contains .sc[sound].
@@ -680,7 +679,7 @@ After these case studies, what is typical for 'the Chinese ideophone'?
 
 I expect to:
 
-1.  find out ***that*** .markeer[variation] is important for Chinese ideophones, in the three poles (.markeer2[meaning], .markeer2[phonological form], and .markeer2[written form]) of the Chinees folk model.
+1.  find out ***that*** .markeer[variation] is important for Chinese ideophones, in the three poles (.markeer2[meaning], .markeer2[phonological form], and .markeer2[written form]) of the Chinese folk model.
 1. find out ***how*** the interplay between variation of these three poles is structured.
 1. find out ***how*** this variation evolved over time.
 1. find out ***that*** the functions of Chinese ideophones becomes more clear, more specifically from the perspective of mental spaces theory.
