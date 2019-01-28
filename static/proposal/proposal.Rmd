@@ -2,7 +2,7 @@
 title: "Lexical variation and semantic change in literary Chinese ideophones: <br> A cognitive and computational linguistic approach"
 subtitle: "中文文言象聲詞的詞彙變異與語意變遷— <br>  以認知與計算語言學方法探討 <html><div style='float:left'></div><hr color='#875712' size=1px width=796px></html>"
 author: "Ph.D candidate Thomas Van Hoey 司馬智 <br> Advisor: Lu Chiarung 呂佳蓉"
-date: "<br>Proposal<br>`r Sys.Date()`<br>National Taiwan University"
+date: "<br>Proposal<br>28 January 2019<br>National Taiwan University"
 output:
   xaringan::moon_reader:
     css: ["ntu.css", "ntu-fonts.css"]
@@ -184,15 +184,17 @@ $$\frac{sound}{writing} \mid meaning$$
 
 $$\frac{sound}{writing} \mid meaning$$
 
-There can be variation at any of these poles:
-
-Pole | Example
+.font90[
+Pole / Modalities | Example
 --- | ---
 .sc[sound] vs. .sc[meaning] <br> .font80[.ref[(polysemy & homonymy)]] | /jījīzhāzhā/ referring to the sounds of 'mice' or 'people chattering'
 .sc[writing] vs. .sc[meaning] | <嘰嘰喳喳\> referring to the sounds of 'mice' or 'people chattering'
 .sc[sound] vs. .sc[writing] | /wēiyí/ being written as <逶迤\> or <委蛇\> <br> .font80[.ref[(there are more variations, cf. Hsu 2013)]]
+.sc[writing] vs. .sc[sound]  | <丁丁\> as /dīngdīng/ or /zhēngzhēng/
+.sc[meaning] vs. .sc[sound] <br> .font80[.ref[(onomsiology)]] | .sc[brightness] expressed with different ideophones (see case study)
+.sc[writing] vs. .sc[sound] <br> .font80[.ref[(onomsiology)]] |.sc[brightness] expressed with different ideophones (see case study)
 
-
+]
 ---
 
 # RQ 1: Variation
