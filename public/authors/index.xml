@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Thomas Van Hoey | Sinologica</title>
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sat, 10 Aug 2019 14:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
+    
+    <item>
+      <title>Thomas Van Hoey &amp; Chiarung Lu</title>
+      <link>/authors/thomas-van-hoey-chiarung-lu/</link>
+      <pubDate>Sat, 10 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/authors/thomas-van-hoey-chiarung-lu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thomas Van Hoey</title>
+      <link>/authors/thomas-van-hoey/</link>
+      <pubDate>Wed, 07 Aug 2019 11:30:00 +0000</pubDate>
+      <guid>/authors/thomas-van-hoey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thomas Van Hoey &amp; Arthur Lewis Thompson</title>
+      <link>/authors/thomas-van-hoey-arthur-lewis-thompson/</link>
+      <pubDate>Sun, 05 May 2019 10:30:00 +0000</pubDate>
+      <guid>/authors/thomas-van-hoey-arthur-lewis-thompson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chiarung Lu</title>
+      <link>/authors/chiarung-lu/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/chiarung-lu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;Hi, my name is &lt;strong&gt;Thomas Van Hoey&lt;/strong&gt; (IPA:[&amp;lsquo;to:mas van &amp;lsquo;hui]). Alternatively, you may find me by my Chinese name — &lt;strong&gt;司馬智&lt;/strong&gt; (&lt;em&gt;Hanyu pinyin&lt;/em&gt;: Sīmǎ Zhì).&lt;/p&gt;
+
+&lt;p&gt;I am a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sinology&#34; target=&#34;_blank&#34;&gt;sinologist&lt;/a&gt; and a &lt;a href=&#34;https://en.wikipedia.org/wiki/Linguistics&#34; target=&#34;_blank&#34;&gt;linguist&lt;/a&gt;, with MA degrees obtained at the &lt;a href=&#34;http://www.kuleuven.be/english&#34; target=&#34;_blank&#34;&gt;University of Leuven&lt;/a&gt;, Belgium. At this moment, I am a Ph.D candidate at the &lt;a href=&#34;http://homepage.ntu.edu.tw/~gilntu/People_Ph.D.Students.html&#34; target=&#34;_blank&#34;&gt;Graduate Institute of Linguistics of National Taiwan University&lt;/a&gt; with a scholarship provided by NTU (Research Fellowship for Outstanding International Doctoral Students 優秀國際博士生獎學金).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;My current research is a diachronic analysis of ideophones in Chinese.&lt;/strong&gt; My supervisor is &lt;a href=&#34;http://chiarung.blog.ntu.edu.tw/&#34; target=&#34;_blank&#34;&gt;Lu Chiarung&lt;/a&gt;. I have a passion for Mandarin and Premodern Chinese, as well as many other languages and the phenomenon &amp;lsquo;language&amp;rsquo; in general.&lt;/p&gt;
+
+&lt;p&gt;Between my bachelor and my master of Sinology, I was able to study at &lt;a href=&#34;http://eng.suda.edu.cn/&#34; target=&#34;_blank&#34;&gt;Suzhou University 苏州大学&lt;/a&gt; with a scholarship provided by the Hanban.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click here for my &lt;a href=&#34;https://github.com/simazhi/cv_in_rmarkdown/blob/master/CV_thomas.pdf&#34; target=&#34;_blank&#34;&gt;academic cv&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

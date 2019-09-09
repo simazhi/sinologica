@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visualization | Thomas Van Hoey | Sinologica</title>
+    <link>/tags/visualization/</link>
+      <atom:link href="/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <description>visualization</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>visualization</title>
+      <link>/tags/visualization/</link>
+    </image>
+    
+    <item>
+      <title>Mapping the terminology for ideophones</title>
+      <link>/post/mapping-the-terminology-for-ideophones/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/post/mapping-the-terminology-for-ideophones/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leaflet/leaflet.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leafletfix/leafletfix.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/rmarkdown-libs/leaflet-label/leaflet.label.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-label/leaflet.label.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-binding/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers/leaflet-providers.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;goal&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Goal&lt;/h1&gt;
+&lt;p&gt;The goal for this short update is to use the R package &lt;code&gt;lingtypology&lt;/code&gt; (click &lt;a href=&#34;https://ropensci.github.io/lingtypology/&#34;&gt;here for the tutorial&lt;/a&gt;), in order to create a map that shows which for which languages we use which terminology relating to ideophones.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now, I know that the data isn’t complete yet. It is an ongoing cataloguing project.&lt;/strong&gt; You can find the more recent versions of this map &lt;a href=&#34;https://github.com/simazhi/ideophones/ideophones/terminology_map.html&#34;&gt;on my Github account&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-packages&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Load packages&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(lingtypology)
+library(kableExtra)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;read-in-the-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Read in the data&lt;/h1&gt;
+&lt;p&gt;The data below is divided into three columns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;language&lt;/code&gt;: the language name found in the &lt;a href=&#34;http://glottolog.org/&#34;&gt;Glottolog database&lt;/a&gt;&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;terminology&lt;/code&gt;: the terminology used to refer to ideophones in descriptions of the phenomenon across different languages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;popup&lt;/code&gt;: What I want to appear in the frames when you click on a given language. In this case that would be a reference to some research, or the names used for the phenomenon in the language itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- read_tsv(&amp;quot;https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv&amp;quot;)
+df %&amp;gt;%
+  kable(&amp;quot;html&amp;quot;) %&amp;gt;%
+  kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+language
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+terminology
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+popup
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Semai
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Diffloth (1976); (Tufvesson 2011)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Bahnar
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Diffloth (1994)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kedah Malay
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Collins (1979)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Lao
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Crisfield (1983); Waylang (1996)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Indonesian
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Carr (1966)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Somali
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Dhoorre &amp;amp; Tosco (1998)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yoruba
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rowlands (1970)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kisi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Childs (1988)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Zulu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Doke 1935, Msimang &amp;amp; Poulos 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gbaya-Bossangoa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Samarin (1965); Noss (2001); Roulon-Doko 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hausa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Newman (1968)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Siwu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Dingemanse (2011)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Korean
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+You (1991); Lee (1992) &amp;lt;br&amp;gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Asheninka Perene
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mihas (2012)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Japanese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+mimetic
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp;amp; Itō (1989), Rodrigues (1604) &amp;lt;br&amp;gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+French
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Grammont (1901)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Northern Pastaza Quichua
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Nuckolls (1992,1996,2004, 2017)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Ewe
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Lautbilder
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Westermann (1905: 1907), Ameka (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Shona
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Fortune (1962), Klassen (1999)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Southern Sotho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kunene (1965)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kota (India)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoetics
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Emeneau (1969)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Vietnamese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+impressif
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Durand (1961)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Khasi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+phonaesthetic words
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Henderson (1965)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pacoh
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Watson (1966)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yir-Yoront
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Alpher (1994), 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Nyanja
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kulemeka (1994) (lang: Chichewa),1996, 1997)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wolaytta
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Amha (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tswana
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Creissels (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Emai-Iuleha-Ora
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Egbokhare (2001), Schaefer (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mundang
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Elders (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Finnish
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Jarva (2001), Mikone (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Didinga
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+de Jong (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Luba-Katanga
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kabuta (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Baka (Cameroon)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kilian-Hatz (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kxoe
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kilian-Hatz (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kambera
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Klamer (1998, 2000)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Warrwa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gooniyandi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kwini
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Estonian
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mikone (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Iloko
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoetics
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rubino (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Jaminjung
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Schultze-Berndt (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tetela
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tassa (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kamu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Svantesson (1983)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mandarin Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yue Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Bodomo (2006); de Sousa (2008) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Central Dagaare
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Bodomo (2006)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hakka Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Xiang Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gan Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Upper Necaxa Totonac
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Beck (2008)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+English
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoeia and phonaesthemes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plot-the-terminology-map&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Plot the terminology map&lt;/h1&gt;
+&lt;p&gt;Next we plot the map, which can then be explored. Click on a dot and you should see the same data we put in the table above.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            color= c(&amp;quot;yellowgreen&amp;quot;, &amp;quot;navy&amp;quot;),
+            #shape = TRUE
+            label = df$language
+            )&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;leaflet html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;options&#34;:{&#34;crs&#34;:{&#34;crsClass&#34;:&#34;L.CRS.EPSG3857&#34;,&#34;code&#34;:null,&#34;proj4def&#34;:null,&#34;projectedBounds&#34;:null,&#34;options&#34;:{}},&#34;zoomControl&#34;:false},&#34;calls&#34;:[{&#34;method&#34;:&#34;addTiles&#34;,&#34;args&#34;:[&#34;OpenStreetMap.Mapnik&#34;,null,null,{&#34;minZoom&#34;:0,&#34;maxZoom&#34;:18,&#34;maxNativeZoom&#34;:null,&#34;tileSize&#34;:256,&#34;subdomains&#34;:&#34;abc&#34;,&#34;errorTileUrl&#34;:&#34;&#34;,&#34;tms&#34;:false,&#34;continuousWorld&#34;:false,&#34;noWrap&#34;:false,&#34;zoomOffset&#34;:0,&#34;zoomReverse&#34;:false,&#34;opacity&#34;:1,&#34;zIndex&#34;:null,&#34;unloadInvisibleTiles&#34;:null,&#34;updateWhenIdle&#34;:null,&#34;detectRetina&#34;:false,&#34;reuseTiles&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;OpenStreetMap.Mapnik&#34;,null,&#34;OpenStreetMap.Mapnik&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;zIndex&#34;:null,&#34;unloadInvisibleTiles&#34;:null,&#34;updateWhenIdle&#34;:null,&#34;detectRetina&#34;:false,&#34;reuseTiles&#34;:false}]},{&#34;method&#34;:&#34;addCircleMarkers&#34;,&#34;args&#34;:[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5.5,null,[&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;mimetic&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;Lautbilder&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;impressif&#34;,&#34;phonaesthetic words&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoeia and phonaesthemes&#34;],{&#34;lineCap&#34;:null,&#34;lineJoin&#34;:null,&#34;clickable&#34;:true,&#34;pointerEvents&#34;:null,&#34;className&#34;:&#34;&#34;,&#34;stroke&#34;:false,&#34;color&#34;:&#34;black&#34;,&#34;weight&#34;:5,&#34;opacity&#34;:0.5,&#34;fill&#34;:true,&#34;fillColor&#34;:&#34;black&#34;,&#34;fillOpacity&#34;:1,&#34;dashArray&#34;:null},null,null,[&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sea&#39; target=&#39;_blank&#39;&gt;Semai&lt;\/a&gt;&lt;br&gt;Diffloth (1976); (Tufvesson 2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bdq&#39; target=&#39;_blank&#39;&gt;Bahnar&lt;\/a&gt;&lt;br&gt;Diffloth (1994)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/meo&#39; target=&#39;_blank&#39;&gt;Kedah Malay&lt;\/a&gt;&lt;br&gt;Collins (1979)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lao&#39; target=&#39;_blank&#39;&gt;Lao&lt;\/a&gt;&lt;br&gt;Crisfield (1983); Waylang (1996)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ind&#39; target=&#39;_blank&#39;&gt;Indonesian&lt;\/a&gt;&lt;br&gt;Carr (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/som&#39; target=&#39;_blank&#39;&gt;Somali&lt;\/a&gt;&lt;br&gt;Dhoorre &amp; Tosco (1998)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yor&#39; target=&#39;_blank&#39;&gt;Yoruba&lt;\/a&gt;&lt;br&gt;Rowlands (1970)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kiz&#39; target=&#39;_blank&#39;&gt;Kisi&lt;\/a&gt;&lt;br&gt;Childs (1988)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/zul&#39; target=&#39;_blank&#39;&gt;Zulu&lt;\/a&gt;&lt;br&gt;Doke 1935, Msimang &amp; Poulos 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gbp&#39; target=&#39;_blank&#39;&gt;Gbaya-Bossangoa&lt;\/a&gt;&lt;br&gt;Samarin (1965); Noss (2001); Roulon-Doko 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hau&#39; target=&#39;_blank&#39;&gt;Hausa&lt;\/a&gt;&lt;br&gt;Newman (1968)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/akp&#39; target=&#39;_blank&#39;&gt;Siwu&lt;\/a&gt;&lt;br&gt;Dingemanse (2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kor&#39; target=&#39;_blank&#39;&gt;Korean&lt;\/a&gt;&lt;br&gt;You (1991); Lee (1992) &lt;br&gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/prq&#39; target=&#39;_blank&#39;&gt;Asheninka Perene&lt;\/a&gt;&lt;br&gt;Mihas (2012)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/jpn&#39; target=&#39;_blank&#39;&gt;Japanese&lt;\/a&gt;&lt;br&gt;Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp; Itō (1989), Rodrigues (1604) &lt;br&gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fra&#39; target=&#39;_blank&#39;&gt;French&lt;\/a&gt;&lt;br&gt;Grammont (1901)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/qvz&#39; target=&#39;_blank&#39;&gt;Northern Pastaza Quichua&lt;\/a&gt;&lt;br&gt;Nuckolls (1992,1996,2004, 2017)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ewe&#39; target=&#39;_blank&#39;&gt;Ewe&lt;\/a&gt;&lt;br&gt;Westermann (1905: 1907), Ameka (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sna&#39; target=&#39;_blank&#39;&gt;Shona&lt;\/a&gt;&lt;br&gt;Fortune (1962), Klassen (1999)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sot&#39; target=&#39;_blank&#39;&gt;Southern Sotho&lt;\/a&gt;&lt;br&gt;Kunene (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kfe&#39; target=&#39;_blank&#39;&gt;Kota (India)&lt;\/a&gt;&lt;br&gt;Emeneau (1969)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/vie&#39; target=&#39;_blank&#39;&gt;Vietnamese&lt;\/a&gt;&lt;br&gt;Durand (1961)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kha&#39; target=&#39;_blank&#39;&gt;Khasi&lt;\/a&gt;&lt;br&gt;Henderson (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/pac&#39; target=&#39;_blank&#39;&gt;Pacoh&lt;\/a&gt;&lt;br&gt;Watson (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yiy&#39; target=&#39;_blank&#39;&gt;Yir-Yoront&lt;\/a&gt;&lt;br&gt;Alpher (1994), 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/nya&#39; target=&#39;_blank&#39;&gt;Nyanja&lt;\/a&gt;&lt;br&gt;Kulemeka (1994) (lang: Chichewa),1996, 1997)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wal&#39; target=&#39;_blank&#39;&gt;Wolaytta&lt;\/a&gt;&lt;br&gt;Amha (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tsn&#39; target=&#39;_blank&#39;&gt;Tswana&lt;\/a&gt;&lt;br&gt;Creissels (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ema&#39; target=&#39;_blank&#39;&gt;Emai-Iuleha-Ora&lt;\/a&gt;&lt;br&gt;Egbokhare (2001), Schaefer (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/mua&#39; target=&#39;_blank&#39;&gt;Mundang&lt;\/a&gt;&lt;br&gt;Elders (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fin&#39; target=&#39;_blank&#39;&gt;Finnish&lt;\/a&gt;&lt;br&gt;Jarva (2001), Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/did&#39; target=&#39;_blank&#39;&gt;Didinga&lt;\/a&gt;&lt;br&gt;de Jong (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lub&#39; target=&#39;_blank&#39;&gt;Luba-Katanga&lt;\/a&gt;&lt;br&gt;Kabuta (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bkc&#39; target=&#39;_blank&#39;&gt;Baka (Cameroon)&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xuu&#39; target=&#39;_blank&#39;&gt;Kxoe&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xbr&#39; target=&#39;_blank&#39;&gt;Kambera&lt;\/a&gt;&lt;br&gt;Klamer (1998, 2000)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wwr&#39; target=&#39;_blank&#39;&gt;Warrwa&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gni&#39; target=&#39;_blank&#39;&gt;Gooniyandi&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gww&#39; target=&#39;_blank&#39;&gt;Kwini&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ekk&#39; target=&#39;_blank&#39;&gt;Estonian&lt;\/a&gt;&lt;br&gt;Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ilo&#39; target=&#39;_blank&#39;&gt;Iloko&lt;\/a&gt;&lt;br&gt;Rubino (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/djd&#39; target=&#39;_blank&#39;&gt;Jaminjung&lt;\/a&gt;&lt;br&gt;Schultze-Berndt (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tll&#39; target=&#39;_blank&#39;&gt;Tetela&lt;\/a&gt;&lt;br&gt;Tassa (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xmu&#39; target=&#39;_blank&#39;&gt;Kamu&lt;\/a&gt;&lt;br&gt;Svantesson (1983)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/cmn&#39; target=&#39;_blank&#39;&gt;Mandarin Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yue&#39; target=&#39;_blank&#39;&gt;Yue Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/dga&#39; target=&#39;_blank&#39;&gt;Central Dagaare&lt;\/a&gt;&lt;br&gt;Bodomo (2006)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hak&#39; target=&#39;_blank&#39;&gt;Hakka Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hsn&#39; target=&#39;_blank&#39;&gt;Xiang Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gan&#39; target=&#39;_blank&#39;&gt;Gan Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wuu&#39; target=&#39;_blank&#39;&gt;Wu Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tku&#39; target=&#39;_blank&#39;&gt;Upper Necaxa Totonac&lt;\/a&gt;&lt;br&gt;Beck (2008)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/eng&#39; target=&#39;_blank&#39;&gt;English&lt;\/a&gt;&lt;br&gt;Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)&#34;],null,null,null,null]},{&#34;method&#34;:&#34;addCircleMarkers&#34;,&#34;args&#34;:[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5,null,[&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;mimetic&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;Lautbilder&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;impressif&#34;,&#34;phonaesthetic words&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoeia and phonaesthemes&#34;],{&#34;lineCap&#34;:null,&#34;lineJoin&#34;:null,&#34;clickable&#34;:true,&#34;pointerEvents&#34;:null,&#34;className&#34;:&#34;&#34;,&#34;stroke&#34;:false,&#34;color&#34;:[&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#6A596D&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#7A7564&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#879259&#34;,&#34;#000080&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#573E74&#34;],&#34;weight&#34;:5,&#34;opacity&#34;:0.5,&#34;fill&#34;:true,&#34;fillColor&#34;:[&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#6A596D&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#7A7564&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#879259&#34;,&#34;#000080&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#573E74&#34;],&#34;fillOpacity&#34;:1,&#34;dashArray&#34;:null},null,null,[&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sea&#39; target=&#39;_blank&#39;&gt;Semai&lt;\/a&gt;&lt;br&gt;Diffloth (1976); (Tufvesson 2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bdq&#39; target=&#39;_blank&#39;&gt;Bahnar&lt;\/a&gt;&lt;br&gt;Diffloth (1994)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/meo&#39; target=&#39;_blank&#39;&gt;Kedah Malay&lt;\/a&gt;&lt;br&gt;Collins (1979)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lao&#39; target=&#39;_blank&#39;&gt;Lao&lt;\/a&gt;&lt;br&gt;Crisfield (1983); Waylang (1996)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ind&#39; target=&#39;_blank&#39;&gt;Indonesian&lt;\/a&gt;&lt;br&gt;Carr (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/som&#39; target=&#39;_blank&#39;&gt;Somali&lt;\/a&gt;&lt;br&gt;Dhoorre &amp; Tosco (1998)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yor&#39; target=&#39;_blank&#39;&gt;Yoruba&lt;\/a&gt;&lt;br&gt;Rowlands (1970)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kiz&#39; target=&#39;_blank&#39;&gt;Kisi&lt;\/a&gt;&lt;br&gt;Childs (1988)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/zul&#39; target=&#39;_blank&#39;&gt;Zulu&lt;\/a&gt;&lt;br&gt;Doke 1935, Msimang &amp; Poulos 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gbp&#39; target=&#39;_blank&#39;&gt;Gbaya-Bossangoa&lt;\/a&gt;&lt;br&gt;Samarin (1965); Noss (2001); Roulon-Doko 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hau&#39; target=&#39;_blank&#39;&gt;Hausa&lt;\/a&gt;&lt;br&gt;Newman (1968)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/akp&#39; target=&#39;_blank&#39;&gt;Siwu&lt;\/a&gt;&lt;br&gt;Dingemanse (2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kor&#39; target=&#39;_blank&#39;&gt;Korean&lt;\/a&gt;&lt;br&gt;You (1991); Lee (1992) &lt;br&gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/prq&#39; target=&#39;_blank&#39;&gt;Asheninka Perene&lt;\/a&gt;&lt;br&gt;Mihas (2012)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/jpn&#39; target=&#39;_blank&#39;&gt;Japanese&lt;\/a&gt;&lt;br&gt;Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp; Itō (1989), Rodrigues (1604) &lt;br&gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fra&#39; target=&#39;_blank&#39;&gt;French&lt;\/a&gt;&lt;br&gt;Grammont (1901)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/qvz&#39; target=&#39;_blank&#39;&gt;Northern Pastaza Quichua&lt;\/a&gt;&lt;br&gt;Nuckolls (1992,1996,2004, 2017)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ewe&#39; target=&#39;_blank&#39;&gt;Ewe&lt;\/a&gt;&lt;br&gt;Westermann (1905: 1907), Ameka (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sna&#39; target=&#39;_blank&#39;&gt;Shona&lt;\/a&gt;&lt;br&gt;Fortune (1962), Klassen (1999)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sot&#39; target=&#39;_blank&#39;&gt;Southern Sotho&lt;\/a&gt;&lt;br&gt;Kunene (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kfe&#39; target=&#39;_blank&#39;&gt;Kota (India)&lt;\/a&gt;&lt;br&gt;Emeneau (1969)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/vie&#39; target=&#39;_blank&#39;&gt;Vietnamese&lt;\/a&gt;&lt;br&gt;Durand (1961)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kha&#39; target=&#39;_blank&#39;&gt;Khasi&lt;\/a&gt;&lt;br&gt;Henderson (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/pac&#39; target=&#39;_blank&#39;&gt;Pacoh&lt;\/a&gt;&lt;br&gt;Watson (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yiy&#39; target=&#39;_blank&#39;&gt;Yir-Yoront&lt;\/a&gt;&lt;br&gt;Alpher (1994), 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/nya&#39; target=&#39;_blank&#39;&gt;Nyanja&lt;\/a&gt;&lt;br&gt;Kulemeka (1994) (lang: Chichewa),1996, 1997)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wal&#39; target=&#39;_blank&#39;&gt;Wolaytta&lt;\/a&gt;&lt;br&gt;Amha (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tsn&#39; target=&#39;_blank&#39;&gt;Tswana&lt;\/a&gt;&lt;br&gt;Creissels (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ema&#39; target=&#39;_blank&#39;&gt;Emai-Iuleha-Ora&lt;\/a&gt;&lt;br&gt;Egbokhare (2001), Schaefer (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/mua&#39; target=&#39;_blank&#39;&gt;Mundang&lt;\/a&gt;&lt;br&gt;Elders (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fin&#39; target=&#39;_blank&#39;&gt;Finnish&lt;\/a&gt;&lt;br&gt;Jarva (2001), Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/did&#39; target=&#39;_blank&#39;&gt;Didinga&lt;\/a&gt;&lt;br&gt;de Jong (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lub&#39; target=&#39;_blank&#39;&gt;Luba-Katanga&lt;\/a&gt;&lt;br&gt;Kabuta (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bkc&#39; target=&#39;_blank&#39;&gt;Baka (Cameroon)&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xuu&#39; target=&#39;_blank&#39;&gt;Kxoe&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xbr&#39; target=&#39;_blank&#39;&gt;Kambera&lt;\/a&gt;&lt;br&gt;Klamer (1998, 2000)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wwr&#39; target=&#39;_blank&#39;&gt;Warrwa&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gni&#39; target=&#39;_blank&#39;&gt;Gooniyandi&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gww&#39; target=&#39;_blank&#39;&gt;Kwini&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ekk&#39; target=&#39;_blank&#39;&gt;Estonian&lt;\/a&gt;&lt;br&gt;Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ilo&#39; target=&#39;_blank&#39;&gt;Iloko&lt;\/a&gt;&lt;br&gt;Rubino (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/djd&#39; target=&#39;_blank&#39;&gt;Jaminjung&lt;\/a&gt;&lt;br&gt;Schultze-Berndt (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tll&#39; target=&#39;_blank&#39;&gt;Tetela&lt;\/a&gt;&lt;br&gt;Tassa (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xmu&#39; target=&#39;_blank&#39;&gt;Kamu&lt;\/a&gt;&lt;br&gt;Svantesson (1983)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/cmn&#39; target=&#39;_blank&#39;&gt;Mandarin Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yue&#39; target=&#39;_blank&#39;&gt;Yue Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/dga&#39; target=&#39;_blank&#39;&gt;Central Dagaare&lt;\/a&gt;&lt;br&gt;Bodomo (2006)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hak&#39; target=&#39;_blank&#39;&gt;Hakka Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hsn&#39; target=&#39;_blank&#39;&gt;Xiang Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gan&#39; target=&#39;_blank&#39;&gt;Gan Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wuu&#39; target=&#39;_blank&#39;&gt;Wu Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tku&#39; target=&#39;_blank&#39;&gt;Upper Necaxa Totonac&lt;\/a&gt;&lt;br&gt;Beck (2008)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/eng&#39; target=&#39;_blank&#39;&gt;English&lt;\/a&gt;&lt;br&gt;Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)&#34;],null,[&#34;Semai&#34;,&#34;Bahnar&#34;,&#34;Kedah Malay&#34;,&#34;Lao&#34;,&#34;Indonesian&#34;,&#34;Somali&#34;,&#34;Yoruba&#34;,&#34;Kisi&#34;,&#34;Zulu&#34;,&#34;Gbaya-Bossangoa&#34;,&#34;Hausa&#34;,&#34;Siwu&#34;,&#34;Korean&#34;,&#34;Asheninka Perene&#34;,&#34;Japanese&#34;,&#34;French&#34;,&#34;Northern Pastaza Quichua&#34;,&#34;Ewe&#34;,&#34;Shona&#34;,&#34;Southern Sotho&#34;,&#34;Kota (India)&#34;,&#34;Vietnamese&#34;,&#34;Khasi&#34;,&#34;Pacoh&#34;,&#34;Yir-Yoront&#34;,&#34;Nyanja&#34;,&#34;Wolaytta&#34;,&#34;Tswana&#34;,&#34;Emai-Iuleha-Ora&#34;,&#34;Mundang&#34;,&#34;Finnish&#34;,&#34;Didinga&#34;,&#34;Luba-Katanga&#34;,&#34;Baka (Cameroon)&#34;,&#34;Kxoe&#34;,&#34;Kambera&#34;,&#34;Warrwa&#34;,&#34;Gooniyandi&#34;,&#34;Kwini&#34;,&#34;Estonian&#34;,&#34;Iloko&#34;,&#34;Jaminjung&#34;,&#34;Tetela&#34;,&#34;Kamu&#34;,&#34;Mandarin Chinese&#34;,&#34;Yue Chinese&#34;,&#34;Central Dagaare&#34;,&#34;Hakka Chinese&#34;,&#34;Xiang Chinese&#34;,&#34;Gan Chinese&#34;,&#34;Wu Chinese&#34;,&#34;Upper Necaxa Totonac&#34;,&#34;English&#34;],{&#34;clickable&#34;:false,&#34;noHide&#34;:false,&#34;direction&#34;:&#34;right&#34;,&#34;opacity&#34;:1,&#34;offset&#34;:[12,-15],&#34;textsize&#34;:&#34;10px&#34;,&#34;textOnly&#34;:true,&#34;style&#34;:{&#34;font-size&#34;:&#34;14px&#34;},&#34;zoomAnimation&#34;:true,&#34;className&#34;:&#34;&#34;},null]},{&#34;method&#34;:&#34;addScaleBar&#34;,&#34;args&#34;:[{&#34;maxWidth&#34;:100,&#34;metric&#34;:true,&#34;imperial&#34;:true,&#34;updateWhenIdle&#34;:true,&#34;position&#34;:&#34;bottomleft&#34;}]},{&#34;method&#34;:&#34;addLegend&#34;,&#34;args&#34;:[{&#34;colors&#34;:[&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#879259&#34;,&#34;#7A7564&#34;,&#34;#6A596D&#34;,&#34;#573E74&#34;,&#34;#3D227A&#34;,&#34;#000080&#34;],&#34;labels&#34;:[&#34;expressive&#34;,&#34;ideophone&#34;,&#34;impressif&#34;,&#34;Lautbilder&#34;,&#34;mimetic&#34;,&#34;onomatopoeia and phonaesthemes&#34;,&#34;onomatopoetics&#34;,&#34;phonaesthetic words&#34;],&#34;na_color&#34;:null,&#34;na_label&#34;:&#34;NA&#34;,&#34;opacity&#34;:1,&#34;position&#34;:&#34;topright&#34;,&#34;type&#34;:&#34;factor&#34;,&#34;title&#34;:null,&#34;extra&#34;:null,&#34;layerId&#34;:null,&#34;className&#34;:&#34;info legend&#34;}]}],&#34;limits&#34;:{&#34;lat&#34;:[-30.44451,64.762825],&#34;lng&#34;:[-2.52265,285.08472]}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tl-dr&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;tl; dr&lt;/h1&gt;
+&lt;p&gt;So with a simple script and some data we can use the &lt;code&gt;lingtypology&lt;/code&gt; package to quickly map language-related data. We can see how &lt;em&gt;ideophone&lt;/em&gt; is used more for African languages, &lt;em&gt;expressive&lt;/em&gt; for Southeast Asian ones, and &lt;em&gt;mimetic&lt;/em&gt; for Japanese. Of these &lt;strong&gt;ideophone&lt;/strong&gt; is recently becoming the global cover term — although what that precisely means, often still has to be explained at the language-particular level. Cool!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;p&gt;Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.&lt;/p&gt;
+&lt;p&gt;Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: University of Queensland PhD dissertation.&lt;/p&gt;
+&lt;p&gt;Moroz G (2017). &lt;em&gt;lingtypology: easy mapping for Linguistic Typology&lt;/em&gt;. &amp;lt;URL: &lt;a href=&#34;https://CRAN.R-project.org/package=lingtypology&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=lingtypology&lt;/a&gt;&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Voeltz, Erhard Friedrich Karl &amp;amp; Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam; Philadelphia: J. Benjamins.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Although maybe it is an adapted form, &lt;a href=&#34;https://ropensci.github.io/lingtypology/lingtypology_glottolog_functions.html&#34;&gt;see the documentation for the R package ‘lingtypology’&lt;/a&gt;.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

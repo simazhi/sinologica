@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CHIDEOD | Thomas Van Hoey | Sinologica</title>
+    <link>/tags/chideod/</link>
+      <atom:link href="/tags/chideod/index.xml" rel="self" type="application/rss+xml" />
+    <description>CHIDEOD</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 05 May 2019 10:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>CHIDEOD</title>
+      <link>/tags/chideod/</link>
+    </image>
+    
+    <item>
+      <title>Bridging phonology, meaning, and written form across time: introducing CHIDEOD, a database of Chinese literary ideophones</title>
+      <link>/talk/2019-lund/</link>
+      <pubDate>Sun, 05 May 2019 10:30:00 +0000</pubDate>
+      <guid>/talk/2019-lund/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chiarung Lu | Thomas Van Hoey | Sinologica</title>
+    <link>/authors/chiarung-lu/</link>
+      <atom:link href="/authors/chiarung-lu/index.xml" rel="self" type="application/rss+xml" />
+    <description>Chiarung Lu</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Chiarung Lu</title>
+      <link>/authors/chiarung-lu/</link>
+    </image>
+    
+    <item>
+      <title>Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration</title>
+      <link>/publication/2019_clr_variation_cldc/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/2019_clr_variation_cldc/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

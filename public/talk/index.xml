@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks on Thomas Van Hoey | Sinologica</title>
+    <title>Recent &amp; Upcoming Talks | Thomas Van Hoey | Sinologica</title>
     <link>/talk/</link>
-    <description>Recent content in Recent &amp; Upcoming Talks on Thomas Van Hoey | Sinologica</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sat, 10 Aug 2019 14:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
+    </image>
     
     <item>
-      <title>All that glitters is not gold: Prototypical semantic change in shiny Literary Chinese ideophones</title>
-      <link>/talk/2018_cldc/</link>
-      <pubDate>Sat, 20 Oct 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/2018_cldc/</guid>
+      <title>Reduplication as a trigger of intersubjectivity: Mandarin Chinese ideophones and reduplication in the CHILDES corpora</title>
+      <link>/talk/2019-iclc-childes/</link>
+      <pubDate>Sat, 10 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-childes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>The Bending of Blending: World-building in Avatar: The Last Airbender and Legend of Korra</title>
-      <link>/talk/2018_raam12/</link>
-      <pubDate>Sat, 20 Oct 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/2018_raam12/</guid>
+      <title>Radiant suns, burning fires and brilliant flowers: The onomasiology and radical support of Chinese literary LIGHT ideophones</title>
+      <link>/talk/2019-iclc-light/</link>
+      <pubDate>Wed, 07 Aug 2019 11:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-light/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Chinese ideophones in historical corpora: A case study of mental space markers</title>
-      <link>/talk/2017_nagoya/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-      
-      <guid>/talk/2017_nagoya/</guid>
-      <description> </description>
+      <title>Defining Chinese ideophones: A family of constructions</title>
+      <link>/talk/2019-nagoya/</link>
+      <pubDate>Fri, 02 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-nagoya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bridging phonology, meaning, and written form across time: introducing CHIDEOD, a database of Chinese literary ideophones</title>
+      <link>/talk/2019-lund/</link>
+      <pubDate>Sun, 05 May 2019 10:30:00 +0000</pubDate>
+      <guid>/talk/2019-lund/</guid>
+      <description></description>
     </item>
     
   </channel>

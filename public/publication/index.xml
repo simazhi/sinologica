@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Thomas Van Hoey | Sinologica</title>
+    <title>Publications | Thomas Van Hoey | Sinologica</title>
     <link>/publication/</link>
-    <description>Recent content in Publications on Thomas Van Hoey | Sinologica</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Publications</title>
+      <link>/publication/</link>
+    </image>
     
     <item>
       <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
       <link>/publication/2018_cogsem_weather/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
-      
       <guid>/publication/2018_cogsem_weather/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration</title>
       <link>/publication/2019_clr_variation_cldc/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/2019_clr_variation_cldc/</guid>
       <description></description>
     </item>

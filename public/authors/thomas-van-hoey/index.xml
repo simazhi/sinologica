@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thomas Van Hoey | Thomas Van Hoey | Sinologica</title>
+    <link>/authors/thomas-van-hoey/</link>
+      <atom:link href="/authors/thomas-van-hoey/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thomas Van Hoey</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 07 Aug 2019 11:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Thomas Van Hoey</title>
+      <link>/authors/thomas-van-hoey/</link>
+    </image>
+    
+    <item>
+      <title>Radiant suns, burning fires and brilliant flowers: The onomasiology and radical support of Chinese literary LIGHT ideophones</title>
+      <link>/talk/2019-iclc-light/</link>
+      <pubDate>Wed, 07 Aug 2019 11:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-light/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Defining Chinese ideophones: A family of constructions</title>
+      <link>/talk/2019-nagoya/</link>
+      <pubDate>Fri, 02 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-nagoya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
+      <link>/publication/2018_cogsem_weather/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
+      <guid>/publication/2018_cogsem_weather/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration</title>
+      <link>/publication/2019_clr_variation_cldc/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/2019_clr_variation_cldc/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

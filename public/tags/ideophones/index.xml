@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ideophones | Thomas Van Hoey | Sinologica</title>
+    <link>/tags/ideophones/</link>
+      <atom:link href="/tags/ideophones/index.xml" rel="self" type="application/rss+xml" />
+    <description>ideophones</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sat, 10 Aug 2019 14:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>ideophones</title>
+      <link>/tags/ideophones/</link>
+    </image>
+    
+    <item>
+      <title>Reduplication as a trigger of intersubjectivity: Mandarin Chinese ideophones and reduplication in the CHILDES corpora</title>
+      <link>/talk/2019-iclc-childes/</link>
+      <pubDate>Sat, 10 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-childes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Radiant suns, burning fires and brilliant flowers: The onomasiology and radical support of Chinese literary LIGHT ideophones</title>
+      <link>/talk/2019-iclc-light/</link>
+      <pubDate>Wed, 07 Aug 2019 11:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-light/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Defining Chinese ideophones: A family of constructions</title>
+      <link>/talk/2019-nagoya/</link>
+      <pubDate>Fri, 02 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-nagoya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bridging phonology, meaning, and written form across time: introducing CHIDEOD, a database of Chinese literary ideophones</title>
+      <link>/talk/2019-lund/</link>
+      <pubDate>Sun, 05 May 2019 10:30:00 +0000</pubDate>
+      <guid>/talk/2019-lund/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapping the terminology for ideophones</title>
+      <link>/post/mapping-the-terminology-for-ideophones/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/post/mapping-the-terminology-for-ideophones/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leaflet/leaflet.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/leafletfix/leafletfix.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/rmarkdown-libs/leaflet-label/leaflet.label.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-label/leaflet.label.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-binding/leaflet.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers/leaflet-providers.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;goal&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Goal&lt;/h1&gt;
+&lt;p&gt;The goal for this short update is to use the R package &lt;code&gt;lingtypology&lt;/code&gt; (click &lt;a href=&#34;https://ropensci.github.io/lingtypology/&#34;&gt;here for the tutorial&lt;/a&gt;), in order to create a map that shows which for which languages we use which terminology relating to ideophones.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now, I know that the data isn’t complete yet. It is an ongoing cataloguing project.&lt;/strong&gt; You can find the more recent versions of this map &lt;a href=&#34;https://github.com/simazhi/ideophones/ideophones/terminology_map.html&#34;&gt;on my Github account&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-packages&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Load packages&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(lingtypology)
+library(kableExtra)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;read-in-the-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Read in the data&lt;/h1&gt;
+&lt;p&gt;The data below is divided into three columns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;language&lt;/code&gt;: the language name found in the &lt;a href=&#34;http://glottolog.org/&#34;&gt;Glottolog database&lt;/a&gt;&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;terminology&lt;/code&gt;: the terminology used to refer to ideophones in descriptions of the phenomenon across different languages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;popup&lt;/code&gt;: What I want to appear in the frames when you click on a given language. In this case that would be a reference to some research, or the names used for the phenomenon in the language itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- read_tsv(&amp;quot;https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv&amp;quot;)
+df %&amp;gt;%
+  kable(&amp;quot;html&amp;quot;) %&amp;gt;%
+  kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+language
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+terminology
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+popup
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Semai
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Diffloth (1976); (Tufvesson 2011)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Bahnar
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Diffloth (1994)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kedah Malay
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Collins (1979)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Lao
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Crisfield (1983); Waylang (1996)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Indonesian
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Carr (1966)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Somali
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Dhoorre &amp;amp; Tosco (1998)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yoruba
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rowlands (1970)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kisi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Childs (1988)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Zulu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Doke 1935, Msimang &amp;amp; Poulos 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gbaya-Bossangoa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Samarin (1965); Noss (2001); Roulon-Doko 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hausa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Newman (1968)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Siwu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Dingemanse (2011)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Korean
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+You (1991); Lee (1992) &amp;lt;br&amp;gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Asheninka Perene
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mihas (2012)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Japanese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+mimetic
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp;amp; Itō (1989), Rodrigues (1604) &amp;lt;br&amp;gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+French
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Grammont (1901)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Northern Pastaza Quichua
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Nuckolls (1992,1996,2004, 2017)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Ewe
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Lautbilder
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Westermann (1905: 1907), Ameka (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Shona
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Fortune (1962), Klassen (1999)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Southern Sotho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kunene (1965)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kota (India)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoetics
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Emeneau (1969)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Vietnamese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+impressif
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Durand (1961)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Khasi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+phonaesthetic words
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Henderson (1965)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pacoh
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Watson (1966)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yir-Yoront
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Alpher (1994), 2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Nyanja
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kulemeka (1994) (lang: Chichewa),1996, 1997)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wolaytta
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Amha (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tswana
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Creissels (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Emai-Iuleha-Ora
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Egbokhare (2001), Schaefer (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mundang
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Elders (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Finnish
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+expressive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Jarva (2001), Mikone (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Didinga
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+de Jong (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Luba-Katanga
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kabuta (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Baka (Cameroon)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kilian-Hatz (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kxoe
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kilian-Hatz (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kambera
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Klamer (1998, 2000)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Warrwa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gooniyandi
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kwini
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+McGregor (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Estonian
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mikone (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Iloko
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoetics
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rubino (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Jaminjung
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Schultze-Berndt (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tetela
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tassa (2001)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kamu
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Svantesson (1983)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mandarin Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Yue Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Bodomo (2006); de Sousa (2008) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Central Dagaare
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Bodomo (2006)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hakka Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Xiang Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Gan Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu Chinese
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Wu (2015) &amp;lt;br&amp;gt; 象聲詞 [xiangshengci] “onomatope” &amp;lt;br&amp;gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Upper Necaxa Totonac
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ideophone
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Beck (2008)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+English
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+onomatopoeia and phonaesthemes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plot-the-terminology-map&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Plot the terminology map&lt;/h1&gt;
+&lt;p&gt;Next we plot the map, which can then be explored. Click on a dot and you should see the same data we put in the table above.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            color= c(&amp;quot;yellowgreen&amp;quot;, &amp;quot;navy&amp;quot;),
+            #shape = TRUE
+            label = df$language
+            )&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;leaflet html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;options&#34;:{&#34;crs&#34;:{&#34;crsClass&#34;:&#34;L.CRS.EPSG3857&#34;,&#34;code&#34;:null,&#34;proj4def&#34;:null,&#34;projectedBounds&#34;:null,&#34;options&#34;:{}},&#34;zoomControl&#34;:false},&#34;calls&#34;:[{&#34;method&#34;:&#34;addTiles&#34;,&#34;args&#34;:[&#34;OpenStreetMap.Mapnik&#34;,null,null,{&#34;minZoom&#34;:0,&#34;maxZoom&#34;:18,&#34;maxNativeZoom&#34;:null,&#34;tileSize&#34;:256,&#34;subdomains&#34;:&#34;abc&#34;,&#34;errorTileUrl&#34;:&#34;&#34;,&#34;tms&#34;:false,&#34;continuousWorld&#34;:false,&#34;noWrap&#34;:false,&#34;zoomOffset&#34;:0,&#34;zoomReverse&#34;:false,&#34;opacity&#34;:1,&#34;zIndex&#34;:null,&#34;unloadInvisibleTiles&#34;:null,&#34;updateWhenIdle&#34;:null,&#34;detectRetina&#34;:false,&#34;reuseTiles&#34;:false}]},{&#34;method&#34;:&#34;addProviderTiles&#34;,&#34;args&#34;:[&#34;OpenStreetMap.Mapnik&#34;,null,&#34;OpenStreetMap.Mapnik&#34;,{&#34;errorTileUrl&#34;:&#34;&#34;,&#34;noWrap&#34;:false,&#34;zIndex&#34;:null,&#34;unloadInvisibleTiles&#34;:null,&#34;updateWhenIdle&#34;:null,&#34;detectRetina&#34;:false,&#34;reuseTiles&#34;:false}]},{&#34;method&#34;:&#34;addCircleMarkers&#34;,&#34;args&#34;:[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5.5,null,[&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;mimetic&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;Lautbilder&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;impressif&#34;,&#34;phonaesthetic words&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoeia and phonaesthemes&#34;],{&#34;lineCap&#34;:null,&#34;lineJoin&#34;:null,&#34;clickable&#34;:true,&#34;pointerEvents&#34;:null,&#34;className&#34;:&#34;&#34;,&#34;stroke&#34;:false,&#34;color&#34;:&#34;black&#34;,&#34;weight&#34;:5,&#34;opacity&#34;:0.5,&#34;fill&#34;:true,&#34;fillColor&#34;:&#34;black&#34;,&#34;fillOpacity&#34;:1,&#34;dashArray&#34;:null},null,null,[&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sea&#39; target=&#39;_blank&#39;&gt;Semai&lt;\/a&gt;&lt;br&gt;Diffloth (1976); (Tufvesson 2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bdq&#39; target=&#39;_blank&#39;&gt;Bahnar&lt;\/a&gt;&lt;br&gt;Diffloth (1994)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/meo&#39; target=&#39;_blank&#39;&gt;Kedah Malay&lt;\/a&gt;&lt;br&gt;Collins (1979)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lao&#39; target=&#39;_blank&#39;&gt;Lao&lt;\/a&gt;&lt;br&gt;Crisfield (1983); Waylang (1996)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ind&#39; target=&#39;_blank&#39;&gt;Indonesian&lt;\/a&gt;&lt;br&gt;Carr (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/som&#39; target=&#39;_blank&#39;&gt;Somali&lt;\/a&gt;&lt;br&gt;Dhoorre &amp; Tosco (1998)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yor&#39; target=&#39;_blank&#39;&gt;Yoruba&lt;\/a&gt;&lt;br&gt;Rowlands (1970)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kiz&#39; target=&#39;_blank&#39;&gt;Kisi&lt;\/a&gt;&lt;br&gt;Childs (1988)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/zul&#39; target=&#39;_blank&#39;&gt;Zulu&lt;\/a&gt;&lt;br&gt;Doke 1935, Msimang &amp; Poulos 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gbp&#39; target=&#39;_blank&#39;&gt;Gbaya-Bossangoa&lt;\/a&gt;&lt;br&gt;Samarin (1965); Noss (2001); Roulon-Doko 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hau&#39; target=&#39;_blank&#39;&gt;Hausa&lt;\/a&gt;&lt;br&gt;Newman (1968)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/akp&#39; target=&#39;_blank&#39;&gt;Siwu&lt;\/a&gt;&lt;br&gt;Dingemanse (2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kor&#39; target=&#39;_blank&#39;&gt;Korean&lt;\/a&gt;&lt;br&gt;You (1991); Lee (1992) &lt;br&gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/prq&#39; target=&#39;_blank&#39;&gt;Asheninka Perene&lt;\/a&gt;&lt;br&gt;Mihas (2012)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/jpn&#39; target=&#39;_blank&#39;&gt;Japanese&lt;\/a&gt;&lt;br&gt;Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp; Itō (1989), Rodrigues (1604) &lt;br&gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fra&#39; target=&#39;_blank&#39;&gt;French&lt;\/a&gt;&lt;br&gt;Grammont (1901)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/qvz&#39; target=&#39;_blank&#39;&gt;Northern Pastaza Quichua&lt;\/a&gt;&lt;br&gt;Nuckolls (1992,1996,2004, 2017)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ewe&#39; target=&#39;_blank&#39;&gt;Ewe&lt;\/a&gt;&lt;br&gt;Westermann (1905: 1907), Ameka (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sna&#39; target=&#39;_blank&#39;&gt;Shona&lt;\/a&gt;&lt;br&gt;Fortune (1962), Klassen (1999)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sot&#39; target=&#39;_blank&#39;&gt;Southern Sotho&lt;\/a&gt;&lt;br&gt;Kunene (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kfe&#39; target=&#39;_blank&#39;&gt;Kota (India)&lt;\/a&gt;&lt;br&gt;Emeneau (1969)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/vie&#39; target=&#39;_blank&#39;&gt;Vietnamese&lt;\/a&gt;&lt;br&gt;Durand (1961)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kha&#39; target=&#39;_blank&#39;&gt;Khasi&lt;\/a&gt;&lt;br&gt;Henderson (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/pac&#39; target=&#39;_blank&#39;&gt;Pacoh&lt;\/a&gt;&lt;br&gt;Watson (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yiy&#39; target=&#39;_blank&#39;&gt;Yir-Yoront&lt;\/a&gt;&lt;br&gt;Alpher (1994), 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/nya&#39; target=&#39;_blank&#39;&gt;Nyanja&lt;\/a&gt;&lt;br&gt;Kulemeka (1994) (lang: Chichewa),1996, 1997)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wal&#39; target=&#39;_blank&#39;&gt;Wolaytta&lt;\/a&gt;&lt;br&gt;Amha (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tsn&#39; target=&#39;_blank&#39;&gt;Tswana&lt;\/a&gt;&lt;br&gt;Creissels (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ema&#39; target=&#39;_blank&#39;&gt;Emai-Iuleha-Ora&lt;\/a&gt;&lt;br&gt;Egbokhare (2001), Schaefer (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/mua&#39; target=&#39;_blank&#39;&gt;Mundang&lt;\/a&gt;&lt;br&gt;Elders (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fin&#39; target=&#39;_blank&#39;&gt;Finnish&lt;\/a&gt;&lt;br&gt;Jarva (2001), Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/did&#39; target=&#39;_blank&#39;&gt;Didinga&lt;\/a&gt;&lt;br&gt;de Jong (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lub&#39; target=&#39;_blank&#39;&gt;Luba-Katanga&lt;\/a&gt;&lt;br&gt;Kabuta (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bkc&#39; target=&#39;_blank&#39;&gt;Baka (Cameroon)&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xuu&#39; target=&#39;_blank&#39;&gt;Kxoe&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xbr&#39; target=&#39;_blank&#39;&gt;Kambera&lt;\/a&gt;&lt;br&gt;Klamer (1998, 2000)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wwr&#39; target=&#39;_blank&#39;&gt;Warrwa&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gni&#39; target=&#39;_blank&#39;&gt;Gooniyandi&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gww&#39; target=&#39;_blank&#39;&gt;Kwini&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ekk&#39; target=&#39;_blank&#39;&gt;Estonian&lt;\/a&gt;&lt;br&gt;Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ilo&#39; target=&#39;_blank&#39;&gt;Iloko&lt;\/a&gt;&lt;br&gt;Rubino (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/djd&#39; target=&#39;_blank&#39;&gt;Jaminjung&lt;\/a&gt;&lt;br&gt;Schultze-Berndt (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tll&#39; target=&#39;_blank&#39;&gt;Tetela&lt;\/a&gt;&lt;br&gt;Tassa (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xmu&#39; target=&#39;_blank&#39;&gt;Kamu&lt;\/a&gt;&lt;br&gt;Svantesson (1983)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/cmn&#39; target=&#39;_blank&#39;&gt;Mandarin Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yue&#39; target=&#39;_blank&#39;&gt;Yue Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/dga&#39; target=&#39;_blank&#39;&gt;Central Dagaare&lt;\/a&gt;&lt;br&gt;Bodomo (2006)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hak&#39; target=&#39;_blank&#39;&gt;Hakka Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hsn&#39; target=&#39;_blank&#39;&gt;Xiang Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gan&#39; target=&#39;_blank&#39;&gt;Gan Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wuu&#39; target=&#39;_blank&#39;&gt;Wu Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tku&#39; target=&#39;_blank&#39;&gt;Upper Necaxa Totonac&lt;\/a&gt;&lt;br&gt;Beck (2008)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/eng&#39; target=&#39;_blank&#39;&gt;English&lt;\/a&gt;&lt;br&gt;Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)&#34;],null,null,null,null]},{&#34;method&#34;:&#34;addCircleMarkers&#34;,&#34;args&#34;:[[4.13257,14.04764,5.933,16.07262,-7.33458,4.778704,7.153455,-9.93,-25.330502,6.61896,11.1512744444,7.23811,37.5,-10.97772,35,48,-1.88573,6.46061,-17.20849,-30.44451,11.4978,18.3887033333,24.97703,16.33533,-15.11172,-14.80472,6.32668,-24.36797,7.09089,9.83195,64.762825,4.21489,-8.2816,2.160125,-16.59051,-9.88447,-17.09646,-18.40733,-14.25155,58.55,15.93614,-15.05583,-4.29314,-13.53926,40.020884,23,10.4226,25,27.66847,27.98958,29.86209,20.2957,53],[101.47651,108.47084,100.492,104.56848,109.71572,45.152856,3.672245,34.48254,31.351174,17.64498,8.78039888889,0.44362,128,285.08472,135,2,283.96112,0.814975,29.75725,27.89507,76.93865,106.756826667,91.999805,107.09417,141.76736,32.810775,37.75373,24.75867,5.84494,14.4751,25.55767,33.68688,25.89183,13.78039,22.599835,120.23531,123.97143,126.351,126.56181,25.82,120.99329,130.0598,24.54596,131.0983,116.228026,113,-2.52265,116,111.47112,115.16585,119.68246,262.15642,-1],5,null,[&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;mimetic&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;Lautbilder&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;impressif&#34;,&#34;phonaesthetic words&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;expressive&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoetics&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;ideophone&#34;,&#34;onomatopoeia and phonaesthemes&#34;],{&#34;lineCap&#34;:null,&#34;lineJoin&#34;:null,&#34;clickable&#34;:true,&#34;pointerEvents&#34;:null,&#34;className&#34;:&#34;&#34;,&#34;stroke&#34;:false,&#34;color&#34;:[&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#6A596D&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#7A7564&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#879259&#34;,&#34;#000080&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#573E74&#34;],&#34;weight&#34;:5,&#34;opacity&#34;:0.5,&#34;fill&#34;:true,&#34;fillColor&#34;:[&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#6A596D&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#7A7564&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#879259&#34;,&#34;#000080&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#3D227A&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#91AF49&#34;,&#34;#573E74&#34;],&#34;fillOpacity&#34;:1,&#34;dashArray&#34;:null},null,null,[&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sea&#39; target=&#39;_blank&#39;&gt;Semai&lt;\/a&gt;&lt;br&gt;Diffloth (1976); (Tufvesson 2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bdq&#39; target=&#39;_blank&#39;&gt;Bahnar&lt;\/a&gt;&lt;br&gt;Diffloth (1994)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/meo&#39; target=&#39;_blank&#39;&gt;Kedah Malay&lt;\/a&gt;&lt;br&gt;Collins (1979)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lao&#39; target=&#39;_blank&#39;&gt;Lao&lt;\/a&gt;&lt;br&gt;Crisfield (1983); Waylang (1996)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ind&#39; target=&#39;_blank&#39;&gt;Indonesian&lt;\/a&gt;&lt;br&gt;Carr (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/som&#39; target=&#39;_blank&#39;&gt;Somali&lt;\/a&gt;&lt;br&gt;Dhoorre &amp; Tosco (1998)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yor&#39; target=&#39;_blank&#39;&gt;Yoruba&lt;\/a&gt;&lt;br&gt;Rowlands (1970)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kiz&#39; target=&#39;_blank&#39;&gt;Kisi&lt;\/a&gt;&lt;br&gt;Childs (1988)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/zul&#39; target=&#39;_blank&#39;&gt;Zulu&lt;\/a&gt;&lt;br&gt;Doke 1935, Msimang &amp; Poulos 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gbp&#39; target=&#39;_blank&#39;&gt;Gbaya-Bossangoa&lt;\/a&gt;&lt;br&gt;Samarin (1965); Noss (2001); Roulon-Doko 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hau&#39; target=&#39;_blank&#39;&gt;Hausa&lt;\/a&gt;&lt;br&gt;Newman (1968)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/akp&#39; target=&#39;_blank&#39;&gt;Siwu&lt;\/a&gt;&lt;br&gt;Dingemanse (2011)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kor&#39; target=&#39;_blank&#39;&gt;Korean&lt;\/a&gt;&lt;br&gt;You (1991); Lee (1992) &lt;br&gt; 의성어 [uiseong-eo], 의태 [uitae], 의정어 [uijeong-eo]&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/prq&#39; target=&#39;_blank&#39;&gt;Asheninka Perene&lt;\/a&gt;&lt;br&gt;Mihas (2012)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/jpn&#39; target=&#39;_blank&#39;&gt;Japanese&lt;\/a&gt;&lt;br&gt;Kita (1993; 1997); Lu (2006); Akita (2009); Kita (1997); Mester &amp; Itō (1989), Rodrigues (1604) &lt;br&gt; オノマトペ・擬音語・擬態語・擬情語 [onomatope, giongo, gitaigo, gijōgo] “onomatopeia, phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fra&#39; target=&#39;_blank&#39;&gt;French&lt;\/a&gt;&lt;br&gt;Grammont (1901)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/qvz&#39; target=&#39;_blank&#39;&gt;Northern Pastaza Quichua&lt;\/a&gt;&lt;br&gt;Nuckolls (1992,1996,2004, 2017)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ewe&#39; target=&#39;_blank&#39;&gt;Ewe&lt;\/a&gt;&lt;br&gt;Westermann (1905: 1907), Ameka (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sna&#39; target=&#39;_blank&#39;&gt;Shona&lt;\/a&gt;&lt;br&gt;Fortune (1962), Klassen (1999)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/sot&#39; target=&#39;_blank&#39;&gt;Southern Sotho&lt;\/a&gt;&lt;br&gt;Kunene (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kfe&#39; target=&#39;_blank&#39;&gt;Kota (India)&lt;\/a&gt;&lt;br&gt;Emeneau (1969)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/vie&#39; target=&#39;_blank&#39;&gt;Vietnamese&lt;\/a&gt;&lt;br&gt;Durand (1961)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/kha&#39; target=&#39;_blank&#39;&gt;Khasi&lt;\/a&gt;&lt;br&gt;Henderson (1965)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/pac&#39; target=&#39;_blank&#39;&gt;Pacoh&lt;\/a&gt;&lt;br&gt;Watson (1966)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yiy&#39; target=&#39;_blank&#39;&gt;Yir-Yoront&lt;\/a&gt;&lt;br&gt;Alpher (1994), 2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/nya&#39; target=&#39;_blank&#39;&gt;Nyanja&lt;\/a&gt;&lt;br&gt;Kulemeka (1994) (lang: Chichewa),1996, 1997)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wal&#39; target=&#39;_blank&#39;&gt;Wolaytta&lt;\/a&gt;&lt;br&gt;Amha (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tsn&#39; target=&#39;_blank&#39;&gt;Tswana&lt;\/a&gt;&lt;br&gt;Creissels (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ema&#39; target=&#39;_blank&#39;&gt;Emai-Iuleha-Ora&lt;\/a&gt;&lt;br&gt;Egbokhare (2001), Schaefer (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/mua&#39; target=&#39;_blank&#39;&gt;Mundang&lt;\/a&gt;&lt;br&gt;Elders (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/fin&#39; target=&#39;_blank&#39;&gt;Finnish&lt;\/a&gt;&lt;br&gt;Jarva (2001), Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/did&#39; target=&#39;_blank&#39;&gt;Didinga&lt;\/a&gt;&lt;br&gt;de Jong (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/lub&#39; target=&#39;_blank&#39;&gt;Luba-Katanga&lt;\/a&gt;&lt;br&gt;Kabuta (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/bkc&#39; target=&#39;_blank&#39;&gt;Baka (Cameroon)&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xuu&#39; target=&#39;_blank&#39;&gt;Kxoe&lt;\/a&gt;&lt;br&gt;Kilian-Hatz (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xbr&#39; target=&#39;_blank&#39;&gt;Kambera&lt;\/a&gt;&lt;br&gt;Klamer (1998, 2000)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wwr&#39; target=&#39;_blank&#39;&gt;Warrwa&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gni&#39; target=&#39;_blank&#39;&gt;Gooniyandi&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gww&#39; target=&#39;_blank&#39;&gt;Kwini&lt;\/a&gt;&lt;br&gt;McGregor (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ekk&#39; target=&#39;_blank&#39;&gt;Estonian&lt;\/a&gt;&lt;br&gt;Mikone (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/ilo&#39; target=&#39;_blank&#39;&gt;Iloko&lt;\/a&gt;&lt;br&gt;Rubino (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/djd&#39; target=&#39;_blank&#39;&gt;Jaminjung&lt;\/a&gt;&lt;br&gt;Schultze-Berndt (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tll&#39; target=&#39;_blank&#39;&gt;Tetela&lt;\/a&gt;&lt;br&gt;Tassa (2001)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/xmu&#39; target=&#39;_blank&#39;&gt;Kamu&lt;\/a&gt;&lt;br&gt;Svantesson (1983)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/cmn&#39; target=&#39;_blank&#39;&gt;Mandarin Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Zhao (2008); Zhang (1999); Yao (2004); Lu (2006); Li (2007); Meng (2012); Van Hoey (2015; 2017) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/yue&#39; target=&#39;_blank&#39;&gt;Yue Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/dga&#39; target=&#39;_blank&#39;&gt;Central Dagaare&lt;\/a&gt;&lt;br&gt;Bodomo (2006)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hak&#39; target=&#39;_blank&#39;&gt;Hakka Chinese&lt;\/a&gt;&lt;br&gt;Mok (2001); Bodomo (2006); de Sousa (2008); Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/hsn&#39; target=&#39;_blank&#39;&gt;Xiang Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/gan&#39; target=&#39;_blank&#39;&gt;Gan Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/wuu&#39; target=&#39;_blank&#39;&gt;Wu Chinese&lt;\/a&gt;&lt;br&gt;Wu (2015) &lt;br&gt; 象聲詞 [xiangshengci] “onomatope” &lt;br&gt; 擬聲詞·擬態詞·擬請詞 [nishengci, nitaici, niqingci] “phonomime, phenomime, psychomime”&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/tku&#39; target=&#39;_blank&#39;&gt;Upper Necaxa Totonac&lt;\/a&gt;&lt;br&gt;Beck (2008)&#34;,&#34;&lt;a href=&#39;http://glottolog.org/resource/languoid/iso/eng&#39; target=&#39;_blank&#39;&gt;English&lt;\/a&gt;&lt;br&gt;Sapir (1929); Bolinger (1950); Bloomfield (1953); Marchand (1983); Magnus (2001), Bolinger (1950)&#34;],null,[&#34;Semai&#34;,&#34;Bahnar&#34;,&#34;Kedah Malay&#34;,&#34;Lao&#34;,&#34;Indonesian&#34;,&#34;Somali&#34;,&#34;Yoruba&#34;,&#34;Kisi&#34;,&#34;Zulu&#34;,&#34;Gbaya-Bossangoa&#34;,&#34;Hausa&#34;,&#34;Siwu&#34;,&#34;Korean&#34;,&#34;Asheninka Perene&#34;,&#34;Japanese&#34;,&#34;French&#34;,&#34;Northern Pastaza Quichua&#34;,&#34;Ewe&#34;,&#34;Shona&#34;,&#34;Southern Sotho&#34;,&#34;Kota (India)&#34;,&#34;Vietnamese&#34;,&#34;Khasi&#34;,&#34;Pacoh&#34;,&#34;Yir-Yoront&#34;,&#34;Nyanja&#34;,&#34;Wolaytta&#34;,&#34;Tswana&#34;,&#34;Emai-Iuleha-Ora&#34;,&#34;Mundang&#34;,&#34;Finnish&#34;,&#34;Didinga&#34;,&#34;Luba-Katanga&#34;,&#34;Baka (Cameroon)&#34;,&#34;Kxoe&#34;,&#34;Kambera&#34;,&#34;Warrwa&#34;,&#34;Gooniyandi&#34;,&#34;Kwini&#34;,&#34;Estonian&#34;,&#34;Iloko&#34;,&#34;Jaminjung&#34;,&#34;Tetela&#34;,&#34;Kamu&#34;,&#34;Mandarin Chinese&#34;,&#34;Yue Chinese&#34;,&#34;Central Dagaare&#34;,&#34;Hakka Chinese&#34;,&#34;Xiang Chinese&#34;,&#34;Gan Chinese&#34;,&#34;Wu Chinese&#34;,&#34;Upper Necaxa Totonac&#34;,&#34;English&#34;],{&#34;clickable&#34;:false,&#34;noHide&#34;:false,&#34;direction&#34;:&#34;right&#34;,&#34;opacity&#34;:1,&#34;offset&#34;:[12,-15],&#34;textsize&#34;:&#34;10px&#34;,&#34;textOnly&#34;:true,&#34;style&#34;:{&#34;font-size&#34;:&#34;14px&#34;},&#34;zoomAnimation&#34;:true,&#34;className&#34;:&#34;&#34;},null]},{&#34;method&#34;:&#34;addScaleBar&#34;,&#34;args&#34;:[{&#34;maxWidth&#34;:100,&#34;metric&#34;:true,&#34;imperial&#34;:true,&#34;updateWhenIdle&#34;:true,&#34;position&#34;:&#34;bottomleft&#34;}]},{&#34;method&#34;:&#34;addLegend&#34;,&#34;args&#34;:[{&#34;colors&#34;:[&#34;#9ACD32&#34;,&#34;#91AF49&#34;,&#34;#879259&#34;,&#34;#7A7564&#34;,&#34;#6A596D&#34;,&#34;#573E74&#34;,&#34;#3D227A&#34;,&#34;#000080&#34;],&#34;labels&#34;:[&#34;expressive&#34;,&#34;ideophone&#34;,&#34;impressif&#34;,&#34;Lautbilder&#34;,&#34;mimetic&#34;,&#34;onomatopoeia and phonaesthemes&#34;,&#34;onomatopoetics&#34;,&#34;phonaesthetic words&#34;],&#34;na_color&#34;:null,&#34;na_label&#34;:&#34;NA&#34;,&#34;opacity&#34;:1,&#34;position&#34;:&#34;topright&#34;,&#34;type&#34;:&#34;factor&#34;,&#34;title&#34;:null,&#34;extra&#34;:null,&#34;layerId&#34;:null,&#34;className&#34;:&#34;info legend&#34;}]}],&#34;limits&#34;:{&#34;lat&#34;:[-30.44451,64.762825],&#34;lng&#34;:[-2.52265,285.08472]}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tl-dr&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;tl; dr&lt;/h1&gt;
+&lt;p&gt;So with a simple script and some data we can use the &lt;code&gt;lingtypology&lt;/code&gt; package to quickly map language-related data. We can see how &lt;em&gt;ideophone&lt;/em&gt; is used more for African languages, &lt;em&gt;expressive&lt;/em&gt; for Southeast Asian ones, and &lt;em&gt;mimetic&lt;/em&gt; for Japanese. Of these &lt;strong&gt;ideophone&lt;/strong&gt; is recently becoming the global cover term — although what that precisely means, often still has to be explained at the language-particular level. Cool!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;p&gt;Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.&lt;/p&gt;
+&lt;p&gt;Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: University of Queensland PhD dissertation.&lt;/p&gt;
+&lt;p&gt;Moroz G (2017). &lt;em&gt;lingtypology: easy mapping for Linguistic Typology&lt;/em&gt;. &amp;lt;URL: &lt;a href=&#34;https://CRAN.R-project.org/package=lingtypology&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=lingtypology&lt;/a&gt;&amp;gt;.&lt;/p&gt;
+&lt;p&gt;Voeltz, Erhard Friedrich Karl &amp;amp; Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam; Philadelphia: J. Benjamins.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Although maybe it is an adapted form, &lt;a href=&#34;https://ropensci.github.io/lingtypology/lingtypology_glottolog_functions.html&#34;&gt;see the documentation for the R package ‘lingtypology’&lt;/a&gt;.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wrapping up 2017: Taipei</title>
+      <link>/post/wrapping-up-2017-i/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/post/wrapping-up-2017-i/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;m back. And I don&amp;rsquo;t know if to you, the reader, it feels as if I have to say that very often at the start of a blog post, but to me it does. Anyway, no more excuses, but &lt;em&gt;I solemly swear&lt;/em&gt; to write more often here. Where were we at last time? Ah yes, I chronicled &lt;a href=&#34;http://www.thomasvanhoey.com/post/travels-with-bae-in-uk/&#34; target=&#34;_blank&#34;&gt;my trip to the UK&lt;/a&gt;. Go read that if you forgot about it, but be sure to return for the update.&lt;/p&gt;
+
+&lt;p&gt;In this update, I first look back at the end of August until the beginning of November. &lt;a href=&#34;https://www.youtube.com/watch?v=yMqL1iWfku4&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Get set, ready, go!&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;going-back-to-taiwan-august-2017&#34;&gt;Going back to Taiwan - August 2017&lt;/h1&gt;
+
+&lt;p&gt;It was hot in Taiwan last summer. We got back and constantly craved air conditioning and only sporadically went places. I also don&amp;rsquo;t seem to have taken any good pictures, so you will have to scroll on.&lt;/p&gt;
+
+&lt;h1 id=&#34;start-of-the-semester-september-2017&#34;&gt;Start of the semester - September 2017&lt;/h1&gt;
+
+&lt;h2 id=&#34;escapism&#34;&gt;Escapism&lt;/h2&gt;
+
+&lt;p&gt;We did &lt;a href=&#34;http://www.stupidparticle.com/english-home&#34; target=&#34;_blank&#34;&gt;an escape room&lt;/a&gt; AND MANAGED TO ESCAPE! It was very close, but I do recommend this type of experience with friends. Let me know below if you have ever done an escape room and if you would do it again!&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38615989042/in/album-72157666234252478/&#34; title=&#34;20170902_181231&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4570/38615989042_a79be0819d_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20170902_181231&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;museism&#34;&gt;Museism&lt;/h2&gt;
+
+&lt;p&gt;Once in a while you have to go to an interesting exhibition and now (well, then) was the perfect time to do so. As &lt;a href=&#34;http://www.huckmagazine.com/art-and-culture/art-2/moca-taipei-lgbtq/&#34; target=&#34;_blank&#34;&gt;Huck magazine&lt;/a&gt; observes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Asia’s first major LGBTQ exhibition is opening this week -
+Breaking barriers&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It was a bit groundbreaking for the Museum of Contemporary Art in Taipei (MOCA Taipei) to organize &lt;a href=&#34;http://www.mocataipei.org.tw/index.php/2012-01-12-03-36-46/past-exhibitions/194-exhibition-review-2017/2452-2017-07-07-05-28-08&#34; target=&#34;_blank&#34;&gt;an exhibition&lt;/a&gt; devoted entirely to Asian LGTBQ issues and art, entitled &amp;ldquo;Spectrosynthesis&amp;rdquo; 光‧合作用.
+Let us first look at this painting which is totally not suggestive at all.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38648215351/in/album-72157666234252478/&#34; title=&#34;20171001_164621&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4562/38648215351_9e22428d40_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_164621&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at it from a distance and over time, this really means &lt;em&gt;a lot&lt;/em&gt;. I remember how just over a year ago a &lt;a href=&#34;https://www.theguardian.com/world/2016/oct/28/professors-death-could-see-taiwan-become-first-asian-country-to-allow-same-sex-marriage&#34; target=&#34;_blank&#34;&gt;French professor living in Taiwan committed suicide&lt;/a&gt; after losing his partner, &lt;a href=&#34;https://en.wikipedia.org/wiki/Suicide_of_Jacques_Picoux&#34; target=&#34;_blank&#34;&gt;who he had not been allowed to marry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I also remember, on the upside, how I joined the gay pride parade &lt;a href=&#34;http://www.thomasvanhoey.com/post/pride-ride/&#34; target=&#34;_blank&#34;&gt;in 2015&lt;/a&gt; and 2016 (but unfortunately had to skip this year&amp;rsquo;s edition). And now, finally, &lt;a href=&#34;https://en.wikipedia.org/wiki/LGBT_rights_in_Taiwan&#34; target=&#34;_blank&#34;&gt;in May 2017&lt;/a&gt;, the legislative barriers were finally broken - within two years Taiwan should see its first same-sex marriage.
+So, I am happy with this step forward in equality, and decided to throw in some bonus pictures from the exhibition： some stilles from the artfilm &lt;em&gt;Passion&lt;/em&gt; 《激情》, directed Wang Jun-Jieh 王俊傑. The film showed three perspectives of the scenes at once, often the different viewpoints of the two characters and a global vantage point - resulting in a very interesting sensory experience.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38648197581/in/album-72157666234252478/&#34; title=&#34;20171001_155320&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4554/38648197581_9e60ab316b_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_155320&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/37930684284/in/album-72157666234252478/&#34; title=&#34;20171001_155434&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4517/37930684284_aa131a8265_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_155434&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/24775977568/in/album-72157666234252478/&#34; title=&#34;20171001_155715&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4533/24775977568_8123317ee1_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_155715&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/37930688074/in/album-72157666234252478/&#34; title=&#34;20171001_155752&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4546/37930688074_361a67402f_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_155752&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38592371156/in/album-72157666234252478/&#34; title=&#34;20171001_155912&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4529/38592371156_825035728f_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171001_155912&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Still not enough? You can watch the making of below!&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/Uz1Kj6WrsYs?rel=0&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&#34;studyism&#34;&gt;Studyism&lt;/h2&gt;
+
+&lt;p&gt;This semester I decided to take three classes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;R Language and Data Science, or as we came to know it: &lt;em&gt;RLaDS&lt;/em&gt;. This was a very interesting class, and I will comment on it in future posts.&lt;/li&gt;
+&lt;li&gt;Seminar on Advanced Cognitive Grammar, which was basically our lab meeting with extra interested students.&lt;/li&gt;
+&lt;li&gt;Phonology. This course was both basic and a bit more advanced, with enough attention to Sound Symbolism, so it was right up my alley.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think this was a good combination for me. Methodologically, I got the most from the R class (&lt;em&gt;should you not know, &lt;a href=&#34;https://www.r-project.org/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt; is a programming language, like e.g. &lt;a href=&#34;https://www.python.org/&#34; target=&#34;_blank&#34;&gt;python&lt;/a&gt;, but &lt;a href=&#34;https://www.quora.com/What-are-some-examples-of-things-I-can-do-in-R-that-I-cant-do-in-Excel&#34; target=&#34;_blank&#34;&gt;it can do some things very well that other languages cannot&lt;/a&gt;&lt;/em&gt;) and I think I am able to speed up my research process significantly with techniques I learnt there.
+Related to ideophones, however, I was able to discuss the same phenomenon (namely ideophones expressing LIGHT in Pre-Modern Chinese) from a Cognitive Semantic point of view, and from a phonological point of view. The resulting papers revealed some overlap, as you would expect from a linguistic phenomenon that is driven by iconicity, and are complementary. I think I might even use chunks of it in my &amp;ndash; gasp &amp;ndash; dissertation.&lt;/p&gt;
+
+&lt;h1 id=&#34;white-nights-and-visitors-october-2017&#34;&gt;White nights and visitors - October 2017&lt;/h1&gt;
+
+&lt;h2 id=&#34;warm-october-nights&#34;&gt;Warm October Nights&lt;/h2&gt;
+
+&lt;p&gt;As sung by one of my defining bands, &lt;a href=&#34;http://yellowcardrock.com/&#34; target=&#34;_blank&#34;&gt;Yellowcard&lt;/a&gt;, in their song &lt;a href=&#34;http://yellowcardrock.com/&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Warm October Nights&lt;/em&gt;&lt;/a&gt;, there was one night-related event that stood out in this month: &lt;a href=&#34;http://nuitblanche.taipei/&#34; target=&#34;_blank&#34;&gt;Taipei&amp;rsquo;s annual &lt;em&gt;Nuit Blanche&lt;/em&gt;&lt;/a&gt;, although that &amp;lsquo;annual&amp;rsquo; should be taken with a grain of salt, as it&amp;rsquo;s only the second edition. (I missed last year&amp;rsquo;s edition, because I was too busy going to &lt;a href=&#34;http://www.thomasvanhoey.com/post/thomas-in-thailand/&#34; target=&#34;_blank&#34;&gt;Thailand&lt;/a&gt; and &lt;a href=&#34;http://www.thomasvanhoey.com/post/shanghai-and-suzhou/&#34; target=&#34;_blank&#34;&gt;China.&lt;/a&gt;)
+Anyway, my university NTU figured prominently on the route of venues that partook in the event. I decided to go with my &lt;em&gt;xuemei&lt;/em&gt; Hanna and her Korean friend, and after they went home, I just felt the energy and nearly pulled an allnighter, doing research in my department. I know, I know, that shouldn&amp;rsquo;t be the point, but at that time it just felt right, and it also reminded me of the one time the Faculty of Arts students back in Leuven did a &lt;em&gt;nuit blanche&lt;/em&gt; in the Faculty library. Ah, good times. Anyways, here are pictures of this event.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38998448542/in/album-72157666234252478/&#34; title=&#34;20171006_181011&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4687/38998448542_65b0aec457_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171006_181011&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Palm tree boulevard without people&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38319142624/in/album-72157666234252478/&#34; title=&#34;20171007_215848&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4553/38319142624_75db09b87a_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20171007_215848&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Palm tree boulevard with people&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/25164113158/in/album-72157666234252478/&#34; title=&#34;20171008_043325&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4555/25164113158_48ae77a18e_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20171008_043325&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+The moon looking down with its menacing eye.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39034831751/in/album-72157666234252478/&#34; title=&#34;20171008_040359&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4640/39034831751_e96cf99ee5_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20171008_040359&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+So at 5 o&amp;rsquo;clock in the morning people &lt;em&gt;do&lt;/em&gt; look like zombies.&lt;/p&gt;
+
+&lt;h2 id=&#34;good-advice&#34;&gt;Good advice&lt;/h2&gt;
+
+&lt;p&gt;Halfway October my old advisor for my MA in Sinology thesis was in Taipei and we decided to meet up. We spent a lovely, yet rainy afternoon chatting about the past, the current state of affairs and future plans, and it was as inspiring as I seemed to remember. Thank you for everything 范德望老師！&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/27258583009/in/album-72157666234252478/&#34; title=&#34;20171015_190641&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4594/27258583009_069b90a1de_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171015_190641&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;good-upbringing&#34;&gt;Good upbringing&lt;/h2&gt;
+
+&lt;p&gt;Then, at the end of October and going into November, my mom finally came to Taiwan! You might have seen some pictures on social media, but that&amp;rsquo;s only because we were both so happy to see each other again and wanted to share that with the world. I took her mostly around Taipei, assisted by CJ&amp;rsquo;s mom (and of course CJ himself). So, I think I will limit the account mostly to some of these images.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38998699402/in/album-72157666234252478/&#34; title=&#34;20171030_115541_HDR&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4575/38998699402_cc7a486b55_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171030_115541_HDR&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Me and mom at 千島湖&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39035199421/in/album-72157666234252478/&#34; title=&#34;20171030_122055&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4596/39035199421_f2a0c9a775_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171030_122055&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+千島湖 without me and my mom&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39035262441/in/album-72157666234252478/&#34; title=&#34;20171102_202932&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4583/39035262441_92b3423429_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171102_202932&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Eating dinner with my advisor&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/27259059469/in/album-72157666234252478/&#34; title=&#34;20171103_110921&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4562/27259059469_e05f021663_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171103_110921&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+One of my favourite spots in Taipei remains Chunky&amp;rsquo;s Mausoleum, and the view you have on this 自由廣場 square.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38998776722/in/album-72157666234252478/&#34; title=&#34;20171103_111107_HDR&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4645/38998776722_354415ba6b_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171103_111107_HDR&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Proof we were there.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39035308371/in/album-72157666234252478/&#34; title=&#34;20171105_151450&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4561/39035308371_d9c1a60cae_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171105_151450&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+My mom&amp;rsquo;s first panda (I think)&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39035363691/in/album-72157666234252478/&#34; title=&#34;20171105_195300&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4595/39035363691_1ea4773599_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20171105_195300&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Me and my mom at the gate of NTU. Scenic spot check!&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/39035378731/in/album-72157666234252478/&#34; title=&#34;20171105_210113&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4686/39035378731_b06714fac8_b.jpg&#34; width=&#34;576&#34; height=&#34;1024&#34; alt=&#34;20171105_210113&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+My mom is so cuddly that even the local Taiwanese children fall asleep on her. His mother did not realize at all though&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/24170410947/in/album-72157666234252478/&#34; title=&#34;20171106_122516&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4726/24170410947_f8a1373372_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171106_122516&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+天下為公: the Empire is for everyone; but my mom is always there for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/27258704789/in/album-72157666234252478/&#34; title=&#34;20171028_153436&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4548/27258704789_a84f133606_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171028_153436&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+CJ&amp;rsquo;s mom took us into the tea fields of Hsinchu. It was an amazing trip, with great tea.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/24170092407/in/album-72157666234252478/&#34; title=&#34;20171028_153204&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4580/24170092407_f5d9fe9174_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171028_153204&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Those teafields have been there for a long time, basking in the sun.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38319253334/in/album-72157666234252478/&#34; title=&#34;20171028_154546_HDR&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4639/38319253334_c4b48779b1_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171028_154546_HDR&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+But they do make for lush background settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34;  href=&#34;https://www.flickr.com/photos/86097314@N03/38149542975/in/album-72157666234252478/&#34; title=&#34;20171026_164437_HDR&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4539/38149542975_c8d89a8f86_b.jpg&#34; width=&#34;1024&#34; height=&#34;576&#34; alt=&#34;20171026_164437_HDR&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunken Moon Lake&lt;/p&gt;
+
+&lt;p&gt;And with that picture this update is finished! Next time, we go to Japan! So stay tuned. And stay in school!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>And Spring Became Summer</title>
+      <link>/post/spring-became-summer/</link>
+      <pubDate>Mon, 10 Jul 2017 18:20:10 +0000</pubDate>
+      <guid>/post/spring-became-summer/</guid>
+      <description>
+
+&lt;p&gt;Time flies! This post will be a short recapitulation of some things that happened after the second semester started and I first went on a trip with my friends from Belgium (read &lt;em&gt;all&lt;/em&gt; about it &lt;a href=&#34;http://www.thomasvanhoey.com/blog/notorious-b-t-belgians-taiwan&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;). As such, I will write a bit about my work as a model (yes, I became somewhat of a model haha); my work in the field with the &lt;a href=&#34;http://www.thomasvanhoey.com/blog/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun&#34; target=&#34;_blank&#34;&gt;Bunun people&lt;/a&gt;; my work as a host to people who visited me; my work as a visitor myself; and finally, my work as an academic, both in Taiwan as well as in the international community. Well, as a matter of fact, these things do not always feel like work, as you may guess from this blogpost. Here is a Taiwanese moon and campus picture to whet your reading appetite.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35770647486/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4237/35770647486_cbfbef7c74_b.jpg&#34; alt=&#34;IMG_20170609_233509_763&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;wanna-be-on-top&#34;&gt;Wanna be on top?&lt;/h1&gt;
+
+&lt;p&gt;Okay, first things first, let&amp;rsquo;s not get carried away with this subtitle&amp;rsquo;s reference to the catchphrase of &lt;a href=&#34;https://en.wikipedia.org/wiki/America%27s_Next_Top_Model&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;America&amp;rsquo;s Next Top Model&lt;/em&gt;&lt;/a&gt;. However, via-via (as everything goes in Chinese culture) I was asked to star — or at least participate — in a small commercial for a touristic app of the &lt;a href=&#34;http://tour.ntpc.gov.tw/en-us/Video/List?wnd_id=154&#34; target=&#34;_blank&#34;&gt;New Taipei City Travel Bureau&lt;/a&gt;. Let&amp;rsquo;s have a look, shall we? Take out the popcorn and enjoy:&lt;/p&gt;
+
+&lt;p&gt;A few weeks later, I was contacted again by the director of that campaign to help for another touristy app called &lt;a href=&#34;http://www.wogogo.com/en/index.html&#34; target=&#34;_blank&#34;&gt;Wogogo&lt;/a&gt;. The app looks solid; if you want to book a tour guide, I would suggest checking it out. Here is a promotional picture, taken together with two dear friends of mine, Vera and Aude:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34971323074/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4210/34971323074_014afe1d8b_b.jpg&#34; alt=&#34;2017-07-09_11-20-55&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So yeah, that&amp;rsquo;s where my modelling career is at. I don&amp;rsquo;t know if it will continue but both times I had a fun experience and if it fits in my schedule I might take on some more work like this. Here is some authentic behind the scenes footage of me taking selfies when the other coworkers weren&amp;rsquo;t looking, #exclusive:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34626659045/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4157/34626659045_32f6c09f73_b.jpg&#34; alt=&#34;20170310_151240&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34585204346/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4170/34585204346_a99c00fc0b_b.jpg&#34; alt=&#34;20170509_114919&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;bunun-fieldwork&#34;&gt;Bunun Fieldwork&lt;/h1&gt;
+
+&lt;p&gt;This semester I was working again with &lt;a href=&#34;https://en.wikipedia.org/wiki/Bunun_language&#34; target=&#34;_blank&#34;&gt;Bunun&lt;/a&gt; data, a language we had studied in &lt;a href=&#34;http://www.thomasvanhoey.com/blog/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun&#34; target=&#34;_blank&#34;&gt;Fieldwork&lt;/a&gt; last year. This time, the goal is assisting prof. &lt;a href=&#34;http://homepage.ntu.edu.tw/~gilntu/Faculty/Li-May_Sung.html&#34; target=&#34;_blank&#34;&gt;Sung&lt;/a&gt; with the &lt;a href=&#34;http://corpus.linguistics.ntu.edu.tw/index_en.php&#34; target=&#34;_blank&#34;&gt;Corpus of Formosan Languages&lt;/a&gt;, a collection of transcribed and analyzed texts that can teach us a lot about how different languages, in this case the Formosan (Austronesian) languages. Different from last year, however, was that we did not really go in the field, but the field came to us! Every Friday I met with Hanaivaz (watch some of her &lt;a href=&#34;https://youtu.be/_Slv7eTzOWs&#34; target=&#34;_blank&#34;&gt;videos on youtube&lt;/a&gt;) and played recordings of the &lt;a href=&#34;http://pearstories.org/&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Pear Stories&lt;/em&gt;&lt;/a&gt; and the &lt;a href=&#34;https://www.amazon.com/Frog-Where-Are-You-Boy/dp/0803728816&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Frog Story — Frog where are you?&lt;/em&gt;&lt;/a&gt;, recorded by my fellow graduate student Eric, who together with another (already graduated student) Aarin, are the main participants of the project on Bunun.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811336485/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4283/35811336485_250f32f489_b.jpg&#34; alt=&#34;IMG_20170616_172531_100&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this &amp;ldquo;totally natural, non-posed, non-filtered picture that was run through instagram&amp;rdquo; you can see Hanaivaz and me doing some work. It is intensive work, and also has an intensive after-work component, but I really like it as well. And I recently learned that I can continue my work starting in September, so I am looking forward to that.&lt;/p&gt;
+
+&lt;h1 id=&#34;some-visits-to-taiwan&#34;&gt;Some visits to Taiwan&lt;/h1&gt;
+
+&lt;p&gt;In the category &amp;ldquo;visitors of Taiwan that I had the honour to meet up with&amp;rdquo; we had some fellow students from the summerschool at NTU that I attended in 2014, which first propelled me to apply for the programme I am in. There was the cool Antonio, &lt;a href=&#34;http://www.thomasvanhoey.com/blog/japanese-linguistic-ninjal&#34; target=&#34;_blank&#34;&gt;who I went to visit in Japan last year&lt;/a&gt; and who I consider to be my bro.] He brought his sister and his partner and just appeared super randomly in Taiwan. But every time I meet him it&amp;rsquo;s like the summer school was yesterday.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34240627780/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4190/34240627780_52715ed0de_b.jpg&#34; alt=&#34;20170414_220010&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And the same statement goes for the wonderful Korean Jiye and the great Singaporean May Tay, not to be confused with the band May Day. Here is a picture of Jiyeah! (but for May I couldn&amp;rsquo;t find any?).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35812522865/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4233/35812522865_debdb506cc_b.jpg&#34; alt=&#34;Jiyeah__Franzi_and_Snow_so_good_to_see_you_gurlzzz_______ntusummerplus2014&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;courses&#34;&gt;Courses&lt;/h1&gt;
+
+&lt;p&gt;I am mostly through with the course part of my PhD. In previous updates I explained how that is a way in which PhDs across the world seem to differ: in Taiwan at least you have to take a certain amount of courses, expressed in study credits, only after which you are eligible to graduate. Of course there are some other requirements to fulfil, but this is the stage I am/was at.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811334675/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4263/35811334675_7e2fd3a6ca_b.jpg&#34; alt=&#34;IMG_20170602_193356_504&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;logical-analysis&#34;&gt;Logical Analysis&lt;/h2&gt;
+
+&lt;p&gt;I took two main courses this semester. The first one was &amp;ldquo;logical analysis of language&amp;rdquo; (&lt;em&gt;yuyan de luoji fenxi&lt;/em&gt; 語言的邏輯分析), in which Prof. Hsieh posed the challenge to think about linguistic problems based on small data sets that had been slightly simplified. The course was conducted in relation to the preselections of Taiwan&amp;rsquo;s participant of the &lt;a href=&#34;http://www.ioling.org&#34; target=&#34;_blank&#34;&gt;International Linguistics Olympiad&lt;/a&gt;. In general I think it gave a nice overview of the basic components of linguistic theories, as well as some reflection on the nature of language. There was also some &lt;a href=&#34;http://conlang.org/&#34; target=&#34;_blank&#34;&gt;conlang&lt;/a&gt;-inspired coursework. For instance, here you see me and my group mate Nick having a conversation in a made-up sign language. At the time it was only a few days old so it&amp;rsquo;s more pidginy than creoly in nature, but we managed to communicate. Subtitles provided!&lt;/p&gt;
+
+&lt;h2 id=&#34;seminar-of-cognitive-grammar&#34;&gt;Seminar of Cognitive Grammar&lt;/h2&gt;
+
+&lt;p&gt;The second course I took was the Seminar of Advanced Cognitive Grammar, which is our lab meeting as well. This semester we focused on Cognitive Grammar (from Langacker 1987 onwards) and Radical Construction Grammar (from Croft 2001 onwards). I may have found a source of material that will help me to answer one of the questions I have been interested in all along: how did ideophones develop diachronically in Chinese? Without going into too much detail, for this paper I was concerned about the methodology, from a technical perspective. The question most researchers are grappling with (or should be) is the source of their data (I am using historical texts), and how to transform raw material into analyzable and usable data. For the moment, I have devised a float chart that should take my data from raw material to slightly enriched material ready for analaysis. Here&amp;rsquo;s the chart:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35029500103/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4277/35029500103_f66d93f226_b.jpg&#34; alt=&#34;Schermafbeelding 2017-06-27 om 17.32.23&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then the question I asked, related to ideophones, was what patterns would emerge from the data. I noticed an interesting phenomenon of post-ideophone markers, which I will follow up on later. Without explaining it too much here, I just want to show the figures I used for the analysis or the motivated explanation in terms of Cognitive Grammar — mostly because I am proud of them, ha:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34998969564/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4208/34998969564_430d3899c2_b.jpg&#34; alt=&#34;Schermafbeelding 2017-06-27 om 22.37.07&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;魯道衰&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35670057182/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4205/35670057182_6148efc52d_b.jpg&#34; alt=&#34;Schermafbeelding 2017-06-28 om 09.28.33&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;“洙泗之間，殷殷如也”&lt;/p&gt;
+
+&lt;p&gt;What was also special about this paper is that it was largely written when I was already back at home!&lt;/p&gt;
+
+&lt;h1 id=&#34;home-and-away&#34;&gt;Home and away&lt;/h1&gt;
+
+&lt;p&gt;I flew home the 24th of June, after the last week of final presentations. As usual we had had the celebratory dinner with Lu &lt;em&gt;laoshi&lt;/em&gt;&amp;rsquo;s group. It was a very cozy evening after a full(!) day of final term presentations - a marathon as it were – held at my Vietnamese classmate Carol&amp;rsquo;s &lt;a href=&#34;http://www.facebook.com/hotnutstw/&#34; target=&#34;_blank&#34;&gt;Vietnamese restaurant&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So after rushing out of my dorm the next day because of the imminent construction works this summer I flew home on the 24th. I arrived the next day in Amsterdam and travelled home to Belgium, only to leave again after one or two hours. One of my best friends Céline had an engagement party in Bièrghes, located in the Middle-Of-Nowhere-city-stan right below Brussels. So we drove, and drove, and went up the highway and off the highway and up and off and up and off until finally we arrived. Here is a cool picture of me with Céline and other presidents of Eoos, past-present-and-future.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811339195/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4257/35811339195_ebc43bb4f8_b.jpg&#34; alt=&#34;IMG_20170625_184209_453&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The even was a lot of fun. I think Céline and Joes (not pronounced like the plural of &amp;lsquo;Joe&amp;rsquo;, but rather like [yu:s]) really fit together and I wish them a happy marriage together! Here they are showing off their literacy skills.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811469145/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4215/35811469145_e7e53ac301_b.jpg&#34; alt=&#34;20170625_162930&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;globetrotters&#34;&gt;Globetrotters&lt;/h1&gt;
+
+&lt;p&gt;After that event we went back home, from Bièrghes, located in the Middle-Of-Nowhere-city-stan, all the way to the megapolis that constitutes Loenhout. I had a nice week chilling at home, while also writing the aforementioned paper and some more. We, i.e. me and CJ, also explored a bit the beautiful landscapes of Loenhout.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35001305673/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4264/35001305673_f442ea1a78_b.jpg&#34; alt=&#34;20170628_211844_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35642075572/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4254/35642075572_6a53915aba_b.jpg&#34; alt=&#34;20170628_212541_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35001186203/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4217/35001186203_e0d793d335_b.jpg&#34; alt=&#34;IMG_20170628_215801_778&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35770650836/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4262/35770650836_9389577b6b_b.jpg&#34; alt=&#34;IMG_20170627_154605_192&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811361865/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4279/35811361865_c786d482e6_b.jpg&#34; alt=&#34;IMG_20170705_205759_359&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35679314901/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4208/35679314901_aef0f17462_b.jpg&#34; alt=&#34;20170704_203812&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35642085912/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4285/35642085912_769e5e114b_b.jpg&#34; alt=&#34;20170704_155147_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then one day we went to Antwerp, and visited the &lt;a href=&#34;http://www.rubenshuis.be/nl&#34; target=&#34;_blank&#34;&gt;Rubenshuis&lt;/a&gt;. Beautiful paintings, the best paintings, painted with big hands, comes from &amp;ldquo;Hand werpen&amp;rdquo; (&amp;lsquo;throw hand&amp;rsquo;), it was the biggest hand.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34971110194/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4236/34971110194_40995760a4_b.jpg&#34; alt=&#34;IMG_20170629_165740_937&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35679304171/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4218/35679304171_a9857b3efa_b.jpg&#34; alt=&#34;20170629_142316&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811345545/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4216/35811345545_72310d8182_b.jpg&#34; alt=&#34;IMG_20170630_174745_824&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also a trip to &amp;lsquo;Hellhole Brussels&amp;rsquo; which was essentially a Belgians in Taiwan reunion. &lt;a href=&#34;http://www.thomasvanhoey.com/blog/notorious-b-t-belgians-taiwan&#34; target=&#34;_blank&#34;&gt;Click here to read more about my adventures with Cedric, Ruben and Isabelle&lt;/a&gt;. It was fun, though we didn&amp;rsquo;t &lt;em&gt;manil&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811353185/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4253/35811353185_297f4894cf_b.jpg&#34; alt=&#34;IMG_20170702_011911_574&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811488715/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4260/35811488715_0869d72293_b.jpg&#34; alt=&#34;20170701_213606&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And of course I should mention the Sinology reunion orchestrated by my good friend Lai Man. Thank you for hosting us and the whole gang!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35001189393/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4258/35001189393_5afbb561f9_b.jpg&#34; alt=&#34;IMG_20170702_181810_369&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ifg17&#34;&gt;#IFG17&lt;/h1&gt;
+
+&lt;p&gt;Then, to wrap up, I will tell you something about the conference I attended in Nijmegen, The Netherlands. It was called &amp;ldquo;Iconicity Focus Group Workshop&amp;rdquo;, hence the hashtag #IFG17. I presented a poster over there, which talked about the weather in Chinese. Well, it talked about weather-related ideophones and iconicity in the writing system. It was hosted at the Max Planck Institute of Psycholinguistics, coincidentally the only other place I had applied for a PhD a few years back. I am more than happy at the university I am at, and now I was extra more than happy to be able to have a look at the MPI and its surroundings and meet lots of interesting people. It also inspired me in some ways for my research so I consider the conference a success.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35422614670/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4236/35422614670_d00ebb0e39_b.jpg&#34; alt=&#34;IMG_20170708_213215_216&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And here is my picture in front of the poster:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/34971117714/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4277/34971117714_546ce08e0a_b.jpg&#34; alt=&#34;IMG_20170706_145113_978&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can &lt;a href=&#34;https://www.academia.edu/33813675/The_Thunder_Rolls_Iconicity_and_ideophones_in_Chinese_meteorological_expressions?s=t&#34; target=&#34;_blank&#34;&gt;read my poster when you click on this link here&lt;/a&gt; (please do!).&lt;/p&gt;
+
+&lt;h1 id=&#34;no-regen-in-nijmegen&#34;&gt;No regen in Nijmegen?&lt;/h1&gt;
+
+&lt;p&gt;Then finally, some pictures of the second oldest city of the Netherlands, Nijmegen. We had beautiful weather and also good food, but unfortunately I was not able to enjoy the city for that long, being away at my conference.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35422615620/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4261/35422615620_6ca857a515_b.jpg&#34; alt=&#34;IMG_20170705_210750_504&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811368485/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4212/35811368485_a866d4a28c_b.jpg&#34; alt=&#34;IMG_20170708_191846_719&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In fact, I had to look back in my archive to find a picture I had taken of the rain in Taipei, about a month ago, in order to find a picture to contrast it with the drought and warm weather, even heatwaves we have had here in Belgium and the Netherlands the last few weeks. It&amp;rsquo;s also the final picture of this update, so cherish it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/35811342605/in/album-72157686045485815/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm5.staticflickr.com/4230/35811342605_49200a49ed_b.jpg&#34; alt=&#34;IMG_20170608_143014_436&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Japanese Linguistic NINJA(L)</title>
+      <link>/post/japanese-linguistic-ninjal/</link>
+      <pubDate>Sat, 01 Apr 2017 15:14:58 +0000</pubDate>
+      <guid>/post/japanese-linguistic-ninjal/</guid>
+      <description>
+
+&lt;p&gt;〜〜&lt;em&gt;Konnichiwa mina san&lt;/em&gt; こんにちはみなさん〜〜&lt;/p&gt;
+
+&lt;p&gt;After my SEA roundtrip to &lt;a href=&#34;http://www.thomasvanhoey.com/blog/thomas-in-thailand&#34; target=&#34;_blank&#34;&gt;Phuket&lt;/a&gt; and &lt;a href=&#34;http://www.thomasvanhoey.com/blog/shanghai-and-suzhou&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt; where I visited some of my friends, I arrived back in Taiwan. I was running in Pudong airport in Shanghai to get my flight because I had to queue for two hours just to get through the security check, but it turned out to be no problem — apparently China occasionally &lt;em&gt;bullies&lt;/em&gt; Taiwanese airlines, resulting in a delay of two, three hours. Maybe we should call this a case of &lt;em&gt;sai weng zhi ma&lt;/em&gt; 塞翁之馬 &amp;ldquo;The old man at the border&amp;rsquo;s horse&amp;rdquo;. Don&amp;rsquo;t worry if you don&amp;rsquo;t understand this Chinese saying; it basically means that bad things can become good things and vice versa. Anyway, the main topic of this blogpost will be my participation in a conference in Japan, at the end of December 2016. So in order to get there, let me first quickly do an overview of the time between my arrival back in Taiwan and before going to Japan.&lt;/p&gt;
+
+&lt;h1 id=&#34;remember-remember-the-fifth-of-november&#34;&gt;Remember, remember, the fifth of November&amp;hellip;&lt;/h1&gt;
+
+&lt;p&gt;November was a pretty normal month, filled with the mundane passage of time (read: whatever other philosophical paraphrase you are into that describes that the days went by). Only two notable things happened and I am only going to tell you one :-). The other is an event to celebrate Belgium&amp;rsquo;s King day (I did not know that was a thing), but I got to meet up with some Belgian friends of mine, as well as take a selfie with Tintin, a.k.a. Kuifje.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32566625825/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/634/32566625825_f86b0b60d2_b.jpg&#34; alt=&#34;IMG_20161116_224541&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;once-upon-a-december&#34;&gt;Once upon a December&amp;hellip;&lt;/h1&gt;
+
+&lt;p&gt;So when December rolled in, and Taiwan stayed warm, there wasn&amp;rsquo;t any real Christmassy feeling. However, I was too busy to notice, because I was watching reruns of &lt;em&gt;Avatar: The Last Airbender&lt;/em&gt; and &lt;em&gt;Avatar: The Legend of Korra&lt;/em&gt;. Later I wrote a paper about it for Prof. Lu&amp;rsquo;s 呂 course on Linguistics in Animation. &lt;strong&gt;If you are interested or have comments or questions about the draft, please feel free to comment. &lt;a href=&#34;https://www.academia.edu/32184348/The_Blending_of_Bending_World-building_in_Avatar_The_Last_Airbender_and_Legend_of_Korra?s=t&#34; target=&#34;_blank&#34;&gt;You can find the paper here&lt;/a&gt;.&lt;/strong&gt; Also, a funny anecdote: I mistyped this once as &lt;em&gt;Aribender&lt;/em&gt; in a first draft of my paper, which prompted my Japanese speaking friend to burst out in laughter — &lt;em&gt;ari&lt;/em&gt; 蟻 is Japanese for &amp;lsquo;ant&amp;rsquo;. Ha.&lt;/p&gt;
+
+&lt;p&gt;Next, let us talk about Japan.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31960235060/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/640/31960235060_e4dbf5fec5_b.jpg&#34; alt=&#34;20161218_080543&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ninjal&#34;&gt;NINJAL&lt;/h1&gt;
+
+&lt;p&gt;I flew to Japan to participate in a conference called &lt;a href=&#34;http://pj.ninjal.ac.jp/mimetics/en/&#34; target=&#34;_blank&#34;&gt;&amp;lsquo;Mimetics in Japanese and Other Languages of the World&amp;rsquo; (⽇日本語と世界諸⾔言語のオノマトペ)&lt;/a&gt;. I was superexcited, not in the least because presenting my poster would give me the opportunity to meet many important people in my field. &lt;a href=&#34;https://www.academia.edu/31197390/Ideophones_in_Premodern_Chinese_Revisting_Dingemanses_Implicational_Hierarchy?s=t&#34; target=&#34;_blank&#34;&gt;You can find the poster itself if you click here&lt;/a&gt; (also, let me know if these links don&amp;rsquo;t do what they are supposed to do please).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32303422870/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/506/32303422870_705b40d79c_b.jpg&#34; alt=&#34;received_10210952006026398&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32560524581/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/413/32560524581_a6b6fb980d_b.jpg&#34; alt=&#34;IMG_20161218_160749&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The conference itself was held in the NINJAL. I know what you are thinking — NINJAs!!!!! Well, I must admit I also thought of NINJAs of Linguistics (that was what the L was doing, &lt;em&gt;obviously&lt;/em&gt;). Turns out they had just had a good brainstorming session, because NINJAL is (of course!) short for National INstitute of JApanese Linguistics. _shinobi_style.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/33408682066/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/4/3791/33408682066_35901a092d_b.jpg&#34; alt=&#34;0001_xlarge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The place where this event was held was &lt;a href=&#34;https://en.wikipedia.org/wiki/Tachikawa,_Tokyo&#34; target=&#34;_blank&#34;&gt;Tachikawa 立川市&lt;/a&gt;, a nice little city next to Tokyo most people haven&amp;rsquo;t heard of. It was freezing cold (寒いですねー) and I was very glad I had packed my winter outfit. That being said, Japan was so nice. The weather was very clear, the 711s were even more convenient than in Taiwan, and the people were very friendly. I must say I did benefit from having studied a year of Japanese in Leuven before, and some of the most frequent expressions were really useful in daily life. Okay, so back to the conference: Team Taiwan — as I unofficially call Prof. Lu, me and our Korean buddy Ian — arrived in the early morning of the first day, having passed the Japanese Ikea, which reminded me of the Ikea in Breda (Netherlands). Or maybe all Ikeas are look-a-likes. I haven&amp;rsquo;t made my mind up yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32217396911/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/646/32217396911_3c23903723_b.jpg&#34; alt=&#34;20161217_082216_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31839473994/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/626/31839473994_271ed959ed_b.jpg&#34; alt=&#34;received_10210952010226503&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The most important part (and most nervous part) of the conference was of course the presentation of my poster. Here are some pictures of how that went down. I must say that the people who I talked to asked some really interesting questions, but they did seem to agree with my baseline. So I wrote a paper about it for our seminar class.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32217423141/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/656/32217423141_87558f1a10_b.jpg&#34; alt=&#34;20161218_104355&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/33408694216/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/4/3714/33408694216_b730106b2d_b.jpg&#34; alt=&#34;0098_xlarge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/33449128005/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/4/3853/33449128005_f19c851672_b.jpg&#34; alt=&#34;0102_xlarge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32606040964/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/587/32606040964_07303d5d57_b.jpg&#34; alt=&#34;0096_xlarge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The rest of the &lt;a href=&#34;http://pj.ninjal.ac.jp/mimetics/en/&#34; target=&#34;_blank&#34;&gt;conference&lt;/a&gt; was organized very well and the presentations were generally very interesting. Of &lt;em&gt;specialest&lt;/em&gt; interest to me were Janis Nuckolls and Mark Dingemanse. So go check them out if you have time and feel like doing that, or even better, when you have a burning hunger for knowledge about Quichua and Siwu. This group photo is the last I will write about this conference here, but I would like to go again.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32682308605/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/267/32682308605_cfaac33bfd_b.jpg&#34; alt=&#34;received_10210952010186502&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/33449139865/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/4/3933/33449139865_63fcfe8196_b.jpg&#34; alt=&#34;0125_xlarge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;tik-tok-tokyo&#34;&gt;Tik Tok Tokyo&lt;/h1&gt;
+
+&lt;p&gt;Congratulations, you survived the serious part of this blog update! Because I had a Christmas party and my TA job waiting for me back in Taipei on Wednesday, my time in Tokyo itself was quite limited — more precisely to 1 day. Fortunately, I was able to make most of it. Firstly, my dear friend Antonio, who I met in NTU during a summer school two summers ago lives in Tokyo, so I was ultra thrilled to be able to see him again and I would like to thank him for having me over! Gracias!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31839472324/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/428/31839472324_fd6a917890_b.jpg&#34; alt=&#34;received_10154187004328595&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The day I spent in Tokyo I did the following things (I must admit it was hard to fit it all in one streamlined trip, but I did manage):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Yasukuni_shrine&#34; target=&#34;_blank&#34;&gt;Yasukuni Shrine&lt;/a&gt; 靖国神社&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Asakusa_Shrine&#34; target=&#34;_blank&#34;&gt;Asakusa Shrine&lt;/a&gt; 浅草神社&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Walk around in &lt;a href=&#34;https://en.wikipedia.org/wiki/Shibuya&#34; target=&#34;_blank&#34;&gt;Shibuya&lt;/a&gt; 渋谷区&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Eat sushi&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go to an onsen, Japanese hotsprings&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;yasukuni-shrine&#34;&gt;Yasukuni Shrine&lt;/h2&gt;
+
+&lt;p&gt;I went to this place because every time the prime minister Abe Shinzo visits it, China gets angry and I wanted to see what all the fuss was about. In this shrine, founded by the Meiji Emperor in 1869 commemorates all those who have died for the Empire. It also houses some war criminals and has a history museum built next to it that tells a &lt;em&gt;slightly twisted&lt;/em&gt; version of events. Here are pictures (also, notice the very cool metal &lt;a href=&#34;https://en.wikipedia.org/wiki/Torii&#34; target=&#34;_blank&#34;&gt;torii&lt;/a&gt; gate in the first picture).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31495127314/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/290/31495127314_18aa3201d7_b.jpg&#34; alt=&#34;20161219_100721&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31495135034/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/372/31495135034_d32b168911_b.jpg&#34; alt=&#34;20161219_101827_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31960294590/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/479/31960294590_8138cfcd56_b.jpg&#34; alt=&#34;20161219_101904_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;During my visit I observed the locals and the way they performed their rituals (washing hands, throwing money, and clapping). It is very interesting to see religion still being kept alive. Also, I discovered the Japanese(?) custom of collection stamps in a dedicated stamp booklet. It looks cool.&lt;/p&gt;
+
+&lt;h2 id=&#34;asakusa-shrine&#34;&gt;Asakusa Shrine&lt;/h2&gt;
+
+&lt;p&gt;This shrine is one of the oldest in Tokyo and one of the most frequented. It is located near Tokyo&amp;rsquo;s Skytree tower, which I unfortunately could not visit because of time constraints. The area is crowded with tourists and Japanese riksha boys.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31960317880/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/701/31960317880_131272b3b0_b.jpg&#34; alt=&#34;20161219_134956_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31526476383/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/601/31526476383_95af5fce18_b.jpg&#34; alt=&#34;20161219_135200&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32337292825/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/645/32337292825_40e1f16c50_b.jpg&#34; alt=&#34;20161219_135411&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32189549812/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/766/32189549812_d90b93128c_b.jpg&#34; alt=&#34;20161219_162203_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32189553552/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/519/32189553552_a0e448243f_b.jpg&#34; alt=&#34;20161219_162300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31497502734/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/750/31497502734_d500924d2f_b.jpg&#34; alt=&#34;20161219_163311&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31497506534/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/455/31497506534_de46ccf1de_b.jpg&#34; alt=&#34;20161219_165017&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;shibuya&#34;&gt;Shibuya&lt;/h2&gt;
+
+&lt;p&gt;I really wanted to see Shibuya because of two reasons: the statue of &lt;a href=&#34;https://en.wikipedia.org/wiki/Hachik%C5%8D&#34; target=&#34;_blank&#34;&gt;Hachiko&lt;/a&gt;, the loyal dog that kept waiting day in day out for its master, even after its master passed away. Sad story. I met Antonio at this statue.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31497510274/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/711/31497510274_001932b812_b.jpg&#34; alt=&#34;20161219_185821&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The other reason for Shibuya was to cross the street. You must think I am crazy, but if I show you this clip of World Order in Shibuya, you will know why — hint: it&amp;rsquo;s the prototype of Japanese businessmen crossing in all directions. It&amp;rsquo;s cool.&lt;/p&gt;
+
+&lt;h2 id=&#34;sushi&#34;&gt;Sushi&lt;/h2&gt;
+
+&lt;p&gt;Antonio took me to a sushi place and it was sushi and sashimi I ate. I discovered I quite like real wasabi — we had to grind it ourselves —, but not that green fake factory flubber that you usually get. Because food was a big thing on this trip, I am just going to put some pictures here.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31497512184/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/391/31497512184_4f9429c629_b.jpg&#34; alt=&#34;20161219_194859&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32217393881/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/492/32217393881_ef015039e1_b.jpg&#34; alt=&#34;20161216_210728&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32525515256/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/441/32525515256_5357e3ae20_b.jpg&#34; alt=&#34;20161225_202634&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32560336831/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/718/32560336831_d203ac6c99_b.jpg&#34; alt=&#34;received_10210953633547085&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;onsen&#34;&gt;Onsen&lt;/h2&gt;
+
+&lt;p&gt;Later that night, Antonio took me to an onsen. No pictures of that though :-).&lt;/p&gt;
+
+&lt;h1 id=&#34;back-to-taipei&#34;&gt;Back to Taipei&lt;/h1&gt;
+
+&lt;p&gt;The next morning I had to say goodbye to Antonio and Antokyo. It was quite sad I thought, because I would have loved to stay longer. I know I will be back. Here is a fake picture of Antonio crying.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32339826495/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/660/32339826495_b0180b7fc8_b.jpg&#34; alt=&#34;20161220_082856&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As my plane flew from Haneda airport, I could see the Fuji mountain, one of Japan&amp;rsquo;s symbols and that occurs twice in pictures above. I watched the movie &lt;em&gt;Kimi no Na wa&lt;/em&gt; 君の名は &amp;ldquo;Your Name&amp;rdquo;, Japan&amp;rsquo;s best selling animated movie, and for a reason. When I was back I couldn&amp;rsquo;t stop myself from relistening the soundtrack over and over. But alas, the warm December breeze of Taiwan was already spottable from my aircraft as I descended into Songshan airport, listening to whatever songs the plane had to offer. I longed for Japan, and not even books, nor drugs could help me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32219965641/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/421/32219965641_6d5ec6d3e6_b.jpg&#34; alt=&#34;20161220_130949&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31528980743/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/415/31528980743_5f5be981b3_b.jpg&#34; alt=&#34;20161220_160307&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32189571442/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/263/32189571442_17258b6861_b.jpg&#34; alt=&#34;20161220_104703&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Luckily that night was the Christmas party of our department. We performed and had lots of fun. I think these kind of events are good for the spirit of a department and I wish it would happen in the summer semester as well. The real Christmas Eve I celebrated with some of my department mates and a nice visit by my Spanish friend Celia with whom I spent some days afterwards, going to restaurants she likes. Last pictures for today!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32413566952/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/291/32413566952_8132de14ac_b.jpg&#34; alt=&#34;20161220_200642&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32443936951/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/778/32443936951_5eb2ca5be1_b.jpg&#34; alt=&#34;20161220_211728&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32187384570/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/586/32187384570_2afc3fb98c_b.jpg&#34; alt=&#34;20161220_200415&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32443935731/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/291/32443935731_cef2e2c7b0_b.jpg&#34; alt=&#34;20161220_200435&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32187386160/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/750/32187386160_bfb86e682c_b.jpg&#34; alt=&#34;20161220_200518&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/31839648604/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/431/31839648604_3ebb5fd424_b.jpg&#34; alt=&#34;IMG_20161224_205530&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32525517566/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/340/32525517566_61887acd88_b.jpg&#34; alt=&#34;20161226_143047&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading. Here is a pokemon store.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32217387551/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/645/32217387551_4ac88b1a00_b.jpg&#34; alt=&#34;20161216_161604&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/32217388831/in/album-72157679902784915/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/1/581/32217388831_4ec6070103_b.jpg&#34; alt=&#34;20161216_161611&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And now a sad note, it has been a year since my dog Jack died (right on this day) and writing this long overdue update has enabled me to cope. So thank you to my readers, whoever you are. If you want to read more about that unfortunate event, &lt;a href=&#34;http://www.thomasvanhoey.com/belgie/brought-together-1&#34; target=&#34;_blank&#34;&gt;you can find it here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ideophones</title>
+      <link>/project/ideophones/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/ideophones/</guid>
+      <description>&lt;p&gt;The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

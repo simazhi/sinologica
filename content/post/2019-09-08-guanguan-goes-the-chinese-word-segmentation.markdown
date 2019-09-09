@@ -12,7 +12,7 @@ tags:
   - python
   - classics
 header:
-  caption: 'source: http://www.zonglanxinwen.com/img/7cacbaac7e7b7fec5a4d4c5bcb2c5dacdaebbaac.html '
+  caption: '[source](http://www.zonglanxinwen.com/img/7cacbaac7e7b7fec5a4d4c5bcb2c5dacdaebbaac.html)'
   image: '2019/guanguan1.jpg'
   preview: yes
 ---

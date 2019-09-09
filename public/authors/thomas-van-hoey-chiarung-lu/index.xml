@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thomas Van Hoey &amp; Chiarung Lu | Thomas Van Hoey | Sinologica</title>
+    <link>/authors/thomas-van-hoey-chiarung-lu/</link>
+      <atom:link href="/authors/thomas-van-hoey-chiarung-lu/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thomas Van Hoey &amp; Chiarung Lu</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sat, 10 Aug 2019 14:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Thomas Van Hoey &amp; Chiarung Lu</title>
+      <link>/authors/thomas-van-hoey-chiarung-lu/</link>
+    </image>
+    
+    <item>
+      <title>Reduplication as a trigger of intersubjectivity: Mandarin Chinese ideophones and reduplication in the CHILDES corpora</title>
+      <link>/talk/2019-iclc-childes/</link>
+      <pubDate>Sat, 10 Aug 2019 14:30:00 +0000</pubDate>
+      <guid>/talk/2019-iclc-childes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

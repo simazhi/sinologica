@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taiwan | Thomas Van Hoey | Sinologica</title>
+    <link>/categories/taiwan/</link>
+      <atom:link href="/categories/taiwan/index.xml" rel="self" type="application/rss+xml" />
+    <description>Taiwan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Taiwan</title>
+      <link>/categories/taiwan/</link>
+    </image>
+    
+    <item>
+      <title>Guanguan goes the Chinese Word Segmentation (I)</title>
+      <link>/post/guanguan-goes-the-chinese-word-segmentation/</link>
+      <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/guanguan-goes-the-chinese-word-segmentation/</guid>
+      <description>
+
+&lt;h1 id=&#34;tl-dr&#34;&gt;tl; dr&lt;/h1&gt;
+
+&lt;p&gt;This double blog is first about the opening line of the &lt;em&gt;Book of Odes&lt;/em&gt;, and later about how to deal with Chinese word segmentation, and my current implementation of it. So if you&amp;rsquo;re only interested in the computational part, look at the next one. I just wrote this to kind of wrap my head around some of these issues.&lt;/p&gt;
+
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;The other day I was browsing through some academic journals, and I came across this article by &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Sampson&#34; target=&#34;_blank&#34;&gt;Geoffrey Sampson&lt;/a&gt;, who I know mostly from (convincingly) attacking the Language Instinct hypothesis in linguistics.
+That led me to his website ( &lt;a href=&#34;https://www.grsampson.net/REmpNat.html&#34; target=&#34;_blank&#34;&gt;see here for the Language Instinct thing&lt;/a&gt; ), where I then found out has written a book that translates 58 poems from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Classic_of_Poetry&#34; target=&#34;_blank&#34;&gt;Shījīng&lt;/a&gt; 詩經, the &lt;em&gt;Book of Odes&lt;/em&gt; or &lt;em&gt;Book of Songs&lt;/em&gt; as it&amp;rsquo;s most commonly known in English.
+Sampson uses Baxter&amp;rsquo;s (1992) reconstruction of Old Chinese on the left-hand side and translates poems on the right-hand side, &lt;a href=&#34;https://www.grsampson.net/BLoveSEC.html&#34; target=&#34;_blank&#34;&gt;see here&lt;/a&gt;.
+This book was also reviewed by the &lt;a href=&#34;https://en.wikipedia.org/wiki/Edward_L._Shaughnessy&#34; target=&#34;_blank&#34;&gt;Edward Shaughnessy&lt;/a&gt;, an expert on very old Chinese (Shaughnessy, Edward. 2008. &lt;em&gt;Modern Philology&lt;/em&gt; (106). 197-2000), where he argued that it&amp;rsquo;s a nice translation, but then critiques some of the choices made.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-issue&#34;&gt;The issue&lt;/h1&gt;
+
+&lt;p&gt;And this is where I address the topic of this blog post. The criticism is about the very first stanza of the very first ode of the &lt;em&gt;Shījīng&lt;/em&gt;, called &lt;em&gt;Guān jū&lt;/em&gt; 關雎.
+I&amp;rsquo;ll first give this poem in full, with a translation by &lt;a href=&#34;https://en.wikipedia.org/wiki/James_Legge&#34; target=&#34;_blank&#34;&gt;James Legge&lt;/a&gt; (dating from 1871), based on the &lt;a href=&#34;https://ctext.org/book-of-poetry/guan-ju&#34; target=&#34;_blank&#34;&gt;ctext&lt;/a&gt; and the book (&lt;em&gt;The She King&lt;/em&gt;) iself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;關關雎鳩、在河之洲。&lt;br /&gt;
+窈窕淑女、君子好逑。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Kwan-kwan&lt;/em&gt; go the ospreys,&lt;br /&gt;
+On the islet in the river.&lt;br /&gt;
+The modest, retiring, virtuous, young lady: —&lt;br /&gt;
+For our prince a good mate she.&lt;/p&gt;
+
+&lt;p&gt;參差荇菜、左右流之。&lt;br /&gt;
+窈窕淑女、寤寐求之。&lt;br /&gt;
+求之不得、寤寐思服。&lt;br /&gt;
+悠哉悠哉、輾轉反側。&lt;/p&gt;
+
+&lt;p&gt;Here long, there short, is the duckweed,&lt;br /&gt;
+To the left, to the right, borne about by the current.&lt;br /&gt;
+The modest, retiring, virtuous, young lady: —&lt;br /&gt;
+Waking and sleeping, he sought her.&lt;br /&gt;
+He sought her and found her not,&lt;br /&gt;
+And waking and sleeping he thought about her.&lt;br /&gt;
+Long he thought; oh! long and anxiously;&lt;br /&gt;
+On his side, on his back, he turned, and back again.&lt;/p&gt;
+
+&lt;p&gt;參差荇菜、左右采之。&lt;br /&gt;
+窈窕淑女、琴瑟友之。&lt;br /&gt;
+參差荇菜、左右芼之。&lt;br /&gt;
+窈窕淑女、鍾鼓樂之。&lt;/p&gt;
+
+&lt;p&gt;Here long, there short, is the duckweed;&lt;br /&gt;
+On the left, on the right, we gather it.&lt;br /&gt;
+The modest, retiring, virtuous, young lady: —&lt;br /&gt;
+With lutes, small and large, let us give her friendly welcome.&lt;br /&gt;
+Here long, there short, is the duckweed;&lt;br /&gt;
+On the left, on the right, we cook and present it.&lt;br /&gt;
+The modest, retiring, virtuous, young lady: —&lt;br /&gt;
+With bells and drums let us show our delight in her.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So as I said, Sampson&amp;rsquo;s (2006) version gives the first line as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Krón, krón, tsa-kou&lt;br /&gt;
+Dzúh gáy tu tou&lt;br /&gt;
+Íwh-líwh diwk nrah&lt;br /&gt;
+Koun-tzuh hóuh grou.&lt;/p&gt;
+
+&lt;p&gt;Krón, krón calls the fish-hawk
+on an islet in the river.&lt;br /&gt;
+A girl who is lovely and good&lt;br /&gt;
+Is the fit match for a princely man.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;rsquo;s first see how this compares to the other translations Shaughnessy discusses, for example &lt;a href=&#34;https://en.wikipedia.org/wiki/Arthur_Waley&#34; target=&#34;_blank&#34;&gt;Arthur Waley &lt;/a&gt; (1937 / 1987:81):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lsquo;Fair, fair,&amp;rsquo; cry the ospreys&lt;br /&gt;
+On the island in the river.&lt;br /&gt;
+Lovely is this noble lady,&lt;br /&gt;
+Fit bride for our lord.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Or &lt;a href=&#34;https://en.wikipedia.org/wiki/Bernhard_Karlgren&#34; target=&#34;_blank&#34;&gt;Bernhard Karlgren&lt;/a&gt; (1950:2):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Kwan-kwan&lt;/em&gt; (cries) the ts&amp;rsquo;ü-kiu bird, on the islet of the river;&lt;br /&gt;
+the beautiful and good girl, she is a good mate for the lord.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As for the quality of translation, I agree with Shaughnessy that Sampson&amp;rsquo;s is not necessarily better than Legge, Waley or Karlgren.
+My personal preference in this case still goes to the one by Legge (1871!).&lt;/p&gt;
+
+&lt;h1 id=&#34;the-first-ideophone&#34;&gt;The first ideophone&lt;/h1&gt;
+
+&lt;p&gt;But what is the most interesting, of course, is the SOUND ideophone (onomatopoeia) all the way in the beginning of the poem.
+There seem to be a few choices possible: 1. either you keep the sound of the current Mandarin reading, i.e. &lt;em&gt;guānguān&lt;/em&gt; / &lt;em&gt;kwan-kwan&lt;/em&gt;; 2. or you translate with a possible English equivalent, i.e. &lt;em&gt;fair fair&lt;/em&gt;; 3. or you use the reconstructed pronunciation, to evoque what it might have sounded like (phonologically) in ancient times, i.e. &lt;em&gt;kron kron&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So Shaughnessy at first seems to somewhat applaud the usage of &lt;em&gt;kron kron&lt;/em&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In principle, I believe that being able to &amp;ldquo;hear&amp;rdquo; the original is important to an appreciation of poetry, and so I think that the addition of these phonetic reconstructions is to be welcomed (although I am not at all sure that for readers who do not know Chinese &amp;ldquo;&lt;em&gt;Krón, krón, tsa-kou&lt;/em&gt;&amp;rdquo; Sampson’s reconstruction, is much to be preferred over &amp;ldquo;&lt;em&gt;Guan guan ju jiu&lt;/em&gt;&amp;rdquo; the standard Romanization of the modern Chinese pronunciation).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But later on he critiques this first line as well:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;&lt;em&gt;Krón, krón&lt;/em&gt;&amp;rdquo; is supposed to be onomatopoeia for the sound that the fish-hawk makes as he calls to his mate. But here as elsewhere in the &lt;em&gt;Shi jing&lt;/em&gt;, when animals, and especially birds, cry out, they do so in Chinese. In any event, their cries are necessarily rendered in Chinese characters, and the characters were obviously chosen not only for their sound but also for their meaning.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is followed by Shaughnessy inspecting Sampson&amp;rsquo;s glossary, where a singular &lt;em&gt;krón&lt;/em&gt; is glossed as a crossbeam in a gate, and then extended to include meanings as diverse as &amp;lsquo;pass (through mountains)&amp;rsquo;, &amp;lsquo;close&amp;rsquo;, &amp;lsquo;join, be related&amp;rsquo;.
+And onomasiologically its form is similar to another word &lt;em&gt;guan&lt;/em&gt;, reconstructed as &lt;em&gt;kons&lt;/em&gt; &amp;lsquo;to pass through&amp;rsquo;, but extended to &amp;lsquo;penetrate&amp;rsquo; (yes in the sexual way).
+So Shaughnessy argues that there is some penetrating punning going on:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It seems to me that the fish-hawk is literally seeking &amp;ldquo;join&amp;rdquo; with his mate, and any translation that does not reflect that sense leaves the reader at an immediate loss.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While the rest of the review makes some good comments about the themes of lust (no caution) in the &lt;em&gt;Shījīng&lt;/em&gt;, this rubbed me a little in the wrong way.
+But let&amp;rsquo;s now turn to Sampson&amp;rsquo;s &lt;a href=&#34;https://www.grsampson.net/CShau.html&#34; target=&#34;_blank&#34;&gt;reply&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The biggest point Sampson makes is that Chinese studies should do more popularizing their findings, and that can be said of many disciplines.
+Books like his &lt;em&gt;Love songs in Early China&lt;/em&gt; do contribute to that goal.&lt;/p&gt;
+
+&lt;p&gt;Then, about the first stanza where Shaughnessy critized Sampson&amp;rsquo;s &lt;em&gt;krón (krón)&lt;/em&gt; as involving a double entendre, Sampson dryly remarks: &amp;ldquo;Perhaps&amp;rdquo;.
+And this is an apt response.&lt;/p&gt;
+
+&lt;p&gt;It baffles me as well how you can relate onomatopoeia / SOUND ideophones, yes composed of characters, to just a reduplication of a homophone in this case.
+As if translating 關關 with &amp;lsquo;beam-beam&amp;rsquo;, or &amp;lsquo;join-join&amp;rsquo; (Sampson), or &amp;lsquo;pass-pass&amp;rsquo; makes sense.
+Shaughnessy&amp;rsquo;s point makes as much sense as in the hypothetical situation where we would have &lt;em&gt;boe, daar is de koe&lt;/em&gt; &amp;ldquo;moo, there is the cow&amp;rdquo; in Dutch with an English translation.
+But &lt;em&gt;boe&lt;/em&gt; not only is the sound of a cow in Dutch, it is also what you use to scare someone, cf. English &lt;em&gt;boo&lt;/em&gt;.
+So should that extension into the semantic domain of FEAR be brought into the translation?
+Perhaps.
+Or, second similar example: &lt;em&gt;tok tok tok — vier kippen op een rij&lt;/em&gt; &amp;ldquo;cluck cluck (cluck) — four chickens arranged in a row&amp;rdquo;.
+Should we be translating &lt;em&gt;tok tok tok&lt;/em&gt; as &amp;lsquo;cluck&amp;rsquo;, or knowing full well that the sequence &lt;em&gt;tok tok tok&lt;/em&gt; is also used for &amp;lsquo;knocking sound (on a door)&amp;rsquo;, as &amp;ldquo;knock-knock go the four chickens&amp;rdquo;?
+Perhaps not.&lt;/p&gt;
+
+&lt;p&gt;These silly examples are just thrown in here to show that, as Sampson argues, it is &amp;ldquo;irrelevant&amp;rdquo; to go looking up his &lt;em&gt;krón&lt;/em&gt; when dealing with &lt;em&gt;krón krón&lt;/em&gt;.
+The second retort is about the formally similar &lt;em&gt;kons&lt;/em&gt;.
+Shaughnessy doesn&amp;rsquo;t give any characters (or tones) in his review, but this is what Sampson finds:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Having argued that 關, &lt;em&gt;krón&lt;/em&gt;, should be read partly for its sense, Shaughnessy then claims to discern yet another layer of meaning: he says that this word is “similar in pronunciation” to 貫, whose primary meaning is &amp;ldquo;to pass through&amp;rdquo; but which has &amp;ldquo;the extended sense of sexual penetration&amp;rdquo;. So perhaps the translation should be not &amp;ldquo; &amp;lsquo;Join, join&amp;rsquo; …&amp;rdquo; but rather &amp;ldquo; &amp;lsquo;Screw, screw&amp;rsquo; calls the fish-hawk&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I find it surprising that the words 關 and 貫 were similar enough to be confusable in the Old Chinese period. (They are pronounced similarly in modern Mandarin – kuan1 [&lt;em&gt;guān&lt;/em&gt;] versus kuan4 [&lt;em&gt;guàn&lt;/em&gt;], a difference of tone only; but 貫 is normally taken to have ended in -&lt;em&gt;s&lt;/em&gt; in Old Chinese: Shaughnessy gives it the pronunciation &lt;em&gt;kons&lt;/em&gt;, and I would write &lt;em&gt;kóns&lt;/em&gt;.) &lt;strong&gt;However, in private correspondence Shaughnessy has shown me good evidence that the words were treated as to some extent interchangeable. Nevertheless, I remain sceptical about whether the meaning, rather than the pronunciation, of either word was relevant to hearers&amp;rsquo; appreciation of the poem. Rendering a crowing sound into human speech by using a word pronounced &lt;em&gt;krón&lt;/em&gt; seems very natural.&lt;/strong&gt; Translating the first word of the Book of Odes into English with a term referring to sexual penetration would not only read bizarrely but be philologically gratuitous. (It might have helped with sales, perhaps.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This also piqued my interest.
+While it may be true that these words were somewhat interchangeable, in single syllables, it is still a bit harder to argue that the same goes for the reduplicated form, especially if we&amp;rsquo;re dealing with SOUND ideophones, who usually display IMAGIC ICONICITY (cf. all the literature on ideophones ever in the last ten years or so, but also e.g. Dingemanse 2012; Thompson 2019).&lt;/p&gt;
+
+&lt;p&gt;But let&amp;rsquo;s follow the argument okay, and compare with some advances in the reconstruction of Old Chinese phonology.
+The table below shows the Mandarin, Middle Chinese (Baxter 1992) and Old Chinese (Baxter &amp;amp; Sagart 2014; B&amp;amp;S) as &lt;a href=&#34;http://ocbaxtersagart.lsait.lsa.umich.edu&#34; target=&#34;_blank&#34;&gt;it is found on their website&lt;/a&gt;, unless otherwise indicated.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;character&lt;/th&gt;
+&lt;th&gt;Mandarin&lt;/th&gt;
+&lt;th&gt;Middle Chinese&lt;/th&gt;
+&lt;th&gt;Old Chinese&lt;/th&gt;
+&lt;th&gt;source&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;關(关)&lt;/td&gt;
+&lt;td&gt;guān&lt;/td&gt;
+&lt;td&gt;kwaen&lt;/td&gt;
+&lt;td&gt;[k]ˤro[n]&lt;/td&gt;
+&lt;td&gt;B&amp;amp;S (2014)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;關&lt;/td&gt;
+&lt;td&gt;kwan1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;krón&lt;/td&gt;
+&lt;td&gt;Sampson (2006; 2009)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;guan&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;kron&lt;/td&gt;
+&lt;td&gt;Shaughnessy (2008)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;guan&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;kons&lt;/td&gt;
+&lt;td&gt;Shaughnessy (2008)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;貫&lt;/td&gt;
+&lt;td&gt;kwan4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;kóns&lt;/td&gt;
+&lt;td&gt;Sampson (2009)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;貫&lt;/td&gt;
+&lt;td&gt;guàn&lt;/td&gt;
+&lt;td&gt;kwan&lt;/td&gt;
+&lt;td&gt;[k]ˤo[n]-s&lt;/td&gt;
+&lt;td&gt;B&amp;amp;S (2014)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;管&lt;/td&gt;
+&lt;td&gt;guǎn&lt;/td&gt;
+&lt;td&gt;kwanX&lt;/td&gt;
+&lt;td&gt;[k]ˤo[n]ʔ&lt;/td&gt;
+&lt;td&gt;B&amp;amp;S (2014)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;口管&lt;/td&gt;
+&lt;td&gt;guān (?)&lt;/td&gt;
+&lt;td&gt;kwan (?)&lt;/td&gt;
+&lt;td&gt;[k]ˤo[n] (?)&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I tried ordering them according to the train of thought in this debate:
+so first you have the current B&amp;amp;S transcription, basically &lt;em&gt;kˤron&lt;/em&gt;, then Sampson&amp;rsquo;s &lt;em&gt;krón&lt;/em&gt;, followed by Shaughnessy&amp;rsquo;s &lt;em&gt;krón&lt;/em&gt; and possible formal variant &lt;em&gt;kons&lt;/em&gt;, followed by Sampson&amp;rsquo;s answer that that would be &lt;em&gt;kóns&lt;/em&gt; in his system.
+Next I give the B&amp;amp;S version of that &lt;em&gt;kons/kóns&lt;/em&gt;, and the last two are suggestions I found in Legge (1871): that 關 is sometimes read as 管 or MOUTH(口)-管, &amp;lsquo;flute&amp;rsquo;.
+Personally, those last ones seem the most convincing for alternative characters of 關關: 管管 or (口管口管) &amp;lsquo;flute flute&amp;rsquo;, as in a sharp sound or so.&lt;/p&gt;
+
+&lt;p&gt;Now what does the biggest dictionary of Chinese I have access to say about 關關?
+The &lt;em&gt;Hànyǔ dà cídiǎn&lt;/em&gt; 漢語大詞典 says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1.鳥類雌雄相和的鳴聲。 後亦泛指鳥鳴聲。&lt;br /&gt;
+Mating call of male and female birds.&lt;br /&gt;
+《詩‧周南‧關雎》： “關關雎鳩， 在河之洲。”&lt;br /&gt;
+  毛 傳： “關關， 和聲也。”&lt;br /&gt;
+  南朝 宋 鮑照 《代悲哉行》： “翩翩翔禽羅， 關關鳴鳥列。”&lt;br /&gt;
+  清 陸以湉 《冷廬雜識‧道情》： “只聽得流水潺潺， 鳥語關關。”&lt;br /&gt;
+2.和諧安適貌。&lt;br /&gt;
+Harmonious.&lt;br /&gt;
+唐 錢起 《暇日覽舊詩因以題詠》： “逍遙心地得關關， 偶被功名涴我閒。”&lt;br /&gt;
+3.車行聲。&lt;br /&gt;
+Sound of carts passing.&lt;br /&gt;
+明 何景明 《憶昔行》： “明星迢迢車關關， 遙向 楚 水辭 燕 山。”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, no &amp;lsquo;beams&amp;rsquo; in sight &amp;ndash; maybe with some stretching you could argue for &amp;lsquo;passing through (of carts)&amp;rsquo; and then that sound, but still mostly just the call of these mysterious birds.
+Yes, you read that correctly, we don&amp;rsquo;t actually really know what the bird is (or maybe now we do?, baidu and wikipedia do lead me to pictures), but the most common translation of &lt;em&gt;jūjiū&lt;/em&gt; &amp;lt; tshjo kjuw &amp;lt; [tsʱ]a [k](r)u 雎鳩 is &amp;lsquo;osprey&amp;rsquo; or &amp;lsquo;fish-hawk&amp;rsquo;.
+Perhaps they are indeed a symbol of sex, because they eat fish, and fish are sexual symbols (Shaughnessy 2008).
+Sampson (2009) notes that he just chose &amp;lsquo;fish-hawk&amp;rsquo; because the osprey (apparently &lt;em&gt;Pandion haliaetus&lt;/em&gt;) makes a very shrill sound, not very love-inspiring.
+Perhaps this was also a case of the literature critic &amp;ndash; Shaugnessy &amp;ndash; reading too much into a pragmatic translation choice.&lt;/p&gt;
+
+&lt;p&gt;So for me in general, it seems Sampson is the winner in this debate, it&amp;rsquo;s better to use &lt;em&gt;krón krón&lt;/em&gt; (or maybe now &lt;em&gt;kˤron kˤron&lt;/em&gt; if you want to be a Peter precise) than Mandarin &lt;em&gt;guānguān&lt;/em&gt; or whatever translationese.&lt;/p&gt;
+
+&lt;p&gt;But he&amp;rsquo;s not entirely without faults either.
+A grave example is when Shaughnessy discusses the merits of using the reconstructed Old Chinese (cf. above):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[&amp;hellip;] (although I am not at all sure that for readers who do not know Chinese &amp;ldquo;&lt;em&gt;Krón, krón, tsa-kou&lt;/em&gt;&amp;rdquo; Sampson’s reconstruction, is much to be preferred over &amp;ldquo;&lt;em&gt;Guan guan ju jiu&lt;/em&gt;&amp;rdquo; the standard Romanization of the modern Chinese pronunciation).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To which Sampson responds:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If the line were considered in isolation like that, there would be little or no reason to prefer one pronunciation over the other; it takes two to tango, and &lt;strong&gt;it certainly takes two lines of poetry to rhyme&lt;/strong&gt;. But the fact that the Book of Odes represents the first known use of rhyme anywhere in world literature is one of the fascinating things about it. So it would not be much use to an English-speaking reader to spell out the poems in a modern version of Chinese, in which the rhymes have been destroyed by three millennia of sound-change. &lt;strong&gt;(In Old Chinese, tsa-kou, fish-hawk, in the first line rhymed with tou, islet, in the second line, but in modern Mandarin chü-chiu scarcely rhymes with chou.&lt;/strong&gt; In other cases the original rhymes, assonances, and so forth have been even more thoroughly wrecked in the modern language.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I&amp;rsquo;ve highlighted two parts: Sampson is right of course, the &lt;em&gt;Shījīng&lt;/em&gt; is one of the prime examples of rhyme and has actually been super useful in reconstruction Old Chinese, see for instance this exciting research by List (&lt;a href=&#34;https://link.springer.com/article/10.1186%2Fs40655-017-0021-8&#34; target=&#34;_blank&#34;&gt;2017&lt;/a&gt;; &lt;a href=&#34;https://pure.mpg.de/pubman/faces/ViewItemOverviewPage.jsp?itemId=item_3149513&#34; target=&#34;_blank&#34;&gt;2019&lt;/a&gt;).
+On the other hand, he remarks that &amp;ldquo;chü-chiu scarcely rhymes with chou&amp;rdquo;, which is a very strange remark to make, as &lt;em&gt;jūjiū&lt;/em&gt; [tɕy˥ tɕjoʊ˥] of course rhymes with &lt;em&gt;zhōu&lt;/em&gt; [ʈʂoʊ˥], there is not a hint of &lt;em&gt;scarcely&lt;/em&gt; in sight.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-other-ideophone&#34;&gt;The other ideophone&lt;/h1&gt;
+
+&lt;p&gt;You thought this was &lt;em&gt;soro soro&lt;/em&gt; (Jap. ソロソロ &amp;lsquo;any time now&amp;rsquo;) winding down, but no, not yet.&lt;/p&gt;
+
+&lt;p&gt;I want to draw attention to the second line of the first stanza as well, and compare again the different translations.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Line&lt;/th&gt;
+&lt;th&gt;Translator&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;窈窕淑女&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;yáotiáo shūnǚ&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;The &lt;strong&gt;modest, retiring, virtuous&lt;/strong&gt;, young lady: —&lt;/td&gt;
+&lt;td&gt;Legge (1871)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Lovely&lt;/strong&gt; is this noble lady,&lt;/td&gt;
+&lt;td&gt;Waley (1937)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;the &lt;strong&gt;beautiful and good&lt;/strong&gt; girl,&lt;/td&gt;
+&lt;td&gt;Karlgren (1950)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;A girl who is &lt;strong&gt;lovely and good&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Sampson (2006)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;君子好逑&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;jūnzi hǎo qiú&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;For our prince a good mate she.&lt;/td&gt;
+&lt;td&gt;Legge (1871)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Fit bride for our lord.&lt;/td&gt;
+&lt;td&gt;Waley (1937)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;she is a good mate for the lord.&lt;/td&gt;
+&lt;td&gt;Karlgren (1950)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Is the fit match for a princely man.&lt;/td&gt;
+&lt;td&gt;Sampson (2006)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Of course, I argue that this &lt;em&gt;yáotiáo&lt;/em&gt; 窈窕 is also an ideophone, more precisely one that expresses EVALUATION based on VISION:
+the lady (&lt;em&gt;shūnǚ&lt;/em&gt; 淑女) is evaluated as lovely, beautiful, good, befitting the lord or gentlemen (&lt;em&gt;jūnzi&lt;/em&gt; 君子).
+Or, as it&amp;rsquo;s found in the Chinese Ideophone Database &lt;a href=&#34;https://simazhi.shinyapps.io/Chineseideophone/&#34; target=&#34;_blank&#34;&gt;CHIDEOD&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;of women, coy and comely, reticent and withdrawn, winsome but withdrawn, delicate and demure; but some indication that the term can instead imply seductive sensuality; covert depths, hidden recesses; quiet(ly) and private(ly)
+(Kroll 2015)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Yáotiáo&lt;/em&gt; thus conforms to the crosslinguistic concept of an ideophone: it is marked (partial reduplication), a word (&amp;ldquo;listable in a lexicon&amp;rdquo;), that depicts (&amp;ldquo;not just describes&amp;rdquo;) a sensory image (&amp;ldquo;beautiful, lovely woman&amp;rdquo;) and belongs to an open lexical class, cf. Dingemanse (2012; 2019).&lt;/p&gt;
+
+&lt;p&gt;But do the translations above also conform what this ideophone depicts? Without taking into account factors like adhering to a metrical scheme (eight syllables or something similar), my preference without doubt goes to Legge&amp;rsquo;s translation, because he captures the antithetical forces of &amp;ldquo;wanting to depict but being only able to describe&amp;rdquo; the best:
+English doesn&amp;rsquo;t have any ideophones (as far as I&amp;rsquo;m aware) to depict the kind of women that befits this lord.&lt;/p&gt;
+
+&lt;p&gt;But perhaps you won&amp;rsquo;t agree.
+Let me know.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-end&#34;&gt;The end?&lt;/h1&gt;
+
+&lt;p&gt;Anyway, let me just end with the best mix-and-match of this stanza, or how I would do it, given a somewhat academic audience and enough space, i.e. here on my blog.&lt;/p&gt;
+
+&lt;p&gt;First I would give Baxter &amp;amp; Sagart&amp;rsquo;s reconstruction:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[k]ˤro[n] [k]ˤro[n] [tsʱ]a [k](r)u&lt;br /&gt;
+[dz]ˤəʕ [C.g]ˤaj tə tu&lt;br /&gt;
+ʔˤ[e]wʔ lˤ[e]wʔ s-tiwk nraʔ&lt;br /&gt;
+C.qur tsəʔ qʱˤuʔ g&amp;reg;u&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Then I would give the Middle Chinese reconstruction, instead of Baxter (1992), I would opt for the IPA version (I converted with &lt;a href=&#34;https://pypi.org/project/sinopy/&#34; target=&#34;_blank&#34;&gt;Sinopy&lt;/a&gt;):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;kwæn kwæn ʦʰjo kjuw¹&lt;br /&gt;
+ʣoj² ɣa ʨi ʨuw¹&lt;br /&gt;
+ʔew² dew² ɕuwk ɳjo³&lt;br /&gt;
+kjun ʦi² xaw³ gjuw¹&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Last I would provide the Mandarin pronunciation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;guānguān jūjiū&lt;br /&gt;
+zài hé zhī zhōu&lt;br /&gt;
+yǎotiǎo shūnǚ&lt;br /&gt;
+jūnzi hǎo qiú&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This way you can kind of see how sounds change, as well as the way people perceive the &amp;ldquo;sounds of the &lt;em&gt;Shījīng&lt;/em&gt;.
+Of course, we would need characters as well:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;關關雎鳩，&lt;br /&gt;
+在河之洲。&lt;br /&gt;
+窈窕淑女，&lt;br /&gt;
+君子好逑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And I would end with a translation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Krōn, krōn&lt;/em&gt; the físh-hawks cáll,&lt;br /&gt;
+ón the íslet ín the ríver.&lt;br /&gt;
+délicáte, demúre, young lády,&lt;br /&gt;
+fór the lórd a góód mate shé.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Of course I borrowed from previous translations, but I also tried to mark the prosody so there&amp;rsquo;s four stressed syllables in the metre of each line.
+This, I think, is a more effective way of trying to marry the original four beat Chinese to English (where pentameter is the most frequent verse form).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Didn&amp;rsquo;t like the translation?&lt;/strong&gt;
+&lt;strong&gt;Make me a better one!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope to see you back for the next update where we attack the problem of this verse and Chinese word segmentation.&lt;/p&gt;
+
+&lt;p&gt;P.s. I have been quite lazy with my references, but if you want a specific reference, feel free to ask.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Saikin hai Bunun tuta tu bunun “I am a Bunun&#34;</title>
+      <link>/post/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun/</link>
+      <pubDate>Fri, 15 Jul 2016 15:32:28 +0000</pubDate>
+      <guid>/post/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun/</guid>
+      <description>
+
+&lt;p&gt;After my previous double update — in case you missed it, here are the links to &lt;a href=&#34;http://www.thomasvanhoey.com/belgie/brought-together-1&#34; target=&#34;_blank&#34;&gt;Brought together 1&lt;/a&gt; and &lt;a href=&#34;http://www.thomasvanhoey.com/blog/brought-together-2&#34; target=&#34;_blank&#34;&gt;Brought together 2&lt;/a&gt; - go check’m out! — I was visited by two of my best friends. I want to thank both Yoana and Tessa for taking the time to visit me and endure my guiding tour. After they had left, I had to prepare for my fieldwork class. This year &lt;a href=&#34;http://homepage.ntu.edu.tw/~gilntu/Faculty/Li-May_Sung.html&#34; target=&#34;_blank&#34;&gt;Professor Sung Li-May&lt;/a&gt; is focusing on &lt;a href=&#34;https://en.wikipedia.org/wiki/Bunun_language&#34; target=&#34;_blank&#34;&gt;Bunun&lt;/a&gt;, one of the 15 or so indigenous languages that can be found in Taiwan. They are &lt;a href=&#34;https://en.wikipedia.org/wiki/Austronesian_languages&#34; target=&#34;_blank&#34;&gt;Austronesian languages&lt;/a&gt;, which means they belong to the same language family as Philippine languages, Indonesian languages and many more. They spread out all the way until Hawaii (yes, Hawaiian is an Austronesian language) and New-Zealand (Maori), so it is very probably the biggest language family or the one that covers the biggest territory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/b/bf/Formosan_languages_2008.png&#34; alt=&#34;MAP OF BUNUN&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All these languages seem to originate from the island of Taiwan, which is, as you know, the place I am studying. Since this island used to be called Ilha Formosa ‘beautiful island’ by the Portuguese, the subbranch of Austronesian languages that can be found here are known as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Formosan_languages&#34; target=&#34;_blank&#34;&gt;Formosan languages&lt;/a&gt; — this variation is “Taiwan’s gift to the world”. There is ample archeological evidence that supports the move from Taiwan to the Philippines to the West and then to the East (Bellwood 2000; Oppenheimer 2001). And one of the languages that can be found in this group is Bunun in Taiwan. Above is a map of the places where it’s spoken.&lt;/p&gt;
+
+&lt;p&gt;It is spoken by the &lt;a href=&#34;https://en.wikipedia.org/wiki/Bunun_people&#34; target=&#34;_blank&#34;&gt;Bunun tribe&lt;/a&gt;, whose massive migration of Bunun started around the turn of the 18th century, i.e. about 300 years ago. The Bunun tribe was originally settled in the midwest of Taiwan, all in Hsinyi county. It dispersed to the south and east. The first subgroup to migrate was Takupulan, which had been resettled to the south of Tsou by the mid-18th century. Then there were two main waves of dispersal: The first to the south and southeast, and the second to the west and southwest, including Isbukun, Takivatan and Takbanuaz subgroups. The latest migration was the northern subgroup, including Takituduh and Takibakha (Li 2004).&lt;/p&gt;
+
+&lt;p&gt;They are mostly known for two things: one is the coming-of-age Ear-Shooting ceremony, called &lt;em&gt;malahtania&lt;/em&gt;; the other is polyphonic singing &lt;em&gt;pasibutbut&lt;/em&gt;. Here is a video of them singing:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27560967736/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7436/27560967736_4c920f9bbc_z.jpg&#34; alt=&#34;20160606_123423&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently there are about 50,000 Bununs still alive (De Busser 2011). They are traditionally divided into five dialects: Isbukun, Takivatan (cf. De Busser 2009 — yes, the specialist on this dialect is Belgian), Takbanuaz, Takituduh, and Takibakha. &lt;em&gt;Taki&lt;/em&gt; means ‘from-‘; and the dialect we studied, Isbukun, is also known as Bubukun. It is estimated to mean something like ‘the Bunun people’. And &lt;em&gt;bunun&lt;/em&gt; itself just means ‘human’.&lt;/p&gt;
+
+&lt;p&gt;The goal of this course, because it is still schoolwork, is to add to the database of Formosan languages that is being developed by my institute. For this we had a teacher every week in our class who we could ask questions to. In this way we elicited more and more language data, for a total of 27 hours. And from 2 June until 6 June we went &amp;lsquo;into the field’ as it is known, to gather more data by talking with three very helpful informants. I will now try to give an overview of our trip:&lt;/p&gt;
+
+&lt;h1 id=&#34;day-1&#34;&gt;Day 1&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27495950152/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7339/27495950152_71b59523c0_z.jpg&#34; alt=&#34;20160602_123334(1)&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We woke up really early to take the early Highspeed Railway to Zuoying 左營, where we consequently were split in two vans. I must point out that we were about 13 people in total and that the vans were thus very big. We were taken into the mountains. Before I had a lot of expectations and romantized thoughts about the village were bound for, which was called Taoyuan 桃源 (not the one with the airport) in Chinese, or Kavalung in Bunun — “Do they live in normal houses? Is there electricity? Is there internet? Is there water? Do they live in tents? …” What I found was just a normal village in the country/mountainside. They are very modernized, but from what I gathered they still care about their heritage as hunters. So we got to know our informants and started working: asking novel sentences (or reaffirming old ones) in orde to explore the different uses of different bits and pieces of the language. We worked for about three hours per session, a rhythm that would repeat itself in the next few days with about two sessions every day.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27561058366/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7633/27561058366_f9e14d2590_z.jpg&#34; alt=&#34;20160602_142318&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We stayed in a few rooms above/behind a church. It is very obvious that the Bunun people we met are a closely knitted community with a lot of adherents of Christianity (there seem to be both Presbyterian and Catholic variants in Kavalung). There were three big rooms and one smaller and eventually I slept in the same room as the teacher because that way I had more space. The last day we were joined by girls who had fled their room because of cockroach problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27318061980/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7340/27318061980_3b6ace82e5_z.jpg&#34; alt=&#34;20160606_123405&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;day-2&#34;&gt;Day 2&lt;/h1&gt;
+
+&lt;p&gt;Waking up around 7 AM (actually a bit before because my classmates are very active in the morning), we went to a breakfast place which enticed us to become regulars in the few days we were there. Things that happened on this included a confirmation that living in the mountains offers ever-changing beautiful landscapes, so that is what you will get a lot of pictures of.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27318099060/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7501/27318099060_d205e06ac1_z.jpg&#34; alt=&#34;20160605_083342&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27318104110/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7536/27318104110_9c27031535_z.jpg&#34; alt=&#34;20160605_080210&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27318119820/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7564/27318119820_63181229b8_z.jpg&#34; alt=&#34;20160605_080159&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I also attracted a crowd of young fans who kept calling me ‘america’. They asked me if I came from the US (&lt;em&gt;Meiguo&lt;/em&gt; 美國), England (&lt;em&gt;Yingguo&lt;/em&gt; 英國), or ‘Abroad’ (&lt;em&gt;Waiguo&lt;/em&gt; 外國). The structure of these words in Chinese makes it seem as if ‘Abroad’ really is a country. When I asked to show it on the local map that hang there, she just pointed at a part that wasn’t highlighted — not even leaving the South of Taiwan. It was very innocent but also very funny. I may have been the first &lt;em&gt;danghashulbu&lt;/em&gt; ‘red-hair &amp;gt; foreigner’ that they have every seen in their lives.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27581569776/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7747/27581569776_b6d6ebc219_z.jpg&#34; alt=&#34;13391498_1090585777667231_1284373761909731034_o&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;day-3&#34;&gt;Day 3&lt;/h1&gt;
+
+&lt;p&gt;The daily rhythm continued, and our materials kept growing. However, on this day there was a unique event in the village: a wedding! In these pictures below must be a significant amount of remaining Bununs. Notice the guy who poses for my picture in the second pic below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27318128780/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7295/27318128780_a34e90125e_z.jpg&#34; alt=&#34;20160604_123258&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26986329943/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c8.staticflickr.com/8/7379/26986329943_2357a553a7_z.jpg&#34; alt=&#34;20160604_123316&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27595148335/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c8.staticflickr.com/8/7456/27595148335_25627a9f38_z.jpg&#34; alt=&#34;20160602_192941&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;day-4&#34;&gt;Day 4&lt;/h1&gt;
+
+&lt;p&gt;On the next day we had a field trip in the area. We got to see a family member of the Bunun leader &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%8B%89%E8%8D%B7%C2%B7%E9%98%BF%E9%9B%B7&#34; target=&#34;_blank&#34;&gt;Lāhè āléi 拉荷·阿雷 (1869-1941)&lt;/a&gt; who opposed the Japanese occupation of their Bunun territories. And we got the whole story of how this happened.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27522470271/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c8.staticflickr.com/8/7302/27522470271_17c674326b_z.jpg&#34; alt=&#34;20160605_153323&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27560997086/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7179/27560997086_72f9e74489_z.jpg&#34; alt=&#34;20160605_154003_HDR&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This was also the spot where I &amp;lsquo;married&amp;rsquo; three women at once, an inside joke that followed from my story of how my fortune was told to my by a crone in the Eslite bookstore #truestory. I was going to mary three women in my life, move back to America and would do a host of other improbable things. Here is the picture of the proposal and the result.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/28042947990/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/9/8602/28042947990_192ea0621d_z.jpg&#34; alt=&#34;wedding&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26984907104/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7382/26984907104_999e5677aa_z.jpg&#34; alt=&#34;20160605_163402&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;day-5&#34;&gt;Day 5&lt;/h1&gt;
+
+&lt;p&gt;All good things come to an end. So too our stay with the Bunun. As if the mountain god didn&amp;rsquo;t want to see us leave it started raining so hard, we had to stay just a bit longer.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27495833652/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7336/27495833652_455f69a75a_z.jpg&#34; alt=&#34;20160606_134034&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But our time there came to and end and I know I will definitely go back to visit them, especially our dear Yan laoshi, or Hanaivaz in Bunun, who is one of the kindest people I have ever met.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27581568936/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7440/27581568936_b80c9bd3d6_z.jpg&#34; alt=&#34;13335791_1088362691235229_6733973097295434467_n&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;returning-to-taipei&#34;&gt;Returning to Taipei&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27595082325/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7439/27595082325_4cb8ab1324_z.jpg&#34; alt=&#34;20160605_170742&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After having returned to Taipei, we had to give a presentation on the linguistic topic we were working on in Bunun. In my case, that was nominalization and relativization. And eventually we had to turn that into a term paper, which I made accessible here (I&amp;rsquo;m welcoming comments!):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; [Paper on _Relativization and Nominalization in Isbukun Bunun_](https://www.academia.edu/26868670/Relativization_and_Nominalization_in_Isbukun_Bunun)
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+&lt;p&gt;All in all, it was wonderful and I really recommend this class to everyone who wants to analyze a new language they have no experience with — a chance that is nearly impossible to get in Belgium in the setting we had it here. Here is a final picture of the group on the mountainside, with the clouds hanging lower because of recent rainfall.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27581568436/in/album-72157670400401671/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7344/27581568436_9b64219eae_z.jpg&#34; alt=&#34;13321848_1088364487901716_8035535932767549850_n&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Brought together (2)</title>
+      <link>/post/brought-together-2/</link>
+      <pubDate>Tue, 31 May 2016 15:40:48 +0000</pubDate>
+      <guid>/post/brought-together-2/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Today&amp;rsquo;s update is the second part of a double post that aims at filling you in with some details of my life here. This part is the more academic part about conferences; the other part &lt;a href=&#34;http://www.thomasvanhoey.com/belgie/brought-together-1&#34; target=&#34;_blank&#34;&gt;you can find here&lt;/a&gt;. As always, comments are welcome on all kinds of platforms.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;conferences&#34;&gt;Conferences&lt;/h1&gt;
+
+&lt;p&gt;Conference. That is the key-word of this update. An English word originating from Latin &lt;em&gt;con-ferre&lt;/em&gt; &amp;lsquo;together-bring&amp;rsquo; (read: &amp;lsquo;bring together&amp;rsquo;), passing through French. Well we are talking about academic conferences here, &amp;lsquo;cause I just started doing that.&lt;/p&gt;
+
+&lt;p&gt;Of course I had done presentations for friends, maybe foes, classmates etc. but I never really attended a conference before. This is in contrast to one of the requirements of the master&amp;rsquo;s programme here at the GIL of NTU, viz. you have to attend an international conference (it&amp;rsquo;s not a requirement of the PhD programme; however, it&amp;rsquo;s strongly advised). In Belgium this was kind of impossible or at least impractical because most masters in the humanities are only one year long. So it was kind of exciting for me when I decided to submit proposals in order to go speak at a conference this year. That&amp;rsquo;s why I will try to describe the process I went through this year.&lt;/p&gt;
+
+&lt;h1 id=&#34;finding-conferences&#34;&gt;Finding conferences&lt;/h1&gt;
+
+&lt;p&gt;First I had to find out about conferences. For me before, this had always been some sort of difficult point. I mean, how do you find out about it long enough beforehand in order for you to write a decent proposal that hopefully incorporates some of the work you have been doing until then? Wow, that is a long sentence. It all became more clear to me this year:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;You have to subscribe &amp;lsquo;social networks&amp;rsquo; for the field you are in. In my case that is mostly &lt;a href=&#34;http://linguistlist.org/indexfd.cfm&#34; target=&#34;_blank&#34;&gt;Linguistlist&lt;/a&gt;. Or at least you have to know about it, so you can check vacancies and other interesting stuff regularly.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You become a member of certain &amp;lsquo;clubs&amp;rsquo; — if that is the right word to put it. For instance, I am a (student) member of the &lt;a href=&#34;http://www.sinalumni.com/&#34; target=&#34;_blank&#34;&gt;alumni organisation Sinalumni&lt;/a&gt; for ex-sinology students, &lt;a href=&#34;http://chinesestudies.eu/&#34; target=&#34;_blank&#34;&gt;the European Association for Chinese Studies (EACS)&lt;/a&gt;, and more recently the &lt;a href=&#34;http://www.cognitivelinguistics.org/en&#34; target=&#34;_blank&#34;&gt;International Cognitive Linguistics Association (ICLA)&lt;/a&gt; for which I was kind of convinced by my previous teacher Dirk Geeraerts. There&amp;rsquo;s many more where those came from (internet) and it&amp;rsquo;s a good way to stay updated.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You get updates from your department. In this case, our dear Mei-Ling sends us regular updates on interesting talks (my department hosts many) and interesting conferences.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Luck. Yes, you have to have a wee bit of luck. Maybe it&amp;rsquo;s a poster you see somewhere, maybe it&amp;rsquo;s a LinkedIn post, a facebook link, something someone tells you about, a random string of letters you type into google&amp;hellip; Who knows.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Anyway, in my cases it was mostly LinguistList and the department that told me.&lt;/p&gt;
+
+&lt;h1 id=&#34;submitting-a-proposal&#34;&gt;Submitting a proposal&lt;/h1&gt;
+
+&lt;p&gt;After you found a conference, you will want to submit a proposal; at least, if your aim is to be super actively involved there. If you want to attend (and mingle with some people), that is also okay of course.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; &#34;The more you come out, the better.&#34;
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+&lt;p&gt;I wrote my first submissions around December 2015 and got answers pretty soon after that. I submitted for CLDC 8 (see below), a summer school in Leiden (see future blog post) and a symposium in Berlin (see future blog post). And then I got notified that I got accepted, which I was thrilled about.&lt;/p&gt;
+
+&lt;p&gt;As a warm-up and given my non-existing prior experience with conferences, I decided to attend one so I could see how the show rolls.&lt;/p&gt;
+
+&lt;h1 id=&#34;ncl-17-2016-tatung-university&#34;&gt;NCL 17 (2016, Tatung University)&lt;/h1&gt;
+
+&lt;p&gt;I went to &lt;a href=&#34;http://%20http://ncl17.afl.ttu.edu.tw/ncl17/#index&#34; target=&#34;_blank&#34;&gt;NCL 17, the (Taiwanese) National Conference on Linguistics.&lt;/a&gt; It was hosted at Tatung University &lt;a href=&#34;https://en.wikipedia.org/wiki/Tatung_University&#34; target=&#34;_blank&#34;&gt;大同大學&lt;/a&gt;. It was very interesting to see; especially because I got to see my senpai 學長 Chester present a paper he had been writing last semester, as well as to see my supervisor Lu Chiarung and my other teachers be present and just in general show my face.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27315809586/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c3.staticflickr.com/8/7666/27315809586_43253004a2_z.jpg&#34; alt=&#34;NCL&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27074016400/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7319/27074016400_1cb2e7cb42_z.jpg&#34; alt=&#34;Chester speaks&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349191045/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7474/27349191045_199bb64024_z.jpg&#34; alt=&#34;Lu laoshi speaks&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;cldc-8-2016-taipei-university&#34;&gt;CLDC 8 (2016, Taipei University)&lt;/h1&gt;
+
+&lt;p&gt;This is the main part of this post, as it is the first conference I spoke at. &lt;a href=&#34;http://homepage.ntu.edu.tw/~gilntu/cldc/2016/index.html&#34; target=&#34;_blank&#34;&gt;CLDC, the Conference on Language, Discourse, and Cognition&lt;/a&gt; is a biennial conference organised by my university NTU. It originated from a smaller set of discussions and has grown out to be a bigger conference that welcomes both Taiwanese as well as foreign talks.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26744157283/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c4.staticflickr.com/8/7046/26744157283_f526703b36_z.jpg&#34; alt=&#34;Sally and Mergen setting up the posters&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;While the conference itself was held from 13 to 14 May, the first pre-session by keynote speaker &lt;a href=&#34;http://www.sfs.uni-tuebingen.de/~hbaayen/contact.html&#34; target=&#34;_blank&#34;&gt;Harald Baayen&lt;/a&gt; happened a day earlier, when he showed us the wondrous world of R — that&amp;rsquo;s a computer programme for statistics, for those who R ignorant of this fact (note: in Dutch I would have said that &amp;ldquo;je geen R-varing hebt&amp;rdquo;). Professor Baayen is very famous in computational linguistics and his talk was interesting; the subsequent hands-on session was more difficult to follow though.&lt;/p&gt;
+
+&lt;p&gt;The next day we had our first set of presentations, &lt;a href=&#34;http://homepage.ntu.edu.tw/~gilntu/cldc/2016/program.html&#34; target=&#34;_blank&#34;&gt;you can find the conference programme here&lt;/a&gt;. In the morning my previous teacher, Professor &lt;a href=&#34;http://wwwling.arts.kuleuven.be/qlvl/dirkg.htm&#34; target=&#34;_blank&#34;&gt;Dirk Geeraerts&lt;/a&gt; from KU Leuven gave a talk on onomasiological variation and lectometry, especially with regard to the lexical field of clothing terms in Flanders vs. the Netherlands.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27074194090/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c3.staticflickr.com/8/7277/27074194090_2b968d07b0_z.jpg&#34; alt=&#34;Dirk Geeraerts &#39;onomasiological variation and lectometry&#39;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The rest of the day was filled with very interesting presentations and a poster session for which some of my classmates had submitted a proposal, e.g. Aarin about the &lt;em&gt;dapat&lt;/em&gt; &amp;lsquo;to get&amp;rsquo; in Indonesian.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26767986124/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7402/26767986124_587bb358bc_z.jpg&#34; alt=&#34;Aarin &#39;dapat&#39;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At night there was a banquet, where I finally got to eat dryish spaghetti — as opposed to the variant that is too moist that is served ubiquitously here. And, I got to sit at the table with the &amp;lsquo;grown-ups&amp;rsquo; (read: with the professors), talking in Dutch and English and Chinese with friendly people.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27277222732/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7096/27277222732_df352742b9_z.jpg&#34; alt=&#34;banquet&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349377885/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7171/27349377885_df10fea214_z.jpg&#34; alt=&#34;banquet&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The very next day it was my turn to deliver my speech that I had prepared together with my supervisor. It was entitled &amp;ldquo;The distribution of ideophones in Tang poems: A variatonist perspective&amp;rdquo;. In short, I summarized findings from my MA thesis last year as a corpus-driven approach to look at three variations &lt;em&gt;mangmang&lt;/em&gt; 茫茫, &lt;em&gt;mangmang&lt;/em&gt; 芒芒 and &lt;em&gt;cangmang&lt;/em&gt; 蒼茫 in a corpus-based way. Turns out that while all three depict &amp;lsquo;wide, open, vast&amp;rsquo;, the ones with the water radical (the two falling and one raising stripes at the left side) occurred in different places and different times closer to water than the one with only grass (that&amp;rsquo;s the second one with the two plus signs (++) at the top). It was a good pilot study and I am happy to announce that we will try to publish it in the future!&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know if you would like to see the powerpoint of the presentation, but if you do, I can send it or in case requests are overwhelming, I might upload it here. Let me know! Anyway, here are some pictures (I am still waiting for better quality pictures than Facebook quality):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26768378453/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7048/26768378453_461e586c25_z.jpg&#34; alt=&#34;presentation&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27277222922/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c3.staticflickr.com/8/7598/27277222922_25bcbaef3e_z.jpg&#34; alt=&#34;presentation&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26768378463/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c8.staticflickr.com/8/7201/26768378463_4bd4780e35_z.jpg&#34; alt=&#34;13220752_10204599605349173_1628020229323652229_o&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27277223262/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7624/27277223262_a009432dc6_z.jpg&#34; alt=&#34;13245230_561516674010353_4933154692913286555_n&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27315998836/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7086/27315998836_be0d8c131e_z.jpg&#34; alt=&#34;20160513_105558&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That was followed by another host of interesting presentations. I think my favourite one was the one right behind me, by Hsin-Yen who talked about iconicity in paintings. Later that night we went for tea shopping with our esteemed guests from the low countries and I had dinner with Prof. Geeraerts and Po-Wei.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27277223062/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7731/27277223062_0702702a72_z.jpg&#34; alt=&#34;tea time&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;During the tea tasting I had a really funny yet embarrassing story that I want to share with you. First we were helped by a very old man, who turned out to be about 85 years old. At one point he left to take a rest and the woman in the picture above helped us further out. I asked her if the old man was her father (&lt;em&gt;fuqin&lt;/em&gt; 父親), to which she mumbled something back that I understood as &lt;em&gt;agong&lt;/em&gt; 阿公, the Taiwanese Mandarin variant for &amp;lsquo;grandfather&amp;rsquo;. So, to be certain, I repeated the question, and she was like &amp;ldquo;no, no, my &lt;em&gt;&lt;strong&gt;lao&lt;/strong&gt;gong&lt;/em&gt; 老公 &amp;lsquo;husband&amp;rsquo;. Turned out she was 65 years old. Will I ever be able to guess the age of my Asian friends??&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26767387294/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c7.staticflickr.com/8/7680/26767387294_9bd43f23e1_z.jpg&#34; alt=&#34;dinner&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;However, it wasn&amp;rsquo;t the only time I would see Po-Wei that night as it was also the grand finale of the &lt;a href=&#34;http://www.eurovision.tv/page/timeline&#34; target=&#34;_blank&#34;&gt;Eurovision Song Contest&lt;/a&gt; (Eurosong for the Dutch speaking friends). Ever since the beginning of this academic year it has been clear that he is a super fan and I am happy that we could arrange to watch the competition on big screen in our department, even if it was only the two of us who watched, starting at 3 AM. This, by the way, is not the first time I watched this &amp;lsquo;late&amp;rsquo; [I like to watch this live], as I had done the same with Joke in Suzhou two years before. Anyways, Po-Wei was ecstatic when his favourite contestant, Ukraine&amp;rsquo;s Jamala with &lt;em&gt;1944&lt;/em&gt;, won the contest.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349379705/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c2.staticflickr.com/8/7012/27349379705_dd7170e870_z.jpg&#34; alt=&#34;Eurovision!&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27251823242/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c3.staticflickr.com/8/7457/27251823242_f3f50c9a99_z.jpg&#34; alt=&#34;Eurovision&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, the real winners that night were presenters Måns Zelmerlöw and Petra Mede who performed what they thought to be the &amp;ldquo;perfect Eurovision song&amp;rdquo;. Of course, it was an act that would have been disqualified in the real competition — having more than six people on stage and going easily over the maximum duration of 3 minutes.&lt;/p&gt;
+
+&lt;p&gt;So, naturally I almost didn&amp;rsquo;t sleep (2 hours in total) and I didn&amp;rsquo;t get a chance to catch up. The next day I guided Prof. Geeraerts and &lt;a href=&#34;https://sites.google.com/site/chiangwenyulab/&#34; target=&#34;_blank&#34;&gt;Prof. Chiang Wen-yu&lt;/a&gt; in the Palace Museum (&lt;a href=&#34;http://www.thomasvanhoey.com/blog/visit-from-vietnam&#34; target=&#34;_blank&#34;&gt;see this blog post for more information&lt;/a&gt;) and I humbly displayed all the sinological knowledge that is still stored in my head.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27278799371/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c4.staticflickr.com/8/7406/27278799371_0282810bb0_z.jpg&#34; alt=&#34;Palace Museum&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349422835/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c4.staticflickr.com/8/7732/27349422835_922ce69fe2_z.jpg&#34; alt=&#34;Jade cup used by the Qianlong emperor&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26743047373/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7435/26743047373_02b3cf6a1a_z.jpg&#34; alt=&#34;Why the long face?&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Fun times, but even conferences have to come to an end. Or maybe especially conferences have to come to an end. Anyway, the next day there was a post-conference talk by Prof. Geeraerts on clothing terms (&lt;em&gt;again&lt;/em&gt;&amp;hellip;) and onomasiological salience and entrenchment, which was very interesting. Here is a picture of him talking with my Japanese friend Saito. This was followed by a lunch and that was that; but it&amp;rsquo;s not that for this update!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27278852771/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c4.staticflickr.com/8/7397/27278852771_a86b88b6bb_z.jpg&#34; alt=&#34;Talking with Saito&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;iscll-15-2016-national-hsinchu-university-of-education&#34;&gt;IsCLL 15 (2016, National Hsinchu University of Education)&lt;/h1&gt;
+
+&lt;p&gt;Last weekend I went to the &lt;a href=&#34;http://www.nhcue.edu.tw/~IsCLL-15/en_index.html&#34; target=&#34;_blank&#34;&gt;International Symposium on Chinese Languages and Linguistics&lt;/a&gt;, which was held in Hsinchu. It was very interesting, with highlights on the first day in the second session.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349493465/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c2.staticflickr.com/8/7617/27349493465_d9a296f290_z.jpg&#34; alt=&#34;Hshinchu University of Education&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26742207244/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7410/26742207244_2e41854fa5_z.jpg&#34; alt=&#34;IsCLL&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But of course, the real attractions were keynote speakers Randy LaPolla, a big name in Asian linguistics, and Adele Goldberg, one of the big names in Construction Grammar.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27349488645/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c6.staticflickr.com/8/7441/27349488645_f810c33c26_z.jpg&#34; alt=&#34;Me and Adele Goldberg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from these two, it was a good opportunity to network and I made new friends, e.g. three graduate students; with two of them I went to a bar with Belgian beer later. I also bumped into some big names in Formosan linguistics (the native languages of Taiwan): Elisabeth Zeitoun and fellow Belgian Rik De Busser.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27074319380/in/album-72157668279194300/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://c5.staticflickr.com/8/7726/27074319380_3e61ca9f44_z.jpg&#34; alt=&#34;20160528_203231&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So that was it for this update, which ends considerably on a happier note &lt;a href=&#34;http://www.thomasvanhoey.com/belgie/brought-together-1&#34; target=&#34;_blank&#34;&gt;than the previous one&lt;/a&gt;. I hope to see you next time my dear reading friends!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Visit From Japan</title>
+      <link>/post/a-visit-from-japan/</link>
+      <pubDate>Fri, 15 Apr 2016 20:21:20 +0000</pubDate>
+      <guid>/post/a-visit-from-japan/</guid>
+      <description>
+
+&lt;p&gt;A long overdue update, but my friends have implored me to write it down. In the last update I talked about the &lt;a href=&#34;http://www.thomasvanhoey.com/blog/artsy-fartsy-afternoons&#34; target=&#34;_blank&#34;&gt;Artsy Fartsy Afternoon&lt;/a&gt; I had after my &lt;a href=&#34;http://www.thomasvanhoey.com/blog/visit-from-vietnam&#34; target=&#34;_blank&#34;&gt;Visit from Vietnam&lt;/a&gt;. Today my treat for you is a Visit from Japan and how I spent Chinese New Year 2016.&lt;/p&gt;
+
+&lt;h1 id=&#34;under-the-bamboo&#34;&gt;Under the Bamboo&lt;/h1&gt;
+
+&lt;p&gt;Last year, my dear Japanese friend Takeshita 竹下 &amp;ldquo;Under the bamboo&amp;rdquo; came to visit me and Joke in Belgium and we had a wonderful time. She had been a classmate of us in Suzhou. This is my favourite picture I have of her, entitled &amp;ldquo;Takeshita under the bamboo&amp;rdquo; 竹下の竹下.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/26447794645/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1573/26447794645_519b7b5dd0_z.jpg&#34; alt=&#34;竹下の竹下&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At the end of January she came for a weekend to Taipei, all the way from Japan. She had so much luggage with her — a whole handbag. She told me that the flight attendants were perplexed, and so was I. However, I think it was magical, like Harry Potter, for she seemed to be able to find everything she needed at a whim, and we all know that is not a given with the vast oceans that women&amp;rsquo;s purses often are.&lt;/p&gt;
+
+&lt;p&gt;We first went to the Confucius temple (note: I have written about these temples and spots before, so just read more posts on my blog if you want to know more about them), where we did the customary jumping picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162391175/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1564/25162391175_09bd19f9e9_z.jpg&#34; alt=&#34;Takeshita jumping with Confucius&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Afterwards, we saw how clean they kept the Bao&amp;rsquo;an temple, by using a toothbrush. I wonder which toothpaste they use to clean though.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24535555283/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1720/24535555283_6efb8fd10f_z.jpg&#34; alt=&#34;Brushing those stelae&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Later we went to Jiufen, but it was raining and misty, so it wasn&amp;rsquo;t that much fun. However, I think she had some fun because she got to see the teahouse from the award winning anime movie &lt;a href=&#34;https://en.wikipedia.org/wiki/Spirited_Away&#34; target=&#34;_blank&#34;&gt;Spirited Away&lt;/a&gt;. Here is the teahouse with Takeshita:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24531710354/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1627/24531710354_b1a773c2e5_z.jpg&#34; alt=&#34;2016-01-30 18.05.49&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The next day, the weather gods were nicer to us. We went to see Chiang Kai-Shek&amp;rsquo;s and Sun Yat-sen&amp;rsquo;s memorial halls, saw Taipei 101 – the big tower –, had lunch in &lt;a href=&#34;https://en.wikipedia.org/wiki/Din_Tai_Fung&#34; target=&#34;_blank&#34;&gt;Din Tai Fung&lt;/a&gt; and went inside the City Hall. Here&amp;rsquo;s pics:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162392395/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1596/25162392395_c2bb51ddf9_z.jpg&#34; alt=&#34;2016-01-31 11.00.27&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24531711004/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1501/24531711004_7afbbaeabe_z.jpg&#34; alt=&#34;2016-01-31 12.57.21&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24535557103/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1716/24535557103_21ea5c383a_z.jpg&#34; alt=&#34;2016-01-31 12.57.28&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24794689879/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1614/24794689879_d4daa70fb5_z.jpg&#34; alt=&#34;2016-01-31 13.05.44&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lastly, I had to say goodbye to Takeshita, after a pleasant weekend of catching up and sightseeing. But not before taking a melodramatic selfie at the airport bus and the obligatory funny picture, &amp;ldquo;Sailor Bamboo&amp;rdquo;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24794708829/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1518/24794708829_8f0bf07980_z.jpg&#34; alt=&#34;2016-01-31 16.09.40&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24866761200/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1649/24866761200_93bdb56897_z.jpg&#34; alt=&#34;Sailor Moonの竹下&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;an-suhi&#34;&gt;An Suhi-&lt;/h1&gt;
+
+&lt;p&gt;About a week later it was &lt;strong&gt;that time of the year in the Chinese world — Chinese New Year 2016&lt;/strong&gt;. First I had a small celebration organised by the university for those students who would not be going home. There were two foreigners (I mean, possibly more, but I only saw myself and a Latin kind of guy at the far end of the room) and I was seated with people I didn&amp;rsquo;t know and who cared more for their phones than for conversation or food. Nevertheless, it was a nice kind of show they wanted to do and we even got &lt;a href=&#34;https://en.wikipedia.org/wiki/Red_envelope&#34; target=&#34;_blank&#34;&gt;red envelopes&lt;/a&gt; from the university, so thank you NTU! At the end of the evening there were some funny fotoshoot moments which I will share with you:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25136057716/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1705/25136057716_7265552acd_z.jpg&#34; alt=&#34;2016-02-06 19.48.14&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24531717884/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1628/24531717884_b0f392fcc9_z.jpg&#34; alt=&#34;2016-02-06 19.48.44&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162398815/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1710/25162398815_46ee0c3d58_z.jpg&#34; alt=&#34;2016-02-06 19.51.20&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The next day I had a new visit from Japan! This time my very good friend Ann-Sofie, who succeeded me as president of my student organisation &lt;a href=&#34;http://eoos.be/en/&#34; target=&#34;_blank&#34;&gt;Eoos&lt;/a&gt;, and here Korean friend Su-chan came to visit me. They were both studying at &lt;a href=&#34;https://en.wikipedia.org/wiki/Kobe_University&#34; target=&#34;_blank&#34;&gt;Kobe University&lt;/a&gt; and their academic year, which starts in March in japan, had just ended. I was very happy to see her (well, them) and speak some normal Dutch again. First we spent some time roaming around Ximen, where their hostel was located, and tried to find some food. This was not an easy task because everything was almost closing for the big celebration that night. Fortunately we were able to go to some temples, like a very clean Bao&amp;rsquo;an temple:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25044134082/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1624/25044134082_3dc649a7cc_z.jpg&#34; alt=&#34;2016-02-07 15.17.31&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;How did we celebrate Chinese New Year you may ask. Well, we went to my almost adopted/host family — my good friend Hsuan&amp;rsquo;s family — for the big celebration. A-ma had cooked so much super tasty food and it was just delicious and just so much and it was such a fun night. Here is our family picture:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25842663724/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1502/25842663724_c9cb57c5e5_z.jpg&#34; alt=&#34;Family picture CNY 2016&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The next days, the weather gods still seemed appeased and allowed us to visit my campus, the presidential palace, the old hospital (Taiwan&amp;rsquo;s Gasthuisberg for my medicine student friends at home).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25044134332/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1493/25044134332_82bcd5b21c_z.jpg&#34; alt=&#34;2016-02-07 16.16.19&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24866769360/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1538/24866769360_4555e992c5_z.jpg&#34; alt=&#34;2016-02-08 11.25.39&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162400465/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1608/25162400465_5045501b4d_z.jpg&#34; alt=&#34;2016-02-08 11.41.09&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We also went to the Palace Museum, where there was a new exhibition about Catholic missionaries etc. I got to see the world map the Belgian Jesuit priest &lt;a href=&#34;https://en.wikipedia.org/wiki/Ferdinand_Verbiest&#34; target=&#34;_blank&#34;&gt;Ferdinand Verbiest&lt;/a&gt; 南懷仁, who became the court astronomer to the Qing Kangxi 康熙 Emperor (1661-1722) and is very important for European-Chinese relations during the later Empire.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24866770350/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1643/24866770350_b88799a7a4_z.jpg&#34; alt=&#34;2016-02-08 15.36.04&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24535566423/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1655/24535566423_c6c3744e9a_z.jpg&#34; alt=&#34;2016-02-08 15.36.11&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The latter part of the visit was filled with trips going to Tamsui (this deserves a future post), night markets, hat shopping, Din Tai Fung, Jiufen and Maokong. Here are some pictures:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25136061226/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1663/25136061226_0ae6fc1859_z.jpg&#34; alt=&#34;2016-02-08 21.16.52&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24794699929/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1497/24794699929_ae6959bf53_z.jpg&#34; alt=&#34;2016-02-08 22.14.48&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162402115/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1516/25162402115_5782f2ac49_z.jpg&#34; alt=&#34;2016-02-09 11.13.47&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25162403065/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1626/25162403065_f2f0c61fea_z.jpg&#34; alt=&#34;2016-02-09 12.49.03&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24866772600/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1558/24866772600_bbd39cf3d2_z.jpg&#34; alt=&#34;2016-02-09 17.24.53&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24531723774/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1584/24531723774_bea84f837a_z.jpg&#34; alt=&#34;2016-02-09 18.02.57&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24794701499/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1576/24794701499_d387a138eb_z.jpg&#34; alt=&#34;2016-02-09 17.50.25&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24794701649/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1471/24794701649_4f09e00486_z.jpg&#34; alt=&#34;2016-02-09 17.58.04&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24531724094/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1687/24531724094_759bd7c017_z.jpg&#34; alt=&#34;2016-02-10 13.44.04&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And lastly, there is a group photo, rather unprofessionally taken against the light (this was my idea), of a very nice moment. Thank you for visiting me, Su-chan and アンスヒー!*&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/25136070936/in/album-72157664759205081/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1490/25136070936_0fded33210_z.jpg&#34; alt=&#34;2016-02-09 17.17.34&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;*Ann-Sofie always complains about people not writing her name correctly. I did the same to her one time, even though I didn&amp;rsquo;t do it intentionally, I wrote her name as アンスヒー rather than アンスフィー. #sorrynotsorry&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lanterns in the sky</title>
+      <link>/post/lanterns/</link>
+      <pubDate>Wed, 23 Dec 2015 03:53:49 +0000</pubDate>
+      <guid>/post/lanterns/</guid>
+      <description>
+
+&lt;p&gt;Hi! It has been a month&lt;a href=&#34;http://www.thomasvanhoey.com/blog/pride-ride&#34; target=&#34;_blank&#34;&gt; since our last meeting&lt;/a&gt; - or less if you looked at this blog more recently. In this update I would like to share with you an amazing trip we had to the waterfall of Shifen 十分 at the end of November. Since it is Christmas time, I am planning to give a few more updates in the next week - to wrap things up.&lt;/p&gt;
+
+&lt;h1 id=&#34;shifen&#34;&gt;Shifen&lt;/h1&gt;
+
+&lt;p&gt;On the 22th November we had arranged a trip to go the &lt;a href=&#34;https://en.wikipedia.org/wiki/Shifen_Waterfall&#34; target=&#34;_blank&#34;&gt;waterfall of Shifen&lt;/a&gt; 十分瀑布. I say we, but I should actually say the exclusive &amp;lsquo;we&amp;rsquo; that refers to Joe, my Dutch friend with Chinese roots. And more inclusively, the &amp;lsquo;we&amp;rsquo; refers also to Wang Hao, Merve, Naoto, Roger, Arisa, Justin, Joe and his girlfriend and me.&lt;/p&gt;
+
+&lt;p&gt;So we took the train to Shifen and first wandered in the old street, snacking on the local dishes, after which we had lunch in a restaurant.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23716492352/in/album-72157661828937619/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/607/23716492352_cebe625fae_z.jpg&#34; alt=&#34;2015-11-22 12.58.17&#34; /&gt;&lt;/a&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23198080553/in/album-72157661828937619/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5683/23198080553_b53711f8f0_z.jpg&#34; alt=&#34;2015-11-22 12.56.37&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After lunch, we set off to the waterfall. I have always liked the sound of the Chinese word for &amp;lsquo;waterfall&amp;rsquo; - _pùbù_ 瀑布. At first I thought there might be some sound symbolism involved there. In Middle Chinese, they are reconstructed as  buwk puH, and in Old Chinese this becomes [b]ˤawk pˤa-s (both are in Baxter &amp;amp; Sagart&amp;rsquo;s transcription)*. That _pu_ is related to water is very obvious - it means something like &amp;lsquo;a large amount of rain&amp;rsquo;. However, _bu_ &amp;rsquo;cloth&amp;rsquo; may also be related to water if we can believe the &lt;em&gt;Shuowen Jiezi,&lt;/em&gt; which mentions that &lt;em&gt;bu&lt;/em&gt; is the same as &lt;em&gt;quan&lt;/em&gt; 泉 &amp;lsquo;source, spring, fountain&amp;rsquo;. Anyway, an etymology that gives you &amp;lsquo;a lot of rain/water&amp;rsquo; + &amp;lsquo;spring&amp;rsquo; makes a nice impression for the concept &amp;rsquo;waterfall&amp;rsquo;, so it will have to make do. Of course, the alliteration of their reconstructed forms remains interesting and there may be something to it, but nothing can&amp;rsquo;t be proven unless we find more examples. I will put this in my &amp;lsquo;for future research&amp;rsquo; section :) .&lt;/p&gt;
+
+&lt;p&gt;In any case, it is a nicer etymology than the Germanic languages. English &lt;em&gt;waterfall&lt;/em&gt;, Dutch &lt;em&gt;waterval&lt;/em&gt;, German _Wasserfall _etc. just give you an explanation à la &amp;lsquo;waterfall, because water fall&amp;rsquo;. It kind of reminded me of a post I saw on the high-culture website 9gag, where they explained the seasons. British English calls the season after summer &amp;lsquo;autumn&amp;rsquo;, while Americans supposedly call it &amp;lsquo;fall - because leaf fall&amp;rsquo;. At the time it was funny, or at least funnier than now when I relate this to you. Anyway, enough etymology, here are some pictures of us at the waterfall - because water fall.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23196753614/in/album-72157661828937619/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/777/23196753614_e734e3583a_z.jpg&#34; alt=&#34;2015-11-22 15.13.16&#34; /&gt;&lt;/a&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23742409161/in/album-72157661828937619/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/757/23742409161_f34289742c_z.jpg&#34; alt=&#34;2015-11-22 15.18.15&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23798770946/in/album-72157661828937619/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5833/23798770946_b6ee7806e4_z.jpg&#34; alt=&#34;2015-11-22 15.19.46&#34; /&gt;&lt;/a&gt;Then, after sundown (because sun down), as evening fell (because evening fall) we also decided to write on a lantern and put all of our wishes on it, so they can become reality. You have probably seen pictures or footage of this before. There is even a holiday in January where they release the lanterns (in a special place - &lt;a href=&#34;https://en.wikipedia.org/wiki/Pingxi_District&#34; target=&#34;_blank&#34;&gt;Pingxi 平溪&lt;/a&gt; ). The lantern was HUGE, so we all got to write multiple wishes and I may already have seen some of them come true. Here is the clip of us releasing the lantern in the sky.&lt;/p&gt;
+
+&lt;p&gt;I will not spill the beans as to what I wrote on the lantern, but if you can read Chinese, you may be able to figure out which one I am. Especially if you are familiar with my &lt;em&gt;roosterlegs&lt;/em&gt;. As a final bonus, here are the rest of the pictures. I will see you in a few days for the next update!  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[flickr_set id=&amp;quot;72157661828937619&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;    *Other transcriptions give similar results:&lt;/p&gt;
+
+&lt;p&gt;Li Fang-Kuei gives: pùbù &amp;lt; MC buk puo &amp;lt; OC bʰog puag&lt;/p&gt;
+
+&lt;p&gt;Dong Tongshu gives: pùbù &amp;lt; MC bʰuk puo &amp;lt; OC bagwh pagh  &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pride &amp; Ride</title>
+      <link>/post/pride-ride/</link>
+      <pubDate>Sat, 21 Nov 2015 16:13:35 +0000</pubDate>
+      <guid>/post/pride-ride/</guid>
+      <description>
+
+&lt;p&gt;A long anticipated update of my blog. The last update was published &lt;a href=&#34;http://www.thomasvanhoey.com/blog/warm-october-nights&#34; target=&#34;_blank&#34;&gt;almost a month ago&lt;/a&gt;. This time you are in for a treat (and a very long post, the way you like it!)&lt;/p&gt;
+
+&lt;p&gt;Thoughtful readers will notice that a major change has taken place - this post is written in English. (There is a minor change as well in the way I upload pictures - but it is in a test phase.)&lt;/p&gt;
+
+&lt;p&gt;Why is that? As I feel most of my Belgian audience as well as most of my more international audience (those few people around the world who stumble upon my blog) are proficient in English, it would be &amp;lsquo;unfair&amp;rsquo; to exclude the latter from my adventures, should they have any interest into the matter. I hope you, the reader, will agree that this is a good direction for this blog - if so, or if not, you are always welcome to share your thoughts in the comment section below. &lt;strong&gt;I am not talking to you spammer guys.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So, without further ado, let us get on with the show. The title of this blog is called Pride &amp;amp; Ride. This refers to the two main parts of this piece of writing - the Gay Pride Parade in Taiwan and my bike ride with friends to Fulong.&lt;/p&gt;
+
+&lt;h1 id=&#34;gay-pride&#34;&gt;&lt;strong&gt;Gay pride&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22547842724/in/album-72157659114560684/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/710/22547842724_55a6879fc8_z.jpg&#34; alt=&#34;NO AGE LIMIT&#34; /&gt;&lt;/a&gt;On the 31st of October 2015 Taiwan held its 13th LGBT Pride Parade (_Taiwan tongzhi youxing _台灣同志遊行). The theme of this parade was &amp;ldquo;NO AGE LIMIT&amp;rdquo; (&lt;em&gt;nianling bu shexian&lt;/em&gt; 年齡不設限). I had actually never attended a parade before - of any kind, so I was quite excited to see if flooding the streets en masse really provides a sense of mutual connectedness.This event is huge in Taiwan - sometimes described as the &amp;lsquo;Gay capital of the Far East&amp;rsquo;. I do not know whether this is true, but I can tell there were a lot of people (around 80 000) interested in the event. So much that there were two lines for walking.&lt;/p&gt;
+
+&lt;p&gt;We - because I went with friends - followed the red line. Since it was also Halloween on the same day, there were not only the typical gay pride outfits the (Belgian) news tends to cover, but also some funny scary outfits. My favourite was seeing &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Addams_Family&#34; target=&#34;_blank&#34;&gt;Wednesday from the Addams family&lt;/a&gt;. &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22548671903/in/album-72157659114560684/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5747/22548671903_acdaae2d5f_z.jpg&#34; alt=&#34;Wednesday&#34; /&gt;&lt;/a&gt;Another major dress up team seems to be animal based. This is not surprising, given the idea of the &amp;lsquo;Gay zoo&amp;rsquo;, which most prominently harbours bears, but also other &amp;lsquo;animals&amp;rsquo;. As for &amp;lsquo;companions&amp;rsquo;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Doge_(meme)&#34; target=&#34;_blank&#34;&gt;dog(e)s&lt;/a&gt; seem to do very well.   &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22781572297/in/album-72157659114560684/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5815/22781572297_6b45681512_z.jpg&#34; alt=&#34;Doge&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And to extend it even further, we even got a Pokémon mascotte that is probably familiar to all readers - Pikachu. That yellow skin, those brown and black markings, those red cheeks, that electric current; everybody&amp;rsquo;s favourite pokémon has got it all. ピカピカ！
+&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22781568327/in/album-72157659114560684/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/587/22781568327_3331fda7b2_z.jpg&#34; alt=&#34;Pikachu&#34; /&gt;&lt;/a&gt;  All in all, it was a great event. I was happy to see some of my old friends back - maybe it was some sort of serendipity or just coincidental, but at the time I was really glad. You can check all of my pictures if you click on one of the highlighted ones, or on the album that marks the end of the first part of this blog. They are worth looking at.&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22547205544/in/album-72157659114560684/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5723/22547205544_6cb60480f2_z.jpg&#34; alt=&#34;Power rangers&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[flickr_set id=&amp;quot;72157659114560684&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;bike-ride&#34;&gt;&lt;strong&gt;Bike ride&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;One week later, we - that is my Chinese friend Wang Hao 王浩, my French friend Léo and me - went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Fulong_Beach&#34; target=&#34;_blank&#34;&gt;Fulong 福隆 beach&lt;/a&gt; to have a nice bicycle ride next to the beach. Unfortunately, we took the wrong way. So instead of seeing the tourist hotspots we saw empty views. The tourist hotspots supposedly include the Old Caoling Tunnel (_Jiu Caoling suidao _舊草嶺隧道), a 2 km train tunnel built in 1924 through which you can bike and numerous of biking routes - like the one we took, but in the wrong direction. However, we still got some nice views.
+  &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22879892150/in/album-72157661394505216/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/774/22879892150_906c9aca53_z.jpg&#34; alt=&#34;Fulong beach&#34; /&gt;&lt;/a&gt;By driving in the wrong direction on our rental bikes, we eventually got to a deserted &amp;lsquo;beach&amp;rsquo; (if you could call it that), where we ate our special Fulong lunch boxes. Me and the French guy were pretty happy to find a private beach, but Wang Hao seemed unhappy as it is not where you have to go when visiting. I think this is perhaps a cultural difference - I tend to go to the places that &amp;lsquo;are undiscovered&amp;rsquo; or at least less crowded, while Chinese seem to go to the hotspots, take some pictures and leave. While we were in China (cf. virtually the whole of my blog up until now) this also seemed commonplace.
+&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23175706765/in/album-72157661394505216/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/569/23175706765_34c08b28d5_z.jpg&#34; alt=&#34;Private beach&#34; /&gt;&lt;/a&gt;Now, on the way back home we had an unfortunate encounter with some really rude people. As it was the first time I experienced real rudeness since I came to Taiwan, I was a bit shocked. The situation was as follows: we were on the slow train - meaning you can use your easycard for public transport to take it, because the train is shaped like a metro carriage. This implies that there is free seating, as long as you can find it. We crossed the train until we arrived in the final carriage and sure enough, we spotted some seats at the tail of the train. Unfortunately, and I was not aware of this, bicycles are human enough to fit into one of &lt;a href=&#34;https://framenet.icsi.berkeley.edu/fndrupal/&#34; target=&#34;_blank&#34;&gt;Fillmore&amp;rsquo;s Frame Semantic theory&lt;/a&gt; that includes frames for the lexeme &amp;lsquo;sit&amp;rsquo;, such as &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Change_posture&#34; target=&#34;_blank&#34;&gt;Change_posture&lt;/a&gt; and &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Posture&#34; target=&#34;_blank&#34;&gt;Posture&lt;/a&gt;, both of which require a sentient protagonist - in normal words: a human or an animal, but definitely not a bike. I friendly asked the people of the &amp;lsquo;fat people go biking for a day and take up all the space in the train&amp;rsquo; biking club if we maybe could move their bicycles in order to sit down. All I got for a reply was an angry stare and the words: &amp;ldquo;But we already put them there&amp;rdquo;. I will share with you my questionable looking face that I also posted on facebook.   &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23149603326/in/album-72157661394505216/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/771/23149603326_afb7e0e553_z.jpg&#34; alt=&#34;My bike is a person&#34; /&gt;&lt;/a&gt;Speaking of facebook, there were a lot of people who supported my frustration (almost 70), but some people commented that there are rude people everywhere around the globe and to think otherwise is a fallacy. I guess that commenter is right, but it still is not nice when it happens. And the worst part is that I did not know if I was &amp;lsquo;allowed&amp;rsquo; as a foreigner to continue the debate with these thick people or I should let it go. My nature seems to be to want to fight, but I saw in my companions&amp;rsquo; eyes that they did not want to fight for their seat, so I backed down as well. I was thinking back to a line i our guidebooks we got in the third year of high school, when we went on a class trip to London. It read:&lt;/p&gt;
+
+&lt;blockquote&gt;Provoceer geen marginalen! (Do not provoke marginalised people!)&lt;/blockquote&gt;
+
+&lt;p&gt;And it is one of the tenets that I use to find my way in life.&lt;/p&gt;
+
+&lt;h1 id=&#34;other-updates&#34;&gt;&lt;strong&gt;Other updates&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;Other important updates that I want to share with you are the bike ride around the neigbourhood. More specifically, I went bike riding in the water park near my dorm, next to the Xindian creek (Xindian xi 新店溪) and around my campus. Here are some nice pictures.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[flickr_set id=&amp;quot;72157659125106023&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Furthermore, we also went to sing karaoke, one of my favourite hobbies.   &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22547232484/in/album-72157659114547644/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5631/22547232484_02de42b917_z.jpg&#34; alt=&#34;IMG_20151116_004337&#34; /&gt;&lt;/a&gt; One of my favourite professor at the University of Leuven retired. Em. prof. dr. Willy Vande Walle was my thesis advisor when I was doing my MA in Sinology. I was a bit sad that I could not attend the celebration. However, I saw a call for videos or messages in some form and decided I should also make one of my own.  I like to think he was very happy with it, given his comment on the youtube video and the retweet - yes he is a very hip emeritus professor. I cannot begin to state how happy and fortunate I am to have being able to enjoy his lectures. I think he is a scholarly example for all of us, one of the reasons he got an &lt;a href=&#34;https://en.wikipedia.org/wiki/Order_of_the_Rising_Sun&#34; target=&#34;_blank&#34;&gt;Order of the Rising Sun&lt;/a&gt; award from Japan - having founded the Japanology department at the University of Leuven, while being a great Sinologist as well. I am proud to call myself a student of him - which makes us return to the first theme of this article.&lt;/p&gt;
+
+&lt;blockquote&gt;[https://t.co/OU9fxuKLlh](https://t.co/OU9fxuKLlh) Deze eufonische toespraak in spiegelschrift van mijn ideofonische wapenbroeder maakt me euforisch. — willy.vandewalle (@willyvandewalle) [October 30, 2015](https://twitter.com/willyvandewalle/status/660075599822725120)&lt;/blockquote&gt;
+
+&lt;p&gt;And lastly, I was interviewed by the University of Leuven&amp;rsquo;s student newspaper &lt;a href=&#34;http://veto.be/&#34; target=&#34;_blank&#34;&gt;Veto&lt;/a&gt; (2015 42:6). Since their archive seems to behave strangely, I will upload a picture of the article here.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/22784814797/in/dateposted-public/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/592/22784814797_fc0e403212_z.jpg&#34; alt=&#34;Schermafbeelding 2015-11-21 om 23.59.59&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s all folks!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Warm October Nights</title>
+      <link>/post/warm-october-nights/</link>
+      <pubDate>Sun, 25 Oct 2015 16:53:15 +0000</pubDate>
+      <guid>/post/warm-october-nights/</guid>
+      <description>&lt;p&gt;Liefste lezers, ik hoop dat jullie klaar zijn voor een nieuwe &lt;em&gt;longread&lt;/em&gt;, &lt;a href=&#34;http://www.thomasvanhoey.com/blog/school-1-les-2-vrije-tijd&#34; target=&#34;_blank&#34;&gt;na mijn vorige post over school, in beide etymologische betekenissen.&lt;/a&gt; Net als De Morgen kondig ik dit nu ook aan, maar ik geef jullie wel allemaal toegang tot mijn premium-content, in tegenstelling tot de voornoemde krant. Vandaag staan op het programma: een Japanse pizza party, een barbecue, een Nationale Feestdag, een basiscursus &amp;lsquo;hoe moet ik het orakel raadplegen&amp;rsquo;, enkele anekdotes, een prezentatie (sic) die ik heb gegeven en een videoclip. Enjoy!&lt;/p&gt;
+
+&lt;p&gt;We beginnen met een pizza party, Japan style. De Japanners hier, met wie ik ondertussen al goede vriendjes geworden ben en converseer in het Japanees (mislukte poging om Japans-Chinees te zeggen), hadden mij uitgenodigd voor een barbecue op het &lt;a href=&#34;https://en.wikipedia.org/wiki/Mid-Autumn_Festival&#34; target=&#34;_blank&#34;&gt;Moonfestival / Mid-Autumn Festival (&lt;em&gt;Zhongqiujie&lt;/em&gt; 中秋節).&lt;/a&gt; Traditioneel eet je daarbij &lt;em&gt;mooncakes&lt;/em&gt;, maar hier in Taiwan eten ze dan ook barbecue. Su laoshi (&lt;a href=&#34;http://www.thomasvanhoey.com/blog/school-1-les-2-vrije-tijd&#34; target=&#34;_blank&#34;&gt;zie vorige post&lt;/a&gt;) zegt dat dit de invloed van reclame is op ons denken en onze taal, wat niet zonder gevolgen is, memento “it’s all about pragmatics”.&lt;/p&gt;
+
+&lt;p&gt;Maar goed, omdat we te maken kregen met een tyfoon (zie mijn ongelukkige natte foto hieronder), werd de barbecue onder de brug afgelast en vervangen door een pizza party. Yummy yummy in my tummy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5639&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Een week later, op 3 oktober, was het weer een eetfestijn. Deze keer kreeg ik wel barbecue te eten, bij iemand die ik had ontmoet t&lt;a href=&#34;http://www.thomasvanhoey.com/blog/welcome-mixers-pandas-en-zwitsers&#34; target=&#34;_blank&#34;&gt;oen Katrin hier was - Jason&lt;/a&gt;. Het was superlekker en ondanks dat ik eigenlijk enkel Jason slechts een dag kende, heb ik toch veel vriendjes gemaakt.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5640&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vijf dagen later kwamen Dan (uit New York, woont nu ook in Taiwan) en Monika (uit Polen, woont nu in Shanghai) op bezoek. Ik ken hen beiden nog van in Suzhou, waar ze in het begin mee taekwondo deden en nadien ook gewoon vrienden werden. Het was zo goed om vooral Monika nog eens terug te zien - en ik wil haar zeker gaan bezoeken in Polen. Bovendien moet ze, omwille van visumgerelateerde redenen, om de maand het land, te weten China, uit en kan ze mij dus elke maand komen bezoeken, haha.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5641&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Twee dagen later was het ‘&lt;a href=&#34;https://en.wikipedia.org/wiki/National_Day_of_the_Republic_of_China&#34; target=&#34;_blank&#34;&gt;Dubbel Tien Dag’ (Shuang shi jie 雙十節)&lt;/a&gt;, de nationale feestdag van Taiwan, op 10 oktober. We kregen verlof op vrijdag en maandag, maar omdat ik toch nooit les heb op maandag heb ik daar niet veel van gemerkt.&lt;/p&gt;
+
+&lt;p&gt;Ik heb het weekend doorgebracht met mijn vriend Choco in &lt;a href=&#34;https://en.wikipedia.org/wiki/Zhongli_District&#34; target=&#34;_blank&#34;&gt;Zhongli&lt;/a&gt;, de tweede grootste stad in het district van Taoyuan, naast Taipei. Er wonen veel inwijkelingen uit Zuidoost-Azië (Filipijnen en Thailand) daar. We hebben anderhalve dag daar gespendeerd bij zijn vriend(inn)en Lilith en Guitou, die daar een klerenwinkel hebben op de nachtmarkt. Veel wachten en in zekere zin ook saai, maar het deed wonderen voor stressverlichting. Bovendien heeft Lilith blijkbaar ook voorspellende gaves en heeft ze tarot gelegd voor mij.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5642&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;De dag nadien zijn we naar tempels in de buurt gegaan en hebben we gebeden. Nu komt het moment waarop ik jullie vertel hoe orakels raadplegen in zijn werk gaat.&lt;/p&gt;
+
+&lt;p&gt;Stap 1. Koop een bundeltje met offergaven.&lt;/p&gt;
+
+&lt;p&gt;Stap 2. Steek de wierook aan.&lt;/p&gt;
+
+&lt;p&gt;Stap 3. Plant de wierook in alle verschillende wierookvaten. Vergeet ook niet om je voor te stellen aan de godheid van de tempel.&lt;/p&gt;
+
+&lt;p&gt;Stap 4. De godheid van de tempel heeft ondertussen je offergaven geheiligd. Ga je _delivery_ ophalen.&lt;/p&gt;
+
+&lt;p&gt;Stap 5. Verbrand het papieren geld om de godheid te betalen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5644&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nu al die dingen achter de rug zijn, mag je het orakel raadplegen. Neem twee ‘babuei’ (&lt;em&gt;j&lt;a href=&#34;https://en.wikipedia.org/wiki/Jiaobei&#34; target=&#34;_blank&#34;&gt;iaobei&lt;/a&gt;&lt;/em&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Jiaobei&#34; target=&#34;_blank&#34;&gt; 筊杯) (in het Taiwanees klinkt dit heel hard als ‘babuei’)&lt;/a&gt; - maanvormige en gelijkvormige schelpachtige rode dingen. Stel je voor aan de god, wees beleefd. Vertel hem/haar (het geslacht van Guanyin is notoir moeilijk te  achterhalen) 1. wie je bent; 2. waar je vandaan komt - je adres; 3. je naam; 4. je leeftijd; 5. tot welk dier je behoort volgens de Chinese horoscoop; 6. leid je situatie en vraag in.&lt;/p&gt;
+
+&lt;p&gt;Daarna gooi je de babuei op de grond en als ze allebei verschillend liggen (1 met de ronde kant naar boven; 1 met de platte kant naar boven), mag je een stokje trekken. Op deze stok staat een nummer. Bedankt de godheid voor zijn gulheid.&lt;/p&gt;
+
+&lt;p&gt;Als je ‘pech hebt’ en beide platte kanten of beide ronde kanten liggen naar boven, dan moet je opnieuw met de godheid communiceren, want dan heb je het wellicht niet goed verwoord en begrijpt hij/zij je vraag niet. Met een ‘beetje geluk’ en welwillendheid van de godheid kom je terecht op een ronde en een platte kant en mag je een stok trekken.&lt;/p&gt;
+
+&lt;p&gt;Na het trekken van de stok met de nummer, bedank je de godheid en moet je het papiertje dat overeenstemt met het nummer op de stok gaan halen en kan je het interpreteren. Vaak ligt er ook een boek met uitleg in ‘normaal’ Chinees over het nummer dat je getrokken hebt.&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5643&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; Dat is eigenlijk hoe het werkt.&lt;/p&gt;
+
+&lt;p&gt;Na het tempelbezoek zijn hebben we een naburig stadje bezocht en daarna gingen we terug naar Zhongli voor de nachtmarkt. ’s Avonds hebben Lilith en Guitou ons teruggevoerd naar Taipei, aten we nachtelijke noedels en bezochten we hun favoriete tempel in Taipei - die van de boeddha met de vier gezichten, alwaar ik nogmaals het orakel heb geraadpleegd en gelijkaardige antwoorden kreeg. Ik denk dat ik hier wel bijgelovig van kan worden :).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5646&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Enkele dagen later kreeg ik een ooglidontsteking (hordeolum voor de medici). Ik ga er geen foto bijvoegen want die is afschrikwekkend. Een leuk weetje: in het Chinees heet dat &lt;em&gt;zhen yan&lt;/em&gt; 針眼 ’naald-oog’ en komt het blijkbaar omdat je iets hebt gezien dat je niet had mogen zien. Al mijn mannelijke vrienden, inclusief de dokter, vroegen of ik geen meisjes had bespioneerd onder de douche… Een minder leuk weetje: blijkbaar moet je bij de dokter zelf achter een diagnoseformulier vragen, anders krijg je geen recompensatie van de groepsverzekering van de universiteit en moet je een tweede consultatie doen, wat echt belachelijk is en waarover ik uitvoerig geklaagd heb. Een ander leuk weetje is dan weer dat het mij maar 5 euro gekost heeft voor doktersbezoek en aankoop van de medicijnen, die enorm effectief waren, en ik het dus niet hoef terug te vorderen… deze keer.&lt;/p&gt;
+
+&lt;p&gt;Andere dingen die nog zijn voorgevallen: ik ben naar de kapper geweest. Verder heb ik de verjaardag van Snow gevierd en met vrienden van de summer school geskypet. En deze week ben ik ook, eindelijk, nog eens naar de karaoke geweest met enkele van mijn klasgenoten. Oh, en ik kocht boeken met mijn eerste beursgeld. #loon&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5650&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ik heb ook dit leuke filmpje gevonden dat een exclusief inzicht biedt in hoe mijn weg naar school eruit ziet, vertrekkende van in de lounge van mijn dorm.&lt;/p&gt;
+
+&lt;p&gt;Als voorvoorlaatste nog enkele foto’s van een trip naar &lt;a href=&#34;https://en.wikipedia.org/wiki/Jiufen&#34; target=&#34;_blank&#34;&gt;Jiufen 九份 &lt;/a&gt;gisteren. Het zou niet regenen. Daar was het dan ook mee gezegd, want vrijwel de hele dag liepen we in de mist in de bergen - weer dat werd omschreven met de ideofonische constructie ((_wu) mengmeng_ 霧濛濛) ‘mistig, droezelig’. Ik was daar eigenlijk heel blij mee, want het bewijst dat ideofonen geen gefingeerd concept is dat enkel voorkomt in poëzie of iets dergelijks, maar wel degelijk dagdagelijkse kost is - zij het dan zonder Jeroen Meus.&lt;/p&gt;
+
+&lt;p&gt;We bezochten eerst het mijnstadje Jinguashi 金瓜石 bovenop de berg, halie hallo, waar ik de tweede grootste goudstaaf ter wereld heb kunnen aanraken. (De eerste bevindt zich ergens in Japan.)&lt;/p&gt;
+
+&lt;p&gt;Daarna Jiufen &lt;em&gt;proper&lt;/em&gt;. We gingen door het smalle straatje de berg op, langs de winkeltjes met snacks en ik kocht _chou doufu_ ‘stinky tofu’. Stinky, maar wel lekker. Op het einde van onze trip gingen we nog langs het bekende zicht op een theehuis waarop het theehuis in Miyazaki’s Studio Ghibli film &lt;a href=&#34;https://en.wikipedia.org/wiki/Spirited_Away&#34; target=&#34;_blank&#34;&gt;_Spirited Away_ (&lt;em&gt;Sen to Chihiro no kamikakushi&lt;/em&gt; 千と千尋の神隠し)&lt;/a&gt; geënt is. De mist gaf me anderzijds wel meer het gevoel dat mijn &lt;em&gt;spirit&lt;/em&gt; &lt;em&gt;awayed&lt;/em&gt; was.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5651&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Als voorlaatste sluit ik hier ook nog de prezi presentatie in die ik deze week heb gegeven tijdens de les Advanced Cognitive Grammar.&lt;/p&gt;
+
+&lt;p&gt;En als allerlaatste sluit ik af met een liedje dat ik nu pas eindelijk begrijp: ‘Warm October Nights’ van Yellowcard (de nachten hier zijn nog warm - mijn raam staat open; in tegenstelling tot België…).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Toekomst in Taiwan</title>
+      <link>/post/toekomst-in-taiwan/</link>
+      <pubDate>Fri, 11 Sep 2015 12:40:15 +0000</pubDate>
+      <guid>/post/toekomst-in-taiwan/</guid>
+      <description>&lt;p&gt;Waarschuwing: lange post!&lt;/p&gt;
+
+&lt;p&gt;Dus op de dag van &lt;a href=&#34;http://www.thomasvanhoey.com/belgie/afscheid-iii&#34; target=&#34;_blank&#34;&gt;mijn laatste blogpost (Afscheid III)&lt;/a&gt; ben ik vertrokken naar Taiwan. Ik werd uitgewuifd op de luchthaven door mijn ouders en door mijn sinologie _posse_ - Lai Man, Anneleen, Joke en Yoana. Bedankt aan jullie allemaal, want dat betekende toch wel veel voor mij.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5030&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mijn vlucht vertrok voorspoedig ’s middags (Hainan Airlines) en ik kwam de volgende ochtend ca. 5 uur toe in Peking en zou dus normaal zo’n 3 à 4 uur hebben om over te stappen. Verkeerd! Met de weg die ik volgde bevond ik mij na het immens lang aanschuiven ineens buiten de luchthaven en moest ik dus terug door de douane gaan. Ook was ik niet in de mooie terminal waar ik de Starbucks weet zijn e.d., maar in een kleinere (oudere?). Dus uiteindelijk had ik aan de gate nog een halfuurtje om even mijn gsm op te zetten en aan het thuisfront te laten weten dat ik toch al in Peking was geraakt.&lt;/p&gt;
+
+&lt;p&gt;Vervolgens nam ik de vlieger naar Taipei en met wat vertraging kon ik eindelijk nog eens Snow zien!! Zij was een van de begeleiders van de zomerschool en ook een van mijn beste vrienden hier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5031&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Normaal mocht ik bij haar blijven slapen de eerste nacht, maar omdat zij toevallig voor haar werk naar Europa afreisde, heb ik mijn &lt;em&gt;guanxi&lt;/em&gt; 關係 ‘connecties’ ingeroepen en mocht ik blijven slapen bij de grootouders van Hsuan, mijn Taiwanese vriend met een Antwerps accent. Dat was geweldig! Vorig jaar heb ik bij zijn moeder gelogeerd en nu bij zijn grootouders. Heel die familie is echt supervriendelijk en ze kunnen allemaal goed koken! Verschillende gerechtjes bij elke maaltijd, van goede kwaliteit “want ik ben vroeger verpleegster geweest”, zei de oma. Nadien heeft ze mij ook nog servies gegeven om te gebruiken “want dat had ze te veel”. En de opa heeft mij weggebracht naar mijn kot “om te zien of alles in orde was”. Bovendien ben ik ook al uitgenodigd op alle feestdagen. Dus iedereen is echt supervriendelijk.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5032&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dinsdag ben ik ook naar het ziekenhuis geweest, voor mijn tweede health exam, nu in Taiwan. Ik kwam daar om acht uur ’s morgens toe en er zaten een Nederlander en een Duitser. Als je denkt dat dat het begin is van een goede mop, dan heb je deels gelijk: zij hadden gehoord dat het blijkbaar drie uur zou duren voor ze daar terug buiten konden gaan, maar ik was daar al op een uurtje terug buiten - en heb ze niet meer gezien bij geen enkele van de vijf of zes plaatsen die we moesten bezoeken volgens het papier dat ons in de handen was geduwd (intake, pipi, bloed, x-ray, oren en zicht, rest van een normale check-up). Het trouwens te doen in het “oude” universitair ziekenhuis. _Eat this Gasthuisberg_ haha!&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5039&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Daarna ben ik dus mijn kot gaan regelen. Ik zit vrij hoog, op het 12de verdiep (11de in normale standaarden), en 1 kamer links van degene &lt;a href=&#34;http://www.thomasvanhoey.com/blog/afscheid-ii&#34; target=&#34;_blank&#34;&gt;waar ik in de zomer zat vorig jaar&lt;/a&gt;. Ik heb hier echt een mooi zicht, op de kant die ik wilde (namelijk geen gebouwen vlak voor mij - de andere kant kijkt uit op de Taipei 101). Dit zijn foto’s van mijn kamer:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5040&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Woensdag heb ik mijn buddy Wen-Lin ontmoet! Hij was supertof en heeft me een fiets gegeven, alsook meegenomen naar een traditioneel Taiwanees/Chinees ontbijt met _jiaozi_ en melkthee. Nadien toonde hij mij al wat gebouwen op de campus. Ik kom goed met hem overeen.&lt;/p&gt;
+
+&lt;p&gt;We zijn ook gestopt bij het International Office hier, dat wel goed lijkt te werken en waar ik enkele van mijn vriendinnen van de summer school heb teruggezien (Margaret, Yiru, Jung-chen). Leuk leuk.&lt;/p&gt;
+
+&lt;p&gt;In de namiddag ben ik naar de Confucius tempel geweest en de nabijgelegen Bao’an tempel en heb daar het orakel geraadpleegd. Dat verzekerde mij dat ik wat rustiger moest zijn over mijn doctoraat, alles kwam wel goed.&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5042&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Donderdag zijn er twee dingen gebeurd: eerst was er de _chahui_ 茶會 ‘theevergadering’ van mijn department. Dat was leuk want alle nieuwe studenten mochten zich (op een beetje beschamende manier soms) voorstellen, en we konden ook alle proffen ontmoeten van taalkunde. Behalve mijn promotor - die ik dus nog steeds niet heb gezien… Word wel een beetje ongerust, maar volgens het orakel geen zorgen, alles oke. Er was thee en versnaperingen en ’s middags een pizzaparty :D Oh, en ik had een kaartje gekregen met Teigetje op en mijn Chinese naam dat ik jullie echt niet wilde onthouden:&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5044&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In de namiddag dan, was er &lt;em&gt;orientation&lt;/em&gt; (lees: vier uur luisteren). Het begon met een rare speech van het hoofd van het international office over een spreuk van Confucius: (bonuspunten voor de sinologen die direct dachten aan) _you peng zi yuan fang lai, bu yi le hu?_ 有朋自遠方來，不亦樂乎？ (Als er vrienden/collega’s van ver komen, is dat dan niet leuk?) - een zinnetje dat dus wel veel gebruikt wordt, &lt;a href=&#34;http://www.thomasvanhoey.com/reisjes/afscheid-i&#34; target=&#34;_blank&#34;&gt;maar waar je geen korting mee krijgt in de Confuciustempel in zijn thuisstad Qufu.&lt;/a&gt; Daarna sprak hij over de _grand tour_ in Europa en dat dit de moderne variant is. En over zijn lievelingsdier, de kikker, vertelde hij drie verhaaltjes: (Nog meer bonuspunten:) _Frog in the well_ (井底之蛙), &lt;em&gt;Boiling frog&lt;/em&gt;, en de kleine dove kikker die wint van iedereen ofzo.&lt;/p&gt;
+
+&lt;p&gt;Het werd gebroken met een jongleervoorstelling (natuurlijk, want wat doen wij hier anders??), gevolgd door de raarste Amerikaan ever (die natuurlijk iets elektrisch ofzo studeerde) en info over inschrijving en andere, toch wel nuttige zaken.&lt;/p&gt;
+
+&lt;p&gt;Nadien ben ik iets gaan eten met een Fransman die ik heb ontmoet (bonuspunten voor mijn Frans) en afkomstig was uit la Réunion. Hij had zelf nog geen brokstukken gevonden van het verdwenen vliegtuig.&lt;/p&gt;
+
+&lt;p&gt;Vandaag, vrijdag, had ik me voorgenomen om vroeg op te staan met de registratie, maar mijn jetlag (nog steeds) verhinderde dat plan. Ik werd wakker om 10:30 en ben dan maar snel gehold naar de printer voor wat documenten en heb nu ook mijn studentenkaart!&lt;/p&gt;
+
+&lt;p&gt;Ben dan ook iets gaan eten met een Chinese Nederlander, Joe, in de Buddhist Vegetarian Palace, en nadien een koffietje gaan drinken in een tweedehandsboekenwinkel die uitkeek over de toegangspoort van de universiteit. Toffe kerel, net als alle kerels die ik heb ontmoet op de campus tour nadien: Nederlanders, Fransmannen (Franslui? Franslieden? Is het meervoud van -man altijd -lui/-lieden?), Spanjaarden enz.&lt;/p&gt;
+
+&lt;p&gt;Al bij al kan ik zeggen dat het hier goed is begonnen en dat het nu wel echt echt echt begint aan te voelen. Mijn toekomst in Taiwan was goed en volgens het orakel is mijn toekomst in Taiwan ook goed! Tot de volgende!&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--5046&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Afscheid (II)</title>
+      <link>/post/afscheid-ii/</link>
+      <pubDate>Sat, 05 Sep 2015 12:23:45 +0000</pubDate>
+      <guid>/post/afscheid-ii/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.thomasvanhoey.com/reisjes/afscheid-i&#34; target=&#34;_blank&#34;&gt;In de vorige update&lt;/a&gt; kon je lezen hoe het afscheid in China gebeurde. Hier zal ik het hebben over de thuiskomst en wat er in de laatste twee jaar gebeurde.&lt;/p&gt;
+
+&lt;p&gt;We kwamen aan in Zaventem. Ik droeg mijn rijsthoed want dat was een souvenir, maar hij paste niet in mijn koffer noch mijn rugzak. Die was trouwens gecontroleerd geweest in Heathrow, want mijn deo zat er nog in. De mevrouw van de douane vond dat hij zwaarder was dan 10kg wat ik contesteerde, maar eigenlijk zat ze er niet veel naast - ik bleek 25kg op mijn rug mee te sjouwen. Maar goed, thuis.&lt;/p&gt;
+
+&lt;p&gt;Ik kwam terug in Loenhout, kreeg als rasechte Belg frieten voorgeschoteld en smulde ervan. De rest van de vakantie hing ik thuis rond en sprak af met vrienden en mijn vriend. Vervolgens begon het jaar terug en begon ik mijn master in de Sinologie, terwijl ik ook preses was, of toch probeerde te zijn, van &lt;a href=&#34;http://eoos.be&#34; target=&#34;_blank&#34;&gt;mijn studentenkring Eoos - beste kring ever&lt;/a&gt;! Mijn voorgevoel dat ik had in Huangshan bleek dus gegrond. Dat jaar verliep ongelooflijk goed en ik heb eigenlijk nergens spijt van. Er volgen evenwel niet veel foto’s omdat de meeste niet zo vatbaar zijn voor publicatie :p.&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--4926&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Op het einde van het jaar zijn Joke en ik onze Tsjechische vrienden gaan bezoeken in&amp;hellip; Tsjechië. Het was zo leuk om na een jaar mijn kamergenoot Jan en de meisjes Míša en Helena (Helča) terug te zien! We hebben Praag bezocht, alsook Podbo#!?#y, de onuitspreekbare plaats waar Míša woont, en Čelákovice, waar Jan woont en het dichtbij gelegen Kutná Hora.&lt;/p&gt;
+
+&lt;p&gt; &lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--4927&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In de vakantie had ik de kans om naar National Taiwan University te gaan om deel te nemen aan hun summer school “Translating Chinese” met een beurs. Ik denk dat die zes weken daar bijna het mooiste was dat me kon overkomen - durf ik te zeggen dat het beter was dan Suzhou?&lt;/p&gt;
+
+&lt;p&gt;Ook daar heb ik vele vrienden leren kennen (Snow, Antonio, Irene, Jiye, Aaron, Sean, Andy, Steven, Austin, Quint, Magnus&amp;hellip; zo vele mensen) en de enkele foto’s die ik hieronder toon, doen de mooie momenten ginder niet genoeg recht aan. Die summer school mondde trouwens uit in een vertaalproject, dus check dat zeker uit hier op de &lt;a href=&#34;http://www.babel101.com/&#34; target=&#34;_blank&#34;&gt;site van Babel 101&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Maar ook die intensieve periode liep helaas (te) snel ten einde en alweer was er een vrij emotioneel afscheid. Ik weet nog hoe ik net terug thuis kwam en zei: “Zet me terug op de vlieger.” Bovendien zei de zeegod in een tempel daar al dat ik zou terugkeren&amp;hellip; Tijd voor sfeerbeelden!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.thomasvanhoey.com/nextgen-attach_to_post/preview/id--4928&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

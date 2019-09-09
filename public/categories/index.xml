@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories | Thomas Van Hoey | Sinologica</title>
+    <link>/categories/</link>
+      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>/categories/</link>
+    </image>
+    
+    <item>
+      <title>Taiwan</title>
+      <link>/categories/taiwan/</link>
+      <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/taiwan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>/categories/blog/</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shanghai</title>
+      <link>/categories/shanghai/</link>
+      <pubDate>Fri, 03 Feb 2017 12:03:49 +0000</pubDate>
+      <guid>/categories/shanghai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Suzhou</title>
+      <link>/categories/suzhou/</link>
+      <pubDate>Fri, 03 Feb 2017 12:03:49 +0000</pubDate>
+      <guid>/categories/suzhou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taipei</title>
+      <link>/categories/taipei/</link>
+      <pubDate>Tue, 31 May 2016 15:40:48 +0000</pubDate>
+      <guid>/categories/taipei/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>België</title>
+      <link>/categories/belgie/</link>
+      <pubDate>Mon, 30 May 2016 14:24:33 +0000</pubDate>
+      <guid>/categories/belgie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reisjes</title>
+      <link>/categories/reisjes/</link>
+      <pubDate>Fri, 04 Sep 2015 20:32:59 +0000</pubDate>
+      <guid>/categories/reisjes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Huangshan</title>
+      <link>/categories/huangshan/</link>
+      <pubDate>Thu, 27 Jun 2013 07:22:04 +0000</pubDate>
+      <guid>/categories/huangshan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ningbo</title>
+      <link>/categories/ningbo/</link>
+      <pubDate>Wed, 31 Oct 2012 13:40:23 +0000</pubDate>
+      <guid>/categories/ningbo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
