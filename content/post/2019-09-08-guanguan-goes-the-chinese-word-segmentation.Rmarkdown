@@ -4,9 +4,8 @@ author: Thomas Van Hoey
 date: '2019-09-08'
 slug: guanguan-goes-the-chinese-word-segmentation
 categories:
-  - Taiwan
+  - Blog
 tags:
-  - academic workflow
   - coding
   - R
   - python
@@ -19,7 +18,7 @@ header:
 
 # tl; dr
 
-This double blog is first about the opening line of the *Book of Odes*, and later about how to deal with Chinese word segmentation, and my current implementation of it. So if you're only interested in the computational part, look at the next one. I just wrote this to kind of wrap my head around some of these issues. 
+This double blog is first about the opening line of the *Book of Odes*, and later about how to deal with Chinese word segmentation, and my current implementation of it. So if you're only [interested in the computational part, look at the next one](../guanguan-goes-the-chinese-word-segmentation-2). If, on the other hand, you want to know more about my views on the translation of *guān guān* etc., [look at the first part](../guanguan-goes-the-chinese-word-segmentation).
 
 # Intro
 

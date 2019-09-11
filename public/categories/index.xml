@@ -5,7 +5,7 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
@@ -13,17 +13,9 @@
     </image>
     
     <item>
-      <title>Taiwan</title>
-      <link>/categories/taiwan/</link>
-      <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/taiwan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Blog</title>
       <link>/categories/blog/</link>
-      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/categories/blog/</guid>
       <description></description>
     </item>
@@ -41,6 +33,14 @@
       <link>/categories/suzhou/</link>
       <pubDate>Fri, 03 Feb 2017 12:03:49 +0000</pubDate>
       <guid>/categories/suzhou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taiwan</title>
+      <link>/categories/taiwan/</link>
+      <pubDate>Fri, 15 Jul 2016 15:32:28 +0000</pubDate>
+      <guid>/categories/taiwan/</guid>
       <description></description>
     </item>
     

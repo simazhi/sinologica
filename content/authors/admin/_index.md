@@ -18,7 +18,7 @@ organizations:
   url: "https://linguistics.ntu.edu.tw"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include ideophones, (Premodern) Chinese, historical linguistics, Cognitive LInguistics, and lexical semantics.
+bio: My research interests include ideophones, (Premodern) Chinese, historical linguistics, Cognitive Linguistics, and lexical semantics.
 
 interests:
 - ideophones
