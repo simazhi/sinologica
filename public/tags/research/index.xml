@@ -22,7 +22,7 @@
 
 &lt;div id=&#34;tl-dr&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;tl ; dr&lt;/h1&gt;
-&lt;p&gt;In this post I look at the family of collexeme analysis methods originated by Gries and Stefanowitsch.
+&lt;p&gt;In this post I look at the family of &lt;a href=&#34;https://en.wikipedia.org/wiki/Collostructional_analysis&#34;&gt;collexeme analysis&lt;/a&gt; methods originated by Gries and Stefanowitsch.
 Since they use a lot of Base R, and love using vectors, there is a hurdle that needs to be conquered if you are used to the rectangles in tidy data.
 I first give an overview of what the method tries to do, and then at the end show the hurdle in detail, followed by the steps necessary to enable the computation of the desired variables and statistical tests (association measures).
 Basically, you need to convert from pure tidy data to a tidy contingency format.&lt;/p&gt;
