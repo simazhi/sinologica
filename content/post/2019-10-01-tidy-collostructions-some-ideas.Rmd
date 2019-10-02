@@ -17,7 +17,7 @@ authors: []
 lastmod: '2019-10-01T22:56:23+08:00'
 featured: no
 header:
-  image: '2019/col.png'
+  image: '2019/collostructions.png'
   caption: ''
   focal_point: ''
   preview_only: no
