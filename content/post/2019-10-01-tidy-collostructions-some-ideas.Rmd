@@ -1,0 +1,426 @@
+---
+title: Tidy collostructions
+author: Thomas Van Hoey
+date: '2019-10-01'
+slug: tidy-collostructions
+categories:
+  - Blog
+tags:
+  - R
+  - research
+  - academic workflow
+  - coding
+  - association measures
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2019-10-01T22:56:23+08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(kableExtra)
+```
+
+# tl ; dr
+
+In this post I look at the family of collexeme analysis methods originated by Gries and Stefanowitsch. 
+Since they use a lot of Base R, and love using vectors, there is a hurdle that needs to be conquered if you are used to the rectangles in tidy data.
+I first give an overview of what the method tries to do, and then at the end show the hurdle in detail, followed by the steps necessary to enable the computation of the desired variables and statistical tests (association measures). 
+Basically, you need to convert from pure tidy data to a tidy contingency format.
+
+# Introduction
+
+So in order to finalize my database on Chinese ideophones, creatively entitled [CHIDEOD](https://osf.io/kpwgf/), I decided to work through [Stefan Gries](http://www.stgries.info)'s *Quantitative corpus linguistics with R* (2016; 2nd edition; [companion website here](http://www.stgries.info/research/qclwr/qclwr.html)).  
+That together with [Natalia Levshina](http://www.natalialevshina.com)'s *How to do linguistics with R* (2015; 1st edition; [companion website here](https://benjamins.com/sites/z.195/)), which I worked through last June, has given me a lot of inspiration to tackle a number issues I have been struggling with, or at least thinking about without really knowing how to tackle them — I guess that counts as *struggling with*.
+By the way, it is locally kind of confirmed currently that Levshina will be a keynote speaker at our CLDC conference in May.
+So you can already prepare those abstracts if you wish to attempt to present here in Taipei.
+
+Anyway, one of the more intriguing family of methods to investigate the relation between constructions and words that fill the slots is the family of collexeme analysis.
+
+# What is collexeme analysis?
+
+As [Gries (2019)](https://doi.org/10.1075/ijcl.00011.gri) discusses, the methodology of collexeme analysis is an extension of the notions of a) *collocation* (which words really belong together, e.g. *watch TV* and *watch a movie* will have a stronger collocational bond than *watch a powerpoint presentation*, although the latter has become a weekly activity), and b) *colligation* (what constructions belong together, e.g. *watch* will typically be followed by a noun, although verb phrases like *watch him play* also occur).
+
+So the basis of this method is a [contingency table](https://en.wikipedia.org/wiki/Contingency_table) (or cross-table; or [*kruistabel*](https://nl.wikipedia.org/wiki/Kruistabel) if you love Dutch; *lièlián biǎo* 列聯表 in Chinese (apparently)).
+Basically, something like this, that should look somewhat familiar:
+
+|                                  | Element 2 | Not element 2 / other elements | Sum
+|----------------------------------|-----------|--------------------------------|---
+**Element 1 **                     | a         |        b                       | a + b
+**Not element 1 / other elements** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+These letters (a, b, c, d) play an important role in colloxeme analyses.
+So stay tuned for that.
+
+## Approach 1: Collexeme analysis
+So what [Stefanowitsch & Gries (2003)](https://doi.org/10.1075/ijcl.8.2.03ste) wanted to investigate was the [N *waiting to happen*] construction, e.g. *an accident waiting to happen*, *a disaster waiting to happen* etc. 
+In this **collexeme analysis** you are quantifying to what degree the words found in a corpus occur in that construction: are they attracted or repulsed, and by how much?
+
+In this scenario, element 1 is e.g. *an accident*, and element 2 the construction *waiting to happen*.
+
+|                                  | *waiting to happen* | not *waiting to happen* | Sum
+|----------------------------------|-----------|--------------------------------|---
+***an accident***                     | a         |        b                       | a + b
+not ***an accident*** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+
+## Approach 2: Distinctive collexeme analysis
+
+A year later, [Gries & Stefanowitsch (2004)](https://doi.org/10.1075/ijcl.9.1.06gri) extended the methodology to quantify to what degree the words prefer to appear in one of two constructions. 
+For example, the ditransitive *give him a call* vs. the prepositional *give a call to him*. 
+Here the table changes into:
+
+|                                  | ditransitive | prepositional | Sum
+|----------------------------------|-----------|--------------------------------|---
+***give***                     | a         |        b                       | a + b
+not ***give*** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+## Approach 3: Co-varying collexeme analysis
+
+The third seminal paper was published in the same year (Gries & Stefanowitsch 2004; ISBN: 9781575864648) sought to quantify the attraction / repulsion between two different slots in a construction, e.g. *trick ... into buying*, *force ... into accepting* etc. 
+For this, the table is adapted to:
+
+|                                  | *accepting* | not *accepting* | Sum
+|----------------------------------|-----------|--------------------------------|---
+***force***                     | a         |        b                       | a + b
+not ***force*** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+
+## Okay, I get that table stuff, what next?
+
+Let's say you were able to get the frequencies from a corpus -- I should probably mention that, `*cough* *cough*` not everybody agrees with this kind of contingency tables, the overview paper by [Gries (2019)](https://doi.org/10.1075/ijcl.00011.gri) has plenty of interesting references and exciting rebuttals -- and you have this table, possibly for lots of elements and/or constructions.
+
+We'll keep an example here that I calculated with Gries's (2016) book mentioned above.
+One of the case studies looks at verbs that co-occur with the modal verb *must*, e.g. *must accept*, *must agree*, *must confess*, vs. how much these verbs occur with other modal verbs, e.g *should accept*, *should agree* etc.
+So in this case, element 1 was a verb (*confess*) and element 2 was *must*; not-element-1 were all the other verbs, and not-element-2 were all the other modal verbs.
+
+The respective table from an abstract level looks like this:
+
+|                                  | *must* | not *must* | Sum
+|----------------------------------|-----------|--------------------------------|---
+***confess***                     | a         |        b                       | a + b
+not ***confess*** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+I got these frequencies from the BNC (as Gries shows in his book, but I used my tidyverse skills^TM^ to get them, so if they are slightly off, then it was because of not following his script completely):
+
+|                                  | *must* | not *must* | Sum
+|----------------------------------|-----------|--------------------------------|---
+***confess***                     | 11         |        1                       | 12
+not ***confess*** | 1990         |     62114                          | 64104
+**Sum**                            | 2001     | 62115                  | 64116
+
+Or in a Base R table:
+
+```{r}
+a <- 11
+b <- 1
+c <- 1990
+d <- 62114
+
+confess <- c(a, b)
+notconfess <- c(c, d)
+
+must.table <- rbind(confess, notconfess) 
+colnames(must.table) <- c("must", "notmust")
+must.table
+```
+
+
+What do you do now?
+
+*Now it's time for letter math!*
+
+The association measure (read: statistical test) that Gries & Stefanowitsch, as well as others, have used most is the [Fisher Yates Exact test](https://en.wikipedia.org/wiki/Fisher%27s_exact_test), and more precisely the negative $log10$ of its $p$-value.
+Underlying this (see the link in this paragraph) are calculations using those letter cells (a,b,c,d).
+Luckily we don't need to do that manually because R has a function for this --  `fischer.test()`:
+
+```{r}
+fisher.test(must.table)
+```
+
+So as you can see the pvalue is `r fisher.test(must.table)$p`. 
+If we take the negative $log10$ of this, it becomes `r -log10(fisher.test(must.table)$p)`, which gives us the result we expected.
+
+An easier way of computing the Fisher Yates Exact test of this table is by using the letter math and the `pv.Fischer.collostr` function provided by Levshina's `Rling` package:
+
+```{r}
+Rling::pv.Fisher.collostr(a, b, c, d)
+```
+
+
+Other tests that have been proposed are so-called Reliance and Attraction (cf. [Schmid & Küchenhoff 2013](doi.org/10.1515/cog-2013-0018) a.o.).
+Reliance is the relative frequency of a verb (*confess*) with *must* with regard to all uses of the given verb; Attraction is the relative frequency of a verb (*confess*) with *must* based on all usages with *must*.
+
+$$ Reliance = \frac{a}{a+b}$$
+
+$$ Attraction = \frac{a}{a+c} $$
+
+
+```{r}
+attraction <- a / (a+c) * 100
+reliance <- a / (a+b) * 100
+```
+
+The Attraction of confess and must is `r attraction` and the Reliance is `r reliance`.
+This high Reliance means that whenever *confess* occurs in the corpus after a modal it *relies* on *must* to occur.
+Its Attraction, however, has a much lower value: *must* does not necessarily occur with *confess*, in fact, it occurs with lots of other verbs as well!
+
+The third group of tests is actually correlated to Attraction and Reliance: respectively  $\Delta P_{word \to construction}$ and $\Delta P_{construction \to word}$ (cf. [Ellis & Ferreira-Junior](doi.org/10.1075/arcl.7.08ell) a.o.).
+They are also known as tests of cue validity and are caluclated as follows:
+
+$$\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}$$
+
+$$\Delta P_{construction \to word} = cue_{verb} = \frac{a}{a + b} - \frac{c}{c + d}$$
+
+```{r}
+dP.cueCx <- a/(a + c) - b/(b + d)
+dP.cueVerb <- a/(a + b) - c/(c + d)
+```
+
+So the $\Delta P_{word \to construction}$ of *must confess* is `r dP.cueCx`
+and the $\Delta P_{construction \to word}$ of *must confess* is `r dP.cueVerb`, so these numbers look a lot like those of Attraction and Reliance.
+
+Anyway, I think you get the drift: if you have the contingency table, you choose an association measure (there are more than these three sets) and analyze the results.
+
+# Tidy collostructions
+
+So if that's so clear, why am I writing this post?
+For me, the main difficulty with the approach is that Gries and Levshina love writing things in Base R (Gries even more than Levshina).
+But to someone who really started to appreciate R after the tidyverse became more available, there is this dissonance with the way they go about things.
+
+One of the biggest difference is the obsessive-compulsion of tidyverse to think in rectangles, a.k.a. dataframes or tibbles, rather than the vector( letter)s that Gries and Levshina love using, especially in their letter mathematics.
+
+As a consequence of this "[rectangling](https://www.youtube.com/watch?v=GapSskrtUzU)" and tidy format (long and skinny), rather than contingency format (2 x 2), it is challenging to compute even basic chisquare.tests.
+
+So in Base R, a chisquare is easy to compute, but then hard to continue working with, because this thick text block is given and you can't really access the contents (but there are solutions, like `broom::tidy`):
+
+```{r}
+chisq.test(must.table)
+```
+
+In a tidy format, you typically have to jump through a lot of hoops to either get to use the same function or use one of the newer alternative functions:
+
+```{r, message=FALSE}
+library(tidyverse)
+must.tibble <- tribble(
+  ~ verb, ~ must, ~notmust,
+  "confess", 11, 1,
+  "notconfess", 1990, 62114
+)
+must.tibble %>% kable()
+```
+
+```{r}
+# this function will give you bad output
+# so you can't just simply do this
+chisq.test(must.tibble$must, must.tibble$notmust)
+```
+
+## Hoop 1: make it really tidy
+```{r}
+must.tibble %>%
+  pivot_longer(cols = c(must, notmust),
+               names_to = "modal",
+               values_to = "n") %>% # now it is really tidy
+  kable()
+```
+
+## Hoop 2: uncount
+```{r}
+must.tibble %>%
+  pivot_longer(cols = c(must, notmust),
+               names_to = "modal",
+               values_to = "n") %>% # now it is really tidy
+  uncount(n)  # uncount
+```
+
+## Hoop 3: convert to table
+```{r}
+must.tibble %>%
+  pivot_longer(cols = c(must, notmust),
+               names_to = "modal",
+               values_to = "n") %>% # now it is really tidy
+  uncount(n)  %>% # uncount
+  table() # turn to Base R table
+  
+```
+
+## Hoop 4: chisquare
+```{r}
+must.tibble %>%
+  pivot_longer(cols = c(must, notmust),
+               names_to = "modal",
+               values_to = "n") %>% # now it is really tidy
+  uncount(n)  %>% # uncount
+  table() %>% # turn to Base R table
+  chisq.test() 
+```
+
+## Hoop 5: `tidy` with `broom`
+```{r}
+must.tibble %>%
+  pivot_longer(cols = c(must, notmust),
+               names_to = "modal",
+               values_to = "n") %>% # now it is really tidy
+  uncount(n)  %>% # uncount
+  table() %>% # turn to Base R table
+  chisq.test()%>%
+  broom::tidy() %>%
+  kable()
+```
+
+I know there are some tidyverse-friendly functions like `infer::chisq_test`, but it seems to lack arguments like expected values (`chisq.test()$exp`). 
+So this awkward hoop jumping is annoying but gets the job done (for now?).
+
+## From tidy to contingency
+
+Anyway, while for most summary statistics a tidy format (see hoop 1) is the easiest to work with, I don't think it's very intuitive for the association measures paradigm.
+
+So in this working example of *must + V_inf_* construction what I did was get all the occurrences of all modal verbs + verbs in the infinitive from the BNC corpus.
+The second step I did was add a column with `dplyr::case_when` to identify if a modal verb was *must* or another modal verb.
+
+Let's look at this data shall we:
+
+```{r, echo=FALSE, message=FALSE}
+df.must <- read_csv(here::here("static", "files", "must.results.csv")) %>%
+  select(modal, verb, mod.type)
+```
+
+```{r}
+df.must
+```
+
+As you can see there are `r nrow(df.must)` rows, and the table is just a count away form being tidy.
+
+```{r}
+tidy.df.must <- df.must %>%
+  count(mod.type, verb, sort = TRUE)
+tidy.df.must
+```
+
+Much 'prettier', but what next?
+This is actually the mental step I struggled the most with, this dissonance between tidy and contingency. 
+However, since we coded `mod.type` with a binary value: "OTHER" or "MUST", it is actually trivial to `dplyr::spread` or `dplyr::pivot_wider` them to a "tidy contingency table":
+
+```{r}
+spread.tidy.df.must <- tidy.df.must %>%
+  pivot_wider(values_from = n,
+              names_from = mod.type) 
+spread.tidy.df.must
+```
+
+Hey, this looks a lot like those schematic tables we had at the beginning!
+But now the real challenge is to turn these numbers into the letters a, b, c, and d, so we can perform our letter math.
+
+After changing all numeric values we have to doubles (instead of integers) and changing all NAs to 0, we can get the letters by following simple arithmetic from our original schematic table, e.g. if we know a and a+c, then c = a+c - a etc.
+
+|                                  | Element 2 | Not element 2 / other elements | Sum
+|----------------------------------|-----------|--------------------------------|---
+**Element 1 **                     | a         |        b                       | a + b
+**Not element 1 / other elements** | c         |     d                          | c + d
+**Sum**                            | a + c     | b + d                  | a + b + c + d
+
+
+```{r}
+spread.tidy.df.must %>%
+  mutate_if(is.numeric, ~ as.double(.x)) %>% # we'll want doubles instead of integers
+  mutate_if(is.numeric, ~ replace_na(.x, 0)) %>% # NAs should be 0
+  
+  mutate(a = MUST,
+       ac = sum(MUST),
+       c = ac - a,
+       ab = MUST + OTHER,
+       b = ab - a,
+       abcd = sum(MUST, OTHER),
+       d = abcd - a - b -c,
+       aExp = (a + b)*(a + c)/(a + b + c + d)) -> abcd.must
+abcd.must
+```
+
+So now we can easily perform all of the association measures we want, and rank them accordingly.
+
+## Fischer Yates Exact
+
+```{r, message=FALSE}
+fye <- abcd.must %>%
+  mutate(fye = Rling::pv.Fisher.collostr(a, b, c, d)) %>%
+  #filter(verb == "confess") %>%
+  mutate(negfye = case_when(a < aExp ~ format(round(log10(fye)), nsmall = 2),
+                            TRUE ~ format(round(- log10(fye)), nsmall = 2)),
+         negfye = as.double(negfye)) %>% #I did some rounding
+  arrange(desc(negfye)) %>%
+  select(verb, OTHER, MUST, fye, negfye)
+
+fye %>% top_n(20) %>% kable()
+```
+
+
+```{r, message=FALSE}
+fye %>% arrange(negfye) %>% top_n(-20) %>% kable()
+```
+
+
+## Attraction, Reliance
+
+```{r}
+abcd.must %>%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %>%
+  arrange(desc(attraction)) %>%
+  top_n(20) %>%
+  select(verb, OTHER, MUST, attraction, reliance) %>%
+  kable()
+```
+
+## Delta P
+
+```{r, message=FALSE}
+abcd.must %>%
+  mutate(dP.cueCx = a/(a + c) - b/(b + d),
+         dP.cueVerb = a/(a + b) - c/(c + d)) %>%
+  arrange(desc(dP.cueCx)) %>%
+  select(verb,  OTHER, MUST, dP.cueCx, dP.cueVerb) %>%
+  top_n(20) %>%
+  kable()
+
+```
+
+# Conclusion
+
+It is perfectly possible to perform association measures starting with a tidy dataframe.
+First you need to spread out with a binary variable, to make it a tidy contingency table.
+Then you can identify a, b, c, and d.
+Next you can chooose your preferred statistical test, rank verbs, and try to interpret the findings.
+
+I should probably also mention that Gries is has been advocating to not just use one association measure, but three or more.
+Using just two, you can plot like Attraction and Reliance.
+
+
+```{r}
+abcd.must %>%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %>%
+  arrange(desc(attraction)) %>%
+  select(verb, OTHER, MUST, attraction, reliance) %>%
+  ggplot(aes(x = attraction, 
+             y = reliance)) +
+   geom_point() +
+  gghighlight::gghighlight(attraction > 2 | 50 < reliance & reliance < 100,
+                           label_key = verb) +
+  theme_minimal()
+```
+
+
+
+

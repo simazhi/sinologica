@@ -5,12 +5,2520 @@
     <link>/tags/research/</link>
       <atom:link href="/tags/research/index.xml" rel="self" type="application/rss+xml" />
     <description>research</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>research</title>
       <link>/tags/research/</link>
     </image>
+    
+    <item>
+      <title>Tidy collostructions</title>
+      <link>/post/tidy-collostructions/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/tidy-collostructions/</guid>
+      <description>
+
+
+&lt;div id=&#34;tl-dr&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;tl ; dr&lt;/h1&gt;
+&lt;p&gt;In this post I look at the family of collexeme analysis methods originated by Gries and Stefanowitsch.
+Since they use a lot of Base R, and love using vectors, there is a hurdle that needs to be conquered if you are used to the rectangles in tidy data.
+I first give an overview of what the method tries to do, and then at the end show the hurdle in detail, followed by the steps necessary to enable the computation of the desired variables and statistical tests (association measures).
+Basically, you need to convert from pure tidy data to a tidy contingency format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;So in order to finalize my database on Chinese ideophones, creatively entitled &lt;a href=&#34;https://osf.io/kpwgf/&#34;&gt;CHIDEOD&lt;/a&gt;, I decided to work through &lt;a href=&#34;http://www.stgries.info&#34;&gt;Stefan Gries&lt;/a&gt;’s &lt;em&gt;Quantitative corpus linguistics with R&lt;/em&gt; (2016; 2nd edition; &lt;a href=&#34;http://www.stgries.info/research/qclwr/qclwr.html&#34;&gt;companion website here&lt;/a&gt;).&lt;br /&gt;
+That together with &lt;a href=&#34;http://www.natalialevshina.com&#34;&gt;Natalia Levshina&lt;/a&gt;’s &lt;em&gt;How to do linguistics with R&lt;/em&gt; (2015; 1st edition; &lt;a href=&#34;https://benjamins.com/sites/z.195/&#34;&gt;companion website here&lt;/a&gt;), which I worked through last June, has given me a lot of inspiration to tackle a number issues I have been struggling with, or at least thinking about without really knowing how to tackle them — I guess that counts as &lt;em&gt;struggling with&lt;/em&gt;.
+By the way, it is locally kind of confirmed currently that Levshina will be a keynote speaker at our CLDC conference in May.
+So you can already prepare those abstracts if you wish to attempt to present here in Taipei.&lt;/p&gt;
+&lt;p&gt;Anyway, one of the more intriguing family of methods to investigate the relation between constructions and words that fill the slots is the family of collexeme analysis.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-is-collexeme-analysis&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What is collexeme analysis?&lt;/h1&gt;
+&lt;p&gt;As &lt;a href=&#34;https://doi.org/10.1075/ijcl.00011.gri&#34;&gt;Gries (2019)&lt;/a&gt; discusses, the methodology of collexeme analysis is an extension of the notions of a) &lt;em&gt;collocation&lt;/em&gt; (which words really belong together, e.g. &lt;em&gt;watch TV&lt;/em&gt; and &lt;em&gt;watch a movie&lt;/em&gt; will have a stronger collocational bond than &lt;em&gt;watch a powerpoint presentation&lt;/em&gt;, although the latter has become a weekly activity), and b) &lt;em&gt;colligation&lt;/em&gt; (what constructions belong together, e.g. &lt;em&gt;watch&lt;/em&gt; will typically be followed by a noun, although verb phrases like &lt;em&gt;watch him play&lt;/em&gt; also occur).&lt;/p&gt;
+&lt;p&gt;So the basis of this method is a &lt;a href=&#34;https://en.wikipedia.org/wiki/Contingency_table&#34;&gt;contingency table&lt;/a&gt; (or cross-table; or &lt;a href=&#34;https://nl.wikipedia.org/wiki/Kruistabel&#34;&gt;&lt;em&gt;kruistabel&lt;/em&gt;&lt;/a&gt; if you love Dutch; &lt;em&gt;lièlián biǎo&lt;/em&gt; 列聯表 in Chinese (apparently)).
+Basically, something like this, that should look somewhat familiar:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Element 2&lt;/th&gt;
+&lt;th&gt;Not element 2 / other elements&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Element 1 &lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Not element 1 / other elements&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These letters (a, b, c, d) play an important role in colloxeme analyses.
+So stay tuned for that.&lt;/p&gt;
+&lt;div id=&#34;approach-1-collexeme-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Approach 1: Collexeme analysis&lt;/h2&gt;
+&lt;p&gt;So what &lt;a href=&#34;https://doi.org/10.1075/ijcl.8.2.03ste&#34;&gt;Stefanowitsch &amp;amp; Gries (2003)&lt;/a&gt; wanted to investigate was the [N &lt;em&gt;waiting to happen&lt;/em&gt;] construction, e.g. &lt;em&gt;an accident waiting to happen&lt;/em&gt;, &lt;em&gt;a disaster waiting to happen&lt;/em&gt; etc.
+In this &lt;strong&gt;collexeme analysis&lt;/strong&gt; you are quantifying to what degree the words found in a corpus occur in that construction: are they attracted or repulsed, and by how much?&lt;/p&gt;
+&lt;p&gt;In this scenario, element 1 is e.g. &lt;em&gt;an accident&lt;/em&gt;, and element 2 the construction &lt;em&gt;waiting to happen&lt;/em&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;em&gt;waiting to happen&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;not &lt;em&gt;waiting to happen&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;em&gt;an accident&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;not &lt;strong&gt;&lt;em&gt;an accident&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;approach-2-distinctive-collexeme-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Approach 2: Distinctive collexeme analysis&lt;/h2&gt;
+&lt;p&gt;A year later, &lt;a href=&#34;https://doi.org/10.1075/ijcl.9.1.06gri&#34;&gt;Gries &amp;amp; Stefanowitsch (2004)&lt;/a&gt; extended the methodology to quantify to what degree the words prefer to appear in one of two constructions.
+For example, the ditransitive &lt;em&gt;give him a call&lt;/em&gt; vs. the prepositional &lt;em&gt;give a call to him&lt;/em&gt;.
+Here the table changes into:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;ditransitive&lt;/th&gt;
+&lt;th&gt;prepositional&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;em&gt;give&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;not &lt;strong&gt;&lt;em&gt;give&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;approach-3-co-varying-collexeme-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Approach 3: Co-varying collexeme analysis&lt;/h2&gt;
+&lt;p&gt;The third seminal paper was published in the same year (Gries &amp;amp; Stefanowitsch 2004; ISBN: 9781575864648) sought to quantify the attraction / repulsion between two different slots in a construction, e.g. &lt;em&gt;trick … into buying&lt;/em&gt;, &lt;em&gt;force … into accepting&lt;/em&gt; etc.
+For this, the table is adapted to:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;em&gt;accepting&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;not &lt;em&gt;accepting&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;em&gt;force&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;not &lt;strong&gt;&lt;em&gt;force&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;okay-i-get-that-table-stuff-what-next&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Okay, I get that table stuff, what next?&lt;/h2&gt;
+&lt;p&gt;Let’s say you were able to get the frequencies from a corpus – I should probably mention that, &lt;code&gt;*cough* *cough*&lt;/code&gt; not everybody agrees with this kind of contingency tables, the overview paper by &lt;a href=&#34;https://doi.org/10.1075/ijcl.00011.gri&#34;&gt;Gries (2019)&lt;/a&gt; has plenty of interesting references and exciting rebuttals – and you have this table, possibly for lots of elements and/or constructions.&lt;/p&gt;
+&lt;p&gt;We’ll keep an example here that I calculated with Gries’s (2016) book mentioned above.
+One of the case studies looks at verbs that co-occur with the modal verb &lt;em&gt;must&lt;/em&gt;, e.g. &lt;em&gt;must accept&lt;/em&gt;, &lt;em&gt;must agree&lt;/em&gt;, &lt;em&gt;must confess&lt;/em&gt;, vs. how much these verbs occur with other modal verbs, e.g &lt;em&gt;should accept&lt;/em&gt;, &lt;em&gt;should agree&lt;/em&gt; etc.
+So in this case, element 1 was a verb (&lt;em&gt;confess&lt;/em&gt;) and element 2 was &lt;em&gt;must&lt;/em&gt;; not-element-1 were all the other verbs, and not-element-2 were all the other modal verbs.&lt;/p&gt;
+&lt;p&gt;The respective table from an abstract level looks like this:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;em&gt;must&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;not &lt;em&gt;must&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;em&gt;confess&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;not &lt;strong&gt;&lt;em&gt;confess&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I got these frequencies from the BNC (as Gries shows in his book, but I used my tidyverse skills&lt;sup&gt;TM&lt;/sup&gt; to get them, so if they are slightly off, then it was because of not following his script completely):&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;em&gt;must&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;not &lt;em&gt;must&lt;/em&gt;&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;em&gt;confess&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;not &lt;strong&gt;&lt;em&gt;confess&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1990&lt;/td&gt;
+&lt;td&gt;62114&lt;/td&gt;
+&lt;td&gt;64104&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;2001&lt;/td&gt;
+&lt;td&gt;62115&lt;/td&gt;
+&lt;td&gt;64116&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Or in a Base R table:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- 11
+b &amp;lt;- 1
+c &amp;lt;- 1990
+d &amp;lt;- 62114
+
+confess &amp;lt;- c(a, b)
+notconfess &amp;lt;- c(c, d)
+
+must.table &amp;lt;- rbind(confess, notconfess) 
+colnames(must.table) &amp;lt;- c(&amp;quot;must&amp;quot;, &amp;quot;notmust&amp;quot;)
+must.table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            must notmust
+## confess      11       1
+## notconfess 1990   62114&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What do you do now?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Now it’s time for letter math!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The association measure (read: statistical test) that Gries &amp;amp; Stefanowitsch, as well as others, have used most is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fisher%27s_exact_test&#34;&gt;Fisher Yates Exact test&lt;/a&gt;, and more precisely the negative &lt;span class=&#34;math inline&#34;&gt;\(log10\)&lt;/span&gt; of its &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-value.
+Underlying this (see the link in this paragraph) are calculations using those letter cells (a,b,c,d).
+Luckily we don’t need to do that manually because R has a function for this – &lt;code&gt;fischer.test()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fisher.test(must.table)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Fisher&amp;#39;s Exact Test for Count Data
+## 
+## data:  must.table
+## p-value = 3.106e-16
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##     49.90447 13241.49567
+## sample estimates:
+## odds ratio 
+##   344.6593&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So as you can see the pvalue is 3.105600710^{-16}.
+If we take the negative &lt;span class=&#34;math inline&#34;&gt;\(log10\)&lt;/span&gt; of this, it becomes 15.5078544, which gives us the result we expected.&lt;/p&gt;
+&lt;p&gt;An easier way of computing the Fisher Yates Exact test of this table is by using the letter math and the &lt;code&gt;pv.Fischer.collostr&lt;/code&gt; function provided by Levshina’s &lt;code&gt;Rling&lt;/code&gt; package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Rling::pv.Fisher.collostr(a, b, c, d)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3.105601e-16&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Other tests that have been proposed are so-called Reliance and Attraction (cf. &lt;a href=&#34;doi.org/10.1515/cog-2013-0018&#34;&gt;Schmid &amp;amp; Küchenhoff 2013&lt;/a&gt; a.o.).
+Reliance is the relative frequency of a verb (&lt;em&gt;confess&lt;/em&gt;) with &lt;em&gt;must&lt;/em&gt; with regard to all uses of the given verb; Attraction is the relative frequency of a verb (&lt;em&gt;confess&lt;/em&gt;) with &lt;em&gt;must&lt;/em&gt; based on all usages with &lt;em&gt;must&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Reliance = \frac{a}{a+b}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Attraction = \frac{a}{a+c} \]&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;attraction &amp;lt;- a / (a+c) * 100
+reliance &amp;lt;- a / (a+b) * 100&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Attraction of confess and must is 0.5497251 and the Reliance is 91.6666667.
+This high Reliance means that whenever &lt;em&gt;confess&lt;/em&gt; occurs in the corpus after a modal it &lt;em&gt;relies&lt;/em&gt; on &lt;em&gt;must&lt;/em&gt; to occur.
+Its Attraction, however, has a much lower value: &lt;em&gt;must&lt;/em&gt; does not necessarily occur with &lt;em&gt;confess&lt;/em&gt;, in fact, it occurs with lots of other verbs as well!&lt;/p&gt;
+&lt;p&gt;The third group of tests is actually correlated to Attraction and Reliance: respectively &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{word \to construction}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{construction \to word}\)&lt;/span&gt; (cf. &lt;a href=&#34;doi.org/10.1075/arcl.7.08ell&#34;&gt;Ellis &amp;amp; Ferreira-Junior&lt;/a&gt; a.o.).
+They are also known as tests of cue validity and are caluclated as follows:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{construction \to word} = cue_{verb} = \frac{a}{a + b} - \frac{c}{c + d}\]&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dP.cueCx &amp;lt;- a/(a + c) - b/(b + d)
+dP.cueVerb &amp;lt;- a/(a + b) - c/(c + d)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So the &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{word \to construction}\)&lt;/span&gt; of &lt;em&gt;must confess&lt;/em&gt; is 0.0054812
+and the &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{construction \to word}\)&lt;/span&gt; of &lt;em&gt;must confess&lt;/em&gt; is 0.8856234, so these numbers look a lot like those of Attraction and Reliance.&lt;/p&gt;
+&lt;p&gt;Anyway, I think you get the drift: if you have the contingency table, you choose an association measure (there are more than these three sets) and analyze the results.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tidy-collostructions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tidy collostructions&lt;/h1&gt;
+&lt;p&gt;So if that’s so clear, why am I writing this post?
+For me, the main difficulty with the approach is that Gries and Levshina love writing things in Base R (Gries even more than Levshina).
+But to someone who really started to appreciate R after the tidyverse became more available, there is this dissonance with the way they go about things.&lt;/p&gt;
+&lt;p&gt;One of the biggest difference is the obsessive-compulsion of tidyverse to think in rectangles, a.k.a. dataframes or tibbles, rather than the vector( letter)s that Gries and Levshina love using, especially in their letter mathematics.&lt;/p&gt;
+&lt;p&gt;As a consequence of this “&lt;a href=&#34;https://www.youtube.com/watch?v=GapSskrtUzU&#34;&gt;rectangling&lt;/a&gt;” and tidy format (long and skinny), rather than contingency format (2 x 2), it is challenging to compute even basic chisquare.tests.&lt;/p&gt;
+&lt;p&gt;So in Base R, a chisquare is easy to compute, but then hard to continue working with, because this thick text block is given and you can’t really access the contents (but there are solutions, like &lt;code&gt;broom::tidy&lt;/code&gt;):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;chisq.test(must.table)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in chisq.test(must.table): Chi-squared approximation may be
+## incorrect&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
+## 
+## data:  must.table
+## X-squared = 282.63, df = 1, p-value &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In a tidy format, you typically have to jump through a lot of hoops to either get to use the same function or use one of the newer alternative functions:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+must.tibble &amp;lt;- tribble(
+  ~ verb, ~ must, ~notmust,
+  &amp;quot;confess&amp;quot;, 11, 1,
+  &amp;quot;notconfess&amp;quot;, 1990, 62114
+)
+must.tibble %&amp;gt;% kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+must
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+notmust
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+confess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+notconfess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1990
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+62114
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# this function will give you bad output
+# so you can&amp;#39;t just simply do this
+chisq.test(must.tibble$must, must.tibble$notmust)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in chisq.test(must.tibble$must, must.tibble$notmust): Chi-squared
+## approximation may be incorrect&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
+## 
+## data:  must.tibble$must and must.tibble$notmust
+## X-squared = 0, df = 1, p-value = 1&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;hoop-1-make-it-really-tidy&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hoop 1: make it really tidy&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;must.tibble %&amp;gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &amp;quot;modal&amp;quot;,
+               values_to = &amp;quot;n&amp;quot;) %&amp;gt;% # now it is really tidy
+  kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+modal
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+n
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+confess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+must
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+confess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+notmust
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+notconfess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+must
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1990
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+notconfess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+notmust
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+62114
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hoop-2-uncount&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hoop 2: uncount&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;must.tibble %&amp;gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &amp;quot;modal&amp;quot;,
+               values_to = &amp;quot;n&amp;quot;) %&amp;gt;% # now it is really tidy
+  uncount(n)  # uncount&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 64,116 x 2
+##    verb    modal
+##    &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;
+##  1 confess must 
+##  2 confess must 
+##  3 confess must 
+##  4 confess must 
+##  5 confess must 
+##  6 confess must 
+##  7 confess must 
+##  8 confess must 
+##  9 confess must 
+## 10 confess must 
+## # … with 64,106 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hoop-3-convert-to-table&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hoop 3: convert to table&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;must.tibble %&amp;gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &amp;quot;modal&amp;quot;,
+               values_to = &amp;quot;n&amp;quot;) %&amp;gt;% # now it is really tidy
+  uncount(n)  %&amp;gt;% # uncount
+  table() # turn to Base R table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             modal
+## verb          must notmust
+##   confess       11       1
+##   notconfess  1990   62114&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hoop-4-chisquare&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hoop 4: chisquare&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;must.tibble %&amp;gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &amp;quot;modal&amp;quot;,
+               values_to = &amp;quot;n&amp;quot;) %&amp;gt;% # now it is really tidy
+  uncount(n)  %&amp;gt;% # uncount
+  table() %&amp;gt;% # turn to Base R table
+  chisq.test() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in chisq.test(.): Chi-squared approximation may be incorrect&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
+## 
+## data:  .
+## X-squared = 282.63, df = 1, p-value &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hoop-5-tidy-with-broom&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hoop 5: &lt;code&gt;tidy&lt;/code&gt; with &lt;code&gt;broom&lt;/code&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;must.tibble %&amp;gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &amp;quot;modal&amp;quot;,
+               values_to = &amp;quot;n&amp;quot;) %&amp;gt;% # now it is really tidy
+  uncount(n)  %&amp;gt;% # uncount
+  table() %&amp;gt;% # turn to Base R table
+  chisq.test()%&amp;gt;%
+  broom::tidy() %&amp;gt;%
+  kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in chisq.test(.): Chi-squared approximation may be incorrect&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+statistic
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+p.value
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+parameter
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+method
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+282.6321
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pearson’s Chi-squared test with Yates’ continuity correction
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I know there are some tidyverse-friendly functions like &lt;code&gt;infer::chisq_test&lt;/code&gt;, but it seems to lack arguments like expected values (&lt;code&gt;chisq.test()$exp&lt;/code&gt;).
+So this awkward hoop jumping is annoying but gets the job done (for now?).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;from-tidy-to-contingency&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;From tidy to contingency&lt;/h2&gt;
+&lt;p&gt;Anyway, while for most summary statistics a tidy format (see hoop 1) is the easiest to work with, I don’t think it’s very intuitive for the association measures paradigm.&lt;/p&gt;
+&lt;p&gt;So in this working example of &lt;em&gt;must + V_inf_&lt;/em&gt; construction what I did was get all the occurrences of all modal verbs + verbs in the infinitive from the BNC corpus.
+The second step I did was add a column with &lt;code&gt;dplyr::case_when&lt;/code&gt; to identify if a modal verb was &lt;em&gt;must&lt;/em&gt; or another modal verb.&lt;/p&gt;
+&lt;p&gt;Let’s look at this data shall we:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df.must&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 64,116 x 3
+##    modal  verb      mod.type
+##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;   
+##  1 can    find      OTHER   
+##  2 should stop      OTHER   
+##  3 should recognise OTHER   
+##  4 will   cost      OTHER   
+##  5 might  think     OTHER   
+##  6 can    sink      OTHER   
+##  7 can    change    OTHER   
+##  8 must   help      MUST    
+##  9 ll     help      OTHER   
+## 10 ll     take      OTHER   
+## # … with 64,106 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see there are 64116 rows, and the table is just a count away form being tidy.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tidy.df.must &amp;lt;- df.must %&amp;gt;%
+  count(mod.type, verb, sort = TRUE)
+tidy.df.must&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2,522 x 3
+##    mod.type verb      n
+##    &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;
+##  1 OTHER    get    3750
+##  2 OTHER    go     3421
+##  3 OTHER    see    2409
+##  4 OTHER    take   2056
+##  5 OTHER    like   1778
+##  6 OTHER    say    1647
+##  7 OTHER    come   1460
+##  8 OTHER    make   1383
+##  9 OTHER    give   1245
+## 10 OTHER    put    1162
+## # … with 2,512 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Much ‘prettier’, but what next?
+This is actually the mental step I struggled the most with, this dissonance between tidy and contingency.
+However, since we coded &lt;code&gt;mod.type&lt;/code&gt; with a binary value: “OTHER” or “MUST”, it is actually trivial to &lt;code&gt;dplyr::spread&lt;/code&gt; or &lt;code&gt;dplyr::pivot_wider&lt;/code&gt; them to a “tidy contingency table”:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spread.tidy.df.must &amp;lt;- tidy.df.must %&amp;gt;%
+  pivot_wider(values_from = n,
+              names_from = mod.type) 
+spread.tidy.df.must&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2,113 x 3
+##    verb  OTHER  MUST
+##    &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+##  1 get    3750   102
+##  2 go     3421    94
+##  3 see    2409    14
+##  4 take   2056    63
+##  5 like   1778     3
+##  6 say    1647   105
+##  7 come   1460    41
+##  8 make   1383    62
+##  9 give   1245    22
+## 10 put    1162    18
+## # … with 2,103 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hey, this looks a lot like those schematic tables we had at the beginning!
+But now the real challenge is to turn these numbers into the letters a, b, c, and d, so we can perform our letter math.&lt;/p&gt;
+&lt;p&gt;After changing all numeric values we have to doubles (instead of integers) and changing all NAs to 0, we can get the letters by following simple arithmetic from our original schematic table, e.g. if we know a and a+c, then c = a+c - a etc.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Element 2&lt;/th&gt;
+&lt;th&gt;Not element 2 / other elements&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Element 1 &lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;a + b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Not element 1 / other elements&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;Sum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;a + c&lt;/td&gt;
+&lt;td&gt;b + d&lt;/td&gt;
+&lt;td&gt;a + b + c + d&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spread.tidy.df.must %&amp;gt;%
+  mutate_if(is.numeric, ~ as.double(.x)) %&amp;gt;% # we&amp;#39;ll want doubles instead of integers
+  mutate_if(is.numeric, ~ replace_na(.x, 0)) %&amp;gt;% # NAs should be 0
+  
+  mutate(a = MUST,
+       ac = sum(MUST),
+       c = ac - a,
+       ab = MUST + OTHER,
+       b = ab - a,
+       abcd = sum(MUST, OTHER),
+       d = abcd - a - b -c,
+       aExp = (a + b)*(a + c)/(a + b + c + d)) -&amp;gt; abcd.must
+abcd.must&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2,113 x 11
+##    verb  OTHER  MUST     a    ac     c    ab     b  abcd     d  aExp
+##    &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+##  1 get    3750   102   102  2001  1899  3852  3750 64116 58365 120. 
+##  2 go     3421    94    94  2001  1907  3515  3421 64116 58694 110. 
+##  3 see    2409    14    14  2001  1987  2423  2409 64116 59706  75.6
+##  4 take   2056    63    63  2001  1938  2119  2056 64116 60059  66.1
+##  5 like   1778     3     3  2001  1998  1781  1778 64116 60337  55.6
+##  6 say    1647   105   105  2001  1896  1752  1647 64116 60468  54.7
+##  7 come   1460    41    41  2001  1960  1501  1460 64116 60655  46.8
+##  8 make   1383    62    62  2001  1939  1445  1383 64116 60732  45.1
+##  9 give   1245    22    22  2001  1979  1267  1245 64116 60870  39.5
+## 10 put    1162    18    18  2001  1983  1180  1162 64116 60953  36.8
+## # … with 2,103 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So now we can easily perform all of the association measures we want, and rank them accordingly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fischer-yates-exact&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Fischer Yates Exact&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fye &amp;lt;- abcd.must %&amp;gt;%
+  mutate(fye = Rling::pv.Fisher.collostr(a, b, c, d)) %&amp;gt;%
+  #filter(verb == &amp;quot;confess&amp;quot;) %&amp;gt;%
+  mutate(negfye = case_when(a &amp;lt; aExp ~ format(round(log10(fye)), nsmall = 2),
+                            TRUE ~ format(round(- log10(fye)), nsmall = 2)),
+         negfye = as.double(negfye)) %&amp;gt;% #I did some rounding
+  arrange(desc(negfye)) %&amp;gt;%
+  select(verb, OTHER, MUST, fye, negfye)
+
+fye %&amp;gt;% top_n(20) %&amp;gt;% kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+OTHER
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+MUST
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+fye
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+negfye
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+admit
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+159
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+225
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+confess
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+say
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1647
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+105
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+realise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+recognise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+know
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+432
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000001
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+remember
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+324
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rank
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000001
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+decide
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+120
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000014
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+pay
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+354
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000052
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+wait
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+139
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000307
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ensure
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000243
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+inform
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000065
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+stress
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000065
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+apologise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0001186
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+obey
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0002895
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+look
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+560
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0017845
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+feel
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+223
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0006318
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+act
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0014017
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+assume
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0018726
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+reflect
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0018726
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+mention
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0015902
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+emerge
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0016252
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+own
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0005395
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+emphasise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0030892
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+register
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0030892
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+balance
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0022137
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+realize
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0022137
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+respect
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0005656
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+comply
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0028599
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+exhibit
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0028599
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+export
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0009735
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+outperform
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0009735
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fye %&amp;gt;% arrange(negfye) %&amp;gt;% top_n(-20) %&amp;gt;% kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+OTHER
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+MUST
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+fye
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+negfye
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+like
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1778
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-20
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+see
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2409
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000000
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-18
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+hear
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+428
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000021
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+help
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+820
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000185
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+want
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+401
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0000074
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+tell
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+985
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0003130
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-4
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+give
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1245
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0031496
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+put
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1162
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0006828
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+need
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+461
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0018961
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+lead
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+321
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0009838
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+imagine
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+290
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0019299
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+call
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+268
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0003216
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cause
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+211
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0022792
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+buy
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+402
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0090712
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+play
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+340
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0291563
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+happen
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+335
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0039267
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+afford
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+205
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0035887
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+receive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+205
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0242516
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+pick
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0239273
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+appear
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+187
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0049951
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+benefit
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+147
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0160195
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;attraction-reliance&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Attraction, Reliance&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;abcd.must %&amp;gt;%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %&amp;gt;%
+  arrange(desc(attraction)) %&amp;gt;%
+  top_n(20) %&amp;gt;%
+  select(verb, OTHER, MUST, attraction, reliance) %&amp;gt;%
+  kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Selecting by reliance&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+OTHER
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+MUST
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+attraction
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+reliance
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+export
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.099950
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+outperform
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.099950
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+acquaint
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+capitalise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+capitulate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+class
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+combat
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+comfort
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+discard
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dissociate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dread
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+enclose
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+graft
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+interrogate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+itch
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nurture
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+plagiarise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+protrude
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rediscover
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+redouble
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+shoulder
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+shrive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+stipulate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.049975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+100
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;delta-p&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Delta P&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;abcd.must %&amp;gt;%
+  mutate(dP.cueCx = a/(a + c) - b/(b + d),
+         dP.cueVerb = a/(a + b) - c/(c + d)) %&amp;gt;%
+  arrange(desc(dP.cueCx)) %&amp;gt;%
+  select(verb,  OTHER, MUST, dP.cueCx, dP.cueVerb) %&amp;gt;%
+  top_n(20) %&amp;gt;%
+  kable()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+verb
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+OTHER
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+MUST
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+dP.cueCx
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+dP.cueVerb
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+export
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0009995
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688212
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+outperform
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0009995
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688212
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+acquaint
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+capitalise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+capitulate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+class
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+combat
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+comfort
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+discard
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dissociate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dread
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+enclose
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+graft
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+interrogate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+itch
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nurture
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+plagiarise
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+protrude
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rediscover
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+redouble
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+shoulder
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+shrive
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+stipulate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.0004998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.9688061
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;It is perfectly possible to perform association measures starting with a tidy dataframe.
+First you need to spread out with a binary variable, to make it a tidy contingency table.
+Then you can identify a, b, c, and d.
+Next you can chooose your preferred statistical test, rank verbs, and try to interpret the findings.&lt;/p&gt;
+&lt;p&gt;I should probably also mention that Gries is has been advocating to not just use one association measure, but three or more.
+Using just two, you can plot like Attraction and Reliance.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;abcd.must %&amp;gt;%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %&amp;gt;%
+  arrange(desc(attraction)) %&amp;gt;%
+  select(verb, OTHER, MUST, attraction, reliance) %&amp;gt;%
+  ggplot(aes(x = attraction, 
+             y = reliance)) +
+   geom_point() +
+  gghighlight::gghighlight(attraction &amp;gt; 2 | 50 &amp;lt; reliance &amp;amp; reliance &amp;lt; 100,
+                           label_key = verb) +
+  theme_minimal()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-01-tidy-collostructions-some-ideas_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Handling research (Academic workflow 2)</title>

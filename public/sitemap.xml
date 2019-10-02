@@ -18,13 +18,58 @@
   </url>
   
   <url>
+    <loc>/tags/academic-workflow/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/association-measures/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/blog/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/coding/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/research/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/tidy-collostructions/</loc>
+    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
   </url>
   
   <url>
@@ -38,37 +83,12 @@
   </url>
   
   <url>
-    <loc>/tags/coding/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/guanguan-goes-the-chinese-word-segmentation-2/</loc>
     <lastmod>2019-09-11T12:27:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/python/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2019-09-11T12:27:22+08:00</lastmod>
   </url>
   
@@ -258,22 +278,12 @@
   </url>
   
   <url>
-    <loc>/tags/academic-workflow/</loc>
-    <lastmod>2018-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/handling-research/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/linguistics/</loc>
-    <lastmod>2018-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/research/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -578,12 +588,12 @@
   </url>
   
   <url>
-    <loc>/categories/suzhou/</loc>
+    <loc>/tags/suzhou/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/suzhou/</loc>
+    <loc>/categories/suzhou/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
   </url>
   
