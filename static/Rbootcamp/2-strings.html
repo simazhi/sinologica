@@ -190,7 +190,7 @@ An example: the names of the people in this class:
 
 
 ```r
-people &lt;- c("Abner", "Andrew", "Carol", 
+people &lt;- c("Abner", "Andrew", "Carol", "Costco",
             "Kimo", "Thomas", "Alex", "Rebecca")
 
 # let's look at the vector:
@@ -221,7 +221,7 @@ people %&gt;% # go to string, and then
 
 --
 
-Oh, but this isn't right! I also wanted to invite the people .blue[capital A] and not just those with only .blue[a].
+Oh, but this isn't right! I also wanted to invite the people .blue[capital R] and not just those with only .blue[r].
 But that is what we asked R to do!
 
 ---
@@ -237,7 +237,7 @@ using .red[`[]`] within the .blue[pattern]. Everything within .red[`[]`] is inte
 
 ```r
 people %&gt;% # go to string, and then
-  str_subset("[rR]") # look for pattern "a"
+  str_subset("[rR]") # look for pattern "r"
 ```
 
 Option 2. 
@@ -248,7 +248,7 @@ Turn all letters .blue[to lowercase] with .red[`str_to_lower()`]
 ```r
 invited &lt;- people %&gt;%           # go to string, and then
   str_to_lower() %&gt;% # turn everything to lower, and then
-  str_subset("r")    # look for pattern "a"
+  str_subset("r")    # look for pattern "r"
 
 invited
 ```
