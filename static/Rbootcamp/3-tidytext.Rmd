@@ -1,0 +1,1074 @@
+---
+title: "R bootcamp for lexical semanticists"
+subtitle: "3: `tidytext` <html><div style='float:left'></div><hr color='#875712' size=1px width=796px></html>"
+author: "Thomas Van Hoey 司馬智 "
+date: "<br><br>7 November 2019<br>National Taiwan University"
+output:
+  xaringan::moon_reader:
+    css: ["./layout/ntu.css", "./layout/ntu-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "./layout/macros.js"
+---
+
+```{r setup, include=FALSE, eval=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle, clear
+
+# Recap of last week
+
+---
+
+# Packages we learnt last week
+
+.pull-left[
+![](./figs/stickers/stringr.png)
+]
+
+.pull-right[
+![](./figs/stickers/readr.png)
+]
+
+---
+
+# Packages we will learn today
+
+.pull-left[
+![:scale 100%](./figs/stickers/tidytext.png)
+]
+
+.pull-right[
+![](./figs/stickers/purrr.png)
+]
+
+---
+
+# Packages we will learn today
+
+.pull-left[
+![](./figs/stickers/glue.png)
+]
+
+.pull-right[
+![](./figs/stickers/lubridate.png)
+]
+
+---
+
+# Things we will learn today
+
+## Skills
+
+* how to make a .blue[concordance] from a text tibble
+* how to read in and process .blue[multiple files]
+* how to make a .blue[wordcloud]
+
+## Data
+* how to download data from .blue[Project Gutenberg]
+* how to work with .blue[multiple .Rds files] (as an example)
+
+## Case studies
+* the .blue[.sc[way construction]] (Goldberg 1995)
+* the .blue[.sc[yidu 一度 construction]] (Chen 2019a; 2019b)  
+
+These are mostly for simulating how to start working on .blue[getting data and cleaning it so we can start our linguistic analyses].
+
+---
+
+# Case study 1: The .sc[way construction]
+
+Goldberg (1996: ch. 9) discusses the .sc[way construction].
+
+Examples:
+
+* *Frank found his way to New York.*
+* *He belched his way out of the restaurant.*
+
+She schematizes the construction as follows:
+
+$$[SUBJ_{i} [V [POSS_{i} way) OBL]]$$
+
+.purple[
+Case study: You want to investigate her categorization and thus need to get your data ready for analysis
+
+More specifically (for today), you want to investigate how [James Joyce](https://en.wikipedia.org/wiki/James_Joyce) 詹姆斯·乔伊斯 (1882-1941), the Irish novelist, used this construction in his book *Ulysses*.
+]
+
+---
+
+# Step 1: data: Project Gutenberg
+
+For old books (no longer under copyright), e.g. *Uylysses*,  we can use [Project Gutenberg](https://www.gutenberg.org) and the R package .orange[`gutenbergr`]. 
+
+By now we know the drill:
+
+```{r, eval=FALSE}
+install.packages("gutenbergr")
+```
+
+```{r, eval=FALSE}
+library(gutenbergr)
+```
+
+Searching for *Ulysses*, we get at this page: [click here](https://www.gutenberg.org/ebooks/4300).
+
+There we can see that the number of *Ulysses* on Project Gutenberg is .blue[4300].
+.grey[(You can see this in the link.)]
+
+---
+
+# Download *Ulysses*
+
+```{r, eval=FALSE}
+joyce <- gutenbergr::gutenberg_download(gutenberg_id = 4300, 
+                                        meta_fields = "title")
+joyce 
+```
+
+After inspection, it seems they follow a printed book: not every line is a nice neat sentence.
+
+---
+
+# One sentence per line
+
+So you maybe want to get one sentence per line.
+
+Let us load in the relevant packages:
+
+```{r, eval=FALSE}
+library(tidytext)
+library(tidyverse)
+library(here)
+```
+
+With the .blue[`token = "sentences"`] argument setting you can turn the garbled lines into sentences (more or less, it is not 100% precise, but good enough for our purposes today)
+
+```{r, eval=FALSE}
+joyce_sent <- joyce %>%
+  unnest_tokens(input = "text", 
+                output = "sentence",
+                token = "sentences") 
+```
+
+---
+
+# Finding the .sc[way]
+
+1st trial
+
+```{r, eval=FALSE}
+joyce_way <- joyce_sent %>%
+  filter(str_detect(sentence, "way"))
+joyce_way
+```
+
+--
+
+2nd trial
+
+Adding the word boundaries with .blue[`\\b`]
+
+```{r, eval=FALSE}
+## adding word boundaries with \\b
+joyce_way2 <- joyce_sent %>%
+  filter(str_detect(sentence, "\\bway\\b"))
+```
+
+Still not what we want.
+We need to be as explicit as possible with our regular expression.
+
+---
+
+# Finding the .sc[way]
+
+Let's see if we can learn something from Goldberg's schema:
+
+$$[SUBJ_{i} [V [POSS_{i} way) OBL]]$$
+
+So in the end we want:
+* V verb
+* POSS possessive
+* OBL oblique
+
+--
+
+.blue[When you don't know how to continue, it helps to write a dummy example.]
+
+```{r, eval=FALSE}
+test <- c("I lost my purse", "They lost their purse", "She lost her purse", "The other purse")
+
+str_extract(test, "(my|their|her) purse")
+
+# word boundaries with \\b
+str_extract(test, "\\b(my|their|her)\\b purse")
+```
+
+---
+
+# Finding the .sc[way]
+
+3rd trial: implementing our dummy example, with some .orange[glue]:
+
+```{r, eval=FALSE}
+possessive <- "\\bmy|your|his|her|our|their\\b"
+way <- "\\bway\\b"
+
+library(glue)
+
+joyce_wcx <- joyce_way2 %>%
+  filter(str_detect(sentence, 
+                    glue("\\b{possessive}\\b \\bway\\b"))
+joyce_wcx
+```
+
+---
+
+# Getting concordances
+
+We know that we want `\\bway\\b` as our target word.
+So we can make concordances with .red[mutate] and our .blue[regex] knowledge
+
+Because what we want is something that looks like this:
+
+left window | target word  | right window
+----------- | -------------| -----------
+Hello my | name | is Thomas .
+Is that his | name |?
+That's not my | name | .
+His | name | is Jeff .
+
+
+Option 1: 
+We can either make a direct regular expression:
+
+```{r, eval=FALSE}
+# direct but difficult
+regexdirect <- "(\\w+\\s){0,9}\\b(my|your|his|her|our|their)\\b\\s\\bway\\b(\\s\\w+){0,10}"
+```
+
+---
+
+# Getting concordances
+
+Option 2: 
+We can also *build* a regular expression (.blue[suggested])
+
+
+```{r, eval=FALSE}
+# building a good regular expression
+possessive <- "\\b(my|your|his|her|our|their)\\b"
+way <- "\\bway\\b"
+left_window <- "(\\w+\\s){0,9}"
+right_window <- "(\\s\\w+){0,10}"
+
+regex <- glue::glue("{left_window}{possessive}\\s{way}{right_window}")
+
+# is it the same?
+regex == regexdirect
+```
+
+---
+
+# Getting concordances of *way*
+
+```{r, eval=FALSE}
+joyce_conc <- joyce_wcx %>%
+  
+  #str_extract_all because there might be more than one per line
+  mutate(expression = str_extract_all(sentence, regex)) %>%  
+  
+  # if you extract_all you should also unnest
+  unnest(expression) %>%
+  
+  # now we're making the left and right window
+  mutate(left = str_replace_all(expression, glue("({possessive}).+"), ""),
+         target = str_extract(expression, glue("{possessive}\\s{way}")),
+         right = str_replace_all(expression, glue(".+({way})"), "")) %>%
+  
+  # maybe better to split "his way" into "his" and "way"
+  separate(target, into = c("poss", "way"), sep = " ") %>%
+  
+  # only keep the relevant variables
+  select(title, left, poss, way, right)
+```
+
+---
+
+# Getting concordances of *way*
+
+Let's check it out:
+
+```{r, eval=FALSE}
+joyce_conc
+```
+
+--
+
+At first sight, it doesn't look like there's a lot of WAY construction going on in *Ulysses*.
+
+Maybe we should .blue[widen the scope to other works by Joyce].
+
+---
+
+# More books by James Joyce
+
+The .orange[gutenbergr] package can help out again.
+
+First we need to find out all the .blue[id]s of the works by Joyce. As the [tutorial of .orange[gutenbergr]](https://ropensci.org/tutorials/gutenbergr_tutorial/) describes, we can use the .green[gutenberg_metadata] dataset that is loaded by the package to find that.
+
+```{r, eval=FALSE}
+gutenbergr::gutenberg_metadata %>%
+  filter(author == "Joyce, James") %>%
+  pull(gutenberg_id) -> id
+
+id
+```
+
+---
+
+# Repeat steps from above
+
+1. download the stuff from Project Gutenberg
+2. .red[`tidytext::unnest_tokens()`] with .blue[`tokens = "sentences"`]
+
+```{r, eval=FALSE}
+joyce <- gutenbergr::gutenberg_download(gutenberg_id = id, # we just found this out right!?
+                                        meta_fields = "title")
+
+# it may possibly not be able to download all the books, but that's okay for today
+
+joyce %>% count(title)
+
+joyce_sent <- joyce %>%
+  unnest_tokens(input = "text", 
+                output = "sentence",
+                token = "sentences")  
+```
+
+---
+
+# Repeat steps from above
+
+1. download the stuff from Project Gutenberg
+2. .red[`tidytext::unnest_tokens()`] with .blue[`tokens = "sentences"`]
+3. run the regular expression to .red[filter]
+4. work the .blue[concordance] functions
+
+```{r, eval=FALSE}
+regex # check if regex is still there
+
+joyce_regex <- joyce_sent %>%
+  filter(str_detect(sentence, regex))
+
+joyce_conc <- joyce_regex %>%
+  mutate(expression = str_extract_all(sentence, regex)) %>%  
+  unnest(expression) %>%
+  mutate(left = str_replace_all(expression, glue("({possessive}).+"), ""),
+         target = str_extract(expression, glue("{possessive}\\s{way}")),
+         right = str_replace_all(expression, glue(".+({way})"), "")) %>%
+  separate(target, into = c("poss", "way"), sep = " ") %>%
+  select(title, left, poss, way, right)
+joyce_conc
+```
+
+---
+
+# Export the file
+
+Now we have a beautiful (though not superbig) dataset to further code in other software.
+I would choose a csv file.
+
+```{r, eval=FALSE}
+write_csv(joyce_conc, 
+          here::here("output", "joyce_way.csv"))
+```
+
+```{r, echo=FALSE}
+write_csv(joyce_conc, 
+          here::here("static", "Rbootcamp", "joyce_way.csv"))
+```
+
+
+---
+
+# Analysis
+
+So this is where you .blue[interact with your data].
+
+As I said in the first session: you already are a data scientist because you have interacted with your data before.
+What we do here is finding ways to .blue[do the dirty work] in a sense: finding lots of data, cleaning it and making it ready for analysis.
+
+For the case study of the .sc[way construction]: you may want to check every line to make sure it is part of the .sc[way construction] that Goldberg intended, cf.
+
+*Frank found his way to New York.*
+
+--
+
+I did this for you (with .blue[yes/no] as the values)
+
+(Hopefully you downloaded the zip files I asked you to download before class).
+
+Save the file "joyce_way_tagged.csv" in .blue[Rbootcamp > inputfiles]
+
+---
+
+# Analysis
+
+```{r, eval=FALSE, message=FALSE}
+joyce_cx <- read_csv("inputfiles", "joyce_way_tagged.csv") #cx for construction
+```
+
+```{r, echo=FALSE, message=FALSE}
+joyce_cx <- read_csv(here::here("static", "Rbootcamp", "joyce_way_tagged.csv"))
+
+# inspect our data
+#skimr::skim(joyce_cx)
+```
+
+
+$$[SUBJ_{i} [V [POSS_{i} way) OBL]]$$
+
+So we are probably interested in 
+* POSS: the possessive, *his*
+* V: the verb and 
+  * Verb tokens (as they appear in our data), e.g. *saw*
+  * Verb types (by .blue[stemming] or .blue[lemmatization]), e.g. *see*
+* OBL: the oblique arguments, e.g. *through*
+
+Some possible difference between stemming and lemmatizing:
+
+word | stemming | lemmatizing
+---- | -------- | -------
+saw  | saw      | see
+broken | broke | break 
+
+
+---
+
+# Analysis
+
+```{r, eval=FALSE}
+# for stemming: 
+library(SnowballC) 
+
+joyce_cx %>%
+  filter(construction == "yes") %>%
+  mutate(oblique = str_replace_all(right, "^(\\w+\\b).+", "\\1")) %>%
+  mutate(verbtoken = str_replace_all(left, ".+\\s(\\w+)$", "\\1")) %>%
+  mutate(verbtype = SnowballC::wordStem(verbtoken,
+                                        language = "english")) -> joyce_df
+  
+```
+
+If you want to not just stem the words, but actually lemmatize them, [this blog](http://www.bernhardlearns.com/2017/04/cleaning-words-with-r-stemming.html) recommends you the .orange[koRpus] package.
+Check it out if you want to change e.g. *saw* to *see* (what we would want).
+
+What you could also do is use an existing corpus, e.g. *British National Corpus BNC* or *Corpus Of Contemporary American English COCA* and basically get all the verbs and then extract their base form as well as the token forms into a very long list and then .red[dplyr::distinct()] that list, and then join that to the .blue[verbtoken] variable we made before.
+
+---
+
+# Analysis
+
+Let's inspect it:
+
+```{r, eval=FALSE}
+joyce_df
+```
+
+Now we can get a number of statistics, for example
+
+```{r, eval=FALSE}
+joyce_df %>% count(verbtype, sort = TRUE)
+joyce_df %>% count(poss, sort = TRUE)
+
+joyce_df %>% count(verbtype, oblique)
+joyce_df %>% count(verbtype, poss)
+
+# the sky is the limit, or rather the data is the limit
+```
+
+For something like the .sc[way construction], you could e.g. connect it to .sc[force dynamics] or to metaphorical usage, **or to ...**
+
+My hope for you is that the hardest part of analysis is not getting the data and counting things, but rather the .blue[coding and interpretation, when you ask questions to your data].
+
+---
+
+# Case study 1: wordclouds!
+
+We'll use a new package
+
+```{r, eval=FALSE}
+library(ggwordcloud)
+```
+
+If we are just interested in a nice fun visualization, we can use wordclouds.
+
+Let us .red[`unnest_tokens`] with the .blue[`token = "words"`] argument:
+
+```{r, eval=FALSE}
+# things we probably still have active in memory
+#joyce <- gutenbergr::gutenberg_download(gutenberg_id = id, meta_fields = "title")
+
+joyce %>% count(title)
+
+joyce_words <- joyce %>%
+  unnest_tokens(input = "text", 
+                output = "words",
+                token = "words")  
+joyce_words
+```
+
+---
+
+# Wordclouds!
+
+.orange[tidytext] comes with a .green[stop_words] dataset (for English).
+
+We can use .orange[dplyr::].red[anti_join] to take these stop words out of our dataset.
+
+Below .blue[`words`] is in `joyce_words` and .blue[`word`] is in `stop_words`
+
+```{r, eval=FALSE}
+joyce_anti <- joyce_words %>%
+  anti_join(stop_words, by = c("words" = "word"))
+```
+
+
+```{r, eval=FALSE}
+joyce_anti %>%
+  count(title, words) %>%
+  filter(title == "Dubliners") %>%
+  arrange(desc(n)) %>%
+  top_n(50) %>%
+  ggplot(aes(label = words, size = n)) + 
+  geom_text_wordcloud() +
+  theme_minimal()
+```
+
+---
+
+# Wordclouds per book! 
+
+Let's do this per book.
+
+For this we need to .orange[dplyr::].red[group_by()] the title variable (instead of filtering) and later we will use .orange[ggplot2::].red[facet_wrap()] to plot the results in as many windows as there are titles (about 4).
+
+```{r, eval=FALSE}
+joyce_anti %>%
+  count(title, words) %>%
+  group_by(title) %>%
+  arrange(desc(n)) %>%
+  top_n(50) %>%
+  ggplot(aes(label = words, size = n, color = title)) + 
+  geom_text_wordcloud() +
+  facet_wrap(facets = "title") +
+  theme_minimal()
+```
+
+---
+
+# Homework
+
+Use part of the script below to read in a word document (or group of word documents with what we learn in the second case study) and try to use .red[`unnest_tokens`] to get all the words, and then try to visualize it in a a wordcloud with .orange[ggwordcloud] and .orange[ggplot2].
+
+ALL THE CAPITALS need to be replaced by you!
+
+
+```{r, eval=FALSE}
+library(textreadr)
+
+p <- PATH_TO_YOUR_DOCUMENT #don't forget the  "" !
+
+doc <- textreadr::read_docx(p)
+
+doc %>%
+  enframe() %>% # turn vector of strings into nice tidy table
+  unnest_tokens(input = "value", 
+                output = "words",
+                token = "words") %>%
+  COUNT %>%
+  GGPLOT +
+  GEOM_TEXT_WORDCLOUD +
+  theme_minimal()
+```
+
+---
+
+# Case study 2: 一度
+
+To help Abner, and also to demonstrate the techniques we learned, we are going to get all sentences with 一度 from the [Academia Sinica Balanced Corpus ASBC 4.0](http://asbc.iis.sinica.edu.tw)
+
+Let us look at some statistics on that website, and what we get if we just search for 「一度」.
+
+
+class (genre) | tokens
+--------------| ------
+文學	| 2
+生活	| 54
+社會	| 242
+科學	| 6 
+哲學	| 9
+藝術  | 5
+
+So in total there are 318 tokens.
+
+.purple[Can we do better with R and the data itself?]
+
+
+---
+
+class: inverse, center, middle, clear
+
+# Break + <br> making sure you have the <br> tidy_ASBC_unnested files
+
+---
+
+# From one to many
+
+.font140[
+
+Important lesson:
+
+.red[
+In programming languages, you almost always first want to test if your code works for 1 file, and only then run that code on all files.
+]
+
+But
+
+Also remember to be DRY:
+
+.red[Don't Repeat Yourself]
+]
+
+If you have to reuse the same code three times, it is time to write a function so you can only make one mistake (and write solutions) once.
+
+
+---
+
+# From one to many
+
+Let's say we want to test the calculator in R.
+
+```{r}
+some_numbers <- c(2, 5, 29, 43)
+some_numbers + 1
+some_numbers + 1 + 1
+some_numbers + 1 + 1 + 1
+```
+
+Oh no, we have written this three times! What if in the future we want not to just .red[`+ 1`] but want to .red[`+ 2`]?
+
+We will need to write a function that we can change.
+
+---
+
+# From one to many: functions
+
+This is how you write a function:
+
+```{r, eval=FALSE}
+plus_one <- function(x){
+  x + 1
+}
+```
+
+Look a function has appeared in our Environment tab!
+
+Let's try it:
+
+```{r, eval=FALSE}
+plus_one(some_numbers)
+```
+
+--
+
+Changing it:
+
+```{r, eval=FALSE}
+plus_one <- function(x){
+  x + 2
+}
+
+plus_one(some_numbers)
+```
+
+---
+
+# Reading in the .Rds files
+
+We need to first read in our files and try to find our search expression.
+
+We can read in a .blue[directory (a folder)] of files by using .orange[fs::].red[dir_ls]
+
+```{r, eval=FALSE}
+files <- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested/哲學",
+                    regexp = ".rds$",
+                    recurse = TRUE)
+files
+```
+
+I know that in filenumber 203976.rds there should be an 一度, but otherwise you should guess a bit, or first try with a high frequency word like 我:
+
+```{r, eval=FALSE}
+files %>% str_which("203976")
+
+# the 846th file, this is a Base R expression
+files[846]
+
+testrds <- read_rds(files[846])
+
+```
+
+---
+
+# Filtering for one 一度
+
+```{r, eval=FALSE}
+testrds %>%
+  filter(str_detect(text, "一度"))
+```
+
+---
+
+# Filtering for all 一度
+
+```{r, eval=FALSE}
+# takes about a minute for me
+files <- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested",
+                    regexp = ".rds$",
+                    recurse = TRUE)
+
+# first just find all the 一s, maybe we want more
+expr <- "\\b一"
+
+# these are the steps we need to take per file:
+finder <- function(file){
+  file %>%
+    read_rds() %>%
+    filter(str_detect(text, expr))
+}
+```
+
+
+---
+
+# Filtering for all 一度
+
+It's time we meet .orange[purrr], the R cat that iterates over many things.
+
+This R cat wants:
+* things to loop / iterate over 
+* a function to do in the loop
+* you get to choose the output:
+  * .red[map] gives a list
+  * .red[map_df] gives a dataframe (tibble)
+  * there is a [cheat sheet](https://rstudio.com/resources/cheatsheets/) 'Apply Functions Cheat Sheet' <br> (but you don't need to download it now)
+
+So to get the dataframe of all the sentences containing 一:
+
+```{r, eval=FALSE}
+df <- map_df(files, finder)
+```
+
+---
+
+# Narrowing the field
+
+Given that this is a tagged corpus, all words are stored as .blue[WORD_TAG]
+
+So logically there could be two options for these two characters:
+* 一_TAG 度_TAG
+* 一度_TAG
+
+Let's make a regular expression:
+
+```{r, eval=FALSE}
+# I did a few runs for this, not in one go :) 
+regex <- "一_\\w+\\b\\s度_\\w+\\b|一度_\\w+\\b"
+
+yidu <- df %>%
+  filter(str_detect(text, regex))
+
+yidu
+```
+
+---
+
+# Concordances for 一度
+
+Version .blue[with parts-of-speech tags POS] and without NOPOS
+
+```{r, eval=FALSE}
+# copy from James Joyce above and adapt!
+
+yidu_pos <- yidu %>%
+  #mutate(expression = str_extract_all(text, glue::glue(".+{regex}.+"))) %>% 
+  #unnest(expression) %>%
+  mutate(left = str_replace_all(text, glue::glue("({regex}).+"), ""),
+         target = str_extract(text, glue::glue("{regex}")),
+         right = str_replace_all(text, glue::glue(".+({regex})"), "")) 
+
+yidu_pos %>%
+  select(left, target, right, text)
+```
+
+---
+
+# Concordances for 一度
+
+Version with parts-of-speech tags POS and .blue[without NOPOS]
+
+
+```{r, eval=FALSE}
+
+regex2 <- "一\\s?度"
+
+yidu_nopos <- yidu %>%
+  mutate(text = str_replace_all(text, "_\\w+\\b", "")) %>%
+  #mutate(expression = str_extract_all(text, regex2)) %>%  
+  #unnest(expression) %>%
+  mutate(left = str_replace_all(text, glue("({regex2}).+"), ""),
+         target = str_extract(text, glue("{regex2}")),
+         right = str_replace_all(text, glue(".+({regex2})"), ""))
+
+yidu_nopos
+```
+
+---
+
+# So did we do better than the website interface?
+
+class (genre) | tokens
+--------------| ------
+文學	| 2
+生活	| 54
+社會	| 242
+科學	| 6 
+哲學	| 9
+藝術  | 5
+
+versus: 
+
+```{r, eval=FALSE}
+yidu %>%
+  count(class)
+```
+
+---
+
+# More and more 一度s?
+
+.purple[We want to know if the number of 一度s increased over the years.]
+
+Normally you want not just absolute (token) frequencies, but relative frequencies, but today we are just going to look at token frequency.
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  count(publishdate)
+```
+
+Oh oh, the publishdate is very messy. 
+You could try to programmatically (with R) change it into the same structure, but since it's only 186 rows at this point, I would consider doing it manually.
+
+Although if year is enough, we might be able to do it quick and dirty!
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  count(publishdate) %>%
+  arrange(desc(year))
+```
+
+---
+
+# More and more 一度s?
+
+Western years
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  count(publishdate) %>%
+  mutate(year = case_when(
+    # western dates
+    str_detect(publishdate, "198.") ~ str_extract(publishdate, "198."),
+    str_detect(publishdate, "199.") ~ str_extract(publishdate, "199."),
+    str_detect(publishdate, "200.") ~ str_extract(publishdate, "200."),
+    TRUE ~ "test"
+  )) %>%
+  arrange(desc(year))
+```
+
+---
+
+# More and more 一度s?
+
+Western years and Taiwanese years
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  count(publishdate) %>%
+  mutate(year = case_when(
+    # western dates
+    str_detect(publishdate, "198.") ~ str_extract(publishdate, "198."),
+    str_detect(publishdate, "199.") ~ str_extract(publishdate, "199."),
+    str_detect(publishdate, "200.") ~ str_extract(publishdate, "200."),
+    # taiwanese dates
+    str_detect(publishdate, "84..") ~ "1995",
+    str_detect(publishdate, "85..") ~ "1996",
+    str_detect(publishdate, "86..") ~ "1997",
+    str_detect(publishdate, "87..") ~ "1998",
+    str_detect(publishdate, "88..") ~ "1999",
+
+    TRUE ~ "test"
+  )) %>%
+  arrange(desc(year))
+```
+
+---
+
+# More and more 一度s?
+
+Final form (with the .blue[`\\d`] regular expression)
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  mutate(year = case_when(
+    # western dates
+    str_detect(publishdate, "198\\d") ~ str_extract(publishdate, "198."),
+    str_detect(publishdate, "199\\d") ~ str_extract(publishdate, "199."),
+    str_detect(publishdate, "200\\d") ~ str_extract(publishdate, "200."),
+    # taiwanese dates
+    str_detect(publishdate, "84\\d\\d") ~ "1995",
+    str_detect(publishdate, "85\\d\\d") ~ "1996",
+    str_detect(publishdate, "86\\d\\d") ~ "1997",
+    str_detect(publishdate, "87\\d\\d") ~ "1998",
+    str_detect(publishdate, "88\\d\\d") ~ "1999",
+
+    TRUE ~ "test"
+  )) %>%
+  count(year) %>%
+  filter(year != "test") -> predate
+```
+
+---
+
+# Lubridate
+
+Now we could turn the .blue[year] variable into a date (a special data object class in R). You can use .orange[lubridate::].red[ymd()] for that. 
+
+But the code below will add "01-01" to our dates (but for current purposes that is okay)
+
+```{r, eval=FALSE}
+library(lubridate)
+
+predate %>% 
+  mutate(year = as.numeric(year),
+         year = lubridate::ymd(year, truncated = 2L)) -> dated_yidu
+```
+
+Let's visualize!
+
+```{r, eval=FALSE}
+dated_yidu %>%
+  ggplot(aes(x = year, y= n)) +
+  geom_point() +
+  theme_minimal() +
+  geom_smooth(stat = "smooth")
+```
+
+
+---
+
+# Final showcase
+
+A short demonstration on how to use .red[`unnest_tokens()`] with .blue[segmented Chinese text].
+
+Option 1: .blue[`token = "words"`] argument
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  select(class, text) %>%
+  unnest_tokens(input = "text",
+                output = "words",
+                token = "words") %>%
+  count(words, sort = TRUE)
+```
+
+---
+
+# Final showcase
+
+A short demonstration on how to use .red[`unnest_tokens()`] with .blue[segmented Chinese text].
+
+
+Option 2:
+It is generally safer to use the .blue[`token = "regex"`] and .blue[`pattern = "\\s"`] arguments in .red[`unnest_tokens()`].
+
+```{r, eval=FALSE}
+yidu_nopos %>%
+  select(class, text) %>%
+  unnest_tokens(input = "text",
+                output = "words",
+                token = "regex",
+                pattern = "\\s") %>%
+  count(words, sort = TRUE)
+```
+
+
+---
+
+# What did we learn today?
+
+## Skills
+
+* ✔️ how to make a .blue[concordance] from a text tibble
+* ✔️ how to read in and process .blue[multiple files]
+* ✔️ how to make a .blue[wordcloud]
+
+## Data
+* ✔️ how to download data from .blue[Project Gutenberg]
+* ✔️ how to work with .blue[multiple .Rds files] (as an example)
+
+## Case studies
+* ✔️ the .blue[.sc[way construction]] (Goldberg 1995)
+* ✔️ the .blue[.sc[yidu 一度 construction]] (Chen 2019a; 2019b)  
+
+
+---
+
+# Next week
+
+## Skills
+
+* .orange[quanteda] package 
+* scraping stuff from static websites with .orange[rvest]
+* looking at some .blue[.xml files]
+
+## Datasets
+
+* a .blue[website of your choice] (you can tell me on CEIBA)
+* .blue[PTT]
+* (a part of the) .blue[BNC corpus (in xml)]
+
+## Case studies
+
+* .blue[Association measures from Gries]: your homework is to read the paper(s).
+
+---
+
+
+background-image: url(https://media.giphy.com/media/upg0i1m4DLe5q/source.gif)
+background-position: 50% 50%
+background-size: 100%
+class: center, bottom, clear
+
+
+
+
+
+
+
