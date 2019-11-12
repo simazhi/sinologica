@@ -756,7 +756,7 @@ We can read in a .blue[directory (a folder)] of files by using .orange[fs::].red
 
 
 ```r
-files &lt;- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested/哲學",
+files &lt;- fs::dir_ls(here("ASBC"), # or check path
                     regexp = ".rds$",
                     recurse = TRUE)
 files
@@ -791,7 +791,7 @@ testrds %&gt;%
 
 ```r
 # takes about a minute for me
-files &lt;- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested",
+files &lt;- fs::dir_ls(here("ASBC"),
                     regexp = ".rds$",
                     recurse = TRUE)
 
@@ -896,7 +896,7 @@ yidu_nopos
 
 ---
 
-# So did we do better than the website interface?
+# Is R better than online corpus?
 
 class (genre) | tokens
 --------------| ------
@@ -1109,7 +1109,7 @@ yidu_nopos %&gt;%
 
 ## Skills
 
-* .orange[quanteda] package 
+* .orange[quanteda] package .grey[(easier corpus but we needed .orange[tidytext] first)]
 * scraping stuff from static websites with .orange[rvest]
 * looking at some .blue[.xml files]
 

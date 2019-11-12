@@ -389,8 +389,8 @@ write_csv(joyce_conc,
 ```
 
 ```{r, echo=FALSE}
-write_csv(joyce_conc, 
-          here::here("static", "Rbootcamp", "joyce_way.csv"))
+#write_csv(joyce_conc, 
+#          here::here("static", "Rbootcamp", "joyce_way.csv"))
 ```
 
 
@@ -424,7 +424,7 @@ joyce_cx <- read_csv("inputfiles", "joyce_way_tagged.csv") #cx for construction
 ```
 
 ```{r, echo=FALSE, message=FALSE}
-joyce_cx <- read_csv(here::here("static", "Rbootcamp", "joyce_way_tagged.csv"))
+#joyce_cx <- read_csv(here::here("static", "Rbootcamp", "joyce_way_tagged.csv"))
 
 # inspect our data
 #skimr::skim(joyce_cx)
@@ -706,7 +706,7 @@ We need to first read in our files and try to find our search expression.
 We can read in a .blue[directory (a folder)] of files by using .orange[fs::].red[dir_ls]
 
 ```{r, eval=FALSE}
-files <- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested/哲學",
+files <- fs::dir_ls(here("ASBC"), # or check path
                     regexp = ".rds$",
                     recurse = TRUE)
 files
@@ -739,7 +739,7 @@ testrds %>%
 
 ```{r, eval=FALSE}
 # takes about a minute for me
-files <- fs::dir_ls("/Users/Thomas/Desktop/ASBC/tidy_ASBC_unnested",
+files <- fs::dir_ls(here("ASBC"),
                     regexp = ".rds$",
                     recurse = TRUE)
 
@@ -841,7 +841,7 @@ yidu_nopos
 
 ---
 
-# So did we do better than the website interface?
+# Is R better than online corpus?
 
 class (genre) | tokens
 --------------| ------
@@ -1044,7 +1044,7 @@ yidu_nopos %>%
 
 ## Skills
 
-* .orange[quanteda] package 
+* .orange[quanteda] package .grey[(easier corpus but we needed .orange[tidytext] first)]
 * scraping stuff from static websites with .orange[rvest]
 * looking at some .blue[.xml files]
 
