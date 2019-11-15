@@ -1,0 +1,192 @@
+---
+title: "1-scrape"
+author: "Thomas Van Hoey"
+date: "4-11-2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Packages used
+
+```{r}
+library(rvest)
+library(tidyverse)
+library(RCurl)
+```
+
+# Extra functions
+
+We need to bypass the 18+ control, see this link in Yongfu's `PTTR` package https://github.com/liao961120/pttR/blob/master/R/data-retrieve.R (which I can't download at the moment).
+
+So we define a new function `read_html2` to hulp us with the 18+.
+
+```{r}
+read_html2 <- function(url, ...) {
+  if (!grepl("^http", url)) return(read_html(url, ...))
+  curl_1 <- getCurlHandle()
+  curlSetOpt(cookie = "over18=1",
+             followlocation = TRUE,
+             curl = curl_1)
+ url <- getURL(url, curl = curl_1)
+ read_html(url, ...)
+}
+```
+
+
+# Data
+
+This link brings us to the Gossiping board, we need to find the sytematicity in the links.
+https://www.ptt.cc/bbs/Gossiping/index38945.html
+
+It's mostly the *endnumbers* that changes. So you should select a range of pages and add them to a base link, as follows:
+
+```{r}
+endnumbers <- 60:77
+
+firstlinks <- glue::glue("https://www.ptt.cc/bbs/Gossiping/index390{endnumbers}.html")
+
+# past
+# index389{endnumbers}
+```
+
+
+# Gossiping list of urls
+
+First we want to collect all the links that are still valid on the page, i.e. the ones that haven't been deleted 刪除 by people before we got to them.
+That's what the `deleted` thing detects.
+
+Next we want the `numbers` on the left side, and especially when things are so-called 爆 (> 101). 
+But we need to take out the `deleted` ones, with `anti_join()`.
+
+Then we also want the `names` of the author of that thread.
+As well as the `url links` to the pages that we want to scrape.
+
+```{r}
+preselection <- function(firstlinks){
+  
+  glue::glue("{firstlinks}\n")
+  
+  gossiping <- read_html2(firstlinks)
+  
+  deleted <-  gossiping %>%
+    html_nodes(".title") %>%
+    html_text() %>%
+    str_which("刪除") %>%
+    enframe()
+
+  gossiping.numbers <-  gossiping %>%
+    html_nodes(".nrec") %>%
+    html_text() %>%
+    enframe(value = "tui") %>%
+    mutate(tui = case_when(
+      str_detect(tui, "爆") ~ "101",
+      TRUE ~ tui
+    )) %>%
+    mutate_if(is_character, funs(na_if(.,""))) %>%
+    #rename(tui = value) %>%
+    mutate(tui = as.numeric(tui)) %>%
+    anti_join(deleted, by = c("name" = "value")) %>%
+    select(tui)
+  #gossiping.numbers
+
+  gossiping.names <- gossiping %>%
+    html_nodes(".title a") %>%
+    html_text() %>%
+    enframe(value = "title") %>%
+      select(title)
+  #gossiping.names 
+
+  gossiping.links <- gossiping %>%
+    html_nodes(".title a") %>%
+    html_attrs() %>%
+    unlist() %>%
+    enframe(value = "link") %>%
+    select(link)
+  #gossiping.links
+
+  combined <- cbind(gossiping.numbers, gossiping.names, gossiping.links)
+  #combined  
+}
+
+df <- map_df(firstlinks, preselection)
+
+df
+
+```
+
+Now we only want the *tui*s 推 that are higher than > 100 (they are '爆').
+
+```{r}
+link.end <- df %>%
+  filter(tui > 100) %>%
+  pull(link)
+
+links <- glue::glue("https://www.ptt.cc{link.end}") %>% as.vector()
+links
+```
+
+# Gossiping content
+
+Now we get the content of all these pages by going to the links we selected above.
+We will save the files by their baseurl (the `end` variable defined below).
+
+For each link we want to 1) get some metadata `meta` and write that in a csv file, 2) get the content `neirong`.
+In `neirong` I took out some unnecessary first and last lines with `dplyr::slice()`: namely about 15 lines on each file was unnecessary, and about 20 lines at the end were also the same in each file.
+
+```{r}
+
+contentgrabber <- function(url){
+  
+  end <- str_replace(url, ".+bbs/.+/", "")
+  
+  content <- read_html2(url)
+  
+  meta <- content %>%
+  html_nodes(".article-meta-value") %>%
+  html_text() %>%
+  enframe(name = NULL) %>%
+  mutate(meta = c("author", "board", "title", "time")) %>%
+  pivot_wider(values_from = value,
+              names_from = meta) %>%
+  mutate(url = url,
+         grabtime = Sys.time())
+  
+  write_csv(meta, here::here("1-grab", "inventory", "metadata.csv"),
+            append = TRUE)
+  
+  neirong <- content %>%
+  html_text("#main-content , .f6 ") %>%
+  tibble::enframe(name = NULL) %>%
+  mutate(value = str_split(value, "\n")) %>%
+  unnest(value) %>%
+  slice(15:(n()-20))
+  
+  write_delim(neirong,
+              here::here("1-grab", "files", 
+                         glue::glue("{end}.txt")), 
+              col_names = FALSE)
+}
+
+```
+
+
+# Run
+
+Finally we run the links we decided to keep.
+
+```{r}
+walk(links, contentgrabber)
+```
+
+
+
+
+---
+
+# troubleshooting
+
+
+
