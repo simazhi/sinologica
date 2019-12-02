@@ -178,7 +178,7 @@ This high Reliance means that whenever *confess* occurs in the corpus after a mo
 Its Attraction, however, has a much lower value: *must* does not necessarily occur with *confess*, in fact, it occurs with lots of other verbs as well!
 
 The third group of tests is actually correlated to Attraction and Reliance: respectively  $\Delta P_{word \to construction}$ and $\Delta P_{construction \to word}$ (cf. [Ellis & Ferreira-Junior](doi.org/10.1075/arcl.7.08ell) a.o.).
-They are also known as tests of cue validity and are caluclated as follows:
+They are also known as tests of cue validity and are calculated as follows:
 
 $$\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}$$
 
