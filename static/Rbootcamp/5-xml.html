@@ -800,7 +800,8 @@ finished.df %&gt;%
   mutate(abcd = abcd) %&gt;% # we know abcd from above
   mutate(cd = abcd - ab) %&gt;% 
   mutate(d = cd - c) %&gt;%
-  select(verb, a, b, c, d, abcd) -&gt; preassociation
+  mutate(aexp = ab * ac / abcd) %&gt;%
+  select(verb, a, b, c, d, abcd, aexp) -&gt; preassociation
 preassociation
 ```
 
