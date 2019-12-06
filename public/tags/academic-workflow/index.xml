@@ -294,7 +294,7 @@ reliance &amp;lt;- a / (a+b) * 100&lt;/code&gt;&lt;/pre&gt;
 This high Reliance means that whenever &lt;em&gt;confess&lt;/em&gt; occurs in the corpus after a modal it &lt;em&gt;relies&lt;/em&gt; on &lt;em&gt;must&lt;/em&gt; to occur.
 Its Attraction, however, has a much lower value: &lt;em&gt;must&lt;/em&gt; does not necessarily occur with &lt;em&gt;confess&lt;/em&gt;, in fact, it occurs with lots of other verbs as well!&lt;/p&gt;
 &lt;p&gt;The third group of tests is actually correlated to Attraction and Reliance: respectively &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{word \to construction}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{construction \to word}\)&lt;/span&gt; (cf. &lt;a href=&#34;doi.org/10.1075/arcl.7.08ell&#34;&gt;Ellis &amp;amp; Ferreira-Junior&lt;/a&gt; a.o.).
-They are also known as tests of cue validity and are caluclated as follows:&lt;/p&gt;
+They are also known as tests of cue validity and are calculated as follows:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{construction \to word} = cue_{verb} = \frac{a}{a + b} - \frac{c}{c + d}\]&lt;/span&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dP.cueCx &amp;lt;- a/(a + c) - b/(b + d)

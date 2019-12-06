@@ -5,12 +5,180 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Fri, 06 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Rbootcamp 2019</title>
+      <link>/post/rbootcamp-2019/</link>
+      <pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/rbootcamp-2019/</guid>
+      <description>
+
+
+&lt;div id=&#34;tl-dr&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;tl; dr&lt;/h1&gt;
+&lt;p&gt;Below you find what we did during the Rbootcamp for Lexical Semanticists.
+In between this paragraph and the contents, there is a bit of my own #Rstory.
+Warning, many R-puns.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;intro&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Somewhere in the beginning of this semester, I got the request to teach the other people in my lab “the basics of R”, so that they could see what kind of benefits programming languages could give them in their research.
+I decided that that was a good idea and so, the “Rbootcamp for Lexical Semanticists” was born.&lt;/p&gt;
+&lt;p&gt;Our group was kind of small, eight people, who found themselves grappling with R and Rstudio for five hours over the course of November and early December 2019.
+What they had had in mind, I guess, was an intro to one package, or one tool to do everything; instead, I decided to give them one swiss army knife.
+While it does take a long time to &lt;em&gt;learn R&lt;/em&gt; (steep learning curve) and many people have despaired (see cartoon below), I think that for newcomers &lt;a href=&#34;http://varianceexplained.org/r/teach-tidyverse/&#34;&gt;&lt;strong&gt;it is okay to start with the so-called tidyverse&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://gilesd-j.com/wp-content/uploads/2018/03/learning-curve.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So my love for the tidyverse can be exemplified in the following meme:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/sontidyverse.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;my-own-experiences&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;My own experiences&lt;/h1&gt;
+&lt;p&gt;What I mean with that actually has to do with my own backstory: when I first encountered R, during my first MA thesis (Sinology), which analyzed if the writing patterns of famous writers of the Tang and Song dynasties conformed to their claim of participating in the &lt;em&gt;gǔwén yùndòng&lt;/em&gt; 古文運動 ‘Classical Prose Movement’ (Van Hoey 2014).
+With some stylometric methdos, provided through an R package I found that some writers did go back to ancient times for phrases, while others claimed to belong to this movement, yet it did not show in their phrasing (but topically they might still be considered part of the movement).
+So for me, R was a way to nuance previous research and add a quantitative component to a largely qualitatively researched subject.&lt;/p&gt;
+&lt;p&gt;After that thesis, I kind of forgot about R, and I have found that coding is really a matter of &lt;em&gt;use it or lose it&lt;/em&gt;, but also like riding a bycicle: once you’re well-versed enough in the principles it is easyish to pick up new languages.
+So I was introduced to Perl in the year after, and learned about &lt;a href=&#34;https://en.wikipedia.org/wiki/Regular_expression&#34;&gt;regular expressions&lt;/a&gt;, which I consider to be one of the top skills that any graduate student (or actually people that use a computer) should learn.
+You can try and play around with this webite, &lt;a href=&#34;https://regexr.com&#34;&gt;regexr&lt;/a&gt; to see if you get the idea.
+&lt;strong&gt;I promise that it will make your life better.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Flash forward some years into my PhD and there I was, given the option to take a course called “R Language and Data Science”, abbreviated as RLADS.
+It started from Base R (the R that you install and can just use out of the box), which was kind of hard the learn (I remembered), but it slowly introduced us to this thing called the Tidyverse.
+My curiosity was piqued and I found the &lt;em&gt;R for Data Science&lt;/em&gt; book that was available online (&lt;a href=&#34;https://r4ds.had.co.nz&#34;&gt;here&lt;/a&gt;), and it changed the way I did R.
+Suddenly, most of the obstacles that resulted from the organic development of R over the years had melted away, in favor of standardized fuctions.
+It also helps that there are lots of &lt;strong&gt;cheat sheets&lt;/strong&gt; to help you remember what certain functions do.
+You can find those &lt;a href=&#34;https://rstudio.com/resources/cheatsheets/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;becoming-a-wizrd&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Becoming a #wizRd&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/descartes.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Okay I am not really a wizRd™, but I do like R a lot, as I have mentioned before on this blog, and even though it is reportedly not the fasted languages, I like that the syntax of the language is pretty clear and straightforward.
+I also like the versatility of the language, and its union to the interface of Rstudio.
+It really is a swiss army knife, and I am even writing this blog using Rstudio, just to give an example.
+It has impacted the way I think about data collection (because of already thinking about how I should use programming to later process the data), and also has caused me to state more clearly the hypotheses and research questions.
+I mean, I already did this before, make no mistake, but it is still a different tale if you’re taking the quantitative route rather than the qualitative route.&lt;/p&gt;
+&lt;p&gt;So when I got the request to teach R to my labmates I had to think of how to go about it.
+I knew I would first start with the installation part, and the basic philosophy, and then show them a bit how to get some immediate results.
+Over the course of the weeks, I did follow some case studies from the three linguists that I most readily connect to the R language: Baayen, Gries and Levshina.
+You can easily google them and find their R-related stuff, often in conjunction with other people, so these three names metonymically stand for networks of people invested in using corpora as their source material in their linguistic analyses.&lt;/p&gt;
+&lt;p&gt;So, without further ado, here are the links to the five bootcamp classes we did and the main points covered in each one.
+For the interested reader, it is best to follow them from the first to the fifth, but if a given topic interests you, feel free to jump to that one.
+Also, if you find any mistakes (because there might have been, maybe corrected in class but not in the materials), I look forward to hearing from you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-rbootcamp-for-lexical-semanticists&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Rbootcamp for Lexical Semanticists&lt;/h1&gt;
+&lt;div id=&#34;setup&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1-Setup&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.thomasvanhoey.com/rbootcamp/1-setup#1&#34;&gt;the first week&lt;/a&gt; we focused on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;setting up R and Rstudio&lt;/li&gt;
+&lt;li&gt;philosophy of R and the tidyverse&lt;/li&gt;
+&lt;li&gt;the most used functions&lt;/li&gt;
+&lt;li&gt;R, R script, R Markdown&lt;/li&gt;
+&lt;li&gt;data transformation with &lt;code&gt;dplyr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;data visualization with &lt;code&gt;ggplot2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The case study came from a&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;movie subtitle corpus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;strings&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;2-Strings&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.thomasvanhoey.com/rbootcamp/2-strings#1&#34;&gt;the second week&lt;/a&gt; we focused on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;working with strings of text through &lt;code&gt;stringr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;datapasta&lt;/li&gt;
+&lt;li&gt;input and output through &lt;code&gt;readr&lt;/code&gt; and &lt;code&gt;readxl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;path problems with &lt;code&gt;here&lt;/code&gt; and &lt;code&gt;fs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;data transformation with &lt;code&gt;dplyr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The case study came from a&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;subset of Star Trek movies in the subtitle corpus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tidytext&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;3-tidytext&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.thomasvanhoey.com/rbootcamp/3-tidytext#1&#34;&gt;the third week&lt;/a&gt; we focused on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;buidling a regular expression with &lt;code&gt;glue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;making concordances from text tibbles&lt;/li&gt;
+&lt;li&gt;processing multiple files by wrapping things in functions and iterating over them with &lt;code&gt;purrr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;making a word cloud&lt;/li&gt;
+&lt;li&gt;very short intro to working with dates through &lt;code&gt;lubridate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data came from and through&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gutenberg.org&#34;&gt;Project Gutenberg&lt;/a&gt; with &lt;code&gt;gutenbergr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;the Academia Sinicia Balanced Corpus ASBC 4.0 which I had converted from .xml to .rds files (ask me about this if you are also interested in &lt;em&gt;not working with xml&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Case studies came from&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Goldberg’s (1995) treatment of the WAY CONSTRUCTION&lt;/li&gt;
+&lt;li&gt;the &lt;em&gt;yídù&lt;/em&gt; 一度 CONSTRUCTION one of my labmates is working on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quanteda&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;4-quanteda&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.thomasvanhoey.com/rbootcamp/4-quanteda#1&#34;&gt;the fourth week&lt;/a&gt; we focused on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;scraping stuff from websites with &lt;code&gt;rvest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;text analysis with &lt;code&gt;quanteda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;more practice on iteration with &lt;code&gt;purrr&lt;/code&gt; and functionizing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data came from&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the lyrics by Jay Chou 周杰倫 on mojim.com&lt;/li&gt;
+&lt;li&gt;PTT (the Taiwanese reddit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;xml&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;5- xml&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.thomasvanhoey.com/rbootcamp/5-xml#1&#34;&gt;the fifth week&lt;/a&gt; we focused on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;learning to work with xml-files through &lt;code&gt;xml2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;segmentation of Chinese &lt;code&gt;jiebaR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;getting a list of Chinese stop words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data came from the&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;British National Corpus (in xml format)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Case studies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we explored the family of collostructional analyses first propagated by Stefanowitsch &amp;amp; Gries (2003)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;general-conclusions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;General conclusions&lt;/h1&gt;
+&lt;p&gt;I want to thank my labmates for “sticking with the program”, and trying out a little bit what R can do.
+I don’t really expect them to go full-on hacker mode, but I do hope that I have shown them that some techniques like regular expressions, or getting stuff from a bunch of files can indeed go pretty efficiently.&lt;/p&gt;
+&lt;p&gt;For me, the most valuable moments were when we started having discussion about the usefulness of the computational approach.
+Basically, we seemed to agree that things like R and python etc. are mostly &lt;em&gt;tools&lt;/em&gt; that help you process data.
+The visualizations that follow from these are nice, and you should make them to get a better handle on the spread of your data etc., but &lt;strong&gt;&lt;em&gt;you&lt;/em&gt; still need to do the analysis&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;And that is what R is for me too: a tool that helps me realize better research, but that is not a replacement of research.
+With that idea running in the background, and the foundational skills I hope to have transferred to them, I hope they can truly become #wizRds™.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salutatio&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Salutatio&lt;/h1&gt;
+&lt;p&gt;In this section of parting words, I want to show that while coding &lt;em&gt;can be&lt;/em&gt; annoying, there a large &lt;strong&gt;community&lt;/strong&gt; that is struggling with similar problems as you, the young R-padawan is facing.
+Luckily we have &lt;strong&gt;memes&lt;/strong&gt; to soothe our suffering.
+Don’t worry if you don’t understand (all of) them, they’re on a pretty nerdy level of humour.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/thinking.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/hadley.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/stackoverflow.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/path.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/codingyoda.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/mariekondo.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Tidy collostructions</title>
@@ -294,7 +462,7 @@ reliance &amp;lt;- a / (a+b) * 100&lt;/code&gt;&lt;/pre&gt;
 This high Reliance means that whenever &lt;em&gt;confess&lt;/em&gt; occurs in the corpus after a modal it &lt;em&gt;relies&lt;/em&gt; on &lt;em&gt;must&lt;/em&gt; to occur.
 Its Attraction, however, has a much lower value: &lt;em&gt;must&lt;/em&gt; does not necessarily occur with &lt;em&gt;confess&lt;/em&gt;, in fact, it occurs with lots of other verbs as well!&lt;/p&gt;
 &lt;p&gt;The third group of tests is actually correlated to Attraction and Reliance: respectively &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{word \to construction}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Delta P_{construction \to word}\)&lt;/span&gt; (cf. &lt;a href=&#34;doi.org/10.1075/arcl.7.08ell&#34;&gt;Ellis &amp;amp; Ferreira-Junior&lt;/a&gt; a.o.).
-They are also known as tests of cue validity and are caluclated as follows:&lt;/p&gt;
+They are also known as tests of cue validity and are calculated as follows:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta P_{construction \to word} = cue_{verb} = \frac{a}{a + b} - \frac{c}{c + d}\]&lt;/span&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dP.cueCx &amp;lt;- a/(a + c) - b/(b + d)
