@@ -5,12 +5,121 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Fri, 06 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Mon, 09 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Data packages for current and future me</title>
+      <link>/post/data-packages/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/data-packages/</guid>
+      <description>
+
+&lt;h1 id=&#34;tl-dr&#34;&gt;tl; dr&lt;/h1&gt;
+
+&lt;p&gt;I show why it is worthwile to put my Chinese-related datasets in packages and how I went about it.&lt;/p&gt;
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know if I&amp;rsquo;m very late to the party, but in this final sprint towards a finished dissertation, I keep finding myself juggling multiple datasets when using them in R.
+This usually is paired with a &lt;code&gt;readr::read_csv()&lt;/code&gt; or related functions, but the drawback is that I have to go find where I actually put that dataset on my computer.
+This causes me some friction (even though the location didn&amp;rsquo;t change), but what&amp;rsquo;s worse is that that&amp;rsquo;s actually not reproducible.
+In other words, the code I wrote that way is &lt;strong&gt;not portable&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;first-trial-chideod&#34;&gt;First trial: CHIDEOD&lt;/h1&gt;
+
+&lt;p&gt;At some point during this year, I suddenly remembered some blog posts I had read like a year ago, on how to turn your dataset into an R package*.
+My first experiment was the database I&amp;rsquo;m making myself, the &lt;strong&gt;Chinese Ideophone Database&lt;/strong&gt; (CHIDEOD; available &lt;a href=&#34;https://osf.io/kpwgf/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;).
+Somewhere in March/April this year I managed to turn that into a data package, and have done so with subesquent versions of CHIDEOD.
+It provided me with the functionality of just running a &lt;code&gt;library(CHIDEOD)&lt;/code&gt; and BAM!, there was the &lt;code&gt;chideod&lt;/code&gt; object to my disposal.&lt;/p&gt;
+
+&lt;p&gt;*More precisely the blog posts I read were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ed Hagen&amp;rsquo;s &lt;a href=&#34;https://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Put your data into an R package&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Dave Kleinschmidt&amp;rsquo;s &lt;a href=&#34;https://www.davekleinschmidt.com/r-packages/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Taking your data to go with R packages&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Erick Howard&amp;rsquo;s &lt;a href=&#34;https://www.erikhoward.net/how-to-create-an-r-data-package/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How to create an R data package&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hilary Parker&amp;rsquo;s &lt;a href=&#34;https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Writing an R package from scratch&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;other-datasets&#34;&gt;Other datasets&lt;/h1&gt;
+
+&lt;p&gt;Then somewhere in the beginning of this semester something clicked: I would take the other datasets I&amp;rsquo;m often working with, and find a way to turn them into data packages as well.
+In concreto, those datasets are&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ocbaxtersagart.lsait.lsa.umich.edu&#34; target=&#34;_blank&#34;&gt;Baxter and Sagart&amp;rsquo;s Middle Chinese and Old Chinese reconstructions&lt;/a&gt;. This was all the more important, because this website has been unavailble at times &lt;em&gt;(maybe because there is no https certificate?, I don&amp;rsquo;t know)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.chineselexicaldatabase.com&#34; target=&#34;_blank&#34;&gt;Sun et al.&amp;rsquo;s Chinese Lexical Database&lt;/a&gt;, a very good database for psycholinguistic information on simplified Chinese characters.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;Hànyǔ dà cídiǎn&lt;/em&gt; 漢語大詞典, a giant monolingual dictionary of Chinese.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;http://asbc.iis.sinica.edu.tw&#34; target=&#34;_blank&#34;&gt;Academia Sinica Balanced Corpus of Chinese ASBC 4.0&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, I need to mention that for my own purposes, I have made some alterations to all of these datasets.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For Baxter &amp;amp; Sagart&amp;rsquo;s dataset, I&amp;rsquo;ve added things like an &lt;a href=&#34;https://en.wikipedia.org/wiki/International_Phonetic_Alphabet&#34; target=&#34;_blank&#34;&gt;IPA&lt;/a&gt; version of the Middle Chinese (thanks to &lt;a href=&#34;https://pypi.org/project/sinopy/&#34; target=&#34;_blank&#34;&gt;sinopy&lt;/a&gt;), a simplified column next to the traditional character one etc.&lt;/li&gt;
+&lt;li&gt;For the Chinese Lexical Database, which is based on simplified characters, I found it useful to still add a traditional column and pull the characters of each word into traditional characters as well. Most of the psycholinguistic measures (entropy, reaction time etc.) are only valid for the simplified ones, but there is still a wealth of information that is useful for the traditional ones.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve &lt;a href=&#34;https://r4ds.had.co.nz/tidy-data.html&#34; target=&#34;_blank&#34;&gt;tidied up&lt;/a&gt; the &lt;em&gt;Hànyǔ dà cídiǎn&lt;/em&gt; 漢語大詞典, by splitting all the meanings that were numbered per lemma.&lt;/li&gt;
+&lt;li&gt;I was lucky to access an institutional version of the ASBC 4.0 but it was unfortunately coded in the programming-language-neutral XML, which is not fun to use (&lt;em&gt;&amp;ldquo;XML IS HELL&amp;rdquo;&lt;/em&gt;). So I spent like a day turning it into nicely structured .Rds files. Not language-neutral (R-friendly) but easier to use for me. I also changed the spacing of the &amp;ldquo;Chines big space&amp;rdquo; (the one that is one square long and tall) to normal spacing; on top of the ugly tagging method of using brackets, e.g. 我(PRON), to less visually cluttered underscores, i.e. 我_PRON.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/post/2019-12-09-data-packages_files/yodar.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;storing-them-somewhere&#34;&gt;Storing them somewhere&lt;/h1&gt;
+
+&lt;p&gt;In an ideal scenario I would do this step first, but I actually did the package stuff (see next section) first.
+In this step I uploaded my datasets to a (private) repository.
+Since my experience with the &lt;a href=&#34;https://osf.io&#34; target=&#34;_blank&#34;&gt;Open Science Framework OSF&lt;/a&gt; had been positive, I decided to dump my datasets there.
+This has the advantages that I can 1) version them, 2) access them from different devices (in case of computer crashes or changes etc.).
+So now I need to find out how to shareable these new datasets are.
+I&amp;rsquo;m pretty sure I can&amp;rsquo;t just make public the dictionary (even though I have transformed it), or the corpus &amp;ndash; although I think that these projects should be freely available.
+The dataset by Baxter &amp;amp; Sagart and the Chinese Lexical Database should be a bit more available, but I will contact the authors shortly about these issues and when they are available, set the packages repositories on gitub to public, so you can all enjoy them.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-to-make-a-datapackage&#34;&gt;How to make a datapackage&lt;/h1&gt;
+
+&lt;p&gt;The main tool I used to create these datapackages is the &lt;code&gt;DataPackageR&lt;/code&gt; package.
+&lt;a href=&#34;https://ropensci.org/blog/2018/09/18/datapackager/&#34; target=&#34;_blank&#34;&gt;This post on the ROpenSci blog&lt;/a&gt; explains pretty well the why and how, and I actually just used the &amp;ldquo;copy + adapt no &lt;a href=&#34;https://naruto.fandom.com/wiki/Jutsu&#34; target=&#34;_blank&#34;&gt;jutsu&lt;/a&gt;&amp;rdquo; to make my packages.
+It does warrant a basic know-how of R(studio) and github, so if you need to brush up on those skills, I can recommend Jenny Bryan&amp;rsquo;s &lt;a href=&#34;https://happygitwithr.com&#34; target=&#34;_blank&#34;&gt;Happy Git and GitHub for the useR&lt;/a&gt;, a.k.a. &lt;em&gt;Happy git with R&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So that&amp;rsquo;s what I did with most of the packages.
+To see the one that is already public &amp;ndash; my CHIDEOD &amp;ndash; you can &lt;a href=&#34;https://github.com/simazhi/chinese_ideophone_database&#34; target=&#34;_blank&#34;&gt;go to this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And to download it, you should be able to do these functions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(devtools)
+install_github(&amp;quot;simazhi/chinese_ideophone_database/CHIDEOD&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;If you find any problems with this functionality, please contact me!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;challenges&#34;&gt;Challenges&lt;/h1&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know how to make the data package for the large-ish dataset of the &lt;em&gt;Hànyǔ dà cídiǎn&lt;/em&gt; 漢語大詞典 (some 200 MB), since it is bigger than Github&amp;rsquo;s size allowance.
+I just &lt;a href=&#34;https://thecoatlessprofessor.com/programming/r/r-data-packages-in-external-data-repositories-using-the-additional_repositories-field/&#34; target=&#34;_blank&#34;&gt;found this blog on attaching larger datasets&lt;/a&gt;, so I&amp;rsquo;m gonna check that out at some point.
+Also the ASBC corpus, I have just stored in the repository, it&amp;rsquo;s probably safer there.&lt;/p&gt;
+
+&lt;p&gt;Another challenge is naming the packages.
+I&amp;rsquo;ve settled for:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CHIDEOD&lt;/li&gt;
+&lt;li&gt;CLD&lt;/li&gt;
+&lt;li&gt;baxteRsagaRt&lt;/li&gt;
+&lt;li&gt;(&lt;em&gt;future:&lt;/em&gt; HYDCD)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;After updating to a new version of R (I read that R 4.0 is around the corner), and / or updating to a newer version of Rstudio, the dance of reinstalling previously installed packages will befall us once again.
+But knowing that this includes (re)installing these datasets I made and that I often use, gives me some solace, because I (will?) have looked ahead to that moment and can just do a simple &lt;code&gt;install_github&lt;/code&gt; and a &lt;code&gt;library(PACKAGE)&lt;/code&gt; and &lt;em&gt;badabing badaboom&lt;/em&gt;: I can run my scripts, in the now and in the future.&lt;/p&gt;
+
+&lt;p&gt;If the aforementioned parties are okay with it, I will make my github data packages public and share them in this post, so keep an eye out for that yo!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Rbootcamp 2019</title>
