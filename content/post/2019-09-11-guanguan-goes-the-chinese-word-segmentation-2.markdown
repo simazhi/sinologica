@@ -142,7 +142,7 @@ reticulate::py_config()
 ## python:         /usr/local/bin/python3
 ## libpython:      /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/config-3.7m-darwin/libpython3.7.dylib
 ## pythonhome:     /Library/Frameworks/Python.framework/Versions/3.7:/Library/Frameworks/Python.framework/Versions/3.7
-## version:        3.7.0 (v3.7.0:1bf9cc5093, Jun 26 2018, 23:26:24)  [Clang 6.0 (clang-600.0.57)]
+## version:        3.7.5 (v3.7.5:5c02a39a0b, Oct 14 2019, 18:49:57)  [Clang 6.0 (clang-600.0.57)]
 ## numpy:          /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy
 ## numpy_version:  1.17.1
 ## 
@@ -232,7 +232,7 @@ tokens(quanteda.corpus)
 ```
 
 ```
-## tokens from 2 documents.
+## Tokens consisting of 2 documents.
 ## text1 :
 ## [1] "關關" "雎鳩" "、"   "在"   "河"   "之"   "洲"   "。"  
 ## 
@@ -251,7 +251,7 @@ tokens_lookup(quanteda.toks, dictionary = quant.dict, levels = 1)
 ```
 
 ```
-## tokens from 2 documents.
+## Tokens consisting of 2 documents.
 ## text1 :
 ## [1] "ideo"
 ## 
@@ -265,7 +265,6 @@ dfm(quanteda.corpus, dictionary = quant.dict)
 
 ```
 ## Document-feature matrix of: 2 documents, 1 feature (50.0% sparse).
-## 2 x 1 sparse Matrix of class "dfm"
 ##        features
 ## docs    ideo
 ##   text1    1
@@ -358,82 +357,10 @@ print("Default Mode: " + "/ ".join(seg_list))  # 默认模式
 ```
 ## Default Mode: 關關/ 雎/ 鳩/ 、/ 在/ 河之洲/ 。
 ## 
-## --- Logging error ---
-## Traceback (most recent call last):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 985, in emit
-##     stream.write(msg)
-## ValueError: I/O operation on closed file
-## Call stack:
-##   File "<string>", line 1, in <module>
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 301, in cut
-##     for word in cut_block(blk):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 233, in __cut_DAG
-##     DAG = self.get_DAG(sentence)
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 179, in get_DAG
-##     self.check_initialized()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 168, in check_initialized
-##     self.initialize()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 111, in initialize
-##     default_logger.debug("Building prefix dict from %s ..." % (abs_path or 'the default dictionary'))
-## Message: 'Building prefix dict from the default dictionary ...'
-## Arguments: ()
-## --- Logging error ---
-## Traceback (most recent call last):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 985, in emit
-##     stream.write(msg)
-## ValueError: I/O operation on closed file
-## Call stack:
-##   File "<string>", line 1, in <module>
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 301, in cut
-##     for word in cut_block(blk):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 233, in __cut_DAG
-##     DAG = self.get_DAG(sentence)
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 179, in get_DAG
-##     self.check_initialized()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 168, in check_initialized
-##     self.initialize()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 145, in initialize
-##     "Dumping model to file cache %s" % cache_file)
-## Message: 'Dumping model to file cache /var/folders/kn/bjb0w7nx061145pnsxtwzpgc0000gn/T/jieba.cache'
-## Arguments: ()
-## --- Logging error ---
-## Traceback (most recent call last):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 985, in emit
-##     stream.write(msg)
-## ValueError: I/O operation on closed file
-## Call stack:
-##   File "<string>", line 1, in <module>
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 301, in cut
-##     for word in cut_block(blk):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 233, in __cut_DAG
-##     DAG = self.get_DAG(sentence)
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 179, in get_DAG
-##     self.check_initialized()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 168, in check_initialized
-##     self.initialize()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 163, in initialize
-##     "Loading model cost %.3f seconds." % (time.time() - t1))
-## Message: 'Loading model cost 1.477 seconds.'
-## Arguments: ()
-## --- Logging error ---
-## Traceback (most recent call last):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 985, in emit
-##     stream.write(msg)
-## ValueError: I/O operation on closed file
-## Call stack:
-##   File "<string>", line 1, in <module>
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 301, in cut
-##     for word in cut_block(blk):
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 233, in __cut_DAG
-##     DAG = self.get_DAG(sentence)
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 179, in get_DAG
-##     self.check_initialized()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 168, in check_initialized
-##     self.initialize()
-##   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jieba/__init__.py", line 164, in initialize
-##     default_logger.debug("Prefix dict has been built succesfully.")
-## Message: 'Prefix dict has been built succesfully.'
-## Arguments: ()
+## Building prefix dict from the default dictionary ...
+## Loading model from cache /var/folders/kn/bjb0w7nx061145pnsxtwzpgc0000gn/T/jieba.cache
+## Loading model cost 1.169 seconds.
+## Prefix dict has been built succesfully.
 ```
 
 ```python
@@ -614,6 +541,10 @@ py$word_list %>%
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## # A tibble: 2 x 2
 ##    name sentence                   
 ##   <int> <chr>                      
@@ -647,7 +578,7 @@ package / library | coding language | score | comment
 `jiebaR` | R | 7 | how to use the dictionary function?
 `udpipe` | R | 6 | not developed enough / unclear instructions
 `jieba` | python | 9 | with dictionaries you can get there, maybe; but how to enforce them?
-`ckiptgagger` | R + python | 9.5 | this method seems to get the ideophone job done, dictionaries can be enforced, but might also not be perfect?
+`ckiptagger` | R + python | 9.5 | this method seems to get the ideophone job done, dictionaries can be enforced, but might also not be perfect?
 
 **I hope you found this blog useful, but should you have tips on how to improve the workflow, always welcome.**
 And thanks for sticking around until here.
