@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: PhD Candidate in Linguistics
+role: PhD in Linguistics
 
 # Organizations/Affiliations
 organizations:
@@ -31,7 +31,7 @@ education:
   courses:
   - course: PhD in Linguistics
     institution: National Taiwan University
-    year: 2015-present
+    year: 2015-2020
   - course: MA Linguistics
     institution: University of Leuven
     year: 2015
