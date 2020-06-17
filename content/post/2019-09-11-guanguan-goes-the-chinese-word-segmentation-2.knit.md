@@ -124,246 +124,41 @@ Let's take these for a spin.
 So in this part I want to showcase a bit how different packages treat the question of segmentation.
 
 ## Loading in the required libraries
-```{r packages, message=FALSE}
-library(tidyverse) #general catch-all of the tidyverse
-library(quanteda)
-library(tidytext)
-library(jiebaR)
-library(udpipe)
-
-# python setup
-library(reticulate)
-use_python("/usr/local/bin/python3", required = T)
-reticulate::py_config()
-```
-
-## Test material
-
-As test material I just care about this stanza from the *Shījīng*.
-
-```{r test}
-test <- c("關關雎鳩、在河之洲。",
-          "窈窕淑女、君子好逑。")
-```
-
-Expected output:
-
-```
-關關 雎鳩 、 在 河 之 洲 。
-窈窕 淑女 、 君子 好 逑 。
-```
-
-## `tidytext`
-
-```{r tidytext1}
-test %>%
-  tibble(.name_repair = ~ "lines") %>%
-  unnest_tokens(word, lines, token = "words")
-```
-
-```{r tidytext2}
-test %>%
-  tibble(.name_repair = ~ "lines") %>%
-  unnest_tokens(word, lines, token = "characters")
-```
-
-Changing the argument `token` from `"words"` to `"characters"` shows that neither is the ideal output. 
-The first one does capture most of the disyllabic words (=good) but the problem really lies with the phrase 窈窕淑女, which is treated as one block in the first and as four pieces in the second.
-Technically you can do more collocationwise with the second, but that's not what I'm after here.
-
-## `quanteda`
-
-```{r quanteda1}
-quanteda.corpus <- corpus(test)
-tokens(quanteda.corpus)
-```
-
-This gives the same problem: 窈窕淑女 is one block.
-But maybe with a dictionary this problem can be solved?
-
-```{r quanteda2}
-quant.dict <- dictionary(list(ideo = c("關關", "窈窕")))
-quanteda.toks <- tokens(quanteda.corpus)
-tokens_lookup(quanteda.toks, dictionary = quant.dict, levels = 1)
-
-dfm(quanteda.corpus, dictionary = quant.dict)
-```
-
-This isn't really working -- the dictionary object in `quanteda` is mostly something for further text analysis (after segmentation).
-I do seem to remember there is a function that ([`tokens_compound`](https://koheiw.net/?p=481)) that allows you to paste erroneously split words back together, but I don't know if you can customize the cutting?
-
-## `jiebaR`
-
-```{r jiebaR1}
-cutter = worker()
-segment(test, cutter)
-```
-
-I wish I knew how to get the dictionary working, because then I would be able to just stay in R.
-If anybody knows the fucntions, please tell me.
-I would want something like this:
-
-```
-jiebaR.dict <- c("關關 5 id", "窈窕 5 id")
-cutter2 <- worker(dict = jiebaR.dict)
-segment(test, cutter2)
-```
-
-## `udpipe`
-
-```{r udpipe1}
-#udmodel <- udpipe_download_model(language = "classical_chinese-kyoto")
-udmodel_KC <- udpipe_load_model(file = "classical_chinese-kyoto-ud-2.4-190531.udpipe")
-```
-
-```{r udpipe2}
-x <- udpipe_annotate(udmodel_KC, x = test)
-x <- as.data.frame(x)
-
-tibble(x$token, x$upos)
-```
-
-Wow this is really weird.
-It splits 關關雎鳩 as `關 關雎 鳩` instead of `關關 雎鳩`, and 窈窕淑女 as `窈 窕 淑 女` instead of the desired `窈窕 淑女`. 
-I don't think I know how to improve this currently, as there are some dictionary settings that allow you to *suggest* but not necessarily *enforce* it.
-Once again, if you know how, tell me now.
-
-## `jieba` in python
-
-```{python jieba, message=FALSE}
-import jieba
-```
-
-```{python jieba1, message = FALSE, warning = FALSE, error = FALSE}
-seg_list = jieba.cut("關關雎鳩、在河之洲。", cut_all=False)
-print("Default Mode: " + "/ ".join(seg_list))  # 默认模式
-
-seg_list = jieba.cut("窈窕淑女、君子好逑。", cut_all=False)
-#print("Default Mode: " + "/ ".join(seg_list))  # 默认模式
-```
-
-This doesn't give the desired results.
-
-```{r jieba2}
-a <-  c("關關 5", "窈窕 500", "雎鳩")
-a
-```
 
 
-```{python jieba3}
-print(r.a)
-jieba.load_userdict(r.a)
-#add_word('雎鳩', freq=None, tag=None)
-
-seg_list = jieba.cut("關關雎鳩、在河之洲。", cut_all=False)
-print("Default Mode: " + "/ ".join(seg_list))  # 默认模式
-
-seg_list = jieba.cut("窈窕淑女、君子好逑。", cut_all=False)
-print("Default Mode: " + "/ ".join(seg_list))  # 默认模式
-
-```
-
-As you can see, it is really easy to just define a dictionary in R, because it is just a list (instead of feeding it a .txt file).
-But I still don't know how to enforce it.
-Do I just change the weight, and if so to what setting?
-
-## `ckiptagger` (in python)
-
-Last on the list is the recent `ckiptagger` library.
-According to the [github page](https://github.com/ckiplab/ckiptagger) this model outperforms `jieba`:
-
-Tool |	(WS) prec	| (WS) rec	| (WS) f1	| (POS) acc
------|------------|-----------|---------|-----------
-CkipTagger |	97.49% |	97.17% |	97.33% |	94.59%
-CKIPWS (classic) |	95.85% |	95.96% |	95.91%	 |90.62%
-Jieba-zh_TW	| 90.51% |	89.10%	| 89.80%	| --
-
-I recommend following the steps for installation outlined over there because their tagged set is quite large (1.8 GB I or so), so you want that downloaded directly to your harddrive or a virtual environment or whatever it is the young kids do these days.
 
 
-```{python ckiptagger1}
-from ckiptagger import *
-#data_utils.download_data_gdown("./") # gdrive-ckip
-#ws = WS("./data")
-ws = WS("/Users/Thomas/data")
-```
-
-```{python ckiptagger2}
-word_list = ws(
-    r.test 
-    )
-    
-word_list
-```
-
-This is not ideal, but lets make a dictionary here too and run it.
-
-```{r ckiptagger3}
-ideos <- c("關關", "窈窕")
-vals <- c(rep(5, times = 2))
-
-lijst <- as.list(vals)
-names(lijst) <- ideos
-
-lijst
-```
-This is the format you want, because it matches the python format of 'dictionaries' the best.
-
-```{python ckiptagger4}
-dictionario = construct_dictionary(r.lijst)
-print(dictionario)
-```
 
 
-```{python ckiptagger5}
-word_list = ws(
-    r.test,
-    coerce_dictionary = dictionario
-    )
-    
-word_list
-```
 
-By using the `coerce_dictionary` argument, you *force* this dictionary, to be used. 
-So theoretically it should look at that first before it throws other segmentation stuff at the data.
 
-```{r ckiptagger6}
-py$word_list %>%
-  #unlist()%>%
-  enframe() %>%
-  unnest(value) %>%
-  group_by(name) %>%
-  summarise(sentence = str_c(value, collapse = " "))
-```
 
-Et voilà, segmented Classical Chinese, the way I want it.
-(Well, I guess I would want 好逑 to be split in 好 and 逑 as well, but for now it's okay.)
 
-The steps in this section thus consist of:
-1. Providing target text (character vectors in R)
-2. Making the dictionary (list in R)
-3. Transforming the R dictionary to python dictionary (dictionary in python)
-4. Running python script (import ckiptagger, load the ws data, run ws function with dictionary coerced)
-5. Transform python object to nice dataframe in R (dataframe in R)
 
-I can readily see applications with a dictionary list taken from the [Chinese Ideophone Database CHIDEOD](https://osf.io/kpwgf/), and maybe with other databases connected to it as well.
 
-But I'm always open to hearing more ways of dealing with this preprocessing problem.
 
-# Conclusions
 
-Above I've showcased a number of packages and ways to deal with the problem of Chinese Word Segmentation.
-Here's the score I would give them.
 
-package / library | coding language | score | comment
-------------------|-----------------|-------|-------
-`tidytext` | R | 8 | if you want a quick solution ("characters") or okayish solution ("words")
-`quanteda` | R | 8 | okayish solution, can't split smaller?
-`jiebaR` | R | 7 | how to use the dictionary function?
-`udpipe` | R | 6 | not developed enough / unclear instructions
-`jieba` | python | 9 | with dictionaries you can get there, maybe; but how to enforce them?
-`ckiptagger` | R + python | 9.5 | this method seems to get the ideophone job done, dictionaries can be enforced, but might also not be perfect?
 
-**I hope you found this blog useful, but should you have tips on how to improve the workflow, always welcome.**
-And thanks for sticking around until here.
-As we say in Taiwan: 謝謝拜拜。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
