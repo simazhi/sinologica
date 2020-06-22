@@ -1,0 +1,2524 @@
+---
+title: Tidy collostructions
+author: Thomas Van Hoey
+date: '2019-10-01'
+slug: tidy-collostructions
+categories:
+  - Blog
+tags:
+  - R
+  - research
+  - academic workflow
+  - coding
+  - association measures
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2019-10-01T22:56:23+08:00'
+featured: no
+header:
+  image: '2019/collostructions.png'
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="tl-dr" class="section level1">
+<h1>tl ; dr</h1>
+<p>In this post I look at the family of <a href="https://en.wikipedia.org/wiki/Collostructional_analysis">collexeme analysis</a> methods originated by Gries and Stefanowitsch.
+Since they use a lot of Base R, and love using vectors, there is a hurdle that needs to be conquered if you are used to the rectangles in tidy data.
+I first give an overview of what the method tries to do, and then at the end show the hurdle in detail, followed by the steps necessary to enable the computation of the desired variables and statistical tests (association measures).
+Basically, you need to convert from pure tidy data to a tidy contingency format.</p>
+</div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>So in order to finalize my database on Chinese ideophones, creatively entitled <a href="https://osf.io/kpwgf/">CHIDEOD</a>, I decided to work through <a href="http://www.stgries.info">Stefan Gries</a>’s <em>Quantitative corpus linguistics with R</em> (2016; 2nd edition; <a href="http://www.stgries.info/research/qclwr/qclwr.html">companion website here</a>).<br />
+That together with <a href="http://www.natalialevshina.com">Natalia Levshina</a>’s <em>How to do linguistics with R</em> (2015; 1st edition; <a href="https://benjamins.com/sites/z.195/">companion website here</a>), which I worked through last June, has given me a lot of inspiration to tackle a number issues I have been struggling with, or at least thinking about without really knowing how to tackle them — I guess that counts as <em>struggling with</em>.
+By the way, it is locally kind of confirmed currently that Levshina will be a keynote speaker at our CLDC conference in May.
+So you can already prepare those abstracts if you wish to attempt to present here in Taipei.</p>
+<p>Anyway, one of the more intriguing family of methods to investigate the relation between constructions and words that fill the slots is the family of collexeme analysis.</p>
+</div>
+<div id="what-is-collexeme-analysis" class="section level1">
+<h1>What is collexeme analysis?</h1>
+<p>As <a href="https://doi.org/10.1075/ijcl.00011.gri">Gries (2019)</a> discusses, the methodology of collexeme analysis is an extension of the notions of a) <em>collocation</em> (which words really belong together, e.g. <em>watch TV</em> and <em>watch a movie</em> will have a stronger collocational bond than <em>watch a powerpoint presentation</em>, although the latter has become a weekly activity), and b) <em>colligation</em> (what constructions belong together, e.g. <em>watch</em> will typically be followed by a noun, although verb phrases like <em>watch him play</em> also occur).</p>
+<p>So the basis of this method is a <a href="https://en.wikipedia.org/wiki/Contingency_table">contingency table</a> (or cross-table; or <a href="https://nl.wikipedia.org/wiki/Kruistabel"><em>kruistabel</em></a> if you love Dutch; <em>lièlián biǎo</em> 列聯表 in Chinese (apparently)).
+Basically, something like this, that should look somewhat familiar:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Element 2</th>
+<th>Not element 2 / other elements</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Element 1 </strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td><strong>Not element 1 / other elements</strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+<p>These letters (a, b, c, d) play an important role in colloxeme analyses.
+So stay tuned for that.</p>
+<div id="approach-1-collexeme-analysis" class="section level2">
+<h2>Approach 1: Collexeme analysis</h2>
+<p>So what <a href="https://doi.org/10.1075/ijcl.8.2.03ste">Stefanowitsch &amp; Gries (2003)</a> wanted to investigate was the [N <em>waiting to happen</em>] construction, e.g. <em>an accident waiting to happen</em>, <em>a disaster waiting to happen</em> etc.
+In this <strong>collexeme analysis</strong> you are quantifying to what degree the words found in a corpus occur in that construction: are they attracted or repulsed, and by how much?</p>
+<p>In this scenario, element 1 is e.g. <em>an accident</em>, and element 2 the construction <em>waiting to happen</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>waiting to happen</em></th>
+<th>not <em>waiting to happen</em></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>an accident</em></strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td>not <strong><em>an accident</em></strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="approach-2-distinctive-collexeme-analysis" class="section level2">
+<h2>Approach 2: Distinctive collexeme analysis</h2>
+<p>A year later, <a href="https://doi.org/10.1075/ijcl.9.1.06gri">Gries &amp; Stefanowitsch (2004)</a> extended the methodology to quantify to what degree the words prefer to appear in one of two constructions.
+For example, the ditransitive <em>give him a call</em> vs. the prepositional <em>give a call to him</em>.
+Here the table changes into:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>ditransitive</th>
+<th>prepositional</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>give</em></strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td>not <strong><em>give</em></strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="approach-3-co-varying-collexeme-analysis" class="section level2">
+<h2>Approach 3: Co-varying collexeme analysis</h2>
+<p>The third seminal paper was published in the same year (Gries &amp; Stefanowitsch 2004; ISBN: 9781575864648) sought to quantify the attraction / repulsion between two different slots in a construction, e.g. <em>trick … into buying</em>, <em>force … into accepting</em> etc.
+For this, the table is adapted to:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>accepting</em></th>
+<th>not <em>accepting</em></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>force</em></strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td>not <strong><em>force</em></strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="okay-i-get-that-table-stuff-what-next" class="section level2">
+<h2>Okay, I get that table stuff, what next?</h2>
+<p>Let’s say you were able to get the frequencies from a corpus – I should probably mention that, <code>*cough* *cough*</code> not everybody agrees with this kind of contingency tables, the overview paper by <a href="https://doi.org/10.1075/ijcl.00011.gri">Gries (2019)</a> has plenty of interesting references and exciting rebuttals – and you have this table, possibly for lots of elements and/or constructions.</p>
+<p>We’ll keep an example here that I calculated with Gries’s (2016) book mentioned above.
+One of the case studies looks at verbs that co-occur with the modal verb <em>must</em>, e.g. <em>must accept</em>, <em>must agree</em>, <em>must confess</em>, vs. how much these verbs occur with other modal verbs, e.g <em>should accept</em>, <em>should agree</em> etc.
+So in this case, element 1 was a verb (<em>confess</em>) and element 2 was <em>must</em>; not-element-1 were all the other verbs, and not-element-2 were all the other modal verbs.</p>
+<p>The respective table from an abstract level looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>must</em></th>
+<th>not <em>must</em></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>confess</em></strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td>not <strong><em>confess</em></strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+<p>I got these frequencies from the BNC (as Gries shows in his book, but I used my tidyverse skills<sup>TM</sup> to get them, so if they are slightly off, then it was because of not following his script completely):</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>must</em></th>
+<th>not <em>must</em></th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>confess</em></strong></td>
+<td>11</td>
+<td>1</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>not <strong><em>confess</em></strong></td>
+<td>1990</td>
+<td>62114</td>
+<td>64104</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>2001</td>
+<td>62115</td>
+<td>64116</td>
+</tr>
+</tbody>
+</table>
+<p>Or in a Base R table:</p>
+<pre class="r"><code>a &lt;- 11
+b &lt;- 1
+c &lt;- 1990
+d &lt;- 62114
+
+confess &lt;- c(a, b)
+notconfess &lt;- c(c, d)
+
+must.table &lt;- rbind(confess, notconfess) 
+colnames(must.table) &lt;- c(&quot;must&quot;, &quot;notmust&quot;)
+must.table</code></pre>
+<pre><code>##            must notmust
+## confess      11       1
+## notconfess 1990   62114</code></pre>
+<p>What do you do now?</p>
+<p><em>Now it’s time for letter math!</em></p>
+<p>The association measure (read: statistical test) that Gries &amp; Stefanowitsch, as well as others, have used most is the <a href="https://en.wikipedia.org/wiki/Fisher%27s_exact_test">Fisher Yates Exact test</a>, and more precisely the negative <span class="math inline">\(log10\)</span> of its <span class="math inline">\(p\)</span>-value.
+Underlying this (see the link in this paragraph) are calculations using those letter cells (a,b,c,d).
+Luckily we don’t need to do that manually because R has a function for this – <code>fischer.test()</code>:</p>
+<pre class="r"><code>fisher.test(must.table)</code></pre>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  must.table
+## p-value = 3.106e-16
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##     49.90447 13241.49567
+## sample estimates:
+## odds ratio 
+##   344.6593</code></pre>
+<p>So as you can see the pvalue is 3.105600710^{-16}.
+If we take the negative <span class="math inline">\(log10\)</span> of this, it becomes 15.5078544, which gives us the result we expected.</p>
+<p>An easier way of computing the Fisher Yates Exact test of this table is by using the letter math and the <code>pv.Fischer.collostr</code> function provided by Levshina’s <code>Rling</code> package:</p>
+<pre class="r"><code>Rling::pv.Fisher.collostr(a, b, c, d)</code></pre>
+<pre><code>## [1] 3.105601e-16</code></pre>
+<p>Other tests that have been proposed are so-called Reliance and Attraction (cf. <a href="doi.org/10.1515/cog-2013-0018">Schmid &amp; Küchenhoff 2013</a> a.o.).
+Reliance is the relative frequency of a verb (<em>confess</em>) with <em>must</em> with regard to all uses of the given verb; Attraction is the relative frequency of a verb (<em>confess</em>) with <em>must</em> based on all usages with <em>must</em>.</p>
+<p><span class="math display">\[ Reliance = \frac{a}{a+b}\]</span></p>
+<p><span class="math display">\[ Attraction = \frac{a}{a+c} \]</span></p>
+<pre class="r"><code>attraction &lt;- a / (a+c) * 100
+reliance &lt;- a / (a+b) * 100</code></pre>
+<p>The Attraction of confess and must is 0.5497251 and the Reliance is 91.6666667.
+This high Reliance means that whenever <em>confess</em> occurs in the corpus after a modal it <em>relies</em> on <em>must</em> to occur.
+Its Attraction, however, has a much lower value: <em>must</em> does not necessarily occur with <em>confess</em>, in fact, it occurs with lots of other verbs as well!</p>
+<p>The third group of tests is actually correlated to Attraction and Reliance: respectively <span class="math inline">\(\Delta P_{word \to construction}\)</span> and <span class="math inline">\(\Delta P_{construction \to word}\)</span> (cf. <a href="doi.org/10.1075/arcl.7.08ell">Ellis &amp; Ferreira-Junior</a> a.o.).
+They are also known as tests of cue validity and are calculated as follows:</p>
+<p><span class="math display">\[\Delta P_{word \to construction} = cue_{construction} = \frac{a}{a + c} - \frac{b}{b + d}\]</span></p>
+<p><span class="math display">\[\Delta P_{construction \to word} = cue_{verb} = \frac{a}{a + b} - \frac{c}{c + d}\]</span></p>
+<pre class="r"><code>dP.cueCx &lt;- a/(a + c) - b/(b + d)
+dP.cueVerb &lt;- a/(a + b) - c/(c + d)</code></pre>
+<p>So the <span class="math inline">\(\Delta P_{word \to construction}\)</span> of <em>must confess</em> is 0.0054812
+and the <span class="math inline">\(\Delta P_{construction \to word}\)</span> of <em>must confess</em> is 0.8856234, so these numbers look a lot like those of Attraction and Reliance.</p>
+<p>Anyway, I think you get the drift: if you have the contingency table, you choose an association measure (there are more than these three sets) and analyze the results.</p>
+</div>
+</div>
+<div id="tidy-collostructions" class="section level1">
+<h1>Tidy collostructions</h1>
+<p>So if that’s so clear, why am I writing this post?
+For me, the main difficulty with the approach is that Gries and Levshina love writing things in Base R (Gries even more than Levshina).
+But to someone who really started to appreciate R after the tidyverse became more available, there is this dissonance with the way they go about things.</p>
+<p>One of the biggest difference is the obsessive-compulsion of tidyverse to think in rectangles, a.k.a. dataframes or tibbles, rather than the vector( letter)s that Gries and Levshina love using, especially in their letter mathematics.</p>
+<p>As a consequence of this “<a href="https://www.youtube.com/watch?v=GapSskrtUzU">rectangling</a>” and tidy format (long and skinny), rather than contingency format (2 x 2), it is challenging to compute even basic chisquare.tests.</p>
+<p>So in Base R, a chisquare is easy to compute, but then hard to continue working with, because this thick text block is given and you can’t really access the contents (but there are solutions, like <code>broom::tidy</code>):</p>
+<pre class="r"><code>chisq.test(must.table)</code></pre>
+<pre><code>## Warning in chisq.test(must.table): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  must.table
+## X-squared = 282.63, df = 1, p-value &lt; 2.2e-16</code></pre>
+<p>In a tidy format, you typically have to jump through a lot of hoops to either get to use the same function or use one of the newer alternative functions:</p>
+<pre class="r"><code>library(tidyverse)
+must.tibble &lt;- tribble(
+  ~ verb, ~ must, ~notmust,
+  &quot;confess&quot;, 11, 1,
+  &quot;notconfess&quot;, 1990, 62114
+)
+must.tibble %&gt;% kable()</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:right;">
+must
+</th>
+<th style="text-align:right;">
+notmust
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+confess
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+notconfess
+</td>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:right;">
+62114
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># this function will give you bad output
+# so you can&#39;t just simply do this
+chisq.test(must.tibble$must, must.tibble$notmust)</code></pre>
+<pre><code>## Warning in chisq.test(must.tibble$must, must.tibble$notmust): Chi-squared
+## approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  must.tibble$must and must.tibble$notmust
+## X-squared = 0, df = 1, p-value = 1</code></pre>
+<div id="hoop-1-make-it-really-tidy" class="section level2">
+<h2>Hoop 1: make it really tidy</h2>
+<pre class="r"><code>must.tibble %&gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &quot;modal&quot;,
+               values_to = &quot;n&quot;) %&gt;% # now it is really tidy
+  kable()</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:left;">
+modal
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+confess
+</td>
+<td style="text-align:left;">
+must
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+confess
+</td>
+<td style="text-align:left;">
+notmust
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+notconfess
+</td>
+<td style="text-align:left;">
+must
+</td>
+<td style="text-align:right;">
+1990
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+notconfess
+</td>
+<td style="text-align:left;">
+notmust
+</td>
+<td style="text-align:right;">
+62114
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="hoop-2-uncount" class="section level2">
+<h2>Hoop 2: uncount</h2>
+<pre class="r"><code>must.tibble %&gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &quot;modal&quot;,
+               values_to = &quot;n&quot;) %&gt;% # now it is really tidy
+  uncount(n)  # uncount</code></pre>
+<pre><code>## # A tibble: 64,116 x 2
+##    verb    modal
+##    &lt;chr&gt;   &lt;chr&gt;
+##  1 confess must 
+##  2 confess must 
+##  3 confess must 
+##  4 confess must 
+##  5 confess must 
+##  6 confess must 
+##  7 confess must 
+##  8 confess must 
+##  9 confess must 
+## 10 confess must 
+## # … with 64,106 more rows</code></pre>
+</div>
+<div id="hoop-3-convert-to-table" class="section level2">
+<h2>Hoop 3: convert to table</h2>
+<pre class="r"><code>must.tibble %&gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &quot;modal&quot;,
+               values_to = &quot;n&quot;) %&gt;% # now it is really tidy
+  uncount(n)  %&gt;% # uncount
+  table() # turn to Base R table</code></pre>
+<pre><code>##             modal
+## verb          must notmust
+##   confess       11       1
+##   notconfess  1990   62114</code></pre>
+</div>
+<div id="hoop-4-chisquare" class="section level2">
+<h2>Hoop 4: chisquare</h2>
+<pre class="r"><code>must.tibble %&gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &quot;modal&quot;,
+               values_to = &quot;n&quot;) %&gt;% # now it is really tidy
+  uncount(n)  %&gt;% # uncount
+  table() %&gt;% # turn to Base R table
+  chisq.test() </code></pre>
+<pre><code>## Warning in chisq.test(.): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  .
+## X-squared = 282.63, df = 1, p-value &lt; 2.2e-16</code></pre>
+</div>
+<div id="hoop-5-tidy-with-broom" class="section level2">
+<h2>Hoop 5: <code>tidy</code> with <code>broom</code></h2>
+<pre class="r"><code>must.tibble %&gt;%
+  pivot_longer(cols = c(must, notmust),
+               names_to = &quot;modal&quot;,
+               values_to = &quot;n&quot;) %&gt;% # now it is really tidy
+  uncount(n)  %&gt;% # uncount
+  table() %&gt;% # turn to Base R table
+  chisq.test()%&gt;%
+  broom::tidy() %&gt;%
+  kable()</code></pre>
+<pre><code>## Warning in chisq.test(.): Chi-squared approximation may be incorrect</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p.value
+</th>
+<th style="text-align:right;">
+parameter
+</th>
+<th style="text-align:left;">
+method
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+282.6321
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Pearson’s Chi-squared test with Yates’ continuity correction
+</td>
+</tr>
+</tbody>
+</table>
+<p>I know there are some tidyverse-friendly functions like <code>infer::chisq_test</code>, but it seems to lack arguments like expected values (<code>chisq.test()$exp</code>).
+So this awkward hoop jumping is annoying but gets the job done (for now?).</p>
+</div>
+<div id="from-tidy-to-contingency" class="section level2">
+<h2>From tidy to contingency</h2>
+<p>Anyway, while for most summary statistics a tidy format (see hoop 1) is the easiest to work with, I don’t think it’s very intuitive for the association measures paradigm.</p>
+<p>So in this working example of <em>must + V_inf_</em> construction what I did was get all the occurrences of all modal verbs + verbs in the infinitive from the BNC corpus.
+The second step I did was add a column with <code>dplyr::case_when</code> to identify if a modal verb was <em>must</em> or another modal verb.</p>
+<p>Let’s look at this data shall we:</p>
+<pre class="r"><code>df.must</code></pre>
+<pre><code>## # A tibble: 64,116 x 3
+##    modal  verb      mod.type
+##    &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   
+##  1 can    find      OTHER   
+##  2 should stop      OTHER   
+##  3 should recognise OTHER   
+##  4 will   cost      OTHER   
+##  5 might  think     OTHER   
+##  6 can    sink      OTHER   
+##  7 can    change    OTHER   
+##  8 must   help      MUST    
+##  9 ll     help      OTHER   
+## 10 ll     take      OTHER   
+## # … with 64,106 more rows</code></pre>
+<p>As you can see there are 64116 rows, and the table is just a count away form being tidy.</p>
+<pre class="r"><code>tidy.df.must &lt;- df.must %&gt;%
+  count(mod.type, verb, sort = TRUE)
+tidy.df.must</code></pre>
+<pre><code>## # A tibble: 2,522 x 3
+##    mod.type verb      n
+##    &lt;chr&gt;    &lt;chr&gt; &lt;int&gt;
+##  1 OTHER    get    3750
+##  2 OTHER    go     3421
+##  3 OTHER    see    2409
+##  4 OTHER    take   2056
+##  5 OTHER    like   1778
+##  6 OTHER    say    1647
+##  7 OTHER    come   1460
+##  8 OTHER    make   1383
+##  9 OTHER    give   1245
+## 10 OTHER    put    1162
+## # … with 2,512 more rows</code></pre>
+<p>Much ‘prettier’, but what next?
+This is actually the mental step I struggled the most with, this dissonance between tidy and contingency.
+However, since we coded <code>mod.type</code> with a binary value: “OTHER” or “MUST”, it is actually trivial to <code>dplyr::spread</code> or <code>dplyr::pivot_wider</code> them to a “tidy contingency table”:</p>
+<pre class="r"><code>spread.tidy.df.must &lt;- tidy.df.must %&gt;%
+  pivot_wider(values_from = n,
+              names_from = mod.type) 
+spread.tidy.df.must</code></pre>
+<pre><code>## # A tibble: 2,113 x 3
+##    verb  OTHER  MUST
+##    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+##  1 get    3750   102
+##  2 go     3421    94
+##  3 see    2409    14
+##  4 take   2056    63
+##  5 like   1778     3
+##  6 say    1647   105
+##  7 come   1460    41
+##  8 make   1383    62
+##  9 give   1245    22
+## 10 put    1162    18
+## # … with 2,103 more rows</code></pre>
+<p>Hey, this looks a lot like those schematic tables we had at the beginning!
+But now the real challenge is to turn these numbers into the letters a, b, c, and d, so we can perform our letter math.</p>
+<p>After changing all numeric values we have to doubles (instead of integers) and changing all NAs to 0, we can get the letters by following simple arithmetic from our original schematic table, e.g. if we know a and a+c, then c = a+c - a etc.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Element 2</th>
+<th>Not element 2 / other elements</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Element 1 </strong></td>
+<td>a</td>
+<td>b</td>
+<td>a + b</td>
+</tr>
+<tr class="even">
+<td><strong>Not element 1 / other elements</strong></td>
+<td>c</td>
+<td>d</td>
+<td>c + d</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>a + c</td>
+<td>b + d</td>
+<td>a + b + c + d</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>spread.tidy.df.must %&gt;%
+  mutate_if(is.numeric, ~ as.double(.x)) %&gt;% # we&#39;ll want doubles instead of integers
+  mutate_if(is.numeric, ~ replace_na(.x, 0)) %&gt;% # NAs should be 0
+  
+  mutate(a = MUST,
+       ac = sum(MUST),
+       c = ac - a,
+       ab = MUST + OTHER,
+       b = ab - a,
+       abcd = sum(MUST, OTHER),
+       d = abcd - a - b -c,
+       aExp = (a + b)*(a + c)/(a + b + c + d)) -&gt; abcd.must
+abcd.must</code></pre>
+<pre><code>## # A tibble: 2,113 x 11
+##    verb  OTHER  MUST     a    ac     c    ab     b  abcd     d  aExp
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 get    3750   102   102  2001  1899  3852  3750 64116 58365 120. 
+##  2 go     3421    94    94  2001  1907  3515  3421 64116 58694 110. 
+##  3 see    2409    14    14  2001  1987  2423  2409 64116 59706  75.6
+##  4 take   2056    63    63  2001  1938  2119  2056 64116 60059  66.1
+##  5 like   1778     3     3  2001  1998  1781  1778 64116 60337  55.6
+##  6 say    1647   105   105  2001  1896  1752  1647 64116 60468  54.7
+##  7 come   1460    41    41  2001  1960  1501  1460 64116 60655  46.8
+##  8 make   1383    62    62  2001  1939  1445  1383 64116 60732  45.1
+##  9 give   1245    22    22  2001  1979  1267  1245 64116 60870  39.5
+## 10 put    1162    18    18  2001  1983  1180  1162 64116 60953  36.8
+## # … with 2,103 more rows</code></pre>
+<p>So now we can easily perform all of the association measures we want, and rank them accordingly.</p>
+</div>
+<div id="fischer-yates-exact" class="section level2">
+<h2>Fischer Yates Exact</h2>
+<pre class="r"><code>fye &lt;- abcd.must %&gt;%
+  mutate(fye = Rling::pv.Fisher.collostr(a, b, c, d)) %&gt;%
+  #filter(verb == &quot;confess&quot;) %&gt;%
+  mutate(negfye = case_when(a &lt; aExp ~ format(round(log10(fye)), nsmall = 2),
+                            TRUE ~ format(round(- log10(fye)), nsmall = 2)),
+         negfye = as.double(negfye)) %&gt;% #I did some rounding
+  arrange(desc(negfye)) %&gt;%
+  select(verb, OTHER, MUST, fye, negfye)
+
+fye %&gt;% top_n(20) %&gt;% kable()</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:right;">
+OTHER
+</th>
+<th style="text-align:right;">
+MUST
+</th>
+<th style="text-align:right;">
+fye
+</th>
+<th style="text-align:right;">
+negfye
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+admit
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+225
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+confess
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+say
+</td>
+<td style="text-align:right;">
+1647
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+realise
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+recognise
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+know
+</td>
+<td style="text-align:right;">
+432
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+0.0000001
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+remember
+</td>
+<td style="text-align:right;">
+324
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rank
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0000001
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+decide
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0.0000014
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pay
+</td>
+<td style="text-align:right;">
+354
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+0.0000052
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wait
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+0.0000307
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ensure
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.0000243
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+inform
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.0000065
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stress
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.0000065
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+apologise
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0001186
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+obey
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0002895
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+look
+</td>
+<td style="text-align:right;">
+560
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+0.0017845
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+feel
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0.0006318
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+act
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.0014017
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+assume
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.0018726
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reflect
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.0018726
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mention
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.0015902
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+emerge
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0016252
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+own
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0005395
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+emphasise
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0030892
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+register
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0030892
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+balance
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0022137
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+realize
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0022137
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+respect
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0005656
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comply
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0028599
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+exhibit
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0028599
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+export
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0009735
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+outperform
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0009735
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>fye %&gt;% arrange(negfye) %&gt;% top_n(-20) %&gt;% kable()</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:right;">
+OTHER
+</th>
+<th style="text-align:right;">
+MUST
+</th>
+<th style="text-align:right;">
+fye
+</th>
+<th style="text-align:right;">
+negfye
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+like
+</td>
+<td style="text-align:right;">
+1778
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+-20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+see
+</td>
+<td style="text-align:right;">
+2409
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+-18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hear
+</td>
+<td style="text-align:right;">
+428
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000021
+</td>
+<td style="text-align:right;">
+-6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+help
+</td>
+<td style="text-align:right;">
+820
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.0000185
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+want
+</td>
+<td style="text-align:right;">
+401
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000074
+</td>
+<td style="text-align:right;">
+-5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tell
+</td>
+<td style="text-align:right;">
+985
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.0003130
+</td>
+<td style="text-align:right;">
+-4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+give
+</td>
+<td style="text-align:right;">
+1245
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+0.0031496
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+put
+</td>
+<td style="text-align:right;">
+1162
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0.0006828
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+need
+</td>
+<td style="text-align:right;">
+461
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0018961
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lead
+</td>
+<td style="text-align:right;">
+321
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0009838
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+imagine
+</td>
+<td style="text-align:right;">
+290
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0019299
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+call
+</td>
+<td style="text-align:right;">
+268
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0003216
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cause
+</td>
+<td style="text-align:right;">
+211
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0022792
+</td>
+<td style="text-align:right;">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+buy
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0090712
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+play
+</td>
+<td style="text-align:right;">
+340
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0291563
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+happen
+</td>
+<td style="text-align:right;">
+335
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0039267
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+afford
+</td>
+<td style="text-align:right;">
+205
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0035887
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+receive
+</td>
+<td style="text-align:right;">
+205
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0242516
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pick
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0239273
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+appear
+</td>
+<td style="text-align:right;">
+187
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0049951
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+benefit
+</td>
+<td style="text-align:right;">
+147
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0160195
+</td>
+<td style="text-align:right;">
+-2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="attraction-reliance" class="section level2">
+<h2>Attraction, Reliance</h2>
+<pre class="r"><code>abcd.must %&gt;%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %&gt;%
+  arrange(desc(attraction)) %&gt;%
+  top_n(20) %&gt;%
+  select(verb, OTHER, MUST, attraction, reliance) %&gt;%
+  kable()</code></pre>
+<pre><code>## Selecting by reliance</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:right;">
+OTHER
+</th>
+<th style="text-align:right;">
+MUST
+</th>
+<th style="text-align:right;">
+attraction
+</th>
+<th style="text-align:right;">
+reliance
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+export
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.099950
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+outperform
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.099950
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+acquaint
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+capitalise
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+capitulate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+class
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+combat
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comfort
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+discard
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dissociate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dread
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+enclose
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+graft
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+interrogate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+itch
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nurture
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+plagiarise
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+protrude
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rediscover
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+redouble
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+shoulder
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+shrive
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stipulate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.049975
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="delta-p" class="section level2">
+<h2>Delta P</h2>
+<pre class="r"><code>abcd.must %&gt;%
+  mutate(dP.cueCx = a/(a + c) - b/(b + d),
+         dP.cueVerb = a/(a + b) - c/(c + d)) %&gt;%
+  arrange(desc(dP.cueCx)) %&gt;%
+  select(verb,  OTHER, MUST, dP.cueCx, dP.cueVerb) %&gt;%
+  top_n(20) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+verb
+</th>
+<th style="text-align:right;">
+OTHER
+</th>
+<th style="text-align:right;">
+MUST
+</th>
+<th style="text-align:right;">
+dP.cueCx
+</th>
+<th style="text-align:right;">
+dP.cueVerb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+export
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0009995
+</td>
+<td style="text-align:right;">
+0.9688212
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+outperform
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0009995
+</td>
+<td style="text-align:right;">
+0.9688212
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+acquaint
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+capitalise
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+capitulate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+class
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+combat
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comfort
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+discard
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dissociate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dread
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+enclose
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+graft
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+interrogate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+itch
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nurture
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+plagiarise
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+protrude
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rediscover
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+redouble
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+shoulder
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+shrive
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stipulate
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.0004998
+</td>
+<td style="text-align:right;">
+0.9688061
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>It is perfectly possible to perform association measures starting with a tidy dataframe.
+First you need to spread out with a binary variable, to make it a tidy contingency table.
+Then you can identify a, b, c, and d.
+Next you can chooose your preferred statistical test, rank verbs, and try to interpret the findings.</p>
+<p>I should probably also mention that Gries is has been advocating to not just use one association measure, but three or more.
+Using just two, you can plot like Attraction and Reliance.</p>
+<pre class="r"><code>abcd.must %&gt;%
+  mutate(attraction = a / (a+c) * 100,
+         reliance = a / (a+b) * 100) %&gt;%
+  arrange(desc(attraction)) %&gt;%
+  select(verb, OTHER, MUST, attraction, reliance) %&gt;%
+  ggplot(aes(x = attraction, 
+             y = reliance)) +
+   geom_point() +
+  gghighlight::gghighlight(attraction &gt; 2 | 50 &lt; reliance &amp; reliance &lt; 100,
+                           label_key = verb) +
+  theme_minimal()</code></pre>
+<p><img src="/post/2019-10-01-tidy-collostructions-some-ideas_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</div>
