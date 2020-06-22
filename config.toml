@@ -1,4 +1,4 @@
-theme = "hugo-academic"
+theme = "academic"
 baseURL = "https://thomasvanhoey.com/"
 languageCode = "en-us"
 title = "Thomas Van Hoey | Sinologica"
