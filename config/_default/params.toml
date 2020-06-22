@@ -13,7 +13,7 @@
 #   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in themes in `themes/academic/data/themes/`
 #   Browse user installed themes in `data/themes/`
-theme = "minimal"
+theme = "simazhi"
 
 # Enable users to switch between day and night mode?
 day_night = true
@@ -88,7 +88,7 @@ show_related = {docs = true, page = false, post = true, project = true, publicat
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "thomas UNDERSCORE van UNDERSCORE hoey AT outlook DOT com"
+email = "thomas_van_hoey@outlook.com"
 # phone = "888 888 88 88"
 
 # Address
