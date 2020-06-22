@@ -87,8 +87,9 @@ show_related = {docs = true, page = false, post = true, project = true, publicat
 ## Additionally, for organizations, these details may be used to enrich search engine results.
 ############################
 
-# Enter contact details (optional). To hide a field, clear it to "".
-email = "thomas_van_hoey@outlook.com"
+# Enter
+ # details (optional). To hide a field, clear it to "".
+email = "https://formspree.io/thomas_van_hoey@outlook.com"
 # phone = "888 888 88 88"
 
 # Address
