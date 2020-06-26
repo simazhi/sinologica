@@ -90,9 +90,10 @@ user_groups:
 
 Hi, my name is **Thomas Van Hoey** (IPA:['to:mas van 'hui]). Alternatively, you may find me by my Chinese name — **司馬智** (*Hanyu pinyin*: Sīmǎ Zhì).
 
-I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologist</a> and a <a href="https://en.wikipedia.org/wiki/Linguistics" target="_blank">linguist</a>, with MA degrees obtained at the <a href="http://www.kuleuven.be/english" target="_blank">University of Leuven</a>, Belgium. At this moment, I am a Ph.D candidate at the <a href="https://linguistics.ntu.edu.tw" target="_blank">Graduate Institute of Linguistics of National Taiwan University</a> with a scholarship provided by NTU (Research Fellowship for Outstanding International Doctoral Students 優秀國際博士生獎學金).
+I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologist</a> and a <a href="https://en.wikipedia.org/wiki/Linguistics" target="_blank">linguist</a>, with a PhD in Linguistics (read at the <a href="https://linguistics.ntu.edu.tw" target="_blank">Graduate Institute of Linguistics of National Taiwan University</a>).
+My MA degrees in Sinology and Linguistics were obtained at the  <a href="http://www.kuleuven.be/english" target="_blank">University of Leuven</a>.
 
-**My current research is a diachronic analysis of ideophones in Chinese.** My supervisor is <a href="http://chiarung.blog.ntu.edu.tw/" target="_blank">Lu Chiarung</a>. I have a passion for Mandarin and Premodern Chinese, as well as many other languages and the phenomenon 'language' in general. 
+**My current research focuses mostly on ideophones in Chinese.** For my PhD dissertation, I developed the <a href="https://osf.io/kpwgf/">Chinese Ideophone Database (CHIDEOD)</a> (click <a href="https://simazhi.shinyapps.io/chideod_appversion/">here for the app</a>) and investigated prototypicality and salience effects present in the data. My supervisor is <a href="http://chiarung.blog.ntu.edu.tw/" target="_blank">Lu Chiarung</a>. I have a passion for Mandarin and Premodern Chinese, as well as many other languages and the phenomenon 'language' in general. 
 
 Between my bachelor and my master of Sinology, I was able to study at <a href="http://eng.suda.edu.cn/" target="_blank">Suzhou University 苏州大学</a> with a scholarship provided by the Hanban. 
 
