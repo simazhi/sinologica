@@ -12,8 +12,9 @@ summary: ''
 authors: []
 lastmod: '2020-06-18T01:45:16+08:00'
 featured: no
-image:
-  caption: ''
+header:
+  image: '2020/abralin.png'
+  caption: 'Imitation of the header of the Abralin lectures'
   focal_point: ''
   preview_only: no
 projects: []
@@ -26,7 +27,7 @@ I thought it would be a good idea to document here the ones I have seen, and lik
 I will categorize them by linguistic subfield and shortly elaborate.
 The full programme [is accessible here](https://aovivo.abralin.org/en/programme/).
 
-**AS A DISCLAIMER**, I do want to point out that this blog reflects a number of observations and in general recommend everybody to watch all of the lectures. You can agree or disagree but I am mostly positive about the talks, because this is a great initiative.
+**AS A DISCLAIMER**, I do want to point out that this blog reflects a number of observations and in general recommend everybody to watch all of the lectures. You can agree or disagree but I am mostly positive about the talks, because this is a great initiative. Also, the categorization in domains is just a tendency, often the talks fall in more specific categories.
 
 ## Semantics
 
@@ -77,6 +78,10 @@ Highly recommended!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h8x-5eEyDjc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Howard Lasnik - Levels of Representation and Semantic Interpretation: a Brief History and a Case Study
+
+This is a pretty standard talk that gives the standard narrative of the different incarnations of generative grammar. [Check it out here if that's new for you and you feel compelled to know.](https://youtu.be/jfG6j0Cwi6I)
+
 
 ### K. David Harrison - Environmental linguistics
 
@@ -125,6 +130,16 @@ I highly recommend this talk!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ndCXa9yn3o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Spike Gildea - Diachronic Typology of Alignment Constructions: Reanalysis Vs. Analogical Change
+
+This was an amazing talk. Gildea, who I was only indirectly familiar with, really knows his stuff and takes us through the well-known cases of (split) ergativity etc. to then show how diachronic comparative syntax can (and maybe should) look like. Amazing talk and highly recommended!
+
+During the Q&A he discusses Joseph's talk (below) who stated that grammaticalization *is not* a process. For Gildea is absolutely is a process, driven by the mechanisms of reanalysis and analogy. I tend to agree with that as well -- it's also in the term itself: *-ization* indicates processes.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XhwVQ9zVHqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 ### Brian D. Joseph - What Grammaticalization Is and What it is Not:  Some Observations
 
 Joseph is a quite well-known grammaticalization guy who views it as "the embedding into grammar (the taking on of grammatical status) of once-non- (or less-) grammatical phenomena".
@@ -139,6 +154,22 @@ I love his Q&A as well, very informative!
 
 
 
+
+### Karen Lahousse - Word Order In French, Spanish and Italian: Syntax, Information Structure and Grammaticalisation
+
+This talk is kind of weird for me, because I almost had Lahousse's class back when I did my MA in Linguistics at KU Leuven in 2014. However, because she was pregnant at the time, we had a guest lecturer, who was in direct contact with her. So we still got her course, just not taught by her. I still recognize a number of topics that we had to read about, and I worked on topics of Chinese and Japaense for my term paper.
+
+[This talk](https://youtu.be/PkCClPpUEJ4) is recommended if you are interested in the study of a number of Romance languages and how they form a continuum. I does bother me a bit that it's only French, Spanish and Italian, when there are all of these other languages that are in between. Maybe that would really provide an even more fine-grained continuum in the typology of Romance languages. I enjoyed the talk though.
+
+### Johannes Kabatek - Discourse Traditions and Grammar
+
+More Romance languages! [This talk](https://youtu.be/26b14iQ81WY) shows that discourse traditions are important when doing historical linguistics.
+
+### Gillian Sankoff - Linguistic Change: Speaker Trajectories and Language History
+
+[This talk](https://youtu.be/uL-3VXMmVIs) is actually a long case study of Montréal French. Sankoff and colleagues find that the auxiliary *être* is being replaced by *avoir* (insert shock face); a change in the speed of the adoption  /ʀ/, coming from  /r/; the replacement of the periphrastic future (*aller* + infinitive) to the detriment of the inflected future. Cool talk!   
+
+
 ## Corpus linguistics
 
 ### Stefan Th. Gries - The Versatility of Quantitative Corpus Linguistics: Examples from orthography, phonology and legal / forensic linguistics
@@ -148,7 +179,7 @@ Confession: I have a huge respect for the work of Gries and have used a number o
 The part about *using a firearm* at the end of the talk (starting around minute 52) was highly relevant to current events and extremely interesting: what is the *ordinary meaning* of a word?
 
  
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HuOc6AzQ4Ig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
@@ -167,12 +198,57 @@ Good talk!
 
 This talk features Marianne Mithun talking about intonation units from the interaction between theory and case study. Amina Mettouchi presents a corpus that can help study prosody, with special focus on Afro Asiatic languages. Alessandro Panunzi presents yet another corpus for studying prosody. The talks are recommended and [can be found here](https://youtu.be/OmfrqPnr30Q).
 
+## Cognitive Linguistics
 
+### Mark Turner - Conceptual Blending as a Central Process of Grammar, Language, and Communication
+
+Turner turns out his greatest hit of conceptual blending theory and does so well. Note that he's about 60 slides in before the moderator interrupts the talk to have him put on the slides as well.
+Recommended talk.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GvCv7PY0m4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Linguística Cognitiva: O que é? Para onde vai?
+
+If your Portuguese is up to standard and you're interested in what Cognitive Linguistics is / does, this can be *the* talk for you.
+[Check it out here.](https://youtu.be/tvrZl6IOmX4)
 
 
 
 
 ## Generative Linguistics
+
+
+### Steven Pinker - Language, Cognition and Human Nature
+
+This is not a presentation but an interview with Pinker, famous for his *The Language Instinct*, a popsci book that was extremely influential in the last 20 years or so. While I admire the acumen of Pinker and agree with a lot of things he found out -- for instance, I love his style book -- I still disagree with many of views on language with parameters, and completely innate. 
+A glimmer of hope shines through this talk near the end, where he advises us to become eclectic, as opposed to adhere to 1 school of thought, "because assumptions get in the way". But of course, every theory or framework makes use of a number of assumptions; you just need to become or stay aware about them. However, this awareness is not equally present across frameworks. 
+Recommended!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cXsqXhjFr_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Enoch O. Aboh - Universal Multilingualism: Contact, Acquisition, and Change
+
+This is a talk that unexpectedly liked a lot and highly recommend. Aboh's main point is that most people are multilingual, and that our models of studying should reflect this, not just in terms of code-switching (although he devotes most of his efforts to this situation), but also in terms of familiarity with different genres etc. Also unexpected then, is that this is definitely wrapped within generative / formal linguistics, a group of frameworks I thought focuses mostly on monolingual situations.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wYyKP5ZrCGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Luis Miguel Rojas-Berscia - An Introduction to Dynamic Linguistics: Capturing Fluidity In Language Change
+
+I mistakenly first categorized this as a form of Cognitive Linguistics, but make no mistake, Dynamic Linguistics is an offshoot of Generative Semantics. Rojas-Berscia [takes us on a tour](https://youtu.be/YueBqMGcFLs) of what this framework entails. It's interesting to see how a different approach to variation (with lects and all) than the one I'm used to plays out.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YueBqMGcFLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Anders Holmberg - Verb Second, But Not As We Know It: The Case of Estonian
+
+Wow, I did not know that Estonian was the only V2 language of the Uralic languages. Holmberg argues that this is because of language contact with Germans who migrated to Estonia and became dominant in the past. If you were ever curious of seeing trees made with Finnish and Estonian data, [this is your chance.](https://youtu.be/f45fJ4n12l4)
+
+### Violeta Demonte - Variation and Interfaces. A Spanish Modal Evidential at The Syntax-Semantics-Pragmatics Interface 
+
+
+[This talk](https://youtu.be/GQ-8N_OAGTs) is what I thought Adger's would be like. Demonte introduces the Minimalist Program, while focusing on variation and Spanish. Revealing for me, even though I think the notion of interface has it backwards: in language, it's not a combination of different fields that has more real status; the fields are abstractions from something highly multimodal. I also think that it's hard to study variation without quantification. In this paradigm things are phrased in terms of passing or failing a certain (syntactic) test...
+
 
 ### Noam Chomsky - The Delphic Oracle: Her Message for Today
 
@@ -184,12 +260,19 @@ You can [find it here](https://youtu.be/SO3tE7clWhI).
 
 ## Popularizing linguistics
 
+### David Adger - Language Invention and Language Structure
+
+This was a somewhat unexpected talk; I had expected Adger to go full on minimalist program on us (which I actually would have liked -- I think the people that watch these Abralin lectures are presumably quite well-versed in linguistic theories), but I will never say no to conlangs. [Cool talk](https://youtu.be/RA5NXBbXYdQ).
+
+
 ### David Crystal - Let’s Talk: How English Conversation Works
 
 Crystal is a household name in the popularization of linguistics and I have enjoyed a good number of his books.
 This talk is a bit different than the other ones, however, in the sense that this is an interview and it is kind of linguistics-light. I do not really recommend it (read: I took one for the team), as they are somewhat prescriptivist in their positions. For example, both parties agree that *social distancing* is a bad term "because it's physical distancing". You can't go to war with those kinds of observations.
 
 You can [find it here](https://youtu.be/UTyg2FHyrL4), should you be interested.
+
+
 
 ## Anthropological linguistics
 
@@ -210,6 +293,23 @@ Of course, Mufwene tells a story that ties in closer to current research into th
 I recommend this talk:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9nsTHFxq-9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Peter Bakker - The Birth of New Languages In Multilingual Situations
+
+This talk presents a more traditional view of pidgins and creoles, compared to Mufwene's talk, but does make the main basic (and correct) claim that creoles are real languages (not just mixed languages). Good!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/24z_W1ty1Ts" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Emmanuel Ngue Um - Social Linguistics: Making Social Sense of the Discipline of Linguistics in Multilingual Africa
+
+Ngue Um starts his presentation with the well-known trope that "you linguistics is not about speaking many languages", by asking: Why not? Why can't linguists be assumed to speak multiple languages? Is it "pure science" advocacy? Is it a disregard to social engagement? Is it a historical bias? Is it neoliberalism? The talk is largely focused on arguing for more sociolinguistic approaches to the 'languaging' in Africa, rather than purely theoretical analyses. And it is quite convincing.On the other hand, some abstraction when sciencing does remain necessary.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-IZwN_DX3EA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
 
 ### Alexandra Aikhenvald - The grammar of well-being: How to talk about health and illness in tropical societies
 
@@ -245,8 +345,16 @@ Recommended.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/46IrwGZpDQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Marilyn Vihman - First Steps In Language Development: The Role of Production and the Emergence of Lexical Systematicity
 
-## Sociolinguistics
+This talk looks at the acquisition from a mostly phonological point-of-view. There is some attention for Mandarin, which was particularly interesting for me, although I don't know if I'm convinced by the idea that Mandarin infants mostly hear syllables rather than words... [Check it out here.](https://youtu.be/m_iP-o9Pf28)
+
+### Language and Literacy Development: Global and Local Issues
+
+[This group talk](https://youtu.be/0lwsnUt5XRU) looks at how children acquire reading skills. Important, because [reading is fundamental.](https://www.youtube.com/watch?v=ZH5wM7tfiiU)
+
+
+## Sociolinguistics / society
 
 ### Michel DeGraff - Black Lives Will Not Matter Until our Languages also Matter: The Politics of Linguistics and Education In Post-Colonies
 
@@ -257,7 +365,12 @@ In the beginning of the talk there is a screenshot with *Black lives matter* tra
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-M91rn4Tr_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### H. Samy Alim - Refusing the "White Gaze": Language, Race, and the Disruption of White Supremacist Ideologies
 
+Yet another great talk on the social issue that grips the world right now. It forces us to think about the white gaze (also in academia).
+Highly recommended!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rm41m38M6g4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Sarah G. Thomason - Deliberate Language Change: Why, How, and Does It Matter?
 
@@ -285,6 +398,12 @@ Especially in times of #BlackLivesMatter this is an important talk, because it g
 
 Decent talk on a number of sociolinguistic issues, mostly America-focused. [Watch it here.](https://youtu.be/JKBE9vW1pL0)
 
+### Jane Setter - Your Voice Speaks Volumes
+
+This is more of a comprehensive talk about a relatively well-understood topic: dialects and accents in the UK. Later on Setter also talks about forensic linguistics, which was quite interesting.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/65KOJ7SusUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### Ryuko Kubota - Epistemological Racism and Language Studies: Decolonizing Knowledge
 
@@ -303,19 +422,52 @@ If one mentions Comrie you might think of aspect or tense, among many other work
 This talk goes through some case studies of what has worked in terms of strategies to make endangered languages less endangered. [You can find it here.](https://youtu.be/uh9PN0K5wuA)
 
 
-## Pragmatics
+## Pragmatics and discourse
+
+### Elizabeth Traugott - A Constructional Perspective on the Rise of Discourse Markers
+
+Grammaticalization expert Traugott discusses a number of discourse markers from a construction grammar perspective, e.g., *by the way*, which she analyzes brilliantly in the way that she is known for throughout her career.
+Curiously, she frames her study somewhat by stating that early Cognitive Linguists did not pay much attention to discourse (markers), referring to Fillmore (1988), Langacker (1987) or Goldberg (1995, 2006, 2019), and that it is odd because Sweetser (1990) talked about discourse markers. I find this a weird starting point, because it certainly is not the goal of Fillmore's Frame semantics to talk about this phenomenon, so I don't know why she would expect to find it there. Langacker's Cognitive Grammar (1987) outlines the basic foundations of his theoretical apparatus, but in (2008) we find a whole section on discourse, which also has played an important part in Cognitive Grammar over the years, albeit from a introspective data approach. Goldberg's work is also mostly focused on constructions that usually feature a verb; it seems that the discourse markers Traugott is interested in are not really of that nature. So it is strange that this is the point against which she frames her talk. 
+BUT, a good talk nonetheless. Highly recommended!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FrkKMMWGfA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Andrej A. Kibrik - Cognitive Discourse Analysis
+
+This lecture provides a decent overview of issues related to studying discourse from a Cognitive Linguistics perspective. I disagree with the starting point (also in the abstract) that states that "On-line phenomena, such as discourse processes unfolding in real time, *can and should* be explored from a cognitive perspective as well" (emphasis mine). Already in the second book in the CLR series, scholars have been dealing with issues like activation, reference etc. That is not to say that that treatment was sufficient -- it was not -- but we should also not pretend that CL has never looked at discourse.
+[Recommended talk.](https://youtu.be/yhxhHO5SY0M)
 
 ### Emanuela Cresti & Massimo Moneglia - Speech Acts, Prosody and the Analysis of Spontaneous Spoken language.
 
 This talk focuses mostly on the utterances and information units.
-It features examples with special prosody that are very reminiscent of a cerain fellow student of mine...
+It features examples with special prosody that are very reminiscent of a certain fellow student of mine...
 [Find the talk here.](https://youtu.be/XE62TA6jWn8)
 
-## Phonology
+## Phonology and phonetics
+
+### Joe Salmons & David Natvig - Sound Change
+
+[This talk](https://youtu.be/gZQ_IB6uPSM) show how different approaches to sounds and sound change can work together to get a more comprehensive picture of what's going on. Not my field, but very interesting!
+
+
+
 
 ### Marc van Oostendorp - Calculating With Sounds. The Legacy of Roman Jakobson
 
 Well-known Dutch linguistic van Oostendorp (who is very active online) talks about his admiration for Roman Jakobson. He conveys his passion about one of Jakobson's works that focuses on featural analysis of phonemes. However, I found the presentation format extremely unclear. [Check it out if you're interested.](https://youtu.be/0GmLCHdIZj0)
+
+
+### Caleb Everett - Newfound Global Phonetic Patterns and What They Tell Us About Language
+
+[This is a cool talk](https://youtu.be/xsAWTzLQPjo) and one of the clearest phonetics presentations I've ever seen. This talk seems to be on the cusp of linguistics (more so than many other talks that take a more historical overview of a field as their topic).
+
+### The Interplay Between Speech and Singing
+
+[This multiple people presentation](https://youtu.be/83BIbEh2Uh4) is a bit more traditional in terms of phonetics presentations. It was interesting.
+
+### Katarzyna Dziubalska-Kołaczyk - Explaining Clusters Using Net Auditory Distance and Morphonotactics
+
+[This talk](https://youtu.be/LxARaRDE4Nk), grounded in Natural phonology principles, talks about clusters. 
 
 ## Biological Linguistics
 
@@ -336,8 +488,52 @@ Also weird is Haspelmath's lumping together of Chomsky (1965) and Jackendoff (20
 I am not well-versed in the world of neuro- /psycholinguistics but I do enjoy the presentations that have found their way to me in the past few years. This talk is very much in line of that. There are lots of specifics of this subfield that are touched upon in this talk, but I remain unconvinced of the usability of generative grammar within this field, and while that still seems to be dominant, the field seems to become more and more aware of culture as well. [Check it out y'all.](https://youtu.be/QV0QKXL0ub4)
 
 
+### Mark Liberman - Clinical Applications of Linguistic Analysis: Opportunities and Challenges
+
+Mark Liberman, well-known from [Language Log](https://languagelog.ldc.upenn.edu/nll/) introduced a number of clinical applications of linguistics. Interesting talk with good future avenues of extension. [Check it out here.](https://youtu.be/kUJyVKC8BZA)
+
+
+
+### Michael Ullman - Language Learning Relies on Brain Circuits that Predate Humans: Evidence from Typical and Atypical Language Development
+
+Another talk on neurolinguistics with three main case studies. It can be found [here.](https://youtu.be/_tl_Dp4CPK0)
+
+### John E. Joseph - The Geographical and Cognitive Mapping of Multilingualism
+
+This is the dialectology / dialectometry talk you didn't know you needed, at least for the first 20 minutes. After that it turns, curiously, to the world of neurolinguistics. I thought this talk was very interesting.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7keVxrmbOd0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### David Poeppel - Rhythms of Speech and Rhythms of Brains
+
+The brain has rhythms - and so do music and speech. In [his talk](https://youtu.be/Kj5MV8g7OAg), Poeppel takes us through a number of experiments that show this.
+
+
+## Translation
+
+### Frieda Steurs - Language Technology: What Is Next?
+
+Steurs, who I have had meetings with when I was the student representative of the Faculty of Arts at KU Leuven, gives a quite comprehensive history of the translation technology in the last 70 years or so. Then she discusses some recent issues and tools. Really good talk [if you ever wanted to know about this!](https://youtu.be/HlyyJNZDc8w)
+
+## Sign language
+
+###  Christian Rathmann - International Sign In Interactions: Revisiting the Concept of 'Foreigner Talk'
+
+Cool [talk](https://youtu.be/zA_N3DuvW7s), *in sign language* (don't worry, there's a vocalizer next to it) about how deaf people sign when coming into contact with other sign languages. 
+
+
+## Literature
+
+### Arran Stibbe - Ecolinguistics: the Search for New Stories to Live by
+
+[This talk](https://youtu.be/mSgDm9a0Wm0) shows that framing and reframing is important. Stibbe discusses newspaper narratives: how immigrants had been framed as invaders in *The Sun*, but now are portrayed as the heroes (doctors, nurses etc.) fighting against COVID. At about minute 38 he talks about haiku, which was quite interesting. 
 
 # More to come later...
+
+
+
+
 
 
 
