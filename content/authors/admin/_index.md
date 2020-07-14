@@ -95,6 +95,6 @@ My MA degrees in Sinology and Linguistics were obtained at the  <a href="http://
 
 **My current research focuses mostly on ideophones in Chinese.** For my PhD dissertation, I developed the <a href="https://osf.io/kpwgf/">Chinese Ideophone Database (CHIDEOD)</a> (click <a href="https://simazhi.shinyapps.io/chideod_appversion/">here for the app</a>) and investigated prototypicality and salience effects present in the data. My supervisor is <a href="http://chiarung.blog.ntu.edu.tw/" target="_blank">Lu Chiarung</a>. I have a passion for Mandarin and Premodern Chinese, as well as many other languages and the phenomenon 'language' in general. 
 
-Between my bachelor and my master of Sinology, I was able to study at <a href="http://eng.suda.edu.cn/" target="_blank">Suzhou University 苏州大学</a> with a scholarship provided by the Hanban. 
+Between my bachelor and my master of Sinology, I was able to study at <a href="http://eng.suda.edu.cn/" target="_blank">Suzhou University 苏州大学</a> with a scholarship provided by the Hanban.
 
-**Click here for my [academic cv](https://github.com/simazhi/cv_in_rmarkdown/blob/master/CV_thomas.pdf).**
+**Click here for my [academic cv](https://www.thomasvanhoey.com/cv/cv_thomas.pdf).**
