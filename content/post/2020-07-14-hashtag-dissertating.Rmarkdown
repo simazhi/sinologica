@@ -272,7 +272,7 @@ Now I still need to turn #dissertating in the Fall semester of 2019. I had a har
 I started teaching English conversation to BA2 at Tatung University, tried to balance a few grant applications, a research project with my advisor, another project with Ann (see above), reworking my database [and on and on and on and on and on and on I went](https://allpoetry.com/Zebra-Question), and I really felt like I was going [on my own, pretending he's beside me, all alone...](https://genius.com/Lea-salonga-on-my-own-lyrics). 
 Nevertheless, I did make strides forward in my research, it's just sometimes -- and I'm pretty sure this happens to all scholars -- you just don't see it for yourself. I got a lot of good tips and inspiration from [Tara Brabazon's youtube channel](https://www.youtube.com/channel/UCwdaNGhdSAwzdztgLTqyhgA) which I like watching, even now. But yeah, it was a dreadful time.
 
-So there you have it, almost a complete year report. It started out kind of anxious, with the Proposal. But then there were lots of good events and I felt accomplished, enjoying a moderately healthy work-life balance.  
+So there you have it, almost a complete year report. It started out kind of anxious, with the Proposal. But then there were lots of good events and I felt accomplished, enjoying a moderately healthy work-life balance. 
 
 <div class="tenor-gif-embed" data-postid="14967018" data-share-method="host" data-width="100%" data-aspect-ratio="1.6711409395973154"><a href="https://tenor.com/view/fire-nation-fire-avatar-the-last-airbender-gif-14967018">Fire Nation Avatar GIF</a> from <a href="https://tenor.com/search/firenation-gifs">Firenation GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
