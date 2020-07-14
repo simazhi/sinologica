@@ -293,6 +293,13 @@ You can [find it here](https://youtu.be/SO3tE7clWhI).
 
 ## Popularizing linguistics
 
+### Gretchen McCulloch & Lauren Gawne - Emoji as Digital Gesture: Why Internet Linguistics Matters
+
+I recently read McCulloch's book *Because Internet*, because how could you not; it has been appearing on all the blogs I follow. Tbh, sometimes I think her style on her blog is a bit too unacademic, but I guess that's the point: she wants to get people more interested in language in general, and does this through the topic of internet usage. This talk is actually wonderful and I really enjoy her passion of her research object and I wish we had more people who do the popularisation of linguistics well.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ryyvyH1wYBM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ### David Adger - Language Invention and Language Structure
 
 This was a somewhat unexpected talk; I had expected Adger to go full on minimalist program on us (which I actually would have liked -- I think the people that watch these Abralin lectures are presumably quite well-versed in linguistic theories), but I will never say no to conlangs. [Cool talk](https://youtu.be/RA5NXBbXYdQ).
@@ -425,6 +432,12 @@ This talk takes a while to get going, but it shows Labov's eminence and longstan
 Especially in times of #BlackLivesMatter this is an important talk, because it goes in depth into AAVE.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cr5tyw8_gT0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Antonella Sorace - The ‘Native Monolingual Standard’ In Language Research (and Why It’s a Problem
+
+Based on the title of [this talk](https://youtu.be/PpSi0lSSlSc) I thought it would be "just another talk on the weirdness of monolingual standards", and it is that for sure, but it's also so much more. I think especially near the end of the talk, when Sorace starts talking about economy and efficiency I was really hooked. Note, this presentation has some technical problems of some duration, so don't be put off by the long initial lecture time. Very good!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PpSi0lSSlSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Augusto Soares da Silva - Bases cognitivas e letomátricas para o estudo da variação pluricêntrica do português
 
