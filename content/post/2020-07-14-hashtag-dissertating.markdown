@@ -6,7 +6,16 @@ slug: hashtag-dissertating
 draft: false
 categories:
   - Blog
-tags: []
+tags:
+  - ideophone
+  - ideophones
+  - GIL
+  - Japan
+  - Sweden
+  - China
+  - conference
+  - PhD
+  - dissertation
 subtitle: ''
 summary: ''
 authors: []
@@ -20,7 +29,9 @@ header:
 projects: [ideophones]
 ---
 
-As I'm about to do the final revisions on my dissertation, I have started reminiscing about my PhD trajectory. I envision myself writing a trilogy (or tetralogy) of posts that span the last 1.5 years of my candidature. Welcome to part 1, #dissertating, which takes us from ca. January 2019 to ca. October 2019. **Many pictures below, pinky promise.**
+As I'm about to do the final revisions on my dissertation, I have started reminiscing about my PhD trajectory. I envision myself writing a trilogy (or tetralogy) of posts that span the last 1.5 years of my candidature. Welcome to part 1, #dissertating, which takes us from ca. January 2019 to ca. October 2019. [Part 2 can be found here.](https://www.thomasvanhoey.com/post/defense-dark-art/)
+
+**Many pictures below, pinky promise.** 
 
 # Preliminary steps
 
@@ -42,10 +53,10 @@ I won't bore you with all the details, but if you are interested, [here are the 
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/48345334976/in/album-72157715092905287/" title="Proposal defense"><img src="https://live.staticflickr.com/65535/48345334976_3c67649da8_4k.jpg" width="4032" height="3024" alt="Proposal defense"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-After some soul searching next to the Drunken Moon Lake on campus, I tried to analyze the five directions directions I was being pulled in. Some examples of things they wanted me to do: add more examples, arrange things chronologically (instead of thematically), add genre effects, look at phonesthemes in the phonology but also radicals, do sound symbolism, add more details about the code without writing the actual code, leave things that I couldn't explain behind, leave acquisition out of the research in the dissertation, add more Chinese papers and so on.
+After some soul searching next to the Drunken Moon Lake on campus, I tried to analyze the five directions I was being pulled in. Some examples of things they wanted me to do: add more examples, arrange things chronologically (instead of thematically), add genre effects, look at phonesthemes in the phonology but also radicals, do sound symbolism, add more details about the code without writing the actual code, leave things that I couldn't explain behind, leave acquisition out of the research in the dissertation, add more Chinese papers and so on.
 There were also a few thinking questions: 1) what is the scope of 'ideophone' in Chinese? 2) what is the story of your dissertation?
 
-And finally there were two questions / comments that I could not answer because I just did not expect them at all. The first of these was the methodological question pertaining to ALL SEMANTIC STUDIES. It went like this: *We have dictionaries, so why would we even need semantic studies??* And I just stood there with my mouth full teeth, unable to reply, because this question touches upon the foundation of all of semantics. Why would you even need to do linguistic research. We have dictionaries, isn't that enough? (Send your answers to me.)
+And finally there were two questions / comments that I could not answer because I just did not expect them at all. The first of these was the methodological question pertaining to ALL SEMANTIC STUDIES. It went like this: *We have dictionaries, so why would we even need semantic studies??* And I just stood there with my mouth full of teeth, unable to reply, because this question touches upon the foundation of all of semantics. Why would you even need to do linguistic research. We have dictionaries, isn't that enough? (Send your answers to me.)
 
 The second one was a comment: *encyclopedic knowledge is not important for linguistics*. I am sorry but I couldn't can't even. Especially for a topic like ideophones, rooted in usage, encyclopedic knowledge is everything. In that moment I realized I was living in a linguistics universe different from that committee member.
 
@@ -277,4 +288,4 @@ So there you have it, almost a complete year report. It started out kind of anxi
 <div class="tenor-gif-embed" data-postid="14967018" data-share-method="host" data-width="100%" data-aspect-ratio="1.6711409395973154"><a href="https://tenor.com/view/fire-nation-fire-avatar-the-last-airbender-gif-14967018">Fire Nation Avatar GIF</a> from <a href="https://tenor.com/search/firenation-gifs">Firenation GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 But then, everything changed in the second half of the year and the #dissertating became #struggling.
-Just so you, things turned out well. I am ending on a down note here, but we're going up again in the next blog post.
+Just so you know, things turned out well. I am ending on a down note here, but we're going up again in the next blog post.
