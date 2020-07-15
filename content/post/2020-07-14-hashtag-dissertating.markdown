@@ -288,4 +288,4 @@ So there you have it, almost a complete year report. It started out kind of anxi
 <div class="tenor-gif-embed" data-postid="14967018" data-share-method="host" data-width="100%" data-aspect-ratio="1.6711409395973154"><a href="https://tenor.com/view/fire-nation-fire-avatar-the-last-airbender-gif-14967018">Fire Nation Avatar GIF</a> from <a href="https://tenor.com/search/firenation-gifs">Firenation GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 But then, everything changed in the second half of the year and the #dissertating became #struggling.
-Just so you know, things turned out well. I am ending on a down note here, but we're going up again in the next blog post.
+Just so you know, things turned out well. I am ending on a down note here, but we're going up again [in the next blog post](https://www.thomasvanhoey.com/post/defense-dark-art/).

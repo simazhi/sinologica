@@ -148,7 +148,6 @@ Here are even more pictures of me wearing the gown (what we call 'toga' in Dutch
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/50116148442/in/album-72157715109327417/" title="family"><img src="https://live.staticflickr.com/65535/50116148442_9724c873b8_c.jpg" width="800" height="641" alt="family"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/50116148442/in/album-72157715109327417/" title="family"><img src="https://live.staticflickr.com/65535/50116148442_9724c873b8_c.jpg" width="800" height="641" alt="family"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/50116010347/in/album-72157715109327417/" title="me and 椰林大道"><img src="https://live.staticflickr.com/65535/50116010347_8f85f9233e_c.jpg" width="600" height="800" alt="me and 椰林大道"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
@@ -156,14 +155,12 @@ Here are even more pictures of me wearing the gown (what we call 'toga' in Dutch
 
 So yes, everything turned out well. I don't care how long you've been on this journey with me, thank you all for being there for me, from my parents to my partner, to my family, to my friends I made along the way, old friends, friends that came to visit me, friends that wished they visit me, my committee, my professors, my friends at school and outside of it, colleagues that have inspired me, people I had the honor of meeting at conferences, and not in the least to my advisor for advising me. I have enjoyed being here in Taiwan and am hoping that once I leave it won't be the last time I see everybody. 
 
-The next installment in this series is foreseen for the end of August, after I "leave school" (離校), i.e., turn in my dissertation. But I probably will make some more posts in between. Of course, I am [keeping the Abralin lectures updated](https://www.thomasvanhoey.com/post/the-abralin-lectures/), so check that out if you haven't thus far. 
+The next installment in this series is planned for the end of August, after I "leave school" (離校), i.e., turn in my dissertation. But I probably will make some more posts in between. Of course, I am [keeping the Abralin lectures updated](https://www.thomasvanhoey.com/post/the-abralin-lectures/), so check that out if you haven't thus far. 
 
 Thomas out.
 
-![]('img/2020/narutorun.gif')
 
-
-
+![](/img/2020/narutorun.gif)
 
 
 
