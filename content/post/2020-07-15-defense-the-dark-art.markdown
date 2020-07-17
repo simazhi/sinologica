@@ -18,8 +18,8 @@ authors: []
 lastmod: '2020-07-15T21:22:27+08:00'
 featured: no
 header:
-  image: '2020/receiving.jpg'
-  caption: 'Receiving my doctoral bull from the President of National Taiwan University'
+  image: '2020/smallgraduation.jpg'
+  caption: '言語学の家族'
   focal_point: ''
   preview_only: no
 projects: [ideophones]
@@ -51,7 +51,7 @@ Luckily I had moments of light in my life, like friends hitting me up to hang ou
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/49947506166/in/album-72157715109327417/" title="me and Powei"><img src="https://live.staticflickr.com/65535/49947506166_935097d800_b.jpg" width="1024" height="814" alt="me and Powei"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-<a data-flickr-embed="true"href="https://www.flickr.com/photos/86097314@N03/49947795257/in/album-72157715109327417/" title="Karen Kerin and Kyran"><img src="https://live.staticflickr.com/65535/49947795257_57152470a3_b.jpg" width="1024" height="766" alt="Karen Kerin and Kyran"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/49947795257/in/album-72157715109327417/" title="Karen Kerin and Kyran"><img src="https://live.staticflickr.com/65535/49947795257_57152470a3_b.jpg" width="1024" height="766" alt="Karen Kerin and Kyran"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/49948018841/in/album-72157715109327417/" title="ChiaHo!"><img src="https://live.staticflickr.com/65535/49948018841_4d954de812_b.jpg" width="768" height="1024" alt="ChiaHo!"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 I just want to say thank you for providing light in the dark.
