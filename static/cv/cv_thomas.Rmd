@@ -183,6 +183,11 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 **Van Hoey, Thomas**. 2017. A semantic map for ideophones: From an implicational hierarchy to the spinning top model. Brown Bag Lectures. Taipei: National Taiwan University. 26 April 2017.
 
+## Contributions
+
+Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wendy Feytons, Alek Keersmaekers, Veerle Monserez, **Thomas Van Hoey**, and Marie Vanwingh. 2016. Addressees use Zipf’s law as a cue for semantics. In Seán G. Roberts, Christine Cuskley, Luke McCrohon, Lluís Barceló-Coblijn, Olga Fehér & Tessa Verhoef (eds.), The evolution of language: Proceedings of the 11th international conference (EVOLANGX11). Online at http://evolang.org/neworleans/papers/117.html.
+
+
 ## Tutorials
 
 **Van Hoey, Thomas**. 2019. R bootcamp for lexical semanticists. Introduction to wrangling raw data to formats useable for further analysis using R. Seminar on Language and Culture 語言與文化專題研究.Taipei: National Taiwan University. 5 lectures during November 2019. [blogpost](https://www.thomasvanhoey.com/post/rbootcamp-2019/)
