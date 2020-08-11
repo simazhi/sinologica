@@ -114,7 +114,7 @@ I was leaving my building one day and realized it would soon be over. So I had t
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/49947795012/in/album-72157715109327417/" title="lesyueguan"><img src="https://live.staticflickr.com/65535/49947795012_336c50661d_b.jpg" width="819" height="1024" alt="lesyueguan"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-And luckily after what felt like an eternity of bleakness, dread and sorrow, I finally got to arrange my final committee. I did the old switcharoo with two members, because I found their comments not maximally helpful -- remember that I felt like I was being pulled in five different directions in the last blog. This took some time and I am so very grateful that the new five-headed committee were able to accommodate my defense within a short amount of time. Forever grateful. Eternally grateful. 
+And luckily after what felt like an eternity of bleakness, dread and sorrow, I finally got to arrange my final committee, who were able to accommodate my defense within a short amount of time. So I am forever grateful for that.
 
 In any case, I became a father of my intellectual brainchild.
 

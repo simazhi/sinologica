@@ -29,6 +29,16 @@ The full programme [is accessible here](https://aovivo.abralin.org/en/programme/
 
 **AS A DISCLAIMER**, I do want to point out that this blog reflects a number of observations and in general recommend everybody to watch all of the lectures. You can agree or disagree but I am mostly positive about the talks, because this is a great initiative. Also, the categorization in domains is just a tendency, often the talks fall in more specific categories.
 
+## Ideophones
+
+### Felix K. Ameka - Linguistic Marginalia and "Grammars of Use"
+
+I was so happy to see Ameka included in the list of speakers as I know him from my literature review on ideophones. Interestingly, Ameka starts his presentation by referring to Joseph's (1997) paper on linguistic marginalia. And then, unsurprisingly, the talk slowly shifts to ideophones and of course his old student Mark Dingemanse. While Ameka unfortunately misquotes Dingemanse's (2011; 2012; 2019) cross-linguistic definition, what follows is a detailed case study of ideophones in the African Kwa languages he is most familiar with, Igbo and Ewe, and what we can learn from them. Ameka rightly argues for the obliteration between core vs. periphery. For the most part I agree with his approach, although I do hold some reservations about resorting to Natural Semantic Metalanguage to describe meanings. The last part of the talk is devoted to interjections, very interesting. This talk is highly recommended.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zyxuW3Za8Kk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 ## Semantics
 
 All linguistic subfields are equal but some are more equal than others.

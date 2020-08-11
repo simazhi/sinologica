@@ -49,7 +49,10 @@ All the while doing this, i.e., when I was waiting for reviews, I tried to atten
 
 After the conference ended I rushed to the writing board to continue the development of my thesis. Because the next step in the program at NTU is called the Proposal. This is actually not so much a full proposal as more of an outline of what you plan to do. Hmmm, writing it out like this makes it seem very similar, but there is a difference: *proposal* sounds more preliminary (?). 
 
-I won't bore you with all the details, but if you are interested, [here are the slides](https://www.thomasvanhoey.com/proposal/proposal#1) of what my plan looked like at the time. I wrote about 80 pages of manuscript to illustrate this. I remember, showing up on 28 January 2019 to present it, when my committee told it was a lot. And then I did my thing. And then they did their thing. I can't say that I found this Proposal defense a particularly enjoyable experience. I felt that there was a lot of unwarranted criticism, but I did pass it and at least that stage was over.  Here is a picture of my committee and me after the event. 
+I won't bore you with all the details, but if you are interested, [here are the slides](https://www.thomasvanhoey.com/proposal/proposal#1) of what my plan looked like at the time. I wrote about 80 pages of manuscript to illustrate this. 
+<!-- I remember, showing up on 28 January 2019 to present it, when my committee told it was a lot. And then I did my thing. And then they did their thing. I can't say that I found this Proposal defense a particularly enjoyable experience. I felt that there was a lot of unwarranted criticism, but    -->
+I passed it and at least that stage was over.
+Here is a picture of my committee and me after the event. 
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/48345334976/in/album-72157715092905287/" title="Proposal defense"><img src="https://live.staticflickr.com/65535/48345334976_3c67649da8_4k.jpg" width="4032" height="3024" alt="Proposal defense"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
