@@ -298,11 +298,11 @@ summer schools?
 # Relevant courses
 National Taiwan University: 
 
-> Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Appraoch to SLA
+> Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu
 
 University of Leuven: 
 
->Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics 
+>Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters)
 
 # Other awards and certificates
 - Intermediate level, Isbukun Bunun Proficiency Test  \hfill 2018
