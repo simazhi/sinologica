@@ -188,7 +188,7 @@ $endfor$
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
 
 % Use fontawesome. Note: you'll need TeXLive 2015. Update. and also academicons
-$if(fontawesome)$\usepackage{fontawesome}$endif$
+$if(fontawesome)$\usepackage{fontawesome5}$endif$
 $if(academicons)$\usepackage{academicons}$endif$
 
 
@@ -242,8 +242,8 @@ $if(jobtitle)$\moveleft.5\hoffset\centerline{$jobtitle$}$endif$
 $if(affiliation)$\moveleft.5\hoffset\centerline{$affiliation$}$endif$
 % first column
 \begin{minipage}[t]{0.7\textwidth}
-$if(email)$$if(fontawesome)$\faEnvelopeO \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email$} \hspace{1 mm}$endif$\\
-$if(email2)$$if(fontawesome)$\faEnvelopeO \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email2$} \hspace{1 mm}$endif$\\
+$if(email)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email$} \hspace{1 mm}$endif$\\
+$if(email2)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email2$} \hspace{1 mm}$endif$\\
 $if(phone)$$if(fontawesome)$ \faPhone \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$\\
 $if(address)$$if(fontawesome)${\large \faHome} \hspace{1 mm}$else$\emph{Address:}$endif${$address$}$endif$\\
 $if(addressuni)$$if(fontawesome)${\large \faUniversity} \hspace{1 mm}$else$\emph{Address:}$endif${$addressuni$}$endif$
