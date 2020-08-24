@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Van Hoey | Sinologica</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Thomas Van Hoey | Sinologica</title>
@@ -51,6 +51,187 @@
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Turning glosses into a mini corpus</title>
+      <link>/post/turning-glosses-into-a-mini-corpus/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/turning-glosses-into-a-mini-corpus/</guid>
+      <description>
+
+
+&lt;div id=&#34;glossing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Glossing&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Interlinear_gloss&#34;&gt;Glossing&lt;/a&gt; is part and parcel in linguistics.
+Part of our training is learning to represent linguistic data in a format that can be understood by all.
+An example can be found in below, taken from the &lt;a href=&#34;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&#34;&gt;Leipzig Glossing Rules&lt;/a&gt;.
+In general, morphemes should correspond, being marked by a hyphen or space to separate them, depending on boundedness.
+The details are highly dependent on your subfield and your audience.
+For instance, ‘1PL’ (first plural pronoun) could also be represented by ‘we’ in certain contexts.
+On other occasions, categories of the language you’re studying are not included in the standard Leipzig Glossing Rules set, e.g., ‘ideophone’ can be represented by IDEO, IDPH, etc.
+There’s also recent advances in the glossing standards of, for instance, &lt;a href=&#34;https://wikis.hu-berlin.de/interlinear_glossing/Main_Page&#34;&gt;ancient languages&lt;/a&gt;, like &lt;a href=&#34;http://wwwuser.gwdg.de/~dwernin/published/DiBiase_Kammerzell_Werning-2009-Glossing_Ancient_Egyptian.pdf&#34;&gt;this paper by DiBiase et al.&lt;/a&gt; for Ancient Egyptian; it’s worth a read.
+(Bonus: check out the article on &lt;a href=&#34;https://en.wikipedia.org/wiki/Kanbun&#34;&gt;Kanbun&lt;/a&gt; which provides a short intro to how the Japanese marked up Classical Chinese to make sense of it.)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;original:         My  s    Marko poexa-l-i avtobus-om v   Peredelkino. 
+morphemes:        1PL COM  Marko go-PST-PL bus-INS    ALL Peredelkino
+free translation: &amp;#39;Marko and I went to Perdelkino by bus.&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;yami&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Yami&lt;/h1&gt;
+&lt;p&gt;Yesterday, my partner &lt;a href=&#34;https://www.researchgate.net/profile/Chun_Jan_Young&#34;&gt;CJ Young (UCSB)&lt;/a&gt;, who is working with &lt;a href=&#34;https://en.wikipedia.org/wiki/Yami_language&#34;&gt;Yami (Tao)&lt;/a&gt; data and has been &lt;del&gt;pushed somewhat aggresively by me to adopt R and Rmarkdown&lt;/del&gt; gradually easing into the R ecoverse, raised an interesting question: &lt;strong&gt;how can I turn my fieldwork glosses into a corpus that’s easily searchable?&lt;/strong&gt;
+Just to clarify things, in his fieldwork he’s following a format that rests on splitting recordings into &lt;a href=&#34;https://en.wikipedia.org/wiki/Prosodic_unit&#34;&gt;intonation units&lt;/a&gt; with the goal of depositing data in the &lt;a href=&#34;https://www.researchgate.net/publication/269805639_NTU_corpus_of_Formosan_languages_A_state-of-the-art_report&#34;&gt;Corpus of Formosan Languages&lt;/a&gt;.
+However, the data is not in that corpus yet, and mostly written down in .pages (the word of mac os).
+The usage of .pages is not a requirement, but just a consequence of him working together with &lt;a href=&#34;https://manoa-hawaii.academia.edu/GregVondiziano&#34;&gt;Greg Vondiziano (UH)&lt;/a&gt; and their both having macbooks ha.&lt;/p&gt;
+&lt;p&gt;A typical gloss looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.
+ko       ononongan  a    kavavatanen            ya        am, 
+ko       ononong-an a    ka-va~vata-nen         ya        am 
+1SG.GEN  narrate-LV LK   NMZ-RDPL~hearsay-PV    DEM.PROX  TOP 
+1SG.屬格 述說-處焦  繫詞 名物化-重疊～據說-受焦 指示.近距 主題 
+
+ko       nimacita             do
+ko       ni-ma-cita           do
+1SG.GEN  PFV-PV.able-see      LOC
+1SG.屬格 完成貌-受焦.能力-看  處格
+
+2.
+paciracirayin an
+pa-cira~ciray-in an
+CAU-RDPL~light-PV FP
+使役-重疊～照亮-受焦 語助詞
+
+#e The story I’m going to tell is what I saw in a movie
+#c 我要說的故事是，我在電影上看到的
+#n paciracirayin = 電影; ciray = 亮; cirayin = 照&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So first there is the gloss number, followed by the original sentence, then an extra level containing the underlying form, then the morphemic glosses in English, in Chinese, and then a free translation of a considerable translation in English (#e) as well as Chinese (#c), and possibly some notes (#n).
+You can see that there is some structure in the order of these items.
+But there are also a few annoying things: the first intonation unit has a very long line, which has been split in two (starting with &lt;em&gt;ko&lt;/em&gt;); and the translations in #e and #c are metioned for intonation unit 2, but actually also relate to intonation unit 1.&lt;/p&gt;
+&lt;p&gt;Ideally, corpora become more machine-searchable if they are further standardized.
+So, I tried to put my head to it and this is what I came up (taking full inspiration from the ASBC corpus used in my PhD dissertation):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.txt source files (because lightweight and cross-platform)&lt;/li&gt;
+&lt;li&gt;script to turn them into dataframe, enabling the powerfull search functions of R (or python)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So the goal is to transform the previous into a table with the following columns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;intonation unit number
+*surface&lt;/li&gt;
+&lt;li&gt;underlying&lt;/li&gt;
+&lt;li&gt;english morphemes&lt;/li&gt;
+&lt;li&gt;chinese morphemes&lt;/li&gt;
+&lt;li&gt;english translation&lt;/li&gt;
+&lt;li&gt;chinese trans&lt;/li&gt;
+&lt;li&gt;notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;preprocessing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Preprocessing&lt;/h1&gt;
+&lt;p&gt;As always, I started out with making &lt;a href=&#34;https://github.com/simazhi/yamicorpusr&#34;&gt;a github repository&lt;/a&gt;, to detail the different steps.
+Next I thought about we were going to get from the source text in .pages to .txt to dataframe.
+In the preprocessing stages, there are about five things that needed to be checked (manually, just to make sure).&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Copy into a txt document. Yes, this is easy.&lt;/li&gt;
+&lt;li&gt;Replace &lt;tabs&gt; with &lt;space&gt;. In a text editor like Atom or even the general text editor on your computer, you can generally replace &lt;code&gt;\t&lt;/code&gt; (tab) with &lt;code&gt;\s&lt;/code&gt; (space) if regular expressions are enabled.&lt;/li&gt;
+&lt;li&gt;Check all multi line glosses on one line. This needs to be checked manually, just to make sure.&lt;/li&gt;
+&lt;li&gt;Add the following. You need to tag the lines, they can be in different orders (maybe one document has the Chinese line before the English line), but they need to be identified. Ideally this can be done programmatically, but better safe with manual than sorry with computational.
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;‘s’ to surface line&lt;/li&gt;
+&lt;li&gt;‘u’ to underlying line&lt;/li&gt;
+&lt;li&gt;‘e’ to English gloss&lt;/li&gt;
+&lt;li&gt;‘z’ to Chinese gloss&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Replace all &lt;code&gt;\n\n+&lt;/code&gt; with &lt;code&gt;\n&lt;/code&gt;. This regular expression will delete empty lines.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Should people be reading this and have tips on to make this more efficient, always welcome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;from-source-txt-to-dataframe&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;From source txt to dataframe&lt;/h1&gt;
+&lt;p&gt;For this you need the following packages&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(tidyverse) # collection of tools
+library(here) # best practice project management
+library(fs) # optional here but preparing for many docs later
+library(glue) # will need later&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next read in the source text that is somewhere in your R project.
+Learn the &lt;code&gt;here&lt;/code&gt; package if you don’t know how that works.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;readin &amp;lt;- read_lines(here(&amp;quot;SOURCETEXT.txt&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What you get is a vector, called &lt;code&gt;readin&lt;/code&gt;, containing every line as a piece of data, something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[1] 1.
+[2] s ko ononongan a kavavatanen ya am, ko nimacita do
+[3] u ko ononong-an a ka-va~vata-nen ya am ko ni-ma-cita do
+[4] e 1SG.GEN narrate-LV LK NMZ-RDPL~hearsay-PV DEM.PROX TOP 1SG.GEN PFV-PV.able-see LOC
+[5] z 1SG.屬格 述說-處焦 繫詞 名物化-重疊～據說-受焦 指示.近距 主題 1SG.屬格 完成貌-受焦.能力-看 處格&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, we need to transform this into the aforementioned table format.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tableform &amp;lt;- # declaring the output variable
+readin %&amp;gt;% # take readin and then
+  as_tibble() %&amp;gt;%  # turn it into a fance tibble
+  
+  # tagging (making columns)
+  mutate(linenumber = cumsum(str_detect(value, &amp;quot;\\d\\.&amp;quot;))) %&amp;gt;% 
+  mutate(category = str_extract(value, &amp;quot;^..?(?=\\s)&amp;quot;)) %&amp;gt;% 
+  
+  # spreding wider
+  pivot_wider(names_from = &amp;quot;category&amp;quot;, values_from = &amp;quot;value&amp;quot;) %&amp;gt;%
+  
+  # fill out the missing translations
+  fill(`#e`, .direction = &amp;quot;up&amp;quot;) %&amp;gt;% 
+  fill(`#c`, .direction = &amp;quot;up&amp;quot;) %&amp;gt;% 
+  
+  # beautify
+  select(-`NA`) %&amp;gt;% 
+  rename(surface = s,
+         underlying = u,
+         englishgloss = e,
+         chinesegloss = z,
+         englishtrans = `#e`,
+         chinesetrans = `#c`) %&amp;gt;% 
+         
+  # delete the tags &amp;#39;s&amp;#39; &amp;#39;u&amp;#39; &amp;#39;e&amp;#39; &amp;#39;z&amp;#39; as well as #n #c #e
+  mutate(across(where(is.character), 
+                ~str_remove(.x, &amp;quot;^..?\\s&amp;quot;)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And tadaah, the table for this text is ready and can be queried.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finding-furthering-and-outputting&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Finding, furthering and outputting&lt;/h1&gt;
+&lt;p&gt;Let’s say, you want to find all OBL markers, to see if there is any variation.
+A simple search can be done with &lt;code&gt;dplyr::filter&lt;/code&gt; and &lt;code&gt;str_detect&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tableform %&amp;gt;%
+  filter(str_detect(englishgloss, &amp;quot;OBL&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or you can select a number of columns of interest and integrate it with a &lt;code&gt;tidytext::unnest_tokens&lt;/code&gt; pipeline (or cast to other corpus packages), for instance, if you want to make a dictionary of a certain kind (which can then be used to pretag new texts for which you have the surface form or underlying form).&lt;/p&gt;
+&lt;p&gt;For exploratory output, I would suggest to use the &lt;code&gt;glue&lt;/code&gt; package, as it is extremely customisable.
+Two immediate output formats that come to mind are 1) something closer to what it originally was in .pages, 2) output to be used in the fantastic LaTeX package &lt;code&gt;expex&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The syntax of &lt;code&gt;glue&lt;/code&gt; is extremely simple.
+The following will take everything you have and output it in (here in Rmarkdown) in nice text lines.
+What then needs to happen when you copy to other programs, is to beautify it, and split long lines again on multiple lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;glue(&amp;#39;{tableform$linenumber}
+     {tableform$surface}
+     {tableform$underlying}
+     {tableform$englishgloss}
+     {tableform$chinesegloss}
+     {tableform$englishtrans}
+     {tableform$chinesetrans}
+     
+     &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But if you’re writing in Rmarkdown or LaTeX, you can easily customize this in such a way that it preformats into the &lt;code&gt;expex&lt;/code&gt; format (without having to worry about the multiline glosses or spacing because that’s what expex does!):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;glue(&amp;#39;\ex[glstyle=wrap]
+     \begingl
+     \gla {tableform$surface} //
+     \glb {tableform$underlying} //
+     \glc {tableform$englishgloss} //
+     \glft {tableform$englishtrans} //
+     \endgl
+     \xe&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;benefits&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Benefits&lt;/h1&gt;
+&lt;p&gt;The general benefits of having this set up is easy exploration of your data; no longer do you need to open up each .pages document and manually count how many times a certain thing occurs.
+What is also good is that it keeps reference numbers, so you can always go back to the source.
+It is a flexible setup, in that if you have a special tag format, for instance a #j for Japanese translation or so, this will automatically be capture in the table.
+And if you are used to marking the voice system with a V instead of F for focus, then you can implement that easily in R.&lt;/p&gt;
+&lt;p&gt;What does still need to happen, however, is a metadata file that links the source texts to data on the speaker, but that is just good housekeeping.
+So probably not the last update on this miniproject, but a good start.
+Good luck CJ!&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -8511,7 +8692,7 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
       <guid>/post/visit-from-vietnam/</guid>
       <description>&lt;p&gt;
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/holiday-celebrate&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Last update discussed the beginning of January and the beginning of my winter holiday&lt;/a&gt;. In this update I will report how I received a visitor from Vietnam and showed him around.&lt;/p&gt;
-&lt;h1 id=&#34;day-1-cks-&#34;&gt;Day 1: CKS  &lt;/h1&gt;
+&lt;h1 id=&#34;day-1-cks&#34;&gt;Day 1: CKS  &lt;/h1&gt;
 &lt;p&gt;I met my Vietnamese friend Quoc Anh during his study abroad in Belgium last year. In fact, you can read about some of 
 &lt;a href=&#34;https://tranlun1212.wordpress.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;his adventures on his blog&lt;/a&gt;. He&amp;rsquo;s got some family in Kaohsiung 高雄, a main city in the South of Taiwan and after travelling North via the East coast, he came to the Northwest of the country - Taipei.&lt;/p&gt;
 &lt;p&gt;The first day, after a lecture on the perdurant vs. endurant properties inherent in Chinese classifiers and measure words, we met and went to 
