@@ -144,6 +144,12 @@ In the preprocessing stages, there are about five things that needed to be check
 &lt;li&gt;Replace all &lt;code&gt;\n\n+&lt;/code&gt; with &lt;code&gt;\n&lt;/code&gt;. This regular expression will delete empty lines.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Should people be reading this and have tips on to make this more efficient, always welcome.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;
+After thinking about it for a while, adding the SUEZ (strategic acronym for the tagging system), the following regular expressions should do the trick.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(\d\.\n)      replace by `$1s ` (s followed by space) # S
+(^s [^\n]+\n) replace by `$1u ` (u followed by space) # U
+(^u [^\n]+\n) replace by `$1e ` (e followed by space) # E
+(^e [^\n]+\n) replace by `$1z ` (z followed by space) # Z&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;from-source-txt-to-dataframe&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;From source txt to dataframe&lt;/h1&gt;
@@ -231,6 +237,26 @@ And if you are used to marking the voice system with a V instead of F for focus,
 &lt;p&gt;What does still need to happen, however, is a metadata file that links the source texts to data on the speaker, but that is just good housekeeping.
 So probably not the last update on this miniproject, but a good start.
 Good luck CJ!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;addendum&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Addendum&lt;/h1&gt;
+&lt;p&gt;After posting about this blog update on facebook, Shu-Kai Hsieh pointed me into the direction of Yongfu Liao’s app version for when they did fieldwork last year, &lt;a href=&#34;https://glosss.yongfu.name/#/&#34;&gt;which can be found here&lt;/a&gt;.
+It’s a beautiful app, and it basically starts from a similar position as this project.
+It shows very clearly when there are differing glosses, allowing the annotator to standardize the glosses.
+It also goes beyond my approach by doing the exact dictionary style matching between forms and gloss I mentioned before, which I would implement with &lt;code&gt;tidytext&lt;/code&gt;, and it provides a nice quick and dirty look up possibility, shown here when looking for ‘OBL’ (oblique).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-24-turning-glosses-into-a-mini-corpus_files/rukaigloss.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The points I have some reservations about, however, are (1) that the &lt;a href=&#34;https://yongfu.name/gloss-search/2020_Budai_Rukai.log&#34;&gt;log&lt;/a&gt; shows that there are incongruencies between the different columns. (2) The &lt;a href=&#34;https://github.com/liao961120/gloss-search/&#34;&gt;input format&lt;/a&gt; (shown below) requires that the glosses are aligned, but I think that is epiphenomenal – one space is all I would want. (3) Fundamentally, while this app is beautiful and useful if you have only a bit of data, it does not enable the user to quickly count a given phenomenon, e.g., the frequency of OBL. And this was the kind of question that CJ asked me. So I think there is room for growth in Yongfu’s app, but also inspiration for the way I approached it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[編號].
+[族語轉寫 (原始, optional)]
+[空行 (optional)]
+[族語分析 (aligned)]
+[英文Glossing (aligned)]
+[中文Glossing (aligned)]
+[空行]
+#e [英文翻譯]
+#c [中文翻譯]
+#n [註釋]
+[空行]&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>

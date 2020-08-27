@@ -109,6 +109,18 @@ In the preprocessing stages, there are about five things that needed to be check
 
 Should people be reading this and have tips on to make this more efficient, always welcome.
 
+**UPDATE**
+After thinking about it for a while, adding the SUEZ (strategic acronym for the tagging system), the following regular expressions should do the trick.
+
+````
+(\d\.\n)      replace by `$1s ` (s followed by space) # S
+(^s [^\n]+\n) replace by `$1u ` (u followed by space) # U
+(^u [^\n]+\n) replace by `$1e ` (e followed by space) # E
+(^e [^\n]+\n) replace by `$1z ` (z followed by space) # Z
+````
+
+
+
 # From source txt to dataframe
 
 For this you need the following packages
@@ -228,7 +240,31 @@ What does still need to happen, however, is a metadata file that links the sourc
 So probably not the last update on this miniproject, but a good start. 
 Good luck CJ!
 
+# Addendum
 
+After posting about this blog update on facebook, Shu-Kai Hsieh pointed me into the direction of Yongfu Liao's app version for when they did fieldwork last year, [which can be found here](https://glosss.yongfu.name/#/). 
+It's a beautiful app, and it basically starts from a similar position as this project.
+It shows very clearly when there are differing glosses, allowing the annotator to standardize the glosses.
+It also goes beyond my approach by doing the exact dictionary style matching between forms and gloss I mentioned before, which I would implement with `tidytext`, and it provides a nice quick and dirty look up possibility, shown here when looking for 'OBL' (oblique).
+
+![](/post/2020-08-24-turning-glosses-into-a-mini-corpus_files/rukaigloss.png)
+
+
+The points I have some reservations about, however, are (1) that the [log](https://yongfu.name/gloss-search/2020_Budai_Rukai.log) shows that there are incongruencies between the different columns. (2) The [input format](https://github.com/liao961120/gloss-search/) (shown below) requires that the glosses are aligned, but I think that is epiphenomenal -- one space is all I would want. (3) Fundamentally, while this app is beautiful and useful if you have only a bit of data, it does not enable the user to quickly count a given phenomenon, e.g., the frequency of OBL. And this was the kind of question that CJ asked me. So I think there is room for growth in Yongfu's app, but also inspiration for the way I approached it.
+
+````
+[編號].
+[族語轉寫 (原始, optional)]
+[空行 (optional)]
+[族語分析 (aligned)]
+[英文Glossing (aligned)]
+[中文Glossing (aligned)]
+[空行]
+#e [英文翻譯]
+#c [中文翻譯]
+#n [註釋]
+[空行]
+````
 
 
 
