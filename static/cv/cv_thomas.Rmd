@@ -12,7 +12,7 @@ mainfont: Noto Serif
 geometry: margin=1in
 jobtitle: Ph.D in Linguistics
 affiliation: National Taiwan University
-address: N. 16-3, Siyuan St., Chungcheng District, 100 Taipei
+address: Stoffezandstraat 29, 2990 Loenhout, Belgium
 fontawesome: yes
 academicons: yes
 email: d04142001@ntu.edu.tw
@@ -113,12 +113,12 @@ PhD thesis Linguistics (grade: A+) \hfill 2020 \newline
 *Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach* \newline
 漢語擬聲(態)詞的原型與顯著特徵：以認知與語料庫語言學方法探討
 
-MA thesis Linguistics (grade: 17.4/20)\hfill 2014-2015 \newline
+MA thesis Linguistics (grade: 17.4/20)\hfill 2015 \newline
 *Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus* 
 
 <!-- >Based on a corpus of Middle Chinese poetry, I identified a set of mimetic words in Middle Chinese. I worked on an analysis of their morphological, phonological, syntactic and semantic properties, against a typological background. -->
 
-MA thesis Sinology (grade: 18.6/20)\hfill 2013-2014 \newline
+MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 *The *Guwen yundong 古文运动 *(Classical Prose Movement) during Tang and Song:* \newline
 *Ideological as well as Stylistic Innovation?*
 
@@ -135,6 +135,7 @@ Thompson, Arthur Lewis & **Thomas Van Hoey**. Prototypicality of Mandarin ideoph
 
 **Van Hoey, Thomas**. A semantic map for ideophones: From an implicational hierarchy to the spinning top model.
 
+**Van Hoey, Thomas**. Describing the meaning of ideophones. In Thomas Fuyin Li (ed.). *Handbook of Cognitive Semantics*. 
 
 # Conferences
 
