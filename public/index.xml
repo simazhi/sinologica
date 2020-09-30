@@ -157,6 +157,152 @@ walk(files, change_file_create_date)&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>Drawing RRG trees with forest </title>
+      <link>/post/drawing-rrg-trees-with-forest/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/drawing-rrg-trees-with-forest/</guid>
+      <description>
+
+
+&lt;p&gt;Just like in a previous update where we looked at glosses, today we are looking at how to draw a specific kind of syntactic tree, namely those of the [Role and Reference Grammar](&lt;a href=&#34;https://en.wikipedia.org/wiki/Role_and_reference_grammar#&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Role_and_reference_grammar#&lt;/a&gt;:~:text=Role%20and%20reference%20grammar%20(RRG,and%20Robert%20Van%20Valin%2C%20Jr.&amp;amp;text=In%202012%2C%20Ball%20integrated%20his,breaking%20down%20language%20by%20meaning) type.
+A brief overview by Van Valin can be found &lt;a href=&#34;acsu.buffalo.edu/~rrgpage/rrg/RRGpaper.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, these are not your standard Chomskyan syntactic trees, but rather a more functional approach, in which there are often three projections with intersecting trees: the operator projection, the constituent projection and the focus structure projection.&lt;/p&gt;
+&lt;p&gt;Here is Van Valin giving a really short intro:&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;What would linguistic theory look like if we started from Lakota, Tagalog and Dyirbal rather than English?&amp;quot; The legendary Van Valin talking about why RRG is a different way of looking at language. Full interview coming soon! &lt;a href=&#34;https://t.co/qfqFw2t0Eu&#34;&gt;pic.twitter.com/qfqFw2t0Eu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Canguro English (@canguroenglish) &lt;a href=&#34;https://twitter.com/canguroenglish/status/1308473381357064193?ref_src=twsrc%5Etfw&#34;&gt;September 22, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;drawing-trees-in-latex-with-rrgtrees&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Drawing trees in Latex with &lt;code&gt;RRGtrees&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;What is the best way to describe and draw these trees with Latex (the alternative being something like powerpoint).
+Now, in Latex, there exists the package &lt;code&gt;RRGtrees&lt;/code&gt; &lt;a href=&#34;https://ctan.org/pkg/rrgtrees?lang=en&#34;&gt;CTAN link here&lt;/a&gt;.
+It has two dependencies &lt;code&gt;pst-node&lt;/code&gt; and &lt;code&gt;pst-tree&lt;/code&gt;.
+So far looking okay.&lt;/p&gt;
+&lt;p&gt;However, the package was last changed in 2004 and while &lt;a href=&#34;https://tex.stackexchange.com/questions/408134/trouble-drawing-role-and-reference-grammar-trees-in-latex-using-rrgtrees-package&#34;&gt;in 2017 it was still working&lt;/a&gt; I just could not get it to work in this year of 2020.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;forest-gump&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;code&gt;forest&lt;/code&gt; Gump&lt;/h1&gt;
+&lt;p&gt;Eventually I just gave up and decided to check out another tree-drawing package, namely &lt;code&gt;forest&lt;/code&gt; &lt;a href=&#34;https://ctan.org/pkg/forest?lang=en&#34;&gt;CTAN link&lt;/a&gt;.
+Luckily, &lt;a href=&#34;https://www.crissp.be/people/guido-vanden-wyngaerd/&#34;&gt;Guido Vanden Wyngaerd&lt;/a&gt; has written a very useful quickstart guide &lt;a href=&#34;https://ling.auf.net/lingbuzz/003391&#34;&gt;lingbuzz&lt;/a&gt; for &lt;code&gt;forest&lt;/code&gt; which helped me out tremendously.&lt;/p&gt;
+&lt;p&gt;Because I didn’t find any RRG-specific forest tutorials, I decided to have a go at it and this is what you’re reading now.
+I’m gonna draw three trees and provide the code, for public benefit and possibly my future self.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;set-up&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Set-up&lt;/h1&gt;
+&lt;p&gt;If I am writing a Latex document, I would expect my minimal preamble to look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\documentclass[]{article}
+\usepackage[linguistics]{forest}
+\usepackage{expex}
+\begin{document}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And if I am writing in R markdown, my current standard, I would expect the following minimal YAML-header, i.e., exporting to Latex to pdf:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+    keep_tex: true
+header-includes:
+- \usepackage[linguistics]{forest}
+- \usepackage{expex}
+---&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 1&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[SENTENCE [CLAUSE [CORE [CLAUSE [That she arrived late, roof]] [NUC [shocked]] [NP [everyone]]]]]
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree1.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-2&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 2&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[SENTENCE
+  [CLAUSE
+  [CORE, name=core
+    [NP [Kim, tier=word]]
+    [NUC [PRED [V [saw, tier=word]]]]
+    [NP [Pat, tier=word]]
+    ]
+   [PERIPHERY, name=peri, no edge [PP [CORE [NUC [PRED [P [after, tier=word]]]] [CLAUSE [she arrived at the party, tier=word, roof]]]]]]
+  ]
+ ]
+ {\draw[-&amp;gt;] (peri) to[out=west,in=east]  (core) ;}
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree2.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-3&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 3&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[,phantom 
+  [Operator projection\\SENTENCE 
+    [IF, no edge, name=if]
+    [CLAUSE, name=clause1
+      [TNS, no edge, name=tns]
+      [CLAUSE, name=clause2
+        [CORE
+          [NUC
+            [NP, no edge, name=npleft
+              [What
+                [ARG, name=argwhat]]
+              [did, no edge, name=did]]
+            [NP, no edge, name=npright
+                [Dana, tier=word
+                  [ARG, name=argdana
+                    [\phantom{P}, name=phant, no edge
+                      [SPEECH ACT\\Focus structure projection, no edge, name=speech]]
+                    ]]]
+            [V, name=vgive
+              [give, tier=word
+                 [NUC]]]]]]]] 
+  [Constituent projection\\SENTENCE
+    [CLAUSE
+      [PrCS, name=prcs]
+      [CORE, name=cora
+        [ARG, name=argleft]
+        [NUC
+          [PRED, name=predgive]]
+        [ARG
+          [NP
+            [Chris, tier=word
+              [ARG]]]]]
+      [PERIPHERY,no edge, name=peri
+        [ADV
+          [yesterday?, tier=word
+            [ADV, name=advyesterday]]]]]]
+]
+\draw (npleft.north) -- (prcs.south);
+\draw[dashed] (if.south) -- (did.north);
+\draw[dashed] (tns.south) -- (did.north);
+\draw (argleft.south) -- (npright.north);
+\draw (vgive.north) -- (predgive.south);
+\draw[-&amp;gt;] (peri.west) -- (cora.east);
+\draw[-&amp;gt;] (if.east) -- (clause1.west);
+\draw[-&amp;gt;] (tns.east) -- (clause2.west);
+\draw[dashed] (argwhat.south west) -- (speech.north);
+\draw[dashed] (advyesterday.south east) -- (speech.north);
+\draw[dotted] 
+  (argwhat.south west) -- (phant.south)
+  (argwhat.south west) -- (argwhat.south east)
+  (phant.south) -- (argwhat.south east);
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree3.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salutation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Salutation&lt;/h1&gt;
+&lt;p&gt;I don’t know RRG that well, so don’t shoot me if the trees are wrong, but now at least I know how to draw the trees with &lt;code&gt;forest&lt;/code&gt;, and so can you!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Turning glosses into a mini corpus</title>
       <link>/post/turning-glosses-into-a-mini-corpus/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
