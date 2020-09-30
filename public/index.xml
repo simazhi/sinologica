@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Van Hoey | Sinologica</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 30 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Thomas Van Hoey | Sinologica</title>
@@ -51,6 +51,108 @@
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Changing photo metadata with R</title>
+      <link>/post/changing-photo-metadata-with-r/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/changing-photo-metadata-with-r/</guid>
+      <description>
+
+
+&lt;p&gt;One gnarly problem I sometimes face is that when I transfer pictures from my phone to my computer, the metadata says that the date the picture was taken is actually the date the file was created on my computer.
+In other words, the date is wrong.
+This has bad consequences for photography software that reads the metadata and sorts them by date taken (like Flickr does for me).&lt;/p&gt;
+&lt;p&gt;The problem is illustrated here in this screenshot.
+We can infer from the name of the file that it was taken on the 5th of September, while the creation date in my computer is today (30th of September).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-changing-photo-metadata-with-r_files/dateproblems.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Luckily, with R it’s not hard to get the correct metadata.
+There are two possible routes.
+The first one concerns real pictures, which actually still have the correct metadata hidden within the file;
+the second one is for screenshots, which maybe have the wanted date in the filename, but which don’t have intrinsic metadata.&lt;/p&gt;
+&lt;p&gt;Ready, set, go.&lt;/p&gt;
+&lt;div id=&#34;packages&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Packages&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# general packages
+library(tidyverse) # our swiss army knife
+library(fs) # reading in files in a tidyish way
+library(lubridate) # working with dates 
+
+# specialized packages
+library(exifr) # for reading photo metadata&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Apart from the general rstudio-like packages like &lt;code&gt;tidyverse&lt;/code&gt;, &lt;code&gt;fs&lt;/code&gt;, &lt;code&gt;glue&lt;/code&gt; and &lt;code&gt;lubridate&lt;/code&gt;, we need a specialized package &lt;code&gt;exifr&lt;/code&gt; (&lt;a href=&#34;https://github.com/paleolimbot/exifr&#34;&gt;github&lt;/a&gt;) for reading EXIF metadata attached to pictures.
+&lt;code&gt;exifr&lt;/code&gt; extracts these metadata and can output them in a nice dataframe.
+Specifically we are interested in the variable “DateTimeOriginal”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;route-1-getting-datetimeoriginal-and-changing-the-creation-date.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Route 1: getting DateTimeOriginal and changing the creation date.&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reading in all the different pictures we need to treat in batch
+files &amp;lt;- dir_ls(&amp;quot;PATH TO FOLDER WHERE PICTURES ARE STORED&amp;quot;,
+                recurse = TRUE,
+                regexp = &amp;quot;.jpg$&amp;quot;)
+
+
+# defining a function
+change_file_create_date &amp;lt;- function(afb){
+  # get correct exif date
+  read_exif(path = afb,
+            tags = c(&amp;quot;DateTimeOriginal&amp;quot;)) %&amp;gt;%
+    pull(DateTimeOriginal) %&amp;gt;%
+    parse_date_time(&amp;quot;Ymd HMS&amp;quot;, 
+                    tz = &amp;quot;Asia/Taipei&amp;quot; #timezone
+                    ) -&amp;gt; correct_time
+
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+purrr::walk(files, change_file_create_date)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;route-2-pulling-the-date-from-filename-and-changing-the-creation-date.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Route 2: pulling the date from filename and changing the creation date.&lt;/h1&gt;
+&lt;p&gt;Screenshots on my computer, which is configured in Dutch, have the following filename.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Schermafbeelding 2020-09-30-09-38-32.png&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;So that means “SCREENSHOT DATE-TIME.png”. The date and time can be foudn with a fairly simple regular expression, namely:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;4 NUMBERS&#39; FOLLOWED BY FIVE TIMES THE SEQUENCE &#39;-2 NUMBERS&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In R code that is written like:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;\\d{4}(-\\d\\d){5}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And then we’re set.
+Just adapt the function definition in the middle and run it over the files we want to change.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# read in files
+files &amp;lt;- dir_ls(&amp;quot;PATH TO FOLDER WHERE PICTURES ARE STORED&amp;quot;,
+                recurse = TRUE,
+                regexp = &amp;quot;.jpg$&amp;quot;)
+
+# function definition
+change_file_create_date &amp;lt;- function(afb){
+
+  # get correct date from filename
+  afb %&amp;gt;%
+    as.character() %&amp;gt;%
+    str_extract(&amp;quot;\\d{4}(-\\d\\d){5}&amp;quot;)  %&amp;gt;%
+    parse_date_time(&amp;quot;YmdHMS&amp;quot;, 
+                      tz = &amp;quot;Asia/Taipei&amp;quot; #timezone
+                    ) -&amp;gt; correct_time
+  
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+walk(files, change_file_create_date)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And there we have it, based on the correct regular expression, we can batch process these without much effort.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-changing-photo-metadata-with-r_files/correct.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;And should you be wondering, this is the picture we were trying to change, with the nice message from my friends in zhuyin: I❤️U ㄚㄓˋ.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364643777/in/datetaken/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364643777_3813722e61_4k.jpg&#34; width=&#34;4032&#34; height=&#34;3024&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -286,7 +388,7 @@ It also goes beyond my approach by doing the exact dictionary style matching bet
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49948018841/in/album-72157715109327417/&#34; title=&#34;ChiaHo!&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49948018841_4d954de812_b.jpg&#34; width=&#34;768&#34; height=&#34;1024&#34; alt=&#34;ChiaHo!&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 I just want to say thank you for providing light in the dark.&lt;/p&gt;
 &lt;h1 id=&#34;once-upon-a-december&#34;&gt;Once upon a December&lt;/h1&gt;
-&lt;p&gt;I couldn&amp;rsquo;t wait until December rolled around, when CJ would come back and we would go to Hong Kong for one of his best friends&amp;rsquo; wedding. It was simply amazing. Congratulations Ka and Mona!&lt;/p&gt;
+&lt;p&gt;I couldn&amp;rsquo;t wait until December rolled around, when CJ would come back and we would go to Hong Kong for one of his best friends&#39; wedding. It was simply amazing. Congratulations Ka and Mona!&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49948276292/in/album-72157715109327417/&#34; title=&#34;CJ is back&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49948276292_d63308e81f_b.jpg&#34; width=&#34;1024&#34; height=&#34;768&#34; alt=&#34;CJ is back&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49947489558/in/album-72157715109327417/&#34; title=&#34;Ka and Mona&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49947489558_e7ed5ebf88_b.jpg&#34; width=&#34;768&#34; height=&#34;1024&#34; alt=&#34;Ka and Mona&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49947991086/in/album-72157715109327417/&#34; title=&#34;Thomas and CJ in HK&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49947991086_1b97c8f30b_b.jpg&#34; width=&#34;1024&#34; height=&#34;768&#34; alt=&#34;Thomas and CJ in HK&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -867,7 +969,7 @@ Of course, Mufwene tells a story that ties in closer to current research into th
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/z17HjgG8mbo&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;neuro-psycholinguistics&#34;&gt;Neuro-/Psycholinguistics&lt;/h2&gt;
 &lt;h3 id=&#34;evelina-fedorenko---the-language-system-in-the-human-mind-and-brain&#34;&gt;Evelina Fedorenko - The Language System In The Human Mind and Brain&lt;/h3&gt;
-&lt;p&gt;I like these &amp;ldquo;intro to neurolinguistics&amp;rdquo; talks. This one is very thorough and intuitively (I say intuitively because I am not familiar with all of the intricacies of this subfield) is taking the right approaches to brain and language, although I don&amp;rsquo;t know about the conclusions (such as in 1). The main contributions of this talk / her program are that 1. brain regions that support language processing are selective for language (as opposed to supporting other abilities, e.g., music, arithmetic); 2. brain regions that support word meanings vs. syntactic processing are the same; 3. the primary driver of the language regions&amp;rsquo; responses is semantic composition (and not structure building).&lt;/p&gt;
+&lt;p&gt;I like these &amp;ldquo;intro to neurolinguistics&amp;rdquo; talks. This one is very thorough and intuitively (I say intuitively because I am not familiar with all of the intricacies of this subfield) is taking the right approaches to brain and language, although I don&amp;rsquo;t know about the conclusions (such as in 1). The main contributions of this talk / her program are that 1. brain regions that support language processing are selective for language (as opposed to supporting other abilities, e.g., music, arithmetic); 2. brain regions that support word meanings vs. syntactic processing are the same; 3. the primary driver of the language regions&#39; responses is semantic composition (and not structure building).&lt;/p&gt;
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hqrsHmhcrSQ&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;peter-hagoort---the-core-and-beyond-in-the-language-ready-brain&#34;&gt;Peter Hagoort - The Core and Beyond In The Language-Ready Brain&lt;/h3&gt;
 &lt;p&gt;I am not well-versed in the world of neuro- /psycholinguistics but I do enjoy the presentations that have found their way to me in the past few years. This talk is very much in line of that. There are lots of specifics of this subfield that are touched upon in this talk, but I remain unconvinced of the usability of generative grammar within this field, and while that still seems to be dominant, the field seems to become more and more aware of culture as well. 
@@ -3748,7 +3850,7 @@ For an implementation of &lt;code&gt;quanteda&lt;/code&gt; on Japanese, I really
 &lt;a href=&#34;https://koheiw.net/?p=339&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kohei Watanabe&amp;rsquo;s post&lt;/a&gt;; for the instructions regarding &lt;code&gt;corpus&lt;/code&gt;, 
 &lt;a href=&#34;https://cran.r-project.org/web/packages/corpus/vignettes/chinese.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;look here&lt;/a&gt;.
 Because I&amp;rsquo;m most familiar with the &lt;code&gt;quanteda&lt;/code&gt; package and its functions, and because the underlying mechenism is the same, I&amp;rsquo;m only going to discuss this package below in &amp;ldquo;the test&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;(I think &lt;code&gt;tidytext&lt;/code&gt;&#39;s &lt;code&gt;token = &amp;quot;words&amp;quot;&lt;/code&gt; also uses &lt;code&gt;stringi&lt;/code&gt; but I&amp;rsquo;m not sure.)&lt;/p&gt;
+&lt;p&gt;(I think &lt;code&gt;tidytext&lt;/code&gt;&amp;rsquo;s &lt;code&gt;token = &amp;quot;words&amp;quot;&lt;/code&gt; also uses &lt;code&gt;stringi&lt;/code&gt; but I&amp;rsquo;m not sure.)&lt;/p&gt;
 &lt;h2 id=&#34;oldies-but-goldies&#34;&gt;oldies but goldies&lt;/h2&gt;
 &lt;p&gt;The package most people are familiar with is probably &lt;code&gt;jieba&lt;/code&gt; (
 &lt;a href=&#34;https://qinwenfeng.com/jiebaR/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R version&lt;/a&gt; and 
@@ -4303,10 +4405,10 @@ Perhaps not.&lt;/p&gt;
 The second retort is about the formally similar &lt;em&gt;kons&lt;/em&gt;.
 Shaughnessy doesn&amp;rsquo;t give any characters (or tones) in his review, but this is what Sampson finds:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Having argued that 關, &lt;em&gt;krón&lt;/em&gt;, should be read partly for its sense, Shaughnessy then claims to discern yet another layer of meaning: he says that this word is “similar in pronunciation” to 貫, whose primary meaning is &amp;ldquo;to pass through&amp;rdquo; but which has &amp;ldquo;the extended sense of sexual penetration&amp;rdquo;. So perhaps the translation should be not &amp;quot; &amp;lsquo;Join, join&amp;rsquo; …&amp;rdquo; but rather &amp;quot; &amp;lsquo;Screw, screw&amp;rsquo; calls the fish-hawk&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Having argued that 關, &lt;em&gt;krón&lt;/em&gt;, should be read partly for its sense, Shaughnessy then claims to discern yet another layer of meaning: he says that this word is “similar in pronunciation” to 貫, whose primary meaning is &amp;ldquo;to pass through&amp;rdquo; but which has &amp;ldquo;the extended sense of sexual penetration&amp;rdquo;. So perhaps the translation should be not &amp;quot; &amp;lsquo;Join, join&amp;rsquo; …&amp;quot; but rather &amp;quot; &amp;lsquo;Screw, screw&amp;rsquo; calls the fish-hawk&amp;quot;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I find it surprising that the words 關 and 貫 were similar enough to be confusable in the Old Chinese period. (They are pronounced similarly in modern Mandarin – kuan1 [&lt;em&gt;guān&lt;/em&gt;] versus kuan4 [&lt;em&gt;guàn&lt;/em&gt;], a difference of tone only; but 貫 is normally taken to have ended in -&lt;em&gt;s&lt;/em&gt; in Old Chinese: Shaughnessy gives it the pronunciation &lt;em&gt;kons&lt;/em&gt;, and I would write &lt;em&gt;kóns&lt;/em&gt;.) &lt;strong&gt;However, in private correspondence Shaughnessy has shown me good evidence that the words were treated as to some extent interchangeable. Nevertheless, I remain sceptical about whether the meaning, rather than the pronunciation, of either word was relevant to hearers&amp;rsquo; appreciation of the poem. Rendering a crowing sound into human speech by using a word pronounced &lt;em&gt;krón&lt;/em&gt; seems very natural.&lt;/strong&gt; Translating the first word of the Book of Odes into English with a term referring to sexual penetration would not only read bizarrely but be philologically gratuitous. (It might have helped with sales, perhaps.)&lt;/p&gt;
+&lt;p&gt;I find it surprising that the words 關 and 貫 were similar enough to be confusable in the Old Chinese period. (They are pronounced similarly in modern Mandarin – kuan1 [&lt;em&gt;guān&lt;/em&gt;] versus kuan4 [&lt;em&gt;guàn&lt;/em&gt;], a difference of tone only; but 貫 is normally taken to have ended in -&lt;em&gt;s&lt;/em&gt; in Old Chinese: Shaughnessy gives it the pronunciation &lt;em&gt;kons&lt;/em&gt;, and I would write &lt;em&gt;kóns&lt;/em&gt;.) &lt;strong&gt;However, in private correspondence Shaughnessy has shown me good evidence that the words were treated as to some extent interchangeable. Nevertheless, I remain sceptical about whether the meaning, rather than the pronunciation, of either word was relevant to hearers&#39; appreciation of the poem. Rendering a crowing sound into human speech by using a word pronounced &lt;em&gt;krón&lt;/em&gt; seems very natural.&lt;/strong&gt; Translating the first word of the Book of Odes into English with a term referring to sexual penetration would not only read bizarrely but be philologically gratuitous. (It might have helped with sales, perhaps.)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This also piqued my interest.
 While it may be true that these words were somewhat interchangeable, in single syllables, it is still a bit harder to argue that the same goes for the reduplicated form, especially if we&amp;rsquo;re dealing with SOUND ideophones, who usually display IMAGIC ICONICITY (cf. all the literature on ideophones ever in the last ten years or so, but also e.g. Dingemanse 2012; Thompson 2019).&lt;/p&gt;
@@ -5139,7 +5241,7 @@ Here&amp;rsquo;s me and my ride:&lt;/p&gt;
     <item>
       <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
       <link>/publication/2018_cogsem_weather/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       <guid>/publication/2018_cogsem_weather/</guid>
       <description></description>
     </item>
@@ -5153,7 +5255,7 @@ Here&amp;rsquo;s me and my ride:&lt;/p&gt;
 &lt;a href=&#34;http://www.thomasvanhoey.com/post/icons-we-live-by/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;I showed you what my PLN looked like about a year ago&lt;/a&gt;. I advise you to read that first before you continue reading below.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In today&amp;rsquo;s update I will lay out how I generally go about the processing of research.
 It&amp;rsquo;s a kind of habit I&amp;rsquo;ve been cultivating for a few years now, and it generally does pay off, but it did not come out of nowhere and I might have forgotten some of the sources that influenced me.
-Since the basic process hasnt&amp;rsquo; really changed in the last year, I will first display again the picture from last update:&lt;/p&gt;
+Since the basic process hasnt&#39; really changed in the last year, I will first display again the picture from last update:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/2018/PLN_2017_research.png&#34; alt=&#34;PLN 2017&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As you can see, I marked the research process with a purple frame.
 So, let&amp;rsquo;s dig into it.&lt;/p&gt;
@@ -8883,7 +8985,7 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
 &lt;p&gt;As was 
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/scholarships&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;explained in the last update&lt;/a&gt;, the end of the semester is quite busy here in Taiwan. There is no official Christmas holiday here, let alone a Boxing Day (which in my home country is known as Second Christmas Day, but counts as an official holiday just as much). So, even though there are Christmas trees and markets galore, I had a lighter 
 &lt;a href=&#34;http://www.thomasvanhoey.com/suzhou/de-periode-van-de-jaarwisseling-kerstmis-en-nieuwjaar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Christmas than in China in 2012&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Christmas Eve I spent with my French friend Léo and our mutual Chinese friend Qi. We ate pizza after roaming the streets for more than an hour looking for a place that wasn&amp;rsquo;t fully booked. It was delicious, just as Chinese natives tend to ask as a standard question for &lt;em&gt;hao chi ma&lt;/em&gt;  好吃嗎? “Does it taste good?&amp;rdquo;. It probably stems from a textbook translation, but delicious is a BIG WORD in English (or in Dutch &lt;em&gt;delicieus&lt;/em&gt; or French _délicieux _for that matter). However, we had a good laugh and a good evening.&lt;/p&gt;
+&lt;p&gt;Christmas Eve I spent with my French friend Léo and our mutual Chinese friend Qi. We ate pizza after roaming the streets for more than an hour looking for a place that wasn&amp;rsquo;t fully booked. It was delicious, just as Chinese natives tend to ask as a standard question for &lt;em&gt;hao chi ma&lt;/em&gt;  好吃嗎? “Does it taste good?&amp;quot;. It probably stems from a textbook translation, but delicious is a BIG WORD in English (or in Dutch &lt;em&gt;delicieus&lt;/em&gt; or French _délicieux _for that matter). However, we had a good laugh and a good evening.&lt;/p&gt;
 &lt;p&gt;On Christmas Day I first went to my class of Corpus Linguistics, where the sympathetic Hsieh laoshi told us that the class would be over after the presentation of our classmate. Thank you! However, I still had the afternoon class, so it was not a &amp;lsquo;real holiday&amp;rsquo;. Later that night we ate&amp;hellip; PITA, because what screams more the word Christmas than a Middle-Eastern dish I loved eating (though not excessively) in Leuven? After that we went to a bar. We, that is me, the French guy, the Chinese guy and a few Malaysian people who I&amp;rsquo;ve come to like a lot. I was really happy with the bar, because they were serving Belgian beer. Here are two pictures of me posing with beers:&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24720315351/in/album-72157663721058470/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1712/24720315351_651f8ff84a_z.jpg&#34; alt=&#34;2015-12-25 22.44.12&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -8931,7 +9033,7 @@ No K No K from day to night
 Always always happy but not sad
 No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
 &lt;p&gt;So, that was about it for my holidays update. There are still some more pictures from pizza and dinner parties at the end of the semester to celebrate our survival. Of course, end of the semester also means saying goodbye to some of my friends who were here for the first semester and then went back home. Nice meeting you guys!&lt;/p&gt;
-&lt;p&gt;[flickr_set id=&amp;quot;72157663599568419&amp;rdquo;]&lt;/p&gt;
+&lt;p&gt;[flickr_set id=&amp;ldquo;72157663599568419&amp;rdquo;]&lt;/p&gt;
 &lt;p&gt;*Maybe the tower was experiencing ejaculatio praecox?&lt;/p&gt;
 </description>
     </item>
@@ -8944,7 +9046,7 @@ No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
       <description>&lt;p&gt;Here we are again - after a few weeks of battling the tasks imposed by finals. My friends had warned me before:&lt;/p&gt;
 &lt;blockquote&gt;&#34;Whaaaat, you have taken 15 credits (of courses this semester), you will collapse during finals&#34;
 &lt;p&gt;[&amp;quot;&lt;em&gt;waaaaa ni xiule 15 xuefen, ni qimo yiding hui bengkui&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;哇～～你修了15學分，你期末一定會崩潰&lt;/em&gt;&amp;rdquo;.]&lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;哇～～你修了15學分，你期末一定會崩潰&lt;/em&gt;&amp;quot;.]&lt;/blockquote&gt;&lt;/p&gt;
 &lt;p&gt;Apart from the very interesting usage of that last word - _bengkui _&amp;lsquo;collapse&amp;rsquo;,  which seemed to be used for &amp;lsquo;the realm/our land collapses&amp;rsquo; (&lt;em&gt;tianxia&lt;/em&gt; 天下) or &amp;lsquo;the emperor dies&amp;rsquo; (e.g. &lt;em&gt;Wen di&lt;/em&gt; 文帝) in the earliest sources and is now applicable to &amp;lsquo;normal people&amp;rsquo; - they were right. The pressure was noticeable and I am sure now that 1 study credit here has a higher BMI than one in Leuven, to which I already 
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/school-1-les-2-vrije-tijd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hinted at in September&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post, I will tell you all about the scholarship award ceremony, which took place on 18 December 2015. As is often the case, these things are planned to the detail and two and a halve weeks before that date, I received an e-mail, asking me if I was interested in doing a speech in Chinese on behalf of the foreign PhD students who got the same scholarship as I had received.&lt;/p&gt;
@@ -9067,7 +9169,7 @@ No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
 &lt;a href=&#34;https://framenet.icsi.berkeley.edu/fndrupal/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fillmore&amp;rsquo;s Frame Semantic theory&lt;/a&gt; that includes frames for the lexeme &amp;lsquo;sit&amp;rsquo;, such as 
 &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Change_posture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Change_posture&lt;/a&gt; and 
 &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Posture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Posture&lt;/a&gt;, both of which require a sentient protagonist - in normal words: a human or an animal, but definitely not a bike. I friendly asked the people of the &amp;lsquo;fat people go biking for a day and take up all the space in the train&amp;rsquo; biking club if we maybe could move their bicycles in order to sit down. All I got for a reply was an angry stare and the words: &amp;ldquo;But we already put them there&amp;rdquo;. I will share with you my questionable looking face that I also posted on facebook.   
-&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23149603326/in/album-72157661394505216/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/771/23149603326_afb7e0e553_z.jpg&#34; alt=&#34;My bike is a person&#34;&gt;&lt;/a&gt;Speaking of facebook, there were a lot of people who supported my frustration (almost 70), but some people commented that there are rude people everywhere around the globe and to think otherwise is a fallacy. I guess that commenter is right, but it still is not nice when it happens. And the worst part is that I did not know if I was &amp;lsquo;allowed&amp;rsquo; as a foreigner to continue the debate with these thick people or I should let it go. My nature seems to be to want to fight, but I saw in my companions&amp;rsquo; eyes that they did not want to fight for their seat, so I backed down as well. I was thinking back to a line i our guidebooks we got in the third year of high school, when we went on a class trip to London. It read:&lt;/p&gt;
+&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23149603326/in/album-72157661394505216/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/771/23149603326_afb7e0e553_z.jpg&#34; alt=&#34;My bike is a person&#34;&gt;&lt;/a&gt;Speaking of facebook, there were a lot of people who supported my frustration (almost 70), but some people commented that there are rude people everywhere around the globe and to think otherwise is a fallacy. I guess that commenter is right, but it still is not nice when it happens. And the worst part is that I did not know if I was &amp;lsquo;allowed&amp;rsquo; as a foreigner to continue the debate with these thick people or I should let it go. My nature seems to be to want to fight, but I saw in my companions&#39; eyes that they did not want to fight for their seat, so I backed down as well. I was thinking back to a line i our guidebooks we got in the third year of high school, when we went on a class trip to London. It read:&lt;/p&gt;
 &lt;blockquote&gt;Provoceer geen marginalen! (Do not provoke marginalised people!)&lt;/blockquote&gt;
 &lt;p&gt;And it is one of the tenets that I use to find my way in life.&lt;/p&gt;
 &lt;h1 id=&#34;other-updates&#34;&gt;&lt;strong&gt;Other updates&lt;/strong&gt;&lt;/h1&gt;

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.8.22)  23 AUG 2020 16:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.8.22)  16 SEP 2020 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,7 +138,7 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/07/15 v2.5i e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count184
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.st
@@ -297,7 +297,7 @@ Package fontspec Info: Font family 'Impact(0)' created for font 'Impact' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
-Package: xeCJK 2020/06/06 v3.8.4 Typesetting CJK scripts with XeLaTeX
+Package: xeCJK 2020/08/23 v3.8.5 Typesetting CJK scripts with XeLaTeX
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2
 e.sty
@@ -316,7 +316,7 @@ Package: xtemplate 2020-05-15 L3 Experimental prototype document functions
 \l__xeCJK_tmp_dim=\dimen148
 \l__xeCJK_tmp_skip=\skip53
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty
-Package: ctexhook 2020/06/06 v2.5.3 Document and package hooks (CTEX)
+Package: ctexhook 2020/08/23 v2.5.4 Document and package hooks (CTEX)
 )
 \g__xeCJK_space_factor_int=\count275
 \l__xeCJK_begin_int=\count276
@@ -346,7 +346,7 @@ Package: ctexhook 2020/06/06 v2.5.3 Document and package hooks (CTEX)
 \l__xeCJK_widow_penalty_int=\count280
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2329.
+(xtemplate)             argument(s) on line 2335.
 
 \l__xeCJK_fixed_punct_width_dim=\dimen157
 \l__xeCJK_mixed_punct_width_dim=\dimen158
@@ -373,7 +373,7 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_verb_case_int=\count284
 \l__xeCJK_verb_exspace_skip=\skip58
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
-File: xeCJK.cfg 2020/06/06 v3.8.4 Configuration file for xeCJK package
+File: xeCJK.cfg 2020/08/23 v3.8.5 Configuration file for xeCJK package
 ))
 
 Package fontspec Info: Noto Sans CJK TC scale = 0.7937400769025417.
@@ -808,17 +808,17 @@ ne 208.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
 (Font)              scaled to size 11.57913pt on input line 208.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 284.
+(Font)              scaled to size 6.43286pt on input line 275.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 284.
+(Font)              scaled to size 6.34998pt on input line 275.
 [2]
-Underfull \hbox (badness 2285) in paragraph at lines 317--323
+Underfull \hbox (badness 2285) in paragraph at lines 320--326
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
 ES corpora. ICLC 15 [International
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 317--323
+Underfull \hbox (badness 1286) in paragraph at lines 320--326
 \TU/NotoSerif(0)/m/n/12 Cognitive Linguistics Conference], Nishinomiya: Kwansei
  Gakuin University. 6-11 August 2019.
  []
@@ -826,11 +826,11 @@ Underfull \hbox (badness 1286) in paragraph at lines 317--323
 [3] [4] [5] [6] 
 AED: lastpage setting LastPage
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 602.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 602.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 605.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 605.
 (./cv_thomas.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 602.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 602.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 605.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 605.
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
 (rerunfilecheck)             Checksum: 2FE5356E63111AC6E8F5254BFB517DB5;1943.
 
@@ -838,12 +838,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 17258 strings out of 481691
- 326873 string characters out of 5929785
- 655071 words of memory out of 5000000
- 34066 multiletter control sequences out of 15000+600000
+ 17268 strings out of 481691
+ 327235 string characters out of 5929785
+ 655109 words of memory out of 5000000
+ 34076 multiletter control sequences out of 15000+600000
  548044 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,12n,119p,1198b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,11n,119p,1198b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cv_thomas.pdf (7 pages).

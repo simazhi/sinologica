@@ -1,0 +1,115 @@
+---
+title: Changing photo metadata with R
+author: Thomas Van Hoey
+date: '2020-09-30'
+slug: changing-photo-metadata-with-r
+categories:
+  - Blog
+  - Rstats
+tags:
+  - rstats
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-30T13:41:21+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>One gnarly problem I sometimes face is that when I transfer pictures from my phone to my computer, the metadata says that the date the picture was taken is actually the date the file was created on my computer.
+In other words, the date is wrong.
+This has bad consequences for photography software that reads the metadata and sorts them by date taken (like Flickr does for me).</p>
+<p>The problem is illustrated here in this screenshot.
+We can infer from the name of the file that it was taken on the 5th of September, while the creation date in my computer is today (30th of September).</p>
+<p><img src="/post/2020-09-30-changing-photo-metadata-with-r_files/dateproblems.png" /></p>
+<p>Luckily, with R it’s not hard to get the correct metadata.
+There are two possible routes.
+The first one concerns real pictures, which actually still have the correct metadata hidden within the file;
+the second one is for screenshots, which maybe have the wanted date in the filename, but which don’t have intrinsic metadata.</p>
+<p>Ready, set, go.</p>
+<div id="packages" class="section level1">
+<h1>Packages</h1>
+<pre class="r"><code># general packages
+library(tidyverse) # our swiss army knife
+library(fs) # reading in files in a tidyish way
+library(lubridate) # working with dates 
+
+# specialized packages
+library(exifr) # for reading photo metadata</code></pre>
+<p>Apart from the general rstudio-like packages like <code>tidyverse</code>, <code>fs</code>, <code>glue</code> and <code>lubridate</code>, we need a specialized package <code>exifr</code> (<a href="https://github.com/paleolimbot/exifr">github</a>) for reading EXIF metadata attached to pictures.
+<code>exifr</code> extracts these metadata and can output them in a nice dataframe.
+Specifically we are interested in the variable “DateTimeOriginal”.</p>
+</div>
+<div id="route-1-getting-datetimeoriginal-and-changing-the-creation-date." class="section level1">
+<h1>Route 1: getting DateTimeOriginal and changing the creation date.</h1>
+<pre class="r"><code># reading in all the different pictures we need to treat in batch
+files &lt;- dir_ls(&quot;PATH TO FOLDER WHERE PICTURES ARE STORED&quot;,
+                recurse = TRUE,
+                regexp = &quot;.jpg$&quot;)
+
+
+# defining a function
+change_file_create_date &lt;- function(afb){
+  # get correct exif date
+  read_exif(path = afb,
+            tags = c(&quot;DateTimeOriginal&quot;)) %&gt;%
+    pull(DateTimeOriginal) %&gt;%
+    parse_date_time(&quot;Ymd HMS&quot;, 
+                    tz = &quot;Asia/Taipei&quot; #timezone
+                    ) -&gt; correct_time
+
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+purrr::walk(files, change_file_create_date)</code></pre>
+</div>
+<div id="route-2-pulling-the-date-from-filename-and-changing-the-creation-date." class="section level1">
+<h1>Route 2: pulling the date from filename and changing the creation date.</h1>
+<p>Screenshots on my computer, which is configured in Dutch, have the following filename.</p>
+<p><code>Schermafbeelding 2020-09-30-09-38-32.png</code></p>
+<p>So that means “SCREENSHOT DATE-TIME.png”. The date and time can be foudn with a fairly simple regular expression, namely:</p>
+<p><code>'4 NUMBERS' FOLLOWED BY FIVE TIMES THE SEQUENCE '-2 NUMBERS'</code></p>
+<p>In R code that is written like:</p>
+<p><code>\\d{4}(-\\d\\d){5}</code></p>
+<p>And then we’re set.
+Just adapt the function definition in the middle and run it over the files we want to change.</p>
+<pre class="r"><code># read in files
+files &lt;- dir_ls(&quot;PATH TO FOLDER WHERE PICTURES ARE STORED&quot;,
+                recurse = TRUE,
+                regexp = &quot;.jpg$&quot;)
+
+# function definition
+change_file_create_date &lt;- function(afb){
+
+  # get correct date from filename
+  afb %&gt;%
+    as.character() %&gt;%
+    str_extract(&quot;\\d{4}(-\\d\\d){5}&quot;)  %&gt;%
+    parse_date_time(&quot;YmdHMS&quot;, 
+                      tz = &quot;Asia/Taipei&quot; #timezone
+                    ) -&gt; correct_time
+  
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+walk(files, change_file_create_date)</code></pre>
+<p>And there we have it, based on the correct regular expression, we can batch process these without much effort.</p>
+<p><img src="/post/2020-09-30-changing-photo-metadata-with-r_files/correct.png" /></p>
+<p>And should you be wondering, this is the picture we were trying to change, with the nice message from my friends in zhuyin: I❤️U ㄚㄓˋ.</p>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/86097314@N03/50364643777/in/datetaken/" title="Untitled"><img src="https://live.staticflickr.com/65535/50364643777_3813722e61_4k.jpg" width="4032" height="3024" alt="Untitled"></a>
+<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
