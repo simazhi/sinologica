@@ -18,13 +18,63 @@
   </url>
   
   <url>
+    <loc>/tag/afscheid/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/category/blog/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ideophone/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ideophones/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/phd/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/summer/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/summertime-sadness-see-you-taiwan/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/taiwan/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
   </url>
   
   <url>
@@ -43,27 +93,12 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/category/rstats/</loc>
     <lastmod>2020-09-30T15:08:14+02:00</lastmod>
   </url>
   
   <url>
     <loc>/tag/rstats/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-09-30T15:08:14+02:00</lastmod>
   </url>
   
@@ -98,22 +133,7 @@
   </url>
   
   <url>
-    <loc>/tag/ideophone/</loc>
-    <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ideophones/</loc>
-    <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/ntu/</loc>
-    <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/phd/</loc>
     <lastmod>2020-07-15T21:22:27+08:00</lastmod>
   </url>
   
@@ -314,11 +334,6 @@
   
   <url>
     <loc>/post/memorable-moments-of-2018/</loc>
-    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taiwan/</loc>
     <lastmod>2019-01-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -574,11 +589,6 @@
   
   <url>
     <loc>/tag/prague/</loc>
-    <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/summer/</loc>
     <lastmod>2017-08-24T06:34:14+00:00</lastmod>
   </url>
   
@@ -920,11 +930,6 @@
   <url>
     <loc>/tag/xiao-ren-guo/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/afscheid/</loc>
-    <lastmod>2016-02-04T16:21:30+00:00</lastmod>
   </url>
   
   <url>
