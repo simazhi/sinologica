@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Van Hoey | Sinologica</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 11 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 18 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Thomas Van Hoey | Sinologica</title>
@@ -51,6 +51,131 @@
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I organize my notes</title>
+      <link>/post/how-i-organize-my-notes/</link>
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-i-organize-my-notes/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;One of the basic skills people, but PhD students and academics in particular, need to cultivate is sharpening their research workflow. You need to cultivate this by just doing it, but also by reviewing it from time to time. In this update, I’ll talk about a new app that has entered my life and made note-taking better: &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; (not a paid sponsorship, just me sharing my thoughts).&lt;/p&gt;
+&lt;div id=&#34;general-note-structure&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;General note structure&lt;/h1&gt;
+&lt;p&gt;I’ve written about this research workflow before (&lt;a href=&#34;https://www.thomasvanhoey.com/post/icons-we-live-by/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.thomasvanhoey.com/post/handling-research/&#34;&gt;here&lt;/a&gt;). In the second post I outlined a method for taking notes and basically still use it to this day:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Make sure Zotero has the right entry.&lt;/li&gt;
+&lt;li&gt;Export a bibliography (Unified Linguistics Stylesheet FTW~~)&lt;/li&gt;
+&lt;li&gt;Open a note in the note-taking app.&lt;/li&gt;
+&lt;li&gt;Make an entry that looks like this in &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;markdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- --&gt;
+&lt;pre&gt;&lt;code&gt;SHORT REFERENCE (exported from Zotero but shortened)
+
+FULL REFERENCE (exported from Zotero, just to be sure you get the full reference)
+
+Read: YYYYMMDD
+
+GENERAL OBSERVATION (good / bad paper, useful...)
+
+---
+
+SUMMARY OF THE PAPER
+QUOTES
+WHATEVER YOU WANT TO TAKE FROM THIS PAPER FOR THE FUTURE YOU&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are &lt;a href=&#34;https://www.youtube.com/watch?v=NXkT2tewLlQ&#34;&gt;quite a few people&lt;/a&gt; that will tell you how to take notes content-wise, but I’m here to tell you about my system. The way people take notes is highly individualized, especially in terms of what you actually jot down, and it often really depends on the paper. If it’s a very graphical paper then I would like to add a lot of screenshots or other figures; if it’s just a “&lt;a href=&#34;https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/26.664/3665&#34;&gt;oh yeah this exists&lt;/a&gt;” paper, then that is what I note and move on with my life.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;but-what-software&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;But what software?&lt;/h1&gt;
+&lt;p&gt;Software-wise, I still don’t think it’s a good idea to keep all your notes in MS Word, but instead look for a way to ensure the longevity of your notes. &lt;a href=&#34;https://youtu.be/hpAJMSS8pvs&#34;&gt;This video&lt;/a&gt; by Nicholas Cifuentes-Goodbody was very influential for me many years ago and I urge you to watch it if you are still stuck waiting for Word to open. Also &lt;a href=&#34;https://www.anghyflawn.net/teaching/2015/ilw-pandoc/&#34;&gt;the slogan in this blog&lt;/a&gt;: “Your academic life in plain text”, or &lt;a href=&#34;https://www.simondcoll.com/markdown-students-academics/&#34;&gt;this informative blog&lt;/a&gt;. If this video and blog appeal to you, you may want to invest in learning markdown. I think &lt;a href=&#34;https://youtu.be/EUoCW-dvnoY&#34;&gt;at most it will take you 20 minutes that will change your life, as advertised here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But what do you write markdown in? Like many students of my generation, I started with &lt;a href=&#34;https://evernote.com/&#34;&gt;Evernote&lt;/a&gt;, the elephant that promised to help us remember everything. I still think Evernote is a pretty good app for general grabbing and storing, because it has adapted for everything. However, their unwillingness to make a simple native (read: free) markdown editor for a thousand years or so (okay the past five years) has made many people jump the ship, and so did I.&lt;/p&gt;
+&lt;p&gt;In 2018 (I think) I came across an app called &lt;a href=&#34;https://notable.app/&#34;&gt;Notable&lt;/a&gt;, the brainchild of 1 person, which had the catchy slogan of being “the markdown-based note-taking app that doesn’t suck”. Basically, it was shown that having markdown (.md) files locally on your computer, which you can keep in the cloud, is a fast and reliable way of taking notes, because you’re not locked into an ecosystem (like Evernote but also lots of popular productivity apps). I became convinced that this is what I needed and I am happy I moved away from Evernote to Notable. Somewhat in awe I watched every update over the past few years, like the integration of figures, split editor, etc.&lt;/p&gt;
+&lt;p&gt;But while the progress of Fabio is admirable and &lt;a href=&#34;https://www.reddit.com/r/Notable/&#34;&gt;the reddit community&lt;/a&gt; is great, I was enticed twice recently to make another switch.&lt;/p&gt;
+&lt;p&gt;The first enticement was &lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; but after seeing its exorbitant prices for an extremely new app (165 dollars per year, yuck), I was looking for an alternative and found &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; (free for personal use), which is backed by a team of highly motivated people that were either “inspired” by Notable or in a case of convergent evolution developed the same idea that notes should be kept on your own system.&lt;/p&gt;
+&lt;p&gt;But where it really shines is the &lt;a href=&#34;https://youtu.be/SyV4xez9Lp0&#34;&gt;backlinking and network visualization of notes&lt;/a&gt;, a feature that Roam also excels at and &lt;em&gt;can&lt;/em&gt; be implemented in Notable (but is not super well-supported), and I guess it was enough to take the jump and try Obsidian out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;migrating-from-notable-to-obsidian-with-r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Migrating from Notable to Obsidian with R&lt;/h1&gt;
+&lt;p&gt;As always, I started with an Rproject, so I can sync it to github (private folder though ✌️). In that folder, I have a subfolder ‘academic_notes’ with all the notes and a subfolder ‘attachments’ for all the figures. Next, I just copied everything from my local Notable folder to the new academic_notes folder.&lt;/p&gt;
+&lt;p&gt;The hardest part was writing a small R-script to change all &lt;code&gt;![](@attachment/NAME)&lt;/code&gt; from Notable to the form &lt;code&gt;![[NAME]]&lt;/code&gt;, so that all figures could be rendered in Obsidian.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;structuring-my-notes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Structuring my notes&lt;/h1&gt;
+&lt;p&gt;Just to give you an impression, I have some 700 notes with details as outlined above. This does not represent everything I have ever read, but a good chunk of it. However, in Notable, I just had a flat structure, like this one:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/flat_structure.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;flat structure&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Wow, what a clusterfuck. If we zoom out we can see that every note is represented by a dot. Using the handy backlinking system &lt;code&gt;[[TERM YOU WANT TO TAG]]&lt;/code&gt; with the square brackets, you can start linking notes together.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/first_structure.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;first structure&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I had quite a bit of fun with manually going through my notes, checking for links and adding unlinked data to the network:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/adding_manual_links.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;adding manual links&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;But then I suddenly saw the R-light!
+I thought, let’s do this programmatically and thematically.
+So I wrote a dirty script to read in every file and add the double square brackets for every term that I wanted.&lt;/p&gt;
+&lt;p&gt;For example, if I wanted to link all words that have “ideophone” together, this is what I wrote:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(tidyverse)
+library(glue)
+library(fs)
+library(here)
+
+
+
+files &amp;lt;- dir_ls(here(&amp;quot;academic_notes&amp;quot;),
+                regexp = &amp;quot;.md$&amp;quot;)
+
+add_backlink &amp;lt;- function(file){
+  filepad &amp;lt;- file
+  
+  target &amp;lt;- glue(&amp;quot;(?&amp;lt;!\\[)\\b{word}s?\\b(?!\\])&amp;quot;)
+  vervanging &amp;lt;- glue(&amp;quot;[[{word}]]&amp;quot;)
+
+  read_lines(file) %&amp;gt;% 
+      str_replace_all(target, vervanging) %&amp;gt;%
+    write_lines(filepad)
+}
+
+
+
+
+
+######################
+# change this variable
+word &amp;lt;- &amp;quot;ideophone&amp;quot;
+######################
+
+walk(files, add_backlink) # actually running things&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ask me about it if you are interested lol.
+And if you keep the graph open you can see it changing in real time, which is very satisfying.&lt;/p&gt;
+&lt;blockquote class=&#34;imgur-embed-pub&#34; lang=&#34;en&#34; data-id=&#34;WwSbQrW&#34;&gt;
+&lt;a href=&#34;//imgur.com/WwSbQrW&#34;&gt;Obsidian change with R&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//s.imgur.com/min/embed.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-network-of-notes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;A network of notes&lt;/h1&gt;
+&lt;p&gt;And then finally, we get a better representation of the notes that intersect in certain topics.
+I believe this can help me to write better surveys of the literature.
+But for now it’s mostly pretty to look at.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/notes_ideophone.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;notes related to ‘ideophone’&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/notes_chinese.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;notes related to ‘chinese’&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     

@@ -1,0 +1,139 @@
+---
+title: How I organize my notes
+author: Thomas Van Hoey
+date: '2020-10-18'
+slug: how-i-organize-my-notes
+categories:
+  - Blog
+tags:
+  - productivity
+  - academic workflow
+  - notes
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-18T18:25:46+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>One of the basic skills people, but PhD students and academics in particular, need to cultivate is sharpening their research workflow. You need to cultivate this by just doing it, but also by reviewing it from time to time. In this update, I’ll talk about a new app that has entered my life and made note-taking better: <a href="https://obsidian.md/">Obsidian</a> (not a paid sponsorship, just me sharing my thoughts).</p>
+<div id="general-note-structure" class="section level1">
+<h1>General note structure</h1>
+<p>I’ve written about this research workflow before (<a href="https://www.thomasvanhoey.com/post/icons-we-live-by/">here</a> and <a href="https://www.thomasvanhoey.com/post/handling-research/">here</a>). In the second post I outlined a method for taking notes and basically still use it to this day:</p>
+<ol style="list-style-type: decimal">
+<li>Make sure Zotero has the right entry.</li>
+<li>Export a bibliography (Unified Linguistics Stylesheet FTW~~)</li>
+<li>Open a note in the note-taking app.</li>
+<li>Make an entry that looks like this in <a href="https://www.markdownguide.org/">markdown</a></li>
+</ol>
+<!-- -->
+<pre><code>SHORT REFERENCE (exported from Zotero but shortened)
+
+FULL REFERENCE (exported from Zotero, just to be sure you get the full reference)
+
+Read: YYYYMMDD
+
+GENERAL OBSERVATION (good / bad paper, useful...)
+
+---
+
+SUMMARY OF THE PAPER
+QUOTES
+WHATEVER YOU WANT TO TAKE FROM THIS PAPER FOR THE FUTURE YOU</code></pre>
+<p>There are <a href="https://www.youtube.com/watch?v=NXkT2tewLlQ">quite a few people</a> that will tell you how to take notes content-wise, but I’m here to tell you about my system. The way people take notes is highly individualized, especially in terms of what you actually jot down, and it often really depends on the paper. If it’s a very graphical paper then I would like to add a lot of screenshots or other figures; if it’s just a “<a href="https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/26.664/3665">oh yeah this exists</a>” paper, then that is what I note and move on with my life.</p>
+</div>
+<div id="but-what-software" class="section level1">
+<h1>But what software?</h1>
+<p>Software-wise, I still don’t think it’s a good idea to keep all your notes in MS Word, but instead look for a way to ensure the longevity of your notes. <a href="https://youtu.be/hpAJMSS8pvs">This video</a> by Nicholas Cifuentes-Goodbody was very influential for me many years ago and I urge you to watch it if you are still stuck waiting for Word to open. Also <a href="https://www.anghyflawn.net/teaching/2015/ilw-pandoc/">the slogan in this blog</a>: “Your academic life in plain text”, or <a href="https://www.simondcoll.com/markdown-students-academics/">this informative blog</a>. If this video and blog appeal to you, you may want to invest in learning markdown. I think <a href="https://youtu.be/EUoCW-dvnoY">at most it will take you 20 minutes that will change your life, as advertised here</a>.</p>
+<p>But what do you write markdown in? Like many students of my generation, I started with <a href="https://evernote.com/">Evernote</a>, the elephant that promised to help us remember everything. I still think Evernote is a pretty good app for general grabbing and storing, because it has adapted for everything. However, their unwillingness to make a simple native (read: free) markdown editor for a thousand years or so (okay the past five years) has made many people jump the ship, and so did I.</p>
+<p>In 2018 (I think) I came across an app called <a href="https://notable.app/">Notable</a>, the brainchild of 1 person, which had the catchy slogan of being “the markdown-based note-taking app that doesn’t suck”. Basically, it was shown that having markdown (.md) files locally on your computer, which you can keep in the cloud, is a fast and reliable way of taking notes, because you’re not locked into an ecosystem (like Evernote but also lots of popular productivity apps). I became convinced that this is what I needed and I am happy I moved away from Evernote to Notable. Somewhat in awe I watched every update over the past few years, like the integration of figures, split editor, etc.</p>
+<p>But while the progress of Fabio is admirable and <a href="https://www.reddit.com/r/Notable/">the reddit community</a> is great, I was enticed twice recently to make another switch.</p>
+<p>The first enticement was <a href="https://roamresearch.com/">Roam Research</a> but after seeing its exorbitant prices for an extremely new app (165 dollars per year, yuck), I was looking for an alternative and found <a href="https://obsidian.md/">Obsidian</a> (free for personal use), which is backed by a team of highly motivated people that were either “inspired” by Notable or in a case of convergent evolution developed the same idea that notes should be kept on your own system.</p>
+<p>But where it really shines is the <a href="https://youtu.be/SyV4xez9Lp0">backlinking and network visualization of notes</a>, a feature that Roam also excels at and <em>can</em> be implemented in Notable (but is not super well-supported), and I guess it was enough to take the jump and try Obsidian out.</p>
+</div>
+<div id="migrating-from-notable-to-obsidian-with-r" class="section level1">
+<h1>Migrating from Notable to Obsidian with R</h1>
+<p>As always, I started with an Rproject, so I can sync it to github (private folder though ✌️). In that folder, I have a subfolder ‘academic_notes’ with all the notes and a subfolder ‘attachments’ for all the figures. Next, I just copied everything from my local Notable folder to the new academic_notes folder.</p>
+<p>The hardest part was writing a small R-script to change all <code>![](@attachment/NAME)</code> from Notable to the form <code>![[NAME]]</code>, so that all figures could be rendered in Obsidian.</p>
+</div>
+<div id="structuring-my-notes" class="section level1">
+<h1>Structuring my notes</h1>
+<p>Just to give you an impression, I have some 700 notes with details as outlined above. This does not represent everything I have ever read, but a good chunk of it. However, in Notable, I just had a flat structure, like this one:</p>
+<div class="figure">
+<img src="/post/2020-10-18-how-i-organize-my-notes_files/flat_structure.png" alt="" />
+<p class="caption">flat structure</p>
+</div>
+<p>Wow, what a clusterfuck. If we zoom out we can see that every note is represented by a dot. Using the handy backlinking system <code>[[TERM YOU WANT TO TAG]]</code> with the square brackets, you can start linking notes together.</p>
+<div class="figure">
+<img src="/post/2020-10-18-how-i-organize-my-notes_files/first_structure.png" alt="" />
+<p class="caption">first structure</p>
+</div>
+<p>I had quite a bit of fun with manually going through my notes, checking for links and adding unlinked data to the network:</p>
+<div class="figure">
+<img src="/post/2020-10-18-how-i-organize-my-notes_files/adding_manual_links.png" alt="" />
+<p class="caption">adding manual links</p>
+</div>
+<p>But then I suddenly saw the R-light!
+I thought, let’s do this programmatically and thematically.
+So I wrote a dirty script to read in every file and add the double square brackets for every term that I wanted.</p>
+<p>For example, if I wanted to link all words that have “ideophone” together, this is what I wrote:</p>
+<pre><code>library(tidyverse)
+library(glue)
+library(fs)
+library(here)
+
+
+
+files &lt;- dir_ls(here(&quot;academic_notes&quot;),
+                regexp = &quot;.md$&quot;)
+
+add_backlink &lt;- function(file){
+  filepad &lt;- file
+  
+  target &lt;- glue(&quot;(?&lt;!\\[)\\b{word}s?\\b(?!\\])&quot;)
+  vervanging &lt;- glue(&quot;[[{word}]]&quot;)
+
+  read_lines(file) %&gt;% 
+      str_replace_all(target, vervanging) %&gt;%
+    write_lines(filepad)
+}
+
+
+
+
+
+######################
+# change this variable
+word &lt;- &quot;ideophone&quot;
+######################
+
+walk(files, add_backlink) # actually running things</code></pre>
+<p>Ask me about it if you are interested lol.
+And if you keep the graph open you can see it changing in real time, which is very satisfying.</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="WwSbQrW">
+<a href="//imgur.com/WwSbQrW">Obsidian change with R</a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
+<div id="a-network-of-notes" class="section level1">
+<h1>A network of notes</h1>
+<p>And then finally, we get a better representation of the notes that intersect in certain topics.
+I believe this can help me to write better surveys of the literature.
+But for now it’s mostly pretty to look at.</p>
+<div class="figure">
+<img src="/post/2020-10-18-how-i-organize-my-notes_files/notes_ideophone.png" alt="" />
+<p class="caption">notes related to ‘ideophone’</p>
+</div>
+<div class="figure">
+<img src="/post/2020-10-18-how-i-organize-my-notes_files/notes_chinese.png" alt="" />
+<p class="caption">notes related to ‘chinese’</p>
+</div>
+</div>
