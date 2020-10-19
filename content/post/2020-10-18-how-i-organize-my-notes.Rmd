@@ -14,12 +14,13 @@ summary: ''
 authors: []
 lastmod: '2020-10-18T18:25:46+02:00'
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
+header:
+  caption: "All 'chinese' related notes in Obsidian"
+  image: '2020/obsidianheader.png'
+  preview: yes
 projects: []
 ---
+
 
 One of the basic skills people, but PhD students and academics in particular, need to cultivate is sharpening their research workflow. You need to cultivate this by just doing it, but also by reviewing it from time to time. In this update, I'll talk about a new app that has entered my life and made note-taking better: [Obsidian](https://obsidian.md/) (not a paid sponsorship, just me sharing my thoughts).
 
@@ -135,42 +136,11 @@ And if you keep the graph open you can see it changing in real time, which is ve
 And then finally, we get a better representation of the notes that intersect in certain topics.
 I believe this can help me to write better surveys of the literature.
 But for now it's mostly pretty to look at.
+Good luck trying this out and **if you have a different workflow, I'd happily learn about it!**
 
 ![notes related to 'ideophone'](/post/2020-10-18-how-i-organize-my-notes_files/notes_ideophone.png)
 
 ![notes related to 'chinese'](/post/2020-10-18-how-i-organize-my-notes_files/notes_chinese.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
