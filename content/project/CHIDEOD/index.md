@@ -1,6 +1,6 @@
 ---
-title: Ideophones
-summary: Studying (Premodern) Chinese ideophones diachronically
+title: Chinese ideophones
+summary: Studying the prototypicality and salience of the Chinese ideophonic lexicon
 tags:
 - ideophones
 - linguistics
@@ -31,4 +31,27 @@ url_video: ""
 slides: example
 ---
 
+
+
+
+
+
+
 The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

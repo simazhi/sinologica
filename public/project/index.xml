@@ -13,11 +13,49 @@
     </image>
     
     <item>
-      <title>Ideophones</title>
-      <link>/project/ideophones/</link>
+      <title>Chinese ideophones</title>
+      <link>/project/chideod/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/ideophones/</guid>
+      <guid>/project/chideod/</guid>
       <description>&lt;p&gt;The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Chinese ideophones and prototypicality</title>
+      <link>/project/chinese-ideophones-and-prototypicality/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/chinese-ideophones-and-prototypicality/</guid>
+      <description>&lt;p&gt;This project, which is handled in my dissertation (
+&lt;a href=&#34;https://www.thomasvanhoey.com/files/DISSERTATION.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pdf here&lt;/a&gt;), explores prototypicality and salience effects of the variation within the Chinese ideophonic lexicon.&lt;/p&gt;
+&lt;p&gt;In my dissertation, Chinese is demonstrated to have ideophones, by unifying previously separately studied phenomena such as reduplication, binomes, and onomatopoeia.
+However, the &amp;ldquo;ideophonic lexicon&amp;rdquo; is not homogeneous; rather, it is prototypically structured.
+This is demonstrated from a synchronic and diachronic perspective, as well as across different modalities, with special attention devoted to the written modality.
+Thus, this dissertation aims to address the lacunae within the literature on ideophones, in which Chinese is often underrepresented, diachronic perspectives are scarce, and the ideophonic usage of writing is often neglected.&lt;/p&gt;
+&lt;p&gt;My original contributions to knowledge include (1) the creation of an open-source database of Chinese ideophones and (2) four methodological perspectives that show how the variation of and within this category is structured.
+The Chinese Ideophone Database (version 0.9.3) collects 4948 unique onomatopoeia and ideophones (mimetics) of modern Mandarin, as well as Middle Chinese and Old Chinese.
+It follows a framework that can be reused and updated in future research, and is accessible in different formats (.rds, .xlsx, .csv, R package and online app interface).
+Based on this database and corpus evidence, the variation of the ideophonic lexicon in Chinese is studied, in four case studies, each with its own methodological lens.&lt;/p&gt;
+&lt;p&gt;The first case study delineates the boundary of (Mandarin) Chinese ideophones as a category and investigates how it is structured.
+Using Multiple Correspondence Analysis, the interactions between morphological patterns, orthographic motivation and depiction of sensory domain were calculated.
+These confirm that sound-depicting ideophones (onomatopoeia) correlate mostly with single morphemes, and that the depiction of movement and sound mostly correlates with full reduplication.
+However, the analysis also shows how strong other correlations between different values of the parameters are.
+A follow-up application of Multiple Correspondence Analysis finds that these correlations are also found with corpus data.
+Important in both applications, however, is the fuzzy overlap between correlations, which strongly suggests that the ideophonic lexicon in Chinese has a dual prototypical core.&lt;/p&gt;
+&lt;p&gt;The second case study investigates the diachronic prototype semantics of Chinese ideophones in the semantic field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt;.
+Through manual study, the mental spaces, frames, domains and image schemas for a sample are followed.
+The meanings form interrelated polysemous clusters, which are dynamic throughout time, with clear prototypical cores that semantically extend over time and can be transient.&lt;/p&gt;
+&lt;p&gt;The third case study studies lexical variational salience within the field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt; ideophones from three perspectives by constructing a semantic vector space based on a historical corpus.
+These perspectives are semasiological salience, onomasiological salience, and structural salience.
+These three types of salience show that within the semantic field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt;, Chinese ideophones are not a homogeneous block.
+Instead they have different features and elements that stand out, depending on one’s perspective, an observation that can be extended to other types of ideophones and the generalizations that can be made about ideophones as a category.&lt;/p&gt;
+&lt;p&gt;The fourth case study continues the probing of the heterogeneity within the Chinese ideophonic lexicon, by adopting collostructional analysis to study ideophones used in Mandarin Chinese constructions.
+The association measures obtained through this method show to what degree individual ideophonic items are attracted or repulsed by certain constructions, and that some items also depend on these constructions to even occur.
+Furthermore, the well-known ABB construction is addressed and is argued to be an instance of a more schematic construction &lt;font style=&#34;font-variant: small-caps&#34;&gt;collocate-ideophone&lt;/font&gt;.&lt;/p&gt;
+&lt;p&gt;The case studies reveal that the Chinese ideophonic lexicon is not homogeneous, and that many different elements of salience can be found, depending on the perspective and the granularity of the analysis.
+They constitute an important addition to previous research by nuancing certain intuitive truths about the nature of ideophones.&lt;/p&gt;
+&lt;h1 id=&#34;defense&#34;&gt;Defense&lt;/h1&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/wuBIgAro0ZQ&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
     </item>
     
