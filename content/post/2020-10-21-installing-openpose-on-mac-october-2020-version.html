@@ -1,0 +1,115 @@
+---
+title: Installing OpenPose on Mac (October 2020 version)
+author: Thomas Van Hoey
+date: '2020-10-21'
+slug: installing-openpose-on-mac-october-2020-version
+categories:
+  - Blog
+tags:
+  - openpose
+  - gesture
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-21T16:36:54+02:00'
+featured: no
+header:
+  caption: ""
+  image: ''
+  preview: yes
+projects: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<blockquote>
+<p>All these poses such beautiful poses. (<a href="https://youtu.be/T4ChJ0_wGxY">Rufus Wainwright - Poses</a>)</p>
+</blockquote>
+<p>My future work will soon involve a more <strong>gestural analysis of ideophones across languages</strong>. I’m slowly plowing through the literature on gesture, but also came across a <a href="https://twitter.com/greg_woodin/status/1316421726948020226?s=20">tweet by Greg Woodin</a>, a PhD student who is investigating gestural metaphors, and who recently installed OpenPose on his computer. <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">OpenPose</a> is a piece of open-source software that represents the first real-time multi-person system to jointly detect human body, hand, facial, and foot keypoints (in total 135 keypoints) on single images.</p>
+<p>Let’s first have a look what it can do:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pW6nZXeWlGM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Cool huh!?</p>
+<div id="installing-openpose-on-mac" class="section level1">
+<h1>Installing OpenPose on Mac</h1>
+<p><a href="https://maelfabien.github.io/tutorials/open-pose/#run-openpose">This guide by Maël Fabien</a> was pretty clear in how to install OpenPose, but I had to make a small tweak. That is why I’m basically repeating that guide but with the switch I made, a sort of October 2020 guide. But thanks so much Maël for guiding the way.</p>
+<div id="step-1-clone-the-repository-in-the-target-folder" class="section level2">
+<h2>Step 1) Clone the repository in the target folder</h2>
+<p>Open terminal and change directory <code>cd</code> to your target folder</p>
+<p><code>git clone &lt;https://github.com/CMU-Perceptual-Computing-Lab/openpose&gt;</code></p>
+</div>
+<div id="step-2-install-cmake-gui" class="section level2">
+<h2>Step 2) Install CMake GUI :</h2>
+<p>If you don’t have <a href="https://brew.sh/">homebrew</a> installed as a package manager on Mac, you should do so asap. Here’s <a href="https://devhints.io/homebrew">a handy cheatsheet for homebrew</a>.</p>
+<p><code>brew cask install cmake</code></p>
+<p>(or the old fashioned way: follow the steps on <a href="https://cmake.org/download/" class="uri">https://cmake.org/download/</a>)</p>
+</div>
+<div id="step-3-install-dependencies" class="section level2">
+<h2>Step 3) Install dependencies :</h2>
+<p><code>bash 3rdparty/osx/install_deps.sh</code></p>
+</div>
+<div id="step-4-generate-caffe.pb.h-manually-using-protoc-as-follows.-install-caffe-with-homebrew" class="section level2">
+<h2><del>Step 4) Generate caffe.pb.h manually using protoc as follows.</del> Install caffe with homebrew</h2>
+<p><del>In the directory, you installed Caffe to</del></p>
+<pre><code>~~protoc src/caffe/proto/caffe.proto --cpp_out=. mkdir include/caffe/proto mv src/caffe/proto/caffe.pb.h include/caffe/proto~~</code></pre>
+<p><del>See <a href="https://github.com/BVLC/caffe/issues/1761">this issue</a> for more details.</del></p>
+<p>Just to be sure, install Caffe with homebrew (all the other steps are unnecessary)</p>
+<pre><code>brew install caffe</code></pre>
+</div>
+<div id="step-5-cmake" class="section level2">
+<h2>Step 5) CMake</h2>
+<p>Open CMake GUI.</p>
+<pre><code>cd /Applications
+
+open CMake.app</code></pre>
+<p>Select the OpenPose directory as project source directory, and a non-existing or empty sub-directory (e.g., build) where the Makefile files (Ubuntu) or Visual Studio solution (Windows) will be generated. If the build does not exist, it will ask you whether to create it. Press Yes.</p>
+<p><img src="/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/cmake.jpg" /></p>
+</div>
+<div id="step-6-make-the-following-adjustments-to-the-cmake-config-before-pressing-configure" class="section level2">
+<h2>Step 6) Make the following adjustments to the CMake config before pressing “Configure”:</h2>
+<pre><code>BUILD_CAFFE set to false
+
+GPU_MODE set to CPU_ONLY (as recommended for MacOS)
+
+Caffe_INCLUDE_DIRS set to /usr/local/include/caffe
+
+Caffe_LIBS set to /usr/local/lib/libcaffe.dylib</code></pre>
+<p>See <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose/issues/677">this issue</a> for more details.</p>
+</div>
+<div id="step-7-configure" class="section level2">
+<h2>Step 7) Configure</h2>
+<p>Press configure, wait until Configuring Done appears.</p>
+<p>Everything should work well, and you should be able to click the Generate right after (<strong>BUT DON’T CLICK IT?</strong>). If ever you get an error here, especially with High Sierra, please check this issue.</p>
+</div>
+<div id="step-8-build-the-project" class="section level2">
+<h2>Step 8) Build the project :</h2>
+<p>(within the OPENPOSE folder you made on your computer, navigate there with <code>cd</code>)</p>
+<pre><code>cd build/
+
+make -j`nproc`</code></pre>
+</div>
+</div>
+<div id="running-openpose" class="section level1">
+<h1>Running OpenPose</h1>
+<p><span style="color: red;">Warning, running OpenPose takes a long time on a normal persoanl computer. But you can check it out on really short video clips and stills.</span></p>
+<div id="step-1-go-to-the-openpose-folder" class="section level2">
+<h2>Step 1: Go to the OPENPOSE folder</h2>
+<pre><code>cd OPENPOSEFOLDERPATH</code></pre>
+</div>
+<div id="step-2-make-an-input-and-output-folder" class="section level2">
+<h2>Step 2: Make an INPUT and OUTPUT folder</h2>
+<p>Put an image / video … in the input folder</p>
+</div>
+<div id="step-3-run-the-following" class="section level2">
+<h2>Step 3: run the following:</h2>
+<pre><code>./build/examples/openpose/openpose.bin --image_dir INPUT/ --write_images OUTPUT/</code></pre>
+<p>You can also analyze the hands with the <em>flag</em> <code>--hand</code> or face with the <em>flag</em> <code>--face</code> etc. For more fun with flags, <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md">see this document</a>.</p>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<p>Preliminary results show a fun gif that has been OpenPosed, as well as a still from my favorite K-pop band VIXX (song: <a href="https://www.youtube.com/watch?v=g1JCFBzIQG8">Love me do</a>). Have fun with all these poses!</p>
+<p><img src="/img/2020/narutorun-openpose.gif" /></p>
+<p><img src="/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/vixxopenpose.jpg" /></p>
+</div>

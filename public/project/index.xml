@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
@@ -13,11 +13,33 @@
     </image>
     
     <item>
-      <title>Chinese ideophones</title>
+      <title>Learnability of ideophones</title>
+      <link>/project/learnability-of-ideophones/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/project/learnability-of-ideophones/</guid>
+      <description>&lt;p&gt;In this project, we investigate the learnability of ideophones, studied through articulatory and gesticulatory gestures.&lt;/p&gt;
+&lt;p&gt;Apart from myself, team members include 
+&lt;a href=&#34;http://ldl.linguistics.hku.hk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Youngah Do&lt;/a&gt;, 
+&lt;a href=&#34;https://markdingemanse.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Mark Dingemanse&lt;/a&gt; and 
+&lt;a href=&#34;https://hku-hk.academia.edu/ArthurLewisThompson&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Arthur Lewis Thompson&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CHIDEOD</title>
       <link>/project/chideod/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/project/chideod/</guid>
-      <description>&lt;p&gt;The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.&lt;/p&gt;
+      <description>&lt;p&gt;The Chinese Ideophone Database (CHIDEOD) is an open-source dataset, which currently collects 4948 unique onomatopoeia and ideophones (mimetics) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables pertaining to the type of data, description, analysis and frequency.&lt;/p&gt;
+&lt;h1 id=&#34;access-the-database&#34;&gt;Access the database&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://osf.io/kpwgf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OSF&lt;/a&gt; (for .xlsx, .rds, and .csv)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://simazhi.shinyapps.io/chideod_appversion/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;app&lt;/a&gt; (online access)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/simazhi/chinese_ideophone_database&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; (workspace)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

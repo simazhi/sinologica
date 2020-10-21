@@ -1,10 +1,10 @@
 ---
-title: Chinese ideophones
-summary: Studying the prototypicality and salience of the Chinese ideophonic lexicon
+title: CHIDEOD
+summary: The Chinese Ideophone Database
 tags:
 - ideophones
 - linguistics
-date: "2016-04-27T00:00:00Z"
+date: "2019-12-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -32,12 +32,13 @@ slides: example
 ---
 
 
+The Chinese Ideophone Database (CHIDEOD) is an open-source dataset, which currently collects 4948 unique onomatopoeia and ideophones (mimetics) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables pertaining to the type of data, description, analysis and frequency.
 
+# Access the database
 
-
-
-
-The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.
+* [OSF](https://osf.io/kpwgf/) (for .xlsx, .rds, and .csv)
+* [app](https://simazhi.shinyapps.io/chideod_appversion/) (online access)
+* [github](https://github.com/simazhi/chinese_ideophone_database) (workspace)
 
 
 

@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Van Hoey | Sinologica</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 18 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Thomas Van Hoey | Sinologica</title>
@@ -51,6 +51,121 @@
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learnability of ideophones</title>
+      <link>/project/learnability-of-ideophones/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/project/learnability-of-ideophones/</guid>
+      <description>&lt;p&gt;In this project, we investigate the learnability of ideophones, studied through articulatory and gesticulatory gestures.&lt;/p&gt;
+&lt;p&gt;Apart from myself, team members include 
+&lt;a href=&#34;http://ldl.linguistics.hku.hk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Youngah Do&lt;/a&gt;, 
+&lt;a href=&#34;https://markdingemanse.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Mark Dingemanse&lt;/a&gt; and 
+&lt;a href=&#34;https://hku-hk.academia.edu/ArthurLewisThompson&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Arthur Lewis Thompson&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing OpenPose on Mac (October 2020 version)</title>
+      <link>/post/installing-openpose-on-mac-october-2020-version/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/installing-openpose-on-mac-october-2020-version/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;All these poses such beautiful poses. (&lt;a href=&#34;https://youtu.be/T4ChJ0_wGxY&#34;&gt;Rufus Wainwright - Poses&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My future work will soon involve a more &lt;strong&gt;gestural analysis of ideophones across languages&lt;/strong&gt;. I’m slowly plowing through the literature on gesture, but also came across a &lt;a href=&#34;https://twitter.com/greg_woodin/status/1316421726948020226?s=20&#34;&gt;tweet by Greg Woodin&lt;/a&gt;, a PhD student who is investigating gestural metaphors, and who recently installed OpenPose on his computer. &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose&#34;&gt;OpenPose&lt;/a&gt; is a piece of open-source software that represents the first real-time multi-person system to jointly detect human body, hand, facial, and foot keypoints (in total 135 keypoints) on single images.&lt;/p&gt;
+&lt;p&gt;Let’s first have a look what it can do:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/pW6nZXeWlGM&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;Cool huh!?&lt;/p&gt;
+&lt;div id=&#34;installing-openpose-on-mac&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installing OpenPose on Mac&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://maelfabien.github.io/tutorials/open-pose/#run-openpose&#34;&gt;This guide by Maël Fabien&lt;/a&gt; was pretty clear in how to install OpenPose, but I had to make a small tweak. That is why I’m basically repeating that guide but with the switch I made, a sort of October 2020 guide. But thanks so much Maël for guiding the way.&lt;/p&gt;
+&lt;div id=&#34;step-1-clone-the-repository-in-the-target-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1) Clone the repository in the target folder&lt;/h2&gt;
+&lt;p&gt;Open terminal and change directory &lt;code&gt;cd&lt;/code&gt; to your target folder&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone &amp;lt;https://github.com/CMU-Perceptual-Computing-Lab/openpose&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-install-cmake-gui&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2) Install CMake GUI :&lt;/h2&gt;
+&lt;p&gt;If you don’t have &lt;a href=&#34;https://brew.sh/&#34;&gt;homebrew&lt;/a&gt; installed as a package manager on Mac, you should do so asap. Here’s &lt;a href=&#34;https://devhints.io/homebrew&#34;&gt;a handy cheatsheet for homebrew&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;brew cask install cmake&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(or the old fashioned way: follow the steps on &lt;a href=&#34;https://cmake.org/download/&#34; class=&#34;uri&#34;&gt;https://cmake.org/download/&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-install-dependencies&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3) Install dependencies :&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bash 3rdparty/osx/install_deps.sh&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-generate-caffe.pb.h-manually-using-protoc-as-follows.-install-caffe-with-homebrew&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;del&gt;Step 4) Generate caffe.pb.h manually using protoc as follows.&lt;/del&gt; Install caffe with homebrew&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;In the directory, you installed Caffe to&lt;/del&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~protoc src/caffe/proto/caffe.proto --cpp_out=. mkdir include/caffe/proto mv src/caffe/proto/caffe.pb.h include/caffe/proto~~&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;del&gt;See &lt;a href=&#34;https://github.com/BVLC/caffe/issues/1761&#34;&gt;this issue&lt;/a&gt; for more details.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;Just to be sure, install Caffe with homebrew (all the other steps are unnecessary)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install caffe&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-cmake&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 5) CMake&lt;/h2&gt;
+&lt;p&gt;Open CMake GUI.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /Applications
+
+open CMake.app&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Select the OpenPose directory as project source directory, and a non-existing or empty sub-directory (e.g., build) where the Makefile files (Ubuntu) or Visual Studio solution (Windows) will be generated. If the build does not exist, it will ask you whether to create it. Press Yes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/cmake.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-6-make-the-following-adjustments-to-the-cmake-config-before-pressing-configure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 6) Make the following adjustments to the CMake config before pressing “Configure”:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;BUILD_CAFFE set to false
+
+GPU_MODE set to CPU_ONLY (as recommended for MacOS)
+
+Caffe_INCLUDE_DIRS set to /usr/local/include/caffe
+
+Caffe_LIBS set to /usr/local/lib/libcaffe.dylib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose/issues/677&#34;&gt;this issue&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-7-configure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 7) Configure&lt;/h2&gt;
+&lt;p&gt;Press configure, wait until Configuring Done appears.&lt;/p&gt;
+&lt;p&gt;Everything should work well, and you should be able to click the Generate right after (&lt;strong&gt;BUT DON’T CLICK IT?&lt;/strong&gt;). If ever you get an error here, especially with High Sierra, please check this issue.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-8-build-the-project&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 8) Build the project :&lt;/h2&gt;
+&lt;p&gt;(within the OPENPOSE folder you made on your computer, navigate there with &lt;code&gt;cd&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd build/
+
+make -j`nproc`&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;running-openpose&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Running OpenPose&lt;/h1&gt;
+&lt;p&gt;&lt;span style=&#34;color: red;&#34;&gt;Warning, running OpenPose takes a long time on a normal persoanl computer. But you can check it out on really short video clips and stills.&lt;/span&gt;&lt;/p&gt;
+&lt;div id=&#34;step-1-go-to-the-openpose-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1: Go to the OPENPOSE folder&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;cd OPENPOSEFOLDERPATH&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-make-an-input-and-output-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2: Make an INPUT and OUTPUT folder&lt;/h2&gt;
+&lt;p&gt;Put an image / video … in the input folder&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-run-the-following&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3: run the following:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;./build/examples/openpose/openpose.bin --image_dir INPUT/ --write_images OUTPUT/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can also analyze the hands with the &lt;em&gt;flag&lt;/em&gt; &lt;code&gt;--hand&lt;/code&gt; or face with the &lt;em&gt;flag&lt;/em&gt; &lt;code&gt;--face&lt;/code&gt; etc. For more fun with flags, &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md&#34;&gt;see this document&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Results&lt;/h1&gt;
+&lt;p&gt;Preliminary results show a fun gif that has been OpenPosed, as well as a still from my favorite K-pop band VIXX (song: &lt;a href=&#34;https://www.youtube.com/watch?v=g1JCFBzIQG8&#34;&gt;Love me do&lt;/a&gt;). Have fun with all these poses!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/2020/narutorun-openpose.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/vixxopenpose.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -1413,6 +1528,24 @@ Of course, Mufwene tells a story that ties in closer to current research into th
 &lt;p&gt;
 &lt;a href=&#34;https://youtu.be/mSgDm9a0Wm0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This talk&lt;/a&gt; shows that framing and reframing is important. Stibbe discusses newspaper narratives: how immigrants had been framed as invaders in &lt;em&gt;The Sun&lt;/em&gt;, but now are portrayed as the heroes (doctors, nurses etc.) fighting against COVID. At about minute 38 he talks about haiku, which was quite interesting, although I dislike the kind of &amp;ldquo;Japanese is so mysterious, so exotic&amp;rdquo; attitude that is displayed in this lecture.&lt;/p&gt;
 &lt;h1 id=&#34;more-to-come-later&#34;&gt;More to come later&amp;hellip;&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CHIDEOD</title>
+      <link>/project/chideod/</link>
+      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/chideod/</guid>
+      <description>&lt;p&gt;The Chinese Ideophone Database (CHIDEOD) is an open-source dataset, which currently collects 4948 unique onomatopoeia and ideophones (mimetics) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables pertaining to the type of data, description, analysis and frequency.&lt;/p&gt;
+&lt;h1 id=&#34;access-the-database&#34;&gt;Access the database&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://osf.io/kpwgf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OSF&lt;/a&gt; (for .xlsx, .rds, and .csv)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://simazhi.shinyapps.io/chideod_appversion/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;app&lt;/a&gt; (online access)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/simazhi/chinese_ideophone_database&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; (workspace)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -8946,15 +9079,6 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
 &lt;p&gt;
 &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/27074085240/in/album-72157668997704886/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/8/7015/27074085240_8291c4fc87_z.jpg&#34; alt=&#34;Making his final mark&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Anyway, let&amp;rsquo;s all hope he&amp;rsquo;s in a better place now. A sad song referenced to above to end this update. Thank you patient reader.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Chinese ideophones</title>
-      <link>/project/chideod/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/chideod/</guid>
-      <description>&lt;p&gt;The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.&lt;/p&gt;
 </description>
     </item>
     
