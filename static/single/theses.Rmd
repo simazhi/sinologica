@@ -1,0 +1,41 @@
+---
+date: '2020-10-21'
+slug: theses
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-21T18:02:46+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+# PhD Dissertation Linguistics (NTU, 2020)
+
+[Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach 漢語擬聲(態)詞的原型與顯著特徵：以認知與語料庫語言學方法探討](/files/DISSERTATION.pdf)
+
+# MA Linguistics (KU Leuven, 2015)
+
+[Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus](/files/MA_linguistics.pdf)
+
+# MA Sinology (KU Leuven, 2014)
+
+[The *Guwen yundong 古文运动 *(Classical Prose Movement) during Tang and Song: Ideological as well as Stylistic Innovation?](/files/MA_sinology.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
