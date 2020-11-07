@@ -100,7 +100,8 @@ Postdoctoral fellow (PIs Youngah Do, Mark Dingemanse), The University of Hong Ko
 
 ## Refereed articles
 
-**Van Hoey, Thomas** & Arthur Lewis Thompson. *forthcoming*. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale*.
+**Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale*49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
+
 
 **Van Hoey, Thomas**. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* (4:2), 230-259. [doi: 10.1163/23526416-00402003](https://doi.org/10.1163/23526416-00402003)
 
