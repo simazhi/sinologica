@@ -1,0 +1,111 @@
+---
+title: CHIDEOD, the Chinese Ideophone Database
+author: Thomas Van Hoey
+date: '2020-11-19'
+slug: []
+categories:
+  - Blog
+tags:
+  - CHIDEOD
+  - database
+  - ideophone
+  - ideophones
+  - chinese
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-11-19T09:26:58+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Finally, the paper I wrote together with Arthur Lewis Thompson on the Chinese Ideophone Database is out!
+Get your copy now at [*Cahiers de Linguistique Asie Orientale*](https://brill.com/view/journals/clao/49/2/article-p136_2.xml) (or by contacting us).
+
+> Van Hoey, Thomas & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de linguistique Asie orientale* 49(2). 136–167. https://doi.org/10.1163/19606028-bja10006.
+
+
+# What is CHIDEOD?
+
+Creatively abbreviated as CHIDEOD, the Chinese Ideophone Database aims to collect ideophone types (as opposed to tokens — it's not a corpus!) as found in dedicated studies and dictionaries.
+
+From the abstract:
+
+> This article introduces the Chinese Ideophone Database (chideod), an open-source dataset, which collects 4948 unique onomatopoeia and ideophones (mimetics, expres- sives) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables, e.g., description, frequency. Apart from an overview of these variables, we provide a tutorial that shows how the database can be accessed in different formats (.rds, .xlsx, .csv, R package and online app interface), and how the database can be used to explore skewed tonal distribution across Mandarin ideophones. Since chideod is a data repository, potential future research applications are discussed.
+
+# What is it good for?
+
+It is our aim that this database can help us to better delineate and understand Chinese ideophones.
+With a cross-linguistic definition of "marked words that depict sensory imagery and which belong to an open lexical class" [(Dingemanse 2019)](https://doi.org/10.1075/ill.16.02din) we can investigate how and to what exant types recorded in this database map onto that necessarily vague and encompassing definition.
+
+In my [dissertation](/files/DISSERTATION.pdf), I have a chapter that does exactly this.
+By exploring different parameters (morphological template, orthograpic reduplication, sensory imagery) one can already sketch a more detailed picture of what "the Chinese ideophonic lexicon" looks like.
+
+But there's more.
+CHIDEOD contains a number of psycholinguistically informative variables on the characters that make up Chinese ideophones, taken from the amazing Chinese Lexical Database [(Sun et al. 2018)](https://doi.org/10.3758/s13428-018-1038-3), which can help one design experiments.
+
+Then there's also the corpus component: the complete list of ideophone types or a subset thereof can be run on a corpus to extract sentences / utterances containing ideophones. 
+A straightforward usage is investigating the interplay between ideophones and constructions [(see my dissertation)](/files/DISSERTATION.pdf). 
+
+And of course, for typological questions this database is quite useful. 
+We incorporated reconstructed pronuncations of items (based on the [Baxter-Sagart system](http://ocbaxtersagart.lsait.lsa.umich.edu/)), which can be compared to other ideophonic forms in the region, or inform us about sound symbolism (see [Smith 2015](https://doi.org/10.1215/23290048-3324236) for an in-depth but limited case study of sound symbolism in the *Shījīng*).
+
+
+# What CHIDEOD doesn't do
+
+It's a misconception that CHIDEOD is a corpus. 
+As such, it does not contain any KWIC (keyword in context) information, or token frequencies; because if you're interested in that, all you have to do is plug the list into a corpus to extract that information.
+
+As of yet, there is no multimodal data involved, like pictures of videoclips, like there is for the [*Multimedia Encyclopedia of Japanese Mimetics (MEJaM)*](https://sites.google.com/site/jpmimeticthesaurus/) or the [*Quechua realwords*](http://nongrat.us/quechua/). 
+
+And on a third note, perhaps somewhat weirdly, it does not contain information about the "ideophonicity" or "iconicness" of these items, simply because that information is not out there yet (if you have this data and want us to incorporate it, please get in touch).
+There is also some debate going on about the validity of such ratings at the moment as well, so I am kind of holding off at the moment though.
+
+# Where can I get CHIDEOD?
+
+This is perhaps what I'm most proud of. 
+We've built a database that is freely accessible and can be used for non-commercial purposes.
+
+You can find the OSF repository of CHIDEOD [here](https://osf.io/kpwgf/) and its accompanying github repository [here](https://github.com/simazhi/chinese_ideophone_database).
+
+The OSF repository contains versioned updates on the database, which can be obtained in .rds, .csv, and .xlsx. 
+
+But there is also the [app version](https://simazhi.shinyapps.io/chideod_appversion/), which lets you select the variables you're interested in and export them to the clipboard, CSV or Excel. 
+
+Then, for the R-minded interested parties, you can also get it in an R package by running the following command:
+
+```{r, eval = FALSE}
+library(devtools)
+devtools::install_github("simazhi/chinese_ideophone_database/CHIDEOD")
+```
+
+# Final tips and tricks
+
+When using the database in code, it is recommended to run a command like `dplyr::distinct()` or `unique()` on subsets, as the data is stored in a reasonably tidy way, which means many values get repeated once you start subsetting.
+
+Also we recommend keeping `traditional` or `simplified` in the mix when you start subsetting, so as to avoid erroneously taking homophones for the same word.
+
+Lastly, we advise that you read the companion article in *CLAO* thoroughly.
+
+# Got questions?
+
+If you are interested in using this database but are unsure of how or what can mean for you in your research, do not hesitate to get in touch, we will try to help you to the best of our abilities.
+
+If you spot an error (*errare humanum est*), be sure to let us know as well; we will try to fix it in a next update.
+
+If you have data that is compatible with this database, or want tips and tricks for making your own database like this, I also welcome you.
+
+
+
+
+
+
+
+
+
+
+
