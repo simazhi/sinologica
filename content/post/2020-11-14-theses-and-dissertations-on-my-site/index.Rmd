@@ -1,0 +1,67 @@
+---
+title: Theses and dissertations on my site
+author: Thomas Van Hoey
+date: '2020-11-14'
+slug: []
+categories:
+  - Blog
+tags:
+  - thesis
+  - dissertation
+  - ideophones
+  - ideophone
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-11-14T16:46:42+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+This is just a short update to inform you that my PhD dissertation and MA theses are now available on my website:
+
+The main link to the "repository" [is this one](https://www.thomasvanhoey.com/single/theses.html).
+
+## PhD Dissertation Linguistics (NTU, 2020)
+
+[Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach 漢語擬聲(態)詞的原型與顯著特徵：以認知與語料庫語言學方法探討](/files/DISSERTATION.pdf)
+
+## MA Linguistics (KU Leuven, 2015)
+
+[Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus](/files/MA_linguistics.pdf)
+
+## MA Sinology (KU Leuven, 2014)
+
+[The *Guwen yundong 古文运动 *(Classical Prose Movement) during Tang and Song: Ideological as well as Stylistic Innovation?](/files/MA_sinology.pdf)
+
+
+# Got questions?
+
+If you have any questions or wish to talk to me about this research, just contact me!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Van Hoey | Sinologica</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Thomas Van Hoey | Sinologica</title>
@@ -55,6 +55,833 @@
     </item>
     
     <item>
+      <title>Learnability of ideophones</title>
+      <link>/project/learnability-of-ideophones/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/project/learnability-of-ideophones/</guid>
+      <description>&lt;p&gt;In this project, we investigate the learnability of ideophones, studied through articulatory and gesticulatory gestures.&lt;/p&gt;
+&lt;p&gt;Apart from myself, team members include 
+&lt;a href=&#34;http://ldl.linguistics.hku.hk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Youngah Do&lt;/a&gt;, 
+&lt;a href=&#34;https://markdingemanse.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Mark Dingemanse&lt;/a&gt; and 
+&lt;a href=&#34;https://hku-hk.academia.edu/ArthurLewisThompson&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Arthur Lewis Thompson&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing OpenPose on Mac (October 2020 version)</title>
+      <link>/post/installing-openpose-on-mac-october-2020-version/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/installing-openpose-on-mac-october-2020-version/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;All these poses such beautiful poses. (&lt;a href=&#34;https://youtu.be/T4ChJ0_wGxY&#34;&gt;Rufus Wainwright - Poses&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My future work will soon involve a more &lt;strong&gt;gestural analysis of ideophones across languages&lt;/strong&gt;. I’m slowly plowing through the literature on gesture, but also came across a &lt;a href=&#34;https://twitter.com/greg_woodin/status/1316421726948020226?s=20&#34;&gt;tweet by Greg Woodin&lt;/a&gt;, a PhD student who is investigating gestural metaphors, and who recently installed OpenPose on his computer. &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose&#34;&gt;OpenPose&lt;/a&gt; is a piece of open-source software that represents the first real-time multi-person system to jointly detect human body, hand, facial, and foot keypoints (in total 135 keypoints) on single images.&lt;/p&gt;
+&lt;p&gt;Let’s first have a look what it can do:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/pW6nZXeWlGM&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;Cool huh!?&lt;/p&gt;
+&lt;div id=&#34;installing-openpose-on-mac&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installing OpenPose on Mac&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://maelfabien.github.io/tutorials/open-pose/#run-openpose&#34;&gt;This guide by Maël Fabien&lt;/a&gt; was pretty clear in how to install OpenPose, but I had to make a small tweak. That is why I’m basically repeating that guide but with the switch I made, a sort of October 2020 guide. But thanks so much Maël for guiding the way.&lt;/p&gt;
+&lt;div id=&#34;step-1-clone-the-repository-in-the-target-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1) Clone the repository in the target folder&lt;/h2&gt;
+&lt;p&gt;Open terminal and change directory &lt;code&gt;cd&lt;/code&gt; to your target folder&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone &amp;lt;https://github.com/CMU-Perceptual-Computing-Lab/openpose&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-install-cmake-gui&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2) Install CMake GUI :&lt;/h2&gt;
+&lt;p&gt;If you don’t have &lt;a href=&#34;https://brew.sh/&#34;&gt;homebrew&lt;/a&gt; installed as a package manager on Mac, you should do so asap. Here’s &lt;a href=&#34;https://devhints.io/homebrew&#34;&gt;a handy cheatsheet for homebrew&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;brew cask install cmake&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(or the old fashioned way: follow the steps on &lt;a href=&#34;https://cmake.org/download/&#34; class=&#34;uri&#34;&gt;https://cmake.org/download/&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-install-dependencies&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3) Install dependencies :&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bash 3rdparty/osx/install_deps.sh&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-generate-caffe.pb.h-manually-using-protoc-as-follows.-install-caffe-with-homebrew&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;del&gt;Step 4) Generate caffe.pb.h manually using protoc as follows.&lt;/del&gt; Install caffe with homebrew&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;In the directory, you installed Caffe to&lt;/del&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~protoc src/caffe/proto/caffe.proto --cpp_out=. mkdir include/caffe/proto mv src/caffe/proto/caffe.pb.h include/caffe/proto~~&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;del&gt;See &lt;a href=&#34;https://github.com/BVLC/caffe/issues/1761&#34;&gt;this issue&lt;/a&gt; for more details.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;Just to be sure, install Caffe with homebrew (all the other steps are unnecessary)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install caffe&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-cmake&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 5) CMake&lt;/h2&gt;
+&lt;p&gt;Open CMake GUI.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /Applications
+
+open CMake.app&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Select the OpenPose directory as project source directory, and a non-existing or empty sub-directory (e.g., build) where the Makefile files (Ubuntu) or Visual Studio solution (Windows) will be generated. If the build does not exist, it will ask you whether to create it. Press Yes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/cmake.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-6-make-the-following-adjustments-to-the-cmake-config-before-pressing-configure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 6) Make the following adjustments to the CMake config before pressing “Configure”:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;BUILD_CAFFE set to false
+
+GPU_MODE set to CPU_ONLY (as recommended for MacOS)
+
+Caffe_INCLUDE_DIRS set to /usr/local/include/caffe
+
+Caffe_LIBS set to /usr/local/lib/libcaffe.dylib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose/issues/677&#34;&gt;this issue&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-7-configure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 7) Configure&lt;/h2&gt;
+&lt;p&gt;Press configure, wait until Configuring Done appears.&lt;/p&gt;
+&lt;p&gt;Everything should work well, and you should be able to click the Generate right after (&lt;strong&gt;BUT DON’T CLICK IT?&lt;/strong&gt;). If ever you get an error here, especially with High Sierra, please check this issue.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-8-build-the-project&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 8) Build the project :&lt;/h2&gt;
+&lt;p&gt;(within the OPENPOSE folder you made on your computer, navigate there with &lt;code&gt;cd&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd build/
+
+make -j`nproc`&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;running-openpose&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Running OpenPose&lt;/h1&gt;
+&lt;p&gt;&lt;span style=&#34;color: red;&#34;&gt;Warning, running OpenPose takes a long time on a normal persoanl computer. But you can check it out on really short video clips and stills.&lt;/span&gt;&lt;/p&gt;
+&lt;div id=&#34;step-1-go-to-the-openpose-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1: Go to the OPENPOSE folder&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;cd OPENPOSEFOLDERPATH&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-make-an-input-and-output-folder&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2: Make an INPUT and OUTPUT folder&lt;/h2&gt;
+&lt;p&gt;Put an image / video … in the input folder&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-run-the-following&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3: run the following:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;./build/examples/openpose/openpose.bin --image_dir INPUT/ --write_images OUTPUT/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can also analyze the hands with the &lt;em&gt;flag&lt;/em&gt; &lt;code&gt;--hand&lt;/code&gt; or face with the &lt;em&gt;flag&lt;/em&gt; &lt;code&gt;--face&lt;/code&gt; etc. For more fun with flags, &lt;a href=&#34;https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md&#34;&gt;see this document&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Results&lt;/h1&gt;
+&lt;p&gt;Preliminary results show a fun gif that has been OpenPosed, as well as a still from my favorite K-pop band VIXX (song: &lt;a href=&#34;https://www.youtube.com/watch?v=g1JCFBzIQG8&#34;&gt;Love me do&lt;/a&gt;). Have fun with all these poses!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/2020/narutorun-openpose.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-10-21-installing-openpose-on-mac-october-2020-version_files/vixxopenpose.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I organize my notes</title>
+      <link>/post/how-i-organize-my-notes/</link>
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-i-organize-my-notes/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;One of the basic skills people, but PhD students and academics in particular, need to cultivate is sharpening their research workflow. You need to cultivate this by just doing it, but also by reviewing it from time to time. In this update, I’ll talk about a new app that has entered my life and made note-taking better: &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; (not a paid sponsorship, just me sharing my thoughts).&lt;/p&gt;
+&lt;div id=&#34;general-note-structure&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;General note structure&lt;/h1&gt;
+&lt;p&gt;I’ve written about this research workflow before (&lt;a href=&#34;https://www.thomasvanhoey.com/post/icons-we-live-by/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.thomasvanhoey.com/post/handling-research/&#34;&gt;here&lt;/a&gt;). In the second post I outlined a method for taking notes and basically still use it to this day:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Make sure Zotero has the right entry.&lt;/li&gt;
+&lt;li&gt;Export a bibliography (Unified Linguistics Stylesheet FTW~~)&lt;/li&gt;
+&lt;li&gt;Open a note in the note-taking app.&lt;/li&gt;
+&lt;li&gt;Make an entry that looks like this in &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;markdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- --&gt;
+&lt;pre&gt;&lt;code&gt;SHORT REFERENCE (exported from Zotero but shortened)
+
+FULL REFERENCE (exported from Zotero, just to be sure you get the full reference)
+
+Read: YYYYMMDD
+
+GENERAL OBSERVATION (good / bad paper, useful...)
+
+---
+
+SUMMARY OF THE PAPER
+QUOTES
+WHATEVER YOU WANT TO TAKE FROM THIS PAPER FOR THE FUTURE YOU&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are &lt;a href=&#34;https://www.youtube.com/watch?v=NXkT2tewLlQ&#34;&gt;quite a few people&lt;/a&gt; that will tell you how to take notes content-wise, but I’m here to tell you about my system. The way people take notes is highly individualized, especially in terms of what you actually jot down, and it often really depends on the paper. If it’s a very graphical paper then I would like to add a lot of screenshots or other figures; if it’s just a “&lt;a href=&#34;https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/26.664/3665&#34;&gt;oh yeah this exists&lt;/a&gt;” paper, then that is what I note and move on with my life.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;but-what-software&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;But what software?&lt;/h1&gt;
+&lt;p&gt;Software-wise, I still don’t think it’s a good idea to keep all your notes in MS Word, but instead look for a way to ensure the longevity of your notes. &lt;a href=&#34;https://youtu.be/hpAJMSS8pvs&#34;&gt;This video&lt;/a&gt; by Nicholas Cifuentes-Goodbody was very influential for me many years ago and I urge you to watch it if you are still stuck waiting for Word to open. Also &lt;a href=&#34;https://www.anghyflawn.net/teaching/2015/ilw-pandoc/&#34;&gt;the slogan in this blog&lt;/a&gt;: “Your academic life in plain text”, or &lt;a href=&#34;https://www.simondcoll.com/markdown-students-academics/&#34;&gt;this informative blog&lt;/a&gt;. If this video and blog appeal to you, you may want to invest in learning markdown. I think &lt;a href=&#34;https://youtu.be/EUoCW-dvnoY&#34;&gt;at most it will take you 20 minutes that will change your life, as advertised here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But what do you write markdown in? Like many students of my generation, I started with &lt;a href=&#34;https://evernote.com/&#34;&gt;Evernote&lt;/a&gt;, the elephant that promised to help us remember everything. I still think Evernote is a pretty good app for general grabbing and storing, because it has adapted for everything. However, their unwillingness to make a simple native (read: free) markdown editor for a thousand years or so (okay the past five years) has made many people jump the ship, and so did I.&lt;/p&gt;
+&lt;p&gt;In 2018 (I think) I came across an app called &lt;a href=&#34;https://notable.app/&#34;&gt;Notable&lt;/a&gt;, the brainchild of 1 person, which had the catchy slogan of being “the markdown-based note-taking app that doesn’t suck”. Basically, it was shown that having markdown (.md) files locally on your computer, which you can keep in the cloud, is a fast and reliable way of taking notes, because you’re not locked into an ecosystem (like Evernote but also lots of popular productivity apps). I became convinced that this is what I needed and I am happy I moved away from Evernote to Notable. Somewhat in awe I watched every update over the past few years, like the integration of figures, split editor, etc.&lt;/p&gt;
+&lt;p&gt;But while the progress of Fabio is admirable and &lt;a href=&#34;https://www.reddit.com/r/Notable/&#34;&gt;the reddit community&lt;/a&gt; is great, I was enticed twice recently to make another switch.&lt;/p&gt;
+&lt;p&gt;The first enticement was &lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt; but after seeing its exorbitant prices for an extremely new app (165 dollars per year, yuck), I was looking for an alternative and found &lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; (free for personal use), which is backed by a team of highly motivated people that were either “inspired” by Notable or in a case of convergent evolution developed the same idea that notes should be kept on your own system.&lt;/p&gt;
+&lt;p&gt;But where it really shines is the &lt;a href=&#34;https://youtu.be/SyV4xez9Lp0&#34;&gt;backlinking and network visualization of notes&lt;/a&gt;, a feature that Roam also excels at and &lt;em&gt;can&lt;/em&gt; be implemented in Notable (but is not super well-supported), and I guess it was enough to take the jump and try Obsidian out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;migrating-from-notable-to-obsidian-with-r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Migrating from Notable to Obsidian with R&lt;/h1&gt;
+&lt;p&gt;As always, I started with an Rproject, so I can sync it to github (private folder though ✌️). In that folder, I have a subfolder ‘academic_notes’ with all the notes and a subfolder ‘attachments’ for all the figures. Next, I just copied everything from my local Notable folder to the new academic_notes folder.&lt;/p&gt;
+&lt;p&gt;The hardest part was writing a small R-script to change all &lt;code&gt;![](@attachment/NAME)&lt;/code&gt; from Notable to the form &lt;code&gt;![[NAME]]&lt;/code&gt;, so that all figures could be rendered in Obsidian.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;structuring-my-notes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Structuring my notes&lt;/h1&gt;
+&lt;p&gt;Just to give you an impression, I have some 700 notes with details as outlined above. This does not represent everything I have ever read, but a good chunk of it. However, in Notable, I just had a flat structure, like this one:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/flat_structure.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;flat structure&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Wow, what a clusterfuck. If we zoom out we can see that every note is represented by a dot. Using the handy backlinking system &lt;code&gt;[[TERM YOU WANT TO TAG]]&lt;/code&gt; with the square brackets, you can start linking notes together.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/first_structure.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;first structure&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I had quite a bit of fun with manually going through my notes, checking for links and adding unlinked data to the network:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/adding_manual_links.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;adding manual links&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;But then I suddenly saw the R-light!
+I thought, let’s do this programmatically and thematically.
+So I wrote a dirty script to read in every file and add the double square brackets for every term that I wanted.&lt;/p&gt;
+&lt;p&gt;For example, if I wanted to link all words that have “ideophone” together, this is what I wrote:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(tidyverse)
+library(glue)
+library(fs)
+library(here)
+
+
+
+files &amp;lt;- dir_ls(here(&amp;quot;academic_notes&amp;quot;),
+                regexp = &amp;quot;.md$&amp;quot;)
+
+add_backlink &amp;lt;- function(file){
+  filepad &amp;lt;- file
+  
+  target &amp;lt;- glue(&amp;quot;(?&amp;lt;!\\[)\\b{word}s?\\b(?!\\])&amp;quot;)
+  vervanging &amp;lt;- glue(&amp;quot;[[{word}]]&amp;quot;)
+
+  read_lines(file) %&amp;gt;% 
+      str_replace_all(target, vervanging) %&amp;gt;%
+    write_lines(filepad)
+}
+
+
+
+
+
+######################
+# change this variable
+word &amp;lt;- &amp;quot;ideophone&amp;quot;
+######################
+
+walk(files, add_backlink) # actually running things&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ask me about it if you are interested lol.
+And if you keep the graph open you can see it changing in real time, which is very satisfying.&lt;/p&gt;
+&lt;blockquote class=&#34;imgur-embed-pub&#34; lang=&#34;en&#34; data-id=&#34;WwSbQrW&#34;&gt;
+&lt;a href=&#34;//imgur.com/WwSbQrW&#34;&gt;Obsidian change with R&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;//s.imgur.com/min/embed.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-network-of-notes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;A network of notes&lt;/h1&gt;
+&lt;p&gt;And then finally, we get a better representation of the notes that intersect in certain topics.
+I believe this can help me to write better surveys of the literature.
+But for now it’s mostly pretty to look at.
+Good luck trying this out and &lt;strong&gt;if you have a different workflow, I’d happily learn about it!&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/notes_ideophone.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;notes related to ‘ideophone’&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-10-18-how-i-organize-my-notes_files/notes_chinese.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;notes related to ‘chinese’&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Summertime sadness. See you Taiwan!</title>
+      <link>/post/summertime-sadness-see-you-taiwan/</link>
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/summertime-sadness-see-you-taiwan/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Wow! It has already been one month (to the day) since my Taiwan adventure ended and I came back to Belgium. High time I publish the third installment of my graduation blogs (&lt;a href=&#34;https://www.thomasvanhoey.com/post/hashtag-dissertating/&#34;&gt;part 1&lt;/a&gt; and &lt;a href=&#34;https://www.thomasvanhoey.com/post/defense-dark-art/&#34;&gt;part 2&lt;/a&gt;).&lt;/p&gt;
+&lt;div id=&#34;so-when-are-you-graduating&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;“So when are you graduating?”&lt;/h1&gt;
+&lt;p&gt;One of the questions that PhD students do not like hearing is “so when are you graduating?”. In many programs, there might be a fixed duration, but the actual date of finishing stays unclear until the end. This often has to do with the progress of a PhD candidate within a program or the relation with the supervisor, but it can also be hard to answer due to unclear milestones that succeed one another rapidly near the end.&lt;/p&gt;
+&lt;p&gt;For me, I knew I hadn’t graduated when I delivered my intellectual baby (see &lt;a href=&#34;https://www.thomasvanhoey.com/post/defense-dark-art/&#34;&gt;part 2&lt;/a&gt;). The next milestone, the PhD defense, feels much more like an initiation ritual: you’re being asked questions about your research and essentially get the stamp of approval from your committee. And if all goes well and you pass, you become the newest member of PhD holders. But you still haven’t graduated. There is the official graduation ceremony–of which I am so glad that it could still happen in-person in this COVID-laden year in Taiwan– and yes that is also a milestone.&lt;/p&gt;
+&lt;p&gt;However, by then I still didn’t have my degree. So had I actually graduated? I kept asking myself this somewhat existential question from time to time during this year’s summer. This also had to do with the revisions that were needed for my dissertation.&lt;/p&gt;
+&lt;p&gt;As a quick note, it is very customary for PhD dissertations to pass with amazing grades and still need to undergo some revisions, ranging from minor things to major revisions or even being failed. Luckily mine did pass with pretty great grades (A+) but I still was asked to rework some parts substantially, which i happily did. As I have often heard&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The only good dissertation is a finished dissertation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The deadline of submitting this revised version (which should pass along your advisor) was 20 August 2020. And actually it’s earlier, as you also need to get your uploaded version accepted by a team of librarians, who probably are swamped with work around this deadline. My first submission into the system, which I had spent a few hours getting the right formatting for, came back a day later with notes for issues that they had not clearly outlined in their instructions. So I spent a few hours making the necessary changes and clicked submit again, hoping for the best. Yes, the second time it did go through and I could print–yet another source of potential stress within a week of the looming deadline. Luckily, the lady from the print shop was extremely friendly and professional, and within just a few hours (!!!! Belgium take note !!!!) I had my copies to submit to the library and the department–yet another milestone that is part of graduating (which I completed on the 20th of August). I should also make the side note that I had to provide 1 copy for NTU library, one for my department, and one for the National Library. Yes, you can check out my dissertation in the National Library of Taiwan.
+Here is a picture of the 20th of August, when I ran into my friend Amirah who incicentally went to submit her dissertation as well.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364494686/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364494686_b99da0af9b_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;It was just a bit before this time that I heard that there is actually a checklist of stuff you need to do to leave school (離校), available in the online administration system. And this involved lots of trips around different offices. For instance, to leave my dorm, I needed three signatures and a trip to the office of student housing; for leaving Taiwan, I needed to let the office of international affairs know that I could be scrapped from the national insurance program (very good medical insurance program though!)… And so I rediscovered the campus I had spent five years, going from &lt;em&gt;hot&lt;/em&gt; to &lt;em&gt;her&lt;/em&gt;. A complication about this list in my case was that I could only finish the list at the end of August, because I was still under contract as a research assistant.&lt;/p&gt;
+&lt;p&gt;So the 28th I finally finished the checklist, went to yet another office, and FINALLY GOT MY DEGREE! My student card was stamped as invalid (this is a good thing) and I also was able to get my alumni card. Here is a picture of my invalidated student ID and my alumni card, both with an extremely old picture–nobody had told me during my application that the picture I sent in would be used for this purpose 🤷🏼‍♂️️️.&lt;/p&gt;
+&lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364631882/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364631882_6d783518e3_4k.jpg&#34; alt=&#34;Untitled&#34; width=&#34;4032&#34; height=&#34;3024&#34;/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, in conclusion, I think that the question of when you actually graduate a PhD program is manifestly multifold. For me personally, I felt most graduated (yes graduating is a feeling) in the aftermath of my defense, when I attended the ceremony, when I went to submit my dissertation to the library and when I got my actual degree. But the most nerve-wrecking is definitely the first of these.&lt;/p&gt;
+&lt;p&gt;Now, in the last weeks of my time in Taiwan, I also decided to print a more luxurious version of my thesis, with the older official formatting. I’m talking black hardcover and golden letters. Below you can see the four stages my pie of research went through: the Proposal version, the Defense version, the Library version and finally the Memorial version.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363759553/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363759553_4fec8a6fe5_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;This fancy version I had printed 10 times, all about 600 NTD, so that means the price was extremely reasonable for an eventually 520 or so page-long document. Five were for my advisor and other committee members, 1 was for myself, and 4 were for interested parties that helped me a lot during my studies.
+Here is me handing it over to my advisor. I am grateful to Dr. Chiarung Lu for taking me on and the academic freedom in these years, and also all the advice she gave to me. 謝謝老師.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363778853/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363778853_7930d5303b_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363779128/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363779128_f305b44c3e_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summertime-sadness&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Summertime sadness&lt;/h1&gt;
+&lt;p&gt;While these somewhat stressful events were playing out, I of course was also realizing that the end of Taiwan time was drawing near–an experience that must be similar to that of the Elves in Lord of the Rings, who are fading away into the West. That being said, I had a great summer, spending lots of time with CJ and going places, like Taichung or restaurants and cafés we loved going.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50358073898/in/album-72157716358267992/&#34; title=&#34;IMG_20200709_140312&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50358073898_86b9eb5651_c.jpg&#34; width=&#34;599&#34; height=&#34;800&#34; alt=&#34;IMG_20200709_140312&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50358070938/in/album-72157716358267992/&#34; title=&#34;IMG_20200710_114817&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50358070938_6dec2a6c3e_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;IMG_20200710_114817&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50358767466/in/album-72157716358267992/&#34; title=&#34;IMG_20200710_134727&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50358767466_365d028d7c_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;IMG_20200710_134727&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364484016/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364484016_e7232e92ab_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;And as I booked my plane ticket – not an easy feat in times of corona – at the end of August, I also got a date of departure: 11 September (yes, that 9/11, but don’t worry, when I flew it was still 9/10 in America). This also meant lots of saying goodbye to people, like the other alumni of my department.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364446281/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364446281_599a16317d_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or our friend Marco, who is also off doing a PhD.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363750193/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363750193_2f2b2970c9_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or a group of selected Belgians in Taiwan (we had mussels from Matzu!), including Ann, Rik and Zouk.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364618077/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364618077_68432c6921_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or Iju and Emily.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364624162/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364624162_96373d9662_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or Rik, Siaw-Fong and Taco.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363766923/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363766923_71b229c58a_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or the ladies from the international office (who I still know from my summer school).&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364485276/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364485276_e547bff14a_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my friends from the summer school in 2014: Snow, Franzi, Lucy and Laurence.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363769778/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363769778_c087872bc7_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my buddy Wen-Lin.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364485441/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364485441_12c26b03f1_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my reporter friend Erin.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364485731/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364485731_7e6f587f10_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my (almost adopted?) Taiwanese family 💖️.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363788853/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363788853_682ee2b56c_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my colleague-classmate Alex.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364486551/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364486551_5dcf7ec0fb_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my hairdresser for the past five years.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363790108/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363790108_6ed774a38a_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Or my coding bodybuilder friend Richard.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364474156/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364474156_1d400e1903_c.jpg&#34; width=&#34;599&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;But a most magical evening was my goodbye party. It was not in a fancy location, but the people who came really made my day. I am so grateful for my time at NTU and want to keep in touch with these people forever.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363778663/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363778663_e801861497_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364643187/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364643187_4f40fd1ed7_c.jpg&#34; width=&#34;800&#34; height=&#34;450&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364643777/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364643777_4de2b62d1b_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363781288/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363781288_3d014744f8_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364646372/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364646372_58e6100f24_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363786528/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363786528_1e2452ca5b_c.jpg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;I also needed to leave my dorm–that place with the amazing view that I might never get again. Discarding of most of my stuff, either to the other dorm people or by throwing it away, and storing some books at CJ’s place made my room suddenly feel so empty. I remember in the last moments of my last days, I went to the rooftop and sat with myself, taking this radical change in. By moving out, I really was saying goodbye to a part of myself: Thomas the PhD student. Here is a picture of me letting that thought get to me.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363762208/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363762208_60f9177db0_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-last-day&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Last Day&lt;/h1&gt;
+&lt;p&gt;After CJ also had left (back to the USA for his PhD), I stayed a few days in a hotel, while trying to wrap up what needed wrapping up, mostly administrative stuff. On my penultimate day, I had a job interview (more about that soo). On my last day, I checked out and tried to use the city check-in. Unfortunately, due to COVID and a stupid rule concerning my trekking backpack, I couldn’t do it in the city, but actually had to travel all the way to Sanchong to drop my stuff off. They weighed my luggage, which of course was too heavy, so they had me transfer a number of books into my carry-on luggage. After losing way too much time, I had a hair appointment. That also ran out and I was also late for my next appointment: a lunch date with my advisor and student-colleague Adrw. I had a wonderful time and got a goodbye gift – Taiwanese facemasks and a Japanese handkerchief, which I really appreciate.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363790348/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363790348_68f67c4681_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;After my hectic day so far, I had a few hours in the eye of the storm. That meant I needed to go back to school and make sure my desk was empty. In the evening I had a great last dinner with Iju, who also escorted me to the airport MRT.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364654037/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364654037_ff41b44e6e_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;And when I got to the airport, I knew that I would be taking the same plane as the person who was in charge of the summer school I was into all those years ago, Jungchen. So in a crazy twist of fate, my Taiwan adventure had come full circle.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364656587/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364656587_eaa82ed7d3_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;So yeah, then it was time to say goodbye to Taiwan, and hello to Holland.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363791518/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363791518_cb5b36c91e_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364488741/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364488741_042c1e0ee3_c.jpg&#34; width=&#34;599&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364655072/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364655072_6cb728d5b4_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364490326/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364490326_e83b2c9337_c.jpg&#34; width=&#34;600&#34; height=&#34;800&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;And, finally, I was so happy to see my parents again. Home.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50363794233/in/album-72157716358267992/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50363794233_191e7387d5_c.jpg&#34; width=&#34;800&#34; height=&#34;599&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Changing photo metadata with R</title>
+      <link>/post/changing-photo-metadata-with-r/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/changing-photo-metadata-with-r/</guid>
+      <description>
+
+
+&lt;p&gt;One gnarly problem I sometimes face is that when I transfer pictures from my phone to my computer, the metadata says that the date the picture was taken is actually the date the file was created on my computer.
+In other words, the date is wrong.
+This has bad consequences for photography software that reads the metadata and sorts them by date taken (like Flickr does for me).&lt;/p&gt;
+&lt;p&gt;The problem is illustrated here in this screenshot.
+We can infer from the name of the file that it was taken on the 5th of September, while the creation date in my computer is today (30th of September).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-changing-photo-metadata-with-r_files/dateproblems.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Luckily, with R it’s not hard to get the correct metadata.
+There are two possible routes.
+The first one concerns real pictures, which actually still have the correct metadata hidden within the file;
+the second one is for screenshots, which maybe have the wanted date in the filename, but which don’t have intrinsic metadata.&lt;/p&gt;
+&lt;p&gt;Ready, set, go.&lt;/p&gt;
+&lt;div id=&#34;packages&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Packages&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# general packages
+library(tidyverse) # our swiss army knife
+library(fs) # reading in files in a tidyish way
+library(lubridate) # working with dates 
+
+# specialized packages
+library(exifr) # for reading photo metadata&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Apart from the general rstudio-like packages like &lt;code&gt;tidyverse&lt;/code&gt;, &lt;code&gt;fs&lt;/code&gt;, &lt;code&gt;glue&lt;/code&gt; and &lt;code&gt;lubridate&lt;/code&gt;, we need a specialized package &lt;code&gt;exifr&lt;/code&gt; (&lt;a href=&#34;https://github.com/paleolimbot/exifr&#34;&gt;github&lt;/a&gt;) for reading EXIF metadata attached to pictures.
+&lt;code&gt;exifr&lt;/code&gt; extracts these metadata and can output them in a nice dataframe.
+Specifically we are interested in the variable “DateTimeOriginal”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;route-1-getting-datetimeoriginal-and-changing-the-creation-date.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Route 1: getting DateTimeOriginal and changing the creation date.&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# reading in all the different pictures we need to treat in batch
+files &amp;lt;- dir_ls(&amp;quot;PATH TO FOLDER WHERE PICTURES ARE STORED&amp;quot;,
+                recurse = TRUE,
+                regexp = &amp;quot;.jpg$&amp;quot;)
+
+
+# defining a function
+change_file_create_date &amp;lt;- function(afb){
+  # get correct exif date
+  read_exif(path = afb,
+            tags = c(&amp;quot;DateTimeOriginal&amp;quot;)) %&amp;gt;%
+    pull(DateTimeOriginal) %&amp;gt;%
+    parse_date_time(&amp;quot;Ymd HMS&amp;quot;, 
+                    tz = &amp;quot;Asia/Taipei&amp;quot; #timezone
+                    ) -&amp;gt; correct_time
+
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+purrr::walk(files, change_file_create_date)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;route-2-pulling-the-date-from-filename-and-changing-the-creation-date.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Route 2: pulling the date from filename and changing the creation date.&lt;/h1&gt;
+&lt;p&gt;Screenshots on my computer, which is configured in Dutch, have the following filename.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Schermafbeelding 2020-09-30-09-38-32.png&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;So that means “SCREENSHOT DATE-TIME.png”. The date and time can be foudn with a fairly simple regular expression, namely:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;4 NUMBERS&#39; FOLLOWED BY FIVE TIMES THE SEQUENCE &#39;-2 NUMBERS&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In R code that is written like:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;\\d{4}(-\\d\\d){5}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And then we’re set.
+Just adapt the function definition in the middle and run it over the files we want to change.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# read in files
+files &amp;lt;- dir_ls(&amp;quot;PATH TO FOLDER WHERE PICTURES ARE STORED&amp;quot;,
+                recurse = TRUE,
+                regexp = &amp;quot;.jpg$&amp;quot;)
+
+# function definition
+change_file_create_date &amp;lt;- function(afb){
+
+  # get correct date from filename
+  afb %&amp;gt;%
+    as.character() %&amp;gt;%
+    str_extract(&amp;quot;\\d{4}(-\\d\\d){5}&amp;quot;)  %&amp;gt;%
+    parse_date_time(&amp;quot;YmdHMS&amp;quot;, 
+                      tz = &amp;quot;Asia/Taipei&amp;quot; #timezone
+                    ) -&amp;gt; correct_time
+  
+  # changing the creation date
+  Sys.setFileTime(afb, correct_time)
+  
+}
+
+
+# run the function over all the different files
+walk(files, change_file_create_date)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And there we have it, based on the correct regular expression, we can batch process these without much effort.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-changing-photo-metadata-with-r_files/correct.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;And should you be wondering, this is the picture we were trying to change, with the nice message from my friends in zhuyin: I❤️U ㄚㄓˋ.&lt;/p&gt;
+&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/50364643777/in/datetaken/&#34; title=&#34;Untitled&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/50364643777_3813722e61_4k.jpg&#34; width=&#34;4032&#34; height=&#34;3024&#34; alt=&#34;Untitled&#34;&gt;&lt;/a&gt;
+&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Drawing RRG trees with forest </title>
+      <link>/post/drawing-rrg-trees-with-forest/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/drawing-rrg-trees-with-forest/</guid>
+      <description>
+
+
+&lt;p&gt;Just like in a previous update where we looked at glosses, today we are looking at how to draw a specific kind of syntactic tree, namely those of the [Role and Reference Grammar](&lt;a href=&#34;https://en.wikipedia.org/wiki/Role_and_reference_grammar#&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Role_and_reference_grammar#&lt;/a&gt;:~:text=Role%20and%20reference%20grammar%20(RRG,and%20Robert%20Van%20Valin%2C%20Jr.&amp;amp;text=In%202012%2C%20Ball%20integrated%20his,breaking%20down%20language%20by%20meaning) type.
+A brief overview by Van Valin can be found &lt;a href=&#34;acsu.buffalo.edu/~rrgpage/rrg/RRGpaper.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, these are not your standard Chomskyan syntactic trees, but rather a more functional approach, in which there are often three projections with intersecting trees: the operator projection, the constituent projection and the focus structure projection.&lt;/p&gt;
+&lt;p&gt;Here is Van Valin giving a really short intro:&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;What would linguistic theory look like if we started from Lakota, Tagalog and Dyirbal rather than English?&amp;quot; The legendary Van Valin talking about why RRG is a different way of looking at language. Full interview coming soon! &lt;a href=&#34;https://t.co/qfqFw2t0Eu&#34;&gt;pic.twitter.com/qfqFw2t0Eu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Canguro English (@canguroenglish) &lt;a href=&#34;https://twitter.com/canguroenglish/status/1308473381357064193?ref_src=twsrc%5Etfw&#34;&gt;September 22, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;drawing-trees-in-latex-with-rrgtrees&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Drawing trees in Latex with &lt;code&gt;RRGtrees&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;What is the best way to describe and draw these trees with Latex (the alternative being something like powerpoint).
+Now, in Latex, there exists the package &lt;code&gt;RRGtrees&lt;/code&gt; &lt;a href=&#34;https://ctan.org/pkg/rrgtrees?lang=en&#34;&gt;CTAN link here&lt;/a&gt;.
+It has two dependencies &lt;code&gt;pst-node&lt;/code&gt; and &lt;code&gt;pst-tree&lt;/code&gt;.
+So far looking okay.&lt;/p&gt;
+&lt;p&gt;However, the package was last changed in 2004 and while &lt;a href=&#34;https://tex.stackexchange.com/questions/408134/trouble-drawing-role-and-reference-grammar-trees-in-latex-using-rrgtrees-package&#34;&gt;in 2017 it was still working&lt;/a&gt; I just could not get it to work in this year of 2020.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;forest-gump&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;code&gt;forest&lt;/code&gt; Gump&lt;/h1&gt;
+&lt;p&gt;Eventually I just gave up and decided to check out another tree-drawing package, namely &lt;code&gt;forest&lt;/code&gt; &lt;a href=&#34;https://ctan.org/pkg/forest?lang=en&#34;&gt;CTAN link&lt;/a&gt;.
+Luckily, &lt;a href=&#34;https://www.crissp.be/people/guido-vanden-wyngaerd/&#34;&gt;Guido Vanden Wyngaerd&lt;/a&gt; has written a very useful quickstart guide &lt;a href=&#34;https://ling.auf.net/lingbuzz/003391&#34;&gt;lingbuzz&lt;/a&gt; for &lt;code&gt;forest&lt;/code&gt; which helped me out tremendously.&lt;/p&gt;
+&lt;p&gt;Because I didn’t find any RRG-specific forest tutorials, I decided to have a go at it and this is what you’re reading now.
+I’m gonna draw three trees and provide the code, for public benefit and possibly my future self.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;set-up&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Set-up&lt;/h1&gt;
+&lt;p&gt;If I am writing a Latex document, I would expect my minimal preamble to look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\documentclass[]{article}
+\usepackage[linguistics]{forest}
+\usepackage{expex}
+\begin{document}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And if I am writing in R markdown, my current standard, I would expect the following minimal YAML-header, i.e., exporting to Latex to pdf:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+    keep_tex: true
+header-includes:
+- \usepackage[linguistics]{forest}
+- \usepackage{expex}
+---&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 1&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[SENTENCE [CLAUSE [CORE [CLAUSE [That she arrived late, roof]] [NUC [shocked]] [NP [everyone]]]]]
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree1.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-2&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 2&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[SENTENCE
+  [CLAUSE
+  [CORE, name=core
+    [NP [Kim, tier=word]]
+    [NUC [PRED [V [saw, tier=word]]]]
+    [NP [Pat, tier=word]]
+    ]
+   [PERIPHERY, name=peri, no edge [PP [CORE [NUC [PRED [P [after, tier=word]]]] [CLAUSE [she arrived at the party, tier=word, roof]]]]]]
+  ]
+ ]
+ {\draw[-&amp;gt;] (peri) to[out=west,in=east]  (core) ;}
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree2.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tree-3&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tree 3&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;\ex
+\begin{forest}
+[,phantom 
+  [Operator projection\\SENTENCE 
+    [IF, no edge, name=if]
+    [CLAUSE, name=clause1
+      [TNS, no edge, name=tns]
+      [CLAUSE, name=clause2
+        [CORE
+          [NUC
+            [NP, no edge, name=npleft
+              [What
+                [ARG, name=argwhat]]
+              [did, no edge, name=did]]
+            [NP, no edge, name=npright
+                [Dana, tier=word
+                  [ARG, name=argdana
+                    [\phantom{P}, name=phant, no edge
+                      [SPEECH ACT\\Focus structure projection, no edge, name=speech]]
+                    ]]]
+            [V, name=vgive
+              [give, tier=word
+                 [NUC]]]]]]]] 
+  [Constituent projection\\SENTENCE
+    [CLAUSE
+      [PrCS, name=prcs]
+      [CORE, name=cora
+        [ARG, name=argleft]
+        [NUC
+          [PRED, name=predgive]]
+        [ARG
+          [NP
+            [Chris, tier=word
+              [ARG]]]]]
+      [PERIPHERY,no edge, name=peri
+        [ADV
+          [yesterday?, tier=word
+            [ADV, name=advyesterday]]]]]]
+]
+\draw (npleft.north) -- (prcs.south);
+\draw[dashed] (if.south) -- (did.north);
+\draw[dashed] (tns.south) -- (did.north);
+\draw (argleft.south) -- (npright.north);
+\draw (vgive.north) -- (predgive.south);
+\draw[-&amp;gt;] (peri.west) -- (cora.east);
+\draw[-&amp;gt;] (if.east) -- (clause1.west);
+\draw[-&amp;gt;] (tns.east) -- (clause2.west);
+\draw[dashed] (argwhat.south west) -- (speech.north);
+\draw[dashed] (advyesterday.south east) -- (speech.north);
+\draw[dotted] 
+  (argwhat.south west) -- (phant.south)
+  (argwhat.south west) -- (argwhat.south east)
+  (phant.south) -- (argwhat.south east);
+\end{forest}
+\xe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-30-drawing-rrg-trees-with-forest_files/tree3.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salutation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Salutation&lt;/h1&gt;
+&lt;p&gt;I don’t know RRG that well, so don’t shoot me if the trees are wrong, but now at least I know how to draw the trees with &lt;code&gt;forest&lt;/code&gt;, and so can you!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Turning glosses into a mini corpus</title>
+      <link>/post/turning-glosses-into-a-mini-corpus/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/turning-glosses-into-a-mini-corpus/</guid>
+      <description>
+
+
+&lt;div id=&#34;glossing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Glossing&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Interlinear_gloss&#34;&gt;Glossing&lt;/a&gt; is part and parcel in linguistics.
+Part of our training is learning to represent linguistic data in a format that can be understood by all.
+An example can be found in below, taken from the &lt;a href=&#34;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&#34;&gt;Leipzig Glossing Rules&lt;/a&gt;.
+In general, morphemes should correspond, being marked by a hyphen or space to separate them, depending on boundedness.
+The details are highly dependent on your subfield and your audience.
+For instance, ‘1PL’ (first plural pronoun) could also be represented by ‘we’ in certain contexts.
+On other occasions, categories of the language you’re studying are not included in the standard Leipzig Glossing Rules set, e.g., ‘ideophone’ can be represented by IDEO, IDPH, etc.
+There’s also recent advances in the glossing standards of, for instance, &lt;a href=&#34;https://wikis.hu-berlin.de/interlinear_glossing/Main_Page&#34;&gt;ancient languages&lt;/a&gt;, like &lt;a href=&#34;http://wwwuser.gwdg.de/~dwernin/published/DiBiase_Kammerzell_Werning-2009-Glossing_Ancient_Egyptian.pdf&#34;&gt;this paper by DiBiase et al.&lt;/a&gt; for Ancient Egyptian; it’s worth a read.
+(Bonus: check out the article on &lt;a href=&#34;https://en.wikipedia.org/wiki/Kanbun&#34;&gt;Kanbun&lt;/a&gt; which provides a short intro to how the Japanese marked up Classical Chinese to make sense of it.)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;original:         My  s    Marko poexa-l-i avtobus-om v   Peredelkino. 
+morphemes:        1PL COM  Marko go-PST-PL bus-INS    ALL Peredelkino
+free translation: &amp;#39;Marko and I went to Perdelkino by bus.&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;yami&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Yami&lt;/h1&gt;
+&lt;p&gt;Yesterday, my partner &lt;a href=&#34;https://www.researchgate.net/profile/Chun_Jan_Young&#34;&gt;CJ Young (UCSB)&lt;/a&gt;, who is working with &lt;a href=&#34;https://en.wikipedia.org/wiki/Yami_language&#34;&gt;Yami (Tao)&lt;/a&gt; data and has been &lt;del&gt;pushed somewhat aggresively by me to adopt R and Rmarkdown&lt;/del&gt; gradually easing into the R ecoverse, raised an interesting question: &lt;strong&gt;how can I turn my fieldwork glosses into a corpus that’s easily searchable?&lt;/strong&gt;
+Just to clarify things, in his fieldwork he’s following a format that rests on splitting recordings into &lt;a href=&#34;https://en.wikipedia.org/wiki/Prosodic_unit&#34;&gt;intonation units&lt;/a&gt; with the goal of depositing data in the &lt;a href=&#34;https://www.researchgate.net/publication/269805639_NTU_corpus_of_Formosan_languages_A_state-of-the-art_report&#34;&gt;Corpus of Formosan Languages&lt;/a&gt;.
+However, the data is not in that corpus yet, and mostly written down in .pages (the word of mac os).
+The usage of .pages is not a requirement, but just a consequence of him working together with &lt;a href=&#34;https://manoa-hawaii.academia.edu/GregVondiziano&#34;&gt;Greg Vondiziano (UH)&lt;/a&gt; and their both having macbooks ha.&lt;/p&gt;
+&lt;p&gt;A typical gloss looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.
+ko       ononongan  a    kavavatanen            ya        am, 
+ko       ononong-an a    ka-va~vata-nen         ya        am 
+1SG.GEN  narrate-LV LK   NMZ-RDPL~hearsay-PV    DEM.PROX  TOP 
+1SG.屬格 述說-處焦  繫詞 名物化-重疊～據說-受焦 指示.近距 主題 
+
+ko       nimacita             do
+ko       ni-ma-cita           do
+1SG.GEN  PFV-PV.able-see      LOC
+1SG.屬格 完成貌-受焦.能力-看  處格
+
+2.
+paciracirayin an
+pa-cira~ciray-in an
+CAU-RDPL~light-PV FP
+使役-重疊～照亮-受焦 語助詞
+
+#e The story I’m going to tell is what I saw in a movie
+#c 我要說的故事是，我在電影上看到的
+#n paciracirayin = 電影; ciray = 亮; cirayin = 照&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So first there is the gloss number, followed by the original sentence, then an extra level containing the underlying form, then the morphemic glosses in English, in Chinese, and then a free translation of a considerable translation in English (#e) as well as Chinese (#c), and possibly some notes (#n).
+You can see that there is some structure in the order of these items.
+But there are also a few annoying things: the first intonation unit has a very long line, which has been split in two (starting with &lt;em&gt;ko&lt;/em&gt;); and the translations in #e and #c are metioned for intonation unit 2, but actually also relate to intonation unit 1.&lt;/p&gt;
+&lt;p&gt;Ideally, corpora become more machine-searchable if they are further standardized.
+So, I tried to put my head to it and this is what I came up (taking full inspiration from the ASBC corpus used in my PhD dissertation):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.txt source files (because lightweight and cross-platform)&lt;/li&gt;
+&lt;li&gt;script to turn them into dataframe, enabling the powerfull search functions of R (or python)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So the goal is to transform the previous into a table with the following columns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;intonation unit number
+*surface&lt;/li&gt;
+&lt;li&gt;underlying&lt;/li&gt;
+&lt;li&gt;english morphemes&lt;/li&gt;
+&lt;li&gt;chinese morphemes&lt;/li&gt;
+&lt;li&gt;english translation&lt;/li&gt;
+&lt;li&gt;chinese trans&lt;/li&gt;
+&lt;li&gt;notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;preprocessing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Preprocessing&lt;/h1&gt;
+&lt;p&gt;As always, I started out with making &lt;a href=&#34;https://github.com/simazhi/yamicorpusr&#34;&gt;a github repository&lt;/a&gt;, to detail the different steps.
+Next I thought about we were going to get from the source text in .pages to .txt to dataframe.
+In the preprocessing stages, there are about five things that needed to be checked (manually, just to make sure).&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Copy into a txt document. Yes, this is easy.&lt;/li&gt;
+&lt;li&gt;Replace &lt;tabs&gt; with &lt;space&gt;. In a text editor like Atom or even the general text editor on your computer, you can generally replace &lt;code&gt;\t&lt;/code&gt; (tab) with &lt;code&gt;\s&lt;/code&gt; (space) if regular expressions are enabled.&lt;/li&gt;
+&lt;li&gt;Check all multi line glosses on one line. This needs to be checked manually, just to make sure.&lt;/li&gt;
+&lt;li&gt;Add the following. You need to tag the lines, they can be in different orders (maybe one document has the Chinese line before the English line), but they need to be identified. Ideally this can be done programmatically, but better safe with manual than sorry with computational.
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;‘s’ to surface line&lt;/li&gt;
+&lt;li&gt;‘u’ to underlying line&lt;/li&gt;
+&lt;li&gt;‘e’ to English gloss&lt;/li&gt;
+&lt;li&gt;‘z’ to Chinese gloss&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Replace all &lt;code&gt;\n\n+&lt;/code&gt; with &lt;code&gt;\n&lt;/code&gt;. This regular expression will delete empty lines.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Should people be reading this and have tips on to make this more efficient, always welcome.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;
+After thinking about it for a while, adding the SUEZ (strategic acronym for the tagging system), the following regular expressions should do the trick.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(\d\.\n)      replace by `$1s ` (s followed by space) # S
+(^s [^\n]+\n) replace by `$1u ` (u followed by space) # U
+(^u [^\n]+\n) replace by `$1e ` (e followed by space) # E
+(^e [^\n]+\n) replace by `$1z ` (z followed by space) # Z&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;from-source-txt-to-dataframe&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;From source txt to dataframe&lt;/h1&gt;
+&lt;p&gt;For this you need the following packages&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(tidyverse) # collection of tools
+library(here) # best practice project management
+library(fs) # optional here but preparing for many docs later
+library(glue) # will need later&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next read in the source text that is somewhere in your R project.
+Learn the &lt;code&gt;here&lt;/code&gt; package if you don’t know how that works.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;readin &amp;lt;- read_lines(here(&amp;quot;SOURCETEXT.txt&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What you get is a vector, called &lt;code&gt;readin&lt;/code&gt;, containing every line as a piece of data, something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[1] 1.
+[2] s ko ononongan a kavavatanen ya am, ko nimacita do
+[3] u ko ononong-an a ka-va~vata-nen ya am ko ni-ma-cita do
+[4] e 1SG.GEN narrate-LV LK NMZ-RDPL~hearsay-PV DEM.PROX TOP 1SG.GEN PFV-PV.able-see LOC
+[5] z 1SG.屬格 述說-處焦 繫詞 名物化-重疊～據說-受焦 指示.近距 主題 1SG.屬格 完成貌-受焦.能力-看 處格&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, we need to transform this into the aforementioned table format.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tableform &amp;lt;- # declaring the output variable
+readin %&amp;gt;% # take readin and then
+  as_tibble() %&amp;gt;%  # turn it into a fance tibble
+  
+  # tagging (making columns)
+  mutate(linenumber = cumsum(str_detect(value, &amp;quot;\\d\\.&amp;quot;))) %&amp;gt;% 
+  mutate(category = str_extract(value, &amp;quot;^..?(?=\\s)&amp;quot;)) %&amp;gt;% 
+  
+  # spreding wider
+  pivot_wider(names_from = &amp;quot;category&amp;quot;, values_from = &amp;quot;value&amp;quot;) %&amp;gt;%
+  
+  # fill out the missing translations
+  fill(`#e`, .direction = &amp;quot;up&amp;quot;) %&amp;gt;% 
+  fill(`#c`, .direction = &amp;quot;up&amp;quot;) %&amp;gt;% 
+  
+  # beautify
+  select(-`NA`) %&amp;gt;% 
+  rename(surface = s,
+         underlying = u,
+         englishgloss = e,
+         chinesegloss = z,
+         englishtrans = `#e`,
+         chinesetrans = `#c`) %&amp;gt;% 
+         
+  # delete the tags &amp;#39;s&amp;#39; &amp;#39;u&amp;#39; &amp;#39;e&amp;#39; &amp;#39;z&amp;#39; as well as #n #c #e
+  mutate(across(where(is.character), 
+                ~str_remove(.x, &amp;quot;^..?\\s&amp;quot;)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And tadaah, the table for this text is ready and can be queried.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finding-furthering-and-outputting&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Finding, furthering and outputting&lt;/h1&gt;
+&lt;p&gt;Let’s say, you want to find all OBL markers, to see if there is any variation.
+A simple search can be done with &lt;code&gt;dplyr::filter&lt;/code&gt; and &lt;code&gt;str_detect&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tableform %&amp;gt;%
+  filter(str_detect(englishgloss, &amp;quot;OBL&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or you can select a number of columns of interest and integrate it with a &lt;code&gt;tidytext::unnest_tokens&lt;/code&gt; pipeline (or cast to other corpus packages), for instance, if you want to make a dictionary of a certain kind (which can then be used to pretag new texts for which you have the surface form or underlying form).&lt;/p&gt;
+&lt;p&gt;For exploratory output, I would suggest to use the &lt;code&gt;glue&lt;/code&gt; package, as it is extremely customisable.
+Two immediate output formats that come to mind are 1) something closer to what it originally was in .pages, 2) output to be used in the fantastic LaTeX package &lt;code&gt;expex&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The syntax of &lt;code&gt;glue&lt;/code&gt; is extremely simple.
+The following will take everything you have and output it in (here in Rmarkdown) in nice text lines.
+What then needs to happen when you copy to other programs, is to beautify it, and split long lines again on multiple lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;glue(&amp;#39;{tableform$linenumber}
+     {tableform$surface}
+     {tableform$underlying}
+     {tableform$englishgloss}
+     {tableform$chinesegloss}
+     {tableform$englishtrans}
+     {tableform$chinesetrans}
+     
+     &amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But if you’re writing in Rmarkdown or LaTeX, you can easily customize this in such a way that it preformats into the &lt;code&gt;expex&lt;/code&gt; format (without having to worry about the multiline glosses or spacing because that’s what expex does!):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;glue(&amp;#39;\ex[glstyle=wrap]
+     \begingl
+     \gla {tableform$surface} //
+     \glb {tableform$underlying} //
+     \glc {tableform$englishgloss} //
+     \glft {tableform$englishtrans} //
+     \endgl
+     \xe&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;benefits&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Benefits&lt;/h1&gt;
+&lt;p&gt;The general benefits of having this set up is easy exploration of your data; no longer do you need to open up each .pages document and manually count how many times a certain thing occurs.
+What is also good is that it keeps reference numbers, so you can always go back to the source.
+It is a flexible setup, in that if you have a special tag format, for instance a #j for Japanese translation or so, this will automatically be capture in the table.
+And if you are used to marking the voice system with a V instead of F for focus, then you can implement that easily in R.&lt;/p&gt;
+&lt;p&gt;What does still need to happen, however, is a metadata file that links the source texts to data on the speaker, but that is just good housekeeping.
+So probably not the last update on this miniproject, but a good start.
+Good luck CJ!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;addendum&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Addendum&lt;/h1&gt;
+&lt;p&gt;After posting about this blog update on facebook, Shu-Kai Hsieh pointed me into the direction of Yongfu Liao’s app version for when they did fieldwork last year, &lt;a href=&#34;https://glosss.yongfu.name/#/&#34;&gt;which can be found here&lt;/a&gt;.
+It’s a beautiful app, and it basically starts from a similar position as this project.
+It shows very clearly when there are differing glosses, allowing the annotator to standardize the glosses.
+It also goes beyond my approach by doing the exact dictionary style matching between forms and gloss I mentioned before, which I would implement with &lt;code&gt;tidytext&lt;/code&gt;, and it provides a nice quick and dirty look up possibility, shown here when looking for ‘OBL’ (oblique).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-24-turning-glosses-into-a-mini-corpus_files/rukaigloss.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The points I have some reservations about, however, are (1) that the &lt;a href=&#34;https://yongfu.name/gloss-search/2020_Budai_Rukai.log&#34;&gt;log&lt;/a&gt; shows that there are incongruencies between the different columns. (2) The &lt;a href=&#34;https://github.com/liao961120/gloss-search/&#34;&gt;input format&lt;/a&gt; (shown below) requires that the glosses are aligned, but I think that is epiphenomenal – one space is all I would want. (3) Fundamentally, while this app is beautiful and useful if you have only a bit of data, it does not enable the user to quickly count a given phenomenon, e.g., the frequency of OBL. And this was the kind of question that CJ asked me. So I think there is room for growth in Yongfu’s app, but also inspiration for the way I approached it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[編號].
+[族語轉寫 (原始, optional)]
+[空行 (optional)]
+[族語分析 (aligned)]
+[英文Glossing (aligned)]
+[中文Glossing (aligned)]
+[空行]
+#e [英文翻譯]
+#c [中文翻譯]
+#n [註釋]
+[空行]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Defense against the Dark Art</title>
       <link>/post/defense-dark-art/</link>
       <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
@@ -79,7 +906,7 @@
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49948018841/in/album-72157715109327417/&#34; title=&#34;ChiaHo!&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49948018841_4d954de812_b.jpg&#34; width=&#34;768&#34; height=&#34;1024&#34; alt=&#34;ChiaHo!&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 I just want to say thank you for providing light in the dark.&lt;/p&gt;
 &lt;h1 id=&#34;once-upon-a-december&#34;&gt;Once upon a December&lt;/h1&gt;
-&lt;p&gt;I couldn&amp;rsquo;t wait until December rolled around, when CJ would come back and we would go to Hong Kong for one of his best friends&amp;rsquo; wedding. It was simply amazing. Congratulations Ka and Mona!&lt;/p&gt;
+&lt;p&gt;I couldn&amp;rsquo;t wait until December rolled around, when CJ would come back and we would go to Hong Kong for one of his best friends&#39; wedding. It was simply amazing. Congratulations Ka and Mona!&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49948276292/in/album-72157715109327417/&#34; title=&#34;CJ is back&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49948276292_d63308e81f_b.jpg&#34; width=&#34;1024&#34; height=&#34;768&#34; alt=&#34;CJ is back&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49947489558/in/album-72157715109327417/&#34; title=&#34;Ka and Mona&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49947489558_e7ed5ebf88_b.jpg&#34; width=&#34;768&#34; height=&#34;1024&#34; alt=&#34;Ka and Mona&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a data-flickr-embed=&#34;true&#34; href=&#34;https://www.flickr.com/photos/86097314@N03/49947991086/in/album-72157715109327417/&#34; title=&#34;Thomas and CJ in HK&#34;&gt;&lt;img src=&#34;https://live.staticflickr.com/65535/49947991086_1b97c8f30b_b.jpg&#34; width=&#34;1024&#34; height=&#34;768&#34; alt=&#34;Thomas and CJ in HK&#34;&gt;&lt;/a&gt;&lt;script async src=&#34;//embedr.flickr.com/assets/client-code.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -660,7 +1487,7 @@ Of course, Mufwene tells a story that ties in closer to current research into th
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/z17HjgG8mbo&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;neuro-psycholinguistics&#34;&gt;Neuro-/Psycholinguistics&lt;/h2&gt;
 &lt;h3 id=&#34;evelina-fedorenko---the-language-system-in-the-human-mind-and-brain&#34;&gt;Evelina Fedorenko - The Language System In The Human Mind and Brain&lt;/h3&gt;
-&lt;p&gt;I like these &amp;ldquo;intro to neurolinguistics&amp;rdquo; talks. This one is very thorough and intuitively (I say intuitively because I am not familiar with all of the intricacies of this subfield) is taking the right approaches to brain and language, although I don&amp;rsquo;t know about the conclusions (such as in 1). The main contributions of this talk / her program are that 1. brain regions that support language processing are selective for language (as opposed to supporting other abilities, e.g., music, arithmetic); 2. brain regions that support word meanings vs. syntactic processing are the same; 3. the primary driver of the language regions&amp;rsquo; responses is semantic composition (and not structure building).&lt;/p&gt;
+&lt;p&gt;I like these &amp;ldquo;intro to neurolinguistics&amp;rdquo; talks. This one is very thorough and intuitively (I say intuitively because I am not familiar with all of the intricacies of this subfield) is taking the right approaches to brain and language, although I don&amp;rsquo;t know about the conclusions (such as in 1). The main contributions of this talk / her program are that 1. brain regions that support language processing are selective for language (as opposed to supporting other abilities, e.g., music, arithmetic); 2. brain regions that support word meanings vs. syntactic processing are the same; 3. the primary driver of the language regions&#39; responses is semantic composition (and not structure building).&lt;/p&gt;
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hqrsHmhcrSQ&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;peter-hagoort---the-core-and-beyond-in-the-language-ready-brain&#34;&gt;Peter Hagoort - The Core and Beyond In The Language-Ready Brain&lt;/h3&gt;
 &lt;p&gt;I am not well-versed in the world of neuro- /psycholinguistics but I do enjoy the presentations that have found their way to me in the past few years. This talk is very much in line of that. There are lots of specifics of this subfield that are touched upon in this talk, but I remain unconvinced of the usability of generative grammar within this field, and while that still seems to be dominant, the field seems to become more and more aware of culture as well. 
@@ -701,6 +1528,24 @@ Of course, Mufwene tells a story that ties in closer to current research into th
 &lt;p&gt;
 &lt;a href=&#34;https://youtu.be/mSgDm9a0Wm0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This talk&lt;/a&gt; shows that framing and reframing is important. Stibbe discusses newspaper narratives: how immigrants had been framed as invaders in &lt;em&gt;The Sun&lt;/em&gt;, but now are portrayed as the heroes (doctors, nurses etc.) fighting against COVID. At about minute 38 he talks about haiku, which was quite interesting, although I dislike the kind of &amp;ldquo;Japanese is so mysterious, so exotic&amp;rdquo; attitude that is displayed in this lecture.&lt;/p&gt;
 &lt;h1 id=&#34;more-to-come-later&#34;&gt;More to come later&amp;hellip;&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CHIDEOD</title>
+      <link>/project/chideod/</link>
+      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/chideod/</guid>
+      <description>&lt;p&gt;The Chinese Ideophone Database (CHIDEOD) is an open-source dataset, which currently collects 4948 unique onomatopoeia and ideophones (mimetics) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables pertaining to the type of data, description, analysis and frequency.&lt;/p&gt;
+&lt;h1 id=&#34;access-the-database&#34;&gt;Access the database&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://osf.io/kpwgf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OSF&lt;/a&gt; (for .xlsx, .rds, and .csv)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://simazhi.shinyapps.io/chideod_appversion/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;app&lt;/a&gt; (online access)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/simazhi/chinese_ideophone_database&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt; (workspace)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -821,7 +1666,7 @@ I decided that that was a good idea and so, the “Rbootcamp for Lexical Semanti
 &lt;p&gt;Our group was kind of small, eight people, who found themselves grappling with R and Rstudio for five hours over the course of November and early December 2019.
 What they had had in mind, I guess, was an intro to one package, or one tool to do everything; instead, I decided to give them one swiss army knife.
 While it does take a long time to &lt;em&gt;learn R&lt;/em&gt; (steep learning curve) and many people have despaired (see cartoon below), I think that for newcomers &lt;a href=&#34;http://varianceexplained.org/r/teach-tidyverse/&#34;&gt;&lt;strong&gt;it is okay to start with the so-called tidyverse&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://gilesd-j.com/wp-content/uploads/2018/03/learning-curve.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gilesd-j.com/wp-content/uploads/2018/03/learning-curve.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So my love for the tidyverse can be exemplified in the following meme:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2019-12-06-rbootcamp-2019_files/sontidyverse.jpg&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -3541,7 +4386,7 @@ For an implementation of &lt;code&gt;quanteda&lt;/code&gt; on Japanese, I really
 &lt;a href=&#34;https://koheiw.net/?p=339&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kohei Watanabe&amp;rsquo;s post&lt;/a&gt;; for the instructions regarding &lt;code&gt;corpus&lt;/code&gt;, 
 &lt;a href=&#34;https://cran.r-project.org/web/packages/corpus/vignettes/chinese.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;look here&lt;/a&gt;.
 Because I&amp;rsquo;m most familiar with the &lt;code&gt;quanteda&lt;/code&gt; package and its functions, and because the underlying mechenism is the same, I&amp;rsquo;m only going to discuss this package below in &amp;ldquo;the test&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;(I think &lt;code&gt;tidytext&lt;/code&gt;&#39;s &lt;code&gt;token = &amp;quot;words&amp;quot;&lt;/code&gt; also uses &lt;code&gt;stringi&lt;/code&gt; but I&amp;rsquo;m not sure.)&lt;/p&gt;
+&lt;p&gt;(I think &lt;code&gt;tidytext&lt;/code&gt;&amp;rsquo;s &lt;code&gt;token = &amp;quot;words&amp;quot;&lt;/code&gt; also uses &lt;code&gt;stringi&lt;/code&gt; but I&amp;rsquo;m not sure.)&lt;/p&gt;
 &lt;h2 id=&#34;oldies-but-goldies&#34;&gt;oldies but goldies&lt;/h2&gt;
 &lt;p&gt;The package most people are familiar with is probably &lt;code&gt;jieba&lt;/code&gt; (
 &lt;a href=&#34;https://qinwenfeng.com/jiebaR/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R version&lt;/a&gt; and 
@@ -4096,10 +4941,10 @@ Perhaps not.&lt;/p&gt;
 The second retort is about the formally similar &lt;em&gt;kons&lt;/em&gt;.
 Shaughnessy doesn&amp;rsquo;t give any characters (or tones) in his review, but this is what Sampson finds:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Having argued that 關, &lt;em&gt;krón&lt;/em&gt;, should be read partly for its sense, Shaughnessy then claims to discern yet another layer of meaning: he says that this word is “similar in pronunciation” to 貫, whose primary meaning is &amp;ldquo;to pass through&amp;rdquo; but which has &amp;ldquo;the extended sense of sexual penetration&amp;rdquo;. So perhaps the translation should be not &amp;quot; &amp;lsquo;Join, join&amp;rsquo; …&amp;rdquo; but rather &amp;quot; &amp;lsquo;Screw, screw&amp;rsquo; calls the fish-hawk&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Having argued that 關, &lt;em&gt;krón&lt;/em&gt;, should be read partly for its sense, Shaughnessy then claims to discern yet another layer of meaning: he says that this word is “similar in pronunciation” to 貫, whose primary meaning is &amp;ldquo;to pass through&amp;rdquo; but which has &amp;ldquo;the extended sense of sexual penetration&amp;rdquo;. So perhaps the translation should be not &amp;quot; &amp;lsquo;Join, join&amp;rsquo; …&amp;quot; but rather &amp;quot; &amp;lsquo;Screw, screw&amp;rsquo; calls the fish-hawk&amp;quot;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I find it surprising that the words 關 and 貫 were similar enough to be confusable in the Old Chinese period. (They are pronounced similarly in modern Mandarin – kuan1 [&lt;em&gt;guān&lt;/em&gt;] versus kuan4 [&lt;em&gt;guàn&lt;/em&gt;], a difference of tone only; but 貫 is normally taken to have ended in -&lt;em&gt;s&lt;/em&gt; in Old Chinese: Shaughnessy gives it the pronunciation &lt;em&gt;kons&lt;/em&gt;, and I would write &lt;em&gt;kóns&lt;/em&gt;.) &lt;strong&gt;However, in private correspondence Shaughnessy has shown me good evidence that the words were treated as to some extent interchangeable. Nevertheless, I remain sceptical about whether the meaning, rather than the pronunciation, of either word was relevant to hearers&amp;rsquo; appreciation of the poem. Rendering a crowing sound into human speech by using a word pronounced &lt;em&gt;krón&lt;/em&gt; seems very natural.&lt;/strong&gt; Translating the first word of the Book of Odes into English with a term referring to sexual penetration would not only read bizarrely but be philologically gratuitous. (It might have helped with sales, perhaps.)&lt;/p&gt;
+&lt;p&gt;I find it surprising that the words 關 and 貫 were similar enough to be confusable in the Old Chinese period. (They are pronounced similarly in modern Mandarin – kuan1 [&lt;em&gt;guān&lt;/em&gt;] versus kuan4 [&lt;em&gt;guàn&lt;/em&gt;], a difference of tone only; but 貫 is normally taken to have ended in -&lt;em&gt;s&lt;/em&gt; in Old Chinese: Shaughnessy gives it the pronunciation &lt;em&gt;kons&lt;/em&gt;, and I would write &lt;em&gt;kóns&lt;/em&gt;.) &lt;strong&gt;However, in private correspondence Shaughnessy has shown me good evidence that the words were treated as to some extent interchangeable. Nevertheless, I remain sceptical about whether the meaning, rather than the pronunciation, of either word was relevant to hearers&#39; appreciation of the poem. Rendering a crowing sound into human speech by using a word pronounced &lt;em&gt;krón&lt;/em&gt; seems very natural.&lt;/strong&gt; Translating the first word of the Book of Odes into English with a term referring to sexual penetration would not only read bizarrely but be philologically gratuitous. (It might have helped with sales, perhaps.)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This also piqued my interest.
 While it may be true that these words were somewhat interchangeable, in single syllables, it is still a bit harder to argue that the same goes for the reduplicated form, especially if we&amp;rsquo;re dealing with SOUND ideophones, who usually display IMAGIC ICONICITY (cf. all the literature on ideophones ever in the last ten years or so, but also e.g. Dingemanse 2012; Thompson 2019).&lt;/p&gt;
@@ -4932,7 +5777,7 @@ Here&amp;rsquo;s me and my ride:&lt;/p&gt;
     <item>
       <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
       <link>/publication/2018_cogsem_weather/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       <guid>/publication/2018_cogsem_weather/</guid>
       <description></description>
     </item>
@@ -4946,7 +5791,7 @@ Here&amp;rsquo;s me and my ride:&lt;/p&gt;
 &lt;a href=&#34;http://www.thomasvanhoey.com/post/icons-we-live-by/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;I showed you what my PLN looked like about a year ago&lt;/a&gt;. I advise you to read that first before you continue reading below.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In today&amp;rsquo;s update I will lay out how I generally go about the processing of research.
 It&amp;rsquo;s a kind of habit I&amp;rsquo;ve been cultivating for a few years now, and it generally does pay off, but it did not come out of nowhere and I might have forgotten some of the sources that influenced me.
-Since the basic process hasnt&amp;rsquo; really changed in the last year, I will first display again the picture from last update:&lt;/p&gt;
+Since the basic process hasnt&#39; really changed in the last year, I will first display again the picture from last update:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/2018/PLN_2017_research.png&#34; alt=&#34;PLN 2017&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As you can see, I marked the research process with a purple frame.
 So, let&amp;rsquo;s dig into it.&lt;/p&gt;
@@ -8238,11 +9083,40 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
     </item>
     
     <item>
-      <title>Ideophones</title>
-      <link>/project/ideophones/</link>
+      <title>Chinese ideophones and prototypicality</title>
+      <link>/project/chinese-ideophones-and-prototypicality/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/ideophones/</guid>
-      <description>&lt;p&gt;The main goal of my PhD is to describe the development of Chinese ideophones from three perspectives: form, meaning, and use. This is a rather vague and big research topic, which is why I divide my work in sub projects, that eventually should glide into one coherent whole.&lt;/p&gt;
+      <guid>/project/chinese-ideophones-and-prototypicality/</guid>
+      <description>&lt;p&gt;This project, which is handled in my dissertation (
+&lt;a href=&#34;https://www.thomasvanhoey.com/files/DISSERTATION.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pdf here&lt;/a&gt;), explores prototypicality and salience effects of the variation within the Chinese ideophonic lexicon.&lt;/p&gt;
+&lt;p&gt;In my dissertation, Chinese is demonstrated to have ideophones, by unifying previously separately studied phenomena such as reduplication, binomes, and onomatopoeia.
+However, the &amp;ldquo;ideophonic lexicon&amp;rdquo; is not homogeneous; rather, it is prototypically structured.
+This is demonstrated from a synchronic and diachronic perspective, as well as across different modalities, with special attention devoted to the written modality.
+Thus, this dissertation aims to address the lacunae within the literature on ideophones, in which Chinese is often underrepresented, diachronic perspectives are scarce, and the ideophonic usage of writing is often neglected.&lt;/p&gt;
+&lt;p&gt;My original contributions to knowledge include (1) the creation of an open-source database of Chinese ideophones and (2) four methodological perspectives that show how the variation of and within this category is structured.
+The Chinese Ideophone Database (version 0.9.3) collects 4948 unique onomatopoeia and ideophones (mimetics) of modern Mandarin, as well as Middle Chinese and Old Chinese.
+It follows a framework that can be reused and updated in future research, and is accessible in different formats (.rds, .xlsx, .csv, R package and online app interface).
+Based on this database and corpus evidence, the variation of the ideophonic lexicon in Chinese is studied, in four case studies, each with its own methodological lens.&lt;/p&gt;
+&lt;p&gt;The first case study delineates the boundary of (Mandarin) Chinese ideophones as a category and investigates how it is structured.
+Using Multiple Correspondence Analysis, the interactions between morphological patterns, orthographic motivation and depiction of sensory domain were calculated.
+These confirm that sound-depicting ideophones (onomatopoeia) correlate mostly with single morphemes, and that the depiction of movement and sound mostly correlates with full reduplication.
+However, the analysis also shows how strong other correlations between different values of the parameters are.
+A follow-up application of Multiple Correspondence Analysis finds that these correlations are also found with corpus data.
+Important in both applications, however, is the fuzzy overlap between correlations, which strongly suggests that the ideophonic lexicon in Chinese has a dual prototypical core.&lt;/p&gt;
+&lt;p&gt;The second case study investigates the diachronic prototype semantics of Chinese ideophones in the semantic field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt;.
+Through manual study, the mental spaces, frames, domains and image schemas for a sample are followed.
+The meanings form interrelated polysemous clusters, which are dynamic throughout time, with clear prototypical cores that semantically extend over time and can be transient.&lt;/p&gt;
+&lt;p&gt;The third case study studies lexical variational salience within the field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt; ideophones from three perspectives by constructing a semantic vector space based on a historical corpus.
+These perspectives are semasiological salience, onomasiological salience, and structural salience.
+These three types of salience show that within the semantic field of &lt;font style=&#34;font-variant: small-caps&#34;&gt;light&lt;/font&gt;, Chinese ideophones are not a homogeneous block.
+Instead they have different features and elements that stand out, depending on one’s perspective, an observation that can be extended to other types of ideophones and the generalizations that can be made about ideophones as a category.&lt;/p&gt;
+&lt;p&gt;The fourth case study continues the probing of the heterogeneity within the Chinese ideophonic lexicon, by adopting collostructional analysis to study ideophones used in Mandarin Chinese constructions.
+The association measures obtained through this method show to what degree individual ideophonic items are attracted or repulsed by certain constructions, and that some items also depend on these constructions to even occur.
+Furthermore, the well-known ABB construction is addressed and is argued to be an instance of a more schematic construction &lt;font style=&#34;font-variant: small-caps&#34;&gt;collocate-ideophone&lt;/font&gt;.&lt;/p&gt;
+&lt;p&gt;The case studies reveal that the Chinese ideophonic lexicon is not homogeneous, and that many different elements of salience can be found, depending on the perspective and the granularity of the analysis.
+They constitute an important addition to previous research by nuancing certain intuitive truths about the nature of ideophones.&lt;/p&gt;
+&lt;h1 id=&#34;defense&#34;&gt;Defense&lt;/h1&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/wuBIgAro0ZQ&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
     </item>
     
@@ -8511,7 +9385,7 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
       <guid>/post/visit-from-vietnam/</guid>
       <description>&lt;p&gt;
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/holiday-celebrate&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Last update discussed the beginning of January and the beginning of my winter holiday&lt;/a&gt;. In this update I will report how I received a visitor from Vietnam and showed him around.&lt;/p&gt;
-&lt;h1 id=&#34;day-1-cks-&#34;&gt;Day 1: CKS  &lt;/h1&gt;
+&lt;h1 id=&#34;day-1-cks&#34;&gt;Day 1: CKS  &lt;/h1&gt;
 &lt;p&gt;I met my Vietnamese friend Quoc Anh during his study abroad in Belgium last year. In fact, you can read about some of 
 &lt;a href=&#34;https://tranlun1212.wordpress.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;his adventures on his blog&lt;/a&gt;. He&amp;rsquo;s got some family in Kaohsiung 高雄, a main city in the South of Taiwan and after travelling North via the East coast, he came to the Northwest of the country - Taipei.&lt;/p&gt;
 &lt;p&gt;The first day, after a lecture on the perdurant vs. endurant properties inherent in Chinese classifiers and measure words, we met and went to 
@@ -8676,7 +9550,7 @@ Our first picture together in Taiwan - visiting NTU&amp;rsquo;s campus and Drunk
 &lt;p&gt;As was 
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/scholarships&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;explained in the last update&lt;/a&gt;, the end of the semester is quite busy here in Taiwan. There is no official Christmas holiday here, let alone a Boxing Day (which in my home country is known as Second Christmas Day, but counts as an official holiday just as much). So, even though there are Christmas trees and markets galore, I had a lighter 
 &lt;a href=&#34;http://www.thomasvanhoey.com/suzhou/de-periode-van-de-jaarwisseling-kerstmis-en-nieuwjaar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Christmas than in China in 2012&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Christmas Eve I spent with my French friend Léo and our mutual Chinese friend Qi. We ate pizza after roaming the streets for more than an hour looking for a place that wasn&amp;rsquo;t fully booked. It was delicious, just as Chinese natives tend to ask as a standard question for &lt;em&gt;hao chi ma&lt;/em&gt;  好吃嗎? “Does it taste good?&amp;rdquo;. It probably stems from a textbook translation, but delicious is a BIG WORD in English (or in Dutch &lt;em&gt;delicieus&lt;/em&gt; or French _délicieux _for that matter). However, we had a good laugh and a good evening.&lt;/p&gt;
+&lt;p&gt;Christmas Eve I spent with my French friend Léo and our mutual Chinese friend Qi. We ate pizza after roaming the streets for more than an hour looking for a place that wasn&amp;rsquo;t fully booked. It was delicious, just as Chinese natives tend to ask as a standard question for &lt;em&gt;hao chi ma&lt;/em&gt;  好吃嗎? “Does it taste good?&amp;quot;. It probably stems from a textbook translation, but delicious is a BIG WORD in English (or in Dutch &lt;em&gt;delicieus&lt;/em&gt; or French _délicieux _for that matter). However, we had a good laugh and a good evening.&lt;/p&gt;
 &lt;p&gt;On Christmas Day I first went to my class of Corpus Linguistics, where the sympathetic Hsieh laoshi told us that the class would be over after the presentation of our classmate. Thank you! However, I still had the afternoon class, so it was not a &amp;lsquo;real holiday&amp;rsquo;. Later that night we ate&amp;hellip; PITA, because what screams more the word Christmas than a Middle-Eastern dish I loved eating (though not excessively) in Leuven? After that we went to a bar. We, that is me, the French guy, the Chinese guy and a few Malaysian people who I&amp;rsquo;ve come to like a lot. I was really happy with the bar, because they were serving Belgian beer. Here are two pictures of me posing with beers:&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/24720315351/in/album-72157663721058470/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1712/24720315351_651f8ff84a_z.jpg&#34; alt=&#34;2015-12-25 22.44.12&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -8724,7 +9598,7 @@ No K No K from day to night
 Always always happy but not sad
 No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
 &lt;p&gt;So, that was about it for my holidays update. There are still some more pictures from pizza and dinner parties at the end of the semester to celebrate our survival. Of course, end of the semester also means saying goodbye to some of my friends who were here for the first semester and then went back home. Nice meeting you guys!&lt;/p&gt;
-&lt;p&gt;[flickr_set id=&amp;quot;72157663599568419&amp;rdquo;]&lt;/p&gt;
+&lt;p&gt;[flickr_set id=&amp;ldquo;72157663599568419&amp;rdquo;]&lt;/p&gt;
 &lt;p&gt;*Maybe the tower was experiencing ejaculatio praecox?&lt;/p&gt;
 </description>
     </item>
@@ -8737,7 +9611,7 @@ No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
       <description>&lt;p&gt;Here we are again - after a few weeks of battling the tasks imposed by finals. My friends had warned me before:&lt;/p&gt;
 &lt;blockquote&gt;&#34;Whaaaat, you have taken 15 credits (of courses this semester), you will collapse during finals&#34;
 &lt;p&gt;[&amp;quot;&lt;em&gt;waaaaa ni xiule 15 xuefen, ni qimo yiding hui bengkui&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;哇～～你修了15學分，你期末一定會崩潰&lt;/em&gt;&amp;rdquo;.]&lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;哇～～你修了15學分，你期末一定會崩潰&lt;/em&gt;&amp;quot;.]&lt;/blockquote&gt;&lt;/p&gt;
 &lt;p&gt;Apart from the very interesting usage of that last word - _bengkui _&amp;lsquo;collapse&amp;rsquo;,  which seemed to be used for &amp;lsquo;the realm/our land collapses&amp;rsquo; (&lt;em&gt;tianxia&lt;/em&gt; 天下) or &amp;lsquo;the emperor dies&amp;rsquo; (e.g. &lt;em&gt;Wen di&lt;/em&gt; 文帝) in the earliest sources and is now applicable to &amp;lsquo;normal people&amp;rsquo; - they were right. The pressure was noticeable and I am sure now that 1 study credit here has a higher BMI than one in Leuven, to which I already 
 &lt;a href=&#34;http://www.thomasvanhoey.com/blog/school-1-les-2-vrije-tijd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hinted at in September&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post, I will tell you all about the scholarship award ceremony, which took place on 18 December 2015. As is often the case, these things are planned to the detail and two and a halve weeks before that date, I received an e-mail, asking me if I was interested in doing a speech in Chinese on behalf of the foreign PhD students who got the same scholarship as I had received.&lt;/p&gt;
@@ -8860,7 +9734,7 @@ No way no way who would say not to that?&lt;/blockquote&gt;&lt;/p&gt;
 &lt;a href=&#34;https://framenet.icsi.berkeley.edu/fndrupal/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fillmore&amp;rsquo;s Frame Semantic theory&lt;/a&gt; that includes frames for the lexeme &amp;lsquo;sit&amp;rsquo;, such as 
 &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Change_posture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Change_posture&lt;/a&gt; and 
 &lt;a href=&#34;https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml?frame=Posture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Posture&lt;/a&gt;, both of which require a sentient protagonist - in normal words: a human or an animal, but definitely not a bike. I friendly asked the people of the &amp;lsquo;fat people go biking for a day and take up all the space in the train&amp;rsquo; biking club if we maybe could move their bicycles in order to sit down. All I got for a reply was an angry stare and the words: &amp;ldquo;But we already put them there&amp;rdquo;. I will share with you my questionable looking face that I also posted on facebook.   
-&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23149603326/in/album-72157661394505216/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/771/23149603326_afb7e0e553_z.jpg&#34; alt=&#34;My bike is a person&#34;&gt;&lt;/a&gt;Speaking of facebook, there were a lot of people who supported my frustration (almost 70), but some people commented that there are rude people everywhere around the globe and to think otherwise is a fallacy. I guess that commenter is right, but it still is not nice when it happens. And the worst part is that I did not know if I was &amp;lsquo;allowed&amp;rsquo; as a foreigner to continue the debate with these thick people or I should let it go. My nature seems to be to want to fight, but I saw in my companions&amp;rsquo; eyes that they did not want to fight for their seat, so I backed down as well. I was thinking back to a line i our guidebooks we got in the third year of high school, when we went on a class trip to London. It read:&lt;/p&gt;
+&lt;a href=&#34;https://www.flickr.com/photos/86097314@N03/23149603326/in/album-72157661394505216/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://farm1.staticflickr.com/771/23149603326_afb7e0e553_z.jpg&#34; alt=&#34;My bike is a person&#34;&gt;&lt;/a&gt;Speaking of facebook, there were a lot of people who supported my frustration (almost 70), but some people commented that there are rude people everywhere around the globe and to think otherwise is a fallacy. I guess that commenter is right, but it still is not nice when it happens. And the worst part is that I did not know if I was &amp;lsquo;allowed&amp;rsquo; as a foreigner to continue the debate with these thick people or I should let it go. My nature seems to be to want to fight, but I saw in my companions&#39; eyes that they did not want to fight for their seat, so I backed down as well. I was thinking back to a line i our guidebooks we got in the third year of high school, when we went on a class trip to London. It read:&lt;/p&gt;
 &lt;blockquote&gt;Provoceer geen marginalen! (Do not provoke marginalised people!)&lt;/blockquote&gt;
 &lt;p&gt;And it is one of the tenets that I use to find my way in life.&lt;/p&gt;
 &lt;h1 id=&#34;other-updates&#34;&gt;&lt;strong&gt;Other updates&lt;/strong&gt;&lt;/h1&gt;

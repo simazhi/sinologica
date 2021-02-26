@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.8.9)  19 AUG 2020 15:35
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.21)  7 NOV 2020 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **cv_thomas.tex
 (./cv_thomas.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-08-07> (/Users/Thomas/Library/TinyTeX/texmf-dist/tex
+L3 programming layer <2020-09-06> (/Users/Thomas/Library/TinyTeX/texmf-dist/tex
 /latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
@@ -138,16 +138,16 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/07/15 v2.5i e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count184
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.st
 y (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-08-07 L3 programming layer (loader) 
+Package: expl3 2020-09-06 L3 programming layer (loader) 
 
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xdvipdf
-mx.def
-File: l3backend-xdvipdfmx.def 2020-08-07 L3 backend support: xdvipdfmx
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.d
+ef
+File: l3backend-xetex.def 2020-09-11 L3 backend support: XeTeX
 \g__graphics_track_int=\count185
 \l__pdf_internal_box=\box47
 \g__pdf_backend_object_int=\count186
@@ -297,7 +297,7 @@ Package fontspec Info: Font family 'Impact(0)' created for font 'Impact' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
-Package: xeCJK 2020/06/06 v3.8.4 Typesetting CJK scripts with XeLaTeX
+Package: xeCJK 2020/08/23 v3.8.5 Typesetting CJK scripts with XeLaTeX
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2
 e.sty
@@ -316,7 +316,7 @@ Package: xtemplate 2020-05-15 L3 Experimental prototype document functions
 \l__xeCJK_tmp_dim=\dimen148
 \l__xeCJK_tmp_skip=\skip53
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty
-Package: ctexhook 2020/06/06 v2.5.3 Document and package hooks (CTEX)
+Package: ctexhook 2020/08/23 v2.5.4 Document and package hooks (CTEX)
 )
 \g__xeCJK_space_factor_int=\count275
 \l__xeCJK_begin_int=\count276
@@ -346,7 +346,7 @@ Package: ctexhook 2020/06/06 v2.5.3 Document and package hooks (CTEX)
 \l__xeCJK_widow_penalty_int=\count280
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2329.
+(xtemplate)             argument(s) on line 2335.
 
 \l__xeCJK_fixed_punct_width_dim=\dimen157
 \l__xeCJK_mixed_punct_width_dim=\dimen158
@@ -373,7 +373,7 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_verb_case_int=\count284
 \l__xeCJK_verb_exspace_skip=\skip58
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
-File: xeCJK.cfg 2020/06/06 v3.8.4 Configuration file for xeCJK package
+File: xeCJK.cfg 2020/08/23 v3.8.5 Configuration file for xeCJK package
 ))
 
 Package fontspec Info: Noto Sans CJK TC scale = 0.7937400769025417.
@@ -460,45 +460,24 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen187
 \titlewidthfirst=\dimen188
 )
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesome.sty
-Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5.s
+ty
+Package: fontawesome5 2020/03/24 v5.13.0 Font Awesome 5
 
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesomesymb
-ols-generic.tex)
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5-u
+tex-helper.sty
+Package: fontawesome5-utex-helper 2020/03/24 v5.13.0 uTeX helper for fontawesom
+e5
+LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on i
+nput line 69.
 
-Package fontspec Info: FontAwesome scale = 0.4326173968980059.
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/tufontawesomef
+ree.fd)
+LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on
+ input line 70.
 
-
-Package fontspec Info: Could not resolve font "FontAwesome/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FontAwesome/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FontAwesome/I" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: FontAwesome scale = 0.4326173968980059.
-
-
-Package fontspec Info: Font family 'FontAwesome(0)' created for font
-(fontspec)             'FontAwesome' with options
-(fontspec)             [Ligatures=TeX,Scale=MatchLowercase].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.4326173968980059]"FontAwesome/AAT:mapping=tex-te
-xt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome/fontawesomesymb
-ols-xeluatex.tex))
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/tufontawesomeb
+rands.fd)))
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/academicons/academicons.sty
 Package: academicons 2020/08/14 v1.9.0 Academicons Icons
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -708,7 +687,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 147.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
@@ -737,8 +716,6 @@ LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
 (Font)              scaled to size 20.0062pt on input line 106.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/b/n' will be
 (Font)              scaled to size 19.74841pt on input line 106.
-LaTeX Font Info:    Font shape `TU/FontAwesome(0)/m/n' will be
-(Font)              scaled to size 5.1914pt on input line 118.
 
 Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 (xeCJK)                
@@ -782,68 +759,66 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
 (Font)              scaled to size 11.57913pt on input line 121.
-LaTeX Font Info:    Font shape `TU/FontAwesome(0)/m/n' will be
-(Font)              scaled to size 6.22968pt on input line 121.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--122
+Underfull \hbox (badness 10000) in paragraph at lines 118--123
 
  []
 
 LaTeX Font Info:    Trying to load font information for TU+academicons on input
- line 128.
+ line 129.
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/academicons/tuacademicons.f
 d)
 Missing character: There is no   in font [academicons.ttf]:!
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
-(Font)              scaled to size 9.64929pt on input line 129.
+(Font)              scaled to size 9.64929pt on input line 130.
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
 
-Overfull \hbox (1.67253pt too wide) in paragraph at lines 117--131
+Overfull \hbox (1.67253pt too wide) in paragraph at lines 117--132
 [][] [] 
  []
 
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 13.89497pt on input line 140.
+(Font)              scaled to size 13.89497pt on input line 141.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 13.89497pt on input line 140.
+(Font)              scaled to size 13.89497pt on input line 141.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/sc' will be
-(Font)              scaled to size 13.89497pt on input line 140.
+(Font)              scaled to size 13.89497pt on input line 141.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 9.64929pt on input line 149.
+(Font)              scaled to size 9.64929pt on input line 150.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 9.52496pt on input line 154.
+(Font)              scaled to size 9.52496pt on input line 155.
 
 LaTeX Font Warning: Font shape `TU/NotoSansCJKTC(0)/m/it' undefined
-(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 165.
+(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 166.
 
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 11.57913pt on input line 208.
+(Font)              scaled to size 11.57913pt on input line 215.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/sl' in size <14.4> not availa
 ble
 (Font)              Font shape `TU/NotoSerif(0)/m/it' tried instead on input li
-ne 208.
+ne 215.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
-(Font)              scaled to size 11.57913pt on input line 208.
+(Font)              scaled to size 11.57913pt on input line 215.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 285.
+(Font)              scaled to size 6.43286pt on input line 279.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 285.
+(Font)              scaled to size 6.34998pt on input line 279.
 [2]
-Underfull \hbox (badness 2285) in paragraph at lines 318--324
+Underfull \hbox (badness 2285) in paragraph at lines 329--335
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
 ES corpora. ICLC 15 [International
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 318--324
+Underfull \hbox (badness 1286) in paragraph at lines 329--335
 \TU/NotoSerif(0)/m/n/12 Cognitive Linguistics Conference], Nishinomiya: Kwansei
  Gakuin University. 6-11 August 2019.
  []
@@ -851,24 +826,24 @@ Underfull \hbox (badness 1286) in paragraph at lines 318--324
 [3] [4] [5] [6] 
 AED: lastpage setting LastPage
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 603.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 603.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 614.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
 (./cv_thomas.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 603.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 603.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 614.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
-(rerunfilecheck)             Checksum: 73294D400EC2881886788DC87EF0D7AD;1963.
+(rerunfilecheck)             Checksum: C241248EDA5008E5962B1FE0204E9D0D;2002.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 17202 strings out of 481691
- 328189 string characters out of 5932656
- 650405 words of memory out of 5000000
- 34015 multiletter control sequences out of 15000+600000
- 548060 words of font info for 90 fonts, out of 8000000 for 9000
+ 17278 strings out of 481674
+ 327346 string characters out of 5932170
+ 656475 words of memory out of 5000000
+ 34106 multiletter control sequences out of 15000+600000
+ 548044 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,12n,122p,1198b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,12n,119p,1198b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cv_thomas.pdf (7 pages).

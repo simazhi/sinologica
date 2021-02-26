@@ -37,7 +37,7 @@ Our group was kind of small, eight people, who found themselves grappling with R
 What they had had in mind, I guess, was an intro to one package, or one tool to do everything; instead, I decided to give them one swiss army knife.
 While it does take a long time to *learn R* (steep learning curve) and many people have despaired (see cartoon below), I think that for newcomers [**it is okay to start with the so-called tidyverse**](http://varianceexplained.org/r/teach-tidyverse/). 
 
-![](http://gilesd-j.com/wp-content/uploads/2018/03/learning-curve.jpg)
+![](https://gilesd-j.com/wp-content/uploads/2018/03/learning-curve.jpg)
 
 So my love for the tidyverse can be exemplified in the following meme:
 

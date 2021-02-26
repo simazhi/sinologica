@@ -5,7 +5,7 @@
     <link>/publication/</link>
       <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0200</lastBuildDate>
     <image>
       <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
       <title>Publications</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
       <link>/publication/2018_cogsem_weather/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
       <guid>/publication/2018_cogsem_weather/</guid>
       <description></description>
     </item>
