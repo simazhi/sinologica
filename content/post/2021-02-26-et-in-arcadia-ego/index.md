@@ -24,7 +24,7 @@ projects: []
 
 ---
 
-I'm writing this post from my compulsroy quarantine hotel in Hong Kong, where I started my postdoctoral fellowship this month. However, by being secluded from the outside--I literally cannot open the window and take a breath of fresh air, luckily the air conditioning system is working optimally--has made me realize how much I have missed just being in Belgium at home during my PhD in Taiwan. Here are some moments that have stood out for me.
+I'm writing this post from my compulsory quarantine hotel in Hong Kong, where I started my postdoctoral fellowship this month. However, by being secluded from the outside--I literally cannot open the window and take a breath of fresh air, luckily the air conditioning system is working optimally--has made me realize how much I have missed just being in Belgium at home during my PhD in Taiwan. Here are some moments that have stood out for me.
 
 # Meeting friends
 
