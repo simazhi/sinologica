@@ -6,6 +6,8 @@ output:
   pdf_document:
     latex_engine: xelatex
     template: template_thomas.tex
+  html_document:
+    df_print: paged
 CJKmainfont: Noto Sans CJK TC
 sansfont: Impact
 mainfont: Noto Serif
@@ -26,7 +28,7 @@ keywords: R Markdown, academic CV, template
 fontsize: 12pt
 linkcolor: blue
 urlcolor: blue
-keep_tex: true
+keep_tex: yes
 ---
 
 <!-- # Biography 
@@ -102,7 +104,6 @@ Postdoctoral fellow (PIs Youngah Do, Mark Dingemanse), The University of Hong Ko
 
 **Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale*49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
 
-
 **Van Hoey, Thomas**. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* (4:2), 230-259. [doi: 10.1163/23526416-00402003](https://doi.org/10.1163/23526416-00402003)
 
 <!-- ## Non-refereed articles -->
@@ -134,7 +135,11 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 ## Publications under review
 
+Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *second round*
+
 **Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. *second round*
+
+
 
 
 ## Publications in preparation
@@ -270,7 +275,10 @@ management of membership database and coordinating KU Leuven Connect
 
 ## Reviewing
 
-* Mapping China Journal (https://mappingchina.org)
+* Cognitive Linguistics
+* Journal of Experimental Psychology:  Learning, Memory, and Cognition
+* Handbook of Cognitive Semantics
+* Mapping China Journal
 
 ## Conference organisation
 
