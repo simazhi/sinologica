@@ -276,8 +276,8 @@ management of membership database and coordinating KU Leuven Connect
 ## Reviewing
 
 * Cognitive Linguistics
-* Journal of Experimental Psychology:  Learning, Memory, and Cognition
 * Handbook of Cognitive Semantics
+* Journal of Experimental Psychology:  Learning, Memory, and Cognition
 * Mapping China Journal
 
 ## Conference organisation
@@ -306,10 +306,11 @@ summer schools?
 
 # Technological knowledge
 - Microsoft office (Word, Excel, PowerPoint, Access) and open source variants
-- \LaTeX (typesetting)
+- \LaTeX{} (typesetting)
 - Database construction and management
 - Application deployment with Shiny
 - R, Python (statistical research)
+- Psychopy3
 - Experimental design and corpus research
 - Regression analysis, cluster analysis, principal components analysis, dendrograms
 - Knowledge of general linguistic theories, (lexical-semantial) Cognitive Linguistics, descriptive and typological linguistics, computational linguistics
