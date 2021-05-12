@@ -1,0 +1,164 @@
+---
+title: 'Setting up a clean project: the best practice I use'
+date: '2021-05-12'
+slug: [cleanproject]
+categories:
+  - Blog
+tags:
+  - academic workflow
+  - rstats
+  - R
+  - coding
+  - project management
+subtitle: ''
+summary: ''
+authors: [Thomas Van Hoey]
+lastmod: '2021-05-12T16:48:35+08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>I’ve been settling in at my <a href="https://linguistics.hku.hk/ldlhku/people/">new job at the Language Development Lab at HKU</a>, which I started physically in March 2021.
+I will soon do an update on my time in Hong Kong since then, but this post is written with future me in mind.
+A big part of my job is to work out the practical implementations of experiments, and that has thus far involved managing the project structure, designing psychopy experiments, and post-experiment analysis in R.
+This seems like a nice trilogy of technical posts, and I hope to deliver to you (and future me).
+Today’s special on the menu is automating the set-up of a project.</p>
+<div id="why-worry-about-this" class="section level1">
+<h1>Why worry about this</h1>
+<p>Most people that are not very code minded have a vague idea of what a folder on their computer should look like and will let the structure of the subfolders automatically emerge.
+Perhaps you tell yourself you will remember which version is the “real final one” and that some of the figures are in that other folder somewhere else on your computer in that one powerpoint slide and that some data can be found under a rock, if you look closely, and oh no it was not the final version after all and you need to make some changes so you add a date, then go find some more data and then remember that maybe if you change a little bit here and there it might be a better version but it’s on the same date, so now it’s today’s date but with an ‘a’ behind it so you will remember and then you’re kinda sure it’s the <em>final-final</em> version so you save it but when you come back next week it turns out there is an even <em>finaler</em> version but then luckily you’re finished.</p>
+<iframe src="https://giphy.com/embed/O6kXMliNmPMiY" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen>
+</iframe>
+<p>
+<a href="https://giphy.com/gifs/later-O6kXMliNmPMiY">via GIPHY</a>
+</p>
+<p>You come back to that document because there was something in it and luckily you still have all versions on your computer but which version is “the real final version”?
+<em><a href="https://en.wiktionary.org/wiki/Joost_mag_het_weten">Joost might know it.</a></em>
+All you find is the following structure:</p>
+<p><img src="https://doctorfreelance.com/wp-content/uploads/2016/05/file-naming.png" /></p>
+<p>And even though <a href="https://doctorfreelance.com/file-naming-conventions/">the post</a> this picture was featured on lists some great tips to avoid the most important versioning issues – I am also privy to using DATE extensions when working with other people in MS Word, e.g., “paperstudy_20210512.docx” – the burden can be alleviated by using a version control system like github.
+I’ve done that for my dissertation and it has been very useful to retrieve older sections, but it did make revisions and comments from my supervisor, who preferred MS Word, more difficult, as we had to settle on PDF and the comment system there.
+There is less friction with the track-changes and comment functions in MS Word than with PDF, but I think I would still prefer a versioning system.</p>
+<p>Anyway, an organically grown folder structure may be clear in the moment, but your future self will curse you, or even worse, hex you.
+The answer to avoiding a lot of future project pain is having a structure that is easy to set up, and is flexible to suit a particular project’s needs.</p>
+</div>
+<div id="best-practices" class="section level1">
+<h1>Best practices</h1>
+<p>Just googling for something like ‘R project structure best practices’ will result in a number of very interesting blogs that advocate what a project folder <del>could</del> should look like.
+For instance, <em>Nice R Code</em> <a href="https://nicercode.github.io/blog/2013-04-05-projects/">shows</a> that a good project layout ensures the integrity of the data, the portability of the project, and the support for the future usage.
+There’s also <em>Krista Destasio’s</em> <a href="https://kdestasio.github.io/post/r_best_practices/">best practices in R</a> or <a href="https://aosmith.rbind.io/2018/10/29/an-example-directory-structure/">an example directory structure</a> on <em>Very statisticious</em>.
+For me, the importance of having a decent structure kicked in about 1.5 years ago, when I did a massive overhaul of my dissertation folder after seeing Jenny Bryan talk about <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">project-oriented workflows</a>, and I wished I had started with a clear structure from the beginning.
+And now I can’t really see myself not making a somewhat clear structure from the beginning.</p>
+<p>So what does my own best practice look like?
+It will be something close to the structure in this screenshot (which I will be building in today’s post, so stay tuned for that).</p>
+<p><img src="images/docstructure.png" /></p>
+<p>As you can see I have quite a number of folders and files, <em>from the getgo</em>.
+First there is the <code>Rproj</code> file (here <code>ABB.Rproj</code>).
+This ensures I can use my project-oriented workflow and keep track, and also connect the code to github if I so desired and I usually desire so.</p>
+<p>Next is the <code>README.md</code> file, a typical file in which you write important information you want other people to read.
+This is a useful piece of documentation, but if you’re not into filling that out in the beginning that’s okay too; it doesn’t take up much space lol.</p>
+<p>Our first folder is the <code>data/</code> folder, which has two subfolders: <code>data/raw/</code> and <code>data/processed/</code>.
+The main idea is that the <code>raw/</code> folder contains original data you bring to the analysis, while the <code>processed/</code> folder acts as a dumping ground for intermediate data files, not necessarily output.
+The <code>processed/</code> folder is a quite new structure for me, so I don’t know if I’m going to keep it around.</p>
+<p>Then we have the <code>documents/</code> folder, which should contain supporting documents, maybe some crucial papers, or a figure that’s important for the argument.</p>
+<p>Next <code>figures/</code> will eventually contain figures generated by code or in powerpoint, or whatever fancy software you wish to use, like photoshop.
+It’s useful to have this as a separate folder because some journals will ask you to submit the figures separately.</p>
+<p>Then there are the <code>notes/</code>, a place for random notes and observations.</p>
+<p>There is <code>output/</code>, which ideally consists of the output data that will see the light of day in a repository, cleaned and ready for analysis.
+In my conception, that means that <code>output/</code> can also contain data to be read in again in a final representation of the script.</p>
+<p>Next we have <code>paper/</code>.
+This is where I keep different versions of the paper, ideally coded with a date as mentioned above.</p>
+<p>There is the <code>previous/</code> folder, in which I will periodically move older versions of the paper we don’t need in the moment but may want to keep around <em>just a little bit longer</em>.
+It also acts as a kind of bin, tbh.</p>
+<p>And finally there is the <code>scripts/</code> folder, in which I would store all .R, .Rmd and .py or what have you files.</p>
+<p><strong>Note that this structure is completely flexible and is bound to change for every project.</strong>
+For instance, there may be a replication component, so it is good to have a separate folder for stimuli or figures from that paper (perhaps under <code>documents/</code> but hey, you do you boo).
+Or if you have an experiment, like I find myself these days with Psychopy, that inevitably comes with a <code>psychopy/</code> folder.</p>
+<p>So, are we good on the idea that 1) it is beneficial to work with projects? and 2) the initial project structure should something like the picture above?
+Okay, time to move on to the next step: workflow and automation.</p>
+</div>
+<div id="version-control---github" class="section level1">
+<h1>1) Version control - github</h1>
+<p>I think it is clear by now that in most cases I would advocate for a version controlled project.
+That usually means I would start on Github to create a new project, as such:</p>
+<p><img src="images/githubnewproject.png" /></p>
+<p>Then fill out the information for your new project.
+I like to start with a private repository, but that’s up to you.
+I would suggest adding the README file and also a .gitignore.</p>
+<p><img src="images/githubnew.png" /></p>
+<p>After the project is started, if you’re on a Mac, go to the .gitignore dotfile and add the following to that file and save it.
+This will make sure that the very annoying .DS_Store files that a reviewer commented on in the past, won’t show up in the project.
+(<em>What are .DS_Store files anyway and why do they keep appearing????</em>)</p>
+<pre><code># .DS_Store
+.DS_Store</code></pre>
+<p>Okay, now you’re all set for step 2.</p>
+</div>
+<div id="version-control---local" class="section level1">
+<h1>2) Version control - local</h1>
+<p>Now, open Rstudio, and create a new project.</p>
+<p><img src="images/newprojectr.png" /></p>
+<p>Next, click on version control with git:</p>
+<p><img src="images/CleanShot%202021-05-12%20at%2015.09.48@2x.png" /></p>
+<p>Fill out the details and open in new session:</p>
+<p><img src="images/CleanShot%202021-05-12%20at%2015.11.41@2x.png" /></p>
+<p>If you don’t want to use github or a similar hub or lab for doing version control, I would at least do it locally.
+In that case you choose “New Directory” (recommended) or “Existing Directory” (not recommended) for making the folder with its <code>Rproj</code> file.</p>
+</div>
+<div id="add-the-folder-structure" class="section level1">
+<h1>3) Add the folder structure</h1>
+<p>Now you have something like this (I turned on the normally invisible dotfiles like .gitignore so you can see their presence):</p>
+<p><img src="images/CleanShot%202021-05-12%20at%2015.12.59@2x.png" /></p>
+<p>Quite barren, isn’t it.
+<strong>Now comes the trick to avoid having to manually make new folders.</strong></p>
+<p>Click on <code>ABB.Rproj</code> (or whatever you named your project folder, followed by <code>.Rproj</code>).
+This will open up Rstudio.
+Make a new script or Rmarkdown file and run the following code:</p>
+<pre><code>library(here)
+library(fs)
+
+dir_create(here(&quot;data&quot;, &quot;raw&quot;))        # raw data
+dir_create(here(&quot;data&quot;, &quot;processed&quot;))  # intermediate data
+dir_create(here(c(&quot;scripts&quot;,           # storing all .R, .Rmd, .py files
+                  &quot;figures&quot;,           # output figures
+                  &quot;output&quot;,            # output files
+                  &quot;previous&quot;,          # previous versions keep for record
+                  &quot;paper&quot;,             # current versions of the document
+                  &quot;notes&quot;,             # random notes
+                  &quot;documents&quot;          # supporting documents
+                  )
+                )
+           )</code></pre>
+<p>Voilà, the structure has been generated in the right way.</p>
+</div>
+<div id="thoughts-on-here-and-fs" class="section level1">
+<h1>Thoughts on <code>here</code> and <code>fs</code></h1>
+<p>I cannot stress how important the anchor of Rproj files has been to my workflow, whether or not I actually run code for a particular project.
+In the not so distant past, R code usually would start with lines like the following to make sure you’re in the right working directory (<code>getwd()</code> and <code>setwd()</code>).</p>
+<pre><code># mac
+setwd(&quot;C:/Thomas/dropbox/here/is/my/unique/folder&quot;)
+# windows
+setwd(&quot;C:\\Thomas\\dropbox\\here\\is\\my\\unique\\folder&quot;)
+
+rm (list=ls())</code></pre>
+<p>Luckily, we were warned not to do so by Jenny Bryan.</p>
+<p><img src="https://miro.medium.com/max/1400/1*fmEQAQ7H_cqAzwOPCIhv8w.png" /></p>
+<p>And even <em>luckierly</em>, we can just make sure there is an <code>Rproj</code> file in our project folder, and then use the <code>here</code> <a href="https://github.com/jennybc/here_here">package</a> to have a transportable folder that will work both on Windows and Mac (and I guess Linux?) to navigate the structure of folders and files.</p>
+<p>The <code>fs</code> <a href="https://github.com/r-lib/fs">package</a> is a better version for managing paths and directories than Base R.
+The first function (in combination with <code>here</code>) that I find myself using a lot is:</p>
+<pre><code>datalist &lt;- fs::dir_ls(here(&quot;data&quot;, &quot;subfolder_with_lots_of_files&quot;),
+                       regexp = &quot;.csv$&quot;,
+                       recurse = TRUE)</code></pre>
+<p>This will get you a vector of all .csv files you want to loop over, and it is easy to write and to remember.</p>
+<p>The second function that I like helped me draw the diagram of the folder structure given above:</p>
+<pre><code>dir_tree(here())</code></pre>
+<p>Yes, it was that simple to make that figure.</p>
+<p>Anyways, future me and other readers for who this is helpful, now I have a place to come copy the code chunk for generating the project setup and also a record of my current best practice of starting a project.
+More posts to follow!</p>
+</div>
