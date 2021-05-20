@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.21)  26 FEB 2021 23:28
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.21)  30 APR 2021 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -808,17 +808,17 @@ ne 215.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
 (Font)              scaled to size 11.57913pt on input line 215.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 279.
+(Font)              scaled to size 6.43286pt on input line 283.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 279.
+(Font)              scaled to size 6.34998pt on input line 283.
 [2]
-Underfull \hbox (badness 2285) in paragraph at lines 329--335
+Underfull \hbox (badness 2285) in paragraph at lines 333--339
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
 ES corpora. ICLC 15 [International
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 329--335
+Underfull \hbox (badness 1286) in paragraph at lines 333--339
 \TU/NotoSerif(0)/m/n/12 Cognitive Linguistics Conference], Nishinomiya: Kwansei
  Gakuin University. 6-11 August 2019.
  []
@@ -826,11 +826,11 @@ Underfull \hbox (badness 1286) in paragraph at lines 329--335
 [3] [4] [5] [6] 
 AED: lastpage setting LastPage
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 614.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
 (./cv_thomas.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 614.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 626.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 626.
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
 (rerunfilecheck)             Checksum: C241248EDA5008E5962B1FE0204E9D0D;2002.
 
