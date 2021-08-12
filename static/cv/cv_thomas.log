@@ -1,29 +1,29 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.21)  30 APR 2021 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.10)  12 AUG 2021 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **cv_thomas.tex
 (./cv_thomas.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-09-06> (/Users/Thomas/Library/TinyTeX/texmf-dist/tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-05-07> (/Users/Thomas/Library/TinyTeX/texmf-dist/tex
 /latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count164
-\c@section=\count165
-\c@subsection=\count166
-\c@subsubsection=\count167
-\c@paragraph=\count168
-\c@subparagraph=\count169
-\c@figure=\count170
-\c@table=\count171
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -67,7 +67,7 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -75,50 +75,50 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen135
+\ex@=\dimen139
 )) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen136
+\pmbraise@=\dimen140
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count172
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count173
-\leftroot@=\count174
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count175
-\DOTSCASE@=\count176
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen137
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count177
-\c@MaxMatrixCols=\count178
+\inf@bad=\count183
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count184
+\leftroot@=\count185
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count186
+\DOTSCASE@=\count187
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count188
+\c@MaxMatrixCols=\count189
 \dotsspace@=\muskip16
-\c@parentequation=\count179
-\dspbrk@lvl=\count180
+\c@parentequation=\count190
+\dspbrk@lvl=\count191
 \tag@help=\toks17
-\row@=\count181
-\column@=\count182
-\maxfields@=\count183
+\row@=\count192
+\column@=\count193
+\maxfields@=\count194
 \andhelp@=\toks18
-\eqnshift@=\dimen138
-\alignsep@=\dimen139
-\tagshift@=\dimen140
-\tagwidth@=\dimen141
-\totwidth@=\dimen142
-\lineht@=\dimen143
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
 \@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
@@ -138,65 +138,65 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count184
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.st
 y (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-09-06 L3 programming layer (loader) 
+Package: expl3 2021-05-07 L3 programming layer (loader) 
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.d
 ef
-File: l3backend-xetex.def 2020-09-11 L3 backend support: XeTeX
-\g__graphics_track_int=\count185
-\l__pdf_internal_box=\box47
-\g__pdf_backend_object_int=\count186
-\g__pdf_backend_annotation_int=\count187
+File: l3backend-xetex.def 2021-05-07 L3 backend support: XeTeX
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count196
+\l__color_backend_stack_int=\count197
+\g__color_backend_stack_int=\count198
+\g__graphics_track_int=\count199
+\l__pdf_internal_box=\box49
+\g__pdf_backend_object_int=\count266
+\g__pdf_backend_annotation_int=\count267
+\g__pdf_backend_link_int=\count268
 ))
-Package: xparse 2020-05-15 L3 Experimental document command parser
-
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-20
+20-10-01.sty
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-ge
-neric.tex
-\l__xparse_current_arg_int=\count188
-\g__xparse_grabber_int=\count189
-\l__xparse_m_args_int=\count190
-\l__xparse_v_nesting_int=\count191
-))
+neric.tex)))
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count192
-\l__fontspec_language_int=\count193
-\l__fontspec_strnum_int=\count194
-\l__fontspec_tmp_int=\count195
-\l__fontspec_tmpa_int=\count196
-\l__fontspec_tmpb_int=\count197
-\l__fontspec_tmpc_int=\count198
-\l__fontspec_em_int=\count199
-\l__fontspec_emdef_int=\count266
-\l__fontspec_strong_int=\count267
-\l__fontspec_strongdef_int=\count268
-\l__fontspec_tmpa_dim=\dimen144
-\l__fontspec_tmpb_dim=\dimen145
-\l__fontspec_tmpc_dim=\dimen146
+\l__fontspec_script_int=\count269
+\l__fontspec_language_int=\count270
+\l__fontspec_strnum_int=\count271
+\l__fontspec_tmp_int=\count272
+\l__fontspec_tmpa_int=\count273
+\l__fontspec_tmpb_int=\count274
+\l__fontspec_tmpc_int=\count275
+\l__fontspec_em_int=\count276
+\l__fontspec_emdef_int=\count277
+\l__fontspec_strong_int=\count278
+\l__fontspec_strongdef_int=\count279
+\l__fontspec_tmpa_dim=\dimen148
+\l__fontspec_tmpb_dim=\dimen149
+\l__fontspec_tmpc_dim=\dimen150
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Use
 rs/Thomas/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks21
 \XKV@tempa@toks=\toks22
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count269
+\XKV@depth=\count280
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\c@eu@=\count270
-\c@eu@i=\count271
-\c@mkern=\count272
+\c@eu@=\count281
+\c@eu@i=\count282
+\c@mkern=\count283
 )
 
 Package fontspec Info: Noto Serif scale = 0.8041012599370388.
@@ -297,30 +297,30 @@ Package fontspec Info: Font family 'Impact(0)' created for font 'Impact' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
-Package: xeCJK 2020/08/23 v3.8.5 Typesetting CJK scripts with XeLaTeX
+Package: xeCJK 2020/10/19 v3.8.6 Typesetting CJK scripts with XeLaTeX
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2
 e.sty
-Package: l3keys2e 2020-05-15 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-05-07 LaTeX2e option processing using LaTeX3 keys
 )
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtempl
 ate.sty
-Package: xtemplate 2020-05-15 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen147
-\l__xtemplate_tmp_int=\count273
+Package: xtemplate 2021-05-07 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen151
+\l__xtemplate_tmp_int=\count284
 \l__xtemplate_tmp_muskip=\muskip17
 \l__xtemplate_tmp_skip=\skip52
 )
-\l__xeCJK_tmp_int=\count274
-\l__xeCJK_tmp_box=\box48
-\l__xeCJK_tmp_dim=\dimen148
+\l__xeCJK_tmp_int=\count285
+\l__xeCJK_tmp_box=\box50
+\l__xeCJK_tmp_dim=\dimen152
 \l__xeCJK_tmp_skip=\skip53
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty
-Package: ctexhook 2020/08/23 v2.5.4 Document and package hooks (CTEX)
+Package: ctexhook 2021/03/14 v2.5.6 Document and package hooks (CTEX)
 )
-\g__xeCJK_space_factor_int=\count275
-\l__xeCJK_begin_int=\count276
-\l__xeCJK_end_int=\count277
+\g__xeCJK_space_factor_int=\count286
+\l__xeCJK_begin_int=\count287
+\l__xeCJK_end_int=\count288
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -330,50 +330,50 @@ Package: ctexhook 2020/08/23 v2.5.4 Document and package hooks (CTEX)
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip54
-\g__xeCJK_node_int=\count278
-\c__xeCJK_CJK_node_dim=\dimen149
-\c__xeCJK_CJK-space_node_dim=\dimen150
-\c__xeCJK_default_node_dim=\dimen151
-\c__xeCJK_default-space_node_dim=\dimen152
-\c__xeCJK_CJK-widow_node_dim=\dimen153
-\c__xeCJK_normalspace_node_dim=\dimen154
+\g__xeCJK_node_int=\count289
+\c__xeCJK_CJK_node_dim=\dimen153
+\c__xeCJK_CJK-space_node_dim=\dimen154
+\c__xeCJK_default_node_dim=\dimen155
+\c__xeCJK_default-space_node_dim=\dimen156
+\c__xeCJK_CJK-widow_node_dim=\dimen157
+\c__xeCJK_normalspace_node_dim=\dimen158
 \l__xeCJK_ccglue_skip=\skip55
 \l__xeCJK_ecglue_skip=\skip56
 \l__xeCJK_punct_kern_skip=\skip57
-\l__xeCJK_last_penalty_int=\count279
-\l__xeCJK_last_bound_dim=\dimen155
-\l__xeCJK_last_kern_dim=\dimen156
-\l__xeCJK_widow_penalty_int=\count280
+\l__xeCJK_last_penalty_int=\count290
+\l__xeCJK_last_bound_dim=\dimen159
+\l__xeCJK_last_kern_dim=\dimen160
+\l__xeCJK_widow_penalty_int=\count291
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2335.
+(xtemplate)             argument(s) on line 2341.
 
-\l__xeCJK_fixed_punct_width_dim=\dimen157
-\l__xeCJK_mixed_punct_width_dim=\dimen158
-\l__xeCJK_middle_punct_width_dim=\dimen159
-\l__xeCJK_fixed_margin_width_dim=\dimen160
-\l__xeCJK_mixed_margin_width_dim=\dimen161
-\l__xeCJK_middle_margin_width_dim=\dimen162
-\l__xeCJK_bound_punct_width_dim=\dimen163
-\l__xeCJK_bound_margin_width_dim=\dimen164
-\l__xeCJK_margin_minimum_dim=\dimen165
-\l__xeCJK_kerning_total_width_dim=\dimen166
-\l__xeCJK_same_align_margin_dim=\dimen167
-\l__xeCJK_different_align_margin_dim=\dimen168
-\l__xeCJK_kerning_margin_width_dim=\dimen169
-\l__xeCJK_kerning_margin_minimum_dim=\dimen170
-\l__xeCJK_bound_dim=\dimen171
-\l__xeCJK_reverse_bound_dim=\dimen172
-\l__xeCJK_margin_dim=\dimen173
-\l__xeCJK_minimum_bound_dim=\dimen174
-\l__xeCJK_kerning_margin_dim=\dimen175
-\g__xeCJK_family_int=\count281
-\l__xeCJK_fam_int=\count282
-\g__xeCJK_fam_allocation_int=\count283
-\l__xeCJK_verb_case_int=\count284
+\l__xeCJK_fixed_punct_width_dim=\dimen161
+\l__xeCJK_mixed_punct_width_dim=\dimen162
+\l__xeCJK_middle_punct_width_dim=\dimen163
+\l__xeCJK_fixed_margin_width_dim=\dimen164
+\l__xeCJK_mixed_margin_width_dim=\dimen165
+\l__xeCJK_middle_margin_width_dim=\dimen166
+\l__xeCJK_bound_punct_width_dim=\dimen167
+\l__xeCJK_bound_margin_width_dim=\dimen168
+\l__xeCJK_margin_minimum_dim=\dimen169
+\l__xeCJK_kerning_total_width_dim=\dimen170
+\l__xeCJK_same_align_margin_dim=\dimen171
+\l__xeCJK_different_align_margin_dim=\dimen172
+\l__xeCJK_kerning_margin_width_dim=\dimen173
+\l__xeCJK_kerning_margin_minimum_dim=\dimen174
+\l__xeCJK_bound_dim=\dimen175
+\l__xeCJK_reverse_bound_dim=\dimen176
+\l__xeCJK_margin_dim=\dimen177
+\l__xeCJK_minimum_bound_dim=\dimen178
+\l__xeCJK_kerning_margin_dim=\dimen179
+\g__xeCJK_family_int=\count292
+\l__xeCJK_fam_int=\count293
+\g__xeCJK_fam_allocation_int=\count294
+\l__xeCJK_verb_case_int=\count295
 \l__xeCJK_verb_exspace_skip=\skip58
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
-File: xeCJK.cfg 2020/08/23 v3.8.5 Configuration file for xeCJK package
+File: xeCJK.cfg 2020/10/19 v3.8.6 Configuration file for xeCJK package
 ))
 
 Package fontspec Info: Noto Sans CJK TC scale = 0.7937400769025417.
@@ -417,17 +417,17 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count285
-\Gm@cntv=\count286
-\c@Gm@tempcnt=\count287
-\Gm@bindingoffset=\dimen176
-\Gm@wd@mp=\dimen177
-\Gm@odd@mp=\dimen178
-\Gm@even@mp=\dimen179
-\Gm@layoutwidth=\dimen180
-\Gm@layoutheight=\dimen181
-\Gm@layouthoffset=\dimen182
-\Gm@layoutvoffset=\dimen183
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
+\Gm@bindingoffset=\dimen180
+\Gm@wd@mp=\dimen181
+\Gm@odd@mp=\dimen182
+\Gm@even@mp=\dimen183
+\Gm@layoutwidth=\dimen184
+\Gm@layoutheight=\dimen185
+\Gm@layouthoffset=\dimen186
+\Gm@layoutvoffset=\dimen187
 \Gm@dimlist=\toks23
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
@@ -441,24 +441,24 @@ LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ))) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box49
+\ttl@box=\box51
 \beforetitleunit=\skip59
 \aftertitleunit=\skip60
-\ttl@plus=\dimen184
-\ttl@minus=\dimen185
+\ttl@plus=\dimen188
+\ttl@minus=\dimen189
 \ttl@toksa=\toks24
-\titlewidth=\dimen186
-\titlewidthlast=\dimen187
-\titlewidthfirst=\dimen188
+\titlewidth=\dimen190
+\titlewidthlast=\dimen191
+\titlewidthfirst=\dimen192
 )
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/fontawesome5.s
 ty
@@ -481,8 +481,8 @@ rands.fd)))
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/academicons/academicons.sty
 Package: academicons 2020/08/14 v1.9.0 Academicons Icons
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
-s
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
 \f@nch@headwidth=\skip61
 \f@nch@O@elh=\skip62
 \f@nch@O@erh=\skip63
@@ -495,7 +495,7 @@ s
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -520,31 +520,39 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen189
-\Hy@linkcounter=\count288
-\Hy@pagecounter=\count289
+\@linkdim=\dimen193
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+)
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatch
+es.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count290
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
+\Hy@SavedSpaceFactor=\count301
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count291
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count302
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen190
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen194
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -552,45 +560,47 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count292
-\Field@Width=\dimen191
-\Fld@charsize=\dimen192
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+\Fld@menulength=\count303
+\Field@Width=\dimen195
+\Fld@charsize=\dimen196
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
 )
-\Hy@abspage=\count293
-\c@Item=\count294
-\c@Hfootnote=\count295
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
-) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box50
-\c@Hy@AnnotLevel=\count296
-\HyField@AnnotCount=\count297
-\Fld@listcount=\count298
-\c@bookmark@seq@number=\count299
+\pdfm@box=\box52
+\c@Hy@AnnotLevel=\count307
+\HyField@AnnotCount=\count308
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfileche
 ck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
 )
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecount
 er.sty
@@ -602,12 +612,6 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip70
 )
 Package hyperref Info: Option `unicode' set `true' on input line 100.
-
-(/Users/Thomas/Library/TinyTeX/texmf-dist/tex/generic/stringenc/se-ascii-print.
-def
-File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
-
-)
 Package hyperref Info: Option `colorlinks' set `true' on input line 100.
 Package hyperref Info: Option `breaklinks' set `true' on input line 100.
 
@@ -679,21 +683,20 @@ LaTeX Font Info:    ... okay on input line 103.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 103.
-\AtBeginShipoutBox=\box51
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 147.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ) (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
 Package hyperref Info: Link coloring ON on input line 103.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -701,7 +704,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count300
+\c@section@level=\count311
 )
 LaTeX Info: Redefining \ref on input line 103.
 LaTeX Info: Redefining \pageref on input line 103.
@@ -722,128 +725,118 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 (xeCJK)                Try to use `\setCJKmonofont[...]{...}' to define it.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-18.
+19.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-18.
+19.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-118.
+119.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-118.
+119.
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 118.
+(Font)              <12> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 118.
+(Font)              <8> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 118.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 118
+(Font)              <6> on input line 119.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119
 .
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 118
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119
 .
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 11.57913pt on input line 121.
+(Font)              scaled to size 11.57913pt on input line 122.
+LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
+(Font)              scaled to size 9.64929pt on input line 125.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--123
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
 
  []
 
 LaTeX Font Info:    Trying to load font information for TU+academicons on input
- line 129.
+ line 131.
 
 (/Users/Thomas/Library/TinyTeX/texmf-dist/tex/latex/academicons/tuacademicons.f
 d)
-Missing character: There is no   in font [academicons.ttf]:!
-LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
-(Font)              scaled to size 9.64929pt on input line 130.
+Missing character: There is no   (U+0020) in font [academicons.ttf]:!
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--131
-
- []
-
-
-Overfull \hbox (1.67253pt too wide) in paragraph at lines 117--132
+Overfull \hbox (1.67253pt too wide) in paragraph at lines 118--133
 [][] [] 
  []
 
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 13.89497pt on input line 141.
+(Font)              scaled to size 13.89497pt on input line 142.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 13.89497pt on input line 141.
+(Font)              scaled to size 13.89497pt on input line 142.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/sc' will be
-(Font)              scaled to size 13.89497pt on input line 141.
+(Font)              scaled to size 13.89497pt on input line 142.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 9.64929pt on input line 150.
+(Font)              scaled to size 9.64929pt on input line 159.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 9.52496pt on input line 155.
+(Font)              scaled to size 9.52496pt on input line 164.
 
 LaTeX Font Warning: Font shape `TU/NotoSansCJKTC(0)/m/it' undefined
-(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 166.
+(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 175.
 
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 11.57913pt on input line 215.
+(Font)              scaled to size 11.57913pt on input line 218.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/sl' in size <14.4> not availa
 ble
 (Font)              Font shape `TU/NotoSerif(0)/m/it' tried instead on input li
-ne 215.
+ne 218.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
-(Font)              scaled to size 11.57913pt on input line 215.
+(Font)              scaled to size 11.57913pt on input line 218.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 283.
+(Font)              scaled to size 6.43286pt on input line 282.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 283.
+(Font)              scaled to size 6.34998pt on input line 282.
 [2]
-Underfull \hbox (badness 2285) in paragraph at lines 333--339
+Underfull \hbox (badness 2285) in paragraph at lines 342--348
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
 ES corpora. ICLC 15 [International
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 333--339
+Underfull \hbox (badness 1286) in paragraph at lines 342--348
 \TU/NotoSerif(0)/m/n/12 Cognitive Linguistics Conference], Nishinomiya: Kwansei
  Gakuin University. 6-11 August 2019.
  []
 
 [3] [4] [5] [6] 
 AED: lastpage setting LastPage
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
-(./cv_thomas.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 626.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 626.
-Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
-(rerunfilecheck)             Checksum: C241248EDA5008E5962B1FE0204E9D0D;2002.
+[7] (./cv_thomas.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
+(rerunfilecheck)             Checksum: 98BCD877BFD15CAAC97AD79D0B6BEC48;4377.
  ) 
 Here is how much of TeX's memory you used:
- 17278 strings out of 481674
- 327346 string characters out of 5932170
- 656475 words of memory out of 5000000
- 34106 multiletter control sequences out of 15000+600000
- 548044 words of font info for 88 fonts, out of 8000000 for 9000
+ 16492 strings out of 478774
+ 313905 string characters out of 5863504
+ 700318 words of memory out of 5000000
+ 36207 multiletter control sequences out of 15000+600000
+ 416386 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,12n,119p,1198b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,12n,123p,1198b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cv_thomas.pdf (7 pages).

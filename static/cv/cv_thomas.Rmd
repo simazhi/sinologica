@@ -12,15 +12,15 @@ CJKmainfont: Noto Sans CJK TC
 sansfont: Impact
 mainfont: Noto Serif
 geometry: margin=1in
-jobtitle: Ph.D in Linguistics
-affiliation: National Taiwan University
-address: Stoffezandstraat 29, 2990 Loenhout, Belgium
+jobtitle: Post-doctoral fellow, Department of Linguistics
+affiliation: The University of Hong Kong
+addressuni: 4.40, Run Run Shaw Tower, Pokfulam Road, Hong Kong
 fontawesome: yes
 academicons: yes
-email: d04142001@ntu.edu.tw
+email: thomasvh@hku.hk
 email2: thomas_van_hoey@outlook.com
 github: github.com/simazhi
-phone: +886-(0)-909 345 062
+phone: +852-6739-1444
 web: thomasvanhoey.com
 orcid: 0000-0002-5226-9752
 updated: yes
@@ -41,10 +41,15 @@ community engagement
 
 -->
 \thispagestyle{empty}
-# Research interests:
+# Research interests
 
 Ideophones, onomatopoeia, mimetics; Cognitive Linguistics; lexical semantics; Cognitive Grammar;  
 historical linguistics; Chinese (in all its variants)
+
+# Employment
+
+Postdoctoral fellow, The University of Hong Kong \hfill 2021- \newline
+(PIs [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160) & [Mark Dingemanse, Ph.D](https://markdingemanse.net/)) \mbox{} \hfill Hong Kong
 
 # Education:
 
@@ -74,10 +79,6 @@ Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill Jul
 
 Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill July 2014
 
-# Academic positions
-
-Postdoctoral fellow (PIs Youngah Do, Mark Dingemanse), The University of Hong Kong \hfill 2021- \newline
-\mbox{} \hfill Hong Kong
 
 
 
@@ -98,6 +99,8 @@ Postdoctoral fellow (PIs Youngah Do, Mark Dingemanse), The University of Hong Ko
 
 ## Book chapters
 
+**Van Hoey, Thomas**. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. (*accepted*, expected in 2021)
+
 **Van Hoey, Thomas** & Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
 
 ## Refereed articles
@@ -110,7 +113,7 @@ Postdoctoral fellow (PIs Youngah Do, Mark Dingemanse), The University of Hong Ko
 
 <!-- ## Journalism -->
 
-## Resources
+## Resources and data sets
 
 **Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. The Chinese ideophone database (CHIDEOD). \newline 
 CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF](https://osf.io/kpwgf/)), as well as through a [Shiny app interface](https://simazhi.shinyapps.io/chideod_appversion/).
@@ -135,20 +138,19 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 ## Publications under review
 
-Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *second round*
+**Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. *(minor revisions, under review)*
 
-**Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. *second round*
-
-
+Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *(second round)*
 
 
 ## Publications in preparation
 
-Thompson, Arthur Lewis & **Thomas Van Hoey**. Prototypicality of Mandarin ideophones: Comparing data from the corpus and the survey.
+**Van Hoey, Thomas**. Tuples and prototypes of collocate-ideophone constructions like ABB in Mandarin.
 
-**Van Hoey, Thomas**. A semantic map for ideophones: From an implicational hierarchy to the spinning top model.
+**Thomas Van Hoey** & Thompson, Arthur Lewis. Prototypicality of Mandarin ideophones: Comparing data from the corpus and the survey.
 
-**Van Hoey, Thomas**. Describing the meaning of ideophones. In Thomas Fuyin Li (ed.). *Handbook of Cognitive Semantics*. 
+Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Sound symbolism in ideophones does not afford better memory but does influence speakers.  
+\* co-first authors
 
 # Conferences
 

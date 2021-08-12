@@ -245,15 +245,15 @@ $if(affiliation)$\moveleft.5\hoffset\centerline{$affiliation$}$endif$
 $if(email)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email$} \hspace{1 mm}$endif$\\
 $if(email2)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email2$} \hspace{1 mm}$endif$\\
 $if(phone)$$if(fontawesome)$ \faPhone \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$\\
+$if(addressuni)$$if(fontawesome)${\large \faUniversity} \hspace{1 mm}$else$\emph{Address:}$endif${$addressuni$}$endif$\\
 $if(address)$$if(fontawesome)${\large \faHome} \hspace{1 mm}$else$\emph{Address:}$endif${$address$}$endif$\\
-$if(addressuni)$$if(fontawesome)${\large \faUniversity} \hspace{1 mm}$else$\emph{Address:}$endif${$addressuni$}$endif$
+$if(updated)$ \emph{Updated:} \today$endif$
 \end{minipage}
 %second column
 \begin{minipage}[t]{0.3\textwidth}
 $if(web)$$if(fontawesome)$\faGlobe \hspace{1 mm}$else$\emph{Web:}$endif$ \href{http://$web$}{\tt $web$}  $endif$\\
 $if(github)$$if(fontawesome)$\faGithub \hspace{1 mm}$else$\emph{Github:}$endif$ \href{http://github.com/$github$}{\tt $github$} \hspace{1 mm} $endif$\\
-$if(orcid)$$if(academicons)$\aiOrcidSquare \hspace{1 mm}$else$\emph{Orcid:}$endif$ \href{http://orcid.org/$orcid$}{\tt $orcid$} \hspace{1 mm} $endif$\\
-$if(updated)$ \emph{Updated:} \today$endif$\\
+$if(orcid)$$if(academicons)$\aiOrcidSquare \hspace{1 mm}$else$\emph{Orcid:}$endif$ \href{http://orcid.org/$orcid$}{\tt $orcid$} \hspace{1 mm} $endif$
 \end{minipage}
 
 \vspace{2 mm}
