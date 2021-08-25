@@ -46,10 +46,10 @@ community engagement
 Ideophones, onomatopoeia, mimetics; Cognitive Linguistics; lexical semantics; Cognitive Grammar;  
 historical linguistics; Chinese (in all its variants)
 
-# Employment
+# Current employment
 
 Postdoctoral fellow, The University of Hong Kong \hfill 2021- \newline
-(PIs [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160) & [Mark Dingemanse, Ph.D](https://markdingemanse.net/)) \mbox{} \hfill Hong Kong
+(PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) & Arthur Lewis Thompson, Ph.D; GRF 17603120) \mbox{} \hfill Hong Kong
 
 # Education:
 
@@ -60,7 +60,7 @@ Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taip
 Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw) 
 
 **MA Linguistics** *(magna cum laude)*, University of Leuven \hfill 2014-2015  
-Thesis: *A typological analysis of mimetic words in Middle Chinese (6th-12th cent.)*  \hfill Leuven, Belgium
+Thesis: *Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus*  \hfill Leuven, Belgium
 Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/) 
 
 **MA Sinology** *(magna cum laude)*, University of Leuven \hfill 2013-2014  
@@ -105,7 +105,9 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 ## Refereed articles
 
-**Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale*49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
+**Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. (accepted). *Metaphor and Symbol*
+
+**Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale* 49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
 
 **Van Hoey, Thomas**. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* (4:2), 230-259. [doi: 10.1163/23526416-00402003](https://doi.org/10.1163/23526416-00402003)
 
@@ -138,7 +140,6 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 ## Publications under review
 
-**Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. *(minor revisions, under review)*
 
 Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *(second round)*
 
@@ -215,10 +216,29 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 
 **Van Hoey, Thomas** & CJ Young. 2019. Language, culture, and cognition. Summer training camp for Taiwanese and Hong Kong high school representatives in the International Linguistics Olympiad. Taipei: Academia Sinica. 17 July 2019.
 
-**Van Hoey, Thomas**. 2018. Austronesian languages. Summer training camp for Taiwnese high school representatives in the International Linguistics Olympiad. Chiayi: National Chungcheng University. 19 July 2018.
+**Van Hoey, Thomas**. 2018. Austronesian languages. Summer training camp for Taiwanese high school representatives in the International Linguistics Olympiad. Chiayi: National Chungcheng University. 19 July 2018.
 
 
-<!-- # Funding -->
+# Funding
+
+## Fellowships
+
+- 2019-2020 \qquad NTU, Financial Assistance Grant for International Students
+- 2018-2019 \qquad NTU, Financial Assistance Grant for International Students
+- 2015-2018 \qquad NTU, Research Fellowship for Outstanding International Doctoral Students
+- 2012-2013 \qquad Hanban scholarship
+
+## Travel grants
+
+- 2019 \qquad NTU, College of Liberal Arts
+- 2019 \qquad MOST-108-2922-I-002-198
+- 2018 \qquad MOST-107-2922-I-002-237
+- 2017 \qquad NTU, College of Liberal Arts
+- 2016 \qquad MOST-105-2922-I-002-682
+
+
+
+
 
 # Teaching
 
@@ -228,15 +248,21 @@ English conversation (BA2) \hfill Applied Foreign Languages, Tatung University �
 
 <!-- # Examinations -->
 
-<!-- # Consultancies 
-Anno annotations? 安諾
+# Consultancies
 
-Project van Daryl Sterk!
--->
+Premodern Japanese grammar for Sterk, Darryl. 2020. *Indigenous cultural translation: A thick description of Seediq Bale*. New York: Routledge.
 
 <!-- # Media section -->
 
-# Employment
+# Membership
+
+- International Cognitive Linguistics Association
+- Researching and Applying Metaphors
+- Linguistics Society of Taiwan
+- European Association of Chinese Studies
+
+
+# Previous employment
 
 Research and Teaching Assistant, National Taiwan University \hfill 2019-2020 \newline
 *Contemporary online language variation: A case study of Internet public opinion analysis, research assistent, PI  Chiarung Lu* (MOST 108-2410-H-002-059)
@@ -289,6 +315,7 @@ ICPEAL 17 - CLDC 9 \hfill 2018
 http://homepage.ntu.edu.tw/~gilntu/icpeal2018cldc/ \newline
 Role: coordinator of the student committee responsible for organizing the joint conference
 
+
 ## Student representation
 
 **Eoos** (student association for the research unit of Area Studies at KU Leuven, Belgium)
@@ -339,4 +366,3 @@ University of Leuven:
 <!-- # Referees -->
 <!-- Chiarung, Hsieh, Willy, Standaert, Carine -->
 
-<!-- MEMBERSHIP -->

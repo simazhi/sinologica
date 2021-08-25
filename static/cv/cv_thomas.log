@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.10)  12 AUG 2021 12:53
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.10)  25 AUG 2021 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -806,9 +806,9 @@ ne 218.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
 (Font)              scaled to size 11.57913pt on input line 218.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 282.
+(Font)              scaled to size 6.43286pt on input line 285.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 282.
+(Font)              scaled to size 6.34998pt on input line 285.
 [2]
 Underfull \hbox (badness 2285) in paragraph at lines 342--348
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
@@ -821,22 +821,22 @@ Underfull \hbox (badness 1286) in paragraph at lines 342--348
  Gakuin University. 6-11 August 2019.
  []
 
-[3] [4] [5] [6] 
+[3] [4] [5] [6] [7] 
 AED: lastpage setting LastPage
-[7] (./cv_thomas.aux)
+[8] (./cv_thomas.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
-(rerunfilecheck)             Checksum: 98BCD877BFD15CAAC97AD79D0B6BEC48;4377.
+(rerunfilecheck)             Checksum: 3E618BEB1DD8AC5C49C1B5E59B826CAF;4999.
  ) 
 Here is how much of TeX's memory you used:
- 16492 strings out of 478774
- 313905 string characters out of 5863504
- 700318 words of memory out of 5000000
- 36207 multiletter control sequences out of 15000+600000
+ 16498 strings out of 478774
+ 313997 string characters out of 5863504
+ 701218 words of memory out of 5000000
+ 36213 multiletter control sequences out of 15000+600000
  416386 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,12n,123p,1198b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,11n,123p,1198b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cv_thomas.pdf (7 pages).
+Output written on cv_thomas.pdf (8 pages).
