@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.10)  25 AUG 2021 10:30
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.5.10)  3 SEP 2021 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -787,28 +787,28 @@ LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/sc' will be
 (Font)              scaled to size 13.89497pt on input line 142.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 9.64929pt on input line 159.
+(Font)              scaled to size 9.64929pt on input line 160.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 9.52496pt on input line 164.
+(Font)              scaled to size 9.52496pt on input line 165.
 
 LaTeX Font Warning: Font shape `TU/NotoSansCJKTC(0)/m/it' undefined
-(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 175.
+(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 178.
 
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/b/n' will be
-(Font)              scaled to size 11.57913pt on input line 218.
+(Font)              scaled to size 11.57913pt on input line 220.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/sl' in size <14.4> not availa
 ble
 (Font)              Font shape `TU/NotoSerif(0)/m/it' tried instead on input li
-ne 218.
+ne 220.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/it' will be
-(Font)              scaled to size 11.57913pt on input line 218.
+(Font)              scaled to size 11.57913pt on input line 220.
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/n' will be
-(Font)              scaled to size 6.43286pt on input line 285.
+(Font)              scaled to size 6.43286pt on input line 282.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34998pt on input line 285.
+(Font)              scaled to size 6.34998pt on input line 282.
 [2]
 Underfull \hbox (badness 2285) in paragraph at lines 342--348
 \TU/NotoSerif(0)/m/n/12 darin Chinese ideophones and reduplication in the CHILD
@@ -828,13 +828,13 @@ AED: lastpage setting LastPage
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
-(rerunfilecheck)             Checksum: 3E618BEB1DD8AC5C49C1B5E59B826CAF;4999.
+(rerunfilecheck)             Checksum: E8281511C4E8CA6C814968EA72BF8968;4809.
  ) 
 Here is how much of TeX's memory you used:
- 16498 strings out of 478774
- 313997 string characters out of 5863504
- 701218 words of memory out of 5000000
- 36213 multiletter control sequences out of 15000+600000
+ 16497 strings out of 478774
+ 313970 string characters out of 5863504
+ 700966 words of memory out of 5000000
+ 36212 multiletter control sequences out of 15000+600000
  416386 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,11n,123p,1198b,473s stack positions out of 5000i,500n,10000p,200000b,80000s

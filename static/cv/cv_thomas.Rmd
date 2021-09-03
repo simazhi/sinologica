@@ -48,24 +48,27 @@ historical linguistics; Chinese (in all its variants)
 
 # Current employment
 
-Postdoctoral fellow, The University of Hong Kong \hfill 2021- \newline
-(PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) & Arthur Lewis Thompson, Ph.D; GRF 17603120) \mbox{} \hfill Hong Kong
+Postdoctoral fellow, The University of Hong Kong \hfill 2021-2023 \newline
+(PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) \hfill Hong Kong \newline
+\mbox{} \qquad{}
+& Arthur Lewis Thompson, Ph.D; GRF 17603120)
 
 # Education:
 
 **PhD Linguistics** *(A+)*, National Taiwan University: Graduate Institute of Linguistics \hfill 2015-2020 \newline
 Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taipei, Taiwan \newline
-\mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach*. \newline
+\mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach* \newline
 <!-- doi: 10.6342/NTU202003830 \newline -->
 Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw) 
 
 **MA Linguistics** *(magna cum laude)*, University of Leuven \hfill 2014-2015  
-Thesis: *Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus*  \hfill Leuven, Belgium
+Thesis: *Ideophones in Middle Chinese:* \hfill Leuven, Belgium \newline 
+\mbox{} \qquad{}\qquad{}*A typological study of a Tang dynasty poetic corpus*  
 Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/) 
 
 **MA Sinology** *(magna cum laude)*, University of Leuven \hfill 2013-2014  
 Thesis: *The Guwen yundong 古文运动 (Classical Prose Movement)* \hfill Leuven, Belgium \newline
-\mbox{} \qquad{}\qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*  
+\mbox{} \qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*  
 Advisor: [Willy Vande Walle, Ph.D](https://www.kuleuven.be/wieiswie/en/person/00009507)
 
 **Year-long Mandarin Chinese exchange study**, Suzhou University 苏州大学 \hfill 2012-2013 \newline
@@ -99,13 +102,15 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 ## Book chapters
 
-**Van Hoey, Thomas**. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. (*accepted*, expected in 2021)
+**Van Hoey, Thomas**. *forthcoming*. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. Leiden: Brill. (*accepted*, expected in 2021)
 
 **Van Hoey, Thomas** & Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
 
 ## Refereed articles
 
-**Van Hoey, Thomas**. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. (accepted). *Metaphor and Symbol*
+Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. *forthcoming*. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics*. (*accepted*).
+
+**Van Hoey, Thomas**. *forthcoming*. The blending of bending: How we engage with the world of *Avatar: The Last Airbender* through memes. *Metaphor and Symbol*. (*accepted*).
 
 **Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale* 49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
 
@@ -138,10 +143,7 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 <!-- >Using quantitative analyses (dendrograms, PCA, cluster analysis), I verified which authors were stylistically part of the Classical Prose Movement. This movement promoted an older style (used some four centuries or more earlier), condemning the formal style of the contemporary popular parallel prose. Unlike theoretical research hitherto suggested, my analysis shows that only a few authors formed the core of the movement. The presence of these authors fits nicely into the dominant framework of the emergence of Neo-Confucianism in the Song dynasty (10th-13th cent.). -->
 
-## Publications under review
-
-
-Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *(second round)*
+<!-- ## Publications under review -->
 
 
 ## Publications in preparation
@@ -304,6 +306,8 @@ management of membership database and coordinating KU Leuven Connect
 ## Reviewing
 
 * Cognitive Linguistics
+* PLoS
+* Glossa
 * Handbook of Cognitive Semantics
 * Journal of Experimental Psychology:  Learning, Memory, and Cognition
 * Mapping China Journal
