@@ -14,8 +14,8 @@ role: PhD in Linguistics
 
 # Organizations/Affiliations
 organizations:
-- name: National Taiwan University
-  url: "https://linguistics.ntu.edu.tw"
+- name: The University of Hong Kong (HKU)
+  url: "https://linguistics.hku.hk/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include ideophones, (Premodern) Chinese, historical linguistics, Cognitive Linguistics, and lexical semantics.
@@ -40,7 +40,7 @@ education:
     year: 2014
   - course: BA Sinology
     institution: University of Leuven
-    year: 2012 
+    year: 2012
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -71,16 +71,16 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/simazhi
-  
+
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
 #   icon_pack: ai
-#   link: files/cv.pdf 
+#   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
-  
+
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.  
 user_groups:
@@ -95,13 +95,14 @@ My MA degrees in Sinology and Linguistics were obtained at the  <a href="http://
 
 
 **My overarching research goal is to understand how people construe meaning through ideophones and iconicity, while balancing cognitive and cultural factors.**
-To that end, my dissertation, ["Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach"](https://www.thomasvanhoey.com/files/DISSERTATION.pdf), supervised by [Lu Chiarung](http://chiarung.blog.ntu.edu.tw), investigates the Chinese ideophonic lexicon through four different methodological lenses: multiple correspondence analysis, diachronic prototype semantics, semantic vector spaces, and collostructional analysis. 
-A prototypical structuring of the ideophonic lexicon is found throughout the data, which is collected from the corpus as well as the [Chinese Ideophone Database (CHIDEOD)](/projects/chideod/), constructed by Dr. Thompson (HKU) and myself. 
-CHIDEOD is freely accessible online in multiple formats, and can be used as a model for the cross-linguistic database that is to be constructed in the first stage of the project. 
-The accompanying explanatory article to CHIDEOD is forthcoming with *Cahiers de Linguistique Asie Orientale*.
+**I am currently a post-doctoral fellow at the University of Hong Kong, in the [Language and Development Lab](https://linguistics.hku.hk/ldlhku/), led by [Youngah Do](http://hub.hku.hk/cris/rp/rp02160).**
+Our main project, together with Mark Dingemanse and Arthur Lewis Thompson, focuses on the learnability of ideophones from a cross-linguistic perspective while focusing on the artiuculatory and gesticulatory gestures of the ideophonic items.
 
-**I am currently (starting January 2021) a post-doctoral researcher at the [Language Development lab at the University of Hong Kong](http://ldl.linguistics.hku.hk/).**
-Our main project focuses on the learnability of ideophones from a cross-linguistic perspective while focusing on the artiuculatory and gesticulatory gestures of the ideophonic items.
+My PhD dissertation (2020), ["Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach"](https://www.thomasvanhoey.com/files/DISSERTATION.pdf), supervised by [Lu Chiarung](http://chiarung.blog.ntu.edu.tw), investigates the Chinese ideophonic lexicon through four different methodological lenses: multiple correspondence analysis, diachronic prototype semantics, semantic vector spaces, and collostructional analysis.
+A prototypical structuring of the ideophonic lexicon is found throughout the data, which is collected from the corpus as well as the [Chinese Ideophone Database (CHIDEOD)](/projects/chideod/), constructed by Arthur Lewis Thompson (HKU) and myself.
+CHIDEOD is freely accessible online in multiple formats, and can be used as a model for the cross-linguistic database that is to be constructed in the first stage of the project.
 
 
 **Click here for my [academic cv](/cv/cv_thomas.pdf).**
+
+Finally, should you wish to hire me for an Assistant Professorship, unsollicited vacancies are more than welcome 👨‍🎓️.
