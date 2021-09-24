@@ -10,7 +10,7 @@ authors:
 # - "Equal contribution"
 # - "Equal contribution"
 date: ""
-doi: ""
+doi: "10.13140/RG.2.2.29889.68961"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2021-09-02T00:00:00Z"
@@ -39,7 +39,7 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: 
+url_pdf: 'https://ling.auf.net/lingbuzz/006201'
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -49,7 +49,7 @@ url_source: ''
 url_video: ''
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
+# To use, add an image named `featured.jpg/png` to your page's folder.
 image:
   caption: ''
   focal_point: ""
@@ -72,10 +72,8 @@ projects: [learnability of ideophones]
 
 {{% alert note %}}
 Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /alert %}} 
+{{% /alert %}}
 
 {{% alert note %}}
 Click the *Slides* button above to demo Academic's Markdown slides feature.
 {{% /alert %}}
-
-
