@@ -2,5 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-public/
+/public/
 .DS_Store # if a windows user, Thumbs.db instead
+/resources/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,444 @@
+---
+title: Tidymodels, interactions and anova - a short tutorial
+author: R package build
+date: '2021-10-12'
+slug: [tidymodels-anova]
+categories:
+  - Blog
+tags:
+  - rstats
+subtitle: ''
+summary: ''
+authors: [Thomas Van Hoey]
+lastmod: '2021-10-12T15:35:21+08:00'
+featured: yes
+image:
+  caption: 'The Greek goddess Iris bringing the iris data set'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+<script src="{{< blogdown/postref >}}index_files/clipboard/clipboard.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/primer-tooltips/build.css" rel="stylesheet" />
+<link href="{{< blogdown/postref >}}index_files/klippy/css/klippy.min.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/klippy/js/klippy.min.js"></script>
+
+
+<p>The past month or so, I’ve become increasingly intrigued by the <a href="https://tidymodels.org/">tidymodels</a> framework for doing modeling in R, especially after hearing an interview with Julia Silge on the <a href="https://nssdeviations.com/">Not so standard deviations</a> podcast with Roger Peng and Hilary Parker.</p>
+<p>I envision myself writing more posts on this framework and applications to case studies from linguistics, but since this is the first post, I’ll just share some thoughts I currently have regarding tidymodels.</p>
+<div id="tidymodels-first-thoughts" class="section level1">
+<h1>Tidymodels: first thoughts</h1>
+<ul>
+<li>Just like with the <a href="https://www.tidyverse.org/">tidyverse</a>, I love the modularity and relatively clear sequence of steps that can guide you through “any” analysis. Although, we’re not quite there yet in terms of straightforward applicability.</li>
+<li>I love the tutorials and the “tidytuesday” series on YouTube. Those case studies really provide excellent showcases for how to do common things.</li>
+<li>The idea of making the interfaces to different models more uniform so you can be more efficient.</li>
+</ul>
+<p>Let’s talk metaphor for a second:</p>
+<ul>
+<li>The conceptual metaphor of DATA IS MONEY, expressed in phrasings like <em>You need to spend your data budget wisely</em> are helpful. I generally don’t see studies in linguistics that split the data first in a training and testing data set, although we probably should be doing that.</li>
+<li>The conceptual metaphor of PREPPING DATA IS FOLLOWING A RECIPE (the <a href="https://recipes.tidymodels.org/">recipes</a> package ) is highly amusing and makes sense.</li>
+<li>The evocative names of the <a href="https://www.tidymodels.org/packages/">other packages in the core tidymodels set</a> are good too: <code>rsample</code> for resampling, <code>parsnip</code> for modeling (this is a <a href="https://en.wikipedia.org/wiki/Parsnip">parsnip</a>, in Dutch it’s called <em>pastinaak</em>), <code>workflows</code> for defining workflows, <code>tune</code> for tuning, <code>yardstick</code> for measing performance of your models, <code>broom</code> for cleaning the output of models…</li>
+</ul>
+<p>What I don’t super like about tidymodels, is that as of yet, sometimes it’s very hard to see what some tidymodels equivalents to super common modeling operations are.</p>
+<ul>
+<li>For instance, I don’t really know how to do an Multiple Correspondence Analysis (MCA) within tidymodels, even though the Principle Components Analysis (PCA) is very well represented in the tutorials and examples. I’ve tried some <code>recipes::step_dummy()</code> to get to similar results as I would have gotten with <code>FactoMineR</code> or <code>ca</code>, but I find the results not similar enough to surrender my dimension reductions for qualitative variables completely to tidymodels. <strong>(Julia Silge and friends, if you are reading this, please figure this out for me.)</strong></li>
+<li>I kind of hate that most analyses just stop at the “Oh I collected the metrics, time to turn off my computer” moment. I don’t think the analysis is finished after calculating a model’s performance; this interpretation is often lacking, and I don’t know if that’s a general quirk of data scientists or just specific to the showcases of these packages, but I wish it didn’t stop there.</li>
+<li><strong>Finally, we come to the topic of this post: how do I decide whether or not to keep interaction effects.</strong> In “normal” modeling, this is quite straightforward:</li>
+</ul>
+<pre><code>Step 1. Make a model with multiple predictors, no interaction.
+
+Step 2. Make another model with the supposed interaction.
+
+Step 3. anova(model1, model2).
+If the p value is significant, 
+the more complex model (the one with the interaction) is what you want.</code></pre>
+</div>
+<div id="but-what-about-the-tidymodels-approach-to-anovas" class="section level1">
+<h1>But what about the tidymodels approach to anovas?</h1>
+<p>Googling “tidymodels anova” will bring you to a lot of pages.
+Unfortunately, they are not super useful in answering our question:</p>
+<blockquote>
+<p>RQ. How do I do a simple comparison of models to decide if the interaction is valid?</p>
+</blockquote>
+<p><a href="https://broom.tidymodels.org/reference/tidy.anova.html">This page</a> takes you to a <code>broom</code> function; <a href="https://www.tmwr.org/compare.html">this one</a> to the excellent <em>Tidy modeling with R</em> book, more specifically, the chapter on comparing models with resampling.
+And I agree, resampling seems a very good way to compare models, and I’ve tried to apply that that page to the case study I will present below (nothing too crazy, just the <code>iris</code> dataset), but if I follow the guides there, I end up with no difference between the model with and without interactions, which is not what our anova will say.
+So yeah.
+🤷️</p>
+</div>
+<div id="lets-load-packages" class="section level1">
+<h1>Let’s load packages</h1>
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('left', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<pre class="r"><code>library(tidymodels)   # general tidymodels packages
+library(skimr)        # fancy way of inspecting data, not necessary
+library(ggplot2)</code></pre>
+</div>
+<div id="lets-look-at-the-data" class="section level1">
+<h1>Let’s look at the data</h1>
+<pre class="r"><code>iris %&gt;% head()</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>skimr::skim(iris)</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">iris</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">150</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Species</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">set: 50, ver: 50, vir: 50</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sepal.Length</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.84</td>
+<td align="right">0.83</td>
+<td align="right">4.3</td>
+<td align="right">5.1</td>
+<td align="right">5.80</td>
+<td align="right">6.4</td>
+<td align="right">7.9</td>
+<td align="left">▆▇▇▅▂</td>
+</tr>
+<tr class="even">
+<td align="left">Sepal.Width</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.06</td>
+<td align="right">0.44</td>
+<td align="right">2.0</td>
+<td align="right">2.8</td>
+<td align="right">3.00</td>
+<td align="right">3.3</td>
+<td align="right">4.4</td>
+<td align="left">▁▆▇▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Petal.Length</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.76</td>
+<td align="right">1.77</td>
+<td align="right">1.0</td>
+<td align="right">1.6</td>
+<td align="right">4.35</td>
+<td align="right">5.1</td>
+<td align="right">6.9</td>
+<td align="left">▇▁▆▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">Petal.Width</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.20</td>
+<td align="right">0.76</td>
+<td align="right">0.1</td>
+<td align="right">0.3</td>
+<td align="right">1.30</td>
+<td align="right">1.8</td>
+<td align="right">2.5</td>
+<td align="left">▇▁▇▅▃</td>
+</tr>
+</tbody>
+</table>
+<p>What I will be investigating, is if Petal.Length can be predicted by Petal.Width and the Species.
+But we want to know if there is an interaction between Petal.Width and Species.
+In other words, our main model will look something like this:</p>
+<pre><code>Petal.Length ~ Petal.Width + (or *) Species</code></pre>
+<p>Let’s plot the data:</p>
+<pre class="r"><code>iris %&gt;% 
+  ggplot(aes(Petal.Width, Petal.Length)) +
+  geom_point(aes(color = Species)) +
+  geom_smooth(method = lm, color = &quot;orange&quot;,
+              formula = &#39;y~x&#39;) + 
+  geom_smooth(method = lm, aes(color = Species),
+              formula = &#39;y~x&#39;) +
+  theme_minimal()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>We can see three nice groups of Species.
+Our general linear model smooth (orange) doesn’t seem too bad, but it doesn’t take into account that there may be an interaction between the Species and the Petal.Width, as evidenced by the three different slopes per Species.</p>
+</div>
+<div id="the-normal-way-of-testing-this" class="section level1">
+<h1>The “normal” way of testing this</h1>
+<p>The code will be quite short:</p>
+<pre class="r"><code>mod1 &lt;- lm(Petal.Length ~ Petal.Width * Species, data = iris)
+# summary(mod1)
+
+mod2 &lt;- lm(Petal.Length ~ Petal.Width + Species, data = iris)
+# summary(mod2)
+
+anova(mod1, mod2) %&gt;% tidy()</code></pre>
+<pre><code>## # A tibble: 2 × 6
+##   res.df   rss    df sumsq statistic   p.value
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1    144  18.8    NA NA        NA    NA       
+## 2    146  20.8    -2 -2.02      7.72  0.000653</code></pre>
+<p>We see a very small p value (0.00065) so we know that there is a difference between <code>mod1</code> (no interaction) and <code>mod2</code> (with interaction), so we have to choose the one with interaction.</p>
+<p><strong>Done!</strong>
+Or not?</p>
+</div>
+<div id="tidymodels" class="section level1">
+<h1>Tidymodels</h1>
+<p>Tidymodels is a lot more verbose than just these three lines of code, but that’s actually a good thing: <strong>you can are more conscious of the steps involved</strong>, <strong>more explicit</strong> and <strong>can easily add more models</strong>.
+However, here it will feel a bit redundant, but bear with me.</p>
+<div id="data-budget-rsample" class="section level2">
+<h2>Data budget: <code>rsample</code></h2>
+<pre class="r"><code>set.seed(1234)
+iris_split &lt;- initial_split(iris, strata = Species, prop = 0.8)
+iris_train &lt;- training(iris_split)
+iris_test  &lt;- testing(iris_split)</code></pre>
+<p>This is kind of the big difference compared to the normal modeling.
+We split the data (and you can even make folds, but that’s not for today) so that we can gauge the model’s effectiveness later on, before reporting the model itself.</p>
+</div>
+<div id="preprocessing-recipes" class="section level2">
+<h2>Preprocessing: <code>recipes</code></h2>
+<pre class="r"><code># the model without interaction
+rec_normal &lt;- 
+  recipe(Petal.Length ~ Petal.Width + Species, 
+         data = iris_train) %&gt;%  # we train on the training set
+  step_dummy(all_nominal_predictors()) %&gt;% 
+  step_center(all_numeric_predictors())
+
+# the model with interaction
+rec_interaction &lt;-
+  rec_normal %&gt;% 
+  step_interact(~ Petal.Width:starts_with(&quot;Species&quot;))</code></pre>
+<p>Notice that we manually create dummy variables (<code>step_dummy</code>) for all categorical predictors. In this case that’s just Species.
+We also center the numerical predictors because that’s generally a good idea.
+For the second model, we just have to add one extra step, that is declaring the interactions.
+You can check the results of this recipe with the <code>prep()</code> function which can then be followed by the <code>bake(new_data = NULL)</code> function to see it in action.</p>
+</div>
+<div id="model-selection-parsnip" class="section level2">
+<h2>Model selection: <code>parsnip</code></h2>
+<pre class="r"><code>iris_model &lt;-
+  linear_reg() %&gt;% 
+  set_engine(&quot;lm&quot;) %&gt;%     # if you want different engines, this is where you would do that
+  set_mode(&quot;regression&quot;)</code></pre>
+</div>
+<div id="workflows-workflows" class="section level2">
+<h2>Workflows: <code>workflows</code></h2>
+<pre class="r"><code># normal workflow
+iris_wf &lt;-
+  workflow() %&gt;% 
+  add_model(iris_model) %&gt;% 
+  add_recipe(rec_normal)
+
+# interaction workflow
+iris_wf_interaction &lt;-
+  iris_wf %&gt;% 
+  update_recipe(rec_interaction)</code></pre>
+<p>Once again, we can easily recycle workflows.
+In workflows we bring together the recipe we made for preprocessing and the model we selected for the analysis.
+Note that we haven’t run anything yet.</p>
+</div>
+<div id="fitting" class="section level2">
+<h2>Fitting</h2>
+<p>Here I’m making use of <code>last_fit()</code> on the split object. This makes sure the data is trained on the training dataset and evaluated on the test dataset.
+But you can of course also <code>fit()</code> on the training or test set separately.</p>
+<pre class="r"><code>iris_normal_lf &lt;-
+  last_fit(iris_wf, 
+           split = iris_split)
+
+iris_inter_lf &lt;-
+  last_fit(iris_wf_interaction, 
+           split = iris_split)</code></pre>
+</div>
+<div id="how-to-anova" class="section level2">
+<h2>How to anova?</h2>
+<p>This is where I was stuck for the longest time.
+The answer is actually surprisingly simple: we just use the normal <code>anova()</code> function, but we need to extract the linear model first.
+We can do that with <code>extract_fit_engine()</code>.</p>
+<pre class="r"><code>normalmodel &lt;- iris_normal_lf %&gt;% extract_fit_engine()
+intermodel  &lt;- iris_inter_lf %&gt;% extract_fit_engine()
+
+anova(normalmodel, intermodel) %&gt;% tidy()</code></pre>
+<pre><code>## # A tibble: 2 × 6
+##   res.df   rss    df sumsq statistic  p.value
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1    116  17.8    NA NA        NA    NA      
+## 2    114  16.1     2  1.72      6.10  0.00304</code></pre>
+<p>Bam! Once again, p is significant.</p>
+<p><strong>But, why go through all this trouble?</strong>
+Keep reading to get metrics and reasons.</p>
+</div>
+<div id="get-metrics-yardstick" class="section level2">
+<h2>Get metrics: <code>yardstick</code></h2>
+<p>Now that we know that the interaction model is the better one, we can also quickly get some metrics for that model.
+The normal model is now irrelevant.</p>
+<pre class="r"><code>iris_inter_lf %&gt;% collect_metrics()</code></pre>
+<pre><code>## # A tibble: 2 × 4
+##   .metric .estimator .estimate .config             
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               
+## 1 rmse    standard       0.318 Preprocessor1_Model1
+## 2 rsq     standard       0.968 Preprocessor1_Model1</code></pre>
+<p>Could we have found this with “normal” modeling?
+I guess so, but now we have also already tested it against “new data”, i.e., the test data set we set aside in the beginning.
+So we know the model <strong>can predict reasonably well</strong> and <strong>does not overfit</strong>.
+There is <strong>no data leakage</strong>.</p>
+<pre class="r"><code>mod2 %&gt;% glance()</code></pre>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.955         0.954 0.378     1036. 3.70e-98     3  -64.8  140.  155.
+## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div id="whats-in-my-model" class="section level2">
+<h2>What’s in my model?</h2>
+<p>This is the step that most tutorials seem to neglect because it’s not really in tidymodels; it’s in general data analysis.
+But what we usually report is not the root mean square deviation <code>rmse</code> (okay this just looks like a bunch of nouns strung together, but <a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation">see here</a>) or the R squared <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">R²</a> <code>rsq</code>, but the whole model.</p>
+<pre class="r"><code>intermodel</code></pre>
+<pre><code>## 
+## Call:
+## stats::lm(formula = ..y ~ ., data = data)
+## 
+## Coefficients:
+##                      (Intercept)                       Petal.Width  
+##                           3.7894                            1.0309  
+##               Species_versicolor                 Species_virginica  
+##                           1.8314                            3.0006  
+## Petal.Width_x_Species_versicolor   Petal.Width_x_Species_virginica  
+##                           1.0536                           -0.2426</code></pre>
+<pre class="r"><code>intermodel %&gt;% tidy()</code></pre>
+<pre><code>## # A tibble: 6 × 5
+##   term                             estimate std.error statistic  p.value
+##   &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)                         3.79      0.197    19.3   1.11e-37
+## 2 Petal.Width                         1.03      0.230     4.49  1.73e- 5
+## 3 Species_versicolor                  1.83      0.557     3.29  1.34e- 3
+## 4 Species_virginica                   3.00      0.585     5.13  1.22e- 6
+## 5 Petal.Width_x_Species_versicolor    1.05      0.652     1.62  1.09e- 1
+## 6 Petal.Width_x_Species_virginica    -0.243     0.621    -0.391 6.97e- 1</code></pre>
+<pre class="r"><code>intermodel %&gt;% glance()</code></pre>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.958         0.956 0.375      516. 1.55e-76     5  -49.6  113.  133.
+## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+<p>And finally, we can plot the model’s predictions against the tested values.
+If we draw an R² plot we can see that it fits pretty well.</p>
+<pre class="r"><code>iris_inter_lf %&gt;% 
+  collect_predictions() %&gt;% 
+  ggplot(aes(.pred, Petal.Length)) +
+  geom_point() +
+  geom_abline(intercept = 0, slope = 1, color = &quot;orange&quot;) +
+  labs(x = &quot;Predicted Petal.Length&quot;,
+       y = &quot;Observed Petal.Length&quot;,
+       title = &quot;R² plot&quot;) +
+  theme_minimal()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>So, tidymodels is definitely a longer style of analysis but you can get much more out of your data.
+And isn’t that what we ultimately want?
+We have:</p>
+<ul>
+<li>shown that indeed the interaction is there: the petal width can predict the petal length, but there is an influence of the species</li>
+<li>made a model that is protected against overfitting</li>
+<li>tested said model against some of the data in the model (so we know it’s more robust)</li>
+<li>observed the fit of the model (R²)</li>
+</ul>
+<p>Of course, these are “just plants” (sorry biased, love languages and I couldn’t get my mint to sprout so may still be vengeful about that).
+But now there’s a tutorial on how to do simple anova within a tidymodels framework for deciding if you should keep an interaction or not.</p>
+</div>
+</div>
+<div id="disclaimer-on-the-iris-data-set" class="section level1">
+<h1>Disclaimer on the iris data set</h1>
+<p>In recent years, it has become more public knowledge that the ubiquitous <code>iris</code> data set was first published in the <em>Annals of Eugenics</em> in 1936 by <a href="https://en.wikipedia.org/wiki/Ronald_Fisher#Eugenics">Ronald Fisher</a>.
+As <a href="https://twitter.com/kareem_carr/status/1271096239103369224?lang=en">this tweet</a> and <a href="https://armchairecology.blog/iris-dataset/">this post</a> point out, it’s perhaps not the best thing that this data set is so readily used in data examples.
+Some proposals for other data sets can be found <a href="https://www.meganstodel.com/posts/no-to-iris/">here</a>.</p>
+<p>Obviously, <strong>eugenics is bad</strong> – think of how important this issue was to the projected future in Star Trek with Khan and friends – and I agree that <code>iris</code> is kind of boring.
+But, just like the <em>Annals of Eugenics</em> rebranded itself to the <a href="https://en.wikipedia.org/wiki/Annals_of_Human_Genetics"><em>Annals of Human Genetics</em></a>, distancing themselves from that terrible phase in science (and we still see the beast rear its head once in a while), I can’t help but think that this silly description of flowers is quite innocent.
+Perhaps, death of the scholar does exist?
+After all, if we have to throw away <code>iris</code> because of Fisher’s bad personal views (once again, not good), do we also have to throw out the stats techniques he developed?
+I know that I’ve used the Fisher-Yates Exact Test to calculate mutual attraction.</p>
+<p>And let’s also talk about <a href="https://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</a>, who was the first editor of the <em>Annals of Eugenics</em>.
+Reading up on his wiki bio was not pleasant either.
+So should we throw out the Pearson correlation?
+Or even worse: the p-value (which was first <em>formally</em> introduced in the Pearson’s chi-square test)?
+Gone with Principled Components Analysis!
+Histograms? History you mean!</p>
+<p>The point is that it is necessary to treat the data and work as separate from their personal life.
+That means that I agree with the efforts to <a href="https://en.wikipedia.org/wiki/Ronald_Fisher#Reappraisal_of_his_contentious_views_on_race_and_eugenics">rename buildings that were named after Fisher</a> or <a href="https://en.wikipedia.org/wiki/Karl_Pearson#Politics_and_eugenics">Pearson</a> at UCL, but that at the same time we should still be okay with using <code>iris</code> or statistical techniques developed by these people.
+The best two arguments for not using <code>iris</code> are that it’s boring and that there exists a <code>penguins</code> dataset (<a href="https://allisonhorst.github.io/palmerpenguins/">found here</a>).</p>
+</div>
