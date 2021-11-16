@@ -1,0 +1,378 @@
+---
+title: "CV"
+author: "Thomas Van Hoey 司馬智"
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  pdf_document:
+    latex_engine: xelatex
+    template: template_thomas.tex
+  html_document:
+    df_print: paged
+CJKmainfont: Noto Sans CJK TC
+sansfont: Impact
+mainfont: Noto Serif
+geometry: margin=1in
+jobtitle: Post-doctoral fellow, Department of Linguistics
+affiliation: The University of Hong Kong
+addressuni: 4.40, Run Run Shaw Tower, Pokfulam Road, Hong Kong
+fontawesome: yes
+academicons: yes
+email: thomasvh@hku.hk
+email2: thomas_van_hoey@outlook.com
+github: github.com/simazhi
+phone: +852-6739-1444
+web: thomasvanhoey.com
+orcid: 0000-0002-5226-9752
+updated: yes
+keywords: R Markdown, academic CV, template
+fontsize: 12pt
+linkcolor: blue
+urlcolor: blue
+keep_tex: yes
+---
+
+<!-- # Biography 
+
+qulificiation,
+outstanding teaching
+reserch
+community engagement
+3 paragraphs of prose
+
+-->
+\thispagestyle{empty}
+# Research interests
+
+Ideophones, onomatopoeia, mimetics; Cognitive Linguistics; lexical semantics; Cognitive Grammar;  
+historical linguistics; Chinese (in all its variants)
+
+# Current employment
+
+Postdoctoral fellow, The University of Hong Kong \hfill 2021-2023 \newline
+(PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) \hfill Hong Kong \newline
+\mbox{} \qquad{}
+& Arthur Lewis Thompson, Ph.D; GRF 17603120)
+
+# Education:
+
+**PhD Linguistics** *(A+)*, National Taiwan University: Graduate Institute of Linguistics \hfill 2015-2020 \newline
+Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taipei, Taiwan \newline
+\mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach* \newline
+<!-- doi: 10.6342/NTU202003830 \newline -->
+Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw) 
+
+**MA Linguistics** *(magna cum laude)*, University of Leuven \hfill 2014-2015  
+Thesis: *Ideophones in Middle Chinese:* \hfill Leuven, Belgium \newline 
+\mbox{} \qquad{}\qquad{}*A typological study of a Tang dynasty poetic corpus*  
+Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/) 
+
+**MA Sinology** *(magna cum laude)*, University of Leuven \hfill 2013-2014  
+Thesis: *The Guwen yundong 古文运动 (Classical Prose Movement)* \hfill Leuven, Belgium \newline
+\mbox{} \qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*  
+Advisor: [Willy Vande Walle, Ph.D](https://www.kuleuven.be/wieiswie/en/person/00009507)
+
+**Year-long Mandarin Chinese exchange study**, Suzhou University 苏州大学 \hfill 2012-2013 \newline
+\mbox{} \hfill Suzhou, China
+
+**BA Sinology** *(cum laude)*, University of Leuven \hfill 2009-2012 \newline
+\mbox{} \hfill Leuven, Belgium
+
+# Additional training and education
+Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill July 2016
+
+Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill July 2014
+
+
+
+
+# Honours and awards
+
+*Financial Assistance Grant for International Students* 國際學位生助學金 \hfill 2019-2020
+
+*Financial Assistance Grant for International Students* 國際學位生助學金 \hfill 2018-2019
+
+*Research Fellowship for Outstanding International Doctoral Students* 優秀國際博士生獎學金 \hfill 2015-2018
+
+*Scholarship from the Hanban 汉办, for long-term study of Chinese* \hfill 2012-2013
+
+
+# Research
+
+<!-- ## Books -->
+
+## Book chapters
+
+[1] **Van Hoey, Thomas**. *forthcoming*. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. Leiden: Brill. (*accepted*, expected in 2022)
+
+[2] **Van Hoey, Thomas** & Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
+
+## Refereed articles
+
+[3] Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4)\*. [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)  
+\*Editor's choice for this issue
+
+[4] **Van Hoey, Thomas**. *forthcoming*. The blending of bending: How we engage with the world of *Avatar: The Last Airbender* through memes. *Metaphor and Symbol*. (*accepted*).
+
+[5] **Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale* 49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
+
+[6] **Van Hoey, Thomas**. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* (4:2), 230-259. [doi: 10.1163/23526416-00402003](https://doi.org/10.1163/23526416-00402003)
+
+<!-- ## Non-refereed articles -->
+
+<!-- ## Journalism -->
+
+## Resources and data sets
+
+[7] **Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. The Chinese ideophone database (CHIDEOD). \newline 
+CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF](https://osf.io/kpwgf/)), as well as through a [Shiny app interface](https://simazhi.shinyapps.io/chideod_appversion/).
+
+
+## Theses
+
+[8] PhD thesis Linguistics (grade: A+) \hfill 2020 \newline
+*Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach* \newline
+漢語擬聲(態)詞的原型與顯著特徵：以認知與語料庫語言學方法探討
+
+[9] MA thesis Linguistics (grade: 17.4/20)\hfill 2015 \newline
+*Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus* 
+
+<!-- >Based on a corpus of Middle Chinese poetry, I identified a set of mimetic words in Middle Chinese. I worked on an analysis of their morphological, phonological, syntactic and semantic properties, against a typological background. -->
+
+[10] MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
+*The *Guwen yundong 古文运动 *(Classical Prose Movement) during Tang and Song:* \newline
+*Ideological as well as Stylistic Innovation?*
+
+<!-- >Using quantitative analyses (dendrograms, PCA, cluster analysis), I verified which authors were stylistically part of the Classical Prose Movement. This movement promoted an older style (used some four centuries or more earlier), condemning the formal style of the contemporary popular parallel prose. Unlike theoretical research hitherto suggested, my analysis shows that only a few authors formed the core of the movement. The presence of these authors fits nicely into the dominant framework of the emergence of Neo-Confucianism in the Song dynasty (10th-13th cent.). -->
+
+<!-- ## Publications under review -->
+
+
+## Publications in preparation
+
+[11] **Van Hoey, Thomas**. Tuples and prototypes of collocate-ideophone constructions like ABB in Mandarin.
+
+[12] **Thomas Van Hoey** & Thompson, Arthur Lewis. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
+
+[13] Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Ideophones -- no benefits for memory but equally guessable  
+\* co-first authors
+
+[14] Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
+\* co-first authors
+
+[15] **Van Hoey, Thomas**. Onomatopoeia in Mandarin Chinese. In Lívia Körtvélyessy (ed.) *Handbook of onomatapoeia*. 
+
+# Conferences
+
+<!-- ## Keynote addresses -->
+
+## Invited talks
+
+[16] **Van Hoey, Thomas**. 2019. Defining Chinese ideophones: A family of constructions. International Workshop on Mimetics (Ideophones, Expressives) III: Crucibles of Mimetics. Nagoya: Nanzan University. 3 August 2019. [doi:10.6084/m9.figshare.12651896](https://doi.org/10.6084/m9.figshare.12651896)
+
+[17] **Van Hoey, Thomas**. 2017. Chinese ideophones in historical corpora: A case study of mental space markers. Workshop on Mimetics II: New approaches to old questions. Nagoya: Nanzan University. 11 November 2017. Funding: MOST-106-2922-I-002-596. [doi:10.6084/m9.figshare.5830341](https://doi.org/10.6084/m9.figshare.5830341)
+
+
+
+## Theme sessions 
+<!-- ## Conference panels -->
+
+[18] Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integrating iconicity: Recent work and future directions. ICLC 15 [International Cognitive Linguistics Conference], Nishinomiya: Kwansei Gakuin University. 6-11 August 2019. https://iclc2019.site/. 
+
+## Conference presentations (oral)
+
+[19] **Van Hoey, Thomas** & Iju Hsu. 2020. Chinese ideophones in advertisements and social media: Motivated by multimodal metaphors. RaAM 13 [Association for Researching and Applying Metaphor] *Virtual*. Hamar: Inland Norway University. 18-21 June 2020. [doi:10.6084/m9.figshare.12651890](https://doi.org/10.6084/m9.figshare.12651890)
+
+[20] **Van Hoey, Thomas** & Chiarung Lu. 2020. From ideational to interpersonal: A behavioral profile analysis of *qǐlái* 起來 in Modern Mandarin. CLDC 10 [Conference on Language, Discourse, and Cognition]. Taipei: National Taiwan University. 1-2 May 2020. https://sites.google.com/view/cldc10 *(cancelled due to corona virus)*
+
+[21] **Van Hoey, Thomas** & Chiarung Lu. 2019. Reduplication as a trigger of intersubjectivity: Mandarin Chinese ideophones and reduplication in the CHILDES corpora. ICLC 15 [International Cognitive Linguistics Conference], Nishinomiya: Kwansei Gakuin University. 6-11 August 2019. [doi:10.6084/m9.figshare.12651902](https://doi.org/10.6084/m9.figshare.12651902) 
+
+[22] **Van Hoey, Thomas**. 2019. Radiant suns, burning fires and brilliant flowers: The onomasiology and radical support of Chinese literary LIGHT ideophones. ICLC 15 [International Cognitive Linguistics Conference], Nishinomiya: Kwansei Gakuin University. 6-11 August 2019. Funding: NTU, College of Liberal Arts. [doi:10.6084/m9.figshare.12652445](https://doi.org/10.6084/m9.figshare.12652445) 
+
+[23] **Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. Bridging phonology, meaning, and written form across time: Introducing a database of Chinese literary ideophones — CHIDEOD. ILL 12 [International Symposium on Iconicity in Language and Literature], Lund: Lund University. 3-5 May 2019. Funding: MOST-108-2922-I-002-198. [doi:10.6084/m9.figshare.12651899](https://doi.org/10.6084/m9.figshare.12651899)
+
+[24] **Van Hoey, Thomas** & Chiarung Lu. 2018. All that glitters is not gold: Prototypical semantic change in shiny Literary Chinese ideophones. ICPEAL 17 [International Conference on the Processing of East Asian Languages]-CLDC 9 [Conference on Language, Discourse, and Cognition]. Taipei: National Taiwan University. 19-21 October 2018.  [doi:10.6084/m9.figshare.12652544](https://doi.org/10.6084/m9.figshare.12652544)
+
+[25] **Van Hoey, Thomas**. 2016. Ideophones in Old Chinese: The case of the *Shijing* 詩經. ISACG [International Symposium on Ancient Chinese Grammar] 9. Berlin: Humboldt University. 29-30 July 2016. [doi:10.6084/m9.figshare.12651875](https://doi.org/10.6084/m9.figshare.12651875)
+
+[26] **Van Hoey, Thomas**. 2016. A diachronic analysis of ideophones in Chinese. Summer school in Chinese Digital Humanities. Leiden: Leiden University. 6-9 July 2016. [doi:10.6084/m9.figshare.12652508](https://doi.org/10.6084/m9.figshare.12652508)
+
+[27] **Van Hoey, Thomas** & Chiarung Lu. 2016. The distribution of ideophones in Tang poems: A variationist perspective. CLDC [Conference on Language, Discourse, and Cognition] 8. Taipei: National Taiwan University.13-14 May 2016. [doi:10.6084/m9.figshare.12651824](https://doi.org/10.6084/m9.figshare.12651824)
+
+
+## Conference presentations (posters)
+
+[28] **Van Hoey, Thomas**. 2018. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. RaAM [Association for Researching and Applying Metaphor] 12. Hong Kong: Hong Kong Polytechnic University. 27-30 June 2018. Funding: MOST-107-2922-I-002-237. [doi:10.6084/m9.figshare.12652460](https://doi.org/10.6084/m9.figshare.12652460)
+
+[29] **Van Hoey, Thomas**. 2017. The thunder rolls: Iconicity and ideophones in Chinese meteorlogical expressions. CLS-MPI Iconicity Focus Group Workshop: Types of Iconicity in Language Use, Development and Processing. Nijmegen: Max Planck Institute for Psycholinguistics. 6-7 July 2017. Funding: NTU, College of Liberal Arts. [doi:10.6084/m9.figshare.12652526](https://doi.org/10.6084/m9.figshare.12652526)
+
+[30] **Van Hoey, Thomas**. 2016. Ideophones in Premodern Chinese: Revisiting Dingemanse’s implicational hierarchy (poster). Mimetics in Japanese and other languages in the world (日本語と世界諸言語のオノマトペ). Tachikawa: NINJAL. 17-18 December 2016. Funding: MOST-105-2922-I-002-682. [doi:10.6084/m9.figshare.12652514](https://doi.org/10.6084/m9.figshare.12652514)
+
+## Departmental lectures
+
+[31] **Van Hoey, Thomas**. 2021. Tuples and prototypes of collocate-ideophone constructions like ABB in Manarin Chinese. VLT talks. Hong Kong: University of Hong Kong. 29 June 2021.
+
+[32] **Van Hoey, Thomas**. 2017. A semantic map for ideophones: From an implicational hierarchy to the spinning top model. Brown Bag Lectures. Taipei: National Taiwan University. 26 April 2017.
+
+<!-- ## Contributions -->
+
+<!-- [33] Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wendy Feytons, Alek Keersmaekers, Veerle Monserez, **Thomas Van Hoey**, and Marie Vanwingh. 2016. Addressees use Zipf’s law as a cue for semantics. In Seán G. Roberts, Christine Cuskley, Luke McCrohon, Lluís Barceló-Coblijn, Olga Fehér & Tessa Verhoef (eds.), The evolution of language: Proceedings of the 11th international conference (EVOLANGX11). Online at http://evolang.org/neworleans/papers/117.html. -->
+
+
+## Tutorials
+
+[33] **Van Hoey, Thomas**. 2019. R bootcamp for lexical semanticists. Introduction to wrangling raw data to formats useable for further analysis using R. Seminar on Language and Culture 語言與文化專題研究.Taipei: National Taiwan University. 5 lectures during November 2019. [blogpost](https://www.thomasvanhoey.com/post/rbootcamp-2019/)
+
+## Broader audiences
+
+[34] **Van Hoey, Thomas** & CJ Young. 2019. Language, culture, and cognition. Summer training camp for Taiwanese and Hong Kong high school representatives in the International Linguistics Olympiad. Taipei: Academia Sinica. 17 July 2019.
+
+[35] **Van Hoey, Thomas**. 2018. Austronesian languages. Summer training camp for Taiwanese high school representatives in the International Linguistics Olympiad. Chiayi: National Chungcheng University. 19 July 2018.
+
+
+# Funding
+
+## Fellowships
+
+- 2019-2020 \qquad NTU, Financial Assistance Grant for International Students
+- 2018-2019 \qquad NTU, Financial Assistance Grant for International Students
+- 2015-2018 \qquad NTU, Research Fellowship for Outstanding International Doctoral Students
+- 2012-2013 \qquad Hanban scholarship
+
+## Travel grants
+
+- 2019 \qquad NTU, College of Liberal Arts
+- 2019 \qquad MOST-108-2922-I-002-198
+- 2018 \qquad MOST-107-2922-I-002-237
+- 2017 \qquad NTU, College of Liberal Arts
+- 2016 \qquad MOST-105-2922-I-002-682
+
+
+
+
+
+# Teaching
+
+English conversation (BA2) \hfill Applied Foreign Languages, Tatung University 大同大學 \hfill 2019-2020
+
+<!-- # Supervision -->
+
+<!-- # Examinations -->
+
+# Consultancies
+
+Premodern Japanese grammar for Sterk, Darryl. 2020. *Indigenous cultural translation: A thick description of Seediq Bale*. New York: Routledge.
+
+<!-- # Media section -->
+
+# Membership
+
+- International Cognitive Linguistics Association
+- Researching and Applying Metaphors
+- Linguistics Society of Taiwan
+- European Association of Chinese Studies
+
+
+# Previous employment
+
+Research and Teaching Assistant, National Taiwan University \hfill 2019-2020 \newline
+*Contemporary online language variation: A case study of Internet public opinion analysis, research assistent, PI  Chiarung Lu* (MOST 108-2410-H-002-059)
+
+Research Assistant, National Taiwan Normal University \hfill 2019-2020  
+*Assisting in Formosa-related newspaper project, PI  Ann Heylen*
+
+Research and Teaching Assistant, National Taiwan University \hfill 2016-2019  
+*Assisting in courses and research, for Chiarung Lu*
+
+Teaching Assistant, English summer camp at Wesley Girls' High School (Taipei), \hfill 2018  
+organized by the Language Training & Testing Center at National Taiwan University
+
+Research Assistant for the Formosan Spoken Corpus, National Taiwan University \hfill 2017-2018  
+*Transcribing Isbukun Bunun, PI Li-May Sung*
+
+Dutch translator of Chinese short stories, babel101.com \hfill 2014-2016
+
+Freelance Chinese-Dutch translator and interpreter, Judicial Court of Leuven \hfill 2014-2016
+
+Assistant, East-Asian Library (University of Leuven) \hfill 2014-2015
+
+Freelance translator Dutch-Chinese, Expat Insurances \hfill 2012-2013
+
+# Languages
+
+**Active:** Dutch, English, Chinese, French 
+
+**Passive:** Japanese, German, Premodern Chinese
+
+**Basic knowledge:** Isbukun Bunun (Austronesian)
+
+# Service 
+<!-- Administration, leadership, management -->
+
+* Sinalumni (alumni association of Sinology students) \hfill 2015-ongoing \newline
+management of membership database and coordinating KU Leuven Connect
+
+## Reviewing
+
+* Cognitive Linguistics
+* PLoS
+* Glossa
+* Handbook of Cognitive Semantics
+* Journal of Experimental Psychology:  Learning, Memory, and Cognition
+* Mapping China Journal
+
+## Conference organisation
+
+ICPEAL 17 - CLDC 9 \hfill 2018  
+*International Conference for the Processing of East Asian Languages* and *Conference on Language, Discourse, and Cognition*
+http://homepage.ntu.edu.tw/~gilntu/icpeal2018cldc/ \newline
+Role: coordinator of the student committee responsible for organizing the joint conference
+
+
+<!-- ## Student representation -->
+
+<!-- **Eoos** (student association for the research unit of Area Studies at KU Leuven, Belgium) -->
+
+<!-- - Webmaster \hfill 2014-2015 -->
+<!-- - President & Webmaster \hfill 2013-2014 -->
+<!-- - Vice President Sinology \hfill 2011-2012 -->
+<!-- - Educational representative \hfill 2011-2012 -->
+<!-- - Chairman Student Council Faculty of Arts (StRaaL) \hfill 2011-2012 -->
+
+<!-- > Roles: membership of the following bodies: Permanent Educational Commission (POC) of Area Studies, Curriculum Commission (CC) of Linguistics, CC of Sinology, Didactical Commission, Faculty board of the Faculty of Arts, Faculty council of the Faculty of Arts, General student council (LOKO and STURA KU LEUVEN), Student council of the Faculty of Arts (StRaaL) -->
+
+<!-- # Professional development
+learning, seminar,
+summer schools?
+-->
+
+# Technological knowledge
+- Microsoft office (Word, Excel, PowerPoint, Access) and open source variants
+- \LaTeX{} (typesetting)
+- Database construction and management
+- Application deployment with Shiny
+- R, Python (statistical research)
+- Psychopy3
+- Experimental design and corpus research
+
+<!-- # Relevant courses -->
+<!-- National Taiwan University:  -->
+
+<!-- > Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu -->
+
+<!-- University of Leuven:  -->
+
+<!-- >Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters) -->
+
+# Other awards and certificates
+- Intermediate level, Isbukun Bunun Proficiency Test  \hfill 2018
+- 1st place at Hackathon Taiwanese Linguistics Olympiad \hfill 2017
+- HSK 6 (Chinese Proficiency Test, level 6) \hfill 2013
+- HSK 5 (Chinese Proficiency Test, level 5) \hfill 2013
+- 3rd place, Chinese calligraphy competiton with hard pen for Belgian university students \hfill 2011
+- HSK 3 (Chinese Proficiency Test, level 3) \hfill 2010
+- Finalist, HUB (Brussels) Language Competition, French  \hfill 2009
+-	Finalist, Olyfran (French language competition)  \hfill 2007
+
+<!-- # Referees -->
+<!-- Chiarung, Hsieh, Willy, Standaert, Carine -->
+

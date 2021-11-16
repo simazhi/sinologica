@@ -41,6 +41,17 @@ community engagement
 
 -->
 \thispagestyle{empty}
+
+# Short bio
+
+My overarching research goal is to understand how people construe meaning through ideophones and iconicity, while balancing cognitive and cultural factors. 
+I am currently a post-doctoral fellow at the University of Hong Kong, in the Language and Development Lab, led by Youngah Do. 
+Our main project, together with Mark Dingemanse and Arthur Lewis Thompson, focuses on the learnability of ideophones from a cross-linguistic perspective while focusing on the artiuculatory and gesticulatory gestures of the ideophonic items.
+
+My PhD dissertation (2020) investigates the Chinese ideophonic lexicon through four different methodological lenses: multiple correspondence analysis, diachronic prototype semantics, semantic vector spaces, and collostructional analysis. 
+A prototypical structuring of the ideophonic lexicon is found throughout the data, which is collected from the corpus as well as the Chinese Ideophone Database (CHIDEOD), constructed by Arthur Lewis Thompson (HKU) and myself. 
+CHIDEOD is freely accessible online in multiple formats, and can be used as a model for the cross-linguistic database that is to be constructed in the first stage of the project.
+
 # Research interests
 
 Ideophones, onomatopoeia, mimetics; Cognitive Linguistics; lexical semantics; Cognitive Grammar;  
@@ -83,8 +94,6 @@ Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill Jul
 Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill July 2014
 
 
-
-
 # Honours and awards
 
 *Financial Assistance Grant for International Students* 國際學位生助學金 \hfill 2019-2020
@@ -96,24 +105,31 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 *Scholarship from the Hanban 汉办, for long-term study of Chinese* \hfill 2012-2013
 
 
-# Research
+# Research\*
 
+\* $\bigstar$ marks the most significant publications.
 <!-- ## Books -->
 
 ## Book chapters
 
-**Van Hoey, Thomas**. *forthcoming*. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. Leiden: Brill. (*accepted*, expected in 2022)
+$\bigstar$ **Van Hoey, Thomas**. *forthcoming*. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. Leiden: Brill. (*accepted*, expected in 2022)
+
+> **Significance:** This chapter contains a literature review of the different semantic domains ideophones can occupy, as well as model that is falsiable given enough data.
 
 **Van Hoey, Thomas** & Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
 
 ## Refereed articles
 
-Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4)\*. [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)
+$\bigstar$ Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4)\*. [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)
 \*Editor's choice for this issue
+
+> **Significance:** This paper investigates which articulatory map to which semantic features for the ideophone systems of 13 languages. It makes use of a collostructional methodology.
 
 **Van Hoey, Thomas**. *forthcoming*. The blending of bending: How we engage with the world of *Avatar: The Last Airbender* through memes. *Metaphor and Symbol*. (*accepted*).
 
-**Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale* 49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
+$\bigstar$ **Van Hoey, Thomas** & Arthur Lewis Thompson. 2020. The Chinese Ideophone Database (CHIDEOD). *Cahiers de Linguistique Asie Orientale* 49(2). 136–167. [doi: 10.1163/19606028-bja10006](https://doi.org/10.1163/19606028-bja10006)
+
+> **Significance:** This paper presents the Chinese Ideophone Database, which is freely available online and can be used in computational studies and aid in the design of psycholinguistic experiments that investigate ideophones in Chinese.
 
 **Van Hoey, Thomas**. 2018. Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity. *Cognitive Semantics* (4:2), 230-259. [doi: 10.1163/23526416-00402003](https://doi.org/10.1163/23526416-00402003)
 
@@ -129,9 +145,12 @@ CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF]
 
 ## Theses
 
-PhD thesis Linguistics (grade: A+) \hfill 2020 \newline
+$\bigstar$  PhD thesis Linguistics (grade: A+) \hfill 2020 \newline
 *Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach* \newline
 漢語擬聲(態)詞的原型與顯著特徵：以認知與語料庫語言學方法探討
+
+> **Significance:** My dissertation contains four different methdologies to investigate salience phenomena in Chinese ideophones, going from the traditional, manual approaches to increasingly more computation and complex methods. 
+
 
 MA thesis Linguistics (grade: 17.4/20)\hfill 2015 \newline
 *Ideophones in Middle Chinese: A typological study of a Tang dynasty poetic corpus* 
@@ -180,7 +199,10 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 ## Conference presentations (oral)
 
-**Van Hoey, Thomas** & Iju Hsu. 2020. Chinese ideophones in advertisements and social media: Motivated by multimodal metaphors. RaAM 13 [Association for Researching and Applying Metaphor] *Virtual*. Hamar: Inland Norway University. 18-21 June 2020. [doi:10.6084/m9.figshare.12651890](https://doi.org/10.6084/m9.figshare.12651890)
+$\bigstar$ **Van Hoey, Thomas** & Iju Hsu. 2020. Chinese ideophones in advertisements and social media: Motivated by multimodal metaphors. RaAM 13 [Association for Researching and Applying Metaphor] *Virtual*. Hamar: Inland Norway University. 18-21 June 2020. [doi:10.6084/m9.figshare.12651890](https://doi.org/10.6084/m9.figshare.12651890)
+
+> **Significance:** This presentation is a qualitative exploration of semantic extensions that can be observed for Chinese ideophones in social media usage. It is a prime candidate for further quantitative study.
+
 
 **Van Hoey, Thomas** & Chiarung Lu. 2020. From ideational to interpersonal: A behavioral profile analysis of *qǐlái* 起來 in Modern Mandarin. CLDC 10 [Conference on Language, Discourse, and Cognition]. Taipei: National Taiwan University. 1-2 May 2020. https://sites.google.com/view/cldc10 *(cancelled due to corona virus)*
 
@@ -326,15 +348,15 @@ http://homepage.ntu.edu.tw/~gilntu/icpeal2018cldc/ \newline
 Role: coordinator of the student committee responsible for organizing the joint conference
 
 
-## Student representation
+<!-- ## Student representation -->
 
-**Eoos** (student association for the research unit of Area Studies at KU Leuven, Belgium)
+<!-- **Eoos** (student association for the research unit of Area Studies at KU Leuven, Belgium) -->
 
-- Webmaster \hfill 2014-2015
-- President & Webmaster \hfill 2013-2014
-- Vice President Sinology \hfill 2011-2012
-- Educational representative \hfill 2011-2012
-- Chairman Student Council Faculty of Arts (StRaaL) \hfill 2011-2012
+<!-- - Webmaster \hfill 2014-2015 -->
+<!-- - President & Webmaster \hfill 2013-2014 -->
+<!-- - Vice President Sinology \hfill 2011-2012 -->
+<!-- - Educational representative \hfill 2011-2012 -->
+<!-- - Chairman Student Council Faculty of Arts (StRaaL) \hfill 2011-2012 -->
 
 <!-- > Roles: membership of the following bodies: Permanent Educational Commission (POC) of Area Studies, Curriculum Commission (CC) of Linguistics, CC of Sinology, Didactical Commission, Faculty board of the Faculty of Arts, Faculty council of the Faculty of Arts, General student council (LOKO and STURA KU LEUVEN), Student council of the Faculty of Arts (StRaaL) -->
 
@@ -354,14 +376,14 @@ summer schools?
 - Regression analysis, cluster analysis, principal components analysis, dendrograms
 - Knowledge of general linguistic theories, (lexical-semantial) Cognitive Linguistics, descriptive and typological linguistics, computational linguistics
 
-# Relevant courses
-National Taiwan University: 
+<!-- # Relevant courses -->
+<!-- National Taiwan University:  -->
 
-> Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu
+<!-- > Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu -->
 
-University of Leuven: 
+<!-- University of Leuven:  -->
 
->Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters)
+<!-- >Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters) -->
 
 # Other awards and certificates
 - Intermediate level, Isbukun Bunun Proficiency Test  \hfill 2018

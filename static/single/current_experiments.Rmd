@@ -1,0 +1,63 @@
+---
+title: "Current experiments"
+# author: "Thomas Van Hoey"
+output: 
+  html_document:
+    theme: readable
+    highlight: tango
+    number_sections: true
+    # css: ["./layout/ntu.css", "./layout/ntu-fonts.css"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+*Hi, welcome to the landing page of current studies.*
+<br>
+*If you are willing to participate, please select the relevant experiment shown below.*
+<br>
+*Thank you so much!*
+<br>
+*Dr. Thomas Van Hoey*
+<br>
+*HKU Linguistics*
+
+
+
+
+# Familiary rating of ABB items
+
+Date: 2021-11-16
+
+Requirements:
+
+* Be a native speaker of Mandarin Chinese
+
+If you want to participate in this ABB experiment, please select the character set you are most familiar with.
+
+
+## Simplified Chinese 简体版本
+
+[Click here for the Simplified Chinese experiment](https://hku.au1.qualtrics.com/jfe/form/SV_77HB9Vswwx7LPD0)
+
+## Traditional Chinese 繁體版本
+
+[Click here for the Traditional Chinese experiment](https://hku.au1.qualtrics.com/jfe/form/SV_eL5OKy6ITdFNHds)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
