@@ -11,9 +11,13 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(klippy)
 ```
 
-
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```
 
 
 *Hi, welcome to the landing page of current studies.*
@@ -44,11 +48,21 @@ If you want to participate in this ABB experiment, please select the character s
 
 [Click here for the Simplified Chinese experiment](https://hku.au1.qualtrics.com/jfe/form/SV_77HB9Vswwx7LPD0)
 
+Or copy the link to send it to all your friends: 
+
+```{r, eval = FALSE}
+https://hku.au1.qualtrics.com/jfe/form/SV_77HB9Vswwx7LPD0
+```
+
 ## Traditional Chinese 繁體版本
 
 [Click here for the Traditional Chinese experiment](https://hku.au1.qualtrics.com/jfe/form/SV_eL5OKy6ITdFNHds)
 
+Or copy the link to send it to all your friends: 
 
+```{r, eval = FALSE}
+https://hku.au1.qualtrics.com/jfe/form/SV_eL5OKy6ITdFNHds
+```
 
 
 
