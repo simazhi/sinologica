@@ -1,0 +1,180 @@
+---
+title: Honglonglong is the sound of thunder
+author: Thomas Van Hoey
+date: '2022-01-05'
+slug: honglonglong
+categories:
+  - Blog
+tags:
+  - ideophone
+  - ideophones
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-05T13:42:10+08:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+I don't often see poetry books that immediately make me go *OMG must have* but [this interview](https://www.theworldofchinese.com/2021/12/poet-shangyang-fang-on-avoiding-tokenizing-shoeboxes-when-writing-in-english/) with poet Fāng Shāngyáng 方商羊 piqued my interest, especially when I saw he had written a poem called 轰隆隆 *is the sound of thunder*. 
+
+# Fang Shangyang
+
+Fang's debut collection *Burying the mountain* is available since the end of October of 2021, and a copy of it currently finds itself in my shopping cart, patiently awaiting the moment I decide to pull the trigger and press the button which will send it on its way to me.
+So far, I haven't but the day is definitely drawing closer.
+
+In any case, you can find more about the poet from [his twitter](https://twitter.com/shangyangfang) or the collection from [the publisher](https://www.coppercanyonpress.org/books/burying-the-mountain-by-shangyang-fang/).
+Currently, that page features him reading some of his work in a video, which I will embed here first.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yHUVFOfT4Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+While there is something in the way he's reading poetry that I find slightly off-putting, I can't help but respect how he appears to be visibly captivated by his own writing.
+Admirable.
+
+# Thunder only happens when it's raining
+
+However, Fang is maybe not why you're here!
+You're perhaps wondering why I am writing about him and his work on this blog. 
+When I saw in the aforementioned interview that he had written a poem entitled 轰隆隆 *is the sound of thunder*, I knew I had to see what that was all about.
+After all, I have a greater-than-average interest in Chinese onomatopoeias and ideophones.
+And I also happen to have written about iconicity in meteorological expressions before!
+
+In my paper ["Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity"](https://brill.com/view/journals/cose/4/2/article-p230_230.xml) (Van Hoey 2018, doi: 10.1163/23526416-00402003) (***Contact me if you want to read a copy but you don't have access***), I talk about the two kinds of motivation that we can observe in weather-related ideophones.
+
+**A first kind**, let's call them *colloquial ideophones*, are formally marked in their phonology, mostly through different types of reduplication (full and partial).
+The way iconicity or sound symbolism works in these words is that when you try to map aspects of the sound on the meaning of the expressions and notice a resemblance.
+For instance, the back vowels and nasals /oŋ/ in *hōnglónglóng* perhaps evoke the rumbling (notice the back vowel and nasal in *r**um**bling*) of thunder.
+Or in ablaut ideophones like *xīlī huālā* or *dīdī dādā* you get that alternating "over here (high vowel /i,i/) ... over there (low vowel /a,a/)" effect.
+Combined with the fricatives of /x/ and /h/, it's easy to imagine a kind of sluicing rainfall in *xīlī huālā*. 
+And then l- reduplication is well-known in Chinese as a marker of continuation.
+Compare this to the unaspirated alveolar /d/'s of *dīdī dādā* that indicate [drips and drops](https://youtu.be/SOKGZb38e5c). 
+
+Just so we're clear, I'm not saying these words are compositional in the way Hamano has argued for Japanese, but conversely that I can see how structural mappings can be identified or imagined. 
+
+
+- *hōnglónglóng* (轟)隆 隆 'sound of thunder'
+- *xīlī huālā* 唏 哩 嘩 啦 'streaming and sluicing, heavy rainfall'
+- *dīdī dādā* 滴 滴 答 答 'lighter rainfall, just beginning or about to end'
+
+**The second kind**, *literary ideophones* by lack of a better term also typically display formal phonological markedness (full or partial reduplication) and also sometimes some phonesthemic-like elements. However, what sets them apart is that they can rely more on **radical support**. 
+Radical support is the idea that the graphical form of a (Chinese) word contains a semantic element that is expressed, often repeated, that indicates something about the meaning of that word. 
+Most people know that onomatopoeia (sound ideophones) in Mandarin often have a 口 MOUTH element, e.g., *jījī zhāzhā* 嘰嘰喳喳 'sound of birds chirping; sound of people chattering'. 
+But literary ideophones typically have other radicals. 
+In the examples below WATER 氵 and RAIN ⻗.
+They are also typically older and not as in use in spoken language as the colloquial ones; but of course, they often turn up in song lyrics, sung in karaoke bars. 
+So I wouldn't flat out say they don't belong to the contemporary Chinese, just that there is a genre effect.
+
+- *línlín* 淋淋 'streaming and sluicing; dash and splatter'
+- *línlí* 淋漓 'light drizzle'
+- *màimù* 霢霂 'soaked and steeped'
+- *fēifēi* 霏霏 'heavy snowfall or rainfall'
+- *pīlì* 霹靂 'thunderclap, thunderbolt'
+
+
+# *Hōnglónglóng* is the sound of thunder
+
+Anyways, I can go on and on about these words but it's now time to turn back to Fang Shangyang and his 轰隆隆 *is the sound of thunder*. 
+I will present the poem below, which, in the spirit of fair use and commentary on (please Shangyang Fang or publishing house, I do this out of love and don't come back to sue me, I hope you sell many copies), I have augmented with pinyin in red so as to show how to pronounce these words and so that you can enjoy the poem to its fullest.
+
+Also, pay attention to what kind of ideophones are used here. 
+They virtually all belong to the colloquial stratum, which tells you that indeed, we should be reading the poem out loud to make most sense of it.
+
+Finally, I hope the lay-out matches that of the original poem but I can't be sure. 
+Just know that it's supposed to have a few lines per paragraph usually.
+
+Okay, enjoy!
+
+```{r, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+```
+
+**轰隆隆 `r colorize("hōnglōnglōng", "red")` Is the Sound of Thunder  **
+  
+By Shāngyáng Fāng 方商羊  
+  
+
+is the rain stitching a bell jar, or the clock remembering its days  
+as a clepsydra.扑通 `r colorize("pūtōng", "red")` is the sound of: man stumbling  
+＆ 哈哈哈哈 `r colorize("hāhāhāhā", "red")` is the laughter that chases after  
+玲玲琅琅 `r colorize("línglíng lángláng", "red")` is the water sword whacking the 哐当锵锵 `r colorize("kuāngdāng qiāng qiāng", "red")` jade pendants  
+of cold rocks. 飒飒瑟瑟 `r colorize("sàsà sèsè", "red")` is the west wind & 扑扑簌簌 `r colorize("pūpū sùsù", "red")`  
+is the falling leaves that 萧萧翩翩 `r colorize("xiāoxiāo piānpiān", "red")` with an autumnmoon  
+  
+In fact, 簌簌 `r colorize("sùsù", "red")` is the sound of all soft things falling  
+The tears 簌簌 `r colorize("sùsù", "red")` on the face. The snow 簌簌 `r colorize("sùsù", "red")`.The begonia 簌簌 `r colorize("sùsù", "red")`  
+on the mahogany bone of a folding fan. 簌簌 `r colorize("sùsù", "red")` the brushstroke  
+paints the rice paper into a landscape of black mountains  
+泠泠淙淙 `r colorize("línglíng cóngcóng", "red")` the rivers flow where the inked mountain is not depicted  
+flow in the uncharted whiteness  
+  
+The bold strings 嘈嘈 `r colorize("cáo cáo", "red")` like blizzard, the fine strings 切切 `r colorize("qièqiè", "red")` like murmur一  
+the melody of a girl playing 琵琶 `r colorize("pípá", "red")` on the orchid boat  
+back in the Tang dynasty which we still hear through [白居易 Bái Jūyì](https://en.wikipedia.org/wiki/Bai_Juyi)'s poetry  
+  
+If the river could speak, would the mountain understand its utterance  
+The sound of a frog is 呱呱呱 `r colorize("guāguāguā", "red")`, which is annoying  
+If you cannot stand the 呱呱呱 `r colorize("guāguāguā", "red")`, please put the frog into a boiler  
+The hard part: try not to mourn the frog  
+  
+The sound of the autumnmoon is 寻寻觅觅 `r colorize("xúnxún mìmì,", "red")`，冷冷清清 `r colorize("lěnglěng qīngqīng", "red")`  
+凄凄惨惨戚戚 `r colorize("qīqī cǎncǎn qīqī,", "red")`，which is also the 点点滴滴 `r colorize("diǎndiǎn dīdī", "red")` sorrow of [李清照 Lǐ Qīngzhào](https://en.wikipedia.org/wiki/Li_Qingzhao)   
+  
+Because to mourn the frog one must speak in the language of frog  
+which is to 呱呱呱 `r colorize("guāguāguā", "red")`  
+  
+咿咿呀呀 `r colorize("yīyī yāyā", "red")` is a青衣 `r colorize("Qīng Yī", "red")` singing with 盈盈脉脉 `r colorize("yíngyíng mòmò", "red")` lips of red beans  
+飘飘冉冉 `r colorize("piāopiāo rǎnrǎn", "red")` is their furbelow 依依霏霏 `r colorize("yīyī fēifēi", "red")` among the willows & catkins  
+式微 `r colorize("shìwēi", "red")` is the evanescent light of a lantern. Wrong. 式微 `r colorize("shìwēi", "red")` is the swansdown  
+evening, a girl calling her beloved: why don't you come back? Come back  
+  
+In truth, 式微 `r colorize("shìwēi", "red")` is [王维 Wáng Wéi](https://en.wikipedia.org/wiki/Wang_Wei_(Tang_dynasty))  writing a poem to the shadow of his leaving friend  
+who promised to come back with a sprig of magnolia to light up the yard  
+His poem has the sound of clouds spread low on the moving water  
+  
+The lamplight threads a dim song across the voice of trees  
+that can only be heard by insects & birds  
+  
+关关喈喈雍雍嘤嘤嗷嗷萋萋肃肃呖呖 `r colorize("guānguān jiējiē yōngyōng yīngyīng áo'áo qīqī sùsù lìlì", "red")`  
+are the sounds of birds  
+薨薨喓喓嘒嘒趯趯啁啾了了 `r colorize("hōnghōng yāoyāo huìhuì tìtì zhōujiū liǎoliǎo", "red")`   
+are the sounds of insects  
+噼里啪啦 `r colorize("pīlipālā", "red")` are the firecrackers bumping into the air  
+叽里咕噜 `r colorize("jīlīgūlū", "red")` is a mouse stealing oil & falling from the chair  
+呦呦 `r colorize("yōuyōu", "red")` the deer sings.萧萧 `r colorize("xiāoxiāo", "red")` the horse chases the wind  
+淅淅沥沥 `r colorize("xīxī lìlì", "red")` the knuckles of rain knocking windows of a departed train  
+知了 `r colorize("zhīliǎo", "red")` : is the cicada chirping its name: 知了知了 `r colorize("zhīliǎo zhīliǎo", "red")`  
+布谷 `r colorize("bùgǔ", "red")` is the cuckoo calling itself: 布谷 `r colorize("bùgǔ", "red")` cuckoo cuckoo 布谷 `r colorize("bùgǔ", "red")`  
+  
+For us, the petals fall with no sound. For the fire ants, the petals hit  
+the ground with a sound as loud as thunder, which is 轰隆隆`r colorize(" hōnglōnglōng", "red")`  
+  
+But what is the ant's onomatopoeia for the thunder & falling flowers  
+What is the petal's onomatopoeia for the wind that brings forth its own  
+  falling  
+Still, we keep hearing, hearing, hearing the hiss of white, yellow  
+& blue petals scattered in a bowl bitten by the ants' bitter teeth  
+  
+沥 `r colorize("lì", "red")`  淅沥沥 `r colorize("xīlìlì", "red")` the rain  
+轰隆隆 `r colorize("hōnglōnglōng", "red")`  轰隆隆 `r colorize("hōnglōnglōng", "red")`  轰隆隆 `r colorize("hōnglōnglōng", "red")`轰隆隆 `r colorize("hōnglōnglōng", "red")`   
+the thunder  
+
+# Outro
+
+Pretty cool huh?!
+
+By his book if you want to support him or read all of his poems.
+
+
+
+

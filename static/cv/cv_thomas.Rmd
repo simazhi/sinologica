@@ -87,13 +87,11 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 # Honours and awards
 
-*Financial Assistance Grant for International Students* 國際學位生助學金 \hfill 2019-2020
-
-*Financial Assistance Grant for International Students* 國際學位生助學金 \hfill 2018-2019
-
-*Research Fellowship for Outstanding International Doctoral Students* 優秀國際博士生獎學金 \hfill 2015-2018
-
-*Scholarship from the Hanban 汉办, for long-term study of Chinese* \hfill 2012-2013
+* \- Editor's choice for Thompson, Van Hoey & Do. *Cognitive Linguistics*. (free open access) \hfill 2021
+* \- Financial Assistance Grant for International Students \hfill 2019-2020
+* \- Financial Assistance Grant for International Students  \hfill 2018-2019
+* \- Research Fellowship for Outstanding International Doctoral Students  \hfill 2015-2018
+* \- Scholarship from the Hanban 汉办, for long-term study of Chinese \hfill 2012-2013
 
 
 # Research
@@ -108,7 +106,7 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 ## Refereed articles
 
-Thompson Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4)\*. [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)
+Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4)\*. [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)
 \*Editor's choice for this issue
 
 **Van Hoey, Thomas**. *forthcoming*. The blending of bending: How we engage with the world of *Avatar: The Last Airbender* through memes. *Metaphor and Symbol*. (*accepted*).
@@ -151,9 +149,9 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 **Van Hoey, Thomas**. Tuples and prototypes of collocate-ideophone constructions like ABB in Mandarin.
 
-**Thomas Van Hoey** & Thompson, Arthur Lewis. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
+**Thomas Van Hoey**. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
 
-Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Ideophones -- no benefits for memory but equally guessable  
+Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Iconicity in ideophones: When memory fails, just guess. 
 \* co-first authors
 
 Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
@@ -209,6 +207,8 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 ## Departmental lectures
 
+**Van Hoey, Thomas**. 2021. Tuples and prototypes of collocate-ideophone constructions like ABB in Manarin Chinese. VLT talks. Hong Kong: University of Hong Kong. 29 June 2021.
+
 **Van Hoey, Thomas**. 2017. A semantic map for ideophones: From an implicational hierarchy to the spinning top model. Brown Bag Lectures. Taipei: National Taiwan University. 26 April 2017.
 
 ## Contributions
@@ -217,6 +217,8 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 
 
 ## Tutorials
+
+**Van Hoey, Thomas**. 2021. R Tutorial for Linguistics Pioneering Initiative. National Taiwan University. 6 lectures during November 2021. *(soon to be released on YouTube)*
 
 **Van Hoey, Thomas**. 2019. R bootcamp for lexical semanticists. Introduction to wrangling raw data to formats useable for further analysis using R. Seminar on Language and Culture 語言與文化專題研究.Taipei: National Taiwan University. 5 lectures during November 2019. [blogpost](https://www.thomasvanhoey.com/post/rbootcamp-2019/)
 
@@ -252,7 +254,10 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 
 English conversation (BA2) \hfill Applied Foreign Languages, Tatung University 大同大學 \hfill 2019-2020
 
-<!-- # Supervision -->
+# Supervision
+
+- Feng, Yuanping, *Chinese aspect markers guo and le, syntax, semantics and preferences (corpus/survey study)* (working title) \hfill 2022
+- Liang, Yifan, *Questionnaires: Gender differences in college students’ verbal style* (working title) \hfill 2022
 
 <!-- # Examinations -->
 
@@ -311,12 +316,14 @@ management of membership database and coordinating KU Leuven Connect
 
 ## Reviewing
 
-* Cognitive Linguistics
-* PLoS
-* Glossa
-* Handbook of Cognitive Semantics
-* Journal of Experimental Psychology:  Learning, Memory, and Cognition
-* Mapping China Journal
+* *Cognitive Linguistics*
+* *PLoS*
+* *Linguistics Vanguard*
+* *Canadian Journal of Linguistics / Revue canadienne de linguistique*
+* *Glossa*
+* *Handbook of Cognitive Semantics*
+* *Journal of Experimental Psychology:  Learning, Memory, and Cognition*
+* *Mapping China Journal*
 
 ## Conference organisation
 
@@ -354,14 +361,14 @@ summer schools?
 - Regression analysis, cluster analysis, principal components analysis, dendrograms
 - Knowledge of general linguistic theories, (lexical-semantial) Cognitive Linguistics, descriptive and typological linguistics, computational linguistics
 
-# Relevant courses
-National Taiwan University: 
+<!-- # Relevant courses -->
+<!-- National Taiwan University:  -->
 
-> Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu
+<!-- > Syntax, Phonology, Lexical Semantics, R Language and Data Science, Linguistic Fieldwork, Logical Analysis of Language, Language and Culture, Corpus Linguistics, Advanced Cognitive Grammar, Cognitive Science, Linguistics in Manga and Animation, Problem-Based Learning Approach to SLA, Manchu -->
 
-University of Leuven: 
+<!-- University of Leuven:  -->
 
->Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters)
+<!-- >Language Typology and Universalia, Computational Linguistics, Modern Mandarin Chinese and Classical Chinese (BA and MA courses), Lexicology and Morphology, Pragmatics and Discourse Analysis, Language Documentation and Description, Language Experiment, Historical Linguistics, Comparative Linguistics, Usage-based Linguistics, Introduction to Modern Japanese (2 semesters) -->
 
 # Other awards and certificates
 - Intermediate level, Isbukun Bunun Proficiency Test  \hfill 2018
@@ -374,5 +381,5 @@ University of Leuven:
 -	Finalist, Olyfran (French language competition)  \hfill 2007
 
 <!-- # Referees -->
-<!-- Chiarung, Hsieh, Willy, Standaert, Carine -->
+<!-- Youngah, Mark, Chiarung, Hsieh, Willy, Standaert, Carine -->
 
