@@ -30,6 +30,17 @@ klippy::klippy()
 <br>
 *HKU Linguistics*
 
+# Arousal, valence, and sensory experience ratings of ABB items
+
+Date: 2022-02-8
+
+Requirements:
+
+* Be a native speaker of Mandarin Chinese
+
+[Click here for the Simplified Chinese experiment](https://hku.au1.qualtrics.com/jfe/form/SV_2rFiopQff1PHjoi)
+
+
 
 
 
