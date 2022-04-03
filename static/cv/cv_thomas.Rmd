@@ -164,14 +164,15 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 ## Publications in preparation
 
 (@)
-**Van Hoey, Thomas**. Tuples and prototypes of collocate-ideophone constructions like ABB in Mandarin.
-
-(@)
-**Thomas Van Hoey**. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
-
-(@)
-Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Iconicity in ideophones: When memory fails, just guess. 
+Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Iconicity in ideophones: When memory fails, just guess. *under review*  
 \* co-first authors
+
+(@)
+**Van Hoey, Thomas**. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *under review*
+
+(@)
+**Thomas Van Hoey** & Xiaoyu Yu. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
+
 
 (@)
 Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
@@ -365,14 +366,17 @@ management of membership database and coordinating KU Leuven Connect
 
 ## Reviewing
 
-* *Cognitive Linguistics*
-* *PLoS*
-* *Linguistics Vanguard*
 * *Canadian Journal of Linguistics / Revue canadienne de linguistique*
+* *Cognitive Linguistics*
+* *Frontiers*
 * *Glossa*
-* *Handbook of Cognitive Semantics*
 * *Journal of Experimental Psychology:  Learning, Memory, and Cognition*
+* *Handbook of Cognitive Semantics*
+* *Language Sciences*
+* *Linguistics Vanguard*
 * *Mapping China Journal*
+* *PLoS*
+* *Review of Cognitive Linguistics*
 
 ## Conference organisation
 
