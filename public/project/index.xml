@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Thomas Van Hoey | Sinologica</title>
-    <link>/project/</link>
-      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://thomasvanhoey.com/project/</link>
+      <atom:link href="https://thomasvanhoey.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
+      <url>https://thomasvanhoey.com/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
-      <link>/project/</link>
+      <link>https://thomasvanhoey.com/project/</link>
     </image>
     
     <item>
       <title>Learnability of ideophones</title>
-      <link>/project/learnability-of-ideophones/</link>
+      <link>https://thomasvanhoey.com/project/learnability-of-ideophones/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>/project/learnability-of-ideophones/</guid>
+      <guid>https://thomasvanhoey.com/project/learnability-of-ideophones/</guid>
       <description>&lt;p&gt;In this project, we investigate the learnability of ideophones, studied through articulatory and gesticulatory gestures.&lt;/p&gt;
 &lt;p&gt;Apart from myself, team members include 
 &lt;a href=&#34;http://ldl.linguistics.hku.hk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Youngah Do&lt;/a&gt;, 
@@ -27,9 +27,9 @@
     
     <item>
       <title>CHIDEOD</title>
-      <link>/project/chideod/</link>
+      <link>https://thomasvanhoey.com/project/chideod/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/project/chideod/</guid>
+      <guid>https://thomasvanhoey.com/project/chideod/</guid>
       <description>&lt;p&gt;The Chinese Ideophone Database (CHIDEOD) is an open-source dataset, which currently collects 4948 unique onomatopoeia and ideophones (mimetics) of Mandarin, as well as Middle Chinese and Old Chinese. These are analyzed according to a wide range of variables pertaining to the type of data, description, analysis and frequency.&lt;/p&gt;
 &lt;h1 id=&#34;access-the-database&#34;&gt;Access the database&lt;/h1&gt;
 &lt;ul&gt;
@@ -45,9 +45,9 @@
     
     <item>
       <title>Chinese ideophones and prototypicality</title>
-      <link>/project/chinese-ideophones-and-prototypicality/</link>
+      <link>https://thomasvanhoey.com/project/chinese-ideophones-and-prototypicality/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/chinese-ideophones-and-prototypicality/</guid>
+      <guid>https://thomasvanhoey.com/project/chinese-ideophones-and-prototypicality/</guid>
       <description>&lt;p&gt;This project, which is handled in my dissertation (
 &lt;a href=&#34;https://www.thomasvanhoey.com/files/DISSERTATION.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pdf here&lt;/a&gt;), explores prototypicality and salience effects of the variation within the Chinese ideophonic lexicon.&lt;/p&gt;
 &lt;p&gt;In my dissertation, Chinese is demonstrated to have ideophones, by unifying previously separately studied phenomena such as reduplication, binomes, and onomatopoeia.

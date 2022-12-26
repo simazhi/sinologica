@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Thomas Van Hoey | Sinologica</title>
-    <link>/tags/</link>
-      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://thomasvanhoey.com/tags/</link>
+      <atom:link href="https://thomasvanhoey.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Thomas Van Hoey</copyright><lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
+      <url>https://thomasvanhoey.com/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_3.png</url>
       <title>Tags</title>
-      <link>/tags/</link>
+      <link>https://thomasvanhoey.com/tags/</link>
     </image>
     
   </channel>

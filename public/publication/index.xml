@@ -2,29 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications | Thomas Van Hoey | Sinologica</title>
-    <link>/publication/</link>
-      <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://thomasvanhoey.com/publication/</link>
+      <atom:link href="https://thomasvanhoey.com/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Thomas Van Hoey</copyright><lastBuildDate>Thu, 02 Sep 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
+      <url>https://thomasvanhoey.com/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
-      <link>/publication/</link>
+      <link>https://thomasvanhoey.com/publication/</link>
     </image>
     
     <item>
+      <title>Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones</title>
+      <link>https://thomasvanhoey.com/publication/2021_cogling_articulatory/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://thomasvanhoey.com/publication/2021_cogling_articulatory/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The blending of bending: How we engage with the world of Avatar: The Last Airbender through memes</title>
+      <link>https://thomasvanhoey.com/publication/2021_metaphor_blending/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://thomasvanhoey.com/publication/2021_metaphor_blending/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Chinese Ideophone Database (CHIDEOD)</title>
+      <link>https://thomasvanhoey.com/publication/2020_cahiers_chideod/</link>
+      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://thomasvanhoey.com/publication/2020_cahiers_chideod/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Does the thunder roll? Mandarin Chinese meteorological expressions and their iconicity</title>
-      <link>/publication/2018_cogsem_weather/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0200</pubDate>
-      <guid>/publication/2018_cogsem_weather/</guid>
-      <description></description>
+      <link>https://thomasvanhoey.com/publication/2018_cogsem_weather/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://thomasvanhoey.com/publication/2018_cogsem_weather/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration</title>
-      <link>/publication/2019_clr_variation_cldc/</link>
+      <link>https://thomasvanhoey.com/publication/2019_clr_variation_cldc/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/2019_clr_variation_cldc/</guid>
+      <guid>https://thomasvanhoey.com/publication/2019_clr_variation_cldc/</guid>
       <description></description>
     </item>
     

@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: PhD in Linguistics
+role: Postdoctoral assistant (Linguistics)
 
 # Organizations/Affiliations
 organizations:
-- name: The University of Hong Kong (HKU)
-  url: "https://linguistics.hku.hk/"
+- name: The University of Leuven (KU Leuven)
+  url: "https://www.arts.kuleuven.be/ling/qlvl"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include ideophones, (Premodern) Chinese, historical linguistics, Cognitive Linguistics, and lexical semantics.
@@ -90,16 +90,15 @@ user_groups:
 
 Hi, my name is **Thomas Van Hoey** (IPA:['to:mas van 'hui]). Alternatively, you may find me by my Chinese name — **司馬智** (*Hanyu pinyin*: Sīmǎ Zhì).
 
-I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologist</a> and a <a href="https://en.wikipedia.org/wiki/Linguistics" target="_blank">linguist</a>, with a PhD in Linguistics (read at the <a href="https://linguistics.ntu.edu.tw" target="_blank">Graduate Institute of Linguistics of National Taiwan University</a>).
+I am a postdoctoral assistant at the University of Leuven (KU Leuven), focusing on the relationship between grammatical variation and complexity, in collaboration with [Benedikt Szmrecsanyi](https://sites.google.com/site/bszmrecsanyi/). This work is embedded squarely within the [Quantitative Lexicology and Variational Linguistics (QLVL) research group](https://www.arts.kuleuven.be/ling/qlvl) in the Department of Linguistics at KU Leuven.
+
+The other side of my work focuses on understanding how people construe meaning through ideophones and iconicity, while balancing cognitive and cultural factors. Previously, I was a post-doctoral fellow at the University of Hong Kong, in the [Language and Development Lab](https://linguistics.hku.hk/ldlhku/), led by [Youngah Do](http://hub.hku.hk/cris/rp/rp02160). Our main project, together with [Mark Dingemanse](https://markdingemanse.net/) and Arthur Lewis Thompson, focused on the learnability of ideophones from a cross-linguistic perspective while focusing on the artiuculatory and gesticulatory gestures of the ideophonic items.
+
+By training, I am a <a href="https://en.wikipedia.org/wiki/Sinology" target="_blank">sinologist</a> and a <a href="https://en.wikipedia.org/wiki/Linguistics" target="_blank">linguist</a>, with a PhD in Linguistics (obtained at the <a href="https://linguistics.ntu.edu.tw" target="_blank">Graduate Institute of Linguistics of National Taiwan University</a>).
 My MA degrees in Sinology and Linguistics were obtained at the  <a href="http://www.kuleuven.be/english" target="_blank">University of Leuven</a>.
 
-
-**My overarching research goal is to understand how people construe meaning through ideophones and iconicity, while balancing cognitive and cultural factors.**
-**I am currently a post-doctoral fellow at the University of Hong Kong, in the [Language and Development Lab](https://linguistics.hku.hk/ldlhku/), led by [Youngah Do](http://hub.hku.hk/cris/rp/rp02160).**
-Our main project, together with Mark Dingemanse and Arthur Lewis Thompson, focuses on the learnability of ideophones from a cross-linguistic perspective while focusing on the artiuculatory and gesticulatory gestures of the ideophonic items.
-
 My PhD dissertation (2020), ["Prototypicality and salience of Chinese ideophones: A cognitive and corpus linguistics approach"](https://www.thomasvanhoey.com/files/DISSERTATION.pdf), supervised by [Lu Chiarung](http://chiarung.blog.ntu.edu.tw), investigates the Chinese ideophonic lexicon through four different methodological lenses: multiple correspondence analysis, diachronic prototype semantics, semantic vector spaces, and collostructional analysis.
-A prototypical structuring of the ideophonic lexicon is found throughout the data, which is collected from the corpus as well as the [Chinese Ideophone Database (CHIDEOD)](/projects/chideod/), constructed by Arthur Lewis Thompson (HKU) and myself.
+A prototypical structuring of the ideophonic lexicon is found throughout the data, which is collected from the corpus as well as the [Chinese Ideophone Database (CHIDEOD)](/projects/chideod/).
 CHIDEOD is freely accessible online in multiple formats, and can be used as a model for the cross-linguistic database that is to be constructed in the first stage of the project.
 
 

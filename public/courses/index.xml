@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Courses | Thomas Van Hoey | Sinologica</title>
-    <link>/courses/</link>
-      <atom:link href="/courses/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://thomasvanhoey.com/courses/</link>
+      <atom:link href="https://thomasvanhoey.com/courses/index.xml" rel="self" type="application/rss+xml" />
     <description>Courses</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Thomas Van Hoey</copyright><lastBuildDate>Sun, 05 May 2019 00:00:00 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Thomas Van Hoey</copyright><lastBuildDate>Sun, 05 May 2019 00:00:00 +0100</lastBuildDate>
     <image>
-      <url>/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_2.png</url>
+      <url>https://thomasvanhoey.com/images/icon_hu4a1e13b0b060d1f4766bcb0254066d4a_49108_512x512_fill_lanczos_center_3.png</url>
       <title>Courses</title>
-      <link>/courses/</link>
+      <link>https://thomasvanhoey.com/courses/</link>
     </image>
     
   </channel>

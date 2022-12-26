@@ -1,1064 +1,736 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/courses/example/example1/</loc>
+    <loc>https://thomasvanhoey.com/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/courses/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/example2/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ideophones/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2022-02-28-1yearversary-in-hong-kong/</loc>
+    <lastmod>2022-02-28T15:54:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/blog/</loc>
+    <lastmod>2022-02-28T15:54:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/categories/</loc>
+    <lastmod>2022-02-28T15:54:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/</loc>
+    <lastmod>2022-02-28T15:54:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/</loc>
+    <lastmod>2022-02-28T15:54:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/articulatory-features/</loc>
+    <lastmod>2022-02-13T20:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/ideophone/</loc>
+    <lastmod>2022-02-13T20:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/ideophones/</loc>
+    <lastmod>2022-02-13T20:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tags/</loc>
+    <lastmod>2022-02-13T20:53:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/honglonglong/</loc>
+    <lastmod>2022-01-05T13:42:10+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/authors/</loc>
+    <lastmod>2021-10-12T15:35:21+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/rstats/</loc>
+    <lastmod>2021-10-12T15:35:21+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/thomas-van-hoey/</loc>
+    <lastmod>2021-10-12T15:35:21+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-10-12-tidymodels-interactions/</loc>
+    <lastmod>2021-10-12T15:35:21+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-09-24-43-days-of-summer/</loc>
+    <lastmod>2021-09-24T13:39:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/big-buddha/</loc>
+    <lastmod>2021-09-24T13:39:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/hong-kong/</loc>
+    <lastmod>2021-09-24T13:39:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication-type/2/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/arthur-lewis-thompson/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/2021_cogling_articulatory/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/avatar/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/conceptual-blending/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/iconicity/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/memes/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication_types/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/2021_metaphor_blending/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/youngah-do/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-07-30-grounding-and-arting-in-hk/</loc>
+    <lastmod>2021-07-30T16:39:12+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/hong-kong/</loc>
+    <lastmod>2021-07-30T16:39:12+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/experiments/</loc>
+    <lastmod>2021-05-20T10:08:20+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/hku/</loc>
+    <lastmod>2021-05-20T10:08:20+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-05-20-psyched-about-psychopy/</loc>
+    <lastmod>2021-05-20T10:08:20+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/psychopy/</loc>
+    <lastmod>2021-05-20T10:08:20+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-05-13-bird-set-free/</loc>
+    <lastmod>2021-05-13T17:13:30+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/academic-workflow/</loc>
+    <lastmod>2021-05-12T16:48:35+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/coding/</loc>
+    <lastmod>2021-05-12T16:48:35+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/project-management/</loc>
+    <lastmod>2021-05-12T16:48:35+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/r/</loc>
+    <lastmod>2021-05-12T16:48:35+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-05-12-setting-up-a-clean-project-the-best-practice-i-use/</loc>
+    <lastmod>2021-05-12T16:48:35+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/belgians/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/belgium/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/belgie/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/covid/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2021-02-26-et-in-arcadia-ego/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/home/</loc>
+    <lastmod>2021-02-26T21:18:11+08:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/chideod/</loc>
+    <lastmod>2020-11-19T09:26:58+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2020-11-19-chideod-the-chinese-ideophone-database/</loc>
+    <lastmod>2020-11-19T09:26:58+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/chinese/</loc>
+    <lastmod>2020-11-19T09:26:58+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/database/</loc>
+    <lastmod>2020-11-19T09:26:58+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/dissertation/</loc>
+    <lastmod>2020-11-14T16:46:42+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/2020-11-14-theses-and-dissertations-on-my-site/</loc>
+    <lastmod>2020-11-14T16:46:42+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/thesis/</loc>
+    <lastmod>2020-11-14T16:46:42+01:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/project/learnability-of-ideophones/</loc>
     <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/learnability-of-ideophones/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/linguistics/</loc>
     <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/linguistics/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/project/</loc>
     <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
-    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/blog/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/2020_cahiers_chideod/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/gesture/</loc>
     <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/installing-openpose-on-mac-october-2020-version/</loc>
     <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/gesture/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/openpose/</loc>
     <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/installing-openpose-on-mac-october-2020-version/</loc>
-    <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/openpose/</loc>
-    <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-10-21T16:36:54+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/academic-workflow/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/how-i-organize-my-notes/</loc>
     <lastmod>2020-10-18T18:25:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/how-i-organize-my-notes/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/notes/</loc>
     <lastmod>2020-10-18T18:25:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/notes/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/productivity/</loc>
     <lastmod>2020-10-18T18:25:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/productivity/</loc>
-    <lastmod>2020-10-18T18:25:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/afscheid/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/afscheid/</loc>
     <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ideophone/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/phd/</loc>
     <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/phd/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/summer/</loc>
     <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/summer/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/summertime-sadness-see-you-taiwan/</loc>
     <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/summertime-sadness-see-you-taiwan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/taiwan/</loc>
     <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taiwan/</loc>
-    <lastmod>2020-10-11T19:14:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/changing-photo-metadata-with-r/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/changing-photo-metadata-with-r/</loc>
     <lastmod>2020-09-30T13:41:21+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/drawing-rrg-trees-with-forest/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/drawing-rrg-trees-with-forest/</loc>
     <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/latex/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/latex/</loc>
     <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/rstats/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/rstats/</loc>
     <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/rstats/</loc>
-    <lastmod>2020-09-30T15:08:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/corpus/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/corpus/</loc>
     <lastmod>2020-08-24T14:40:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/turning-glosses-into-a-mini-corpus/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/turning-glosses-into-a-mini-corpus/</loc>
     <lastmod>2020-08-24T14:40:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/yami/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/yami/</loc>
     <lastmod>2020-08-24T14:40:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/defense-dark-art/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/defense-dark-art/</loc>
     <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/dissertation/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/gil/</loc>
     <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/gil/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/ntu/</loc>
     <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ntu/</loc>
-    <lastmod>2020-07-15T21:22:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/china/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/china/</loc>
     <lastmod>2020-07-14T13:34:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/conference/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/conference/</loc>
     <lastmod>2020-07-14T13:34:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hashtag-dissertating/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/hashtag-dissertating/</loc>
     <lastmod>2020-07-14T13:34:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/japan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/japan/</loc>
     <lastmod>2020-07-14T13:34:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/sweden/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/sweden/</loc>
     <lastmod>2020-07-14T13:34:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/the-abralin-lectures/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/the-abralin-lectures/</loc>
     <lastmod>2020-07-14T01:45:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/chideod/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/project/chideod/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/chideod/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/data-packages/</loc>
     <lastmod>2019-12-09T16:44:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/chinese/</loc>
-    <lastmod>2019-12-09T16:44:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/data-packages/</loc>
-    <lastmod>2019-12-09T16:44:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/r/</loc>
-    <lastmod>2019-12-09T16:44:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/lexical-semantics/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/lexical-semantics/</loc>
     <lastmod>2019-12-06T16:33:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/rbootcamp-2019/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/rbootcamp-2019/</loc>
     <lastmod>2019-12-06T16:33:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/association-measures/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/association-measures/</loc>
     <lastmod>2019-10-01T22:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/coding/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/research/</loc>
     <lastmod>2019-10-01T22:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/research/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/tidy-collostructions/</loc>
     <lastmod>2019-10-01T22:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/tidy-collostructions/</loc>
-    <lastmod>2019-10-01T22:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/classics/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/classics/</loc>
     <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/guanguan-goes-the-chinese-word-segmentation-2/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/guanguan-goes-the-chinese-word-segmentation-2/</loc>
     <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/python/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/python/</loc>
     <lastmod>2019-09-11T12:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/guanguan-goes-the-chinese-word-segmentation/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/guanguan-goes-the-chinese-word-segmentation/</loc>
     <lastmod>2019-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/talk/</loc>
     <lastmod>2019-08-10T14:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/talk/2019-iclc-childes/</loc>
     <lastmod>2019-08-10T14:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/2019-iclc-childes/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/thomas-van-hoey-chiarung-lu/</loc>
     <lastmod>2019-08-10T14:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/thomas-van-hoey-chiarung-lu/</loc>
-    <lastmod>2019-08-10T14:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/2019-iclc-light/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/talk/2019-iclc-light/</loc>
     <lastmod>2019-08-07T11:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/thomas-van-hoey/</loc>
-    <lastmod>2019-08-07T11:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/2019-nagoya/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/talk/2019-nagoya/</loc>
     <lastmod>2019-08-02T14:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/2019-lund/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/talk/2019-lund/</loc>
     <lastmod>2019-05-05T10:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/thomas-van-hoey-arthur-lewis-thompson/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/thomas-van-hoey-arthur-lewis-thompson/</loc>
     <lastmod>2019-05-05T10:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/courses/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/slides/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/slides/example/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/belgians/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/family/</loc>
     <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/belgium/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/friends/</loc>
     <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/belgie/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/memorable-moments-of-2018/</loc>
     <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/family/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/wrap-up/</loc>
     <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/friends/</loc>
-    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/memorable-moments-of-2018/</loc>
-    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/wrap-up/</loc>
-    <lastmod>2019-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/bunun/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/bunun/</loc>
     <lastmod>2018-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/the-rite-of-spring/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/the-rite-of-spring/</loc>
     <lastmod>2018-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/yuanzhumin/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/yuanzhumin/</loc>
     <lastmod>2018-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/big-hero-city/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/big-hero-city/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/buddhism/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/buddhism/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/kaohsiung/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/kaohsiung/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/museum/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/museum/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/reisjes/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/reisjes/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/summer-school/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/summer-school/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/temple/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/temple/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/visitors/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/visitors/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/winter/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/winter/</loc>
     <lastmod>2018-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication-type/2/</loc>
-    <lastmod>2018-08-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/2018_cogsem_weather/</loc>
-    <lastmod>2018-08-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2018-08-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2018-08-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/handling-research/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/2018_cogsem_weather/</loc>
+    <lastmod>2018-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/weather/</loc>
+    <lastmod>2018-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/handling-research/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/zotero/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/zotero/</loc>
     <lastmod>2018-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/mapping-the-terminology-for-ideophones/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/mapping-the-terminology-for-ideophones/</loc>
     <lastmod>2018-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/visualization/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/visualization/</loc>
     <lastmod>2018-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/icons-we-live-by/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/icons-we-live-by/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/pln/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/pln/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/study/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/study/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/kanazawa/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/kanazawa/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/nagoya/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/nagoya/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/tokyo/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/tokyo/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/wrapping-up-2017-ii/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/wrapping-up-2017-ii/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/art/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/art/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/gaypride/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/gaypride/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/hsinchu/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/hsinchu/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taipei/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/taipei/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/wrapping-up-2017-i/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/wrapping-up-2017-i/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication-type/6/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication-type/6/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/chiarung-lu/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/chiarung-lu/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/2019_clr_variation_cldc/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/publication/2019_clr_variation_cldc/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/bath/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/bath/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/brisol/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/brisol/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/cambridge/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/cambridge/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/cardiff/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/cardiff/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/europe/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/europe/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/london/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/london/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/travel/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/travel/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/travels-with-bae-in-uk/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/travels-with-bae-in-uk/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/uk/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/uk/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/wales/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/wales/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/welsh/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/welsh/</loc>
     <lastmod>2017-08-30T08:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hashtag-travels-with-bae/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/hashtag-travels-with-bae/</loc>
     <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/home/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/praag/</loc>
     <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/praag/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/prague/</loc>
     <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/prague/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/trips/</loc>
     <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/trips/</loc>
-    <lastmod>2017-08-24T06:34:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/spring-became-summer/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/spring-became-summer/</loc>
     <lastmod>2017-07-10T18:20:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/antwerp/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/antwerp/</loc>
     <lastmod>2017-07-10T18:20:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/loenhout/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/loenhout/</loc>
     <lastmod>2017-07-10T18:20:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/nijmegen/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/nijmegen/</loc>
     <lastmod>2017-07-10T18:20:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/hualien/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/hualien/</loc>
     <lastmod>2017-05-13T07:47:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/tamsui/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/tamsui/</loc>
     <lastmod>2017-05-13T07:47:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taroko/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/taroko/</loc>
     <lastmod>2017-05-13T07:47:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/notorious-b-t-belgians-taiwan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/notorious-b-t-belgians-taiwan/</loc>
     <lastmod>2017-05-13T07:47:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/vakantie/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/vakantie/</loc>
     <lastmod>2017-05-13T07:47:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/breaking-winter/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/breaking-winter/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/karaoke/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/karaoke/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/keelung/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/keelung/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/kerst/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/kerst/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/new-year/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/new-year/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/tainan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/tainan/</loc>
     <lastmod>2017-04-07T16:15:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/japanese-linguistic-ninjal/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/japanese-linguistic-ninjal/</loc>
     <lastmod>2017-04-01T15:14:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/christmas/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/christmas/</loc>
     <lastmod>2017-04-01T15:14:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/gardens/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/gardens/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/shanghai/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/shanghai/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/shanghai/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/shanghai/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/shanghai-and-suzhou/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/shanghai-and-suzhou/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/suzhou/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/suzhou/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/suzhou/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/suzhou/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taekwondo/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/taekwondo/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/thailand/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/thailand/</loc>
     <lastmod>2017-02-03T12:03:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/katrin/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/katrin/</loc>
     <lastmod>2017-02-02T08:41:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/phuket/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/phuket/</loc>
     <lastmod>2017-02-02T08:41:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/thomas-in-thailand/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/thomas-in-thailand/</loc>
     <lastmod>2017-02-02T08:41:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/beachweekend/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/beachweekend/</loc>
     <lastmod>2016-09-21T17:14:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/belgium-and-back-in-business-summer-in-europe-3/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/belgium-and-back-in-business-summer-in-europe-3/</loc>
     <lastmod>2016-09-21T17:14:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/harry-potter/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/harry-potter/</loc>
     <lastmod>2016-09-21T17:14:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/berlin/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/berlin/</loc>
     <lastmod>2016-09-15T08:49:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/berlin/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/berlin/</loc>
     <lastmod>2016-09-15T08:49:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/icasg/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/icasg/</loc>
     <lastmod>2016-09-15T08:49:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/symposium/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/symposium/</loc>
     <lastmod>2016-09-15T08:49:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/leiden/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/leiden/</loc>
     <lastmod>2016-08-30T10:25:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/leiden/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/leiden/</loc>
     <lastmod>2016-08-30T10:25:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/saikin-hai-bubun-tuta-tu-bunun-i-am-a-bunun/</loc>
     <lastmod>2016-07-15T15:32:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/taiwan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/taiwan/</loc>
     <lastmod>2016-07-15T15:32:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/brought-together-2/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/brought-together-2/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/cldc/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/cldc/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/eurovision/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/eurovision/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/iscll/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/iscll/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ncl/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/ncl/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/nhue/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/nhue/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/taipei/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/taipei/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/ttu/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/ttu/</loc>
     <lastmod>2016-05-31T15:40:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/belgie/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/category/belgie/</loc>
     <lastmod>2016-05-30T14:24:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/brought-together-1/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/brought-together-1/</loc>
     <lastmod>2016-05-30T14:24:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/jack/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/jack/</loc>
     <lastmod>2016-05-30T14:24:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/taizhong/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/taizhong/</loc>
     <lastmod>2016-05-30T14:24:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/chinese-ideophones-and-prototypicality/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/project/chinese-ideophones-and-prototypicality/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/a-visit-from-japan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/a-visit-from-japan/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/baoan-gong/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/baoan-gong/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/cny/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/cny/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/confucius-temple/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/confucius-temple/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/jiufen/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/jiufen/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/maokong/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/maokong/</loc>
     <lastmod>2016-04-15T20:21:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/artsy-fartsy-afternoons/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/artsy-fartsy-afternoons/</loc>
     <lastmod>2016-02-21T07:49:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/botanical-garden/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/botanical-garden/</loc>
     <lastmod>2016-02-21T07:49:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/witches/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/witches/</loc>
     <lastmod>2016-02-21T07:49:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/visit-from-vietnam/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/visit-from-vietnam/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/confucius/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/confucius/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/gugong/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/gugong/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/xiangshan/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/xiangshan/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/xiao-ren-guo/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/xiao-ren-guo/</loc>
     <lastmod>2016-02-16T16:19:08+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/holiday-celebrate/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/holiday-celebrate/</loc>
     <lastmod>2016-02-04T16:21:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/holidays/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/holidays/</loc>
     <lastmod>2016-02-04T16:21:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/nieuwjaar/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/nieuwjaar/</loc>
     <lastmod>2016-02-04T16:21:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/scholarships/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/scholarships/</loc>
     <lastmod>2016-01-27T13:41:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/scholarship/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/scholarship/</loc>
     <lastmod>2016-01-27T13:41:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/lantern/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/lantern/</loc>
     <lastmod>2015-12-23T03:53:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/lanterns/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/lanterns/</loc>
     <lastmod>2015-12-23T03:53:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/shifen/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/shifen/</loc>
     <lastmod>2015-12-23T03:53:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/waterfall/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/waterfall/</loc>
     <lastmod>2015-12-23T03:53:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/biking/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/biking/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/fulong/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/fulong/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/interview/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/interview/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/newspaper/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/newspaper/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/pikachu/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/pikachu/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/pride/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/pride/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/pride-ride/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/post/pride-ride/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/veto/</loc>
+  </url><url>
+    <loc>https://thomasvanhoey.com/tag/veto/</loc>
     <lastmod>2015-11-21T16:13:35+00:00</lastmod>
+  </url><url>
+    <loc>https://thomasvanhoey.com/author/</loc>
   </url>
-  
-  <url>
-    <loc>/author/</loc>
-  </url>
-  
 </urlset>
