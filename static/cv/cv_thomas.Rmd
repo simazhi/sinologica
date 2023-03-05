@@ -9,8 +9,8 @@ output:
   html_document:
     df_print: paged
 CJKmainfont: Noto Sans CJK TC
-sansfont: Impact
-mainfont: Noto Serif
+sansfont: Georgia
+mainfont: Georgia # Noto Serif
 geometry: margin=1in
 jobtitle: Postdoctoral assistant, Department of Linguistics
 affiliation: KU Leuven
@@ -18,7 +18,7 @@ addressuni: Blijde Inkomststraat 21, 3000 Leuven
 fontawesome: yes
 academicons: yes
 email: thomas_van_hoey@outlook.com
-# email2: thomasvh@hku.hk
+email2: thomas.vanhoey@kuleuven.be
 github: github.com/simazhi
 phone: +32 472 32 43 00
 web: thomasvanhoey.com
@@ -30,6 +30,7 @@ linkcolor: blue
 urlcolor: blue
 keep_tex: yes
 ---
+
 
 <!-- # Biography 
 
@@ -45,6 +46,11 @@ community engagement
 
 Ideophones, onomatopoeia, mimetics; Cognitive Linguistics; lexical semantics; Cognitive Grammar;  
 historical linguistics; Chinese (in all its variants)
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
 
 # Employment
 
@@ -109,6 +115,15 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 ## Refereed articles
 
+
+(@)
+Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. accepted. Iconicity in Ideophones: Guessing, memorizing, and reassessing. *Cognitive Science*  
+\* co-first authors
+
+(@)
+**Van Hoey, Thomas**. accepted. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics*.
+
+
 (@)
 **Van Hoey, Thomas**. 2022. The blending of bending: How we engage with the World of *Avatar: The Last Airbender* through memes. Metaphor and Symbol 37(3). 185–207. [doi: 10.1080/10926488.2021.1973868](https://doi.org/10.1080/10926488.2021.1973868)
 
@@ -140,16 +155,11 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 (@)
 **Van Hoey, Thomas** \& Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
 
+
 ## Publications under review
 
-(@)
-Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. Iconicity in ideophones: When memory fails, just guess. *under review*  
-\* co-first authors
-<!-- Cognitive Science -->
 
-(@)
-**Van Hoey, Thomas**. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *under review*
-<!-- Cognitive Linguistics -->
+
 
 (@)
 Do, Youngah, Bingzi Yu & **Thomas Van Hoey**. You can go your own way: Self-directed and active phonological learning. *under review*
@@ -227,11 +237,23 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 ## Conference presentations (oral)
 
 (@)
-**Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 2023). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
+**Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
+
+(@)
+Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Grammatical variation is not suboptimal. Presented at the 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
+
+(@)
+Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Competing grammatical constructions: questioning No Synonymy. 16th International Cognitive Linguistics Conference (ICLC 16).  Düsseldorf: Heinrich Heine University. https://iclc16.phil.hhu.de/. 7-11 August 2023.
+
+(@)
+**Van Hoey, Thomas**, Xiaoyu Yu, Tungle Pan & Youngah Do. 2023. Bridging corpus and norm: Mandarin sensory adjectival phrases. Presented at the 16th International Cognitive Linguistics Conference (ICLC 16). Düsseldorf: Heinrich Heine University. https://iclc16.phil.hhu.de/. 7-11 August 2023.
+
+(@)
+**Van Hoey, Thomas**, Matt Hunt Gardner & Benedikt Szmrecsanyi. 2023. Grammatical variation in English is not so difficult. 7th Meeting of the International Society for the Linguistics of English (ISLE7), Brisbane: University of Queensland. 19-23 June 2023.
 
 
 (@)
-**Van Hoey, Thomas**, Matt H. Gardner & Benedikt Szmrecsanyi. Speaking of variation and, uhm, complexity in a corpus of spoken dialogues. 44th conference of the International Computer Archive of Modern and Medieval English (ICAME 44). Vanderbijlpark: North-West University. 17-21 May 2023. 
+**Van Hoey, Thomas**, Matt Hunt Gardner & Benedikt Szmrecsanyi. 2023. Speaking of variation and, uhm, complexity in a corpus of spoken dialogues. 44th International Computer Archive of Modern and Medieval English (ICAME 44). Vanderbijlpark: North-West University. 18-21 May 2023.
 
 
 (@)
@@ -284,6 +306,9 @@ Do, Youngah,  Arthur Lewis Thompson, **Thomas Van Hoey**, Aaron Wing Cheung Chik
 **Van Hoey, Thomas**. 2016. Ideophones in Premodern Chinese: Revisiting Dingemanse’s implicational hierarchy (poster). Mimetics in Japanese and other languages in the world (日本語と世界諸言語のオノマトペ). Tachikawa: NINJAL. 17-18 December 2016. Funding: MOST-105-2922-I-002-682. [doi:10.6084/m9.figshare.12652514](https://doi.org/10.6084/m9.figshare.12652514)
 
 ## Departmental lectures
+
+(@)
+Szmrecsanyi, Benedikt & **Thomas Van Hoey**. 2023. Relatively complex or relatively simple? Toward new ways of analyzing language variation. QLVL Colloquium. Leuven: KU Leuven. 17 February 2023.
 
 (@)
 **Van Hoey, Thomas**. 2021. Tuples and prototypes of collocate-ideophone constructions like ABB in Manarin Chinese. VLT talks. Hong Kong: University of Hong Kong. 29 June 2021.
@@ -345,23 +370,76 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 - 2022\phantom{-2020} \qquad  Introduction to Cognitive Linguistics (MA) (LING 7011) \hfill HKU
 - 2019-2020 \qquad English conversation (BA2) \hfill Tatung University 
 
-# Supervision
+# Thesis supervision 
 
-- 2022 \qquad Feng, Yuanping \hfill "Analysis of tendency towards usage of different SFPs in Mandarin Chinese"
-- 2022 \qquad Liang, Yifan \hfill "Gender terms in Mandarin Chinese: A corpus-based study"
+```{r, echo=FALSE}
+supervision_table <-
+  tribble(~ year, ~ name, ~ title, ~ university,
+          "2023",   "Liang, Suya",   "Sound symbolism in Mongolian", "HKU",
+          "2023",   "Liao, Pinghui", "Expressing 'sour' in Mandarin and in English", "HKU",
+          "2023",   "Zhu, Yiran",    "Animal metaphors in Chinese", "HKU",
+          "2023",   "Zhang, Weixi", "Conceptual metaphor in \\textit{Pride and Prejudice}", "HKU",
+          "2023",   "Zhang, Huchao", "Similes in \\textit{Salome} by Oscar Wilde", "HKU",
+          "2023",   "Gerets, Nan", "Chinees op sociale media", "KU Leuven",
+          
+          "2022",   "Feng, Yuanping", "Analysis of tendency towards usage of different SFPs in Mandarin Chinese", "HKU",
+          "2022",   "Liang, Yifan", "Gender terms in Mandarin Chinese: A corpus-based study", "HKU",
+          )
 
-<!-- # Examinations -->
+supervision_table %>% 
+  kbl(booktabs = TRUE, linesep = "", align = c("rllr"),
+      escape = FALSE) %>% 
+  kable_styling(full_width = TRUE) %>% 
+  column_spec(1, width = "1 cm") %>% 
+  column_spec(2, width = "4 cm") %>% 
+  column_spec(3, width = "7.5 cm") #%>%
+  # column_spec(4, align = "r")
+  # kable_paper(full_width = F)
+```
+
+
+# Theses examinations
+
+```{r, echo=FALSE}
+examination_table <-
+  tribble(~ year, ~ name, ~ title, ~ university,
+          "2023",   "Ma, Ruiming", "Why are alternations difficult", "KU Leuven",
+          "2023",   "Tsou, Shao-Lin", "Variation contexts in parallel corpora", "KU Leuven",
+          "2023",   "Churchill, Anna Sofia", "Variation contexts in parallel corpora", "KU Leuven",
+          
+          "2022",   "Huang, Xuxing",   "An ecological discourse analysis of news on the COVID-19 pandemic", "HKU",
+          "2022",   "Li, Chenyu", "Changes of emotional meaning in Chinese online chat text", "HKU",
+          "2022",   "Li, Ping",    "Language use of Sichuan migrants living in Shenzhen", "HKU",
+          "2022",   "Li, Siyao", "Language ideologies and cultural construction: A sociolinguistic analysis of the accents used in Disney animated cartoons", "HKU",
+          "2022",   "Lin, Yinyue", "Bilingual lexicography (English-Chinese) with reference to etymology and cultural factors: Implications for English language teaching", "HKU",
+          "2022",   "Liu, Yuqin", "The use of the particle \\textit{hahaha} in WeChat conversations: A discourse-based approach", "HKU"
+          )
+
+examination_table %>% 
+  kbl(booktabs = TRUE, linesep = "", align = c("rllr"),
+      escape = FALSE) %>% 
+  kable_styling(full_width = TRUE) %>% 
+  column_spec(1, width = "1 cm") %>% 
+  column_spec(2, width = "4 cm") %>% 
+  column_spec(3, width = "7.5 cm") #%>%
+  # column_spec(4, align = "r")
+  # kable_paper(full_width = F)
+```
+
 
 # Service 
 <!-- Administration, leadership, management -->
 
+## Alumni 
+
 * Sinalumni (alumni association of Sinology students) \hfill 2015-ongoing \newline
 management of membership database and coordinating KU Leuven Connect
 
-## Reviewing
+## Reviewing for journals
 
 * *Canadian Journal of Linguistics / Revue canadienne de linguistique*
 * *Cognitive Linguistics*
+* *East Asian Journal of Popular Culture* 
 * *Frontiers*
 * *Glossa*
 * *Journal of Experimental Psychology:  Learning, Memory, and Cognition*
@@ -371,7 +449,12 @@ management of membership database and coordinating KU Leuven Connect
 * *Linguistics Vanguard*
 * *Mapping China Journal*
 * *PLoS*
+* *Quarterly Journal of Experimental Psychology*
 * *Review of Cognitive Linguistics*
+
+## Reviewing for conferences
+
+* SLE 56 (Societas Linguistica Europaea) 2023: papers on Mandarin
 
 ## Conference organisation
 
