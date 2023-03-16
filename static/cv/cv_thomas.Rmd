@@ -121,7 +121,7 @@ Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse.
 \* co-first authors
 
 (@)
-**Van Hoey, Thomas**. accepted. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics*.
+**Van Hoey, Thomas**. in print. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics*. [doi: 10.1515/cog-2022-0031](https://doi.org/10.1515/cog-2022-0031) 
 
 
 (@)
@@ -159,15 +159,13 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 ## Publications under review
 
 
-
-
 (@)
 Do, Youngah, Bingzi Yu & **Thomas Van Hoey**. You can go your own way: Self-directed and active phonological learning. *under review*
-<!-- Language and Cognition -->
+<!-- Phonology -->
 
 (@)
 Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Baichen Du & Lihui Tan. Adults intuitively prefer learning regular novel phonological patterns: A tale of two planets. 
-<!-- Nature Scientific Reports -->
+<!-- Linguistics Vanguard -->
 
 
 ## Publications in preparation
@@ -236,11 +234,11 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 ## Conference presentations (oral)
 
-(@)
-**Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
+<!-- (@) -->
+<!-- **Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023. -->
 
-(@)
-Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Grammatical variation is not suboptimal. Presented at the 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
+<!-- (@) -->
+<!-- Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Grammatical variation is not suboptimal. Presented at the 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023. -->
 
 (@)
 Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Competing grammatical constructions: questioning No Synonymy. 16th International Cognitive Linguistics Conference (ICLC 16).  Düsseldorf: Heinrich Heine University. https://iclc16.phil.hhu.de/. 7-11 August 2023.
@@ -257,7 +255,7 @@ Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Competing 
 
 
 (@)
-**Van Hoey, Thomas**,\* Arthur Lewis Thompson,\* Youngah Do & Mark Dingemanse. 2023. Iconicity in ideophones: When memory fails, just guess.  45th Annual Meeting of the Deutsche Gesellschaft für Sprachwissenschaft. Köln: University of Cologne. 8-9 March 2023. (*Co-first authors) 
+**Van Hoey, Thomas**,\* Arthur Lewis Thompson,\* Youngah Do & Mark Dingemanse. 2023. Iconicity in ideophones: Guessing, memorizing, and reassessing.  45th Annual Meeting of the Deutsche Gesellschaft für Sprachwissenschaft (DGfS 2023). Köln: University of Cologne. 8-9 March 2023. (*Co-first authors) 
 
 
 (@)
