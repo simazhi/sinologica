@@ -117,8 +117,7 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 
 (@)
-Do, Youngah\*, Arthur Lewis Thompson\*, **Thomas Van Hoey**\* & Mark Dingemanse. accepted. Iconicity in Ideophones: Guessing, memorizing, and reassessing. *Cognitive Science*  
-\* co-first authors
+**Van Hoey, Thomas**, Arthur Lewis Thompson,  Youngah Do & Mark Dingemanse. accepted. Iconicity in Ideophones: Guessing, memorizing, and reassessing. *Cognitive Science*
 
 (@)
 **Van Hoey, Thomas**. in print. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics*. [doi: 10.1515/cog-2022-0031](https://doi.org/10.1515/cog-2022-0031) 
@@ -234,11 +233,11 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 ## Conference presentations (oral)
 
-<!-- (@) -->
-<!-- **Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023. -->
+(@)
+**Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
 
-<!-- (@) -->
-<!-- Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Grammatical variation is not suboptimal. Presented at the 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023. -->
+(@)
+Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Grammatical variation is not suboptimal. Presented at the 56th Annual Meeting of the Societas Linguistica Europaea (SLE 56). Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
 
 (@)
 Szmrecsanyi, Benedikt, Matt Hunt Gardner & **Thomas Van Hoey**. 2023. Competing grammatical constructions: questioning No Synonymy. 16th International Cognitive Linguistics Conference (ICLC 16).  Düsseldorf: Heinrich Heine University. https://iclc16.phil.hhu.de/. 7-11 August 2023.
