@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.21)  14 APR 2023 15:03
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.21)  10 MAY 2023 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,56 +975,62 @@ LaTeX Font Info:    Font shape `TU/Georgia(0)/b/sc' will be
 LaTeX Font Info:    Font shape `TU/Georgia(0)/b/n' will be
 (Font)              scaled to size 10.67761pt on input line 173.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 9.52478pt on input line 186.
+(Font)              scaled to size 9.52478pt on input line 185.
 
-LaTeX Font Warning: Font shape `TU/NotoSansCJKTC(0)/m/it' undefined
-(Font)              using `TU/NotoSansCJKTC(0)/m/n' instead on input line 199.
+Underfull \hbox (badness 10000) in paragraph at lines 180--188
 
+ []
+
+LaTeX Font Info:    Font shape `TU/Georgia(0)/b/n' will be
+(Font)              scaled to size 12.81313pt on input line 224.
+LaTeX Font Info:    Font shape `TU/Georgia(0)/m/sl' in size <14.4> not available
+(Font)              Font shape `TU/Georgia(0)/m/it' tried instead on input line 224.
+LaTeX Font Info:    Font shape `TU/Georgia(0)/m/it' will be
+(Font)              scaled to size 12.59735pt on input line 224.
 [1
 
 ]
-LaTeX Font Info:    Font shape `TU/Georgia(0)/b/n' will be
-(Font)              scaled to size 12.81313pt on input line 248.
-LaTeX Font Info:    Font shape `TU/Georgia(0)/m/sl' in size <14.4> not available
-(Font)              Font shape `TU/Georgia(0)/m/it' tried instead on input line 248.
-LaTeX Font Info:    Font shape `TU/Georgia(0)/m/it' will be
-(Font)              scaled to size 12.59735pt on input line 248.
 LaTeX Font Info:    Font shape `TU/Georgia(0)/m/n' will be
 (Font)              scaled to size 7.16174pt on input line 315.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
 (Font)              scaled to size 6.34985pt on input line 315.
-[2] [3] [4]
-Underfull \hbox (badness 1701) in paragraph at lines 530--537
+[2]
+Overfull \hbox (12.58379pt too wide) in paragraph at lines 372--379
+\TU/Georgia(0)/m/n/12 (CHIDEOD). CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [][]10.17605/OSF.IO/KPWGF[][]),
+ []
+
+[3] [4]
+Underfull \hbox (badness 1701) in paragraph at lines 514--521
 \TU/Georgia(0)/m/n/12 and written form across time: Introducing a database of Chinese literary ideophones
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 530--537
+Underfull \hbox (badness 1881) in paragraph at lines 514--521
 \TU/Georgia(0)/m/n/12 — CHIDEOD. ILL 12 [International Symposium on Iconicity in Language and Litera-
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 530--537
+Underfull \hbox (badness 1132) in paragraph at lines 514--521
 \TU/Georgia(0)/m/n/12 ture], Lund: Lund University. 3-5 May 2019. Funding: MOST-108-2922-I-002-198.
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 537--545
+Underfull \hbox (badness 1127) in paragraph at lines 521--529
 \TU/Georgia(0)/m/n/12 Discourse, and Cognition]. Taipei: National Taiwan University. 19-21 October 2018.
  []
 
 [5]
-Underfull \hbox (badness 1997) in paragraph at lines 578--585
+Underfull \hbox (badness 1997) in paragraph at lines 562--569
 []\TU/Georgia(0)/b/n/12 Van Hoey, Thomas\TU/Georgia(0)/m/n/12 . 2017. The thunder rolls: Iconicity and ideophones in Chi-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 578--585
+Underfull \hbox (badness 1478) in paragraph at lines 562--569
 \TU/Georgia(0)/m/n/12 Iconicity in Language Use, Development and Processing. Nijmegen: Max Planck In-
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 578--585
+Underfull \hbox (badness 1314) in paragraph at lines 562--569
 \TU/Georgia(0)/m/n/12 stitute for Psycholinguistics. 6-7 July 2017. Funding: NTU, College of Liberal Arts.
  []
 
@@ -1038,10 +1044,10 @@ Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
 (rerunfilecheck)             Checksum: 00E9E58678719D59D29C3193D2E78E4A;5284.
  ) 
 Here is how much of TeX's memory you used:
- 20207 strings out of 478687
- 393363 string characters out of 5848240
+ 20204 strings out of 478687
+ 393282 string characters out of 5848240
  1866007 words of memory out of 5000000
- 39938 multiletter control sequences out of 15000+600000
+ 39935 multiletter control sequences out of 15000+600000
  525859 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,13n,122p,1198b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s

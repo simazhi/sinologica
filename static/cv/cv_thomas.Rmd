@@ -54,8 +54,7 @@ library(kableExtra)
 
 # Employment
 
-**Postdoctoral assistant**, KU Leuven \hfill 2023-present
-
+**Postdoctoral assistant**, KU Leuven \hfill 2023-present  
 **Postdoctoral fellow**, The University of Hong Kong \hfill 2021-2022 
 <!-- \newline -->
 <!-- (PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) \hfill Hong Kong \newline -->
@@ -65,34 +64,27 @@ library(kableExtra)
 
 # Education
 
-**PhD Linguistics** *(A+)*, National Taiwan University: Graduate Institute of Linguistics \hfill 2015-2020 \newline
-Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taipei, Taiwan \newline
-\mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach* \newline
+**PhD Linguistics** *(A+)*, National Taiwan University: Graduate Institute of Linguistics \hfill 2015-2020  <!-- \newline -->
+<!-- Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taipei, Taiwan \newline -->
+<!-- \mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach* \newline -->
 <!-- doi: 10.6342/NTU202003830 \newline -->
-Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw) 
-
+<!-- Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw)  -->
 **MA Linguistics** *(magna cum laude)*, KU Leuven \hfill 2014-2015  
-Thesis: *Ideophones in Middle Chinese:* \hfill Leuven, Belgium \newline 
-\mbox{} \qquad{}\qquad{}*A typological study of a Tang dynasty poetic corpus*  
-Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/) 
-
+<!-- Thesis: *Ideophones in Middle Chinese:* \hfill Leuven, Belgium \newline  -->
+<!-- \mbox{} \qquad{}\qquad{}*A typological study of a Tang dynasty poetic corpus*   -->
+<!-- Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/)  -->
 **MA Sinology** *(magna cum laude)*, KU Leuven \hfill 2013-2014  
-Thesis: *The Guwen yundong 古文运动 (Classical Prose Movement)* \hfill Leuven, Belgium \newline
-\mbox{} \qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*  
-Advisor: [Willy Vande Walle, Ph.D](https://www.kuleuven.be/wieiswie/en/person/00009507)
-
-**Year-long Mandarin Chinese exchange study**, Suzhou University 苏州大学 \hfill 2012-2013 \newline
-\mbox{} \hfill Suzhou, China
-
+<!-- Thesis: *The Guwen yundong 古文运动 (Classical Prose Movement)* \hfill Leuven, Belgium \newline -->
+<!-- \mbox{} \qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*   -->
+<!-- Advisor: [Willy Vande Walle, Ph.D](https://www.kuleuven.be/wieiswie/en/person/00009507) -->
+**Mandarin Chinese exchange programme**, Suzhou University 苏州大学 \hfill 2012-2013 \newline
+<!-- \mbox{} \hfill Suzhou, China -->
 **BA Sinology** *(cum laude)*, University of Leuven \hfill 2009-2012 \newline
-\mbox{} \hfill Leuven, Belgium
+<!-- \mbox{} \hfill Leuven, Belgium -->
 
 # Additional training and education
-Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill July 2016
-
-Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill July 2014
-
-
+Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill 2016  
+Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill 2014
 
 
 # Honours and awards
@@ -117,14 +109,13 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 
 (@)
-**Van Hoey, Thomas**, Arthur Lewis Thompson,  Youngah Do & Mark Dingemanse. accepted. Iconicity in Ideophones: Guessing, memorizing, and reassessing. *Cognitive Science*
+**Van Hoey, Thomas**, Arthur Lewis Thompson,  Youngah Do & Mark Dingemanse. 2023. Iconicity in ideophones: Guessing, memorizing, and reassessing. *Cognitive Science* e13268. 1-27. [doi: 10.1111/cogs.13268](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13268)
 
 (@)
-**Van Hoey, Thomas**. in print. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics*. [doi: 10.1515/cog-2022-0031](https://doi.org/10.1515/cog-2022-0031) 
-
+**Van Hoey, Thomas**. 2023. ABB, a salient prototype of collocate-ideophone constructions in Mandarin Chinese. *Cognitive Linguistics* 34(1). 133-163. [doi: 10.1515/cog-2022-0031](https://doi.org/10.1515/cog-2022-0031) 
 
 (@)
-**Van Hoey, Thomas**. 2022. The blending of bending: How we engage with the World of *Avatar: The Last Airbender* through memes. Metaphor and Symbol 37(3). 185–207. [doi: 10.1080/10926488.2021.1973868](https://doi.org/10.1080/10926488.2021.1973868)
+**Van Hoey, Thomas**. 2022. The blending of bending: How we engage with the World of *Avatar: The Last Airbender* through memes. *Metaphor and Symbol* 37(3). 185–207. [doi: 10.1080/10926488.2021.1973868](https://doi.org/10.1080/10926488.2021.1973868)
 
 (@)
 Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. *Cognitive Linguistics* 32(4). 563-608. \* [doi: 10.1515/cog-2020-0055](https://10.1515/cog-2020-0055)
@@ -157,28 +148,39 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 
 ## Publications under review
 
+(@)
+Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Baichen Du & Lihui Tan. 
+Implicit and explicit learning of vowel harmony patterns in phonotactics and alternations.
+<!-- Linguistics Vanguard -->
 
 (@)
-Do, Youngah, Bingzi Yu & **Thomas Van Hoey**. You can go your own way: Self-directed and active phonological learning. *under review*
+Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Bingzi Yu, Lihui Tan, Sui Lung Sze, Tsz To Ho, Tak-Wang Li.
+The acquisition, contact, and transmission of phonological variation.
 <!-- Phonology -->
 
 (@)
-Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Baichen Du & Lihui Tan. Adults intuitively prefer learning regular novel phonological patterns: A tale of two planets. 
-<!-- Linguistics Vanguard -->
+Do, Youngah, Bingzi Yu & **Thomas Van Hoey**. 
+Mitigating the trade-off between verification and speculation in learning vowel harmony. 
+<!-- Language and Speech -->
+
+(@)
+Do, Youngah, Xiaoyu Yu, Bingzi Yu, **Thomas Van Hoey**, Tsz To Ho.
+Bilingualism and phonological control: Evidence for independent regulation of phonotactic and alternation systems
+<!-- Language -->
 
 
 ## Publications in preparation
 
 (@)
-**Thomas Van Hoey**, Xiaoyu Yu & Youngah Do. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
+**Thomas Van Hoey**, Xiaoyu Yu, Tungle Pan & Youngah Do. Converging evidence: ABB constructions in Mandarin analyzed in the corpus and rated in the experiment.
 
 (@)
 **Van Hoey, Thomas**\*, Arthur Lewis Thompson\*, Aaron Wing Cheung Chik, Youngah Do & Mark Dingemanse. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
 \* co-first authors
 
 
-(@)
-**Van Hoey, Thomas** & Tungle Pan. The iconicity of ABB across Sinitic languages.
+<!-- (@) -->
+<!-- **Van Hoey, Thomas** & Tungle Pan. The iconicity of ABB across Sinitic languages. -->
 
 ## Theses
 
@@ -203,8 +205,7 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 ## Resources and data sets
 
 (@)
-**Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. The Chinese ideophone database (CHIDEOD). \newline 
-CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF](https://osf.io/kpwgf/)), as well as through a [Shiny app interface](https://simazhi.shinyapps.io/chideod_appversion/).
+**Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. The Chinese ideophone database (CHIDEOD). CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF](https://osf.io/kpwgf/)), as well as through a [Shiny app interface](https://simazhi.shinyapps.io/chideod_appversion/).
 
 
 
@@ -435,6 +436,7 @@ management of membership database and coordinating KU Leuven Connect
 ## Reviewing for journals
 
 * *Canadian Journal of Linguistics / Revue canadienne de linguistique*
+* *Cognitive Semantics*
 * *Cognitive Linguistics*
 * *East Asian Journal of Popular Culture* 
 * *Frontiers*
@@ -442,12 +444,15 @@ management of membership database and coordinating KU Leuven Connect
 * *Journal of Experimental Psychology:  Learning, Memory, and Cognition*
 * *Handbook of Cognitive Semantics*
 * *Language and Cognition*
+* *Language and Speech*
+* *Language Learning*
 * *Language Sciences*
 * *Linguistics Vanguard*
 * *Mapping China Journal*
 * *PLoS*
 * *Quarterly Journal of Experimental Psychology*
 * *Review of Cognitive Linguistics*
+* *Typology at the Crossroads*
 
 ## Reviewing for conferences
 
