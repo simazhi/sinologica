@@ -3,6 +3,7 @@ title: "ABB, a salient prototype of collocate–ideophone constructions in Manda
 
 authors:
 - Thomas Van Hoey
+
 # author_notes:
 # - "Equal contribution"
 # - "Equal contribution"
@@ -19,7 +20,7 @@ publishDate: "2023-09-07T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Cognitive Linguisitcs*"
+publication: "*Cognitive Linguistics*"
 publication_short: "CogLing"
 
 Abstract: ABB words in Chinese, e.g., hēi-qīqī ‘pitch black’, have been studied for a long time. Most traditional studies analyze these words through derivational rules involving empty suffixes. However, this is problematic, as they are better seen as compounds involving a prosaic A and an ideophonic BB part. By treating ABB as a schema sanctioned by collocate–ideophonic constructions, it is possible to investi- gate other similar patterns. A corpus study (more than 5,000 tokens) revealed that on the level of schemas, ABB truly acts as a prototype of such constructions, but that it is far from the only pattern to be identified. A second corpus-based study on the level of exemplars showed there are different pockets of salience and non-uniformity in the data from four angles: cue validity, frequency, dispersion, and constructional pref- erence. This paper provides evidence that the traditional ABB narrative needs to be complemented with usage-based data, and grapple with the lexical salience effects this brings along for words involving iconicity."
