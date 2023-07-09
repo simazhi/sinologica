@@ -1,6 +1,6 @@
 +++
 title = "Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration"
-date = "2018-01-01"
+date = "2019-01-01"
 
 
 # Authors. Comma separated list, e.g. `["Van Hoey, Thomas", "Chiarung Lu"]`.
