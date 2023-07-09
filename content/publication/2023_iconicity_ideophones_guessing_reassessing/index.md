@@ -26,7 +26,7 @@ publication_types: ["2"]
 publication: "*Cognitive Science*"
 publication_short: "CogSci"
 
-Abstract: Iconicity, or the resemblance between form and meaning, is often ascribed to a special status and contrasted with default assumptions of arbitrariness in spoken language. But does iconicity in spoken language have a special status when it comes to learnability? A simple way to gauge learnability is to see how well something is retrieved from memory. We can further contrast this with guessability, to see (1) whether the ease of guessing the meanings of ideophones outperforms the rate at which they are remembered; and (2) how willing participants’ are to reassess what they were taught in a prior task—a novel contribution of this study. We replicate prior guessing and memory tasks using ideophones and adjectives from Japanese, Korean, and Igbo. Our results show that although native Cantonese speakers guessed ideophone meanings above chance level, they memorized both ideophones and adjectives with comparable accuracy. However, response time data show that participants took significantly longer to respond correctly to adjective–meaning pairs—indicating a discrepancy in a cognitive effort that favored the recognition of ideophones. In a follow-up reassessment task, participants who were taught foil translations were more likely to choose the true translations for ideophones rather than adjectives. By comparing the findings from our guessing and memory tasks, we conclude that iconicity is more
+Abstract: "Iconicity, or the resemblance between form and meaning, is often ascribed to a special status and contrasted with default assumptions of arbitrariness in spoken language. But does iconicity in spoken language have a special status when it comes to learnability? A simple way to gauge learnability is to see how well something is retrieved from memory. We can further contrast this with guessability, to see (1) whether the ease of guessing the meanings of ideophones outperforms the rate at which they are remembered; and (2) how willing participants’ are to reassess what they were taught in a prior task—a novel contribution of this study. We replicate prior guessing and memory tasks using ideophones and adjectives from Japanese, Korean, and Igbo. Our results show that although native Cantonese speakers guessed ideophone meanings above chance level, they memorized both ideophones and adjectives with comparable accuracy. However, response time data show that participants took significantly longer to respond correctly to adjective–meaning pairs—indicating a discrepancy in a cognitive effort that favored the recognition of ideophones. In a follow-up reassessment task, participants who were taught foil translations were more likely to choose the true translations for ideophones rather than adjectives. By comparing the findings from our guessing and memory tasks, we conclude that iconicity is more
 accessible if a task requires participants to actively seek out sound-meaning associations."
 
 # Summary. An optional shortened abstract.
@@ -46,7 +46,7 @@ featured: false
 
 # links:
 # - name: ""
-url: "https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13268"
+# url: "https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13268"
 url_pdf: ''
 url_code: 'https://osf.io/463ts/'
 url_dataset: ''
