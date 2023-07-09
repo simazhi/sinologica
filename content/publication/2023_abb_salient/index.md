@@ -36,7 +36,7 @@ tags:
 - tupleization
 
 
-featured: false 
+featured: true 
 
 # links:
 # - name: ""
