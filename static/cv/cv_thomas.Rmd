@@ -165,7 +165,7 @@ Mitigating the trade-off between verification and speculation in learning vowel 
 
 (@)
 Do, Youngah, Xiaoyu Yu, Bingzi Yu, **Thomas Van Hoey**, Tsz To Ho.
-Bilingualism and phonological control: Evidence for independent regulation of phonotactic and alternation systems
+Bilingualism and phonological control: Evidence for independent regulation of phonotactic and alternation systems.
 <!-- Language -->
 
 

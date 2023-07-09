@@ -6,11 +6,11 @@ authors:
 # author_notes:
 # - "Equal contribution"
 # - "Equal contribution"
-date: "accepted"
+date: "2022-06-27"
 doi: "https://doi.org/10.1080/10926488.2021.1973868"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2021-09-02T00:00:00Z"
+publishDate: "2022-09-02T00:00:00Z"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -36,8 +36,8 @@ featured: false
 
 # links:
 # - name: ""
-#   url: ""
-url_pdf: 
+url: "https://www.tandfonline.com/doi/abs/10.1080/10926488.2021.1973868"
+url_pdf: 'https://osf.io/xka9m/'
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -68,12 +68,6 @@ projects: []
 # slides: example
 ---
 
-{{% alert note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /alert %}}
 
-{{% alert note %}}
-Click the *Slides* button above to demo Academic's Markdown slides feature.
-{{% /alert %}}
 
 
