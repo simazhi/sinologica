@@ -54,8 +54,8 @@ library(kableExtra)
 
 # Employment
 
-**Postdoctoral assistant**, KU Leuven \hfill 2023-present  
-**Postdoctoral fellow**, The University of Hong Kong \hfill 2021-2022 
+**Postdoctoral assistant** \hfill KU Leuven \hspace*{1em} 2023-2024  
+**Postdoctoral fellow** \hfill The University of Hong Kong \hspace*{1em} 2021-2022 
 <!-- \newline -->
 <!-- (PI [Youngah Do, Ph.D](http://hub.hku.hk/cris/rp/rp02160), Co-Is [Mark Dingemanse, Ph.D](https://markdingemanse.net/) \hfill Hong Kong \newline -->
 <!-- \mbox{} \qquad{} -->
@@ -64,27 +64,21 @@ library(kableExtra)
 
 # Education
 
-**PhD Linguistics** *(A+)*, National Taiwan University: Graduate Institute of Linguistics \hfill 2015-2020  <!-- \newline -->
-<!-- Dissertation: *Prototypicality and salience of Chinese ideophones: * \hfill Taipei, Taiwan \newline -->
-<!-- \mbox{} \qquad{}\qquad{}\qquad{} *A cognitive and corpus linguistics approach* \newline -->
-<!-- doi: 10.6342/NTU202003830 \newline -->
+
+**PhD Linguistics** *(A+)* \hfill National Taiwan University \hspace*{1em} 2015-2020 \newline
 <!-- Advisor: [Lu Chiarung 呂佳蓉, Ph.D](chiarung.blog.ntu.edu.tw)  -->
-**MA Linguistics** *(magna cum laude)*, KU Leuven \hfill 2014-2015  
-<!-- Thesis: *Ideophones in Middle Chinese:* \hfill Leuven, Belgium \newline  -->
-<!-- \mbox{} \qquad{}\qquad{}*A typological study of a Tang dynasty poetic corpus*   -->
+**MA Linguistics** *(magna cum laude)* \hfill KU Leuven \hspace*{1em} 2014-2015 \newline 
 <!-- Advisor: [Jean-Christophe Verstraete, Ph.D](https://perswww.kuleuven.be/~u0005010/jcv/)  -->
-**MA Sinology** *(magna cum laude)*, KU Leuven \hfill 2013-2014  
-<!-- Thesis: *The Guwen yundong 古文运动 (Classical Prose Movement)* \hfill Leuven, Belgium \newline -->
-<!-- \mbox{} \qquad{}\qquad{} *during Tang and Song: Ideological as well as Stylistic Innovation?*   -->
+**MA Sinology** *(magna cum laude)* \hfill KU Leuven \hspace*{1em} 2013-2014  
 <!-- Advisor: [Willy Vande Walle, Ph.D](https://www.kuleuven.be/wieiswie/en/person/00009507) -->
-**Mandarin Chinese exchange programme**, Suzhou University 苏州大学 \hfill 2012-2013 \newline
+**Mandarin Chinese exchange programme** \hfill Suzhou University \hspace*{1em} 2012-2013 \newline
 <!-- \mbox{} \hfill Suzhou, China -->
-**BA Sinology** *(cum laude)*, University of Leuven \hfill 2009-2012 \newline
+**BA Sinology** *(cum laude)* \hfill KU Leuven \hspace*{1em} 2009-2012 \newline
 <!-- \mbox{} \hfill Leuven, Belgium -->
 
 # Additional training and education
-Summer school: Chinese Digital Humanities. Leiden: Leiden University. \hfill 2016  
-Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan University. \hfill 2014
+Summer school: Chinese Digital Humanities \hfill Leiden University \hspace*{1em} 2016  
+Summer school:  Translating Chinese (Summer +10). \hfill National Taiwan University \hspace*{1em} 2014
 
 
 # Honours and awards
@@ -101,11 +95,15 @@ Summer school:  Translating Chinese (Summer +10). Taipei: National Taiwan Univer
 
 ## Projects
 
+PI
+
+* \- "Borrowing Iconic Words: Loss, Transfer, and Reinvention of Depiction" for FWO at KU Leuven (FWO K1AFE24N) <!-- 3 years postdoc [ca. 300,000 EUR] + 16,500 EUR -->
+
 Co-I
 
 * \- "Breaking down and rebuilding iconicity: machine learning verified by human learning" (PI Youngah Do, Co-I Harald Baayen, Co-I Christophe Coupé, Co-I Thomas Van Hoey) at HKU (GRF 17602723) <!-- 846,300 HKD -->
 
-Executing
+Executing/ed
 
 * \- "Relatively complex or relatively simple? Toward new ways of analyzing language variation" (PI Benedikt Szmrecsanyi) at KU Leuven (BOF C1 C14/22/045)
 * \- "Exploring the learnability of ideophones through articulatory and manual gestures" (PI Youngah Do, Co-I Mark Dingemanse, Co-I Arthur Thompson) at HKU (GRF 17603120) <!-- 700,134 HKD -->
@@ -114,6 +112,13 @@ Executing
 
 ## Refereed articles
 
+(@)
+**Thomas Van Hoey**, Xiaoyu Yu, Tungle Pan & Youngah Do. (*accepted*). What ratings and corpus data reveal about the vividness of Mandarin ABB words. *Language and Cognition* 
+
+(@)
+Yu, Xiaoyu, **Thomas Van Hoey**, Baichen Du, Lihui Tan & Youngah Do. (*accepted*).
+Implicit and explicit learning of vowel harmony patterns in phonotactics and alternations. *Linguistics Vanguard*
+<!-- Linguistics Vanguard -->
 
 (@)
 **Van Hoey, Thomas**, Arthur Lewis Thompson,  Youngah Do & Mark Dingemanse. 2023. Iconicity in ideophones: Guessing, memorizing, and reassessing. *Cognitive Science* e13268. 1-27. [doi: 10.1111/cogs.13268](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13268)
@@ -142,12 +147,10 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 ## Book chapters
 
 (@)
-**Van Hoey, Thomas**. *forthcoming*. Onomatopoeia in Mandarin Chinese. In Lívia Körtvélyessy & Pavol Štekauer (eds.), Edinburgh Handbook of Onomatopoeia (Handbooks of Linguistics). Mouton de Gruyter. 
-(*accepted*, [preprint doi: 10.31219/osf.io/s72mj](https://osf.io/s72mj))
-
+**Van Hoey, Thomas**. 2024. Onomatopoeia in Mandarin Chinese. In Lívia Körtvélyessy & Pavol Štekauer (eds.), Onomatopoeia in the world’s languages: A comparative handbook (Comparative Handbooks of Linguistics 10), 563–575. Berlin: Mouton de Gruyter. [doi:10.1515/9783111053226-047](https://doi.org/10.1515/9783111053226-047).
 
 (@)
-**Van Hoey, Thomas**. *forthcoming*. A semantic map for ideophones. In Thomas Fuyin Li (ed.) *Handbook of Cognitive Semantics*. Ch. 16. Leiden: Brill. (*accepted*, [preprint doi: 10.31219/osf.io/muhpd](https://osf.io/muhpd/))
+**Van Hoey, Thomas**. 2024. A semantic map for ideophones. In Thomas Fuyin Li (ed.), Handbook of Cognitive Semantics: Vol 2, 129–175. Leiden: Brill. [preprint doi: 10.31219/osf.io/muhpd](https://osf.io/muhpd/))
 
 (@)
 **Van Hoey, Thomas** \& Chiarung Lu. 2019. Lexical variation of ideophones in Chinese classics: Their implications in embodiment and migration. In Janice Fon (ed.), *Dimensions of diffusion and diversity*, 195–226. (Cognitive Linguistics Research 63). Berlin; Boston: De Gruyter Mouton. [doi: 10.1515/9783110610895](https://doi.org/10.1515/9783110610895)
@@ -155,27 +158,15 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 
 ## Publications under review
 
-(@)
-**Thomas Van Hoey**, Xiaoyu Yu, Tungle Pan & Youngah Do. What ratings and corpus data reveal about the vividness of Mandarin ABB words.
-<!-- Language and Cognition -->
-
-(@)
-Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Baichen Du & Lihui Tan. 
-Implicit and explicit learning of vowel harmony patterns in phonotactics and alternations.
-<!-- Linguistics Vanguard -->
-
 <!-- (@) -->
 <!-- Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Bingzi Yu, Lihui Tan, Sui Lung Sze, Tsz To Ho, Tak-Wang Li. -->
 <!-- The acquisition, contact, and transmission of phonological variation. -->
 <!-- Phonology -->
 
-
 <!-- (@) -->
 <!-- Do, Youngah, Bingzi Yu & **Thomas Van Hoey**.  -->
 <!-- Mitigating the trade-off between verification and speculation in learning vowel harmony.  -->
 <!-- Language and Speech -->
-
-
 
 <!-- (@) -->
 <!-- Do, Youngah, Xiaoyu Yu, Bingzi Yu, **Thomas Van Hoey**, Tsz To Ho. -->
@@ -183,20 +174,19 @@ Implicit and explicit learning of vowel harmony patterns in phonotactics and alt
 <!-- Language -->
 
 
-
 (@)
-**Van Hoey, Thomas**\*, Arthur Lewis Thompson\*, Aaron Wing Cheung Chik, Youngah Do & Mark Dingemanse. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
+**Van Hoey, Thomas**\*, Arthur Lewis Thompson\*, Aaron Wing Cheung Chik & Youngah Do. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
 \* co-first authors
 
 
+(@)
+**Van Hoey, Thomas**, Benedikt Szmrecsanyi, Matt Hunt Gardner. Language users don't mind optionality, and absolute complexity is not proportional to relative complexity.
 
 ## Publications in preparation
 
 (@)
 **Van Hoey, Thomas**, Dan Dewey, Youngah Do. fNIR study on ideophone usage in Mandarin speakers.
 
-(@)
-**Van Hoey, Thomas**, Benedikt Szmrecsanyi, Matt Hunt Gardner. Language users don't mind optionality, and absolute complexity is not proportional to relative complexity.
 
 (@)
 **Van Hoey, Thomas**. Sound and lexical semantics. *Cambridge handbook of lexical semantics* (eds. Dirk Geeraerts & Dylan Glynn)
@@ -207,10 +197,6 @@ Implicit and explicit learning of vowel harmony patterns in phonotactics and alt
 (@)
 **Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media.
 
-
-
-<!-- (@) -->
-<!-- **Van Hoey, Thomas** & Tungle Pan. The iconicity of ABB across Sinitic languages. -->
 
 ## Theses
 
@@ -238,7 +224,6 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 **Van Hoey, Thomas** & Arthur Lewis Thompson. 2019. The Chinese ideophone database (CHIDEOD). CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [10.17605/OSF.IO/KPWGF](https://osf.io/kpwgf/)), as well as through a [Shiny app interface](https://simazhi.shinyapps.io/chideod_appversion/).
 
 
-
 # Conferences
 
 <!-- ## Keynote addresses -->
@@ -246,14 +231,10 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 ## Invited talks
 
 (@)
-**Van Hoey, Thomas**. *TITLE TBD*. 2024. Workshop on Manifestations of sound symbolism in language: phonaesthemes, ideophones and onomatopoeia. Held at the first Biennial of Czech Linguistics. Prague: Charles University. 18-20 September 2024.
+**Van Hoey, Thomas**. *Measuring the meaning and structure of ideophones: Lessons from Chinese*. 2024. Workshop on Manifestations of sound symbolism in language: phonaesthemes, ideophones and onomatopoeia. Held at the first Biennial of Czech Linguistics. Prague: Charles University. 18-20 September 2024.
 
 (@)
-**Van Hoey, Thomas&**. *TITLE TBD*. 2024. LOT summer school. Amersterdam: University of Amsterdam.
-
-(@)
-**Van Hoey, Thomas**, Benedikt Szmrecsanyi & Matt Hunt Gardner. *TITLE TBD*. 2024. Conference on Language, Discourse, and Cognition (CLDC 11). Taipei: National Taiwan University. May 2024.
-
+**Van Hoey, Thomas&**. *Exploratory data analysis: From start to report*. 2024. LOT summer school. Amersterdam: University of Amsterdam.
 
 (@)
 **Van Hoey, Thomas**. 2022. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. IcoSem 10. 9 February 2022. Published as Thompson, Van Hoey & Do in *Cognitive Linguistics* (2021). https://youtu.be/UlJpI9FhUmE 
@@ -275,10 +256,16 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 ## Conference presentations (oral)
 
 (@)
+**Van Hoey, Thomas**. 2024. A semantic map for ideophones and its application to Middle Chinese poetry. SLE 57 [57th Annual Meeting of the Societas Linguistica Europaea]. Helsinki: University of Helsinki. 21-24 August 2024.
+
+(@)
+Yu, Xiaoyu, Samuel Sui Lung Sze, **Thomas Van Hoey**, Bingzi Yu, Frank Lihui Tan, Stephen Tsz To Ho, Wayne Tak Wang Li, Youngah Do. 2024. The acquisition, contact, and transmission of phonological variation. LabPhon 19 [Conference on Laboratory Phonology]. 27-29 June 2024.
+
+(@)
 **Van Hoey, Thomas**, Xiaoyu Yu, Tungle Pan & Youngah Do. 2023. What ratings and corpus data reveal about the vividness of Mandarin ABB words. IcoSem 2023 [Iconicity Seminar]. online conference. 25 November 2023.
 
 (@)
-**Van Hoey, Thoms** & Benedikt Szmrecsanyi. 2023. Language users don't mind optionality, and absolute complexity is not proportional to relative complexity. BAAHE 2023 [Belgian Association of Anglicists in Higher Education]. Leuven: KU Leuven. 17 November 2023.
+**Van Hoey, Thomas** & Benedikt Szmrecsanyi. 2023. Language users don't mind optionality, and absolute complexity is not proportional to relative complexity. BAAHE 2023 [Belgian Association of Anglicists in Higher Education]. Leuven: KU Leuven. 17 November 2023.
 
 (@)
 **Van Hoey, Thomas**. 2023. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media. SLE 56 [56th Annual Meeting of the Societas Linguistica Europaea]. Athens: National and Kapodistrian University of Athens. 29 August - 1 September 2023.
@@ -341,6 +328,9 @@ Do, Youngah,  Arthur Lewis Thompson, **Thomas Van Hoey**, Aaron Wing Cheung Chik
 ## Conference presentations (posters)
 
 (@)
+Yu, Xiaoyu, Samuel Sui Lung Sze, **Thomas Van Hoey**, Bingzi Yu, Frank Lihui Tan, Stephen Tsz To Ho, Wayne Tak Wang Li, Youngah Do. 2024. The acquisition, contact, and transmission of phonological variation. LabPhon [Laboratory Phonology] 19. Seoul: Hanyang University. 27-29 June 2024. 
+
+(@)
 **Van Hoey, Thomas**. 2018. The blending of bending: Worldbuilding in *Avatar: The Last Airbender* and *The Legend of Korra*. RaAM [Association for Researching and Applying Metaphor] 12. Hong Kong: Hong Kong Polytechnic University. 27-30 June 2018. Funding: MOST-107-2922-I-002-237. [doi:10.6084/m9.figshare.12652460](https://doi.org/10.6084/m9.figshare.12652460)
 
 (@)
@@ -391,32 +381,38 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 
 ## Fellowships
 
-- 2019-2020 \qquad NTU, Financial Assistance Grant for International Students <!-- 160,000 NTD -->
-- 2018-2019 \qquad NTU, Financial Assistance Grant for International Students <!-- 160,000 NTD -->
-- 2015-2018 \qquad NTU, Research Fellowship for Outstanding International Doctoral Students <!-- 1,500,000 NTD -->
-- 2012-2013 \qquad Hanban scholarship <!-- one year study -->
+\begin{tabular}{p{1.9cm}p{9cm}p{1cm}p{2.7cm}}
+2018-2020 &  Financial Assistance Grant for International Students & NTU & \RaggedLeft{320,000 NTD} \\
+2015-2018 & Research Fellowship for Outstanding International Doctoral Students & NTU & \RaggedLeft{1,500,000 NTD} \\
+2012-2013 & Exchange scholarship (Suzhou University) & Hanban & \RaggedLeft{1 year funding} \\
+\end{tabular}
 
 
 ## Travel grants
 
-- 2022 \qquad HKU, RCGAS 202107170056 <!-- 16,500 HKD --> 
-- 2019 \qquad NTU, College of Liberal Arts  <!-- 15,000 NTD -->
-- 2019 \qquad MOST-108-2922-I-002-198 <!-- 45,000 NTD -->
-- 2018 \qquad MOST-107-2922-I-002-237 <!-- 8,000 NTD -->
-- 2017 \qquad MOST-106-2922-I-002-596 <!-- 15,000 NTD --> 
-- 2017 \qquad NTU, College of Liberal Arts  <!-- 20,000 NTD --> 
-- 2016 \qquad MOST-105-2922-I-002-682 <!-- 10,000 NTD --> 
+\begin{tabular}{p{1.9cm}p{9cm}p{1cm}p{2.7cm}}
+2024 & \RaggedRight{FWO K1AFE24N} & FWO/KU Leuven & \RaggedLeft{500 EUR}  \\
+2022 & \RaggedRight{RCGAS 202107170056} & HKU & \RaggedLeft{16,500 HKD}  \\
+2019 & \RaggedRight{College of Liberal Arts} & NTU & \RaggedLeft{15,000 NTD} \\
+2019 & \RaggedRight{MOST-108-2922-I-002-198} & MOST & \RaggedLeft{45,000 NTD} \\
+2018 & \RaggedRight{MOST-107-2922-I-002-237} & MOST & \RaggedLeft{8,000 NTD} \\
+2017 & \RaggedRight{MOST-106-2922-I-002-596} & MOST & \RaggedLeft{15,000 NTD}  \\
+2017 & \RaggedRight{College of Liberal Arts} & NTU & \RaggedLeft{20,000 NTD} \\
+2016 & \RaggedRight{MOST-105-2922-I-002-682} & MOST & \RaggedLeft{10,000 NTD} \\
+\end{tabular}
 
 
 # Teaching
 
-<!-- MA LEVEL -->
+\begin{tabular}{p{1.9cm}p{9cm}p{3cm}}
+2024 & Language Varieties and Language Variants (F0VH3A) & KU Leuven \\
+2024 & Introduction to Cognitive Linguistics (LING 7011) & HKU \\
+2023 & Lexical Semantics and Lexicology  (F0TU0A) & KU Leuven \\
+2022 & Introduction to Cognitive Linguistics (LING 7011) & HKU \\
+2019-2020 & English converation (BA2) & Tatung University \\
+\end{tabular}
 
-- 2024\phantom{-2020} \qquad  Language Varieties and Language Variants (B-KUL-F0VH3A) \hfill KU Leuven <!-- MA  -->
-- 2024\phantom{-2020} \qquad  Introduction to Cognitive Linguistics (LING 7011) \hfill HKU <!-- MA  -->
-- 2023\phantom{-2020} \qquad  Lexical Semantics and Lexicology  (B-KUL-F0TU0A) \hfill KU Leuven <!-- MA  -->
-- 2022\phantom{-2020} \qquad  Introduction to Cognitive Linguistics  (LING 7011) \hfill HKU <!-- MA  -->
-- 2019-2020 \qquad English conversation \hfill Tatung University  <!-- BA2  -->
+
 
 # PhD Thesis supervision (co-supervisor)
 
@@ -560,6 +556,7 @@ president (since 2023)
 * *Cognitive Semantics*
 * *Cognitive Linguistics*
 * *East Asian Journal of Popular Culture* 
+* *Folia Linguistica*
 * *Frontiers*
 * *Glossa*
 * *Journal of Experimental Psychology:  Learning, Memory, and Cognition*
@@ -581,7 +578,7 @@ president (since 2023)
 
 <!-- * Czech conference -->
 * CLDC 11 (Conference on Language, Discourse, and Cognition) 2024
-* SLE 56 (Societas Linguistica Europaea) 2024: papers on Mandarin Chinese
+* SLE 57 (Societas Linguistica Europaea) 2024: papers on Mandarin Chinese
 * SLE 56 (Societas Linguistica Europaea) 2023: papers on Mandarin Chinese
 
 ## Conference organisation
@@ -665,7 +662,7 @@ Freelance translator Dutch-Chinese, Expat Insurances \hfill 2012-2013
 **Basic knowledge:** Isbukun Bunun (Austronesian)
 
 # Technological knowledge
-- Moodle
+- Blackboard (Ultra), Moodle
 - Microsoft office (Word, Excel, PowerPoint, Access) and open source variants
 - \LaTeX{} (typesetting)
 - Database construction and management
@@ -687,6 +684,7 @@ Freelance translator Dutch-Chinese, Expat Insurances \hfill 2012-2013
 
 # Professional development
 
+- Antiphishing training \hfill KU Leuven, 2024
 - Supervising a Master thesis \hfill KU Leuven, 2023
 - Start to teach \hfill KU Leuven, 2023
 - GDPR \hfill GoodHabitz, 2023
