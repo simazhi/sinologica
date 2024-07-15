@@ -54,6 +54,7 @@ library(kableExtra)
 
 # Employment
 
+**Senior postdoctoral fellow** \hfill KU Leuven \hspace*{1em} 2024-2027  
 **Postdoctoral assistant** \hfill KU Leuven \hspace*{1em} 2023-2024  
 **Postdoctoral fellow** \hfill The University of Hong Kong \hspace*{1em} 2021-2022 
 <!-- \newline -->
@@ -113,12 +114,10 @@ Executing/ed
 ## Refereed articles
 
 (@)
-**Thomas Van Hoey**, Xiaoyu Yu, Tungle Pan & Youngah Do. (*accepted*). What ratings and corpus data reveal about the vividness of Mandarin ABB words. *Language and Cognition* 
+Yu, Xiaoyu, **Thomas Van Hoey**, Frank Lihui Tan, Baichen Du & Youngah Do. 2024. Tracking phonological regularities: Exploring the influence of learning mode and regularity locus in adult phonological learning.  *Linguistics Vanguard* aop. 1-12. [doi: 10.1515/lingvan-2023-0050](https://doi.org/10.1515/lingvan-2023-0050)
 
 (@)
-Yu, Xiaoyu, **Thomas Van Hoey**, Baichen Du, Lihui Tan & Youngah Do. (*accepted*).
-Implicit and explicit learning of vowel harmony patterns in phonotactics and alternations. *Linguistics Vanguard*
-<!-- Linguistics Vanguard -->
+**Thomas Van Hoey**, Xiaoyu Yu, Tungle Pan & Youngah Do. 2024. What ratings and corpus data reveal about the vividness of Mandarin ABB words. *Language and Cognition* aop. 1-23. [doi: 10.1017/langcog.2024.22](https://doi.org/10.1017/langcog.2024.22)
 
 (@)
 **Van Hoey, Thomas**, Arthur Lewis Thompson,  Youngah Do & Mark Dingemanse. 2023. Iconicity in ideophones: Guessing, memorizing, and reassessing. *Cognitive Science* e13268. 1-27. [doi: 10.1111/cogs.13268](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13268)
@@ -228,13 +227,16 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 
 <!-- ## Keynote addresses -->
 
+## Invited summer school sessions
+
+(@)
+**Van Hoey, Thomas&**. *Exploratory data analysis: From start to report*. 2024. LOT summer school. Amersterdam: University of Amsterdam. (5 times 2 hours).
+
 ## Invited talks
 
 (@)
 **Van Hoey, Thomas**. *Measuring the meaning and structure of ideophones: Lessons from Chinese*. 2024. Workshop on Manifestations of sound symbolism in language: phonaesthemes, ideophones and onomatopoeia. Held at the first Biennial of Czech Linguistics. Prague: Charles University. 18-20 September 2024.
 
-(@)
-**Van Hoey, Thomas&**. *Exploratory data analysis: From start to report*. 2024. LOT summer school. Amersterdam: University of Amsterdam.
 
 (@)
 **Van Hoey, Thomas**. 2022. Articulatory features of phonemes pattern to iconic meanings: Evidence from cross-linguistic ideophones. IcoSem 10. 9 February 2022. Published as Thompson, Van Hoey & Do in *Cognitive Linguistics* (2021). https://youtu.be/UlJpI9FhUmE 
@@ -391,7 +393,7 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 ## Travel grants
 
 \begin{tabular}{p{1.9cm}p{9cm}p{1cm}p{2.7cm}}
-2024 & \RaggedRight{FWO K1AFE24N} & FWO/KU Leuven & \RaggedLeft{500 EUR}  \\
+2024 & \RaggedRight{FWO K1AFE24N} & FWO & \RaggedLeft{480 EUR}  \\
 2022 & \RaggedRight{RCGAS 202107170056} & HKU & \RaggedLeft{16,500 HKD}  \\
 2019 & \RaggedRight{College of Liberal Arts} & NTU & \RaggedLeft{15,000 NTD} \\
 2019 & \RaggedRight{MOST-108-2922-I-002-198} & MOST & \RaggedLeft{45,000 NTD} \\
@@ -405,11 +407,13 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 # Teaching
 
 \begin{tabular}{p{1.9cm}p{9cm}p{3cm}}
+2024 & Intro to Linguistics 1 (Algemene taalwetenschap 1) (F0AA3A) & KU Leuven \\
 2024 & Language Varieties and Language Variants (F0VH3A) & KU Leuven \\
 2024 & Introduction to Cognitive Linguistics (LING 7011) & HKU \\
 2023 & Lexical Semantics and Lexicology  (F0TU0A) & KU Leuven \\
 2022 & Introduction to Cognitive Linguistics (LING 7011) & HKU \\
-2019-2020 & English converation (BA2) & Tatung University \\
+2020 & English converation A  & Tatung University \\
+2019 & English converation B & Tatung University \\
 \end{tabular}
 
 
@@ -419,7 +423,7 @@ Van de Velde, Freek & Dirk Pijpops, in collaboration with Mathias De Backer, Wen
 ```{r, echo=FALSE}
 phd_supervision_table <-
   tribble(~ year, ~ name, ~ title, ~ university,
-          "2023-...",   "Ma, Ruiming", "Does grammatical optionality complicate speech production and comprehension? The case of Mandarin Chinese", "KU Leuven"
+          "2023-...",   "Ma, Ruiming", "Does grammatical optionality complicate speech production and comprehension? The case of Mandarin Chinese (3H240027)", "KU Leuven"
           
           )
 
@@ -440,6 +444,8 @@ phd_supervision_table %>%
 phd_committee_table <-
   tribble(~ year, ~ name, ~ title, ~ university,
           "2022-2026",   "Guan, Sumin", "A multifactorial analysis of Chinese analytic passive constructions (3H220465)", "KU Leuven",
+          "2020-2024", "Liu, Meili", "The Mandarin Chinese \\textit{bǎ}-construction: Diachronic, synchronic and constructional perspectives (3H200667)", "KU Leuven",
+          "2020-2024", "Tian, Xiaoyu", "Variation in Chinese analytic causative constructions across time and varieties (3H200468)", "KU Leuven",
           "2022-2026",   "Zhang, Jiayin",   "A dynamic perspective on the relationship between motivation and identity negotiation in heritage language contexts: The case of Chinese Heritage Learners in Belgium? (3H220534)", "KU Leuven",
           "2019-2023",   "Li, Yi", "A probabilistic grammar analysis of the theme-recipient alternation in Mandarin, and of its sensitivity to lectal factors (3H190459)", "KU Leuven"
           
@@ -477,15 +483,22 @@ phd_committee_table %>%
 
 # MA Thesis supervision 
 
+<!-- Yixi Luo -->
+
 ```{r, echo=FALSE}
 supervision_table <-
   tribble(~ year, ~ name, ~ title, ~ university,
+          "2024",   "Gerets, Nan", "Exploring language and identity in the Chinese lesbian and non-binary digital sphere", "KU Leuven",
+          "2024", "Han, Zhen", "A corpus-based study on two near-synonymous verbs in academic journals: \\textit{Explore} and \\textit{investigate}", "HKU",
+          "2024", "Hong, Yingqi", "Relationship between personality type (MBTI) and second language acquisition", "HKU",
+          "2024", "Wu, Yueya", "The multimodal analysis of Hong Kong advertisements: A case study of IKEA HK on instagram", "HKU",
+          "2024", "Xi, Zimo", "Profiling near-synonyms with frame semantic features: A corpus-based Behavioral Profile study of the durational adjectives \\textit{perpetual}, \\textit{enduring}, and \\textit{persistent}", "HKU",
+          
           "2023",   "Liang, Suya",   "Are Mongolian speakers sensitive to iconicity?", "HKU",
           "2023",   "Liao, Pinghui", "Synesthetic metaphor under embodied cognition: A corpus-based study on the gustatory lexeme 'sour' in Chinese and English", "HKU",
-          "2023",   "Zhu, Yiran",    "Conceptual metaphors in Chinese and American English news reports about ChatGPT", "HKU",
-          "2023",   "Zhang, Weixi", "The metaphorical usage of the prepositions \\textsc{in}, \\textsc{at}, and \\textsc{on} in \\textit{Pride and Prejudice}", "HKU",
           "2023",   "Zhang, Huchao", "Can the soul be cured through our senses? What dialogues and internal speeches reveal about New Hedonism in \\textit{The Picture of Dorian Gray}", "HKU",
-          "2023",   "Gerets, Nan", "Chinees op sociale media", "KU Leuven",
+          "2023",   "Zhang, Weixi", "The metaphorical usage of the prepositions \\textsc{in}, \\textsc{at}, and \\textsc{on} in \\textit{Pride and Prejudice}", "HKU",
+          "2023",   "Zhu, Yiran",    "Conceptual metaphors in Chinese and American English news reports about ChatGPT", "HKU",
           
           "2022",   "Feng, Yuanping", "Analysis of tendency towards usage of different SFPs in Mandarin Chinese", "HKU",
           "2022",   "Liang, Yifan", "Gender terms in Mandarin Chinese: A corpus-based study", "HKU",
@@ -553,6 +566,7 @@ president (since 2023)
 ## Reviewing for journals
 
 * *Canadian Journal of Linguistics / Revue canadienne de linguistique*
+* *Cognitive Science*
 * *Cognitive Semantics*
 * *Cognitive Linguistics*
 * *East Asian Journal of Popular Culture* 
