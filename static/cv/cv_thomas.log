@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.3)  12 JUN 2024 15:06
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.3)  30 AUG 2024 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,106 +1000,101 @@ LaTeX Font Info:    Font shape `TU/Georgia(0)/b/sc' will be
 LaTeX Font Info:    Font shape `TU/Georgia(0)/b/n' will be
 (Font)              scaled to size 10.67761pt on input line 174.
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--189
+Underfull \hbox (badness 10000) in paragraph at lines 183--191
 
  []
 
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 9.52478pt on input line 215.
+(Font)              scaled to size 9.52478pt on input line 217.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/Georgia(0)/b/n' will be
-(Font)              scaled to size 12.81313pt on input line 223.
+(Font)              scaled to size 12.81313pt on input line 225.
 LaTeX Font Info:    Font shape `TU/Georgia(0)/m/sl' in size <14.4> not available
-(Font)              Font shape `TU/Georgia(0)/m/it' tried instead on input line 223.
+(Font)              Font shape `TU/Georgia(0)/m/it' tried instead on input line 225.
 LaTeX Font Info:    Font shape `TU/Georgia(0)/m/it' will be
-(Font)              scaled to size 12.59735pt on input line 223.
+(Font)              scaled to size 12.59735pt on input line 225.
 LaTeX Font Info:    Font shape `TU/Georgia(0)/m/n' will be
-(Font)              scaled to size 7.16174pt on input line 308.
+(Font)              scaled to size 7.16174pt on input line 313.
 LaTeX Font Info:    Font shape `TU/NotoSansCJKTC(0)/m/n' will be
-(Font)              scaled to size 6.34985pt on input line 308.
+(Font)              scaled to size 6.34985pt on input line 313.
 [2] [3]
-Overfull \hbox (12.58379pt too wide) in paragraph at lines 405--412
+Overfull \hbox (12.58379pt too wide) in paragraph at lines 435--442
 \TU/Georgia(0)/m/n/12 (CHIDEOD). CHIDEOD is accessible in .xlsx, .csv, .rds formats (doi: [][]10.17605/OSF.IO/KPWGF[][]),
  []
 
 [4] [5]
-Underfull \hbox (badness 1701) in paragraph at lines 574--581
+Underfull \hbox (badness 1701) in paragraph at lines 618--625
 \TU/Georgia(0)/m/n/12 and written form across time: Introducing a database of Chinese literary ideophones
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 574--581
+Underfull \hbox (badness 1881) in paragraph at lines 618--625
 \TU/Georgia(0)/m/n/12 — CHIDEOD. ILL 12 [International Symposium on Iconicity in Language and Litera-
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 574--581
+Underfull \hbox (badness 1132) in paragraph at lines 618--625
 \TU/Georgia(0)/m/n/12 ture], Lund: Lund University. 3-5 May 2019. Funding: MOST-108-2922-I-002-198.
  []
 
-
-Underfull \hbox (badness 1127) in paragraph at lines 581--589
+[6]
+Underfull \hbox (badness 1127) in paragraph at lines 625--633
 \TU/Georgia(0)/m/n/12 Discourse, and Cognition]. Taipei: National Taiwan University. 19-21 October 2018.
  []
 
-[6]
-Underfull \hbox (badness 1997) in paragraph at lines 627--634
+
+Underfull \hbox (badness 1997) in paragraph at lines 671--678
 []\TU/Georgia(0)/b/n/12 Van Hoey, Thomas\TU/Georgia(0)/m/n/12 . 2017. The thunder rolls: Iconicity and ideophones in Chi-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 627--634
+Underfull \hbox (badness 1478) in paragraph at lines 671--678
 \TU/Georgia(0)/m/n/12 Iconicity in Language Use, Development and Processing. Nijmegen: Max Planck In-
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 627--634
+Underfull \hbox (badness 1314) in paragraph at lines 671--678
 \TU/Georgia(0)/m/n/12 stitute for Psycholinguistics. 6-7 July 2017. Funding: NTU, College of Liberal Arts.
  []
 
 [7]
-Underfull \hbox (badness 2253) in paragraph at lines 724--724
+Underfull \hbox (badness 2253) in paragraph at lines 768--768
 []|\TU/Georgia(0)/m/n/12 Research Fellowship for Outstanding International
  []
 
 
-Overfull \hbox (9.8388pt too wide) in paragraph at lines 725--725
+Overfull \hbox (9.8388pt too wide) in paragraph at lines 769--769
 []|\TU/Georgia(0)/m/n/12 Hanban| 
  []
 
-
-Overfull \hbox (17.07748pt too wide) in paragraph at lines 731--731
-[]|\TU/Georgia(0)/m/n/12 FWO/KU
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 731--731
-\TU/Georgia(0)/m/n/12 Leu-
- []
-
-
-Overfull \hbox (2.17525pt too wide) in paragraph at lines 734--734
+[8]
+Overfull \hbox (2.17525pt too wide) in paragraph at lines 778--778
 []|\TU/Georgia(0)/m/n/12 MOST| 
  []
 
 
-Overfull \hbox (2.17525pt too wide) in paragraph at lines 735--735
+Overfull \hbox (2.17525pt too wide) in paragraph at lines 779--779
 []|\TU/Georgia(0)/m/n/12 MOST| 
  []
 
 
-Overfull \hbox (2.17525pt too wide) in paragraph at lines 736--736
+Overfull \hbox (2.17525pt too wide) in paragraph at lines 780--780
 []|\TU/Georgia(0)/m/n/12 MOST| 
  []
 
 
-Overfull \hbox (2.17525pt too wide) in paragraph at lines 738--738
+Overfull \hbox (2.17525pt too wide) in paragraph at lines 782--782
 []|\TU/Georgia(0)/m/n/12 MOST| 
  []
 
-[8] [9] [10] [11] [12] 
+
+Underfull \hbox (badness 1057) in paragraph at lines 788--788
+[]|\TU/Georgia(0)/m/n/12 Intro to Linguistics 1 (Algemene taalwetenschap 1)
+ []
+
+[9] [10] [11] [12] [13] [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./cv_thomas.aux)
  ***********
@@ -1110,15 +1105,15 @@ L3 programming layer <2022/08/05>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `cv_thomas.out' has not changed.
-(rerunfilecheck)             Checksum: 112CABF8D97297DF60749BAD8148506C;6185.
+(rerunfilecheck)             Checksum: 1BFB67F803FC7968946C8637D48A868F;6404.
  ) 
 Here is how much of TeX's memory you used:
- 20127 strings out of 476878
- 387545 string characters out of 5804262
- 1938627 words of memory out of 5000000
- 41659 multiletter control sequences out of 15000+600000
+ 20138 strings out of 476878
+ 387677 string characters out of 5804262
+ 1940627 words of memory out of 5000000
+ 41670 multiletter control sequences out of 15000+600000
  571641 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  93i,13n,122p,1198b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv_thomas.pdf (12 pages).
+Output written on cv_thomas.pdf (14 pages).

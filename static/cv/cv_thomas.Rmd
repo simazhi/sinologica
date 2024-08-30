@@ -157,41 +157,53 @@ Thompson, Arthur Lewis, **Thomas Van Hoey** & Youngah Do. 2021. Articulatory fea
 
 ## Publications under review
 
-<!-- (@) -->
-<!-- Do, Youngah, Xiaoyu Yu, **Thomas Van Hoey**, Bingzi Yu, Lihui Tan, Sui Lung Sze, Tsz To Ho, Tak-Wang Li. -->
-<!-- The acquisition, contact, and transmission of phonological variation. -->
-<!-- Phonology -->
 
 <!-- (@) -->
 <!-- Do, Youngah, Bingzi Yu & **Thomas Van Hoey**.  -->
 <!-- Mitigating the trade-off between verification and speculation in learning vowel harmony.  -->
 <!-- Language and Speech -->
 
-<!-- (@) -->
-<!-- Do, Youngah, Xiaoyu Yu, Bingzi Yu, **Thomas Van Hoey**, Tsz To Ho. -->
-<!-- Bilingualism and phonological control: Evidence for independent regulation of phonotactic and alternation systems. -->
-<!-- Language -->
-
+(@)
+Sze , Samuel Sui Lung, Xiaoyu Yu, **Thomas Van Hoey**, Bingzi Yu & Youngah Do. 
+Bilinguals’ advantages in executive function: learning phonotactics and alternation.
+<!-- Second Language Research -->
 
 (@)
-**Van Hoey, Thomas**\*, Arthur Lewis Thompson\*, Aaron Wing Cheung Chik & Youngah Do. Teasing apart sound, meaning and gesture of ideophones in a transmission and iterated learning paradigm.  
+Yu, Xiaoyu, Bingzi Yu, **Thomas Van Hoey**, Samuel Sui Lung Sze, Frank Lihui Tan, Tak Wang Li & Youngah Do. Phonetic substance reshapes phonological variation in language acquisition and language contact. 
+<!-- Language Variation and Change -->
+
+(@)
+**Van Hoey, Thomas**\*, Arthur Lewis Thompson\*, Aaron Wing Cheung Chik & Youngah Do. Iconic hand gestures from ideophones exhibit stability and emergent phonological properties: An iterated learning study.
 \* co-first authors
-
+<!-- Cognitive Linguistics -->
 
 (@)
-**Van Hoey, Thomas**, Benedikt Szmrecsanyi, Matt Hunt Gardner. Language users don't mind optionality, and absolute complexity is not proportional to relative complexity.
+**Van Hoey, Thomas**, Benedikt Szmrecsanyi, Matt Hunt Gardner. Choice and complexity: Debunking the myth that absolute complexity invariably leads to relative complexity.
+<!-- Linguistic Typology at the Crossroads - special issue -->
+
+(@)
+Szmrecsanyi, Benedikt, Matt Hunt Gardner, Ruiming Ma & **Thomas Van Hoey**. Empirical accountability meets theorizing about language variation. in Cukor-Avila, Patrica, Sali A. Tagliamonte & Guy Bailey (eds.) *Empirical accountability in variation linguistics: Taking the next step*. Cambridge University Press. 
+
+(@)
+**Van Hoey, Thomas**. Waddling, wandering and waving: Literary Chinese ideophones and the Motion Semantic Grid.
+<!-- Cognitive Semantics - special issue -->
 
 ## Publications in preparation
 
 (@)
 **Van Hoey, Thomas**, Dan Dewey, Youngah Do. fNIR study on ideophone usage in Mandarin speakers.
 
-
 (@)
 **Van Hoey, Thomas**. Sound and lexical semantics. *Cambridge handbook of lexical semantics* (eds. Dirk Geeraerts & Dylan Glynn)
 
+
 (@)
-**Van Hoey, Thomas**. Waddling, wandering and waving: Literary Chinese ideophones and the Motion Semantic Grid.
+Ma, Ruiming, **Thomas Van Hoey** & Benedikt Szmrecsanyi. Fact-checking common ideas about the cognitive complexity of grammatical variation.
+<!-- Cognitive Linguistics -->
+
+(@)
+**Van Hoey, Thomas**, Benedikt Szmrecsanyi, Matt Hunt Gardner, Ruiming Ma. Choosing between alternate ways of saying the same: How hard can it be??
+<!-- Language Variation and Change -->
 
 (@)
 **Van Hoey, Thomas**. Iconicity in the streets, multimodal metaphor in the sheets: Chinese ideophones on social media.
@@ -230,7 +242,7 @@ MA thesis Sinology (grade: 18.6/20)\hfill 2014 \newline
 ## Invited summer school sessions
 
 (@)
-**Van Hoey, Thomas&**. *Exploratory data analysis: From start to report*. 2024. LOT summer school. Amersterdam: University of Amsterdam. (5 times 2 hours).
+**Van Hoey, Thomas**. *Exploratory data analysis: From start to report*. 2024. LOT summer school. Amersterdam: University of Amsterdam. (5 times 2 hours).
 
 ## Invited talks
 
@@ -257,8 +269,14 @@ Dingemanse, Mark, Arie Verhagen, Jonas Nölle & **Thomas Van Hoey**. 2019. Integ
 
 ## Conference presentations (oral)
 
+
+
+
 (@)
-**Van Hoey, Thomas**. 2024. A semantic map for ideophones and its application to Middle Chinese poetry. SLE 57 [57th Annual Meeting of the Societas Linguistica Europaea]. Helsinki: University of Helsinki. 21-24 August 2024.
+**Van Hoey, Thomas**. 2024. Waddling, wandering and waving: Literary Chinese ideophones and the motion semantic grid. ICL 21 [21st International Congress of Linguists]. Poznań: Adam Mickiewicz University Poznań. 12 September 2024.
+
+(@)
+**Van Hoey, Thomas**. 2024. A semantic map for ideophones and its application to Middle Chinese poetry. SLE 57 [57th Annual Meeting of the Societas Linguistica Europaea]. Helsinki: University of Helsinki. 22 August 2024.
 
 (@)
 Yu, Xiaoyu, Samuel Sui Lung Sze, **Thomas Van Hoey**, Bingzi Yu, Frank Lihui Tan, Stephen Tsz To Ho, Wayne Tak Wang Li, Youngah Do. 2024. The acquisition, contact, and transmission of phonological variation. LabPhon 19 [Conference on Laboratory Phonology]. 27-29 June 2024.
@@ -483,11 +501,12 @@ phd_committee_table %>%
 
 # MA Thesis supervision 
 
-<!-- Yixi Luo -->
+
 
 ```{r, echo=FALSE}
 supervision_table <-
   tribble(~ year, ~ name, ~ title, ~ university,
+          "2024",   "Liu, Yixi", "Do variation contexts attract disfluencies? The case of discourse markers", "KU Leuven",
           "2024",   "Gerets, Nan", "Exploring language and identity in the Chinese lesbian and non-binary digital sphere", "KU Leuven",
           "2024", "Han, Zhen", "A corpus-based study on two near-synonymous verbs in academic journals: \\textit{Explore} and \\textit{investigate}", "HKU",
           "2024", "Hong, Yingqi", "Relationship between personality type (MBTI) and second language acquisition", "HKU",
@@ -569,6 +588,7 @@ president (since 2023)
 * *Cognitive Science*
 * *Cognitive Semantics*
 * *Cognitive Linguistics*
+* *Corpus Linguistics and Linguistic Theory*
 * *East Asian Journal of Popular Culture* 
 * *Folia Linguistica*
 * *Frontiers*
@@ -591,9 +611,10 @@ president (since 2023)
 ## Reviewing for conferences
 
 <!-- * Czech conference -->
+* IcoSem (Iconicity Seminar) 2025
 * CLDC 11 (Conference on Language, Discourse, and Cognition) 2024
-* SLE 57 (Societas Linguistica Europaea) 2024: papers on Mandarin Chinese
-* SLE 56 (Societas Linguistica Europaea) 2023: papers on Mandarin Chinese
+* SLE 57 (Societas Linguistica Europaea) 2024
+* SLE 56 (Societas Linguistica Europaea) 2023
 
 ## Conference organisation
 
